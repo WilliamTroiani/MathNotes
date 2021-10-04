@@ -50,6 +50,7 @@
 \newtheorem{construction}[thm]{Construction}
 \newtheorem{exercise}[thm]{Exercise}
 \newtheorem{example}[thm]{Example}
+\newtheorem{aside}[thm]{Aside}
 
 \def\doubleunderline#1{\underline{\underline{#1}}}
 \newcommand{\bb}[1]{\mathbb{#1}}
@@ -85,6 +86,9 @@
 \newcommand{\negation}{\sim}
 \newcommand{\true}{\top}
 \newcommand{\false}{\bot}
+\DeclareRobustCommand{\diamondtimes}{%
+  \mathbin{\text{\rotatebox[origin=c]{45}{$\boxplus$}}}%
+}
 \newcommand{\tagarray}{\mbox{}\refstepcounter{equation}$(\theequation)$}
 \newcommand{\startproof}[1]{
 \AxiomC{#1}
@@ -109,13 +113,14 @@
 \begin{defn}\label{def:formulas}
 There is a countably infinite set of \textbf{atomic preformulas} $\scr{F} = \lbrace p,q,r\hdots \negation p, \negation q, \negation r,...\rbrace$ where $p \in \scr{F}$ if and only if $\negation p \in \scr{F}$, and a set of \textbf{preformulas} $\operatorname{Pre}\Psi_{\otimes,\parr}$ (or simply $\operatorname{Pre}\Psi$) which is the smallest set subject to:
 \begin{enumerate}
-    \item all atomic formulas are formulas, that is, if $p \in \scr{F}$ then $p \in \Psi$,
-    \item if $A$ and $B$ are formulas then so are $A \otimes B$, and $A \parr B$,
-    \item\label{def:formulas_negation} if $A$ is a formula then so is $\sim A$,
+    \item all atomic preformulas are preformulas, that is, if $p \in \scr{F}$ then $p \in \Psi$,
+    \item if $A$ and $B$ are preformulas then so are $A \otimes B$, and $A \parr B$,
+    \item\label{def:formulas_negation} if $A$ is a preformula then so is $\sim A$,
 \end{enumerate}
+The \textbf{complexity} of a preformula $A$, denoted $c(A)$, is the number of occurrences of atomic preformulas in $A$.
 \end{defn}
 \begin{defn}\label{def:negation_normal_map}
-We define the following map $\gamma: \operatorname{Pre}\Psi \lto \operatorname{Pre}\Psi$ where $p$ are atomic and $A,B$ arbitrary preformulas:
+We define the following map $\gamma: \operatorname{Pre}\Psi \lto \operatorname{Pre}\Psi$ where $p$ is atomic and $A,B$ arbitrary preformulas:
 \begin{align*}
     \negation (p) &\longmapsto \negation p & \negation p &\longmapsto \negation p\\
     \negation (\negation A) &\longmapsto A \\
@@ -127,7 +132,7 @@ We define the following map $\gamma: \operatorname{Pre}\Psi \lto \operatorname{P
 For any formula $A$, there exists $n > 0$ and a formula $B$ such that for all $m \ge n$ we have $\gamma^m(A) = B$.
 \end{lemma}
 \begin{proof}
-Follows from induction on the number of pairs of brackets in $A$.
+Follows from induction on the complexity $c(A)$ of $A$.
 \end{proof}
 \begin{defn}
 In the notation of Lemma \ref{lem:negation_normal_form}, $B$ is the \textbf{negation normal form} corresponding to $A$, we write $\operatorname{NF}(A) = B$.
@@ -144,8 +149,21 @@ This leads to the \textbf{negation abnormal form} of a formula $A$ which we deno
 \begin{defn}
 We let $\cong$ be the smallest equivalence relation on the set of preformuals $\operatorname{Pre}\Psi$ such that $A \cong \gamma(A)$. The set $\Psi$ of \textbf{formulas} is the set of equivalence classes of preformulas under $\cong$.
 \end{defn}
+\begin{defn}\label{def:labelled_formulas}
+We assume that for each formula $A$ there is a (countably) infinite set of \textbf{variables} $\call{V}_{A} := \lbrace x, y,...\rbrace$. The notation $x : A$ means $x \in \call{V}_A$. The union of all of these sets is the set of \textbf{variables} denoted $\call{V}:=\bigcup_{A \in \Psi}\call{V}_A$. We inductively define the set of \textbf{labelled formulas} denoted $\operatorname{L}\Psi$:
+\begin{itemize}
+\item if $x:A \in \call{V}$ then $x:A \in \operatorname{L}\Psi$, such labelled formulas are \textbf{variables},
+\item if $x:A, y:B \in \operatorname{L}\Psi$ then $(x:A) \otimes (y:B)$ and $(x:A) \parr (y:B) \in \operatorname{L}\Psi$, such labelled formulas are \textbf{compound}.
+\end{itemize}
+The \textbf{name} of a variable $x:A$ is $x$.
+
+For convenience, we often drop the variable name by writing $A$ instead of $x:A$ and $A \otimes B$, $A \parr B$ instead of $(x:A) \otimes (y:B)$,$(x:A) \parr (y:B)$ respectively. 
+\begin{remark}\label{rmk:pre_labelled_formulas}
+We uphold the identifications implied by Definition \ref{def:negation_normal_map}, for example, $(x:A)\otimes(y:B)$ is identified with $\negation((x:\negation A) \parr (y:\negation B))$. This can be formalised by considering ``pre"labelled formulas, we suppress this level of detail in these notes.
+\end{remark}
+\end{defn}
 \begin{defn}
-A pair $(A,i)$ where $A$ is a formula and $i \in \bb{Z}$ is an \textbf{occurrence of a formula} (or simply an \textbf{occurrence}). An occurrence $(A,i)$ is often written $A$. A finite sequence of occurrences is a \textbf{sequent} and we write $\vdash A_1,...,A_n$ for the sequent $(A_1,...,A_n)$.
+A finite sequence of labelled variables is a \textbf{sequent} and we write $\vdash x_1: A_1,...,x_n: A_n$ for the sequent $(x_1:A_1,...,x_n:A_n)$.
 \end{defn}
 \begin{defn}\label{def:mult_lin_log_ded_rule}
 A \textbf{multiplicative, linear logic deduction rule} (or simply \textbf{deduction rule}) results from one of the schemata below by a substitution of the following kind: replace $A,B$ by arbitrary formulas, and $\Gamma, \Gamma', \Delta, \Delta'$ by arbitrary (possibly empty) sequences of formulas separated by commas:
@@ -156,12 +174,12 @@ A \textbf{multiplicative, linear logic deduction rule} (or simply \textbf{deduct
         \begin{prooftree}
             \AxiomC{}
             \RightLabel{$\ax$}
-            \UnaryInfC{$\vdash A, \sim A$}
+            \UnaryInfC{$\vdash x:A, y: \sim A$}
         \end{prooftree}
         \item \textbf{Cut}:
         \begin{prooftree}
-            \AxiomC{$\vdash \Gamma, A, \Gamma'$}
-            \AxiomC{$\vdash \Delta, \negation A, \Delta'$}
+            \AxiomC{$\vdash \Gamma, x:A, \Gamma'$}
+            \AxiomC{$\vdash \Delta, y:\negation A, \Delta'$}
             \RightLabel{$\cut$}
             \BinaryInfC{$\vdash \Gamma, \Gamma', \Delta, \Delta'$}
         \end{prooftree}
@@ -170,64 +188,63 @@ A \textbf{multiplicative, linear logic deduction rule} (or simply \textbf{deduct
     \begin{itemize}
         \item \textbf{Times}:
         \begin{prooftree}
-            \AxiomC{$\vdash \Gamma, A, \Gamma'$}
-            \AxiomC{$\vdash \Delta, B, \Delta'$}
+            \AxiomC{$\vdash \Gamma, x:A, \Gamma'$}
+            \AxiomC{$\vdash \Delta, y:B, \Delta'$}
             \RightLabel{$\otimes$}
-            \BinaryInfC{$\vdash \Gamma, \Gamma', A \otimes B, \Delta, \Delta'$}
+            \BinaryInfC{$\vdash \Gamma, \Gamma', (x:A) \otimes (y:B), \Delta, \Delta'$}
         \end{prooftree}
         \item \textbf{Par}
         \begin{prooftree}
-            \AxiomC{$\vdash \Gamma, A, B, \Gamma'$}
+            \AxiomC{$\vdash \Gamma, x:A,y: B, \Gamma'$}
             \RightLabel{$\parr$}
-            \UnaryInfC{$\vdash \Gamma, A \parr B, \Gamma'$}
+            \UnaryInfC{$\vdash \Gamma, (x:A) \parr (y:B), \Gamma'$}
         \end{prooftree}
     \end{itemize}
     \item the \textbf{structural rule}:
     \begin{itemize}
         \item \textbf{Exchange}
         \begin{prooftree}
-            \AxiomC{$\vdash \Gamma, A, B, \Gamma'$}
+            \AxiomC{$\vdash \Gamma, x:A,y: B, \Gamma'$}
             \RightLabel{$\ex$}
-            \UnaryInfC{$\vdash \Gamma, B, A, \Gamma'$}
+            \UnaryInfC{$\vdash \Gamma, y:B, x:A, \Gamma'$}
         \end{prooftree}
     \end{itemize}
 \end{itemize}
 \end{defn}
 \begin{defn}\label{def:proof}
-A \textbf{proof in MLL} is a finite, rooted, planar, tree where each edge is labelled by a sequent and each node except for the root is labelled by a valid deduction rule. If the edge connected to the root is labelled by the sequent $\vdash \Gamma, A, \Gamma'$ then we call the proof a \textbf{proof of $\vdash \Gamma, A, \Gamma'$}.
+A \textbf{proof in MLL} is a finite, rooted, planar, tree where each edge is labelled by a sequent and each node except for the root is labelled by a valid deduction rule. If the edge connected to the root is labelled by the sequent $\vdash \Gamma$ then we call the proof a \textbf{proof of $\vdash \Gamma$}.
 \end{defn}
 There is a lot of redundancy in Definition \ref{def:proof} (for instance, $\vdash$) so we introduce another way of writing proofs:
 \begin{defn}\label{def:proof_structures}
-A \textbf{multiplicative proof structure} (or simply \textbf{proof-structure}) consists of:
-\begin{itemize}
-    \item a finite set of \textbf{occurrences of formulas}, ie, tuples $(A,i)$ consisting of a formula $A$ and an integer $i$,
-    \item a finite set consisting of \textbf{links} which may be:
-    \begin{itemize}
-        \item \textbf{axiom links}: tuples $(\operatorname{ax}, A,i,\negation A,j)$ where $(A,i),(\negation A,j)$ are occurrences of formulas and are the \textbf{conclusions} of the axiom link,
-        \item \textbf{cut links}: tuples $(\operatorname{cut}, A,i,\negation A, j)$ where $(A,i),(\negation A,j)$ are occurrences of formulas and are the \textbf{premises} of the cut link,
-        \item \textbf{tensor links}: tuples $(A,i,B,j, A \otimes B, k)$ or, $(B,j,A,i, A \otimes B, k)$ where $(A,i),(B,j),(A \otimes B, k)$ are occurrences of formulas, $(A,i),(B,j)$ are the \textbf{premises} of the tensor link, and $(A \otimes B, k)$ is the \textbf{conclusion},
-        \item \textbf{par links}: $(A,i,B,j, A \parr B, k)$ or $(B,j,A,i, A \parr B, k)$ where $(A,i),(B,j),(A \parr B, k)$ are occurrences of formulas, the \textbf{premises} and \textbf{conclusion} are as for the tensor link.
-    \end{itemize}
-\end{itemize}
-subject to:
+A \textbf{multiplicative proof-structure} (or simply \textbf{proof-structure}) is a finite, directed graph $\pi$ where each vertex is labelled by labelled formula, we identify the vertices with their labels. Each edge $e$ is required to exist in exactly one of the following forms:
 \begin{enumerate}
-    \item\label{def:proof_structure_distinct_occurrences} every occurrence of a formula is distinct. Ie, for two occurrences of formulas $(A,i),(B,j)$ in a proof-structure $\pi$, we have either $A \neq B$ or $i \neq j$, 
-    \item\label{def:proof_structure_conclusions_one_link} every occurrence of a formula is a conclusion of one and only one link,
-    \item\label{def:proof_structure_premise_one_link} every occurrence of a formula is the premise of at most one link.
+\item as part of an \textbf{axiom link}: a set consisting of a pair of vertices labelled by a labelled formulas $A, \negation A$, and an edge which is either $A \lto \negation A$ or $\negation A \lto A$. The vertices $A, \negation A$ are \textbf{conclusions of the axiom link}.
+\item as part of a \textbf{tensor link}: a set consisting of a triple of distinct vertices $A, B, A\otimes B$,  and a pair of edges $A \lto A \otimes B, B \lto A \otimes B$. The labelled formulas $A, B$ are \textbf{premises of the tensor link} and $A \otimes B$ is the \textbf{conclusion of the tensor link},
+\item as part of a \textbf{par link}: a set consisting of a triple of distinct vertices $A, B, A \parr B$, and a pair of edges $A \lto A \parr B,B \lto A \parr B$. The \textbf{premises} and \textbf{conclusions of the par link} are similar to that of the tensor link,
+\item as part of a \textbf{cut link}: a set consisting of a pair of vertices $A, \negation A$ along with either an edge $A \lto \negation A$, or an edge $\negation A \lto A$. The vertices $A, \negation A$ are the \textbf{conclusions of the cut link}.
 \end{enumerate}
-A proof-structure without any cut links is \textbf{cut-free}.
+Furthermore, $\pi$ is required to satisfy the following conditions:
+\begin{enumerate}
+\item\label{def:proof_structure_distinct_occurrences} every labelled formula throughout the labellings of the graph are distinct, ie, for every pair of labels $x:A, y:B$ in $\pi$, either $x \neq y$, or $A \neq B$,
+\item every labelled formula is a conclusion of one and only one link,
+\item every labelled formula is the premise of at most one link.
+\end{enumerate}
+A \textbf{link} is either an axiom, tensor, par, or cut link.
+\end{defn}
+\begin{defn}\label{def:occurrences_labels}
+An \textbf{occurrence of a formula} in a proof-structure $\pi$ is the labelled formula corresponding to some vertex in $\pi$.
 \end{defn}
 \begin{remark}
 We have introduced axiom \ref{def:proof_structure_distinct_occurrences} explicitly here whereas in other sources (\cite{linearlogic}) it has been left implicit.
 \end{remark}
 We draw proof-structures diagrammatically, there is an obvious map from the set of proofs to the set of proof-structures, this map is non-surjective. The proof structure given by the image of a proof $\pi$ is the \textbf{translation} of $\pi$. The image of this translation is the set of \textbf{proof-nets}, there is a characterisation of proof-nets involving \emph{long trips} and \emph{switchings}. Loosely speaking, a \emph{trip} of a proof structure $\pi$ is a sequence of occurrences of formulas in $\pi$ representing a path on the underlying graph. A \emph{switching} will be instructions which define this path.
 
-\begin{defn}\label{def:int_mult_ded_rule}
-The set of \textbf{intuitionistic formulas} $I\Psi$ is defined in the same way as $\Psi$ in Definition \ref{def:formulas} but we omit \ref{def:formulas_negation}.
+\begin{defn}\label{def:int_mult_ded_rule} 
+The set of \textbf{intuitionistic formulas} $I\Psi$ is defined in the same way as $\Psi$ in Definition \ref{def:formulas} but we omit \ref{def:formulas_negation}. We use the same set of variables $\call{V}$ of Definition \ref{def:labelled_formulas}, and we let $\operatorname{L}I\Psi$ denote the set of \textbf{labelled intuitionistic formulas}. 
 
-Let $\call{P}^n$ be the set of all length $n$ sequences of variables with $\call{P}^0 := \lbrace \varnothing \rbrace$, and $\call{P} := \cup_{n = 0}^\infty \call{P}^n$. A \textbf{sequent} is a pair $(\Gamma,A)$ where $\Gamma \in \call{P}$ and $A \in \Psi$, written $\Gamma \vdash A$. We call $\Gamma$ the \textbf{antecedent} and $A$ the \textbf{succedent} of the sequent. Given $\Gamma$ and a formula $A$ we write $\Gamma, A$ for the element of $\call{P}$ given by appending $A$ to the end of $\Gamma$. We write $\vdash A$ for $\varnothing \vdash A$.
+Let $\call{P}^n$ be the set of all length $n$ sequences of labelled intuitionistic variables with $\call{P}^0 := \lbrace \varnothing \rbrace$, and $\call{P} := \cup_{n = 0}^\infty \call{P}^n$. A \textbf{sequent} is a pair $(\Gamma,A)$ where $\Gamma \in \call{P}$ and $A \in \operatorname{L}I\Psi$, written $\Gamma \vdash A$. We call $\Gamma$ the \textbf{antecedent} and $A$ the \textbf{succedent} of the sequent. Given $\Gamma$ and a labelled intuitionistic formula $A$ we write $\Gamma, A$ for the element of $\call{P}$ given by appending $A$ to the end of $\Gamma$. We write $\vdash A$ for $\varnothing \vdash A$.
 
-An \textbf{intuitionistic, multiplicative deduction rule} (or simply \textbf{deduction rule}) results from one of the schemata below by a substitution of the following kind: replace $A,B,C$ by arbitrary formulas, $x,y$ by arbitrary intuitionistic formulas, and $\Gamma,\Delta, \Theta$ by arbitrary (possibly empty) sequences of intuitionistic formulas separated by commas:
+An \textbf{intuitionistic, multiplicative deduction rule} (or simply \textbf{deduction rule}) results from one of the schemata below by a substitution of the following kind: replace $A,B,C$ by arbitrary labelled intuitionistic formulas, and $\Gamma,\Delta, \Theta$ by arbitrary (possibly empty) sequences of labelled intuitionistic formulas separated by commas:
 \begin{itemize}
     \item The \textbf{identity group}:
 \begin{center}
@@ -315,6 +332,9 @@ An \textbf{intuitionistic, multiplicative deduction rule} (or simply \textbf{ded
 \end{itemize}
 A \textbf{proof in IMLL} is defined the same way as in Definition \ref{def:proof}.
 \end{defn}
+\begin{remark}
+We often refer to labelled intuitionistic formulas $x:A$ just by \emph{formulas}, and write $A$.
+\end{remark}
 \begin{defn}
 Let $\Sigma$ denote the set of multiplicative, linear logic proofs and $\operatorname{MPS}$ the set of multiplicative proof-structures. We let
 \begin{equation}
@@ -626,12 +646,12 @@ In Section \ref{sec:sequentialisation} we will see what the image of the map $T$
 \begin{defn}
 Let $\pi$ be a proof-structure and denote the set of tensor and par links of $\pi$ by $\operatorname{Link}_{\otimes,\parr}\pi$ (or simply $\operatorname{Link}\pi$). A \textbf{switching} of $\pi$ is a function
 \begin{equation}
-    S: \operatorname{Link}(\pi) \lto \lbrace L,R\rbrace
+    S: \operatorname{Link}\pi \lto \lbrace L,R\rbrace
 \end{equation}
 A \textbf{switching} of a particular link $\tau$ is a choice of $L,R$ associated to $\tau$.
 \end{defn}
 \begin{defn}\label{def:trip}
-Let $\pi$ be a proof-structure. Let $\call{O}(\pi)$ denote the set of occurrences of formulas in $\pi$. We consider two disjoint copies of this set 
+Let $\pi$ be a proof-structure. Let $\call{O}(\pi)$ denote the set of occurrences of formulas in $\pi$ (Definition \ref{def:occurrences_labels}).   We consider two disjoint copies of this set 
 \begin{equation}
     \call{U}(\pi) := \call{O}(\pi) \coprod \call{O}(\pi)
 \end{equation}
@@ -1100,22 +1120,37 @@ For the inductive step, we consider two cases, first say $\pi$ admits a par link
 Now say that $\pi$ contained cuts. We replace each cut with a tensor link to create a new proof $\zeta$. That there exists a proof $\Xi$ which maps to $\zeta$ follows from the part of the result proved already as $\zeta$ is cut-free. We adapt $\Xi$ appropriately by replacing $\otimes$-rules by $\operatorname{cut}$-rules and we are done.
 \end{proof}
 \section{Cut}
-\begin{defn}[Cut-reduction]
-Cut-reduction $\lto_{\operatorname{cut}}$ is the smallest, \emph{compatible} equivalence relation on the set of all proof-nets containing the following generators (for clarity, the occurrence labels have been written in explicitly):
-\begin{enumerate}
-    \item \begin{equation}\label{eq:cut_red_ax}
+The cut-reduction process may involve re-writing vertex labels. For this we introduce the following substitution operation:
+\begin{defn}[Labelled formula substitution]
+Given a labelled formula $x_1: A_1 \boxtimes_{1} \hdots \boxtimes_{n-1} x_n: A_n$, where each $\boxtimes_i \in \lbrace \otimes, \parr \rbrace$, we denote by
+\begin{equation}\label{eq:labelled_form_substitution}
+(x_1: A_1 \boxtimes_{1} \hdots \boxtimes_{n-1} x_n: A_n)[x_i := y_i]
+\end{equation}
+the labelled formula given by replacing every instance of $x_i$ in $x_1: A_1 \boxtimes_{1} \hdots \boxtimes_{n-1} x_n: A_n$ by $y_i$. To avoid clutter, we continue the convention of not writing the labels, and so \eqref{eq:labelled_form_substitution} may just as well be written $A[x_i := y_i]$, where $A$ denotes $x_1: A_1 \boxtimes_{1} \hdots \boxtimes_{n-1} x_n: A_n$.
+\end{defn}
+\begin{defn}\label{def:proof_structure_parts}
+A \textbf{proof-structure part} is a subgraph of proof-structures which need not be a proof-structure itself.
+\end{defn}
+\begin{defn}[Proof substitution]
+Given a proof structure $\pi$, we denote by $\pi[x:=y]$ the proof structure given by replacing every labelled formula $A$ in $\pi$ by $A[x_i := y_i]$. Similarly, we define substitution on proof-structure parts. 
+\end{defn}
+\begin{defn}\label{def:cut_reduction}[Cut-reduction]
+Cut-reduction $\lto_{\operatorname{cut}}$ is the smallest, compatible equivalence relation on the set of all proof-nets containing the following generators (for clarity, the occurrence labels have been written in explicitly):
+\begin{itemize}
+    \item \textbf{Axiom redex} Consider a proof-structure $\pi$ of the following shape:
+    \begin{equation}\label{eq:cut_red_ax}
     \begin{tikzcd}[column sep = tiny]
-        (A,i)\arrow[r,dash, bend left] & (\negation A,j)\arrow[r,dash, bend right] & (A,k)
-    \end{tikzcd}
-    \lto_{\operatorname{cut}}
-    \begin{tikzcd}
-        (A,i)
+    & & \pi_1\arrow[d,dash]\\
+        x:A\arrow[r,dash, bend left]\arrow[d,dash] & y:\negation A\arrow[r,dash, bend right] & z:A\\
+        \pi_2
     \end{tikzcd}
 \end{equation}
-    \item \begin{equation}\label{eq:cut_red_tens}
+with $\pi_1,\pi_2$ possibly connected proof-structure parts. We first consider the proof-structure part given by removing $y:\negation A$ (and the incident edges) from \eqref{eq:cut_red_ax},  denote this $\zeta$. We then construct $\zeta[z := x]$ and then identify the displayed occurrences of $x:A, z:A$ which due to the substitution are now both $x:A$. The result is a proof-structure $\pi'$, this is the image of $\pi$ under cut-reduction in this case.
+    \item \textbf{Tensor-par redex}
+       \begin{equation}\label{eq:cut_red_tens}
         \begin{tikzcd}[column sep = tiny]
-            (A,i)\arrow[dr,dash] && (B,j)\arrow[dl,dash] & (\negation A, k)\arrow[dr,dash] && (\negation B, l)\arrow[dl,dash]\\
-            & (A \otimes B, m)\arrow[rrr,dash, bend right] & & & (\negation A \parr \negation B, n)
+            A\arrow[dr,dash] && B\arrow[dl,dash] & \negation A\arrow[dr,dash] && \negation B\arrow[dl,dash]\\
+            & A \otimes B\arrow[rrr,dash, bend right] & & & \negation A \parr \negation B
         \end{tikzcd}
     \end{equation}
     $\lto_{\operatorname{cut}}$
@@ -1124,7 +1159,7 @@ Cut-reduction $\lto_{\operatorname{cut}}$ is the smallest, \emph{compatible} equ
         (A,i)\arrow[rr,dash,bend right] & (B,j)\arrow[rr,dash,bend right] & (\negation A, k) & (\negation B, l)
         \end{tikzcd}
     \end{equation}
-\end{enumerate}
+\end{itemize}
 The reflexive, symmetric, transitive closure of cut-reduction is \textbf{cut-equivalence}, and is denoted $\sim_{\operatorname{cut}}$.
 
 A pair consisting of an axiom link and a cut link in the shape of \eqref{eq:cut_red_ax} is a \textbf{axiom redex}, and a set consisting of occurrences of formulas, a tensor link, a par link, and a cut link in the shape of \eqref{eq:cut_red_tens} is a \textbf{tensor-par redex}.
@@ -1247,24 +1282,59 @@ We see from Figure \ref{ex:counter} that we can write down $\Sigma(\pi_1)$:
 Clearly, the set $\Sigma(\pi_1)$ only depends on the typing tree (the cut-free sub-proof-structure corresponding to a provable formula $A$ as described in Remark \ref{rmk:trunk}), which in turn only depends on the formula $A$.
 \end{remark}
 \end{example}
-\section{Geometry of Interaction}
-\begin{defn}\label{def:GoI_permutation}
-Let $\pi$ be a proof-net possibly with cuts and assume the axioms have been labelled $1,...,2n$. Perform the cut-reduction step \eqref{eq:cut_red_tens} as many times as possible and perform \emph{no} cut-reduction step of the form \eqref{eq:cut_red_ax}. The result is a proof-net $\zeta$ where each axiom link is part of a chain
+\section{Geometry of Interaction Zero}
+Geometry of interaction zero requires that all formulas occurring in axiom links are atomic, every proof-structure not of this form can be related to one which is by $\eta$-equivalence:
+\begin{defn}[$\eta$-equivalence]
+Let $\sim_{\eta}$ denote the smallest, compatible, equivalence relation on the set of all proof-structures satisfying the following for all labelled formulas $A,B$:
 \begin{equation}
-    \begin{tikzcd}
-    A\arrow[r,dash,bend left] & \negation A\arrow[r,dash, bend right] & A\arrow[r,dash,bend left] & \hdots\arrow[r,dash,bend left] & \negation A\arrow[r,dash,bend right] & A\arrow[r,dash,bend left] & \negation A
-    \end{tikzcd}
+\begin{tikzcd}[column sep = small]
+A\otimes B \arrow[r,dash, bend left] & \negation A \parr \negation B
+\end{tikzcd}
+\sim_{\eta}
+\begin{tikzcd}
+A\arrow[rrr,bend left, dash]\arrow[dr,dash] & & B\arrow[rrr,dash,bend left]\arrow[dl,dash] & \negation A\arrow[dr,dash] & & \negation B\arrow[dl,dash]\\
+& A \otimes B & & & \negation A \parr \negation B
+\end{tikzcd}
 \end{equation}
-The cut-links of $\zeta$ define a permutation (which is a disjoint union of transpositions) $\gamma_{\pi}$ (which is easily shown to be well defined by Lemma \ref{prop:church_rosser}) on $\lbrace 1,...,n\rbrace$ where $2n$.
+\end{defn}
 
-Say the atoms $(A_{1},k_1),...,(A_m,k_m)$ are at the ends of these chains. Recall Definition \ref{def:permutations} the permutation $\alpha_{\pi}$ induced by the axiom links of $\pi$. For each $i$ let $d_i$ denote the least integer such that 
+
+
+
+We begin with the following crucial observation:
+\begin{lemma}\label{lem:GoI_lemma}
+Let $\pi$ be a proof-structure and assume there is a cut in $\pi$ of $A$ against $\negation A$. Write
 \begin{equation}
-(\alpha_{\pi} \circ \gamma_{\pi})^{d_i}(i) \in \lbrace 1,...,m\rbrace    
+A := x_1: A_1 \boxtimes_1 \hdots \boxtimes_{n-1} A_n
 \end{equation}
+where for each $i$ we have $\boxtimes_i \in \lbrace \otimes, \parr\rbrace$. Let $\zeta$ be a proof-structure equivalent to $\pi$ under cut-reduction which is obtained by performing all tensor-par reductions (Definition \ref{def:cut_reduction}).Then for each $i$ there exists a cut of $A_i$ against $\negation A_i$.
+\end{lemma}
+\begin{proof}
+By induction on $n$, where the base case follows trivially and the inductive step by inspection of \eqref{eq:cut_red_tens}.
+\end{proof}
+Lemma \ref{lem:GoI_lemma} will be used to prove both Geometry of Interaction zero and Geometry of Interaction One.
+\begin{defn}
+A proof-net is \textbf{neat} if
+\begin{itemize}
+\item Only atomic formulas appear in axiom links,
+\item Every name of every atomic labelled formula is distinct.
+\end{itemize}
+\end{defn}
+\begin{defn}\label{def:GoI_permutation}
+Let $\pi$ be a neat proof-net. Denote by $\operatorname{Var}(\pi)$ the set of all names of labelled formulas, ie, if $x:A$ appears in $\pi$, then $x \in \operatorname{Var}(\pi)$. We describe a bijection $\delta_\pi: \operatorname{Var}(\pi) \lto \operatorname{Var}(\pi)$ by giving an element of $S_m$, the permutation group on $m$ elements, where $m$ is the number of elements in $\operatorname{Var}(\pi)$. Towards this end, enumerate the elements of $\operatorname{Var}(\pi)$. Furthermore, if $\zeta$ is the normal form of $\pi$ (Definition \ref{def:normal_form}) obtained from $\pi$ by cut-elimination, assume the enumeration of $\operatorname{Var}(\pi)$ is such that the variables numbered $1,...,m'$ are exactly those which exist in $\zeta$.
+
+For each cut link in $\pi$, say of $A := x_{n_1}:A_{n_1} \boxtimes_{n_1}\hdots \boxtimes_{n_{r-1}} x_{n_r}: A_{n_r}$ against $\negation A$, for every $i \in \lbrace n_1,...,n_r\rbrace$ let $\gamma(i)$ denote the integer such that the the $i^{\text{th}}$ element of $\negation A$ is labelled by the variable name corresponding to $\gamma(i)$.
+
+For each $i$ let $d_i$ denote the least integer such that 
+\begin{equation}
+(\alpha_{\pi} \circ \gamma_{\pi})^{d_i}(i) \in \lbrace 1,...,m'\rbrace    
+\end{equation}
+Notice that such an integer $d_i$ always exists as $\pi$ is a proof-net, so the permutation $\alpha_{\pi} \circ \gamma_{\pi}$ is cyclic.
+
 We then define the following permutation:
 \begin{align*}
     \delta_{\pi}: \lbrace 1,...,m\rbrace &\lto \lbrace 1,...,m\rbrace\\
-    i &\longmapsto \text{the integer }j\text{ such that } (\alpha_{\pi} \circ \gamma_{\pi})^{d_i}(k_i) = k_j
+    i &\longmapsto \text{the integer }j\text{ such that } (\alpha_{\pi} \circ \gamma_{\pi})^{d_i}(i) = j
 \end{align*}
 \end{defn}
 \begin{thm}[Geometry of Interaction]
@@ -1274,8 +1344,327 @@ Let $\pi$ be a proof-net possibly with cuts and let $\zeta$ be the normal form o
 \end{equation}
 \end{thm}
 \begin{proof}
-Let $\xi$ be the proof-net obtained from $\pi$ given by reducing all tensor-redexes (referred to as $\zeta$ in Definition \ref{def:GoI_permutation}). Then atom $(A_i,k_i)$ is connected to atom $(\negation A, k_{\delta_{\pi}(i)})$ by definition of $\alpha_{\zeta}$.
+Follows from construction and Lemma \ref{lem:GoI_lemma}.
 \end{proof}
+\section{Geometry of Interaction One}
+We now consider conclusion-conclusion paths in a proof-net and associate to this collection a bounded linear operator upon a Hilbert space. First, we recall some general theory from functional analysis.
+\subsection{Internalisation of direction sum and tensor product}\label{sec:interal_sum_tens}
+We focus on the specific Hilbert space $\bb{H} = \ell^2$ of sequences $(z_n)_{n = 0}^\infty$ of complex numbers which are square summable, ie, $\sum_{n = 0}^\infty |z_n|^2$ converges. For convenience, such a sequence will be denoted $(z_n)$. This has an inner product defined by
+\begin{equation}
+    \big\langle (z_n), (w_n)\big\rangle = \sum_{n = 0}^\infty z_n\overline{w}_n
+\end{equation}
+In fact, the sum $\bb{H}^m$ of $m$ copies of $\bb{H}$ also has an inner product structure, defined by
+\begin{equation}\label{eq:bijection}
+    \Big\langle \big((z_n^1),...,(z_n^m)\big),\big((w_n^1),...,(w_n^m)\big)\Big\rangle_{\bb{H}^m} = \sum_{j = 1}^m\Big\langle \big((z_n^j),(w_n^j)\big)\Big\rangle_{\bb{H}}
+\end{equation}
+We fix the standard basis for $\ell^2$ consisting of sequences $(b^i_n)$ such that all entries are equal to $0$ except for the $i^{\operatorname{th}}$ which is equal to $1$. We note that this basis is countable. A basis for $\ell^2 \oplus \ell^2$ is given by all $(b^i_n, 0)$ and $(0,b_n^i)$ which is also countable, thus, bijections $\alpha: \bb{N} \lto \bb{N} \coprod \bb{N}$ induce isomorphisms $\ell^2 \lto \ell^2 \oplus \ell^2$. More explicitly, if $\alpha: \bb{N} \lto \bb{N} \coprod \bb{N}$ is such a bijection then there exists functions $\alpha_1,\alpha_2: \bb{N} \lto \bb{N}$ which fit into the following coproduct diagram:
+\begin{equation}
+    \begin{tikzcd}
+    \bb{N}\arrow[dr,"{\alpha_1}"]\arrow[d,rightarrowtail]\\
+    \bb{N}\arrow[r,"{\alpha}"] \coprod \bb{N}\arrow[r,"{\alpha}"] & \bb{N}\\
+    \bb{N}\arrow[ur,swap,"{\alpha_2}"]\arrow[u,rightarrowtail]
+    \end{tikzcd}
+\end{equation}
+The induced isomorphism $\hat{\alpha}: \ell^2 \lto \ell^2 \oplus \ell^2$ is then given by the following explicit formula, where $z = \sum_{i = 1}^\infty z_i(b^i_m)$:
+\begin{equation}\label{eq:alpha_hat}
+    \hat{\alpha}(z) = \sum_{i = 1}^\infty\Big( z_{\alpha_1(i)}(b^i_m),z_{\alpha_2(i)}(b^i_m)\Big)
+\end{equation}
+The following calculation shows that $\hat{\alpha}$ is an isometry:
+\begin{align*}
+    \Big\langle \big((z_n^1),(z_n^2)\big), \big((w_n^1),(w_n^2)\big)\Big\rangle &= \Big\langle \sum_{i = 1}^\infty \big(z_{\alpha_1(i)}(b_m^i), z_{\alpha_2(i)}(b_m^i)\big), \sum_{i = 1}^\infty \big( w_{\alpha_1(i)}(b_m^i), w_{\alpha_2(i)}(b_m^i)\big) \Big\rangle\\
+    &= \Big\langle \sum_{i = 1}^\infty z_{\alpha_1(i)}(b_m^i), \sum_{i = 1}^\infty w_{\alpha_1(i)}(b_m^i)\Big\rangle + \Big\langle \sum_{i = 1}^\infty z_{\alpha_2(i)}(b_m^i), \sum_{i = 1}^\infty w_{\alpha_2(i)}(b_m^i) \Big\rangle\\
+    &= \sum_{i = 1}^\infty z_{\alpha_1(i)}\overline{w}_{\alpha_i}(i) + \sum_{i = 1}^\infty z_{\alpha_2(i)}\overline{w}_{\alpha_2}(i)\\
+    &= \sum_{i = 1}^\infty z_i\overline{w}_i\\
+    &=  \langle (z_n),(w_n)\rangle
+\end{align*}
+We claim that \eqref{eq:alpha_hat} can also be written as $\hat{\alpha}(z) = \big(p^\ast(z), q^\ast(z)\big)$ for appropriate operators $p,q: \ell^2 \lto \ell^2$. Towards this end, define:
+\begin{equation}\label{eq:transformations}
+p(z) = \sum_{i = 0}^\infty z_i(b_m^{\alpha_1(i)}),\qquad \text{and} \qquad q(z) = \sum_{i = 0}^\infty z_i(b_m^{\alpha_2(i)})
+\end{equation}
+These maps are norm preserving and so are clearly bounded, thus we have well defined linear operators. It can be established by a direct calculation that these have adjoints respectively given by
+\begin{equation}
+p^\ast(z) = \sum_{i = 0}^\infty z_{\alpha_1(i)}(b^i_m),\qquad \text{and} \qquad q^\ast(z) = \sum_{i = 0}^\infty z_{\alpha_2(i)}(b^i_m)
+\end{equation}
+for example: let $w = \sum_{i = 0}^\infty w_i(b_i^m)$:
+\begin{align*}
+    \big\langle p(z),w \big\rangle = \sum_{i = 0}^\infty z_i\overline{w}_{\alpha_1(i)} = \big\langle z, p^\ast(w)\big\rangle
+\end{align*}
+We thus have the formula:
+\begin{equation}
+    \hat{\alpha} = p^\ast \oplus q^\ast
+\end{equation}
+In a similar way, given any $n > 0$ along with a bijection $\alpha: \bb{N} \lto \coprod_{i = 1}^n\bb{N}$, there is a corresponding induced isometric isomorphism $\hat{\alpha}: \bb{H} \lto \bb{H}^n$ which has an explicit formula, where $z = \sum_{i = 0}^\infty z_i(b_m^i)$:
+\begin{equation}
+    \hat{\alpha}(z) = \sum_{i = 0}^\infty \Big(z_{\alpha_1(i)}(b^i_m),...,z_{\alpha_n(i)}(b^i_m)\Big)
+\end{equation}
+Formulas similar to \eqref{eq:transformations} allow $\hat{\alpha}$ to be written as
+\begin{equation}
+    \hat{\alpha} = \bigoplus_{i = 1}^n p_i^\ast
+\end{equation}
+\begin{example}
+A simple example is given by the following:
+\begin{align*}
+    \alpha_1: \bb{N} &\lto \bb{N} & \alpha_2: \bb{N} &\lto \bb{N}\\
+    n &\longmapsto 2n & n &\longmapsto 2n + 1
+\end{align*}
+which induces $\alpha: \bb{N} \coprod \bb{N} \lto \bb{N}$, defined by $\alpha(n,1) = 2n$ and $\alpha(n,2) = 2n+1$. The functions $\alpha_1,\alpha_2,\alpha$ make the following a coproduct diagram:
+\begin{equation}
+    \begin{tikzcd}
+    \bb{N}\arrow[dr,"{\alpha_1}"]\arrow[d,rightarrowtail]\\
+    \bb{N}\arrow[r,"{\alpha}"] \coprod \bb{N}\arrow[r,"{\alpha}"] & \bb{N}\\
+    \bb{N}\arrow[ur,swap,"{\alpha_2}"]\arrow[u,rightarrowtail]
+    \end{tikzcd}
+\end{equation}
+and indeed $\alpha$ is a bijection. We thus have two functions:
+\begin{align*}
+    p: \ell^2 & \lto \ell^2 & q: \ell^2 &\lto \ell^2\\
+    (z_1,z_2,...) &\longmapsto (0, z_1, 0, z_2, ...) & (z_1,z_2,...) &\longmapsto (z_1, 0, z_2, 0, ...)
+\end{align*}
+which have the following adjoints:
+\begin{align*}
+    p^\ast: \ell^2 &\longmapsto \ell^2 & q^\ast: \ell^2 &\lto \ell^2\\
+    (z_1,z_2,...) &\longmapsto (z_2,z_4,...) & (z_1,z_2,...) &\longmapsto (z_1,z_3,...)
+\end{align*}
+\begin{aside}
+The following calculation shows that $p^\ast$ is adjoint to $p$, the corresponding calculation for $q$ is similar:
+\begin{align*}
+    \big\langle p(z_1,z_2,...),(w_1,w_2,...)\big\rangle &= \big\langle (0,z_1,0,z_2,...),(w_1,w_2,...)\big\rangle\\
+    &= \big\langle (z_1,z_2,...),(w_2,w_4,...)\big\rangle\\
+    &= \big\langle (z_1,z_2,...),p^\ast(w_1,w_2,...)\big\rangle
+\end{align*}
+\end{aside}
+The function $p^\ast,q^\ast$ induce $\hat{\alpha} = p^\ast \oplus q^\ast: \ell^2 \lto \ell^2 \oplus \ell^2$ defined by
+\begin{equation}
+    \hat{\alpha}(z_1,z_2,...) = \big((z_2,z_4,...),(z_1,z_3,...)\big)
+\end{equation}
+We make a few observations:
+\begin{lemma}\label{lem:operator_properties}
+The functions $p,q,p^\ast,q^\ast$ satisfy the following:
+\begin{itemize}
+    \item $p^\ast p = \operatorname{id}_{\ell^2} = q^\ast q$,
+    \item $p p^\ast + q q^\ast = \operatorname{id}_{\ell^2}$,
+    \item $p^\ast q = 0 = q^\ast p$.
+\end{itemize}
+\end{lemma}
+\end{example}
+\subsection{Proofs as operators}
+The general theory is easiest to understand when we start with an example:
+\begin{example}
+Let $\pi$ denote the following proof-net, recall that proof-nets are \emph{directed} graphs, we put in this order explicitly:
+\begin{equation}\label{eq:standard_example}
+\begin{tikzcd}[column sep = tiny]
+{x: A}\arrow[r,bend left] & {y: \negation A}\arrow[dr] & & {z:A}\arrow[dl]\arrow[r,bend left] & {w:\negation A} & {u: A}\arrow[rr,bend left]\arrow[dr] & & {v: \negation A}\arrow[dl]\\
+& & {y:\negation A \otimes z: A}\arrow[rrrr, bend right] & & & & {u:A \parr v: \negation A}
+\end{tikzcd}
+\end{equation}
+We now remove the cut-link (the reason for doing this will be explained later \textcolor{red}{where?}) to obtain a proof-\emph{structure} $\pi'$, label the left edges of the premises of each tensor and par link by $p$ and the right ones by $q$ (indeed these are the same $p$ and $q$ as in Section \ref{sec:interal_sum_tens}), and label the edges corresponding to axiom and cut links by the identity map $\operatorname{id}$ (this is the identity on the space $\ell^2$):
+\begin{equation}
+\begin{tikzcd}[column sep = tiny]
+{x: A}\arrow[r,bend left, "{\operatorname{id}}"] & {y: \negation A}\arrow[dr,swap, "p"] & & {z:A}\arrow[dl,"q"]\arrow[r,bend left, "{\operatorname{id}}"] & {w:\negation A} & {u: A}\arrow[rr,bend left, "{\operatorname{id}}"]\arrow[dr,swap,"p"] & & {v: \negation A}\arrow[dl,"q"]\\
+& & {y:\negation A \otimes z: A} & & & & {u:A \parr v: \negation A}
+\end{tikzcd}
+\end{equation}
+Now, to each pair of conclusions is the collection of paths in $\pi'$ (where we allow for paths which traverse arrows in either direction). We introduce some notation, associated to the pair $x:A, w:\negation A$ is the set of paths $\operatorname{Path}(x:A,w:\negation A)$, notice this set has one element, but $\operatorname{Path}(u:A \parr v: \negation A,u:A \parr v: \negation A)$ has two elements. Each path induces an operator $\ell^2 \lto \ell^2$ given by composing the labels on the edges in the path, where if an edge is traversed from the target to the source, we take the adjoint of the label. For example, the path
+\begin{equation}
+(x:A, y: \negation A, y: \negation A \otimes z: A, z:A, w:\negation A) \in \operatorname{Path}(x:A, w:\negation A)
+\end{equation}
+is the associated operator $\operatorname{id}q^\ast p\operatorname{id} = q^\ast p$. 
+\begin{remark}
+Notice by Lemma \ref{lem:operator_properties} that this is the zero operator, this corresponds to the fact that if we perform cut-elimination on $\pi$, the resulting proof-net does \emph{not} admit a path from $x:A$ to $w:\negation A$, this is explained in more detail in \textcolor{red}{where?}.
+\end{remark}
+Ranging over all paths between all pairs of conclusions in $\pi'$ defines a set of operators which can be organised into an incidence matrix as follows, we let $r$ denote $pq^\ast + qp^\ast$:
+\begin{equation}
+\begin{matrix}
+& y: \negation A \otimes z: A, & u: A \parr v: \negation A & x: A &  w: \negation A \\
+y: \negation A \otimes z: A &0&&p&q&&\\
+u: A \parr v: \negation A &&r&\\
+x: A &p^\ast&&0& p^\ast q&&\\
+w: \negation A &q^\ast&& q^\ast p&0
+\end{matrix}
+\end{equation}
+Let $\llbracket \pi_1 \rrbracket$ denote this matrix. Notice that the first two columns and first two rows are labelled by the formulas involved in the cut-link of $\pi$. Thus, we define $\sigma$ to be the matrix which permutes the first two columns:
+\begin{equation}
+\sigma =
+\begin{pmatrix}
+0 & 1 & 0 & 0\\
+1 & 0 & 0 & 0\\
+0 & 0 & 1 & 0\\
+0 & 0 & 0 & 1
+\end{pmatrix}
+\end{equation}
+and consider $\llbracket \pi \rrbracket \sigma \llbracket \pi \rrbracket$, which is a matrix whose $ij^{\text{th}}$ entry corresponds to the sum of operators corresponding to the paths in $\pi'$ which traverse the cut once, where the start of the path is the conclusion in $\pi'$ with label corresponding to column $j$, and whose end point is the conclusion with label corresponding to row $i$. In our current example, this is:
+\begin{equation}
+\llbracket \pi \rrbracket \sigma \llbracket \pi \rrbracket =
+\begin{pmatrix}
+0&&&\\
+&0&r p &r q &\\
+& p^\ast r &0&\\
+& q^\ast r &&0
+\end{pmatrix}
+\end{equation}
+Doing this again yields:
+\begin{equation}\label{eq:cut_elimination_GoI}
+\llbracket \pi \rrbracket \sigma \llbracket \pi \rrbracket \sigma \llbracket \pi \rrbracket = 
+\begin{pmatrix}
+0&&&\\
+&0&&\\
+&& p^\ast r p & q^\ast r p\\
+&& p^\ast r q & q^\ast r q
+\end{pmatrix}
+=
+\begin{pmatrix}
+0&&&\\
+&0&&\\
+&& 0 & 1\\
+&& 1 & 0
+\end{pmatrix}
+\end{equation}
+What happens if we perform the same process to $\pi$ after we have performed cut-elimination? Under this process, $\pi$ corresponds to the proof consisting of a single axiom link:
+\begin{equation}
+\begin{tikzcd}
+x:A\arrow[r,bend left,] & y:\negation A
+\end{tikzcd}
+\end{equation}
+which corresponds to the matrix
+\begin{equation}
+\begin{pmatrix}
+0 & 1\\
+1 & 0
+\end{pmatrix}
+\end{equation}
+which appears as a minor in \eqref{eq:cut_elimination_GoI}. The general theory will show that this is not a coincidence.
+\end{example}
+\begin{lemma}\label{lem:cut_order_preservation}
+Let $\pi$ be a proof-structure admitting a cut
+\begin{equation}
+\begin{tikzcd}
+A\arrow[r,dash,bend right] & \negation A
+\end{tikzcd}
+\end{equation}
+and write $A := A_1 \boxtimes_1 \hdots \boxtimes_{n-1} A_n, B := B_1 \diamondtimes_1 \hdots \diamondtimes_{n-1} B_n$ with $\boxtimes_i, \diamondtimes_i \in \lbrace \otimes, \parr\rbrace$ for each $i$. Then, once all tensor-par redexes have been eliminated from $\pi$ (and no other redexes) yielding a proof $\pi'$, for each $i$ the following cut will be present in $\pi'$:
+\begin{equation}
+\begin{tikzcd}
+A_i\arrow[r,dash,bend right] & B_i
+\end{tikzcd}
+\end{equation}
+\end{lemma}
+\begin{proof}
+By induction on $n$, the base case is trivial and the inductive step follows by inspection of the tensor-par redex rule.
+\end{proof}
+\begin{example}
+We continue to denote by $\pi$ the proof \eqref{eq:standard_example}. Reducing the cut-redex we obtain:
+\begin{equation}
+\begin{tikzcd}[column sep = tiny]
+{x:A}\arrow[r,bend left,dash] & {y: \negation A}\arrow[rrrr,bend right,dash] & & {z: A}\arrow[r,bend left,dash]\arrow[rrr,bend right,dash] & {w: \negation A} & {u:A}\arrow[r,bend left,dash] & {v: \negation A}
+\end{tikzcd}
+\end{equation}
+The cut link in $\pi$ consists of $y: \negation A \otimes z: A$ and $u:A \parr v: \negation A$, the order of these formulas was respected by the cut-reduction step, in the sense made precise by Lemma \ref{lem:cut_order_preservation}, as seen in this example as the resulting cuts are between ``the two first elements" and ``the two last elements", ie, between $y: \negation A$ and $u:A$, and between $z:A$ and $v : \negation A$.
+\end{example}
+\begin{defn}
+Let $A_1,A_2$ be conclusions in a proof-structure $\pi$. The set of paths (possibly traversing edges in reverse direction) in $\pi$ from $A_1$ to $A_2$ is denoted
+\begin{equation}
+\operatorname{Path}(A_1,A_2)
+\end{equation}
+\end{defn}
+\begin{defn}
+Let $\pi$ be a proof-structure, remove all edges corresponding to cut links to obtain a proof-structure $\pi'$ with conclusions $A_1,...,A_n$.  Let $m < n$ be an integer and assume that $A_1,...,A_n$ are ordered so that $A_1,...,A_m$ are conclusions of $\pi'$ but \emph{not} conclusions of $\pi$ (in other words, $A_1,...,A_m$ are the formulas appearing in cut links of $\pi$).  We construct an $n \times n$ matrix $\llbracket \pi \rrbracket$ via the following procedure:
+\begin{enumerate}
+\item Let $L$ be either a tensor or par link in $\pi'$. Label the edge corresponding to the \emph{left} premise of $L$ by $p$, and label the edge corresponding to the \emph{right} premise of $L$ by $q$,
+\item Label the remaining edges of $\pi'$ by $\operatorname{id}$.
+\item For each path $\nu \in \operatorname{Path}(A_i,A_j)$ we let $o_\nu$ denote the operator $\ell^2 \lto \ell^2$ given by the composite of the operators in the path $\nu$, where we take the adjoint of an operator if the corresponding edge is traversed in reverse direction in $\nu$. Define 
+$$o_{ij} = \sum_{\nu \in \operatorname{Path}(A_i,A_j)}o_\nu$$
+\item Define the matrix
+\begin{equation}
+(\llbracket \pi \rrbracket)_{ij} = o_{ji}
+\end{equation}
+(note that we take $o_{ji}$ here, not $o_{ij}$).
+\end{enumerate}
+\end{defn}
+Recall that a proof-structure $\pi$ with a single conclusion is unique up to the axiom links. Thus, if a proof-structure $\pi$ admits a cut between formulas $A := A_1 \boxtimes_1 \hdots \boxtimes_{n-1} A_n$ and $B:=B_1 \diamondtimes_1 \hdots \diamondtimes_{n-1} B_n$, we can consider the unique proof-structure parts (Definition \ref{def:proof_structure_parts}) $\pi_1,\pi_2$ which are given by removing the axiom links of any proof-structure with unique conclusions $A,B$ respectively.  Let $\zeta$ be the subproof-structure consisting of $\pi_1,\pi_2$ and a cut-link connecting their unique conclusions. By uniqueness of $\pi_1,\pi_2$ and using Lemma \ref{lem:cut_order_preservation}, the following Proposition is clear:
+\begin{proposition}\label{prop:main_GoI_prop}
+Let $\nu_{ij}$ be the (unique) path from $A_i$ to $B_j$ in $\zeta$. Then if $o_{\nu_{ij}}$ denotes the corresponding operator, we have
+\begin{equation}
+o_{\nu_{ij}} = \delta_{ij}
+\end{equation}
+\end{proposition}
+We wish to compose the incidence matrix with itself but with columns of cut formulas interchanged, hence we introduce:
+\begin{defn}
+Let $\pi$ be a proof-net and $\zeta$ the corresponding proof-structure given by removing all edges corresponding to cut-links in $\pi$. Then if $A_1,...,A_n$ are the conclusions of $\zeta$ and $m < n$ is such that $A_1,...,A_m$ are conclusions of $\zeta$ but \emph{not} of $\pi$, then we let $\sigma_m$ denote the $(2m + n) \times (2m + n)$ matrix whose top left $2m \times 2m$ minor is given by
+\begin{equation}
+\begin{pmatrix}
+0 & 1\\
+1 & 0\\
+& & \ddots\\
+& & & 0 & 1\\
+& & & 1 & 0
+\end{pmatrix}
+\end{equation}
+and whose lower right $n \times n$ minor is the identity. The rest of the entries are 0.
+
+Let $\pi$ be a proof-net, we define
+\begin{equation}
+\operatorname{Ex}(\llbracket \pi \rrbracket) = \llbracket \pi \rrbracket + \llbracket \pi \rrbracket \sigma \llbracket \pi \rrbracket + \llbracket \pi \rrbracket \sigma \llbracket \pi \rrbracket \sigma \llbracket \pi \rrbracket + \hdots
+\end{equation}
+\textcolor{red}{(It has yet to be shown that this is finite)}.
+\end{defn}
+\begin{cor}[Geometry of Interaction One]\label{cor:GoI_one}
+Let $\pi$ be a proof-net and $\zeta$ the cut-free proof equivalent under cut elimination to $\pi$. Then the matrix $\llbracket \zeta\rrbracket$ exists as a minor in $Ex(\llbracket \pi \rrbracket)$.
+\end{cor}
+\begin{proof}
+Let $(A_i,A_j)$ be a pair of conclusions in $\zeta$, assume furthermore that the $ji^{\text{th}}$ entry of $\llbracket \zeta \rrbracket$ is non-zero. The pair $(A_i,A_j)$ also exists as a pair of conclusions in $\pi$. Let $\nu_{ij}$ be a path in $\pi$ connecting $A_i$ to $A_j$, such a path necessarily exists since such a path exists in $\zeta$, indeed the cut-elimination rules preserve connected and disconnectedness. If $\nu_{ij} = 0$ then there necessarily exists a path which traverses a single cut once, where the cut is between formulas $A_1 \boxtimes_1 \hdots \boxtimes_{n-1} A_n$ and $B_1 \diamondtimes_1 \hdots \diamondtimes_{n-1} B_n$ such that some $A_k$ is connected to some $B_l$ for $k \neq l$. This implies by Proposition \ref{prop:main_GoI_prop} that the $ji^{\text{th}}$ entry of $\llbracket \zeta \rrbracket$ is zero, a contradiction.
+
+Hence $\nu_{ij} \neq 0$, and indeed the remaining elements of the proof $\pi$ are preserved by cut-elimination, so in fact $\nu_{ij} = (\llbracket \zeta \rrbracket)_{ji}$.
+\end{proof}
+The following allows for an alternate description of conclusion-conclusion paths in a proof-structure:
+\begin{cor}
+Let $\pi$ be a proof-structure and $A_1,A_2$ a pair of distinct conclusions in $\pi$. There exists a unique path in $\pi$ from $A_1$ to $A_2$ whose corresponding operator is equal to the identity.
+\end{cor}
+\begin{proof}
+Clear in the cut-free case, Corollary \ref{cor:GoI_one} then implies the general case.
+\end{proof}
+We thus have:
+\begin{thm}
+Every conclusion to conclusion path $\nu$ in a proof-net $\pi$, where the operator corresponding to $\nu$ is equal to the identity, induces a unique set of arcs through vertices in the ``\emph{web}" corresponding to $\pi$ as given by \emph{CatGoI}. Moreover, two distinct such paths have no vertex arcs in common, and all vertex arcs are given in this way.
+\end{thm}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

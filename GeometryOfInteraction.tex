@@ -24,6 +24,10 @@
 \usepackage{tasks}
 \usepackage{ cmll }
 
+\DeclareRobustCommand{\diamondtimes}{%
+  \mathbin{\text{\rotatebox[origin=c]{45}{$\boxplus$}}}%
+}
+
 \newcommand\blankpage{
     \null
     \thispagestyle{empty}
@@ -107,254 +111,7 @@
 \maketitle
 \tableofcontents
 
-\section{Operator Theory}
-\subsection{Adjoint operator}
-We will be chiefly concerned with the Hilbert space $\ell^2$ but we work in a more general setting for now. A \emph{Hilbert space} will always mean over $\bb{C}$. Associated to every operator between Hilbert spaces is an operator between their \emph{dual spaces}:
 
-In general, if $\call{I}$ is any inner product space over $\bb{C}$ and we have two vectors $x,y \in I$ then we can consider the projection of $y$ onto $x$ which is given by
-\begin{equation}\label{eq:easy_case}
-    \operatorname{Proj}_y(x) := \frac{\langle x, y \rangle}{||y||} \frac{y}{||y||}
-\end{equation}
-Thus, if $U \subseteq \call{I}$ is a one dimensional subspace spanned by a unit vector $u \in U$ then the projection of any $x \in \call{I}$ onto $u$ is given by the simple formula $\langle x,u\rangle u$. The following Lemma shows what we can say when the subspace is of arbitrary dimension but with $U$ closed:
-\begin{lemma}\label{lem:decomposition}
-Let $\bb{H}$ be a Hilbert space and $U \subseteq \bb{H}$ a closed subspace. Then
-\[\bb{H} = U \oplus U^\perp\]
-\end{lemma}
-\begin{proof}
-We will define a projection
-\begin{align*}
-    P_U: \bb{H} &\lto U\\
-    x &\longmapsto \operatorname{inf}\lbrace ||x - y|| \mid y \in U\rbrace
-\end{align*}
-We let $d$ denote $\operatorname{inf}\lbrace ||x - y|| \mid y \in U\rbrace$. By definition of $\operatorname{inf}$ there exists a sequence $(x_n)_{n=0}^\infty$ of elements in $U$ such that $\lim_{n\to \infty}||x - x_n|| = d$. Since $U$ is closed it is complete and the norm is continuous so it suffices to show that the sequence $(x_n)_{n=0}^\infty$ is Cauchy. This can be done for example using the parallelogram identity: for all $n,m\geq 0$:
-\begin{equation}
-    ||x_n - x_m||^2 + ||(x - x_n) + (x - x_m)||^2 = 2||x - x_n||^2 + 2||x - x_m||^2
-\end{equation}
-As given $\epsilon > 0$ there exists $N \geq 0$ such that $||x - x_n||^2 < d^2 + \epsilon^2/4$, for $n \geq N$. Thus
-\begin{align*}
-    ||x_n - x_m||^2 &= 2||x - x_n||^2 + 2||x - x_m||^2 - 4||x = 1/2(x_n + x_m)||^2\\
-    &\leq 4d^2 + \epsilon^2 - 4||x - 1/2(x_n + x_m)||^2
-\end{align*}
-which since $1/2(x_n + x_m) \in C$ we have $d \leq ||x - 1/2(x_n + x_m)||$, proving $(x_n)_{n = 0}^\infty$ is Cauchy. This also shows linearity.
-
-It remains to show $x - P_U(x) \in U^\perp$. To do this, we will consider the family of vectors $c(t) = (1-t)P_U(x) + ty$, ($t \in \bb{R}$) and analyse the derivative of $||x - y_t||^2$ at $t = 0$.
-
-Consider the composition
-\begin{align}
-    \gamma: \bb{R} &\lto \bb{R}\\
-    t &\longmapsto ||x - c(t)||^2
-\end{align}
-We can write $\gamma$ in a more explicit form:
-\begin{align*}
-    \gamma(t) &= ||x - P_U(x) + t(y - P_U(x))||^2\\
-    &= \big\langle x - P_U(x) + t(y - P_U(x)),x - P_U(x) + t(y - P_U(x))\big\rangle\\
-    &= ||x - P_U(x)||^2 - 2t\operatorname{Re}\langle  x - P_U(x),y - P_U(x)\rangle + t^2||y - P_U(x)||
-\end{align*}
-which is clearly differentiable and has derivative $- 2\operatorname{Re}\langle  x - P_U(x),y - P_U(x)\rangle$ at $t = 0$. Since $P_U(x)$ (which equals $c(0)$) is a minimum of $\gamma(t)$ we have that $\operatorname{Re}\langle  x - P_U(x),y - P_U(x)\rangle = 0$. This holds true for arbitrary $y \in U$ and lastly we have
-\[\lbrace y - P_U(x) \mid y \in U \rbrace = U\]
-thus for all $y \in U$:
-\begin{equation}
-    \operatorname{Re}\langle  x - P_U(x),y\rangle = 0
-\end{equation}
-This shows that $x - P_U(x) \in U^\perp$.
-\end{proof}
-Given a Hilbert space $\bb{H}$ there is a map
-\begin{align}
-    \Phi: \bb{H} &\lto \bb{H}^\ast\label{eq:Riesz_map}\\
-    b &\longmapsto \langle \und{0.2}, b \rangle
-\end{align}
-By anti-linearity of the second argument of the inner product we have that $\Phi$ is anti-linear, and moreover is injective as
-\begin{align*}
-    \Phi(b) = \Phi(b') &\Longrightarrow \langle \und{0.2}, b\rangle = \langle \und{0.2}, b'\rangle\\
-    &\Longrightarrow \forall b'' \in \bb{H}, \langle b'', b - b'\rangle = 0\\
-    &\Longrightarrow \text{ in particular, } \langle b-b', b-b'\rangle = 0\\
-    &\Longrightarrow b - b' = 0
-\end{align*}
-In the special case where $\bb{H}$ is finite dimensional, we automatically have that this map is surjective as it is an injective, as any anti-linear map between two finite dimensional spaces of equal dimension. More generally, if $\bb{H}$ has arbitrary dimension, then for any $y \in \bb{H}$ the map $\langle \und{0.2},y\rangle$ is bounded (see Remark \ref{rmk:bounded_inner_product}) so the image of $\Phi$ is at contained in the continuous linear functionals, the following establishes the reverse inequality:
-\begin{thm}[Riesz Representation Theorem]\label{thm:riesz}
-Let $\bb{H}$ be a Hilbert space. For every continuous linear functional $\varphi \in \bb{H}^\ast$ there exists a unique element $h_\varphi \in \bb{H}$ such that
-\begin{equation}
-    \varphi = \langle \und{0.2}, h_\varphi \rangle
-\end{equation}
-Moreover, we have
-\begin{equation}
-    ||\varphi||_{\bb{H}^\ast} = ||h_\varphi||_{\bb{H}}
-\end{equation}
-\end{thm}
-We will use the following Lemma (one ought take a moment to appreciate this lemma, it is quite novel):
-\begin{lemma}\label{lem:one_dim_kernel}
-Let $\bb{H}$ be a Hilbert space and $\varphi \in \bb{H}^\ast$ be non-zero and continuous. Then $(\operatorname{ker}\varphi)^\perp$ is one dimensional.
-\end{lemma}
-\begin{proof}
-Since $\varphi$ is continuous the set $\operatorname{ker}\varphi$ is closed and so by Lemma \ref{lem:decomposition} we have $\bb{H} = \operatorname{ker}\varphi \oplus (\operatorname{ker}\varphi)^\perp$, which since $\varphi\neq 0$ implies there exists $v\neq 0 \in (\operatorname{ker}\varphi)^\perp$, so $\operatorname{dim}(\operatorname{ker}\varphi)^\perp > 0$. Now, say $v_1,v_2 \in (\operatorname{ker}\varphi)^\perp$ so that $\varphi(v_1) \neq 0$ and $\varphi(v_2) \neq 0$. These are complex numbers and so there exists $\lambda \in \bb{C}$ such that
-\[0 = \lambda \varphi(v_1) - \varphi(v_2) = \varphi(\lambda v_1 - v_2)\]
-which means $\lambda v_1 - v_2 \in \operatorname{ker}\varphi \cap (\operatorname{ker}\varphi)^\perp = \lbrace 0 \rbrace$.
-\end{proof}
-\begin{proof}[Proof of Theorem \ref{thm:riesz}]
-Clearly if $\operatorname{ker}\varphi = \bb{H}$ we can take $h_\varphi = 0$ so assume this is not the case. Since $\varphi$ is continuous its kernel $\operatorname{ker}\varphi$ is a closed subset of $\bb{H}$. Thus, by Lemma \ref{lem:decomposition} the Hilbert space $\bb{H}$ decomposes: $\bb{H} = \operatorname{ker}\varphi \oplus (\operatorname{ker}\varphi)^\ast$. Since $\operatorname{ker}\varphi$ is a proper subset it then follows that there exists a non-zero element $v\neq0 \in (\operatorname{ker}\varphi)^\ast$, by normalising we may assume that $v$ is a unit vector. We will show that $\overline{\varphi(v)}v$ is the appropriate unique choice for $h_\varphi$.
-
-By Lemma \ref{lem:one_dim_kernel} the subspace $(\operatorname{ker}\varphi)^\perp$ is one dimensional, hence we can use formula \eqref{eq:easy_case} for the projection of arbitrary $x$ onto $(\operatorname{ker}\varphi)^\perp$. Observe the following calculation:
-\begin{align*}
-    \varphi(x) &= \varphi(x - \langle x,v\rangle v + \langle x,v\rangle v)\\
-    &= \varphi(x - \langle x,v\rangle v) + \varphi(\langle x,v\rangle v)\\
-    &= 0 + \langle x,v\rangle\varphi(v)\\
-    &= \langle x, \overline{\varphi(v)}v\rangle
-\end{align*}
-For uniqueness, say $h_\varphi'$ was another such element. Then
-\begin{align*}
-    &\forall x \in \bb{H}, \langle x, h_\varphi\rangle = \langle x, h_\varphi'\rangle\\
-    &\Longrightarrow \forall x \in \bb{H}, \langle x, h_\varphi - h_\varphi'\rangle = 0\\
-    &\Longrightarrow|| h_\varphi - h_\varphi'|| = 0\\
-    &\Longrightarrow h_\varphi = h_\varphi'
-\end{align*}
-For the second claim, we use the Cauchy-Schwartz inequality:
-\begin{align*}
-    |\varphi(x)| = |\langle x, \overline{\varphi(v)}v\rangle| \leq ||x||||\overline{\varphi(v)}||v|| = ||x|||\varphi(v)|
-\end{align*}
-and so if $x$ has unit norm $|\varphi(x)| \leq |\varphi(v)|$, in other words, $||\varphi||_{\bb{H}^\ast} \leq |\varphi(v)|$ however $v$ has unit norm itself, so $||\varphi||_{\bb{H}^\ast} = |\varphi(v)|$. The proof is now complete once it is noted that $||h_\varphi||_{\bb{H}} = |\varphi(v)|$.
-\end{proof}
-\begin{remark}
-\label{rmk:bounded_inner_product} Let $y \in \bb{H}$ be an element of a Hilbert space $\bb{H}$ and consider the function $\langle \und{0.2},y\rangle$. This is bounded, as by Cauchy-Schwartz:
-\[|\langle x,y\rangle| \leq ||x||||y||\]
-thus $||\langle \und{0.2},y\rangle|| \leq ||y||$ and in fact this is equality as $|\langle y/||y||,y\rangle| = ||y||$.
-\end{remark}
-Given an operator $u: \bb{H}_1 \lto \bb{H}_2$ there is for each $y \in \bb{H}_2$ an associated linear functional $x \longmapsto \langle u(x),y\rangle$ which we denote by $\langle u(\und{0.2}),y\rangle$. By Theorem \ref{thm:riesz} there is thus an element $y^\ast \in \bb{H}_1$ such that $\langle u(\und{0.2}),y\rangle = \langle \und{0.2}, y^\ast\rangle$. The assignment $y \mapsto y^\ast$ is in fact linear, we show additivity:
-\begin{align*}
-    \langle u(\und{0.2}), y_1 + y_2\rangle &= \langle \und{0.2}, (y_1 + y_2)^\ast\rangle\\
-\end{align*}
-and
-\begin{align*}
-    \langle u(\und{0.2}), y_1 + y_2\rangle &= \langle u(\und{0.2}), y_1\rangle + \langle u(\und{0.2}), y_2\rangle\\
-    &= \langle \und{0.2}, y_1^\ast\rangle + \langle \und{0.2}, y_2^\ast\rangle\\
-    &= \langle \und{0.2}, y_1^\ast + y_2^\ast\rangle
-\end{align*}
-which implies $(y_1 + y_2)^\ast = y_1^\ast + y_2^\ast$. We define:
-\begin{defn}
-The \textbf{adjoint operator} associated to an operator $u: \bb{H}_1 \lto \bb{H}_2$ is the linear map:
-\begin{align*}
-    u^\ast: \bb{H}_2 &\lto \bb{H}_1\\
-    y &\longmapsto y^\ast
-\end{align*}
-Its existence is established by the Riesz Representation Theorem (\ref{thm:riesz}) and it is uniquely determined by the property:
-\begin{equation}
-    \forall x\in\bb{H}_1,y\in\bb{H}_2, \langle u(x),y\rangle = \langle x, u^\ast(y)\rangle
-\end{equation}
-\end{defn}
-\begin{remark}
-\textcolor{red}{What's the relationship between the adjoint defined above and the following?}
-
-Let $\big(\bb{H}_1,\langle\cdot,\cdot\rangle_B\big), \big(\bb{H}_2,\langle \cdot, \cdot \rangle\big)_C$ be Hilbert spaces and let $u: \bb{H}_1 \lto \bb{H}_2$ be an operator. The \textbf{adjoint} to $u$, denoted $u^\ast$ is the operator:
-\begin{align}
-    u^\ast: \bb{H}_2^\ast &\lto \bb{H}_1^\ast\\
-    \varphi &\longmapsto \varphi \circ u
-\end{align}
-If $\bb{H}_1$ and $\bb{H}_2$ are finite dimensional with $b_1,...,b_n$ and $c_1,...,c_m$ respective sets of basis vectors, we then have dual basis vectors $b_1^\ast,...,b_n^\ast$ and $c_1^\ast,...,c_m^\ast$. Any operator $u: \bb{H}_1 \lto \bb{H}_2$ as well as its adjoint $u^\ast$ can be represented respectively by a $m \times n$ matrix $\doubleunderline{u}$ and a $n \times m$ matrix $\doubleunderline{u^\ast}$, what is the relationship between $\doubleunderline{u}$ and $\doubleunderline{u^\ast}$?
-\end{remark}
-
-
-
-
-\subsection{Internalisation of direction sum and tensor product}\label{sec:interal_sum_tens}
-We now focus on the specific Hilbert space $\bb{H} = \ell^2$ of sequences $(z_n)_{n = 0}^\infty$ of complex numbers which are square summable, ie, $\sum_{n = 0}^\infty |z_n|^2$ converges. For convenience, such a sequence will be denoted $(z_n)$ This has an inner product defined by
-\begin{equation}
-    \big\langle (z_n), (w_n)\big\rangle = \sum_{n = 0}^\infty z_n\overline{w}_n
-\end{equation}
-\textcolor{red}{Show this converges and $\ell^2$ is complete}.
-In fact, the sum $\bb{H}^m$ of $m$ copies of $\bb{H}$ also has an inner product structure, defined by
-\begin{equation}\label{eq:bijection}
-    \Big\langle \big((z_n^1),...,(z_n^m)\big),\big((w_n^1),...,(w_n^m)\big)\Big\rangle_{\bb{H}^m} = \sum_{j = 1}^m\Big\langle \big((z_n^j),(w_n^j)\big)\Big\rangle_{\bb{H}}
-\end{equation}
-We fix the standard basis for $\ell^2$ consisting of sequences $(b^i_n)$ such that all entries are but the $i^{\operatorname{th}}$ which is equal to $1$. We note that this basis is countable. A basis for $\ell^2 \oplus \ell^2$ is given by all $(b^i_n, 0)$ and $(0,b_n^i)$ which is also countable, thus, bijections $\alpha: \bb{N} \lto \bb{N} \coprod \bb{N}$ induce isomorphisms $\ell^2 \lto \ell^2 \oplus \ell^2$. More explicitly, if $\alpha: \bb{N} \lto \bb{N} \coprod \bb{N}$ is such a bijection then there exists functions $\alpha_1,\alpha_2, \bb{N} \lto \bb{N}$ which fit into the following commuting diagram:
-\begin{equation}
-\begin{tikzcd}
-& \bb{N}\arrow[d,"{\iota_1}"]\\
-\bb{N}\arrow[ur,"{\alpha_1}"]\arrow[dr,swap,"{\alpha_2}"]\arrow[r,"{\alpha}"] & \bb{N} \coprod \bb{N}\\
-& \bb{N}\arrow[u,swap,"{\iota_2}"]
-\end{tikzcd}
-\end{equation}
-The induced isomorphism $\hat{\alpha}: \ell^2 \lto \ell^2 \oplus \ell^2$ is then given by the following explicit formula, where $z = \sum_{i = 1}^\infty z_i(b^i_m)$:
-\begin{equation}\label{eq:alpha_hat}
-    \hat{\alpha}(z) = \sum_{i = 1}^\infty\Big( z_{\alpha_1(i)}(b^i_m),z_{\alpha_2(i)}(b^i_m)\Big)
-\end{equation}
-The following calculation shows that $\hat{\alpha}$ is an isometry:
-\begin{align*}
-    \Big\langle \big((z_n^1),(z_n^2)\big), \big((w_n^1),(w_n^2)\big)\Big\rangle &= \Big\langle \sum_{i = 1}^\infty \big(z_{\alpha_1(i)}(b_m^i), z_{\alpha_2(i)}(b_m^i)\big), \sum_{i = 1}^\infty \big( w_{\alpha_1(i)}(b_m^i), w_{\alpha_2(i)}(b_m^i)\big) \Big\rangle\\
-    &= \Big\langle \sum_{i = 1}^\infty z_{\alpha_1(i)}(b_m^i), \sum_{i = 1}^\infty w_{\alpha_1(i)}(b_m^i)\Big\rangle + \Big\langle \sum_{i = 1}^\infty z_{\alpha_2(i)}(b_m^i), \sum_{i = 1}^\infty w_{\alpha_2(i)}(b_m^i) \Big\rangle\\
-    &= \sum_{i = 1}^\infty z_{\alpha_1(i)}\overline{w}_{\alpha_i}(i) + \sum_{i = 1}^\infty z_{\alpha_2(i)}\overline{w}_{\alpha_2}(i)\\
-    &= \sum_{i = 1}^\infty z_i\overline{w}_i\\
-    &=  \langle (z_n),(w_n)\rangle
-\end{align*}
-We claim that \eqref{eq:alpha_hat} can also be written as $\hat{\alpha}(z) = \big(p^\ast(z), q^\ast(z)\big)$ for appropriate operators $p,q: \ell^2 \lto \ell^2$. Towards this end, define:
-\begin{equation}\label{eq:transformations}
-p(z) = \sum_{i = 0}^\infty z_i(b_m^{\alpha_1(i)}),\qquad \text{and} \qquad q(z) = \sum_{i = 0}^\infty z_i(b_m^{\alpha_2(i)})
-\end{equation}
-These maps are norm preserving and so are clearly bounded, thus we have well defined linear operators. It can be established by a direct calculation that these have adjoints respectively given by
-\begin{equation}
-p^\ast(z) = \sum_{i = 0}^\infty z_{\alpha_1(i)}(b^i_m),\qquad \text{and} \qquad q^\ast(z) = \sum_{i = 0}^\infty z_{\alpha_2(i)}(b^i_m)
-\end{equation}
-for example: let $w = \sum_{i = 0}^\infty w_i(b_i^m)$:
-\begin{align*}
-    \big\langle p(z),w \big\rangle = \sum_{i = 0}^\infty z_i\overline{w}_{\alpha_1(i)} = \big\langle z, p^\ast(w)\big\rangle
-\end{align*}
-We thus have the formula:
-\begin{equation}
-    \hat{\alpha} = p^\ast \oplus q^\ast
-\end{equation}
-In a similar way, given any $n > 0$ along with a bijection $\alpha: \bb{N} \lto \coprod_{i = 1}^n\bb{N}$, there is a corresponding induced isometric isomorphism $\hat{\alpha}: \bb{H} \lto \bb{H}^n$ which has an explicit formula, where $z = \sum_{i = 0}^\infty z_i(b_m^i)$:
-\begin{equation}
-    \hat{\alpha}(z) = \sum_{i = 0}^\infty \Big(z_{\alpha_1(i)}(b^i_m),...,z_{\alpha_n(i)}(b^i_m)\Big)
-\end{equation}
-Formulas similar to \eqref{eq:transformations} allow $\hat{\alpha}$ to be written as
-\begin{equation}
-    \hat{\alpha} = \bigoplus_{i = 1}^n p_i^\ast
-\end{equation}
-\textcolor{red}{The following example shows I got \eqref{eq:bijection} wrong.}
-\begin{example}
-A simple example is given by the following:
-\begin{align*}
-    \alpha_1: \bb{N} &\lto \bb{N} & \alpha_2: \bb{N} &\lto \bb{N}\\
-    n &\longmapsto 2n & n &\longmapsto 2n + 1
-\end{align*}
-which induces $\alpha: \bb{N} \coprod \bb{N} \lto \bb{N}$, defined by $\alpha(n,1) = 2n$ and $\alpha(n,2) = 2n+1$. The function $\alpha_1,\alpha_2,\alpha$ make the following a coproduct diagram:
-\begin{equation}
-    \begin{tikzcd}
-    \bb{N}\arrow[dr,"{\alpha_1}"]\arrow[d,rightarrowtail]\\
-    \bb{N}\arrow[r,"{\alpha}"] \coprod \bb{N}\arrow[r,"{\alpha}"] & \bb{N}\\
-    \bb{N}\arrow[ur,swap,"{\alpha_2}"]\arrow[u,rightarrowtail]
-    \end{tikzcd}
-\end{equation}
-and indeed $\alpha$ is a bijection. We thus have two functions:
-\begin{align*}
-    p: \ell^2 & \lto \ell^2 & q: \ell^2 &\lto \ell^2\\
-    (z_1,z_2,...) &\longmapsto (0, z_1, 0, z_2, ...) & (z_1,z_2,...) &\longmapsto (z_1, 0, z_2, 0, ...)
-\end{align*}
-which have the following adjoints:
-\begin{align*}
-    p^\ast: \ell^2 &\longmapsto \ell^2 & q^\ast: \ell^2 &\lto \ell^2\\
-    (z_1,z_2,...) &\longmapsto (z_2,z_4,...) & (z_1,z_2,...) &\longmapsto (z_1,z_3,...)
-\end{align*}
-\begin{aside}
-The following calculation shows that $p^\ast$ is adjoint to $p$, the corresponding calculation for $q$ is similar:
-\begin{align*}
-    \big\langle p(z_1,z_2,...),(w_1,w_2,...)\big\rangle &= \big\langle (0,z_1,0,z_2,...),(w_1,w_2,...)\big\rangle\\
-    &= \big\langle (z_1,z_2,...),(w_2,w_4,...)\big\rangle\\
-    &= \big\langle (z_1,z_2,...),p^\ast(w_1,w_2,...)\big\rangle
-\end{align*}
-\end{aside}
-The function $p^\ast,q^\ast$ induce $\hat{\alpha} = p^\ast \oplus q^\ast: \ell^2 \lto \ell^2 \oplus \ell^2$ defined by
-\begin{equation}
-    \hat{\alpha}(z_1,z_2,...) = \big((z_2,z_4,...),(z_1,z_3,...)\big)
-\end{equation}
-We make a few observations:
-\begin{lemma}
-The functions $p,q,p^\ast,q^\ast$ satisfy the following:
-\begin{itemize}
-    \item $p^\ast p = \operatorname{id}_{\ell^2} = q^\ast q$,
-    \item $p p^\ast + q q^\ast = \operatorname{id}_{\ell^2}$,
-    \item $p^\ast q = 0 = q^\ast p$.
-\end{itemize}
-\end{lemma}
-\end{example}
 %
 %
 %
@@ -473,54 +230,22 @@ We then perform matrix multiplication:
 \end{equation}
 \end{example}
 \begin{example}
-Let $\pi_1$ denote the following proof-net:
-\begin{equation}
-\begin{tikzcd}[column sep = tiny]
-{(A,1)}\arrow[r,bend left, dash] & {(\negation A, 2)}\arrow[dr,dash] & & {(A, 3)}\arrow[dl,dash]\arrow[r,bend left, dash] & {(\negation A, 4)} & {(A, 5)\arrow[rr,bend left, dash]}\arrow[dr,dash] & & {(\negation A, 6)}\arrow[dl,dash]\\
-& & {(\negation A \otimes A, 7)}\arrow[rrrr, bend right,dash] & & & & {(A \parr \negation A, 8)}
-\end{tikzcd}
-\end{equation}
-which is equivalent under cut elimination to $\pi_2$ of Example \ref{ex:axiom_GoI}. We let $r$ denote $pq^\ast + qp^\ast$, we have
-\begin{equation}
-\begin{matrix}
-& (\negation A \otimes A, 7) & (A \parr \negation A, 8) & (A,1) &  (\negation A, 4) \\
-(\negation A \otimes A, 7) &0&&p^\ast&q^\ast&&\\
-(A \parr \negation A, 8) &&r&\\
-(A,1) &p&&0&q^\ast p&&\\
-(\negation A, 4) &q&&p^\ast q&0
-\end{matrix}
-\end{equation}
-We then have
-\begin{equation}
-\llbracket \pi_1 \rrbracket \sigma \llbracket \pi_1 \rrbracket =
-\begin{bmatrix}
-0&&&\\
-&0&p^\ast r&q^\ast r &\\
-& rp &0&\\
-& rp &&0
-\end{bmatrix}
-\end{equation}
-and
-\begin{equation}
-\llbracket \pi_1 \rrbracket \sigma \llbracket \pi_1 \rrbracket \sigma \llbracket \pi_1 \rrbracket = 
-\begin{bmatrix}
-0&&&\\
-&0&&\\
-&& p^\ast r p & q^\ast r p\\
-&& p^\ast r q & q^\ast r q
-\end{bmatrix}
-=
-\begin{bmatrix}
-0&&&\\
-&0&&\\
-&& 0 & 1\\
-&& 1 & 0
-\end{bmatrix}
-\cong \llbracket \pi_1 \rrbracket
-\end{equation}
+
 \end{example}
+\textcolor{red}{Warning: have not done cut-elimination for proof-structures yet.}
+The following crucial Lemma will be used to prove both GoI 0 and multiplicative GoI 1.
+
+We now use this to prove GoI 0:
+\begin{defn}
+Let $\pi$ be a proof-structure
+\end{defn}
 
 
+
+
+\begin{thm}[Geometry of Interaction 0]
+Let $\pi$ be a proof-structure 
+\end{thm}
 
 
 \end{defn}
