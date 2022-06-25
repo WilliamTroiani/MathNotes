@@ -20,6 +20,7 @@
 \usepackage{leftidx}
 \usepackage{afterpage}
 \usepackage{varwidth}
+\usepackage{physics}
 
 \newcommand\blankpage{
     \null
@@ -69,6 +70,30 @@
 \begin{document}
 
 \maketitle
+
+\section{Trace}
+
+\begin{lemma}[Gram-Schmidt process]\label{lem:gram_schmidt}
+Every Hilbert space $\bb{H}$ admits an orthonormal basis. Moreover, there is an algorithm which converts a (not necessarily orthonormal) basis for $\bb{H}$ into an orthonormal basis.
+\end{lemma}
+\begin{proof}
+Every Hilbert space admits a basis so it suffices to prove the second claim.
+
+Let $\ket{v_1},...,\ket{v_n}$ be a basis for $\bb{H}$ and inductively define the following set of vectors:
+\begin{equation}
+\ket{u_1} := \ket{v_i}/||\ket{v_i}||,\qquad
+\ket{u_i} := \frac{\ket{v_i} - \sum_{k = 1}^{i-1}\bra{u_k}\ket{v_i}\ket{u_k}}{||\ket{v_i} - \sum_{k = 1}^{i-1}\bra{u_k}\ket{v_i}\ket{u_k}||}
+\end{equation}
+These are clearly normal vectors which span all of $\bb{H}$, we prove orthogonality by induction on $j$, the key calculation is the following: let $i < j$
+\begin{align*}
+||\ket{u_j}|| ||\ket{u_i}||\bra{u_j}\ket{u_i} &= (\bra{v_i} - \sum_{k = 1}^{i-1}\overline{\bra{u_k}\ket{v_i}}\bra{u_k})\ket{u_i}\\
+&= \bra{v_i}\ket{u_i} - \sum_{k = 1}^{i-1}\overline{\bra{u_k}\ket{v_i}}\bra{u_k}\ket{u_i}\\
+&= \bra{v_i}\ket{u_i} - \overline{\bra{u_i}\ket{v_i}}\\
+&= 0
+\end{align*}
+\end{proof}
+
+
 
 \section{Matrix algebra}
 Observe the following calculation, where all entries are elements of some ring $R$:

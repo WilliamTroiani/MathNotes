@@ -113,7 +113,7 @@ In other words, convergent sequences forms a $\bb{C}$-algebra.
 \begin{cor}\label{cor:sum_convergen_sums}
 If $\sum_{i = 1}^\infty z_i$ and $\sum_{i = 1}^\infty w_j$ converge, then so do (for any $k \in \bb{C}$)
 \begin{equation}
-\sum_{i = 1}^\infty (z_i + w_i),\quad,\sum_{i = 1}^\infty kz_i,\quad \text{and}\quad \sum_{i = 1}^\infty z_iw_i
+\sum_{i = 1}^\infty (z_i + w_i),\quad\sum_{i = 1}^\infty kz_i,\quad \text{and}\quad \sum_{i = 1}^\infty z_iw_i
 \end{equation}
 \end{cor}
 
@@ -261,7 +261,7 @@ We let $d$ denote $\operatorname{inf}\lbrace ||x - y|| \mid y \in U\rbrace$. By 
 \end{equation}
 As given $\epsilon > 0$ there exists $N \geq 0$ such that $||x - x_n||^2 < d^2 + \epsilon^2/4$, for $n \geq N$. Thus
 \begin{align*}
-    ||x_n - x_m||^2 &= 2||x - x_n||^2 + 2||x - x_m||^2 - 4||x = 1/2(x_n + x_m)||^2\\
+    ||x_n - x_m||^2 &= 2||x - x_n||^2 + 2||x - x_m||^2 - 4||x = ||1/2(x_n + x_m)||^2\\
     &\leq 4d^2 + \epsilon^2 - 4||x - 1/2(x_n + x_m)||^2
 \end{align*}
 which since $1/2(x_n + x_m) \in C$ we have $d \leq ||x - 1/2(x_n + x_m)||$, proving $(x_n)_{n = 0}^\infty$ is Cauchy. This also shows linearity.
@@ -410,7 +410,7 @@ A square, complex matrix $A$ is \textbf{Hermitian} if it is self-adjoint, that i
 
 A matrix is \textbf{normal} if $AA^\dagger = A^\dagger A$
 
-An operator $\varphi:V \lto V$ is \textbf{Hermitian} (\textbf{normal}) if a (and hence all) matrix representations of $V$ is Hermitian (normal).
+An operator $\varphi:V \lto V$ is \textbf{Hermitian} (\textbf{normal}) if a (and hence all) matrix representation(s) of $V$ is Hermitian (normal).
 \end{defn}
 Clearly, all Hermitian matrices are normal.
 \begin{thm}[Spectral decomposition]\label{thm:spectral}

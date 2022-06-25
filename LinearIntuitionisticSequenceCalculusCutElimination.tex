@@ -105,6 +105,11 @@
 \maketitle
 \tableofcontents
 
+\section{Introduction}
+The paper titled Gentzen-Mints-Zucker Duality \cite{GMZ} provides an constructive proof  of the Cut Elimination Theorem for intuitionistic sequent calculus.
+
+The proof presented there extends easily to the intuitionistic linear logic sequent calculus. This note writes out this extension, and also \emph{defines} the intuitionistic linear logic sequent calculus, as this was only presented implicitly in \cite{blind}.
+
 \section{Intuitionistic Sequent Calculus}\label{Sec:intuitionistic_linear_sequent_calculus}
 The \emph{Intuitionistic, Linear Sequent Calculus} is defined loosely in \cite[\S 11.1.2]{blind}, for clarity, we define here this system precisely.
 
@@ -1208,7 +1213,7 @@ The left and right branches of the proof given in Remark \ref{rmk:gridlocked} is
 \begin{remark}
 One could also consider the pair $\big(h(\pi_1) + 1 - \operatorname{Distinct}(\pi_1,\pi_2),h(\pi_2) + 1 - \operatorname{Distinct}(\pi_1,\pi_2)\big)$.
 \end{remark}
-The organisation of these equivalence relations helps to conceptualise them as there are so many different relations. The following appears to reflect a \emph{co-algebraic structure} so we endow it \emph{co-equivalence}: \textcolor{red}{I think these actually shouldn't be here. These break well definedness of the translation map.}
+The organisation of these equivalence relations helps to conceptualise them as there are so many different relations. The following appears to reflect a \emph{co-algebraic structure} so we endow it \emph{co-equivalence}:
 \begin{defn}[\textbf{\emph{co}-equivalence}]\label{def:co-equivalence}
 We define $\sim_{\operatorname{co}}$ to be the smallest, compatible equivalence relation satisfying the following:
 \begin{center}
