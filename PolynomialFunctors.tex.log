@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.5.21)  24 JUN 2022 14:51
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.5.21)  13 JUL 2022 13:21
 entering extended mode
 **./PolynomialFunctors.tex.tex
 (PolynomialFunctors.tex.tex
@@ -1044,8 +1044,41 @@ LaTeX Info: Redefining \addtolength on input line 81.
 \calc@Ccount=\count323
 \calc@Cskip=\skip70
 )
-\c@thm=\count324
-LaTeX Info: Redefining \diamondtimes on input line 118.
+(/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/latex/st
+ackengine/stackengine.sty
+Package: stackengine 2021/07/22 v4.11\ Stacking text and objects in convenient 
+ways
+
+(/Library/Application Support/MiKTeX/texmfs/install/tex/latex/etoolbox/etoolbox
+.sty
+Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count324
+)
+(/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/latex/li
+stofitems/listofitems.sty
+(/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/generic/
+listofitems/listofitems.tex
+\loi_cnt_foreach_nest=\count325
+\loi_nestcnt=\count326
+)
+Package: listofitems 2019/08/21 v1.63 Grab items in lists using user-specified 
+sep char (CT)
+)
+\c@@stackindex=\count327
+\@boxshift=\skip71
+\stack@tmplength=\skip72
+\temp@stkl=\skip73
+\@stackedboxwidth=\skip74
+\@addedbox=\box78
+\@anchorbox=\box79
+\@insetbox=\box80
+\se@backgroundbox=\box81
+\stackedbox=\box82
+\@centerbox=\box83
+\c@ROWcellindex@=\count328
+)
+\c@thm=\count329
+LaTeX Info: Redefining \diamondtimes on input line 119.
 
 (/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/latex/ge
 ometry/geometry.sty
@@ -1055,9 +1088,9 @@ Package: geometry 2020/01/02 v5.9 Page Geometry
 y
 Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 )
-\Gm@cnth=\count325
-\Gm@cntv=\count326
-\c@Gm@tempcnt=\count327
+\Gm@cnth=\count330
+\Gm@cntv=\count331
+\c@Gm@tempcnt=\count332
 \Gm@bindingoffset=\dimen331
 \Gm@wd@mp=\dimen332
 \Gm@odd@mp=\dimen333
@@ -1072,47 +1105,47 @@ Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 ometry/geometry.cfg)) (PolynomialFunctors.tex.aux)
 \openout1 = `PolynomialFunctors.tex.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 143.
-LaTeX Font Info:    ... okay on input line 143.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 143.
-LaTeX Font Info:    ... okay on input line 143.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 143.
-LaTeX Font Info:    ... okay on input line 143.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 143.
-LaTeX Font Info:    ... okay on input line 143.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 143.
-LaTeX Font Info:    ... okay on input line 143.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 143.
-LaTeX Font Info:    ... okay on input line 143.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 143.
-LaTeX Font Info:    ... okay on input line 143.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 143.
-LaTeX Font Info:    ... okay on input line 143.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 143.
-LaTeX Font Info:    ... okay on input line 143.
-LaTeX Font Info:    Checking defaults for T3/cmr/m/n on input line 143.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 145.
+LaTeX Font Info:    ... okay on input line 145.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 145.
+LaTeX Font Info:    ... okay on input line 145.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 145.
+LaTeX Font Info:    ... okay on input line 145.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 145.
+LaTeX Font Info:    ... okay on input line 145.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 145.
+LaTeX Font Info:    ... okay on input line 145.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 145.
+LaTeX Font Info:    ... okay on input line 145.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 145.
+LaTeX Font Info:    ... okay on input line 145.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 145.
+LaTeX Font Info:    ... okay on input line 145.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 145.
+LaTeX Font Info:    ... okay on input line 145.
+LaTeX Font Info:    Checking defaults for T3/cmr/m/n on input line 145.
 LaTeX Font Info:    Trying to load font information for T3+cmr on input line 14
-3.
+5.
 
 (/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/latex/ti
 pa/t3cmr.fd
 File: t3cmr.fd 2001/12/31 TIPA font definitions
 )
-LaTeX Font Info:    ... okay on input line 143.
+LaTeX Font Info:    ... okay on input line 145.
 
 (/Library/Application Support/MiKTeX/texmfs/install/tex/context/base/mkii/supp-
 pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count328
+\scratchcounter=\count333
 \scratchdimen=\dimen339
-\scratchbox=\box78
-\nofMPsegments=\count329
-\nofMParguments=\count330
+\scratchbox=\box84
+\nofMPsegments=\count334
+\nofMParguments=\count335
 \everyMPshowfont=\toks50
-\MPscratchCnt=\count331
+\MPscratchCnt=\count336
 \MPscratchDim=\dimen340
-\MPnumerator=\count332
-\makeMPintoPDFobject=\count333
+\MPnumerator=\count337
+\makeMPintoPDFobject=\count338
 \everyMPtoPDFconversion=\toks51
 )
 (/Library/Application Support/MiKTeX/texmfs/install/tex/latex/epstopdf-pkg/epst
@@ -1125,7 +1158,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 -sys.cfg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
-Package hyperref Info: Link coloring OFF on input line 143.
+Package hyperref Info: Link coloring OFF on input line 145.
 
 (/Library/Application Support/MiKTeX/texmfs/install/tex/latex/hyperref/nameref.
 sty
@@ -1139,11 +1172,11 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count334
+\c@section@level=\count339
 )
-LaTeX Info: Redefining \ref on input line 143.
-LaTeX Info: Redefining \pageref on input line 143.
-LaTeX Info: Redefining \nameref on input line 143.
+LaTeX Info: Redefining \ref on input line 145.
+LaTeX Info: Redefining \pageref on input line 145.
+LaTeX Info: Redefining \nameref on input line 145.
  (PolynomialFunctors.tex.out)
 (PolynomialFunctors.tex.out)
 \@outlinefile=\write4
@@ -1184,30 +1217,30 @@ LaTeX Info: Redefining \nameref on input line 143.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 145
+LaTeX Font Info:    Trying to load font information for U+msa on input line 147
 .
 (/Library/Application Support/MiKTeX/texmfs/install/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 145
+LaTeX Font Info:    Trying to load font information for U+msb on input line 147
 .
 (/Library/Application Support/MiKTeX/texmfs/install/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Trying to load font information for U+rsfs on input line 14
-5.
+7.
 
 (/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/latex/jk
 nappen/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
 LaTeX Font Info:    Trying to load font information for U+stmry on input line 1
-45.
+47.
 
 (/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/latex/st
 maryrd/Ustmry.fd)
 LaTeX Font Info:    Trying to load font information for U+cmllr on input line 1
-45.
+47.
 
 (/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/latex/cm
 ll/ucmllr.fd) (PolynomialFunctors.tex.toc)
@@ -1217,38 +1250,38 @@ ll/ucmllr.fd) (PolynomialFunctors.tex.toc)
  [1
 
 {/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/data/pdftex/config/p
-dftex.map}]
-
-Package amsfonts Warning: Obsolete command \bold; \mathbf should be used instea
-d on input line 190.
-
-[2] [3] [4] [5]
-Overfull \hbox (8.8298pt too wide) in paragraph at lines 399--400
-[][]\OT1/cmr/bx/n/12 Lemma 4.0.2. []\OT1/cmr/m/it/12 A functor $\U/rsfs/m/n/12 
+dftex.map}] [2] [3] [4]
+Overfull \hbox (8.8298pt too wide) in paragraph at lines 371--372
+[][]\OT1/cmr/bx/n/12 Lemma 3.0.2. []\OT1/cmr/m/it/12 A functor $\U/rsfs/m/n/12 
 F \U/MnSymbolC/m/n/12  [][] \U/MnSymbolA/m/n/12 Ð[]  []$ \OT1/cmr/m/it/12 sati
 sfying the finite normal form property preserves monomorphisms.
  []
 
-[6] [7] [8] [9] [10] [11] [12]
+[5] [6] [7] [8]
+
+Package amsfonts Warning: Obsolete command \bold; \mathbf should be used instea
+d on input line 576.
+
+[9] [10] [11] [12]
 
 Package amsfonts Warning: Obsolete command \frak; \mathfrak should be used inst
-ead on input line 777.
+ead on input line 753.
 
-LaTeX Font Info:    Trying to load font information for U+euf on input line 777
+LaTeX Font Info:    Trying to load font information for U+euf on input line 753
 .
 (/Library/Application Support/MiKTeX/texmfs/install/tex/latex/amsfonts/ueuf.fd
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
 ) [13] [14] [15] [16] [17] (PolynomialFunctors.tex.aux)
 Package rerunfilecheck Info: File `PolynomialFunctors.tex.out' has not changed.
 
-(rerunfilecheck)             Checksum: 28126895DC9F2BB5105F583A1066B47D;888.
+(rerunfilecheck)             Checksum: ED5F4CC7BD3630B43F0FBCE6C5DCE67B;869.
  ) 
 Here is how much of TeX's memory you used:
- 28597 strings out of 481099
- 536319 string characters out of 2904467
- 776850 words of memory out of 3000000
- 45263 multiletter control sequences out of 15000+600000
- 427745 words of font info for 122 fonts, out of 8000000 for 9000
+ 29202 strings out of 481099
+ 544681 string characters out of 2904467
+ 785527 words of memory out of 3000000
+ 45847 multiletter control sequences out of 15000+600000
+ 427240 words of font info for 119 fonts, out of 8000000 for 9000
  0 hyphenation exceptions out of 8191
  98i,15n,103p,1262b,1095s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/fonts/enc/
@@ -1265,26 +1298,26 @@ port/MiKTeX/texmfs/install/fonts/type1/public/mnsymbol/MnSymbol12.pfb></Users/w
 troiani/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/mn
 symbol/MnSymbol6.pfb></Users/wtroiani/Library/Application Support/MiKTeX/texmfs
 /install/fonts/type1/public/mnsymbol/MnSymbol8.pfb></Library/Application Suppor
-t/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmbx12.pfb></Library/App
-lication Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi12.pf
-b></Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfon
-ts/cm/cmmi6.pfb></Library/Application Support/MiKTeX/texmfs/install/fonts/type1
-/public/amsfonts/cm/cmmi8.pfb></Library/Application Support/MiKTeX/texmfs/insta
-ll/fonts/type1/public/amsfonts/cm/cmr12.pfb></Library/Application Support/MiKTe
-X/texmfs/install/fonts/type1/public/amsfonts/cm/cmr17.pfb></Library/Application
- Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmr6.pfb></Librar
-y/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmr8
-.pfb></Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/ams
-fonts/cm/cmti12.pfb></Library/Application Support/MiKTeX/texmfs/install/fonts/t
-ype1/public/amsfonts/cm/cmti8.pfb></Library/Application Support/MiKTeX/texmfs/i
-nstall/fonts/type1/public/amsfonts/cm/cmtt12.pfb></Library/Application Support/
-MiKTeX/texmfs/install/fonts/type1/public/amsfonts/euler/eufm10.pfb></Library/Ap
-plication Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/symbols/msb
-m10.pfb></Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/
-rsfs/rsfs10.pfb>
-Output written on PolynomialFunctors.tex.pdf (17 pages, 336588 bytes).
+t/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmbx12.pfb></Users/wtroi
+ani/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/cmll/c
+mllr12.pfb></Library/Application Support/MiKTeX/texmfs/install/fonts/type1/publ
+ic/amsfonts/cm/cmmi12.pfb></Library/Application Support/MiKTeX/texmfs/install/f
+onts/type1/public/amsfonts/cm/cmmi6.pfb></Library/Application Support/MiKTeX/te
+xmfs/install/fonts/type1/public/amsfonts/cm/cmmi8.pfb></Library/Application Sup
+port/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmr12.pfb></Library/A
+pplication Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmr17.p
+fb></Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfo
+nts/cm/cmr6.pfb></Library/Application Support/MiKTeX/texmfs/install/fonts/type1
+/public/amsfonts/cm/cmr8.pfb></Library/Application Support/MiKTeX/texmfs/instal
+l/fonts/type1/public/amsfonts/cm/cmti12.pfb></Library/Application Support/MiKTe
+X/texmfs/install/fonts/type1/public/amsfonts/cm/cmti8.pfb></Library/Application
+ Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/euler/eufm10.pfb></L
+ibrary/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/sy
+mbols/msbm10.pfb></Library/Application Support/MiKTeX/texmfs/install/fonts/type
+1/public/rsfs/rsfs10.pfb>
+Output written on PolynomialFunctors.tex.pdf (17 pages, 342414 bytes).
 PDF statistics:
- 411 PDF objects out of 1000 (max. 8388607)
- 147 named destinations out of 1000 (max. 500000)
+ 421 PDF objects out of 1000 (max. 8388607)
+ 155 named destinations out of 1000 (max. 500000)
  61 words of extra memory for PDF output out of 10000 (max. 10000000)
 

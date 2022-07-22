@@ -31,6 +31,8 @@
 \usepackage{booktabs}
 \usepackage{xparse}
 \usepackage{calc}
+\usepackage{stackengine}
+\usepackage{csquotes}
 
 \newcommand\blankpage{
 	\null
@@ -126,14 +128,13 @@
 }
 \newcommand\showdiv[1]{\overline{\smash{)}#1}}
 \newcommand{\set}{\operatorname{\underline{Set}}}
+\newcommand{\coherence}[2]{#1\text{ }\rotatebox{90}{()}_A\text{ }#2}
 
 
 
 \newenvironment{scprooftree}[1]%
 {\gdef\scalefactor{#1}\begin{center}\proofSkipAmount \leavevmode}%
 	{\scalebox{\scalefactor}{\DisplayProof}\proofSkipAmount \end{center} }
-
-\usepackage[margin=1cm]{geometry}
 
 \title{Polynomial functors}
 \author{William Troiani}
@@ -145,8 +146,11 @@
 	\tableofcontents
 	
 	\section{Introduction}
+	Coherence spaces have been described as ``a simplification of Scott domains..." from which ``one eventually discoverss a logical layer finer than intuitionism, linear logic" \cite{BS}. Quotes such as these imply that Girard discovered linear logic by first considering coherence spaces. This however, is not true. In fact, Girard discovered linear logic by first considering a model of $\lambda$-calculus using Analytic Functors, indeed, we quote from his paper \cite{Girard}:
 	
-	
+	\begin{displayquote}
+		``It appears now (October 1986) that the main interest of the paper is the general analogy with linear algebra. The analogy brought in sight new operations, new connectives, thus leading to `linear logic'. The treatment of the sum of types... contains implicitly all the operations of linear logic. What has been found later is that the operations used here (e.g., linearization by means of `tensor algebra') are of logical nature."
+		\end{displayquote}
 	
 	
 	
@@ -178,34 +182,10 @@
 	\begin{defn}\label{def:forms}
 		Let $(F,x) \in \operatorname{El}(\scr{F})$. A \textbf{form} of $\scr{F}$ with respect to $(F,x)$ is an element of the comma category $\operatorname{El}(\scr{F})/(F,x)$.
 		
-		The form is \textbf{normal} if it is initial (ie, is an initial object in the category $\operatorname{El}(\scr{F}))/(F,x)$.
+%		The form is \textbf{normal} if it is initial (ie, is an initial object in the category $\operatorname{El}(\scr{F}))/(F,x)$.
 		\end{defn}
-	
-	\begin{example}\label{ex:saturated_normal_form}
-		Consider the functor $\scr{D}: \set \lto \set$ which acts on objects and morphisms in the following way.
-		\begin{align*}
-			\scr{D}(X) &:= X \times X\\
-			\scr{D}(f: X \lto Y) &:= f \times f: X \times X \lto Y \times Y
-			\end{align*}
-		Let $\bold{2}$ denote the set $\lbrace 0, 1 \rbrace$ and $\bold{23}$ denote the set $\lbrace 0, ..., 22\rbrace$. Consider the point $(4,4) \in \scr{D}(\bold{23})$. We will define a normal form with codomain $(\bold{23}, (4,4))$. Define the following function.
-		\begin{align}
-			k: \bold{2} &\lto \bold{23}\\
-			0 &\longmapsto 4\\
-			1 &\longmapsto 4
-		\end{align}
-		The form we consider is $k: (\bold{2},(0,1)) \lto (\bold{23}, (4,4))$. To see that this is normal, consider a form $f: (X, (x,y)) \lto (\bold{23}, (4,4))$. We wish to define a function $l: \bold{2} \lto X$ such that $l \times l: \bold{2} \times \bold{2} \lto X \times X$ renders the following diagram commutative.
-		\begin{equation}
-			\begin{tikzcd}
-				& (\bold{23} \times \bold{23}, (4,4))\\
-				(\bold{2} \times \bold{2}, (0,1))\arrow[ur,"{k \times k}"]\arrow[rr,swap,"{l \times l}"] && (X \times X, (x,y))\arrow[ul,swap,"{f \times f}"]
-			\end{tikzcd}
-		\end{equation}
-		In other words, we desire a function $l: \bold{2} \lto X$ satisfying the following properties.
-		\begin{equation}
-			l(0) = x, \quad l(1) = y
-		\end{equation}
-		but this condition defines a function with domain $\bold{2}$ uniquely.
-		\end{example}
+
+See Example \ref{ex:saturated_normal_form} for an example of a normal form.
 	
 	\begin{defn}\label{def:integer}
 		We define a family of adjectives for sets, forms, and functors. Let $X \in \set$ be a set and $F \in \set^A$ a functor, and $\eta: (G,y) \lto (F,x)$ a form, where $x \in \scr{F}(F)$.
@@ -697,8 +677,12 @@ This morphism is given as follows.
 	
 	\section{Qualitative domains}
 	\begin{defn}
-		A \textbf{qualitative domain} is a set $X$ along with a collection $\scr{X}$ of subsets $U_i \subseteq X$ subject to the following.
+		A \textbf{qualitative domain} is a set $X$ along with a collection $\scr{X}$ of subsets $U \subseteq X$ subject to the following.
 		\begin{itemize}
+			\item $\scr{X}$ covers $X$
+			\begin{equation}
+				\bigcup_{U \in \scr{X}}U = X
+				\end{equation}
 			\item The empty set is in $\scr{X}$
 			\begin{equation}
 				\varnothing \in \scr{X}
@@ -897,69 +881,133 @@ This morphism is given as follows.
 		Conversely, if $y \in \operatorname{App}(\operatorname{tr}(f), U)$ then $y \in f(U) = \bigcup_{i \in I}f(U_i)$ by stability of $f$. Hence, there exists $i \in I$ such that $y \in f(U_i)$ and so taking $U_i$ as a subset of itself, we see that $(U_i, y)$ satisfy the condition required so that $y \in f_i(U_i)$. That is, there exists $i \in I$ such that $y \in \operatorname{App}(\frak{a}_i, U_i)$. This completes the proof.
 		\end{proof}
 	
-	\begin{proposition}\label{prop:app_binary}
-		Let $(X, \scr{X}), (\call{P}_{\text{fin}}(X) \times Y, \scr{X} \Rightarrow \scr{Y})$ be qualitative domains. Then $\big(Y, \operatorname{App}(\scr{X} \Rightarrow \scr{Y}, \scr{X}) \big)$ is binary.
-		\end{proposition}
+	\begin{lemma}
+		Let $(X, \scr{X}), (Y, \scr{Y})$ be qualitative domains. For every subset $\frak{a} \subseteq Y$ there exists a stable function $f: X \lto Y$ and a set $U \subseteq X$ such that
+		\begin{equation}
+			\frak{a} = \operatorname{App}(\operatorname{tr}(f), U)
+			\end{equation}
+		\end{lemma}
 	\begin{proof}
-		Let $\frak{a} \subseteq Y$ be a subset such that $\frak{a} \not\in \operatorname{App}(\scr{X} \Rightarrow \scr{Y}, \scr{X})$. Assume that for each $y \in \frak{a}$ there exists a stable function $f_y$ such that $y \in \operatorname{tr}(f_y)$. Then consider the following function.
+		Consider the constant function
 		\begin{align*}
-			g: \scr{X} &\lto \scr{Y}\\
-			W &\longmapsto \{ y \in Y \mid \exists V \subseteq W\text{ finite }(V,y) \in \bigcup_{y \in \frak{a}}\operatorname{tr}(f_y) \}
+			f: \scr{X} &\lto \scr{Y}\\
+			W &\longmapsto \frak{a}
 			\end{align*}
-		This is a well defined function, which is stable under directed union. Moreover, if for each $y \in \frak{a}$ we let $U_y$ denote the unique set such that $y \in f_y(U_y)$ then the following equality holds
-		\begin{equation}
-			\frak{a} = \{ y \in Y \mid \exists V \subseteq \bigcup_{y \in \frak{a}}U_y \}
-			\end{equation}
-		In other words, if $g$ satisfies the property that if $W, W' \in \scr{X}$ are such that $W \cup W' \in \scr{X}$ then $g(W) \cap g(W') = g(W \cap W')$ then we would have
-		\begin{equation}
-			\frak{a} = \operatorname{App}(g, \bigcup_{y \in \frak{a}}U_y)
-			\end{equation}
-		\textcolor{red}{how do we know $\bigcup_{y \in \frak{a}}U_y \in \scr{X}$?}
+		We first claim that this is stable. Clearly, if $W \subseteq W'$ then $f(W) = f(W')$ and so in particular, $f(W) \subseteq f(W')$.
 		
-		By hypothesis, this is not true, and so there exists $W,W' \in \scr{X}$ with $W \cup W'$ and
+		Next, if $\{ U_i \}_{i \in I}$ is a directed system of sets in $\scr{X}$ we have
 		\begin{equation}
-			g(W) \cap g(W') \subseteq g(W \cap W') \text{ but } g(W) \cap g(W') \neq g(W \cap W')
-			\end{equation}
-		We have $y \in \big(g(W) \cap g(W')\big)\setminus\big(g(W \cap W')\big)$ if and only if $\Longleftrightarrow \exists y_1, y_2 \in \frak{a},\exists V,V' \subseteq W,W'\text{ resp. } (V,y) \in \operatorname{tr}(f_{y_1}), (V',y) \in \operatorname{tr}(f_{y_2})$ and there exists no $y_3 \in \frak{a}$ such that $(V,y),(V', y) \in \operatorname{tr}(f_{y_3})$.
-		
-		Note, that necessarily $y_1 \neq y_2$.
-		
-		We now claim that $\{ y_1, y_2 \} \not\in \operatorname{App}(\scr{X} \Rightarrow \scr{Y}, \scr{X})$.
-		
-		Suppose to the contrary that $\{ y_1, y_2 \} = \operatorname{App}(\operatorname{tr}(h), Z)$ for some stable $h: \scr{X} \Rightarrow \scr{Y}$ and $Z \in \scr{X}$. Then by stability we have
-		\begin{equation}
-			h(V) \cap h(V') = h(V \cap V')
+			\bigcup_{i \in I}f(U_i) = \bigcup_{i \in I}\frak{a} = \frak{a}  = f(\bigcup_{i \in I})
 			\end{equation}
 		
+		Lastly, if $W_1 \cup W_2 \in \scr{X}$ then we again (trivially) have
+		\begin{equation}
+			f(W_1 \cap W_2) = \frak{a} = \frak{a}\cap \frak{a} = f(W_1) \cap f(W_2)
+			\end{equation}
+		
+		Next, we claim that the empty set $\varnothing$ is an appropriate choice for $U$, that is
+		\begin{equation}
+			\frak{a} = \operatorname{App}(\operatorname{tr}(f), \varnothing)
+			\end{equation}
+		We have
+		\begin{align*}
+			y \in \frak{a} &\Leftrightarrow y \in f(\varnothing)\\
+			&\Leftrightarrow \exists V \subseteq \varnothing\text{ st }(V,y) \in \operatorname{tr}(f)\\
+			&\Leftrightarrow y \in \operatorname{App}(\operatorname{tr}(f), \varnothing)
+			\end{align*}
 		\end{proof}
 	
-	(lq.(lp.(copy q as r, s in (lz.(derelict(p)(derelict(s)(derelict(r)z)))))))
-	\begin{equation}
-		\lambda q \lambda p. \texttt{copy } q \texttt{ as } r, s \texttt{ in } \lambda z. \texttt{derelict}(p)(\texttt{derelict}(s)(\texttt{derelict}(r)z))
-		\end{equation}
-	
-	
-	
-	
-	
-	
 	\section{Coherence spaces}
+	We recall the definition of a \emph{reflexive graph}.
 	\begin{defn}
-		A \textbf{coherence space} is a pair
-		\begin{equation}
-			(\scr{X}, \sim)
-			\end{equation}
-		consisting of a set $\scr{X}$ called the \textbf{web} and a reflexive symmetric relation $\sim$ on $\scr{X} \times \scr{X}$.
+		A multigraph $G = (V,E)$ is \textbf{reflexive} if for every vertex $v \in V$ there exists an edge $\{ v, v \}$ (recall that in a multigraph, the set $E$ is a \emph{multiset}, and so here the notation $\{ v,v\}$ does \emph{not} mean the set $\{ v\}$).
+		\end{defn}
+	\begin{defn}
+		A \textbf{coherence space} $A$ is a pair $(|A|, \coh_A)$ consisting of a set $|A|$ and a reflexive, symmetric relation $\coh_A$ on $|A|$. The set $|A|$ is the \textbf{web} of $A$ and the relation $\coh_A$ is the \textbf{coherence} of $A$.
 		\end{defn}
 	
+	\begin{lemma}
+		Let $(X, \scr{X})$ be a binary qualitative domain. Define a relation $R$ on $X$ in the following way.
+		\begin{equation}
+			(x_1,x_2) \in R \Leftrightarrow \{ x_1, x_2 \} \in \scr{X}
+			\end{equation}
+		This relation is reflexive and symmetric.
+		\end{lemma}
+	\begin{proof}
+		Since $X$ is a qualitative domain, the sets $\scr{X}$ cover $X$, that is,
+		\begin{equation}
+			\bigcup_{U \in \scr{X}}U = X
+			\end{equation}
+		Thus, since every subset of every elemenet of $\scr{X}$ is also an element of $\scr{X}$, it follows that $\{ x \} \in \scr{X}$ for each $x \in X$. In other words, $R$ is reflexive.
+		
+		The defining statement of $R$ is symmetric in $x_1, x_2$ and so $R$ is clearly symmetric as a relation.
+		\end{proof}
+	
+	\begin{defn}
+		A \textbf{clique} in a coherence space $A = (|A|, \coh_A)$ is a subset $C \subseteq |A|$ subject to
+		\begin{equation}
+			\forall c_1, c_2 \in C\qquad c_1 \coh_A c_2
+			\end{equation}
+		\end{defn}
+	
+	\begin{lemma}
+		Let $A = (|A|, \coh_A)$ be a coherence space. Let $\scr{X}$ denote the set of cliques of $A$. Then $(|A|, \scr{X})$ is a binary qualitative domain.
+		\end{lemma}
+	\begin{proof}
+		Since $\coh_A$ is reflexice, we have that for all $a \in |A|$ that $\{ a \} \in \scr{X}$, and so $\scr{X}$ covers $|A|$.
+		
+		The empty set is vacuously a clique, and so $\varnothing \in \scr{X}$.
+		
+		If $\{ U_i \}_{i \in I}$ is a directed family of cliques, then $U := \bigcup_{i \in I}U_i$ is satisfies:
+		\begin{equation}
+			\forall u_1, u_2 \in U, \exists i \in I, \{ u_1, u_2 \} \in U
+			\end{equation}
+		and so $u_1 \coh_A u_2$. That is, $U$ is a clique.
+		
+		If $U,V \in \scr{X}$ are such that $U \cup V \in \scr{X}$ then we see that $U \cap V$, being a subset of $U \cup V$, is a clique. Thus $U \cap V \in \scr{X}$.
+		
+		Say $U \not\in \scr{X}$. Then by definition, there exists $u_1, u_2$ such that $u_1 \not\coh_A u_2$. That is, $\{ u_1 u_2 \} \not\in \scr{X}$, and so $(|A|,\scr{X})$ is binary.
+		\end{proof}
+	We thus have a bijection between the collection of coherence spaces and the collection of binary qualitative domains.
+	
+	\appendix
+	\section{Examples}
+	
+	\begin{example}\label{ex:saturated_normal_form}
+		Consider the functor $\scr{D}: \set \lto \set$ which acts on objects and morphisms in the following way.
+		\begin{align*}
+			\scr{D}(X) &:= X \times X\\
+			\scr{D}(f: X \lto Y) &:= f \times f: X \times X \lto Y \times Y
+		\end{align*}
+		Let $\bold{2}$ denote the set $\lbrace 0, 1 \rbrace$ and $\bold{23}$ denote the set $\lbrace 0, ..., 22\rbrace$. Consider the point $(4,4) \in \scr{D}(\bold{23})$. We will define a normal form with codomain $(\bold{23}, (4,4))$. Define the following function.
+		\begin{align}
+			k: \bold{2} &\lto \bold{23}\\
+			0 &\longmapsto 4\\
+			1 &\longmapsto 4
+		\end{align}
+		The form we consider is $k: (\bold{2},(0,1)) \lto (\bold{23}, (4,4))$. To see that this is normal, consider a form $f: (X, (x,y)) \lto (\bold{23}, (4,4))$. We wish to define a function $l: \bold{2} \lto X$ such that $l \times l: \bold{2} \times \bold{2} \lto X \times X$ renders the following diagram commutative.
+		\begin{equation}
+			\begin{tikzcd}
+				& (\bold{23} \times \bold{23}, (4,4))\\
+				(\bold{2} \times \bold{2}, (0,1))\arrow[ur,"{k \times k}"]\arrow[rr,swap,"{l \times l}"] && (X \times X, (x,y))\arrow[ul,swap,"{f \times f}"]
+			\end{tikzcd}
+		\end{equation}
+		In other words, we desire a function $l: \bold{2} \lto X$ satisfying the following properties.
+		\begin{equation}
+			l(0) = x, \quad l(1) = y
+		\end{equation}
+		but this condition defines a function with domain $\bold{2}$ uniquely.
+	\end{example}
+\section{Girard's LIES}
+\cite{BS}[\S 8.2 page 164] ``Coherent spaces are originally a simplification of Scott domains; the irredundant encoding due to stability enables a more limpid approach: we no longer content ourselves with the possibility of interpreting logic, one is able to write down this interpretation. One eventually discovers a logical layer finer than intuitionism, linear logic". This isn't necessarily a \emph{lie} though, because he isn't saying that Linear Logic was originally invented this way.
+
+Thomas Erhard, Probabilistic Coherence Spaces are
+Fully Abstract for Probabilistic PCF, page 1. ``From the very beginning, Linear Logic has been associated with intuitions coming from calculus and linear algebra" (and then references \cite{Girard}). Does this imply that Erhard new \cite{Girard} was the beginning of Linear Logic?
 	
 	\begin{thebibliography}{9}
 		\bibitem{Girard} J. Y. Girard, \emph{Normal functors, power series and lambda-calculus}.
+		
+		\bibitem{BS} J.Y.Girard, \emph{The Blind Spot}
 		\end{thebibliography}
-	
-	
-	
-	
-	
 	\end{document}
 

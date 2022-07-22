@@ -1,10 +1,10 @@
 \contentsline {section}{\numberline {1}Multiplicatives}{1}{section.1}%
-\contentsline {section}{\numberline {2}The Sequentialisation Theorem}{8}{section.2}%
-\contentsline {section}{\numberline {3}The dynamics of MLL}{17}{section.3}%
-\contentsline {section}{\numberline {4}Proofs as permutations}{20}{section.4}%
-\contentsline {section}{\numberline {5}Geometry of Interaction Zero, modelling the dynamics of MLL}{23}{section.5}%
-\contentsline {section}{\numberline {6}Geometry of Interaction One}{28}{section.6}%
-\contentsline {subsection}{\numberline {6.1}Internalisation of direction sum and tensor product}{28}{subsection.6.1}%
-\contentsline {subsection}{\numberline {6.2}Persistent paths}{31}{subsection.6.2}%
-\contentsline {subsection}{\numberline {6.3}Proofs as operators}{34}{subsection.6.3}%
-\contentsline {section}{\numberline {7}Exponentials}{40}{section.7}%
+\contentsline {section}{\numberline {2}The Sequentialisation Theorem}{9}{section.2}%
+\contentsline {section}{\numberline {3}The dynamics of MLL}{19}{section.3}%
+\contentsline {section}{\numberline {4}Modelling the dynamics of MLL}{22}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Proofs as permutations}{23}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Geometry of Interaction Zero}{27}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Internalisation of direct sum and tensor product}{31}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}Persistent paths}{34}{subsection.4.4}%
+\contentsline {subsection}{\numberline {4.5}Proofs as operators}{37}{subsection.4.5}%
+\contentsline {subsection}{\numberline {4.6}Geometry of Interaction One}{38}{subsection.4.6}%

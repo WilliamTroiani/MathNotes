@@ -1,7 +1,7 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.5.21)  18 JUL 2022 11:43
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.5.21)  18 JUL 2022 17:31
 entering extended mode
-**./LinearLogic.tex
-(LinearLogic.tex
+**./PolynomialFunctors.tex
+(PolynomialFunctors.tex
 LaTeX2e <2020-10-01> patch level 4
 L3 programming layer <2021-05-11>
 (/Library/Application Support/MiKTeX/texmfs/install/tex/latex/base/article.cls
@@ -834,6 +834,91 @@ Package: cmll 2010/04/20 Linear Logic symbols for Computer Modern
 \symllsymbols=\mathgroup8
 LaTeX Font Info:    Overwriting symbol font `llsymbols' in version `bold'
 (Font)                  U/cmllr/m/n --> U/cmllr/bx/n on input line 49.
+)
+(/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/latex/ma
+kecell/makecell.sty
+Package: makecell 2009/08/03 V0.1e Managing of Tab Column Heads and Cells
+\rotheadsize=\dimen295
+\c@nlinenum=\count312
+\TeXr@lab=\toks46
+)
+(/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/latex/mn
+symbol/MnSymbol.sty
+Package: MnSymbol 2007/01/21 v1.4 support for the MnSymbol font
+LaTeX Info: Redefining \dagger on input line 84.
+LaTeX Info: Redefining \ddagger on input line 84.
+LaTeX Info: Redefining \mathparagraph on input line 84.
+LaTeX Info: Redefining \mathsection on input line 84.
+LaTeX Info: Redefining \mathdollar on input line 84.
+LaTeX Info: Redefining \mathsterling on input line 84.
+LaTeX Info: Redefining \yen on input line 84.
+LaTeX Info: Redefining \circledR on input line 84.
+LaTeX Info: Redefining \circledS on input line 84.
+LaTeX Info: Redefining \Re on input line 84.
+LaTeX Info: Redefining \Im on input line 84.
+LaTeX Info: Redefining \dotplus on input line 84.
+LaTeX Info: Redefining \thicksim on input line 84.
+LaTeX Info: Redefining \thickapprox on input line 84.
+LaTeX Info: Redefining \veebar on input line 84.
+LaTeX Info: Redefining \barwedge on input line 84.
+LaTeX Info: Redefining \doublebarwedge on input line 84.
+LaTeX Info: Redefining \centerdot on input line 84.
+LaTeX Info: Redefining \divideontimes on input line 84.
+\symMnSyA=\mathgroup9
+\symMnSyB=\mathgroup10
+\symMnSyC=\mathgroup11
+\symMnSyD=\mathgroup12
+LaTeX Font Info:    Redeclaring symbol font `largesymbols' on input line 119.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
+(Font)                  OMX/cmex/m/n --> OMX/MnSymbolE/m/n on input line 119.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
+(Font)                  OMX/cmex/m/n --> OMX/MnSymbolE/m/n on input line 119.
+LaTeX Font Info:    Redeclaring symbol font `symbols' on input line 120.
+LaTeX Font Info:    Encoding `OMS' has changed to `U' for symbol font
+(Font)              `symbols' in the math version `normal' on input line 120.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
+(Font)                  OMS/cmsy/m/n --> U/MnSymbolF/m/n on input line 120.
+LaTeX Font Info:    Encoding `OMS' has changed to `U' for symbol font
+(Font)              `symbols' in the math version `bold' on input line 120.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
+(Font)                  OMS/cmsy/b/n --> U/MnSymbolF/m/n on input line 120.
+LaTeX Font Info:    Overwriting symbol font `MnSyA' in version `bold'
+(Font)                  U/MnSymbolA/m/n --> U/MnSymbolA/b/n on input line 121.
+LaTeX Font Info:    Overwriting symbol font `MnSyB' in version `bold'
+(Font)                  U/MnSymbolB/m/n --> U/MnSymbolB/b/n on input line 122.
+LaTeX Font Info:    Overwriting symbol font `MnSyC' in version `bold'
+(Font)                  U/MnSymbolC/m/n --> U/MnSymbolC/b/n on input line 123.
+LaTeX Font Info:    Overwriting symbol font `MnSyD' in version `bold'
+(Font)                  U/MnSymbolD/m/n --> U/MnSymbolD/b/n on input line 124.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
+(Font)                  OMX/MnSymbolE/m/n --> OMX/MnSymbolE/b/n on input line 1
+25.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
+(Font)                  U/MnSymbolF/m/n --> U/MnSymbolF/b/n on input line 126.
+LaTeX Font Info:    Redeclaring math alphabet \mathcal on input line 241.
+LaTeX Font Info:    Overwriting math alphabet `\mathcal' in version `bold'
+(Font)                  OMS/MnSymbolS/m/n --> OMS/MnSymbolS/b/n on input line 2
+41.
+LaTeX Info: Redefining \longrightarrow on input line 548.
+LaTeX Info: Redefining \longleftarrow on input line 549.
+LaTeX Info: Redefining \longleftrightarrow on input line 550.
+LaTeX Info: Redefining \Longrightarrow on input line 551.
+LaTeX Info: Redefining \Longleftarrow on input line 552.
+LaTeX Info: Redefining \Longleftrightarrow on input line 553.
+LaTeX Info: Redefining \longmapsto on input line 554.
+LaTeX Info: Redefining \vdots on input line 868.
+LaTeX Font Info:    Redeclaring math symbol \braceld on input line 1721.
+LaTeX Font Info:    Redeclaring math symbol \bracelu on input line 1722.
+LaTeX Font Info:    Redeclaring math symbol \bracerd on input line 1723.
+LaTeX Font Info:    Redeclaring math symbol \braceru on input line 1724.
+LaTeX Info: Redefining \downbracefill on input line 1799.
+LaTeX Info: Redefining \upbracefill on input line 1800.
+LaTeX Info: Redefining \overbrace on input line 1819.
+LaTeX Info: Redefining \underbrace on input line 1820.
+LaTeX Info: Redefining \surd on input line 1843.
+LaTeX Font Info:    Redeclaring math accent \widehat on input line 1845.
+LaTeX Font Info:    Redeclaring math accent \widetilde on input line 1846.
+LaTeX Font Info:    Redeclaring math accent \vec on input line 1848.
 ) (quiver.sty
 Package: quiver 2021/01/11 quiver
 
@@ -847,14 +932,14 @@ er/tikz/libraries/tikzlibrarydecorations.pathmorphing.code.tex
 er/tikz/libraries/tikzlibrarydecorations.code.tex
 (/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/modules/pgf
 moduledecorations.code.tex
-\pgfdecoratedcompleteddistance=\dimen295
-\pgfdecoratedremainingdistance=\dimen296
-\pgfdecoratedinputsegmentcompleteddistance=\dimen297
-\pgfdecoratedinputsegmentremainingdistance=\dimen298
-\pgf@decorate@distancetomove=\dimen299
-\pgf@decorate@repeatstate=\count312
-\pgfdecorationsegmentamplitude=\dimen300
-\pgfdecorationsegmentlength=\dimen301
+\pgfdecoratedcompleteddistance=\dimen296
+\pgfdecoratedremainingdistance=\dimen297
+\pgfdecoratedinputsegmentcompleteddistance=\dimen298
+\pgfdecoratedinputsegmentremainingdistance=\dimen299
+\pgf@decorate@distancetomove=\dimen300
+\pgf@decorate@repeatstate=\count313
+\pgfdecorationsegmentamplitude=\dimen301
+\pgfdecorationsegmentlength=\dimen302
 )
 \tikz@lib@dec@box=\box76
 )
@@ -872,10 +957,10 @@ Package: xkeyval 2020/11/20 v2.8 package option processing (HA)
 .tex
 (/Library/Application Support/MiKTeX/texmfs/install/tex/generic/xkeyval/xkvutil
 s.tex
-\XKV@toks=\toks46
-\XKV@tempa@toks=\toks47
+\XKV@toks=\toks47
+\XKV@tempa@toks=\toks48
 )
-\XKV@depth=\count313
+\XKV@depth=\count314
 File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
 ))
 (/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/latex/ad
@@ -892,114 +977,177 @@ llectbox/collectbox.sty
 Package: collectbox 2012/05/17 v0.4b Collect macro arguments as boxes
 \collectedbox=\box77
 )
-\tc@llx=\dimen302
-\tc@lly=\dimen303
-\tc@urx=\dimen304
-\tc@ury=\dimen305
+\tc@llx=\dimen303
+\tc@lly=\dimen304
+\tc@urx=\dimen305
+\tc@ury=\dimen306
 Package trimclip Info: Using driver 'tc-pdftex.def'.
 
 (/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/latex/ad
 justbox/tc-pdftex.def
 File: tc-pdftex.def 2019/01/04 v2.2 Clipping driver for pdftex
 ))
-\adjbox@Width=\dimen306
-\adjbox@Height=\dimen307
-\adjbox@Depth=\dimen308
-\adjbox@Totalheight=\dimen309
-\adjbox@pwidth=\dimen310
-\adjbox@pheight=\dimen311
-\adjbox@pdepth=\dimen312
-\adjbox@ptotalheight=\dimen313
+\adjbox@Width=\dimen307
+\adjbox@Height=\dimen308
+\adjbox@Depth=\dimen309
+\adjbox@Totalheight=\dimen310
+\adjbox@pwidth=\dimen311
+\adjbox@pheight=\dimen312
+\adjbox@pdepth=\dimen313
+\adjbox@ptotalheight=\dimen314
 
 (/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/latex/if
 oddpage/ifoddpage.sty
 Package: ifoddpage 2016/04/23 v1.1 Conditionals for odd/even page detection
-\c@checkoddpage=\count314
+\c@checkoddpage=\count315
 ))
+(/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/latex/mu
+ltirow/multirow.sty
+Package: multirow 2021/03/15 v2.8 Span multiple rows of a table
+\multirow@colwidth=\skip66
+\multirow@cntb=\count316
+\multirow@dima=\skip67
+\bigstrutjot=\dimen315
+)
+(/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/latex/bo
+oktabs/booktabs.sty
+Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
+\heavyrulewidth=\dimen316
+\lightrulewidth=\dimen317
+\cmidrulewidth=\dimen318
+\belowrulesep=\dimen319
+\belowbottomsep=\dimen320
+\aboverulesep=\dimen321
+\abovetopsep=\dimen322
+\cmidrulesep=\dimen323
+\cmidrulekern=\dimen324
+\defaultaddspace=\dimen325
+\@cmidla=\count317
+\@cmidlb=\count318
+\@aboverulesep=\dimen326
+\@belowrulesep=\dimen327
+\@thisruleclass=\count319
+\@lastruleclass=\count320
+\@thisrulewidth=\dimen328
+)
+(/Library/Application Support/MiKTeX/texmfs/install/tex/latex/latex-tools/calc.
+sty
+Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count321
+\calc@Bcount=\count322
+\calc@Adimen=\dimen329
+\calc@Bdimen=\dimen330
+\calc@Askip=\skip68
+\calc@Bskip=\skip69
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count323
+\calc@Cskip=\skip70
+)
+(/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/latex/st
+ackengine/stackengine.sty
+Package: stackengine 2021/07/22 v4.11\ Stacking text and objects in convenient 
+ways
+
+(/Library/Application Support/MiKTeX/texmfs/install/tex/latex/etoolbox/etoolbox
+.sty
+Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count324
+)
+(/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/latex/li
+stofitems/listofitems.sty
 (/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/generic/
-genmisc/kbordermatrix.sty
-Package: kbordermatrix 2011/09/21 Bordered matrix with brackets
-\kbcolsep=\skip66
-\kbrowsep=\skip67
-\br@kwd=\skip68
-\k@bordht=\skip69
+listofitems/listofitems.tex
+\loi_cnt_foreach_nest=\count325
+\loi_nestcnt=\count326
 )
-\c@thm=\count315
-
-(/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/latex/ge
-ometry/geometry.sty
-Package: geometry 2020/01/02 v5.9 Page Geometry
-
-(/Library/Application Support/MiKTeX/texmfs/install/tex/generic/iftex/ifvtex.st
-y
-Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
+Package: listofitems 2019/08/21 v1.63 Grab items in lists using user-specified 
+sep char (CT)
 )
-\Gm@cnth=\count316
-\Gm@cntv=\count317
-\c@Gm@tempcnt=\count318
-\Gm@bindingoffset=\dimen314
-\Gm@wd@mp=\dimen315
-\Gm@odd@mp=\dimen316
-\Gm@even@mp=\dimen317
-\Gm@layoutwidth=\dimen318
-\Gm@layoutheight=\dimen319
-\Gm@layouthoffset=\dimen320
-\Gm@layoutvoffset=\dimen321
-\Gm@dimlist=\toks48
-
-(/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/latex/ge
-ometry/geometry.cfg)) (LinearLogic.aux
-
-LaTeX Warning: Label `LL:times' multiply defined.
-
-
-LaTeX Warning: Label `eq:standard_example' multiply defined.
-
+\c@@stackindex=\count327
+\@boxshift=\skip71
+\stack@tmplength=\skip72
+\temp@stkl=\skip73
+\@stackedboxwidth=\skip74
+\@addedbox=\box78
+\@anchorbox=\box79
+\@insetbox=\box80
+\se@backgroundbox=\box81
+\stackedbox=\box82
+\@centerbox=\box83
+\c@ROWcellindex@=\count328
 )
-\openout1 = `LinearLogic.aux'.
+(/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/latex/cs
+quotes/csquotes.sty
+Package: csquotes 2021-02-22 v5.2l context-sensitive quotations (JAW)
+\csq@reset=\count329
+\csq@gtype=\count330
+\csq@glevel=\count331
+\csq@qlevel=\count332
+\csq@maxlvl=\count333
+\csq@tshold=\count334
+\csq@ltx@everypar=\toks49
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 112.
-LaTeX Font Info:    ... okay on input line 112.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 112.
-LaTeX Font Info:    ... okay on input line 112.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 112.
-LaTeX Font Info:    ... okay on input line 112.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 112.
-LaTeX Font Info:    ... okay on input line 112.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 112.
-LaTeX Font Info:    ... okay on input line 112.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 112.
-LaTeX Font Info:    ... okay on input line 112.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 112.
-LaTeX Font Info:    ... okay on input line 112.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 112.
-LaTeX Font Info:    ... okay on input line 112.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 112.
-LaTeX Font Info:    ... okay on input line 112.
-LaTeX Font Info:    Checking defaults for T3/cmr/m/n on input line 112.
-LaTeX Font Info:    Trying to load font information for T3+cmr on input line 11
-2.
+(/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/latex/cs
+quotes/csquotes.def
+File: csquotes.def 2021-02-22 v5.2l csquotes generic definitions (JAW)
+)
+Package csquotes Info: Trying to load configuration file 'csquotes.cfg'...
+Package csquotes Info: ... configuration file loaded successfully.
+
+(/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/latex/cs
+quotes/csquotes.cfg
+File: csquotes.cfg 
+))
+\c@thm=\count335
+LaTeX Info: Redefining \diamondtimes on input line 120.
+Package csquotes Info: Checking for multilingual support...
+Package csquotes Info: ... none found.
+ (PolynomialFunctors.aux)
+\openout1 = `PolynomialFunctors.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 144.
+LaTeX Font Info:    ... okay on input line 144.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 144.
+LaTeX Font Info:    ... okay on input line 144.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 144.
+LaTeX Font Info:    ... okay on input line 144.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 144.
+LaTeX Font Info:    ... okay on input line 144.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 144.
+LaTeX Font Info:    ... okay on input line 144.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 144.
+LaTeX Font Info:    ... okay on input line 144.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 144.
+LaTeX Font Info:    ... okay on input line 144.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 144.
+LaTeX Font Info:    ... okay on input line 144.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 144.
+LaTeX Font Info:    ... okay on input line 144.
+LaTeX Font Info:    Checking defaults for T3/cmr/m/n on input line 144.
+LaTeX Font Info:    Trying to load font information for T3+cmr on input line 14
+4.
 
 (/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/latex/ti
 pa/t3cmr.fd
 File: t3cmr.fd 2001/12/31 TIPA font definitions
 )
-LaTeX Font Info:    ... okay on input line 112.
+LaTeX Font Info:    ... okay on input line 144.
 
 (/Library/Application Support/MiKTeX/texmfs/install/tex/context/base/mkii/supp-
 pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count319
-\scratchdimen=\dimen322
-\scratchbox=\box78
-\nofMPsegments=\count320
-\nofMParguments=\count321
-\everyMPshowfont=\toks49
-\MPscratchCnt=\count322
-\MPscratchDim=\dimen323
-\MPnumerator=\count323
-\makeMPintoPDFobject=\count324
-\everyMPtoPDFconversion=\toks50
+\scratchcounter=\count336
+\scratchdimen=\dimen331
+\scratchbox=\box84
+\nofMPsegments=\count337
+\nofMParguments=\count338
+\everyMPshowfont=\toks50
+\MPscratchCnt=\count339
+\MPscratchDim=\dimen332
+\MPnumerator=\count340
+\makeMPintoPDFobject=\count341
+\everyMPtoPDFconversion=\toks51
 )
 (/Library/Application Support/MiKTeX/texmfs/install/tex/latex/epstopdf-pkg/epst
 opdf-base.sty
@@ -1011,7 +1159,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 -sys.cfg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
-Package hyperref Info: Link coloring OFF on input line 112.
+Package hyperref Info: Link coloring OFF on input line 144.
 
 (/Library/Application Support/MiKTeX/texmfs/install/tex/latex/hyperref/nameref.
 sty
@@ -1025,377 +1173,326 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count325
+\c@section@level=\count342
 )
-LaTeX Info: Redefining \ref on input line 112.
-LaTeX Info: Redefining \pageref on input line 112.
-LaTeX Info: Redefining \nameref on input line 112.
- (LinearLogic.out) (LinearLogic.out)
+LaTeX Info: Redefining \ref on input line 144.
+LaTeX Info: Redefining \pageref on input line 144.
+LaTeX Info: Redefining \nameref on input line 144.
+ (PolynomialFunctors.out)
+(PolynomialFunctors.out)
 \@outlinefile=\write4
-\openout4 = `LinearLogic.out'.
+\openout4 = `PolynomialFunctors.out'.
 
-
-*geometry* driver: auto-detecting
-*geometry* detected driver: pdftex
-*geometry* verbose mode - [ preamble ] result:
-* driver: pdftex
-* paper: <default>
-* layout: <same size as paper>
-* layoutoffset:(h,v)=(0.0pt,0.0pt)
-* modes: 
-* h-part:(L,W,R)=(42.67912pt, 528.93675pt, 42.67912pt)
-* v-part:(T,H,B)=(42.67912pt, 709.61174pt, 42.67912pt)
-* \paperwidth=614.295pt
-* \paperheight=794.96999pt
-* \textwidth=528.93675pt
-* \textheight=709.61174pt
-* \oddsidemargin=-29.59087pt
-* \evensidemargin=-29.59087pt
-* \topmargin=-66.59087pt
-* \headheight=12.0pt
-* \headsep=25.0pt
-* \topskip=12.0pt
-* \footskip=30.0pt
-* \marginparwidth=44.0pt
-* \marginparsep=10.0pt
-* \columnsep=10.0pt
-* \skip\footins=10.8pt plus 4.0pt minus 2.0pt
-* \hoffset=0.0pt
-* \voffset=0.0pt
-* \mag=1000
-* \@twocolumnfalse
-* \@twosidefalse
-* \@mparswitchfalse
-* \@reversemarginfalse
-* (1in=72.27pt=25.4mm, 1cm=28.453pt)
-
-LaTeX Font Info:    Trying to load font information for U+msa on input line 114
+LaTeX Font Info:    Trying to load font information for U+msa on input line 146
 .
+
 (/Library/Application Support/MiKTeX/texmfs/install/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 114
+LaTeX Font Info:    Trying to load font information for U+msb on input line 146
 .
 (/Library/Application Support/MiKTeX/texmfs/install/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 11
-4.
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 14
+6.
 
 (/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/latex/jk
 nappen/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
 LaTeX Font Info:    Trying to load font information for U+stmry on input line 1
-14.
+46.
 
 (/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/latex/st
 maryrd/Ustmry.fd)
 LaTeX Font Info:    Trying to load font information for U+cmllr on input line 1
-14.
+46.
 
 (/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/latex/cm
-ll/ucmllr.fd) (LinearLogic.toc)
+ll/ucmllr.fd) (PolynomialFunctors.toc)
 \tf@toc=\write5
-\openout5 = `LinearLogic.toc'.
+\openout5 = `PolynomialFunctors.toc'.
 
- [1
+
+Overfull \hbox (1.40149pt too wide) in paragraph at lines 149--150
+\OT1/cmr/m/n/12 Coherence spaces have been described as ``a simplification of S
+cott domains..."
+ []
+
+[1
 
 {/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/data/pdftex/config/p
 dftex.map}]
-\myBox1=\box79
-\myScoreStart1=\dimen324
-\myCenter1=\dimen325
-\myScoreEnd1=\dimen326
-\myBox2=\box80
-\myScoreStart2=\dimen327
-\myCenter2=\dimen328
-\myScoreEnd2=\dimen329
- [2] [3] [4]
-Overfull \hbox (0.78737pt too wide) in paragraph at lines 298--299
- []|[][]$\OT1/cmr/m/n/12 (4)$[]| 
+Overfull \hbox (34.48137pt too wide) in paragraph at lines 166--167
+[]\OT1/cmr/m/n/12 Functions between sets are denoted by lower case roman letter
+s $\OML/cmm/m/it/12 f; g; h; j; k; l; []$ 
+ []
+
+[2] [3]
+Overfull \hbox (4.68008pt too wide) in paragraph at lines 224--225
+[][]\OT1/cmr/bx/n/12 Definition 3.0.2. []\OT1/cmr/m/n/12 The functor $\U/rsfs/m
+/n/12 F$ \OT1/cmr/m/n/12 satisfies the \OT1/cmr/bx/n/12 finite normal form prop
+erty
  []
 
 
-Overfull \hbox (0.78737pt too wide) in paragraph at lines 313--314
- []|[][]$\OT1/cmr/m/n/12 (5)$[]| 
+Overfull \hbox (2.08543pt too wide) in paragraph at lines 240--241
+[]\OT1/cmr/m/n/12 We know that all normal forms with the same codomain are isom
+orphic
+ []
+
+[4] [5]
+Overfull \hbox (6.42174pt too wide) in paragraph at lines 289--290
+\OT1/cmr/m/n/12 normal, and let $\OML/cmm/m/it/12 C[]$ \OT1/cmr/m/n/12 denote a
+ set of choices of representatives of the isomorphism
  []
 
 
-Overfull \hbox (0.78737pt too wide) in paragraph at lines 332--333
- []|[][]$\OT1/cmr/m/n/12 (6)$[]| 
- []
-
-
-Overfull \hbox (0.78737pt too wide) in paragraph at lines 351--352
- []|[][]$\OT1/cmr/m/n/12 (7)$[]| 
- []
-
-
-Overfull \hbox (0.78737pt too wide) in paragraph at lines 367--368
- []|[][]$\OT1/cmr/m/n/12 (8)$[]| 
- []
-
-
-Overfull \hbox (5.10706pt too wide) in paragraph at lines 390--390
- []|$[]$| 
- []
-
-[5]
-Overfull \hbox (5.10706pt too wide) in paragraph at lines 416--416
- []|$[]$| 
- []
-
-
-Overfull \hbox (5.10706pt too wide) in paragraph at lines 442--442
- []|$[]$| 
- []
-
-
-Overfull \hbox (5.10706pt too wide) in paragraph at lines 469--469
- []|$[]$| 
- []
-
-
-Overfull \hbox (5.10706pt too wide) in paragraph at lines 496--496
- []|$[]$| 
- []
-
-
-Overfull \hbox (5.10706pt too wide) in paragraph at lines 516--516
- []|$[]$| 
+Overfull \hbox (1.5072pt too wide) in paragraph at lines 307--309
+\OT1/cmr/m/n/12 First we show that these are both normal forms with respect to 
+$\OMX/MnSymbolE/m/n/12 à\OML/cmm/m/it/12 H; \U/rsfs/m/n/12 F\OMX/MnSymbolE/m/n/
+12 à\OML/cmm/m/it/12 \OMX/MnSymbolE/m/n/12 çà\OML/cmm/m/it/12 x\OMX/MnSymbolE/
+m/n/12 çç$\OT1/cmr/m/n/12 .
  []
 
 [6]
-Overfull \hbox (5.10706pt too wide) in paragraph at lines 542--542
- []|$[]$| 
+Overfull \hbox (48.74922pt too wide) in paragraph at lines 319--321
+\OT1/cmr/m/n/12 there exists a unique morphism $\OMX/MnSymbolE/m/n/12 à\OML/cmm
+/m/it/12 G; y\OMX/MnSymbolE/m/n/12 ç \U/MnSymbolA/m/n/12 –[]  \OMX/MnSymbolE/m/
+n/12 à\OML/cmm/m/it/12 K; z\OMX/MnSymbolE/m/n/12 ç$ \OT1/cmr/m/n/12 in the cate
+gory $[]\OMX/MnSymbolE/m/n/12 à\U/rsfs/m/n/12 F\OMX/MnSymbolE/m/n/12 ç~à\OML/cm
+m/m/it/12 H; \U/rsfs/m/n/12 F\OMX/MnSymbolE/m/n/12 à\OML/cmm/m/it/12 \OMX/MnSy
+mbolE/m/n/12 çà\OML/cmm/m/it/12 x\OMX/MnSymbolE/m/n/12 çç$\OT1/cmr/m/n/12 .
  []
 
 
-Overfull \hbox (5.10706pt too wide) in paragraph at lines 564--564
- []|$[]$| 
- []
-
-
-Overfull \hbox (3.04944pt too wide) in paragraph at lines 583--583
- []|[]| 
- []
-
-
-Overfull \hbox (5.10706pt too wide) in paragraph at lines 592--592
- []|$[]$| 
- []
-
-
-Overfull \hbox (33.01163pt too wide) in paragraph at lines 612--612
- []|[]| 
- []
-
-
-Overfull \hbox (5.10706pt too wide) in paragraph at lines 618--618
- []|$[]$| 
- []
-
-
-Overfull \hbox (25.17838pt too wide) in paragraph at lines 637--637
- []|[]| 
- []
-
-
-Overfull \hbox (5.10706pt too wide) in paragraph at lines 646--646
- []|$[]$| 
+Overfull \hbox (13.47362pt too wide) in paragraph at lines 337--338
+[]\OT1/cmr/m/n/12 The morphism $\OML/cmm/m/it/12  \U/MnSymbolC/m/n/12  \OMX/
+MnSymbolE/m/n/12 à\OML/cmm/m/it/12 L; w\OMX/MnSymbolE/m/n/12 ç \U/MnSymbolA/m/n
+/12 –[]  \OMX/MnSymbolE/m/n/12 à\OML/cmm/m/it/12 F; x\OMX/MnSymbolE/m/n/12 ç$ \
+OT1/cmr/m/n/12 induces the morphism $\OML/cmm/m/it/12 []$ \OT1/cmr/m/n/12 and 
+composing
  []
 
 [7]
-Overfull \hbox (5.10706pt too wide) in paragraph at lines 673--673
- []|$[]$| 
+Overfull \hbox (57.59029pt too wide) in paragraph at lines 345--346
+[]\OT1/cmr/m/n/12 Let $\OML/cmm/m/it/12 F \U/MnSymbolD/m/n/12 > [][]$ \OT1/cmr/
+m/n/12 and consider an element $\OMX/MnSymbolE/m/n/12 à\OML/cmm/m/it/12 G; ; y
+\OMX/MnSymbolE/m/n/12 ç$ \OT1/cmr/m/n/12 of $\U/rsfs/m/n/12 F\OMX/MnSymbolE/m/n
+/12 à\OML/cmm/m/it/12 F\OMX/MnSymbolE/m/n/12 ç \U/MnSymbolD/m/n/12   [][]\OMX/M
+nSymbolE/m/n/12 à[][]à\OML/cmm/m/it/12 G[]; F\OMX/MnSymbolE/m/n/12 ç \U/MnSymbo
+lC/m/n/12 
  []
 
 
-Overfull \hbox (5.10706pt too wide) in paragraph at lines 689--689
- []|$[]$| 
+Overfull \hbox (10.748pt too wide) in paragraph at lines 345--346
+\OT1/cmr/m/n/12 particular element of this set is $\OMX/MnSymbolE/m/n/12 à\OML/
+cmm/m/it/12 G; [][]; y\OMX/MnSymbolE/m/n/12 ç$\OT1/cmr/m/n/12 . We show that $\
+OML/cmm/m/it/12  \U/MnSymbolC/m/n/12  \OMX/MnSymbolE/m/n/12 à\OML/cmm/m/it/12
+ G; \OMX/MnSymbolE/m/n/12 à\OML/cmm/m/it/12 G; [][]; y\OMX/MnSymbolE/m/n/12 çç 
+\U/MnSymbolA/m/n/12 –[] 
+ []
+
+[8] [9]
+Overfull \hbox (0.50414pt too wide) in paragraph at lines 399--401
+\U/rsfs/m/n/12 F$ \OT1/cmr/bx/n/12 preserves directed colimits: \OT1/cmr/m/n/12
+ consider a directed system, that is, assume
+ []
+
+[10]
+Overfull \hbox (15.33041pt too wide) in paragraph at lines 451--453
+\OT1/cmr/m/n/12 Hence, $\OML/cmm/m/it/12 g[]\OMX/MnSymbolE/m/n/12 à\OML/cmm/m/i
+t/12 z[]\OMX/MnSymbolE/m/n/12 ç$ \OT1/cmr/m/n/12 is an element of $\OML/cmm/m/i
+t/12 C[]$ \OT1/cmr/m/n/12 such that $\OML/cmm/m/it/12 f\OMX/MnSymbolE/m/n/12 à\
+OML/cmm/m/it/12 g[]\OMX/MnSymbolE/m/n/12 à\OML/cmm/m/it/12 z[]\OMX/MnSymbolE/m/
+n/12 çç \U/MnSymbolD/m/n/12   \OML/cmm/m/it/12 z$\OT1/cmr/m/n/12 , establishing
+ surjectivity. 
  []
 
 
-Overfull \hbox (5.10706pt too wide) in paragraph at lines 711--711
- []|$[]$| 
+Overfull \hbox (6.12445pt too wide) in paragraph at lines 456--457
+\OT1/cmr/m/n/12 surjectivity how from this we obtain a $\OML/cmm/m/it/12 j \U/M
+nSymbolD/m/n/12 > \OML/cmm/m/it/12 I$ \OT1/cmr/m/n/12 along with a natural tran
+sformation
+ []
+
+[11]
+Overfull \hbox (8.02711pt too wide) in paragraph at lines 473--474
+[]\OT1/cmr/m/n/12 Combining [] and [] we obtain commutativity of the following 
+diagram. 
+ []
+
+[12]
+Overfull \hbox (2.26134pt too wide) in paragraph at lines 510--512
+\OT1/cmr/m/n/12 are normal forms with respect to $\OMX/MnSymbolE/m/n/12 à\OML/c
+mm/m/it/12 G; \U/rsfs/m/n/12 F\OML/cmm/m/it/12 []\OMX/MnSymbolE/m/n/12 à\OML/c
+mm/m/it/12 w[]\OMX/MnSymbolE/m/n/12 çç$ \OT1/cmr/m/n/12 (note, $\U/rsfs/m/n/12 
+F\OML/cmm/m/it/12 []\OMX/MnSymbolE/m/n/12 à\OML/cmm/m/it/12 w[]\OMX/MnSymbolE/
+m/n/12 ç$ \OT1/cmr/m/n/12 is independent
  []
 
 
-Overfull \hbox (5.10706pt too wide) in paragraph at lines 734--734
- []|$[]$| 
+Overfull \hbox (23.2346pt too wide) in paragraph at lines 515--516
+[]\OT1/cmr/m/n/12 By the universal property of the pullback, there exists a nat
+ural transformation
+ []
+
+[13]
+Overfull \hbox (3.44731pt too wide) in paragraph at lines 563--564
+[]\OT1/cmr/m/n/12 First, notice that for $\OML/cmm/m/it/12 k \U/MnSymbolD/m/n/1
+2   \OT1/cmr/m/n/12 1\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 2$ and all $\OML/cmm/m/
+it/12 i \U/MnSymbolD/m/n/12 > \OML/cmm/m/it/12 I$ \OT1/cmr/m/n/12 we have $\U/r
+sfs/m/n/12 F\OMX/MnSymbolE/m/n/12 à\OML/cmm/m/it/12 [][]\OMX/MnSymbolE/m/n/12
+ ç \U/MnSymbolD/m/n/12   \OML/cmm/m/it/12 []f\U/rsfs/m/n/12 F\OMX/MnSymbolE/m/
+n/12 à\OML/cmm/m/it/12 []\OMX/MnSymbolE/m/n/12 çà\OML/cmm/m/it/12 x\OMX/MnSymb
+olE/m/n/12 ç$\OT1/cmr/m/n/12 .
+ []
+
+[14]
+
+Package amsfonts Warning: Obsolete command \bold; \mathbf should be used instea
+d on input line 584.
+
+[15]
+Overfull \hbox (15.46347pt too wide) in paragraph at lines 617--618
+[]\OT1/cmr/m/n/12 Consider the collection of all finite functors $\OML/cmm/m/it
+/12 G \U/MnSymbolD/m/n/12 > [][]$ \OT1/cmr/m/n/12 and monomorphisms
+ []
+
+[16]
+Overfull \hbox (3.70378pt too wide) in paragraph at lines 642--643
+\OT1/cmr/m/n/12 corresponding morphism of the colimit. We thus have a commutati
+ve diagram. 
  []
 
 
-Overfull \hbox (3.04944pt too wide) in paragraph at lines 746--746
- []|[]| 
+Overfull \hbox (12.7597pt too wide) in paragraph at lines 651--652
+[]\OT1/cmr/m/n/12 The final preliminary lemma required states that morphisms ou
+t of saturated
+ []
+
+[17] [18]
+Overfull \hbox (1.03317pt too wide) in paragraph at lines 720--721
+[][]\OT1/cmr/bx/n/12 Theorem 5.0.4. []\OT1/cmr/m/it/12 Let $\OML/cmm/m/it/12 f 
+\U/MnSymbolC/m/n/12  \OMX/MnSymbolE/m/n/12 à\OML/cmm/m/it/12 X; \U/rsfs/m/n/12
+ X\OMX/MnSymbolE/m/n/12 ç \U/MnSymbolA/m/n/12 –[]  \OMX/MnSymbolE/m/n/12 à\OML/
+cmm/m/it/12 Y; \U/rsfs/m/n/12 Y\OMX/MnSymbolE/m/n/12 ç$ \OT1/cmr/m/it/12 be a s
+table function of qualitative
  []
 
 
-Overfull \hbox (5.10706pt too wide) in paragraph at lines 755--755
- []|$[]$| 
+Overfull \hbox (50.58058pt too wide) detected at line 740
+[] []\OMX/MnSymbolE/m/n/12 à\OML/cmm/m/it/12 f\OMX/MnSymbolE/m/n/12 ç \U/MnSymb
+olC/m/n/12 \U/MnSymbolD/m/n/12   \OMX/MnSymbolE/m/n/12 òà\OML/cmm/m/it/12 W; w
+\OMX/MnSymbolE/m/n/12 ç \U/MnSymbolD/m/n/12 > \OMS/MnSymbolS/m/n/12 P[]\OMX/MnS
+ymbolE/m/n/12 à\OML/cmm/m/it/12 X\OMX/MnSymbolE/m/n/12 ç \U/MnSymbolC/m/n/12  
+\OML/cmm/m/it/12 Y \OMX/MnSymbolE/m/n/12 S \U/MnSymbolC/m/n/12 ß\OML/cmm/m/it/1
+2 U \U/MnSymbolD/m/n/12 > \OML/cmm/m/it/12 W \U/MnSymbolC/m/n/12 9 \U/rsfs/m/n/
+12 X\OML/cmm/m/it/12 ; w \U/MnSymbolD/m/n/12 > \OML/cmm/m/it/12 f\OMX/MnSymbolE
+/m/n/12 à\OML/cmm/m/it/12 U\OMX/MnSymbolE/m/n/12 ç[]\U/MnSymbolC/m/n/12 ¶\OML/c
+mm/m/it/12 V \U/MnSymbolD/m/n/12 b \OML/cmm/m/it/12 U; V \U/MnSymbolD/m/n/12 x 
+\OML/cmm/m/it/12 U \U/MnSymbolA/m/n/12  \OML/cmm/m/it/12 w [] f\OMX/MnSymbolE/
+m/n/12 à\OML/cmm/m/it/12 V\OMX/MnSymbolE/m/n/12 çù
+ []
+
+[19]
+Overfull \hbox (3.45625pt too wide) in paragraph at lines 759--760
+[]\OT1/cmr/m/n/12 Adopting the attitude that a function is a subset of a cartes
+ian product,
  []
 
 
-Overfull \hbox (33.01163pt too wide) in paragraph at lines 771--771
- []|[]| 
+Package amsfonts Warning: Obsolete command \frak; \mathfrak should be used inst
+ead on input line 761.
+
+LaTeX Font Info:    Trying to load font information for U+euf on input line 761
+.
+(/Library/Application Support/MiKTeX/texmfs/install/tex/latex/amsfonts/ueuf.fd
+File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
+) [20]
+Overfull \hbox (11.06682pt too wide) in paragraph at lines 808--809
+[][]\OT1/cmr/bx/n/12 Proposition 5.0.8. []\OT1/cmr/m/it/12 If $\OMX/MnSymbolE/m
+/n/12 à\OML/cmm/m/it/12 X; \U/rsfs/m/n/12 X\OMX/MnSymbolE/m/n/12 ç\OML/cmm/m/it
+/12 ; \OMX/MnSymbolE/m/n/12 à\OML/cmm/m/it/12 Y; \U/rsfs/m/n/12 Y\OMX/MnSymbolE
+/m/n/12 ç$ \OT1/cmr/m/it/12 are qualitative domains, then $\OMX/MnSymbolE/m/n/1
+2 à\OMS/MnSymbolS/m/n/12 P[]\OMX/MnSymbolE/m/n/12 à\OML/cmm/m/it/12 X\OMX/MnSym
+bolE/m/n/12 ç \U/MnSymbolC/m/n/12 
  []
 
-
-Overfull \hbox (5.10706pt too wide) in paragraph at lines 777--777
- []|$[]$| 
- []
-
-
-Overfull \hbox (25.17838pt too wide) in paragraph at lines 792--792
- []|[]| 
- []
-
-
-Overfull \hbox (5.10706pt too wide) in paragraph at lines 801--801
- []|$[]$| 
- []
-
-[8]
-Overfull \hbox (5.10706pt too wide) in paragraph at lines 824--824
- []|$[]$| 
- []
-
-[9]
-<TensorSwitch.jpg, id=197, 2425.06pt x 774.895pt>
-File: TensorSwitch.jpg Graphic file (type jpg)
-<use TensorSwitch.jpg>
-Package pdftex.def Info: TensorSwitch.jpg  used on input line 916.
-(pdftex.def)             Requested size: 423.151pt x 135.20663pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-<ParSwitch.jpg, id=198, 2400.97pt x 662.475pt>
-File: ParSwitch.jpg Graphic file (type jpg)
-<use ParSwitch.jpg>
-Package pdftex.def Info: ParSwitch.jpg  used on input line 922.
-(pdftex.def)             Requested size: 423.151pt x 116.75365pt.
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[10] [11 <./TensorSwitch.jpg> <./ParSwitch.jpg>] [12] [13]
-Overfull \hbox (3.84572pt too wide) in paragraph at lines 1122--1123
-[][]\OT1/cmr/bx/n/12 Lemma 2.0.13 \OT1/cmr/m/n/12 (Realisation Lemma)\OT1/cmr/b
-x/n/12 . []\OT1/cmr/m/it/12 Let $\OML/cmm/m/it/12 $ \OT1/cmr/m/it/12 be a cut-
-free proof structure satisfying the long trip condition,
- []
-
-[14] [15] [16] [17] [18] [19] [20] [21]
-Overfull \hbox (3.20361pt too wide) in paragraph at lines 1631--1632
-\OT1/cmr/m/n/12 program, in which two proofs $\OML/cmm/m/it/12 ; []$ \OT1/cmr
-/m/n/12 which are cut-equivalent to each other are given the same interpretatio
-n
- []
-
-[22]
-Overfull \hbox (32.95467pt too wide) in paragraph at lines 1691--1692
-[][]\OT1/cmr/bx/n/12 Definition 4.0.4. []\OT1/cmr/m/n/12 Let $\OML/cmm/m/it/12 
-A$ \OT1/cmr/m/n/12 be a formula. The \OT1/cmr/bx/n/12 sequence of oriented atom
-s \OT1/cmr/m/n/12 of $\OML/cmm/m/it/12 A$ \OT1/cmr/m/n/12 is $\OML/cmm/m/it/12 
-a\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 A\OT1/cmr/m/n/12 ) = (\OML/cmm/m/it/12 X[]; 
-x[]\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 ; [] ; \OT1/cmr/m/n/12 (\OML/cmm/m/it/12 X
-[]; x[]\OT1/cmr/m/n/12 )$
+[21] [22]
+Overfull \hbox (4.77727pt too wide) in paragraph at lines 871--872
+[]\OT1/cmr/m/n/12 On the other hand, if $\OML/cmm/m/it/12 y \U/MnSymbolD/m/n/12
+ > []\OMX/MnSymbolE/m/n/12 à[]à\OML/cmm/m/it/12 f\OMX/MnSymbolE/m/n/12 ç\OML/cm
+m/m/it/12 ; U\OMX/MnSymbolE/m/n/12 ç$ \OT1/cmr/m/n/12 then by definition of $[]
+\OMX/MnSymbolE/m/n/12 à[]à\OML/cmm/m/it/12 f\OMX/MnSymbolE/m/n/12 ç\OML/cmm/m/i
+t/12 ; U\OMX/MnSymbolE/m/n/12 ç$
  []
 
 [23]
-<Switching.jpg, id=435, 2105.8675pt x 1337.99875pt>
-File: Switching.jpg Graphic file (type jpg)
-<use Switching.jpg>
-Package pdftex.def Info: Switching.jpg  used on input line 1751.
-(pdftex.def)             Requested size: 569.05511pt x 361.55032pt.
-
-Overfull \hbox (40.11836pt too wide) in paragraph at lines 1751--1752
- [][] 
+Overfull \hbox (0.37175pt too wide) in paragraph at lines 878--880
+\OT1/cmr/m/n/12 For any element $\OML/cmm/m/it/12 y \U/MnSymbolD/m/n/12 > [][] 
+[]\OMX/MnSymbolE/m/n/12 à\U/euf/m/n/12 a[]\OML/cmm/m/it/12 ; U[]\OMX/MnSymbolE/
+m/n/12 ç$ \OT1/cmr/m/n/12 there exists $\OML/cmm/m/it/12 i \U/MnSymbolD/m/n/12 
+> \OML/cmm/m/it/12 I$ \OT1/cmr/m/n/12 such that $\OML/cmm/m/it/12 y \U/MnSymbol
+D/m/n/12 > []\OMX/MnSymbolE/m/n/12 à\U/euf/m/n/12 a[]\OML/cmm/m/it/12 ; U[]\OMX
+/MnSymbolE/m/n/12 ç$
  []
 
 
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[24] [25 <./Switching.jpg>]
-Overfull \hbox (4.1597pt too wide) in paragraph at lines 1841--1842
-[][]\OT1/cmr/bx/n/12 Corollary 4.1.8. []\OT1/cmr/m/it/12 Let $\OML/cmm/m/it/12 
-$ \OT1/cmr/m/it/12 be a cut-free proof net with conclusions $\OML/cmm/m/it/12 
-A[]; :::; A[]$\OT1/cmr/m/it/12 , assume also that all conclusions
+Overfull \hbox (1.61261pt too wide) in paragraph at lines 885--886
+[][]\OT1/cmr/bx/n/12 Lemma 5.0.12. []\OT1/cmr/m/it/12 Let $\OMX/MnSymbolE/m/n/1
+2 à\OML/cmm/m/it/12 X; \U/rsfs/m/n/12 X\OMX/MnSymbolE/m/n/12 ç\OML/cmm/m/it/12 
+; \OMX/MnSymbolE/m/n/12 à\OML/cmm/m/it/12 Y; \U/rsfs/m/n/12 Y\OMX/MnSymbolE/m/n
+/12 ç$ \OT1/cmr/m/it/12 be qualitative domains. For every subset
  []
 
-[26] [27] [28] [29]
-Overfull \hbox (29.06499pt too wide) detected at line 2103
-[]
- []
-
-[30] [31] [32] [33] [34]
-Overfull \hbox (29.45995pt too wide) in paragraph at lines 2410--2413
-\OT1/cmr/m/n/12 For this following diagram, we have $\OML/cmm/m/it/12 U[] \OT1/
-cmr/m/n/12 = \OMS/cmsy/m/n/12 f\OML/cmm/m/it/12 X[]; [] ; X[]\OMS/cmsy/m/n/12 g
-\OML/cmm/m/it/12 ; U[] \OT1/cmr/m/n/12 = \OMS/cmsy/m/n/12 f\OML/cmm/m/it/12 Y[]
-; [] ; Y[]\OMS/cmsy/m/n/12 g\OML/cmm/m/it/12 ; U[] \OT1/cmr/m/n/12 = \OMS/cmsy/
-m/n/12 f\OML/cmm/m/it/12 X[]; [] ; X[]; Y[]; [] ; Y[]\OMS/cmsy/m/n/12 g$\OT1/cm
-r/m/n/12 ,
- []
-
-[35] [36] [37] [38] [39]
-Overfull \hbox (12.36322pt too wide) in paragraph at lines 2663--2665
-\OT1/cmr/m/n/12 Consider also $\U/stmry/m/n/12 J\OML/cmm/m/it/12 \U/stmry/m/n/
-12 K\OML/cmm/m/it/12 \U/stmry/m/n/12 J\OML/cmm/m/it/12 \U/stmry/m/n/12 K$\OT1
-/cmr/m/n/12 , which is a matrix whose $\OML/cmm/m/it/12 ij[]$ \OT1/cmr/m/n/12 e
-ntry corresponds to the sum of operators corresponding
- []
-
-[40] [41]
-Overfull \hbox (4.30833pt too wide) in paragraph at lines 2863--2864
-[]\OT1/cmr/m/n/12 It is clear by inspection of the rules in Definition []4.6.6[
-] that the transformations preserve persistency
- []
-
-[42] [43] (LinearLogic.aux)
-
-LaTeX Warning: There were multiply-defined labels.
-
-Package rerunfilecheck Info: File `LinearLogic.out' has not changed.
-(rerunfilecheck)             Checksum: 8D6912277212AB7B9698665D1AF8FEBC;1853.
+[24] [25] [26] [27] (PolynomialFunctors.aux)
+Package rerunfilecheck Info: File `PolynomialFunctors.out' has not changed.
+(rerunfilecheck)             Checksum: 31D948E192D36CE8B61FE64A5D00043D;1084.
  ) 
 Here is how much of TeX's memory you used:
- 32453 strings out of 481099
- 664524 string characters out of 2904467
- 918360 words of memory out of 3000000
- 48993 multiletter control sequences out of 15000+600000
- 416890 words of font info for 86 fonts, out of 8000000 for 9000
+ 29326 strings out of 481099
+ 547245 string characters out of 2904467
+ 782168 words of memory out of 3000000
+ 45958 multiletter control sequences out of 15000+600000
+ 427240 words of font info for 119 fonts, out of 8000000 for 9000
  0 hyphenation exceptions out of 8191
- 98i,24n,103p,2987b,1270s stack positions out of 5000i,500n,10000p,200000b,80000s
- </Users/wtroiani/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljf
-our/jknappen/ec/dpi600/tcrm1200.pk></Library/Application Support/MiKTeX/texmfs/
-install/fonts/type1/public/amsfonts/cm/cmbx12.pfb></Library/Application Support
-/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmex10.pfb></Users/wtroia
-ni/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/cmll/cm
-llr12.pfb></Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/fo
-nts/type1/public/cmll/cmllr8.pfb></Library/Application Support/MiKTeX/texmfs/in
-stall/fonts/type1/public/amsfonts/cm/cmmi12.pfb></Library/Application Support/M
-iKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi6.pfb></Library/Applica
-tion Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi8.pfb></L
-ibrary/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm
-/cmr12.pfb></Library/Application Support/MiKTeX/texmfs/install/fonts/type1/publ
-ic/amsfonts/cm/cmr17.pfb></Library/Application Support/MiKTeX/texmfs/install/fo
-nts/type1/public/amsfonts/cm/cmr6.pfb></Library/Application Support/MiKTeX/texm
-fs/install/fonts/type1/public/amsfonts/cm/cmr8.pfb></Library/Application Suppor
-t/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy10.pfb></Library/App
-lication Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy6.pfb
-></Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfont
-s/cm/cmsy8.pfb></Library/Application Support/MiKTeX/texmfs/install/fonts/type1/
-public/amsfonts/cm/cmti12.pfb></Library/Application Support/MiKTeX/texmfs/insta
-ll/fonts/type1/public/amsfonts/cm/cmtt12.pfb></Library/Application Support/MiKT
-eX/texmfs/install/fonts/type1/public/amsfonts/symbols/msam10.pfb></Library/Appl
-ication Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/symbols/msbm1
-0.pfb></Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/fonts/
-type1/public/hoekwater/stmary10.pfb>
-Output written on LinearLogic.pdf (43 pages, 1010899 bytes).
+ 98i,15n,103p,1258b,1095s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/fonts/enc/
+dvips/mnsymbol/MnSymbolE.enc}{/Users/wtroiani/Library/Application Support/MiKTe
+X/texmfs/install/fonts/enc/dvips/mnsymbol/MnSymbolS.enc}{/Users/wtroiani/Librar
+y/Application Support/MiKTeX/texmfs/install/fonts/enc/dvips/mnsymbol/MnSymbolF.
+enc}{/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/fonts/en
+c/dvips/mnsymbol/MnSymbolD.enc}{/Users/wtroiani/Library/Application Support/MiK
+TeX/texmfs/install/fonts/enc/dvips/mnsymbol/MnSymbolC.enc} </Users/wtroiani/Lib
+rary/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/
+tcrm1200.pk>{/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/
+fonts/enc/dvips/mnsymbol/MnSymbolA.enc}</Users/wtroiani/Library/Application Sup
+port/MiKTeX/texmfs/install/fonts/type1/public/mnsymbol/MnSymbol12.pfb></Users/w
+troiani/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/mn
+symbol/MnSymbol6.pfb></Users/wtroiani/Library/Application Support/MiKTeX/texmfs
+/install/fonts/type1/public/mnsymbol/MnSymbol8.pfb></Library/Application Suppor
+t/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmbx12.pfb></Users/wtroi
+ani/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/cmll/c
+mllr12.pfb></Library/Application Support/MiKTeX/texmfs/install/fonts/type1/publ
+ic/amsfonts/cm/cmmi12.pfb></Library/Application Support/MiKTeX/texmfs/install/f
+onts/type1/public/amsfonts/cm/cmmi6.pfb></Library/Application Support/MiKTeX/te
+xmfs/install/fonts/type1/public/amsfonts/cm/cmmi8.pfb></Library/Application Sup
+port/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmr12.pfb></Library/A
+pplication Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmr17.p
+fb></Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfo
+nts/cm/cmr6.pfb></Library/Application Support/MiKTeX/texmfs/install/fonts/type1
+/public/amsfonts/cm/cmr8.pfb></Library/Application Support/MiKTeX/texmfs/instal
+l/fonts/type1/public/amsfonts/cm/cmti12.pfb></Library/Application Support/MiKTe
+X/texmfs/install/fonts/type1/public/amsfonts/cm/cmti8.pfb></Library/Application
+ Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/euler/eufm10.pfb></L
+ibrary/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/sy
+mbols/msbm10.pfb></Library/Application Support/MiKTeX/texmfs/install/fonts/type
+1/public/rsfs/rsfs10.pfb>
+Output written on PolynomialFunctors.pdf (27 pages, 361136 bytes).
 PDF statistics:
- 842 PDF objects out of 1000 (max. 8388607)
- 320 named destinations out of 1000 (max. 500000)
- 108 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 479 PDF objects out of 1000 (max. 8388607)
+ 167 named destinations out of 1000 (max. 500000)
+ 77 words of extra memory for PDF output out of 10000 (max. 10000000)
 

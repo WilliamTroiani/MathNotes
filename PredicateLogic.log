@@ -1,7 +1,7 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.5.21)  18 JUL 2022 11:43
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.5.21)  21 JUL 2022 13:32
 entering extended mode
-**./LinearLogic.tex
-(LinearLogic.tex
+**./PredicateLogic.tex
+(PredicateLogic.tex
 LaTeX2e <2020-10-01> patch level 4
 L3 programming layer <2021-05-11>
 (/Library/Application Support/MiKTeX/texmfs/install/tex/latex/base/article.cls
@@ -834,172 +834,53 @@ Package: cmll 2010/04/20 Linear Logic symbols for Computer Modern
 \symllsymbols=\mathgroup8
 LaTeX Font Info:    Overwriting symbol font `llsymbols' in version `bold'
 (Font)                  U/cmllr/m/n --> U/cmllr/bx/n on input line 49.
-) (quiver.sty
-Package: quiver 2021/01/11 quiver
-
-(/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/frontendlay
-er/tikz/libraries/tikzlibrarycalc.code.tex
-File: tikzlibrarycalc.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 )
-(/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/frontendlay
-er/tikz/libraries/tikzlibrarydecorations.pathmorphing.code.tex
-(/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/frontendlay
-er/tikz/libraries/tikzlibrarydecorations.code.tex
-(/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/modules/pgf
-moduledecorations.code.tex
-\pgfdecoratedcompleteddistance=\dimen295
-\pgfdecoratedremainingdistance=\dimen296
-\pgfdecoratedinputsegmentcompleteddistance=\dimen297
-\pgfdecoratedinputsegmentremainingdistance=\dimen298
-\pgf@decorate@distancetomove=\dimen299
-\pgf@decorate@repeatstate=\count312
-\pgfdecorationsegmentamplitude=\dimen300
-\pgfdecorationsegmentlength=\dimen301
-)
-\tikz@lib@dec@box=\box76
-)
-(/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/libraries/d
-ecorations/pgflibrarydecorations.pathmorphing.code.tex)))
-(/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/latex/ad
-justbox/adjustbox.sty
-Package: adjustbox 2020/08/19 v1.3 Adjusting TeX boxes (trim, clip, ...)
+\c@thm=\count312
+ (PredicateLogic.aux)
+\openout1 = `PredicateLogic.aux'.
 
-(/Library/Application Support/MiKTeX/texmfs/install/tex/latex/xkeyval/xkeyval.s
-ty
-Package: xkeyval 2020/11/20 v2.8 package option processing (HA)
-
-(/Library/Application Support/MiKTeX/texmfs/install/tex/generic/xkeyval/xkeyval
-.tex
-(/Library/Application Support/MiKTeX/texmfs/install/tex/generic/xkeyval/xkvutil
-s.tex
-\XKV@toks=\toks46
-\XKV@tempa@toks=\toks47
-)
-\XKV@depth=\count313
-File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
-))
-(/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/latex/ad
-justbox/adjcalc.sty
-Package: adjcalc 2012/05/16 v1.1 Provides advanced setlength with multiple back
--ends (calc, etex, pgfmath)
-)
-(/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/latex/ad
-justbox/trimclip.sty
-Package: trimclip 2020/08/19 v1.2 Trim and clip general TeX material
-
-(/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/latex/co
-llectbox/collectbox.sty
-Package: collectbox 2012/05/17 v0.4b Collect macro arguments as boxes
-\collectedbox=\box77
-)
-\tc@llx=\dimen302
-\tc@lly=\dimen303
-\tc@urx=\dimen304
-\tc@ury=\dimen305
-Package trimclip Info: Using driver 'tc-pdftex.def'.
-
-(/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/latex/ad
-justbox/tc-pdftex.def
-File: tc-pdftex.def 2019/01/04 v2.2 Clipping driver for pdftex
-))
-\adjbox@Width=\dimen306
-\adjbox@Height=\dimen307
-\adjbox@Depth=\dimen308
-\adjbox@Totalheight=\dimen309
-\adjbox@pwidth=\dimen310
-\adjbox@pheight=\dimen311
-\adjbox@pdepth=\dimen312
-\adjbox@ptotalheight=\dimen313
-
-(/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/latex/if
-oddpage/ifoddpage.sty
-Package: ifoddpage 2016/04/23 v1.1 Conditionals for odd/even page detection
-\c@checkoddpage=\count314
-))
-(/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/generic/
-genmisc/kbordermatrix.sty
-Package: kbordermatrix 2011/09/21 Bordered matrix with brackets
-\kbcolsep=\skip66
-\kbrowsep=\skip67
-\br@kwd=\skip68
-\k@bordht=\skip69
-)
-\c@thm=\count315
-
-(/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/latex/ge
-ometry/geometry.sty
-Package: geometry 2020/01/02 v5.9 Page Geometry
-
-(/Library/Application Support/MiKTeX/texmfs/install/tex/generic/iftex/ifvtex.st
-y
-Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
-)
-\Gm@cnth=\count316
-\Gm@cntv=\count317
-\c@Gm@tempcnt=\count318
-\Gm@bindingoffset=\dimen314
-\Gm@wd@mp=\dimen315
-\Gm@odd@mp=\dimen316
-\Gm@even@mp=\dimen317
-\Gm@layoutwidth=\dimen318
-\Gm@layoutheight=\dimen319
-\Gm@layouthoffset=\dimen320
-\Gm@layoutvoffset=\dimen321
-\Gm@dimlist=\toks48
-
-(/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/latex/ge
-ometry/geometry.cfg)) (LinearLogic.aux
-
-LaTeX Warning: Label `LL:times' multiply defined.
-
-
-LaTeX Warning: Label `eq:standard_example' multiply defined.
-
-)
-\openout1 = `LinearLogic.aux'.
-
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 112.
-LaTeX Font Info:    ... okay on input line 112.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 112.
-LaTeX Font Info:    ... okay on input line 112.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 112.
-LaTeX Font Info:    ... okay on input line 112.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 112.
-LaTeX Font Info:    ... okay on input line 112.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 112.
-LaTeX Font Info:    ... okay on input line 112.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 112.
-LaTeX Font Info:    ... okay on input line 112.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 112.
-LaTeX Font Info:    ... okay on input line 112.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 112.
-LaTeX Font Info:    ... okay on input line 112.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 112.
-LaTeX Font Info:    ... okay on input line 112.
-LaTeX Font Info:    Checking defaults for T3/cmr/m/n on input line 112.
-LaTeX Font Info:    Trying to load font information for T3+cmr on input line 11
-2.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 107.
+LaTeX Font Info:    ... okay on input line 107.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 107.
+LaTeX Font Info:    ... okay on input line 107.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 107.
+LaTeX Font Info:    ... okay on input line 107.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 107.
+LaTeX Font Info:    ... okay on input line 107.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 107.
+LaTeX Font Info:    ... okay on input line 107.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 107.
+LaTeX Font Info:    ... okay on input line 107.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 107.
+LaTeX Font Info:    ... okay on input line 107.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 107.
+LaTeX Font Info:    ... okay on input line 107.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 107.
+LaTeX Font Info:    ... okay on input line 107.
+LaTeX Font Info:    Checking defaults for T3/cmr/m/n on input line 107.
+LaTeX Font Info:    Trying to load font information for T3+cmr on input line 10
+7.
 
 (/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/latex/ti
 pa/t3cmr.fd
 File: t3cmr.fd 2001/12/31 TIPA font definitions
 )
-LaTeX Font Info:    ... okay on input line 112.
+LaTeX Font Info:    ... okay on input line 107.
 
 (/Library/Application Support/MiKTeX/texmfs/install/tex/context/base/mkii/supp-
 pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count319
-\scratchdimen=\dimen322
-\scratchbox=\box78
-\nofMPsegments=\count320
-\nofMParguments=\count321
-\everyMPshowfont=\toks49
-\MPscratchCnt=\count322
-\MPscratchDim=\dimen323
-\MPnumerator=\count323
-\makeMPintoPDFobject=\count324
-\everyMPtoPDFconversion=\toks50
+\scratchcounter=\count313
+\scratchdimen=\dimen295
+\scratchbox=\box76
+\nofMPsegments=\count314
+\nofMParguments=\count315
+\everyMPshowfont=\toks46
+\MPscratchCnt=\count316
+\MPscratchDim=\dimen296
+\MPnumerator=\count317
+\makeMPintoPDFobject=\count318
+\everyMPtoPDFconversion=\toks47
 )
 (/Library/Application Support/MiKTeX/texmfs/install/tex/latex/epstopdf-pkg/epst
 opdf-base.sty
@@ -1011,7 +892,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 -sys.cfg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
-Package hyperref Info: Link coloring OFF on input line 112.
+Package hyperref Info: Link coloring OFF on input line 107.
 
 (/Library/Application Support/MiKTeX/texmfs/install/tex/latex/hyperref/nameref.
 sty
@@ -1025,377 +906,183 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count325
+\c@section@level=\count319
 )
-LaTeX Info: Redefining \ref on input line 112.
-LaTeX Info: Redefining \pageref on input line 112.
-LaTeX Info: Redefining \nameref on input line 112.
- (LinearLogic.out) (LinearLogic.out)
+LaTeX Info: Redefining \ref on input line 107.
+LaTeX Info: Redefining \pageref on input line 107.
+LaTeX Info: Redefining \nameref on input line 107.
+ (PredicateLogic.out) (PredicateLogic.out)
 \@outlinefile=\write4
-\openout4 = `LinearLogic.out'.
+\openout4 = `PredicateLogic.out'.
 
-
-*geometry* driver: auto-detecting
-*geometry* detected driver: pdftex
-*geometry* verbose mode - [ preamble ] result:
-* driver: pdftex
-* paper: <default>
-* layout: <same size as paper>
-* layoutoffset:(h,v)=(0.0pt,0.0pt)
-* modes: 
-* h-part:(L,W,R)=(42.67912pt, 528.93675pt, 42.67912pt)
-* v-part:(T,H,B)=(42.67912pt, 709.61174pt, 42.67912pt)
-* \paperwidth=614.295pt
-* \paperheight=794.96999pt
-* \textwidth=528.93675pt
-* \textheight=709.61174pt
-* \oddsidemargin=-29.59087pt
-* \evensidemargin=-29.59087pt
-* \topmargin=-66.59087pt
-* \headheight=12.0pt
-* \headsep=25.0pt
-* \topskip=12.0pt
-* \footskip=30.0pt
-* \marginparwidth=44.0pt
-* \marginparsep=10.0pt
-* \columnsep=10.0pt
-* \skip\footins=10.8pt plus 4.0pt minus 2.0pt
-* \hoffset=0.0pt
-* \voffset=0.0pt
-* \mag=1000
-* \@twocolumnfalse
-* \@twosidefalse
-* \@mparswitchfalse
-* \@reversemarginfalse
-* (1in=72.27pt=25.4mm, 1cm=28.453pt)
-
-LaTeX Font Info:    Trying to load font information for U+msa on input line 114
+LaTeX Font Info:    Trying to load font information for U+msa on input line 110
 .
+
 (/Library/Application Support/MiKTeX/texmfs/install/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 114
+LaTeX Font Info:    Trying to load font information for U+msb on input line 110
 .
 (/Library/Application Support/MiKTeX/texmfs/install/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Trying to load font information for U+rsfs on input line 11
-4.
+0.
 
 (/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/latex/jk
 nappen/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
 LaTeX Font Info:    Trying to load font information for U+stmry on input line 1
-14.
+10.
 
 (/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/latex/st
 maryrd/Ustmry.fd)
 LaTeX Font Info:    Trying to load font information for U+cmllr on input line 1
-14.
+10.
 
 (/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/latex/cm
-ll/ucmllr.fd) (LinearLogic.toc)
+ll/ucmllr.fd) (PredicateLogic.toc)
 \tf@toc=\write5
-\openout5 = `LinearLogic.toc'.
+\openout5 = `PredicateLogic.toc'.
 
- [1
+
+Overfull \hbox (3.63304pt too wide) in paragraph at lines 112--113
+\OT1/cmr/m/n/12 A baby correctly moves to the softer floor to crawl on. Immedia
+tely interacting
+ []
+
+[1
 
 {/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/data/pdftex/config/p
 dftex.map}]
-\myBox1=\box79
-\myScoreStart1=\dimen324
-\myCenter1=\dimen325
-\myScoreEnd1=\dimen326
-\myBox2=\box80
-\myScoreStart2=\dimen327
-\myCenter2=\dimen328
-\myScoreEnd2=\dimen329
- [2] [3] [4]
-Overfull \hbox (0.78737pt too wide) in paragraph at lines 298--299
- []|[][]$\OT1/cmr/m/n/12 (4)$[]| 
+Overfull \hbox (3.3774pt too wide) in paragraph at lines 120--121
+[]\OT1/cmr/m/n/12 Another example. One does not stumble over the lack of rigoro
+us definition
+ []
+
+[2]
+Overfull \hbox (7.14171pt too wide) in paragraph at lines 125--126
+\OT1/cmr/m/n/12 What does an author ask of the reader when the author is defini
+ng foundations?
+ []
+
+[3]
+Overfull \hbox (5.64035pt too wide) in paragraph at lines 135--136
+\OT1/cmr/m/n/12 definition in Definition []2.0.1[], but we will remark afterwar
+ds that this Definition
+ []
+
+[4] [5] [6]
+Overfull \hbox (14.53978pt too wide) in paragraph at lines 256--257
+\OT1/cmr/m/n/12 beginning of this Section. Mathematics is an inherently philoso
+phical endeavour,
+ []
+
+[7] [8] [9]
+\myBox1=\box77
+\myScoreStart1=\dimen297
+\myCenter1=\dimen298
+\myScoreEnd1=\dimen299
+\myBox2=\box78
+\myScoreStart2=\dimen300
+\myCenter2=\dimen301
+\myScoreEnd2=\dimen302
+\myBox3=\box79
+\myScoreStart3=\dimen303
+\myCenter3=\dimen304
+\myScoreEnd3=\dimen305
+ [10] [11]
+Overfull \hbox (22.42072pt too wide) in paragraph at lines 510--511
+[]\OT1/cmr/m/n/12 This is a platonist viewpoint: that mathematical (along with 
+other theoretical)
+ []
+
+[12]
+Overfull \hbox (12.47507pt too wide) in paragraph at lines 545--546
+[][]\OT1/cmr/bx/n/12 Theorem 4.0.6. []\OT1/cmr/m/it/12 Classical natural deduct
+ion is both sound for natural deduction
+ []
+
+[13] [14] [15] [16]
+Overfull \hbox (1.41403pt too wide) in paragraph at lines 714--716
+\OT1/cmr/m/n/12 which is given by adding all the function symbols $\OML/cmm/m/i
+t/12 f[]$ \OT1/cmr/m/n/12 to $\U/msb/m/n/12 T$\OT1/cmr/m/n/12 . The \OT1/cmr/bx
+/n/12 Skolemisation
+ []
+
+[17] [18]
+
+LaTeX Warning: Reference `??' on page 19 undefined on input line 768.
+
+
+Overfull \hbox (2.8985pt too wide) in paragraph at lines 791--792
+\OT1/cmr/m/it/12 with one sort $\OML/cmm/m/it/12 A$ \OT1/cmr/m/it/12 which admi
+ts an model $\OMS/cmsy/m/n/12 I$ \OT1/cmr/m/it/12 so that $\OMS/cmsy/m/n/12 I\O
+T1/cmr/m/n/12 (\OML/cmm/m/it/12 A\OT1/cmr/m/n/12 )$ \OT1/cmr/m/it/12 is infinit
+e in cardinality.
+ []
+
+[19]
+Overfull \hbox (0.11182pt too wide) in paragraph at lines 822--823
+[]\OT1/cmr/m/n/12 A \OT1/cmr/bx/n/12 morphism of $\OT1/cmr/m/n/12 $\OT1/cmr/bx
+/n/12 -structures $\OML/cmm/m/it/12  \OT1/cmr/m/n/12 : \OML/cmm/m/it/12 M [][]
+\OMS/cmsy/m/n/12 ! \OML/cmm/m/it/12 M[]$ \OT1/cmr/m/n/12 is a collection of mor
+phisms
+ []
+
+[20]
+Overfull \hbox (2.6571pt too wide) in paragraph at lines 844--845
+[]\OT1/cmr/m/n/12 Given a first order theory $\U/msb/m/n/12 T$ \OT1/cmr/m/n/12 
+the subcategory $[](\OMS/cmsy/m/n/12 E\OT1/cmr/m/n/12 )$ of $[]$ consisting
  []
 
 
-Overfull \hbox (0.78737pt too wide) in paragraph at lines 313--314
- []|[][]$\OT1/cmr/m/n/12 (5)$[]| 
+Underfull \hbox (badness 10000) in paragraph at lines 848--849
+[]\OT1/cmr/m/n/12 W. Troiani, \OT1/cmr/m/it/12 (Finite) simplicial sets are alg
+orithms\OT1/cmr/m/n/12 , []$\OT1/cmtt/m/n/12 http :
  []
 
+[21] [22] (PredicateLogic.aux)
 
-Overfull \hbox (0.78737pt too wide) in paragraph at lines 332--333
- []|[][]$\OT1/cmr/m/n/12 (6)$[]| 
- []
+LaTeX Warning: There were undefined references.
 
-
-Overfull \hbox (0.78737pt too wide) in paragraph at lines 351--352
- []|[][]$\OT1/cmr/m/n/12 (7)$[]| 
- []
-
-
-Overfull \hbox (0.78737pt too wide) in paragraph at lines 367--368
- []|[][]$\OT1/cmr/m/n/12 (8)$[]| 
- []
-
-
-Overfull \hbox (5.10706pt too wide) in paragraph at lines 390--390
- []|$[]$| 
- []
-
-[5]
-Overfull \hbox (5.10706pt too wide) in paragraph at lines 416--416
- []|$[]$| 
- []
-
-
-Overfull \hbox (5.10706pt too wide) in paragraph at lines 442--442
- []|$[]$| 
- []
-
-
-Overfull \hbox (5.10706pt too wide) in paragraph at lines 469--469
- []|$[]$| 
- []
-
-
-Overfull \hbox (5.10706pt too wide) in paragraph at lines 496--496
- []|$[]$| 
- []
-
-
-Overfull \hbox (5.10706pt too wide) in paragraph at lines 516--516
- []|$[]$| 
- []
-
-[6]
-Overfull \hbox (5.10706pt too wide) in paragraph at lines 542--542
- []|$[]$| 
- []
-
-
-Overfull \hbox (5.10706pt too wide) in paragraph at lines 564--564
- []|$[]$| 
- []
-
-
-Overfull \hbox (3.04944pt too wide) in paragraph at lines 583--583
- []|[]| 
- []
-
-
-Overfull \hbox (5.10706pt too wide) in paragraph at lines 592--592
- []|$[]$| 
- []
-
-
-Overfull \hbox (33.01163pt too wide) in paragraph at lines 612--612
- []|[]| 
- []
-
-
-Overfull \hbox (5.10706pt too wide) in paragraph at lines 618--618
- []|$[]$| 
- []
-
-
-Overfull \hbox (25.17838pt too wide) in paragraph at lines 637--637
- []|[]| 
- []
-
-
-Overfull \hbox (5.10706pt too wide) in paragraph at lines 646--646
- []|$[]$| 
- []
-
-[7]
-Overfull \hbox (5.10706pt too wide) in paragraph at lines 673--673
- []|$[]$| 
- []
-
-
-Overfull \hbox (5.10706pt too wide) in paragraph at lines 689--689
- []|$[]$| 
- []
-
-
-Overfull \hbox (5.10706pt too wide) in paragraph at lines 711--711
- []|$[]$| 
- []
-
-
-Overfull \hbox (5.10706pt too wide) in paragraph at lines 734--734
- []|$[]$| 
- []
-
-
-Overfull \hbox (3.04944pt too wide) in paragraph at lines 746--746
- []|[]| 
- []
-
-
-Overfull \hbox (5.10706pt too wide) in paragraph at lines 755--755
- []|$[]$| 
- []
-
-
-Overfull \hbox (33.01163pt too wide) in paragraph at lines 771--771
- []|[]| 
- []
-
-
-Overfull \hbox (5.10706pt too wide) in paragraph at lines 777--777
- []|$[]$| 
- []
-
-
-Overfull \hbox (25.17838pt too wide) in paragraph at lines 792--792
- []|[]| 
- []
-
-
-Overfull \hbox (5.10706pt too wide) in paragraph at lines 801--801
- []|$[]$| 
- []
-
-[8]
-Overfull \hbox (5.10706pt too wide) in paragraph at lines 824--824
- []|$[]$| 
- []
-
-[9]
-<TensorSwitch.jpg, id=197, 2425.06pt x 774.895pt>
-File: TensorSwitch.jpg Graphic file (type jpg)
-<use TensorSwitch.jpg>
-Package pdftex.def Info: TensorSwitch.jpg  used on input line 916.
-(pdftex.def)             Requested size: 423.151pt x 135.20663pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-<ParSwitch.jpg, id=198, 2400.97pt x 662.475pt>
-File: ParSwitch.jpg Graphic file (type jpg)
-<use ParSwitch.jpg>
-Package pdftex.def Info: ParSwitch.jpg  used on input line 922.
-(pdftex.def)             Requested size: 423.151pt x 116.75365pt.
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[10] [11 <./TensorSwitch.jpg> <./ParSwitch.jpg>] [12] [13]
-Overfull \hbox (3.84572pt too wide) in paragraph at lines 1122--1123
-[][]\OT1/cmr/bx/n/12 Lemma 2.0.13 \OT1/cmr/m/n/12 (Realisation Lemma)\OT1/cmr/b
-x/n/12 . []\OT1/cmr/m/it/12 Let $\OML/cmm/m/it/12 $ \OT1/cmr/m/it/12 be a cut-
-free proof structure satisfying the long trip condition,
- []
-
-[14] [15] [16] [17] [18] [19] [20] [21]
-Overfull \hbox (3.20361pt too wide) in paragraph at lines 1631--1632
-\OT1/cmr/m/n/12 program, in which two proofs $\OML/cmm/m/it/12 ; []$ \OT1/cmr
-/m/n/12 which are cut-equivalent to each other are given the same interpretatio
-n
- []
-
-[22]
-Overfull \hbox (32.95467pt too wide) in paragraph at lines 1691--1692
-[][]\OT1/cmr/bx/n/12 Definition 4.0.4. []\OT1/cmr/m/n/12 Let $\OML/cmm/m/it/12 
-A$ \OT1/cmr/m/n/12 be a formula. The \OT1/cmr/bx/n/12 sequence of oriented atom
-s \OT1/cmr/m/n/12 of $\OML/cmm/m/it/12 A$ \OT1/cmr/m/n/12 is $\OML/cmm/m/it/12 
-a\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 A\OT1/cmr/m/n/12 ) = (\OML/cmm/m/it/12 X[]; 
-x[]\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 ; [] ; \OT1/cmr/m/n/12 (\OML/cmm/m/it/12 X
-[]; x[]\OT1/cmr/m/n/12 )$
- []
-
-[23]
-<Switching.jpg, id=435, 2105.8675pt x 1337.99875pt>
-File: Switching.jpg Graphic file (type jpg)
-<use Switching.jpg>
-Package pdftex.def Info: Switching.jpg  used on input line 1751.
-(pdftex.def)             Requested size: 569.05511pt x 361.55032pt.
-
-Overfull \hbox (40.11836pt too wide) in paragraph at lines 1751--1752
- [][] 
- []
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[24] [25 <./Switching.jpg>]
-Overfull \hbox (4.1597pt too wide) in paragraph at lines 1841--1842
-[][]\OT1/cmr/bx/n/12 Corollary 4.1.8. []\OT1/cmr/m/it/12 Let $\OML/cmm/m/it/12 
-$ \OT1/cmr/m/it/12 be a cut-free proof net with conclusions $\OML/cmm/m/it/12 
-A[]; :::; A[]$\OT1/cmr/m/it/12 , assume also that all conclusions
- []
-
-[26] [27] [28] [29]
-Overfull \hbox (29.06499pt too wide) detected at line 2103
-[]
- []
-
-[30] [31] [32] [33] [34]
-Overfull \hbox (29.45995pt too wide) in paragraph at lines 2410--2413
-\OT1/cmr/m/n/12 For this following diagram, we have $\OML/cmm/m/it/12 U[] \OT1/
-cmr/m/n/12 = \OMS/cmsy/m/n/12 f\OML/cmm/m/it/12 X[]; [] ; X[]\OMS/cmsy/m/n/12 g
-\OML/cmm/m/it/12 ; U[] \OT1/cmr/m/n/12 = \OMS/cmsy/m/n/12 f\OML/cmm/m/it/12 Y[]
-; [] ; Y[]\OMS/cmsy/m/n/12 g\OML/cmm/m/it/12 ; U[] \OT1/cmr/m/n/12 = \OMS/cmsy/
-m/n/12 f\OML/cmm/m/it/12 X[]; [] ; X[]; Y[]; [] ; Y[]\OMS/cmsy/m/n/12 g$\OT1/cm
-r/m/n/12 ,
- []
-
-[35] [36] [37] [38] [39]
-Overfull \hbox (12.36322pt too wide) in paragraph at lines 2663--2665
-\OT1/cmr/m/n/12 Consider also $\U/stmry/m/n/12 J\OML/cmm/m/it/12 \U/stmry/m/n/
-12 K\OML/cmm/m/it/12 \U/stmry/m/n/12 J\OML/cmm/m/it/12 \U/stmry/m/n/12 K$\OT1
-/cmr/m/n/12 , which is a matrix whose $\OML/cmm/m/it/12 ij[]$ \OT1/cmr/m/n/12 e
-ntry corresponds to the sum of operators corresponding
- []
-
-[40] [41]
-Overfull \hbox (4.30833pt too wide) in paragraph at lines 2863--2864
-[]\OT1/cmr/m/n/12 It is clear by inspection of the rules in Definition []4.6.6[
-] that the transformations preserve persistency
- []
-
-[42] [43] (LinearLogic.aux)
-
-LaTeX Warning: There were multiply-defined labels.
-
-Package rerunfilecheck Info: File `LinearLogic.out' has not changed.
-(rerunfilecheck)             Checksum: 8D6912277212AB7B9698665D1AF8FEBC;1853.
+Package rerunfilecheck Info: File `PredicateLogic.out' has not changed.
+(rerunfilecheck)             Checksum: 451FDD2559B922A1E7C9FD399222FA13;1035.
  ) 
 Here is how much of TeX's memory you used:
- 32453 strings out of 481099
- 664524 string characters out of 2904467
- 918360 words of memory out of 3000000
- 48993 multiletter control sequences out of 15000+600000
- 416890 words of font info for 86 fonts, out of 8000000 for 9000
+ 22994 strings out of 481099
+ 434542 string characters out of 2904467
+ 691506 words of memory out of 3000000
+ 39794 multiletter control sequences out of 15000+600000
+ 417204 words of font info for 87 fonts, out of 8000000 for 9000
  0 hyphenation exceptions out of 8191
- 98i,24n,103p,2987b,1270s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 98i,15n,103p,1315b,1149s stack positions out of 5000i,500n,10000p,200000b,80000s
  </Users/wtroiani/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljf
 our/jknappen/ec/dpi600/tcrm1200.pk></Library/Application Support/MiKTeX/texmfs/
 install/fonts/type1/public/amsfonts/cm/cmbx12.pfb></Library/Application Support
-/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmex10.pfb></Users/wtroia
-ni/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/cmll/cm
-llr12.pfb></Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/fo
-nts/type1/public/cmll/cmllr8.pfb></Library/Application Support/MiKTeX/texmfs/in
-stall/fonts/type1/public/amsfonts/cm/cmmi12.pfb></Library/Application Support/M
-iKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi6.pfb></Library/Applica
-tion Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi8.pfb></L
-ibrary/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm
-/cmr12.pfb></Library/Application Support/MiKTeX/texmfs/install/fonts/type1/publ
-ic/amsfonts/cm/cmr17.pfb></Library/Application Support/MiKTeX/texmfs/install/fo
-nts/type1/public/amsfonts/cm/cmr6.pfb></Library/Application Support/MiKTeX/texm
-fs/install/fonts/type1/public/amsfonts/cm/cmr8.pfb></Library/Application Suppor
-t/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy10.pfb></Library/App
-lication Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy6.pfb
+/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmex10.pfb></Library/Appl
+ication Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi12.pfb
 ></Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfont
-s/cm/cmsy8.pfb></Library/Application Support/MiKTeX/texmfs/install/fonts/type1/
-public/amsfonts/cm/cmti12.pfb></Library/Application Support/MiKTeX/texmfs/insta
-ll/fonts/type1/public/amsfonts/cm/cmtt12.pfb></Library/Application Support/MiKT
-eX/texmfs/install/fonts/type1/public/amsfonts/symbols/msam10.pfb></Library/Appl
-ication Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/symbols/msbm1
-0.pfb></Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/fonts/
-type1/public/hoekwater/stmary10.pfb>
-Output written on LinearLogic.pdf (43 pages, 1010899 bytes).
+s/cm/cmmi6.pfb></Library/Application Support/MiKTeX/texmfs/install/fonts/type1/
+public/amsfonts/cm/cmmi8.pfb></Library/Application Support/MiKTeX/texmfs/instal
+l/fonts/type1/public/amsfonts/cm/cmr12.pfb></Library/Application Support/MiKTeX
+/texmfs/install/fonts/type1/public/amsfonts/cm/cmr17.pfb></Library/Application 
+Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmr6.pfb></Library
+/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmr8.
+pfb></Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsf
+onts/cm/cmsy10.pfb></Library/Application Support/MiKTeX/texmfs/install/fonts/ty
+pe1/public/amsfonts/cm/cmsy6.pfb></Library/Application Support/MiKTeX/texmfs/in
+stall/fonts/type1/public/amsfonts/cm/cmsy8.pfb></Library/Application Support/Mi
+KTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmti12.pfb></Library/Applica
+tion Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmtt12.pfb></
+Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/s
+ymbols/msam10.pfb></Library/Application Support/MiKTeX/texmfs/install/fonts/typ
+e1/public/amsfonts/symbols/msbm10.pfb></Library/Application Support/MiKTeX/texm
+fs/install/fonts/type1/public/rsfs/rsfs10.pfb>
+Output written on PredicateLogic.pdf (22 pages, 276111 bytes).
 PDF statistics:
- 842 PDF objects out of 1000 (max. 8388607)
- 320 named destinations out of 1000 (max. 500000)
- 108 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 358 PDF objects out of 1000 (max. 8388607)
+ 122 named destinations out of 1000 (max. 500000)
+ 61 words of extra memory for PDF output out of 10000 (max. 10000000)
 

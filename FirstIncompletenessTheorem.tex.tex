@@ -130,35 +130,69 @@
 		\end{itemize}
 		Applying this to $Q$ and we obtain $Q^\ast$, which contains $Q$, is consistent, and complete. Hence, $Q$ is consistently completable (assuming it is consistent).
 	\end{example}
-	Indeed, the phrase ``...whose set of axioms and set of deduction rules are both computable" in Proposition \ref{prop:Godel} cannot be ignored. We make this phrase precise by working with \emph{general recursive functions} and \emph{relations}. We define ``general recursive" in Definition \ref{def:primitive_recursive}. Indeed, the general recursive functions and relations play an important role in the theory of computation more broadly, but this is not necessary to understand G\"{o}del's Theorem. For the current purposes, the role of general recursive functions and relations will be to carve out a subset of formulas which satisfy a representability criteria (Proposition \ref{lem:strongly_representable} below).
+	Indeed, the phrase ``...whose set of axioms and set of deduction rules are both computable" in Proposition \ref{prop:Godel} cannot be ignored. We make this phrase precise by working with \emph{general recursive functions} and \emph{relations}. We define ``general recursive" in Definition \ref{def:primitive_recursive}. Indeed, the general recursive functions and relations play an important role in the theory of computation more broadly, but this is not necessary to understand G\"{o}del's Theorem. For the current purposes, the role of general recursive functions and relations will be to carve out a subset of formulas which satisfy a representability criteria (Proposition \ref{lem:strongly_representable_intro} below).
 	
-	In the following proposition, we denote the formula in $Q$ corresponding to a natural number $n$ by $\underline{n}$, for example, $\underline{2}$ denotes $S(S(0))$.
-	\begin{lemma}\label{lem:strongly_representable}
-		Let $f: \bb{N}^m \lto \bb{N}$ be a general recursive function. Then there exists a relation $F$ satisfying:
+	In the following lemma, we denote the formula in $Q$ corresponding to a natural number $n$ by $\underline{n}$, for example, $\underline{2}$ denotes $S(S(0))$.
+	\begin{proposition}\label{lem:strongly_representable_intro}
+		Let $f: \bb{N}^m \lto \bb{N}$ be a general recursive function. Then there exists a relation $F$ with free variables $x_1,\ldots, x_m, y$ satisfying:
 		\begin{equation}
-			\text{If }f(n_1,...,n_m) = k \text{ then }Q\vdash \forall y, F(\underline{n_1},...,\underline{n_m},y)\Longleftrightarrow y = \underline{k}
+			\text{If }f(n_1,...,n_m) = k \text{ then }Q\vdash \forall y, F[x_i := \underline{n_i}]_{i = 1}^m\Longleftrightarrow y = \underline{k}
 		\end{equation}
-	Moreover, if a relation $r \subseteq \bb{N}^m$ is general recursive, then there exists a formula $R(x_1,...,x_m)$ in $Q$ with free variables $x_1,...,x_n$ satisfying the following.
+	where $F[x_i := \underline{n_i}]_{i = 1}^m$ denotes the formula $F$ with $\underline{n_i}$ substituted for all free occurrences of $x_i$ for $i = 1,\ldots, m$.
+	
+	Moreover, if a relation $r \subseteq \bb{N}^m$ is general recursive, then there exists a formula $R$ in $Q$ with free variables $x_1,...,x_n$ satisfying the following.
 	\begin{align*}
-		\text{If }(n_1,...,n_m) \in r &\text{ then }Q\vdash R(\underline{n_1},...,\underline{n_m})\\
-		\text{If }(n_1,...,n_m) \not\in r &\text{ then }Q\vdash\neg R(\underline{n_1},...,\underline{n_m})
+		\text{If }(n_1,...,n_m) \in r &\text{ then }Q\vdash R[x_i := \underline{n_i}]_{i = 1}^m\\
+		\text{If }(n_1,...,n_m) \not\in r &\text{ then }Q\vdash\neg R[x_i := \underline{n_i}]_{i = 1}^m
 	\end{align*}
-	\end{lemma}
-	Proposition \ref{lem:strongly_representable} is in fact the core of the argument for G\"{o}del's First Incompleteness Theorem. It is proved and discussed further in Section \ref{sec:prim_rec}. This is where the class of general recursive relations is paramount, a similar statement to Proposition \ref{lem:strongly_representable} but without the hypothesis that $R$ is general recursive is \emph{false}.
+	\end{proposition}
+	Proposition \ref{lem:strongly_representable_intro} is in fact the core of the argument for G\"{o}del's First Incompleteness Theorem. It is proved and discussed further in Section \ref{sec:prim_rec}. This is where the class of general recursive relations is paramount, a similar statement to Proposition \ref{lem:strongly_representable_intro} but without the hypothesis that $R$ is general recursive is \emph{false}.
+	
+	We are now cornered into making a very precise definition of ``computable sets", as if all sets are defined to be computable, then G\"{o}del's First Incompleteness Theorem does not hold.
+	
+	A set will be \emph{computable} if there exists a general recursive funciton which in some way ``recognises" the elements. General recursive functions have the natural numbers as their domains though, so we need to encode the elements of the set into natural numbers first, but not any encoding will do as what if this encoding itself is non-computable?
+	
+	Thus we will fix a particular encoding of first order formulas into natural numbers. This is done using G\"{o}del numbers, defined in the following way.
+	
+	\begin{defn}\label{def:godel_numbering}
+		Given a term or formula $\varphi$ of $Q$, we associate a natural number $\adj{\varphi} \in \bb{N}$ in the following way.
+		\begin{itemize}
+			\item To each letter in the alphabet associated to $Q$ we associate an integer according to the following table.
+			\begin{align*}
+				\gamma(0) &= 1 & \gamma(S) &= 3 & \gamma(+) &= 5 & \gamma(\times) &= 7\\
+				\gamma(() &= 9 & \gamma()) &= 11 & \gamma(\neg) &= 13 & \gamma(\wedge) &= 15\\
+				\gamma(\vee) &= 17 & \gamma(\Longrightarrow) &= 19 & \gamma(\forall) &= 21 & \gamma(\exists) &= 23\\
+				\gamma(=) &= 25 & \gamma(x_1) &= 2 & \gamma(x_2) &= 4 & \hdots
+			\end{align*}
+		\end{itemize}
+		\item To each term or formula $\varphi$ is an associated sequence of symbols $s_1\ldots s_n$ which spell out $\varphi$, that is, as words $\varphi = s_1 \ldots s_n$. Denoting the $i^\text{th}$ (in magnitude) prime number by $p_i$, we define:
+		\begin{equation}
+			\adj{\varphi} = p_1^{\gamma(s_1)}\cdots p_n^{\gamma(s_n)}
+		\end{equation}
+	\end{defn}
+	\begin{example}
+		We calculate the G\"{o}del number associated to the formula $S(0)=0+1$.
+		\begin{align*}
+			\adj{S(0)=0+1} &= \adj{S(0)=0+S(0)}\\
+			&= 2^{\gamma(S)}3^{\gamma(()}5^{\gamma(0)}7^{\gamma())}11^{\gamma(=)}13^{\gamma(0)}17^{\gamma(+)}19^{\gamma(S)}23^{\gamma(()}29^{\gamma(0)}31^{\gamma())}\\
+			&= 2^3 3^9 5^1 7^{11} 11^{23} 13^1 17^5 19^3 23^9 29^1 31^{11}\\
+			&= 191352835104285876966611134901860756135433453873754327850773507007732920
+		\end{align*}
+	\end{example}
 	
 	\begin{defn}
 		Let $X$ be a set, and for each $x \in X$ assume there is some integer $\underline{x}$ uniquely associated to $x$. The \textbf{characteristic function} of $X$ is the function $\chi_X: \bb{N} \lto \bb{N}$ which for every $x \in X$ is such that $\chi_X(\underline{x}) = 0$ and for all other $x \in \bb{N}$ is such that $\chi_X(x) = 1$.
 		
-		A set is \textbf{general recursive} if there exists some associated of an integer $\underline{x}$ to each element $x \in X$ such that the induced characteristic function is general recursive.
+		A set of first order formulas $X$ is \textbf{general recursive} if the characteristic function of the set of G\"{o}del numbers of the formulas of $X$ is general recursive.
 		\end{defn}
 	
 	\begin{defn}
-		A first order theory $L$ is \textbf{effectively, consistently, completable} if there exists a first order theory $L'$ satisfying the following.
+		A first order theory $\bb{T}$ is \textbf{effectively, consistently, completable} if there exists a first order theory $\bb{T}'$ satisfying the following.
 		\begin{itemize}
-			\item The set of axioms in $L'$ is general recursive.
-			\item The set of deduction rules in $L'$ is general recursive.
-			\item Every axiom rule of $L$ is provable in $L'$.
-			\item $L'$ is consistent and complete.
+			\item The set of axioms in $\bb{T}'$ is general recursive.
+			\item The set of deduction rules in $\bb{T}'$ is general recursive.
+			\item Every axiom rule of $\bb{T}$ is provable in $\bb{T}'$.
+			\item $\bb{T}'$ is consistent and complete.
 		\end{itemize}
 	\end{defn}
 	Before stating our version of G\"{o}del's First Incompleteness Theorem, we make a historical remark. Proposition \ref{prop:Godel} stated that $L$ is either incomplete or inconsistent, but in fact this is \emph{not} what was first proved by G\"{o}del. The original paper \cite{Godel} instead proves the weaker claim where the word ``inconcistent" is replaced by ``$\omega$-inconsistent", which we define precisely in Definition \ref{def:omega_inconsistent}. It was Rosser who in \cite{Rosser} relinquished G\"{o}del's Theorem of the assumption of $\omega$-consistency. The important fact for now is that $\omega$-consistency implies consistency, but the converse does not hold, so Rosser's result is strictly stronger than what G\"{o}del original wrote.
@@ -167,17 +201,15 @@
 	\begin{thm}[G\"{o}del's First Incompleteness Theorem (precise)]
 		If $Q$ is $\omega$-consistent, then $Q$ is not effectively, consistently completable.
 	\end{thm}
-	
-	A core part of the argument which has not been mentioned yet is the concept of \emph{G\"{o}del numbering}. G\"{o}del numbering is simply a way of associating a natural number $\adj{\varphi}$ to each formula $\varphi$ in $Q$. We remark that extremely little of the structure of the natural numbers will be used throughout the entire argument, indeed G\"{o}del numbering is \emph{not} where the core of the argument lies.
-	
-	G\"{o}del numbering will be used to construct a formula $G_Q$ in $Q$ which satisfies the following properties.
+	The argument will proceed by first defining a particular first order sentence, the G\"{o}del sentence $G_Q$. This sentence will have the following properties.
 	\begin{align}
 		\text{If }Q\text{ is consistent, then }Q &\not\vdash G_Q\label{eq:consistent}\\
 		\text{If }Q\text{ is }\omega\text{-consistent, then }Q &\not\vdash \neg G_Q\label{eq:omega_consistent}
 	\end{align}
-	Hence, the argument will proceed by first defining the G\"{o}del sentence $G_Q$, and then proving that indeed $G_Q$ satisfies properties \eqref{eq:consistent} and \eqref{eq:omega_consistent}.
+That such a sentence exists is remarkable. It is not simple to write $G_Q$ down. We discuss this sentence and its construction more carefully in Section \ref{sec:godel_sentence}.
 	
 	\section{General Recursive Functions and Relations}\label{sec:prim_rec}
+	First we define which functions constitue the ``computable" ones. These will be the \emph{general recursive} functions.
 	\begin{defn}\label{def:primitive_recursive}
 		The set $\Psi$ of \textbf{general recursive functions} is defined inductively.
 		\begin{itemize}
@@ -251,7 +283,9 @@
 			d(y,x) &= (x - y) + (y - x)
 		\end{align*}
 	\end{example}
-	In Section \ref{sec:crucial} we will define two functions, and one relation, all of which will turn out to be general recursive. To prove that these three definitions are general recursive, we use a collection of construction techniques which we establish in the remainder of this Section. Full proofs that what we define in Section \ref{sec:crucial} are indeed general recursive will not be given, but the general methods will be establishes now.
+Note the distance function is not the zero function (read carefully!)
+
+We establish some general methods for constructing general recursive functions/relations.
 	\begin{lemma}
 		If $f: \bb{N} \lto \bb{N}$ is a general recursive function, then the relation $R$ defined by
 		\begin{equation}
@@ -272,7 +306,7 @@
 		If $R,S \subseteq \bb{N}$ are general recursive relations, then so are $R^c$ and $R \cup S$.
 	\end{lemma}
 	\begin{proof}
-		Let $\chi_R,\chi_S$ be the characteristic functions of $R,S$ respectively. The characteristic function of $R^c$ is equal to $\overline{\operatorname{sg}}(\chi_R)$. The characteristic function of $R \cup S$ is equal to the product $\chi_R \times \chi_S$, and it can easily be shown that multiplication is a general recursive function.
+		Let $\chi_R,\chi_S$ be the characteristic functions of $R,S$ respectively. The characteristic function of $R^c$ is equal to $\overline{\operatorname{sg}}(\chi_R)$. The characteristic function of $R \cup S$ is equal to the product $\chi_R \times \chi_S$, and it can be shown that multiplication is a general recursive function.
 	\end{proof}
 	\begin{remark}
 		A helpful way to think about Lemma \ref{lem:and_or} is in the special case where $R,S$ are defined by \emph{properties} $P,Q$. Lemma \ref{lem:and_or} in this case says that if $R,S$ are general recursive, then so are the relations defined by the properties ``not $P$", ``$P$ and $Q$", ``$P$ or $Q$", ``$P$ implies $Q$".
@@ -299,8 +333,6 @@
 		\end{align*}
 		The characteristic function of $F$ is then equal to the general recursive function $\operatorname{sg}(\hat{\chi}_F(f(\und{0.2})))$ which maps $n \longmapsto \operatorname{sg}(\hat{\chi}_F(f(n)))$.
 	\end{proof}
-	
-	The point is that general recursive functions and relations can be used and combined to build more and more complicated general recursive functions. Why we actually care about the general recursive functions though is due to Lemma \ref{lem:strongly_representable} below.
 	
 	\section{The general recursive functions and the general recursive relations are representable}
 	\begin{defn}
@@ -962,38 +994,13 @@ In the following prooftree, we use the fact that $Q \vdash \forall w, w < \under
 	
 	That integers can \emph{encode} data is a key part of G\"{o}del's argument. Ultimately, G\"{o}del's argument comes down to defining a formula (the G\"{o}del sentence $G_Q$) whose provability infers a relationship of natural numbers which expresses (when interpreted in the correct way) a paradox.
 	
-	The particular choice of encoding taken here is largely arbitrary, many other codings could be (and have been) used and still result in a correct argument.
+	The particular choice of encoding taken here is largely arbitrary, many other codings could be (and have been) used and still result in a correct argument. See Definition \ref{def:godel_numbering} for the encoding.
 	
-	\begin{defn}
-		Given a term or formula $\varphi$ of $Q$, we associate a natural number $\adj{\varphi} \in \bb{N}$ in the following way.
-		\begin{itemize}
-			\item To each letter in the alphabet associated to $Q$ we associate an integer according to the following table.
-			\begin{align*}
-				\gamma(0) &= 1 & \gamma(S) &= 3 & \gamma(+) &= 5 & \gamma(\times) &= 7\\
-				\gamma(() &= 9 & \gamma()) &= 11 & \gamma(\neg) &= 13 & \gamma(\wedge) &= 15\\
-				\gamma(\vee) &= 17 & \gamma(\Longrightarrow) &= 19 & \gamma(\forall) &= 21 & \gamma(\exists) &= 23\\
-				\gamma(=) &= 25 & \gamma(x_1) &= 2 & \gamma(x_2) &= 4 & \hdots
-			\end{align*}
-		\end{itemize}
-		\item To each term or formula $\varphi$ is an associated sequence of symbols $s_1\hdots s_n$ which spell out $\varphi$. Denoting the $i^\text{th}$ (in magnitude) prime number by $p_i$, we define:
-		\begin{equation}
-			\adj{\varphi} = p_1^{\gamma(s_1)}\cdots p_n^{\gamma(s_n)}
-		\end{equation}
-	\end{defn}
-	\begin{example}
-		We calculate the G\"{o}del number associated to the formula $S(0)=0+1$.
-		\begin{align*}
-			\adj{S(0)=0+1} &= \adj{S(0)=0+S(0)}\\
-			&= 2^{\gamma(S)}3^{\gamma(()}5^{\gamma(0)}7^{\gamma())}11^{\gamma(=)}13^{\gamma(0)}17^{\gamma(+)}19^{\gamma(S)}23^{\gamma(()}29^{\gamma(0)}31^{\gamma())}\\
-			&= 2^3 3^9 5^1 7^{11} 11^{23} 13^1 17^5 19^3 23^9 29^1 31^{11}\\
-			&= 191352835104285876966611134901860756135433453873754327850773507007732920
-		\end{align*}
-	\end{example}
 	\begin{remark}
 		Later, we will need to be able to extract the term/formula $\varphi$ from the integer $\adj{\varphi}$ in the situation where we know that $\adj{\varphi}$ is the G\"{o}del number for some formula, hence we require that the mapping $\varphi \longmapsto \adj{\varphi}$ is injective. This is why we the definition of $\adj{\varphi}$ involves the exponents of prime numbers.
 	\end{remark}
 	
-	\section{Three important general recursive things}\label{sec:crucial}
+	\section{Towards the G\"{o}del sentence}\label{sec:crucial}
 	In Section \ref{sec:prim_rec} we constructed many examples of general recursive functions, relations, and formulas. In this Section, we construct more elaborate general recursive relations, which will be crucial in defining the G\"{o}del sentence, $G_Q$.
 	
 	\subsection{Diagonalisation}
@@ -1025,7 +1032,7 @@ In the following prooftree, we use the fact that $Q \vdash \forall w, w < \under
 	\end{proof}
 	
 	\begin{defn}
-		The \textbf{concatination} of two G\"{o}del numbers $n,m$, denoted $n \ast m$ is given as follows. First write $n = p_1^{\adj{s_1}}\hdots p_n^{\adj{s_n}}$ and $m = p_1^{\adj{t_1}}\hdots p_m^{\adj{t_m}}$. Then $n \ast m$ is the integer $p_1^{\adj{t_1}}\hdots p_n^{\adj{s_n}}p_{n+1}^{t_1}\hdots p_{n+m}^{t_m}$.
+		The \textbf{concatination} of two G\"{o}del numbers $n,m$, denoted $n \ast m$ is given as follows. First write $n = p_1^{\adj{s_1}}\hdots p_n^{\adj{s_n}}$ and $m = p_1^{\adj{t_1}}\hdots p_m^{\adj{t_m}}$. Then $n \ast m$ is the integer $p_1^{t_1}\hdots p_n^{s_n}p_{n+1}^{t_1}\hdots p_{n+m}^{t_m}$.
 	\end{defn}
 	A fact we will not prove is the following.
 	\begin{fact}
@@ -1083,7 +1090,7 @@ In the following prooftree, we use the fact that $Q \vdash \forall w, w < \under
 	\end{fact}
 	The proof of Fact \ref{fact:crucial} is where the bulk of the busy work of G\"{o}del's Theorem lies. We leave references of work which goes through the proof of this part in more detail: \cite{Mendelson}, \cite{Godel}, \cite{smith}, however we note that these resources use simpler proof systems, the author knows of no detailed account of the proof of Fact \ref{fact:crucial} (as stated with respect to Gentzen's Natural Deduction).
 	
-	\section{G\"{o}del's Sentence}
+	\section{G\"{o}del's Sentence}\label{sec:godel_sentence}
 	In Section \ref{sec:crucial} we mentioned that the function $\operatorname{diag}: \bb{N} \lto \bb{N}$ and the relation $\operatorname{proof} \subseteq \bb{N} \times \bb{N}$ are general recursive. The composition of general recursive functions remains general recursive, so the following relation is general recursive.
 	\begin{equation}
 		\operatorname{gdl} \subseteq \bb{N} \times \bb{N} \text{, where }(n,m) \in \operatorname{gdl}\text{ iff }(n,\operatorname{diag}(m)) \in \operatorname{proofof}
@@ -1132,34 +1139,33 @@ In the following prooftree, we use the fact that $Q \vdash \forall w, w < \under
 		Say $Q \vdash \neg G_Q$. Then $Q \vdash \exists x, \operatorname{GDL}(x,\underline{\adj{U(y)}})$. Now, since $Q$ is $\omega$-consistent, it is in particular consistent, and so $Q \vdash \neg G_Q$ implies that $Q$ can\emph{not} prove $G_Q$. Hence, for every integer $m \in \bb{N}$ we have that $m$ is \emph{not} the super G\"{o}del number of a proof of $G_Q$. Hence, by strong representability, we have that $Q \vdash \neg\operatorname{GDL}(\underline{m},\underline{\adj{U(y)}})$, for each integer $m \in \bb{N}$. This contradicts the assumption that $Q$ is $\omega$-consistent, and so we have that $Q \not\vdash \neg G_Q$.
 	\end{proof}
 
-Notice that in order to prove Lemma \ref{lem:consistent}, all we need to know is that if $m$ is the super G\"{o}del number of a proof of $\pi$, then $Q \vdash \operatorname{GDL}(\underline{m},\underline{\adj{U(y)}})$, hence, as long as this can be shown, the fact that $\operatorname{gdl}$ is a general recursive function is not important.
-
-In fact, in order to prove Lemma \ref{lem:omega_consistent} all we need to know is that if $Q \not\vdash G_Q$ then for every integer $m \in \bb{N}$ we have that $Q \vdash \neg \operatorname{GDL}(\underline{m},\underline{\adj{U(y)}})$.
-
-Moreover, the proof of Proposition \ref{prop:prim_rec_rep} every general recursive function is representable, took the inductive structure of the definition of a general recursive function and mimicked this construction inside $Q$ along with natural deduction to construct a representing formula.
-
-Hence, the role of general recursive functions inside the entire proof, is essentially just a convenient way to describe the construction of the G\"{o}del sentence, and is in fact not a crucial part of the proof.
-
-We outline here a way to prove G\"{o}del's First Incompleteness Theorem without making mention of general recursive functions, we will also use an abstract notion of G\"{o}del Numbering, meaning that we do not fix a particular such translation from proofs to integers. First, fix an injective translation from formulas in $Q$ to natural numbers, given a formula $F$ in $Q$ we denote by $\underline{F}$ its translation. Also, fix an injective translation from proofs to natural numbers, for any proof $\pi$ we let $\underline{\underline{\pi}}$ denote its translation. The next step is to prove the following Lemma.
-
-\begin{lemma}\label{lem:existence_Godel}
-	There exists a formula $F(x,y)$ with two free variables $x,y$ subject to the following properties.
-	\begin{itemize}
-		\item Given a proof $\pi$ of $\forall x, F(x,y)$ we have $Q \vdash F(\underline{\underline{\pi}},\underline{\forall x, F(x,y)})$.
-		\item If there is no proof of $\forall x, F(x,y)$ then for each natural number $m \in \bb{N}$ we have $Q \vdash \neg F(\underline{m},\underline{\forall x, F(x,y)})$.
-	\end{itemize} 
-\end{lemma}
-Then Lemmas \ref{lem:consistent}, \ref{lem:omega_consistent} can easily be adapted to accomodate Lemma \ref{lem:existence_Godel}.
-
-
-	\section{Questions}
+	\section{Is the use of general recursive functions problematic?}
 	What is the role of the general recursive functions in the proof of G\"{o}del's First Incompleteness Theorem? Essentially, they are a convenient means to describe G\"{o}del's sentence, which is simply some formula inside the first order theory $Q$. Hence, the fact that these functions are general recursive is \emph{not} their important property, but instead, the underlying representing formulas are what matter.
 	
-	Hence, the introduction of general recursive functions to this argument is a detour, one could be more direct by simply working with the underlying representing formulas right from the beginning. However, this is not so simple, as what is the underlying representing formula of a function defined by primitive recursion?
+	Notice that in order to prove Lemma \ref{lem:consistent}, all we need to know is that if $m$ is the super G\"{o}del number of a proof of $\pi$, then $Q \vdash \operatorname{GDL}(\underline{m},\underline{\adj{U(y)}})$, hence, as long as this can be shown, the fact that $\operatorname{gdl}$ is a general recursive function is not important.
 	
-	Recall, that we showed that these such functions are representable by making use of a $\beta$-function (Definition \ref{def:beta_function}).
+	In fact, in order to prove Lemma \ref{lem:omega_consistent} all we need to know is that if $Q \not\vdash G_Q$ then for every integer $m \in \bb{N}$ we have that $Q \vdash \neg \operatorname{GDL}(\underline{m},\underline{\adj{U(y)}})$.
 	
-	In fact, the situation is even more problematic than it seems. What \emph{is} a general recursive function? The point of G\"{o}del's First Incompleteness Theorem is to show a counterintuitive result concerning the theory of arithmetic. Before this is organised, how can we discuss the general recursive functions? It is the author's opinion that, one \emph{ought} to present G\"{o}del's First Incompleteness Theorem on the level of the representing formulas, in order to stay completely contained in the realm of logic and language. Only then can the philosophical implications be considered before moving onto further mathematical discourse.
+	Moreover, the proof of Proposition \ref{prop:prim_rec_rep} that every general recursive function is representable, took the inductive structure of the definition of a general recursive function and mimicked this construction inside $Q$ along with natural deduction to construct a representing formula.
+	
+	Hence, the role of general recursive functions inside the entire proof, is essentially just a convenient way to describe the construction of the G\"{o}del sentence, and is in fact not a crucial part of the proof.
+	
+	We outline here a way to prove G\"{o}del's First Incompleteness Theorem without making mention of general recursive functions, we will also use an abstract notion of G\"{o}del Numbering, meaning that we do not fix a particular such translation from proofs to integers. First, fix an injective translation from formulas in $Q$ to natural numbers, given a formula $F$ in $Q$ we denote by $\underline{F}$ its translation. Also, fix an injective translation from proofs to natural numbers, for any proof $\pi$ we let $\underline{\underline{\pi}}$ denote its translation. The next step is to prove the following Lemma.
+	
+	\begin{lemma}\label{lem:existence_Godel}
+		There exists a formula $F(x,y)$ with two free variables $x,y$ subject to the following properties.
+		\begin{itemize}
+			\item Given a proof $\pi$ of $\forall x, F(x,y)$ we have $Q \vdash F(\underline{\underline{\pi}},\underline{\forall x, F(x,y)})$.
+			\item If there is no proof of $\forall x, F(x,y)$ then for each natural number $m \in \bb{N}$ we have $Q \vdash \neg F(\underline{m},\underline{\forall x, F(x,y)})$.
+		\end{itemize} 
+	\end{lemma}
+	Then Lemmas \ref{lem:consistent}, \ref{lem:omega_consistent} can easily be adapted to accomodate Lemma \ref{lem:existence_Godel}.
+	
+	Hence, the introduction of general recursive functions to this argument is a detour, one could be more direct by simply working with the underlying representing formulas right from the beginning. However, this is not so simple, as what is the underlying representing formula of a function defined by primitive recursion? Recall, that we showed that these such functions are representable by making use of a $\beta$-function (Definition \ref{def:beta_function}).
+	
+	In fact, not only is the introduction of general recursive functions not necessary, it can be argued that it is indeed problematic; what \emph{is} a general recursive function? The point of G\"{o}del's First Incompleteness Theorem is to show a counterintuitive result concerning the theory of arithmetic. Before this is organised, how can we discuss the general recursive functions? One must accept a kind of Platonic existence of general recursive functions, but then what slips in when we do this? After all, we wish to talk about these functions, so what language do we use? A first order theory of some kind....?
+	
+	It is the author's opinion that, one \emph{ought} to present G\"{o}del's First Incompleteness Theorem on the level of the representing formulas, in order to stay completely contained in the realm of logic and language. Only then can the philosophical implications be considered before moving onto further mathematical discourse.
 	
 	
 	\begin{thebibliography}{9}

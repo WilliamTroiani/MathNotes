@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.5.21)  25 JUN 2022 10:31
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.5.21)  22 JUL 2022 12:33
 entering extended mode
 **./QuantumComputing.tex
 (QuantumComputing.tex
@@ -775,74 +775,51 @@ File: l3backend-pdftex.def 2021-05-07 L3 backend support: PDF output (pdfTeX)
 (/Library/Application Support/MiKTeX/texmfs/install/tex/latex/l3packages/xparse
 /xparse-generic.tex))))
 \c@thm=\count300
-
-(/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/latex/ge
-ometry/geometry.sty
-Package: geometry 2020/01/02 v5.9 Page Geometry
-
-(/Library/Application Support/MiKTeX/texmfs/install/tex/generic/iftex/ifvtex.st
-y
-Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
-)
-\Gm@cnth=\count301
-\Gm@cntv=\count302
-\c@Gm@tempcnt=\count303
-\Gm@bindingoffset=\dimen282
-\Gm@wd@mp=\dimen283
-\Gm@odd@mp=\dimen284
-\Gm@even@mp=\dimen285
-\Gm@layoutwidth=\dimen286
-\Gm@layoutheight=\dimen287
-\Gm@layouthoffset=\dimen288
-\Gm@layoutvoffset=\dimen289
-\Gm@dimlist=\toks45
-
-(/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/latex/ge
-ometry/geometry.cfg)) (QuantumComputing.aux)
+ (QuantumComputing.aux)
 \openout1 = `QuantumComputing.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Checking defaults for T3/cmr/m/n on input line 70.
-LaTeX Font Info:    Trying to load font information for T3+cmr on input line 70
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 69.
+LaTeX Font Info:    ... okay on input line 69.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 69.
+LaTeX Font Info:    ... okay on input line 69.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 69.
+LaTeX Font Info:    ... okay on input line 69.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 69.
+LaTeX Font Info:    ... okay on input line 69.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 69.
+LaTeX Font Info:    ... okay on input line 69.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 69.
+LaTeX Font Info:    ... okay on input line 69.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 69.
+LaTeX Font Info:    ... okay on input line 69.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 69.
+LaTeX Font Info:    ... okay on input line 69.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 69.
+LaTeX Font Info:    ... okay on input line 69.
+LaTeX Font Info:    Checking defaults for T3/cmr/m/n on input line 69.
+LaTeX Font Info:    Trying to load font information for T3+cmr on input line 69
 .
 
 (/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/latex/ti
 pa/t3cmr.fd
 File: t3cmr.fd 2001/12/31 TIPA font definitions
 )
-LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    ... okay on input line 69.
 
 (/Library/Application Support/MiKTeX/texmfs/install/tex/context/base/mkii/supp-
 pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count304
-\scratchdimen=\dimen290
+\scratchcounter=\count301
+\scratchdimen=\dimen282
 \scratchbox=\box70
-\nofMPsegments=\count305
-\nofMParguments=\count306
-\everyMPshowfont=\toks46
-\MPscratchCnt=\count307
-\MPscratchDim=\dimen291
-\MPnumerator=\count308
-\makeMPintoPDFobject=\count309
-\everyMPtoPDFconversion=\toks47
+\nofMPsegments=\count302
+\nofMParguments=\count303
+\everyMPshowfont=\toks45
+\MPscratchCnt=\count304
+\MPscratchDim=\dimen283
+\MPnumerator=\count305
+\makeMPintoPDFobject=\count306
+\everyMPtoPDFconversion=\toks46
 )
 (/Library/Application Support/MiKTeX/texmfs/install/tex/latex/epstopdf-pkg/epst
 opdf-base.sty
@@ -854,7 +831,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 -sys.cfg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
-Package hyperref Info: Link coloring OFF on input line 70.
+Package hyperref Info: Link coloring OFF on input line 69.
 
 (/Library/Application Support/MiKTeX/texmfs/install/tex/latex/hyperref/nameref.
 sty
@@ -868,62 +845,28 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count310
+\c@section@level=\count307
 )
-LaTeX Info: Redefining \ref on input line 70.
-LaTeX Info: Redefining \pageref on input line 70.
-LaTeX Info: Redefining \nameref on input line 70.
+LaTeX Info: Redefining \ref on input line 69.
+LaTeX Info: Redefining \pageref on input line 69.
+LaTeX Info: Redefining \nameref on input line 69.
  (QuantumComputing.out)
 (QuantumComputing.out)
 \@outlinefile=\write4
 \openout4 = `QuantumComputing.out'.
 
+LaTeX Font Info:    Trying to load font information for U+msa on input line 72.
 
-*geometry* driver: auto-detecting
-*geometry* detected driver: pdftex
-*geometry* verbose mode - [ preamble ] result:
-* driver: pdftex
-* paper: <default>
-* layout: <same size as paper>
-* layoutoffset:(h,v)=(0.0pt,0.0pt)
-* modes: 
-* h-part:(L,W,R)=(28.45274pt, 557.38951pt, 28.45274pt)
-* v-part:(T,H,B)=(28.45274pt, 738.0645pt, 28.45274pt)
-* \paperwidth=614.295pt
-* \paperheight=794.96999pt
-* \textwidth=557.38951pt
-* \textheight=738.0645pt
-* \oddsidemargin=-43.81725pt
-* \evensidemargin=-43.81725pt
-* \topmargin=-80.81725pt
-* \headheight=12.0pt
-* \headsep=25.0pt
-* \topskip=12.0pt
-* \footskip=30.0pt
-* \marginparwidth=44.0pt
-* \marginparsep=10.0pt
-* \columnsep=10.0pt
-* \skip\footins=10.8pt plus 4.0pt minus 2.0pt
-* \hoffset=0.0pt
-* \voffset=0.0pt
-* \mag=1000
-* \@twocolumnfalse
-* \@twosidefalse
-* \@mparswitchfalse
-* \@reversemarginfalse
-* (1in=72.27pt=25.4mm, 1cm=28.453pt)
-
-LaTeX Font Info:    Trying to load font information for U+msa on input line 73.
 
 (/Library/Application Support/MiKTeX/texmfs/install/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 73.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 72.
 
 (/Library/Application Support/MiKTeX/texmfs/install/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 73
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 72
 .
 
 (/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/latex/jk
@@ -931,7 +874,7 @@ nappen/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
 LaTeX Font Info:    Trying to load font information for U+stmry on input line 7
-3.
+2.
 
 (/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/latex/st
 maryrd/Ustmry.fd) (QuantumComputing.toc)
@@ -941,42 +884,230 @@ maryrd/Ustmry.fd) (QuantumComputing.toc)
  [1
 
 {/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/data/pdftex/config/p
-dftex.map}] [2] [3] [4] [5] [6]
+dftex.map}]
+Overfull \hbox (15.60597pt too wide) in paragraph at lines 91--92
+[]\OT1/cmr/m/n/12 We can now be more precise; our goal is to develop a theory o
+f communication
+ []
+
+[2] [3]
+Overfull \hbox (8.76305pt too wide) in paragraph at lines 152--153
+[]\OT1/cmr/m/n/12 Assume such a measurement exists. Since $[] \OML/cmm/m/it/12 
+; []$ \OT1/cmr/m/n/12 are non-orthogonal,
+ []
+
+[4]
+Overfull \hbox (34.39699pt too wide) in paragraph at lines 178--180
+\OT1/cmr/m/n/12 Since these are non-orthogonal though, Lemma []1.0.7[] renders 
+these indistinguishable.
+ []
+
+
+Overfull \hbox (30.6762pt too wide) in paragraph at lines 178--180
+\OT1/cmr/m/n/12 Desigining algorithms amongst the push and pull of superpositio
+n and measurement
+ []
+
+[5]
+Overfull \hbox (5.97089pt too wide) in paragraph at lines 230--231
+[]\OT1/cmr/m/n/12 Orthogonal states can be distinguished via measurement, this 
+is the content
+ []
+
+[6]
+Overfull \hbox (8.84308pt too wide) in paragraph at lines 262--263
+[]\OT1/cmr/m/n/12 The exact relationship between projective measurements and me
+asurements
+ []
+
 [7] [8] [9]
-Overfull \hbox (10.78131pt too wide) in paragraph at lines 494--496
-\OT1/cmr/m/n/12 Alice applies the following unitary matrix (which is written wi
-th respect to the ordered basis $[] \OML/cmm/m/it/12 ; [] ; [] ; []$\OT1/cmr/m/
-n/12 ) 
+Overfull \hbox (2.96814pt too wide) in paragraph at lines 338--339
+\OT1/cmr/m/n/12 system been described as a product, then we would have projecti
+on morphisms
+ []
+
+[10]
+Overfull \hbox (2.1501pt too wide) in paragraph at lines 372--373
+\OT1/cmr/m/n/12 generalises Definition []1.0.1[] in this way, and also generali
+ses further by allowing
  []
 
 
-Overfull \hbox (5.22859pt too wide) in paragraph at lines 523--525
-\OT1/cmr/m/n/12 Now, Alice can perform a measurement on her two qubits, and dep
-ending on which outcome $[] \OML/cmm/m/it/12 ; [] ; [] ; []$
+Overfull \hbox (1.39732pt too wide) in paragraph at lines 376--377
+\OT1/cmr/m/n/12 that positive operators on finite dimensional Hilbert spaces ar
+e diagonalisable.
  []
 
-[10] [11] [12] [13] [14] [15] [16] [17] [18] [19] [20] [21] [22] [23] [24]
-[25] [26] [27] [28] [29] [30]
-Overfull \hbox (9.45436pt too wide) in paragraph at lines 1591--1592
+[11] [12] [13] [14]
+Overfull \hbox (0.79002pt too wide) in paragraph at lines 480--481
+[][]\OT1/cmr/bx/n/12 Example 2.1.10 \OT1/cmr/m/n/12 (Quantum teleportation)\OT1
+/cmr/bx/n/12 . []\OT1/cmr/m/n/12 Superposition states clearly have
+ []
+
+[15]
+Overfull \hbox (14.02078pt too wide) in paragraph at lines 529--530
+[]\OT1/cmr/m/n/12 Alice can then send Bob the classical bits $00\OML/cmm/m/it/1
+2 ; \OT1/cmr/m/n/12 01\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 10\OML/cmm/m/it/12 ; \
+OT1/cmr/m/n/12 11$ respectively indicating
+ []
+
+
+Overfull \hbox (3.27168pt too wide) in paragraph at lines 529--530
+\OT1/cmr/m/n/12 that Bob should apply the Unitary matrix respectively $\OML/cmm
+/m/it/12 I; X; Z; ZX$\OT1/cmr/m/n/12 , recovering
+ []
+
+[16] [17] [18] [19] [20]
+Overfull \hbox (21.02083pt too wide) in paragraph at lines 690--692
+\OT1/cmr/m/n/12 then an encoding of a message with respect to this encoding mig
+ht be $[]$,
+ []
+
+[21] [22] [23]
+Overfull \hbox (11.8164pt too wide) in paragraph at lines 815--817
+\OT1/cmr/m/n/12 let $(\OML/cmm/m/it/12 r[]; r[]; r[]; r[]; r[]; r[]; r[]; r[]\O
+T1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 2 \U/msb/m/n/12 Z[]$ \OT1/cmr/m/n/12 be the re
+sults from these measurements.
+ []
+
+[24] [25]
+Overfull \hbox (2.00658pt too wide) in paragraph at lines 915--916
+\OT1/cmr/m/n/12 of this section. It presents the general error correction condi
+tions as advertised
+ []
+
+[26] [27]
+Overfull \hbox (0.48009pt too wide) in paragraph at lines 950--951
+[]\OT1/cmr/m/n/12 Moreover, in Section []2[], the choice of operators $\OMS/cms
+y/m/n/12 f\OML/cmm/m/it/12 E[]; [] ; E[]\OMS/cmsy/m/n/12 g$ \OT1/cmr/m/n/12 for
+ a quantum
+ []
+
+
+Overfull \hbox (20.47664pt too wide) in paragraph at lines 950--951
+\OT1/cmr/m/n/12 operation was also not given a canonical form. Indeed, the oper
+ators $\OMS/cmsy/m/n/12 f\OML/cmm/m/it/12 E[]; [] ; E[]\OMS/cmsy/m/n/12 g$
+ []
+
+[28] [29] [30] [31]
+Overfull \hbox (3.28072pt too wide) in paragraph at lines 1058--1059
+\OT1/cmr/bx/n/12 correctable set of errors \OT1/cmr/m/n/12 if there exists a tr
+ace-preserving quantum operator
+ []
+
+
+Overfull \hbox (1.09766pt too wide) in paragraph at lines 1065--1066
+\OT1/cmr/m/n/12 (Algorithm []3.1.5[]) has \OT1/cmr/m/it/12 two \OT1/cmr/m/n/12 
+diagnoses involved, first that from the measurement
+ []
+
+[32] [33]
+Overfull \hbox (47.04831pt too wide) in paragraph at lines 1120--1122
+\OT1/cmr/m/n/12 We define $\OMS/cmsy/m/n/12 R \OT1/cmr/m/n/12 = \OMS/cmsy/m/n/1
+2 f\OML/cmm/m/it/12 U[]P[]; :::; U[]P[]\OMS/cmsy/m/n/12 g$ \OT1/cmr/m/n/12 with
+ corresponding operator $\OMS/cmsy/m/n/12 R\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 \
+OT1/cmr/m/n/12 ) = [][] \OML/cmm/m/it/12 U[]P[]P[]U[]$\OT1/cmr/m/n/12 . 
+ []
+
+[34]
+Overfull \hbox (12.47217pt too wide) in paragraph at lines 1135--1136
+[][]\OT1/cmr/bx/n/12 Definition 4.0.10. []\OT1/cmr/m/n/12 The equations [] are 
+the \OT1/cmr/bx/n/12 error correction conditions\OT1/cmr/m/n/12 . 
+ []
+
+
+Overfull \hbox (14.36728pt too wide) in paragraph at lines 1143--1144
+\OT1/cmr/m/n/12 Moreover, we have that $[] = [] = \OML/cmm/m/it/12 P$ \OT1/cmr/
+m/n/12 and so the polar decomposition
+ []
+
+[35] [36]
+Overfull \hbox (43.39061pt too wide) in paragraph at lines 1217--1218
+[][]\OT1/cmr/bx/n/12 Observation 5.0.3. []\OT1/cmr/m/n/12 Let $(\OML/cmm/m/it/1
+2 g; h\OT1/cmr/m/n/12 )$ be a pair of elements of $\OML/cmm/m/it/12 G[]$ \OT1/c
+mr/m/n/12 and let $\OML/cmm/m/it/12 g[]; :::; g[]; h[]; :::; h[] \OMS/cmsy/m/n/
+12 2
+ []
+
+[37]
+Overfull \hbox (0.88422pt too wide) in paragraph at lines 1264--1266
+\OT1/cmr/m/n/12 (here, the notation $\OMS/cmsy/m/n/12 h\OML/cmm/m/it/12 g[]; ::
+:; g[]\OMS/cmsy/m/n/12 i$ \OT1/cmr/m/n/12 denotes the group generated by these 
+elements). 
+ []
+
+
+Overfull \hbox (20.62733pt too wide) in paragraph at lines 1268--1269
+\OMS/cmsy/m/n/12 h\OML/cmm/m/it/12 g[]; :::; g[]\OMS/cmsy/m/n/12 i$\OT1/cmr/m/i
+t/12 , then the elements $\OML/cmm/m/it/12 g[]; :::; g[]$ \OT1/cmr/m/it/12 are 
+independent if and only if $\OML/cmm/m/it/12 r\OT1/cmr/m/n/12 (\OML/cmm/m/it/12
+ g[]\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 ; :::; r\OT1/cmr/m/n/12 (\OML/cmm/m/it/12
+ g[]\OT1/cmr/m/n/12 )$
+ []
+
+[38] [39] [40] [41] [42] [43]
+Overfull \hbox (1.98721pt too wide) in paragraph at lines 1490--1491
+[][]\OT1/cmr/bx/n/12 Notation A.1.8. []\OT1/cmr/m/n/12 Given a complex matrix $
+\OML/cmm/m/it/12 A$\OT1/cmr/m/n/12 , the matrix given by conjugating
+ []
+
+[44] [45] [46]
+Overfull \hbox (12.4015pt too wide) in paragraph at lines 1594--1595
+[][]\OT1/cmr/bx/n/12 Corollary A.2.9. []\OT1/cmr/m/it/12 A normal matrix $\OML/
+cmm/m/it/12 A$ \OT1/cmr/m/it/12 is Hermitian if and only if its eigenvalues
+ []
+
+[47]
+Overfull \hbox (2.2103pt too wide) in paragraph at lines 1637--1638
 [][]\OT1/cmr/bx/n/12 Definition A.2.13. []\OT1/cmr/m/n/12 Let $\OML/cmm/m/it/12
  A; B$ \OT1/cmr/m/n/12 be matrices, then the \OT1/cmr/bx/n/12 commutator \OT1/c
-mr/m/n/12 is $[\OML/cmm/m/it/12 A; B\OT1/cmr/m/n/12 ] := \OML/cmm/m/it/12 AB \O
-MS/cmsy/m/n/12   \OML/cmm/m/it/12 BA$\OT1/cmr/m/n/12 . The \OT1/cmr/bx/n/12 ant
-icommutator
+mr/m/n/12 is $[\OML/cmm/m/it/12 A; B\OT1/cmr/m/n/12 ] :=
  []
 
-[31] [32] [33] (QuantumComputing.aux)
+
+Overfull \hbox (10.37729pt too wide) in paragraph at lines 1640--1641
+\OT1/cmr/m/it/12 Hermitian operators. Then $\OT1/cmr/m/n/12 [\OML/cmm/m/it/12 A
+; B\OT1/cmr/m/n/12 ] = 0$ \OT1/cmr/m/it/12 if and only if $\OML/cmm/m/it/12 A$ 
+\OT1/cmr/m/it/12 and $\OML/cmm/m/it/12 B$ \OT1/cmr/m/it/12 are simultaneously
+ []
+
+[48]
+Overfull \hbox (20.72354pt too wide) detected at line 1650
+[]\OML/cmm/m/it/12 AB \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 U[]D[]UU[]D[]U \OT1/cm
+r/m/n/12 = \OML/cmm/m/it/12 U[]D[]D[]U \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 U[]D[
+]D[]U \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 U[]D[]UU[]D[]U \OT1/cmr/m/n/12 = \OML/
+cmm/m/it/12 BA
+ []
+
+[49]
+Overfull \hbox (23.90117pt too wide) in paragraph at lines 1678--1680
+\OT1/cmr/m/n/12 which indeed is unitary. In fact we read off from this that $\O
+MS/cmsy/m/n/12 f\OML/cmm/m/it/12 Tv[]=[]; :::; Tv[]=[]\OMS/cmsy/m/n/12 g$
+ []
+
+[50] [51]
+Overfull \hbox (5.15395pt too wide) in paragraph at lines 1767--1768
+[][]\OT1/cmr/bx/n/12 Corollary B.0.5. []\OT1/cmr/m/it/12 For finite dimensional
+ vector spaces, there is an adjunction: 
+ []
+
+[52]
+Overfull \hbox (13.18738pt too wide) detected at line 1809
+[][]
+ []
+
+[53] [54] [55] (QuantumComputing.aux)
 Package rerunfilecheck Info: File `QuantumComputing.out' has not changed.
-(rerunfilecheck)             Checksum: DDEF3A1E303809B91FB7614C17153B67;1728.
+(rerunfilecheck)             Checksum: 933012BCE927B63E5FF44DF7A9916F32;1642.
  ) 
 Here is how much of TeX's memory you used:
- 23703 strings out of 481099
- 437000 string characters out of 2904467
- 722247 words of memory out of 3000000
- 40301 multiletter control sequences out of 15000+600000
+ 23447 strings out of 481099
+ 434245 string characters out of 2904467
+ 703530 words of memory out of 3000000
+ 40014 multiletter control sequences out of 15000+600000
  416620 words of font info for 80 fonts, out of 8000000 for 9000
  0 hyphenation exceptions out of 8191
- 98i,16n,103p,868b,1089s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 98i,16n,103p,869b,1089s stack positions out of 5000i,500n,10000p,200000b,80000s
  </Users/wtroiani/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljf
 our/jknappen/ec/dpi600/tcrm1200.pk></Library/Application Support/MiKTeX/texmfs/
 install/fonts/type1/public/amsfonts/cm/cmbx12.pfb></Library/Application Support
@@ -996,11 +1127,13 @@ stall/fonts/type1/public/amsfonts/cm/cmsy8.pfb></Library/Application Support/Mi
 KTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmti12.pfb></Library/Applica
 tion Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmtt12.pfb></
 Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/s
-ymbols/msbm10.pfb></Library/Application Support/MiKTeX/texmfs/install/fonts/typ
-e1/public/rsfs/rsfs10.pfb>
-Output written on QuantumComputing.pdf (33 pages, 403094 bytes).
+ymbols/msam10.pfb></Library/Application Support/MiKTeX/texmfs/install/fonts/typ
+e1/public/amsfonts/symbols/msbm10.pfb></Library/Application Support/MiKTeX/texm
+fs/install/fonts/type1/public/rsfs/rsfs10.pfb></Users/wtroiani/Library/Applicat
+ion Support/MiKTeX/texmfs/install/fonts/type1/public/hoekwater/stmary10.pfb>
+Output written on QuantumComputing.pdf (55 pages, 453437 bytes).
 PDF statistics:
- 781 PDF objects out of 1000 (max. 8388607)
- 339 named destinations out of 1000 (max. 500000)
+ 929 PDF objects out of 1000 (max. 8388607)
+ 377 named destinations out of 1000 (max. 500000)
  109 words of extra memory for PDF output out of 10000 (max. 10000000)
 

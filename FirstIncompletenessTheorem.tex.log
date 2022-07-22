@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.5.21)  14 APR 2022 10:07
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.5.21)  20 JUL 2022 18:18
 entering extended mode
 **./FirstIncompletenessTheorem.tex.tex
 (FirstIncompletenessTheorem.tex.tex
@@ -802,11 +802,7 @@ Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 \Gm@dimlist=\toks45
 
 (/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/latex/ge
-ometry/geometry.cfg)) (FirstIncompletenessTheorem.tex.aux
-
-LaTeX Warning: Label `lem:strongly_representable' multiply defined.
-
-)
+ometry/geometry.cfg)) (FirstIncompletenessTheorem.tex.aux)
 \openout1 = `FirstIncompletenessTheorem.tex.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 73.
@@ -950,35 +946,37 @@ maryrd/Ustmry.fd) (FirstIncompletenessTheorem.tex.toc)
 
 {/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/data/pdftex/config/p
 dftex.map}] [2]
-Overfull \hbox (10.77638pt too wide) in paragraph at lines 164--165
+[3]
+Overfull \hbox (10.77638pt too wide) in paragraph at lines 198--199
 []\OT1/cmr/m/n/12 Before stating our version of Godel's First Incompleteness T
 heorem, we make a historical remark. Proposition
  []
 
 
 Package amsfonts Warning: Obsolete command \bold; \mathbf should be used instea
-d on input line 186.
+d on input line 218.
 
-[3] [4] [5]
-Overfull \hbox (21.73221pt too wide) in paragraph at lines 305--305
+[4] [5]
+Overfull \hbox (21.73221pt too wide) in paragraph at lines 337--337
 []\OT1/cmr/bx/n/17.28 The general recursive functions and the general recursive
  relations
  []
 
+[6]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 325.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\beta' on input line 325.
+(hyperref)                removing `math shift' on input line 357.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 325.
+(hyperref)                removing `\beta' on input line 357.
 
-[6] [7] [8]
-Overfull \hbox (5.7132pt too wide) in paragraph at lines 452--453
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 357.
+
+[7] [8]
+Overfull \hbox (5.7132pt too wide) in paragraph at lines 484--485
 [][]\OT1/cmr/bx/n/12 Lemma 3.1.11. []\OT1/cmr/m/it/12 Let $\OT1/cmr/m/n/12 (\OM
 L/cmm/m/it/12 y[]; :::; y[]\OT1/cmr/m/n/12 )$ \OT1/cmr/m/it/12 be a sequence of
  natural numbers, $\OML/cmm/m/it/12 j \OT1/cmr/m/n/12 = [](\OML/cmm/m/it/12 m; 
@@ -996,6 +994,7 @@ cmr/m/n/12 = \OML/cmm/m/it/12 []\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 y[]; :::; y[
 \myScoreStart2=\dimen295
 \myCenter2=\dimen296
 \myScoreEnd2=\dimen297
+ [10]
 \myBox3=\box73
 \myScoreStart3=\dimen298
 \myCenter3=\dimen299
@@ -1004,27 +1003,24 @@ cmr/m/n/12 = \OML/cmm/m/it/12 []\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 y[]; :::; y[
 \myScoreStart4=\dimen301
 \myCenter4=\dimen302
 \myScoreEnd4=\dimen303
- [10] [11] [12] [13] [14]
+ [11] [12] [13] [14] [15]
 
 LaTeX Font Warning: Font shape `T3/cmr/m/it' in size <12> not available
-(Font)              Font shape `T3/cmr/m/sl' tried instead on input line 1016.
+(Font)              Font shape `T3/cmr/m/sl' tried instead on input line 1023.
 
-[15] [16] [17] [18] (FirstIncompletenessTheorem.tex.aux)
-
-LaTeX Warning: There were multiply-defined labels.
-
+[16] [17] [18] [19] (FirstIncompletenessTheorem.tex.aux)
 Package rerunfilecheck Info: File `FirstIncompletenessTheorem.tex.out' has not 
 changed.
-(rerunfilecheck)             Checksum: 9936AC251830DCE47E856783E914B563;1968.
+(rerunfilecheck)             Checksum: B79A34EAA4624EB93B861171DDAE5BE2;2144.
  ) 
 Here is how much of TeX's memory you used:
- 23240 strings out of 481099
- 427431 string characters out of 2904467
- 715086 words of memory out of 3000000
- 40010 multiletter control sequences out of 15000+600000
+ 23244 strings out of 481099
+ 427515 string characters out of 2904467
+ 715134 words of memory out of 3000000
+ 40013 multiletter control sequences out of 15000+600000
  420562 words of font info for 89 fonts, out of 8000000 for 9000
  0 hyphenation exceptions out of 8191
- 98i,12n,103p,817b,534s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 98i,12n,103p,817b,478s stack positions out of 5000i,500n,10000p,200000b,80000s
  </Users/wtroiani/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljf
 our/jknappen/ec/dpi600/tcrm1200.pk></Library/Application Support/MiKTeX/texmfs/
 install/fonts/type1/public/amsfonts/cm/cmbx12.pfb></Library/Application Support
@@ -1049,9 +1045,9 @@ fs/install/fonts/type1/public/tipa/tipa12.pfb></Users/wtroiani/Library/Applicat
 ion Support/MiKTeX/texmfs/install/fonts/type1/public/tipa/tipa8.pfb></Users/wtr
 oiani/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/tipa
 /tipasl12.pfb>
-Output written on FirstIncompletenessTheorem.tex.pdf (18 pages, 305662 bytes).
+Output written on FirstIncompletenessTheorem.tex.pdf (19 pages, 308060 bytes).
 PDF statistics:
- 455 PDF objects out of 1000 (max. 8388607)
- 157 named destinations out of 1000 (max. 500000)
+ 457 PDF objects out of 1000 (max. 8388607)
+ 158 named destinations out of 1000 (max. 500000)
  101 words of extra memory for PDF output out of 10000 (max. 10000000)
 

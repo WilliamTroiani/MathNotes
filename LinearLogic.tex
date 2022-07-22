@@ -102,21 +102,25 @@
 {\gdef\scalefactor{#1}\begin{center}\proofSkipAmount \leavevmode}%
 	{\scalebox{\scalefactor}{\DisplayProof}\proofSkipAmount \end{center} }
 
-\usepackage[margin=1cm]{geometry}
+\usepackage[margin=1.5cm]{geometry}
 
 
-\title{Linear Logic}
+\title{Linear Logic: Multiplicatives}
 \author{Will Troiani}
-\date{February 2021}
+\date{\today}
 
 \begin{document}
 	\maketitle
 	\tableofcontents
 	\section{Multiplicatives}
+	Mathematics is written is formalised in logical languages which in turn are designed around the ideas of mathematics. So which, of mathematics or logic, is more fundamental? To explore this question, this note presents the Geometry of Interaction program, which seeks to define a model for Linear Logic inside some ``geometric" (or topological, or functional...) category (interpreted either formally or informally).
+	
+	The Geometry of Interaction program has been intiated by Girard \cite{girard}, \cite{GoI2}, \cite{GoI3}, \cite{GoI4}, \cite{GoI5}, and further developed by Regnier \cite{Regnier}, Seiller \cite{Seiller1}, \cite{Seiller2}, \cite{Seiller3}, \cite{Seiller4}, as well as many others \cite{Laurent}, \cite{Hines}. The work presented in this current note is an entrance point to this body of work, in particular, none of the ideas presented here are new (although the presentation has been personalised and is different to their original presentations). The standard textbook reference is \cite{BS} however this note was developed from the original papers.
+	
 	\begin{defn}\label{def:formulas}
 		There is an infinite set of \textbf{unoriented atoms} $X,Y,Z,...$ and an \textbf{oriented atom} (or \textbf{atomic proposition}) is a pair $(X,+)$ or $(X,-)$ where $X$ is an unoriented atom. The set of \textbf{pre-formulas} is defined as follows.
 		\begin{itemize}
-			\item Any atomic proposition is a preformula.
+			\item Any atomic proposition is a pre-formula.
 			\item If $A,B$ are pre-formulas then so are $A \otimes B$, $A \parr B$.
 			\item If $A$ is a pre-formula then so is $\neg A$.
 		\end{itemize}
@@ -126,7 +130,7 @@
 		\end{equation}
 	\end{defn}
 \begin{remark}
-	In \cite{AlgPnt} we define $\neg (A \otimes B)$ to be $\neg B \parr \neg A$, that is, the order order of $A$ and $B$ is swapped. Here we do \emph{not} swap the order in order to make Geometry of Interaction One (Theorem \ref{thm:GoI_one}) more transparent.
+	In \cite{AlgPnt} we define $\neg (A \otimes B)$ to be $\neg B \parr \neg A$, that is, the order of $A$ and $B$ is swapped by the negation. Here we do \emph{not} swap the order so that Geometry of Interaction One (Theorem \ref{thm:GoI_one}) is more transparent.
 	\end{remark}
 
 	\begin{lemma}
@@ -146,6 +150,9 @@
 	\begin{defn}
 		A finite sequence of formulas is a \textbf{sequent} and we write $\vdash  A_1,..., A_n$ for the sequent $(A_1,...,A_n)$.
 	\end{defn}
+
+The following system of logic is due to Girard \cite{linearlogic}, \cite{AnalyticFunctors}.
+
 	\begin{defn}\label{def:mult_lin_log_ded_rule}
 		A \textbf{multiplicative, linear logic deduction rule} (or simply \textbf{deduction rule}) results from one of the schemata below by a substitution of the following kind: replace $A,B$ by arbitrary formulas, and $\Gamma, \Gamma', \Delta, \Delta'$ by arbitrary (possibly empty) sequences of formulas separated by commas:
 		\begin{itemize}
@@ -155,12 +162,12 @@
 				\begin{prooftree}
 					\AxiomC{}
 					\RightLabel{$\ax$}
-					\UnaryInfC{$\vdash A, \sim A$}
+					\UnaryInfC{$\vdash \neg A, A$}
 				\end{prooftree}
 				\item \textbf{Cut}:
 				\begin{prooftree}
 					\AxiomC{$\vdash \Gamma, A, \Gamma'$}
-					\AxiomC{$\vdash \Delta, \negation A, \Delta'$}
+					\AxiomC{$\vdash \Delta, \neg A, \Delta'$}
 					\RightLabel{$\cut$}
 					\BinaryInfC{$\vdash \Gamma, \Gamma', \Delta, \Delta'$}
 				\end{prooftree}
@@ -193,11 +200,11 @@
 		\end{itemize}
 	\end{defn}
 	\begin{defn}\label{def:proof}
-		A \textbf{proof in MLL} is a finite, rooted, planar, tree where each edge is labelled by a sequent and each node except for the root is labelled by a valid deduction rule. If the edge connected to the root is labelled by the sequent $\vdash \Gamma$ then we call the proof a \textbf{proof of $\vdash \Gamma$} and in such a situation, $\Gamma$ is the \textbf{conclusion} of $\pi$.
+		A \textbf{proof in MLL} is a finite, rooted, planar, tree where each edge is labelled by a sequent and each node except for the root is labelled by a valid deduction rule. If the edge connected to the root is labelled by the sequent $\vdash \Gamma$ then we call the proof a \textbf{proof of $\Gamma$} and in such a situation, $\Gamma$ is the \textbf{conclusion} of $\pi$.
 	\end{defn}
-	A proof in MLL is a concept inspired by the proofs that mathematicians write in, for example, algebraic geometry. One of the reasons why it is interesting to consider a formal notion of a proof so that we can analyse the true \emph{essence} of a proof. Many arbitrary choices are made when one writes a proof on paper, for instance, what order two arguments are written down when one does not depend on the other. Hence, a natural idea is to define an equivalence relation on the set of a proofs in MLL which identify proofs which differ only in these insignificant ways. However, there is an even better idea. We begin with the question: ``what is good notation"?
+	A proof in MLL is a concept inspired by the proofs that mathematicians write in, for example, algebraic geometry. One of the reasons why it is interesting to consider a formal notion of a proof is so that we can analyse the true \emph{essence} of a proof. Many arbitrary choices are made when one writes a proof on paper, for instance, what order two arguments are written down when one does not depend on the other. Hence, a natural idea is to define an equivalence relation on the set of a proofs in MLL which identify proofs which differ only in these insignificant ways. This question was explored to its natural end for the Intuitionistic Sequent Calculus in \cite{GMZ}, for example. However, there is a deeper point to be made. We begin with the question: ``what is good notation"?
 	
-	Let us begin with an example of \emph{bad} notation. Say we considered proofs in MLL up to equivalence, as suggested by the previous paragraph. For clarity, just in this paragraph and the next we will refer to proofs in MLL as \emph{preproofs}, and equivalence classes of such things as \emph{proofs}. The only reasonable way to denote a proof would be to denote it \emph{indirectly} via a preproof. Hence, this notation \emph{encompasses more than the pure essence of a proof}, as the arbitrary choices belonging to that particular preproof are also included in the notation. The result: a notation which obfuscates the mathematical structure of proofs.
+	Let us begin with an example of \emph{bad} notation. Say we considered proofs in MLL up to equivalence. For clarity, just in this paragraph and the next we will refer to proofs in MLL as \emph{preproofs}, and equivalence classes of such things as \emph{proofs}. The only reasonable way to denote a proof would be to denote it \emph{indirectly} via a preproof. Hence, this notation \emph{encompasses more than the pure essence of a proof}, as the arbitrary choices belonging to that particular preproof are also included in the notation. The result: a notation which obfuscates the mathematical structure of proofs.
 	
 	Hence, the desiderata for what constitutes ``good notation" at least includes the following condition.
 	\begin{equation}
@@ -216,13 +223,15 @@
 		For all edges $e \in E$, the first element of $r(e)$ is the \textbf{source} and the second element is the \textbf{target}.
 		\end{defn}
 	
+	The following method for writing certain equivalence classes of proofs with a single calculus is due to Girard \cite{linearlogic}. See \cite{BS} for his own explanation of how one may think of this graphical syntax. This particular presentation of proof structures is due to Laurent \cite{laurent}.
+	
 	\begin{defn}\label{def:proof_structures}
 		A \textbf{proof structure} is a directed multigraph with edges labelled with formulas (Definition \ref{def:formulas}) and with nodes labelled with an element of the following set: $\lbrace \ax, \cut, \otimes, \parr, \operatorname{c} \rbrace$. A proof structure may not admit any loops (however it may admit cycles). The incoming edges of a node are called its \textbf{premisses}, the outgoing edges are its \textbf{conclusions}. Proof structures are required to adhere to the following conditions.
 		\begin{itemize}
 			\item Each node labelled $\ax$ has exactly two conclusions and no premisse, the conclusions are labelled $A$ and $\neg A$ for some $A$.
 			\item Each node labelled $\cut$ has exactly two premisses and no conclusion, where the premisses are labelled $A$ and $\neg A$ for some $A$. 
 			\item Each node labelled $\otimes$ has exactly two premisses and one conclusion. These two premisses are ordered. The smallest one is called the \emph{left} premise of the node, the biggest one is called the \emph{right} premise. The left premise is labelled $A$, the right premise is labelled $B$ and the conclusion is labelled $A \otimes B$, for some $A,B$.
-			\item Each node labelled $\parr$ has exactly two ordered premisses and one conclusion. The left premise is labelled $A$, the right premise is labelled $B$ and the conclusion sis labelled $A \parr B$, for some $A,B$.
+			\item Each node labelled $\parr$ has exactly two ordered premisses and one conclusion. The left premise is labelled $A$, the right premise is labelled $B$ and the conclusion is labelled $A \parr B$, for some $A,B$.
 			\item Each node labelled $\operatorname{c}$ has exactly one premise and no conclusion. Such a premise of a node labelled $\operatorname{c}$ is called the \textbf{conclusion} of the proof structure.
 		\end{itemize}
 		Let $\pi$ be a proof structure. A \textbf{conclusion link} consists of a node labelled $\operatorname{c}$ along with its premise. An \textbf{axiom link} of $\pi$ is a subgraph consisting of a node labelled $\ax$ along with its conclusions. A $\cut$ link consists of a node labelled $\cut$ along with its premises. A \textbf{tensor link} of $\pi$ consists of a node labelled $\otimes$ along with its premises and conclusion. A \textbf{par link} consists of a node labelled $\parr$ along with its premises and conclusion.
@@ -260,13 +269,10 @@
 			\arrow[curve={height=12pt}, from=2-5, to=3-6]
 		\end{tikzcd}\]
 	\end{defn}
-	\begin{remark}
-		Our reference for the definition of a proof structure is \cite{laurent}, see there for more details.
-	\end{remark}
 	\begin{defn}\label{def:occurrences_labels}
 		An \textbf{occurrence of a formula} $A$ in a proof structure $\pi$ is an edge $e$ labelled by $A$.
 	\end{defn}
-	Loosely speaking, logic is about determining correct arguments. That is, from the space of arguments (either correct or incorrect), logic determines whether an argument $A$ lies in the subspace of \emph{correct arguments} or not. In the current context, we take the set of proof structures to be the space of proofs, both correct and incorrect, and we take the subset of so called \emph{proof nets} to be the subspace of correct arguments. Proof nets are the proof structures which lie in the image of a translation map (Definition \ref{def:translation_map} below) between sequent style proofs and proof structures, we now explain this sequent style logical system.
+	Loosely speaking, logic is about determining correct arguments. That is, from the space of arguments (either correct or incorrect), logic determines whether an argument $A$ lies in the subspace of \emph{correct arguments} or not. In the current context, we take the set of proof structures to be the space of proofs, both correct and incorrect, and we take the subset of so called \emph{proof nets} to be the subspace of correct arguments. Proof nets are the proof structures which lie in the image of a translation map (Definition \ref{def:translation_map} below) between sequent style proofs and proof structures. We now define this sequent style logical system, which again is due to Girard \cite{BS}.
 	
 	\begin{defn}\label{def:int_mult_ded_rule} 
 		The set of \textbf{intuitionistic formulas} is defined as follows.
@@ -274,9 +280,9 @@
 			\item Any atomic proposition (Definition \ref{def:formulas}) is an intuitionistic formula.
 			\item If $A,B$ are formulas then so are $A \otimes B, A \multimap B$.
 		\end{itemize}
-		Let $\call{P}^n$ be the set of all length $n$ sequences of labelled intuitionistic variables with $\call{P}^0 := \lbrace \varnothing \rbrace$, and $\call{P} := \cup_{n = 0}^\infty \call{P}^n$. A \textbf{sequent} is a pair $(\Gamma,A)$ where $\Gamma \in \call{P}$ and $A \in I\Psi$, written $\Gamma \vdash A$. We call $\Gamma$ the \textbf{antecedent} and $A$ the \textbf{succedent} of the sequent. Given $\Gamma$ and a labelled intuitionistic formula $A$ we write $\Gamma, A$ for the element of $\call{P}$ given by appending $A$ to the end of $\Gamma$. We write $\vdash A$ for $\varnothing \vdash A$.
+		Let $\call{P}^n$ be the set of all length $n$ sequences of intuitionistic variables with $\call{P}^0 := \lbrace \varnothing \rbrace$, and $\call{P} := \cup_{n = 0}^\infty \call{P}^n$. A \textbf{sequent} is a pair $(\Gamma,A)$ where $\Gamma \in \call{P}$ and $A$ is an intuitionistic formula, written $\Gamma \vdash A$. We call $\Gamma$ the \textbf{antecedent} and $A$ the \textbf{succedent} of the sequent. Given $\Gamma$ and an intuitionistic formula $A$ we write $\Gamma, A$ for the element of $\call{P}$ given by appending $A$ to the end of $\Gamma$. We write $\vdash A$ for $\varnothing \vdash A$.
 		
-		An \textbf{intuitionistic, multiplicative deduction rule} (or simply \textbf{deduction rule}) results from one of the schemata below by a substitution of the following kind: replace $A,B,C$ by arbitrary labelled intuitionistic formulas, and $\Gamma,\Delta, \Theta$ by arbitrary (possibly empty) sequences of labelled intuitionistic formulas separated by commas:
+		An \textbf{intuitionistic, multiplicative deduction rule} (or simply \textbf{deduction rule}) results from one of the schemata below by a substitution of the following kind: replace $A,B,C$ by arbitrary intuitionistic formulas, and $\Gamma,\Delta, \Theta$ by arbitrary (possibly empty) sequences of intuitionistic formulas separated by commas.
 		\begin{itemize}
 			\item The \textbf{identity group}:
 			\begin{center}
@@ -362,10 +368,10 @@
 				\end{tabular}
 			\end{center}
 		\end{itemize}
-		A \textbf{proof in IMLL} is defined the same way as in Definition \ref{def:proof}.
+		A \textbf{proof in IMLL} (intuitionistic multiplicative linear logic) is defined the similarly to proofs of MLL (Definition \ref{def:proof}).
 	\end{defn}
 	\begin{defn}\label{def:translation_map}
-		Let $\Sigma$ denote the set of multiplicative, linear logic proofs and $\operatorname{MPS}$ the set of multiplicative proof structures. We let $T: \Sigma \lto \operatorname{MPS}$ denote the function defined inductively by associating to each deduction rule of Definition \ref{def:mult_lin_log_ded_rule} a multiplicative proof structure. More precisely, we simultaneously inductively prove that if $\pi$ has height $n$ and is constructed from either one proof $\pi'$ with height less than $n$ or from two proofs $\pi_1,\pi_2$ each with height less than $n$, then $T(\pi'), T(\pi_1), T(\pi_2)$ have conclusions corresponding to the conclusions of $\pi',\pi_1,\pi_2$, and we use this fact to inductively define $T(\pi)$ which in turn has conclusions corresponding to those of $\pi$.
+		Let $\Sigma$ denote the set of MLL proofs and $\operatorname{MPS}$ the set of multiplicative proof structures. We let $T: \Sigma \lto \operatorname{MPS}$ denote the function defined inductively by associating to each deduction rule of Definition \ref{def:mult_lin_log_ded_rule} a multiplicative proof structure. More precisely, we simultaneously inductively prove that if $\pi$ has height $n$ and is constructed from either one proof $\pi'$ with height less than $n$ or from two proofs $\pi_1,\pi_2$ each with height less than $n$, then $T(\pi'), T(\pi_1), T(\pi_2)$ have conclusions corresponding to the conclusions of $\pi',\pi_1,\pi_2$, and we use this fact to inductively define $T(\pi)$ which in turn has conclusions corresponding to the formulas in the final sequent of $\pi$.
 		
 		Given a proof $\pi$, the following notation:
 		\begin{equation}
@@ -380,12 +386,12 @@
 				\text{Axiom} & \begin{prooftree}
 					\AxiomC{}
 					\RightLabel{$\ax$}
-					\UnaryInfC{$\vdash A, \sim A$}
+					\UnaryInfC{$\vdash A, \neg A$}
 				\end{prooftree} & $\stackrel{T}{\lto}$ &
 				% https://q.uiver.app/?q=WzAsNSxbMSwwLCJcXGF4Il0sWzAsMSwiQSJdLFsyLDEsIlxcbmVnIEEiXSxbMCwyLCJcXG9wZXJhdG9ybmFtZXtjfSJdLFsyLDIsIlxcb3BlcmF0b3JuYW1le2N9Il0sWzAsMSwiIiwwLHsiY3VydmUiOjIsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbMCwyLCIiLDIseyJjdXJ2ZSI6LTIsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbMSwzXSxbMiw0XV0=
 				$\begin{tikzcd}[column sep = small, row sep = small]
 					& \ax \\
-					A && {\neg A} \\
+					\neg A && {A} \\
 					{\operatorname{c}} && {\operatorname{c}}
 					\arrow[curve={height=12pt}, no head, from=1-2, to=2-1]
 					\arrow[curve={height=-12pt}, no head, from=1-2, to=2-3]
@@ -400,9 +406,11 @@
 				\text{Cut} &
 				\begin{prooftree}
 					\startproof{$\pi_1$}
+					\noLine
 					\UnaryInfC{$\vdash \Gamma, A, \Gamma'$}
 					\startproof{$\pi_2$}
-					\UnaryInfC{$\vdash \Delta, \negation A, \Delta'$}
+					\noLine
+					\UnaryInfC{$\vdash \Delta, \neg A, \Delta'$}
 					\RightLabel{$\cut$}
 					\BinaryInfC{$\vdash \Gamma, \Gamma', \Delta, \Delta'$}
 				\end{prooftree} & $\stackrel{T}{\lto}$ &
@@ -424,8 +432,10 @@
 				\text{Times} &
 				\begin{prooftree}
 					\startproof{$\pi_1$}
+					\noLine
 					\UnaryInfC{$\vdash \Gamma, A, \Gamma'$}
 					\startproof{$\pi_2$}
+					\noLine
 					\UnaryInfC{$\vdash \Delta, B, \Delta'$}
 					\RightLabel{$\otimes$}
 					\BinaryInfC{$\vdash \Gamma, \Gamma', A \otimes B, \Delta, \Delta'$}
@@ -452,6 +462,7 @@
 				\text{Par} &
 				\begin{prooftree}
 					\startproof{$\pi$}
+					\noLine
 					\UnaryInfC{$\vdash \Gamma, A, B, \Gamma'$}
 					\RightLabel{$\parr$}
 					\UnaryInfC{$\vdash \Gamma, A \parr B, \Gamma'$}
@@ -478,6 +489,7 @@
 				\text{Exchange} &
 				\begin{prooftree}
 					\startproof{$\pi$}
+					\noLine
 					\UnaryInfC{$\vdash \Gamma, A, B, \Gamma'$}
 					\RightLabel{$\ex$}
 					\UnaryInfC{$\vdash \Gamma, B, A, \Gamma'$}
@@ -520,8 +532,10 @@
 				\text{Cut} &
 				\begin{prooftree}
 					\startproof{$\pi_1$}
+					\noLine
 					\UnaryInfC{$\Gamma \vdash A$}
 					\startproof{$\pi_2$}
+					\noLine
 					\UnaryInfC{$\Delta, A,\Theta \vdash B$}
 					\RightLabel{$({\operatorname{cut}})$}
 					\BinaryInfC{$\Gamma, \Delta, \Theta \vdash B$}
@@ -543,6 +557,7 @@
 			\begin{tabular}{ >{\centering}m{2cm} >{\centering}m{7cm} >{\centering}m{0.5cm} >{\centering}m{7cm}}
 				\text{Left times} &
 				\startproof{$\pi$}
+				\noLine
 				\UnaryInfC{$\Gamma, A, B, \Gamma' \vdash C$}
 				\RightLabel{$\ltensor$}
 				\UnaryInfC{$\Gamma, A \otimes B, \Gamma' \vdash C$}
@@ -567,8 +582,10 @@
 			\begin{tabular}{ >{\centering}m{2cm} >{\centering}m{7cm} >{\centering}m{0.5cm} >{\centering}m{7cm}}
 				\text{Right times} &
 				\startproof{$\pi_1$}
+				\noLine
 				\UnaryInfC{$\Gamma \vdash A$}
 				\startproof{$\pi_2$}
+				\noLine
 				\UnaryInfC{$\Delta\vdash B$}
 				\RightLabel{$\rtensor$}
 				\BinaryInfC{$\Gamma, \Delta \vdash A \otimes B$}
@@ -594,6 +611,7 @@
 			\begin{tabular}{ >{\centering}m{2cm} >{\centering}m{7cm} >{\centering}m{0.5cm} >{\centering}m{7cm}}
 				\text{Right implication} &
 				\startproof{$\pi$}
+				\noLine
 				\UnaryInfC{$\Gamma, A, \Gamma' \vdash B$}
 				\RightLabel{$\rimp$}
 				\UnaryInfC{$\Gamma, \Gamma' \vdash A \multimap B$}
@@ -618,8 +636,10 @@
 			\begin{tabular}{ >{\centering}m{2cm} >{\centering}m{7cm} >{\centering}m{0.5cm} >{\centering}m{7cm}}
 				\text{Left implication} &
 				\startproof{$\pi_1$}
+				\noLine
 				\UnaryInfC{$\Gamma \vdash A$}
 				\startproof{$\pi_2$}
+				\noLine
 				\UnaryInfC{$\Delta, B, \Delta' \vdash C$}
 				\RightLabel{$\limp$}
 				\BinaryInfC{$A \multimap B, \Gamma, \Delta \vdash C$}
@@ -646,6 +666,7 @@
 				\text{Exchange} &
 				\begin{prooftree}
 					\startproof{$\pi$}
+					\noLine
 					\UnaryInfC{$ \Gamma, A, B, \Gamma' \vdash C$}
 					\RightLabel{$\ex$}
 					\UnaryInfC{$\Gamma, B, A, \Gamma' \vdash C$}
@@ -680,8 +701,10 @@
 				\text{Cut} &
 				\begin{prooftree}
 					\startproof{$\pi_1$}
+					\noLine
 					\UnaryInfC{$\Gamma \vdash A$}
 					\startproof{$\pi_2$}
+					\noLine
 					\UnaryInfC{$\Delta, A,\Theta \vdash B$}
 					\RightLabel{$({\operatorname{cut}})$}
 					\BinaryInfC{$\Gamma, \Delta, \Theta \vdash B$}
@@ -689,8 +712,10 @@
 				% 
 				\begin{prooftree}
 					\startproof{$R(\pi_1)$}
+					\noLine
 					\UnaryInfC{$ \vdash \neg \Gamma, A$}
 					\startproof{$R(\pi_2)$}
+					\noLine
 					\UnaryInfC{$ \vdash \neg \Delta, \neg A,\neg\Theta, B$}
 					\RightLabel{$({\operatorname{cut}})$}
 					\BinaryInfC{$ \vdash \neg \Gamma, \neg\Delta, \neg \Theta, B$}
@@ -702,11 +727,13 @@
 			\begin{tabular}{ >{\centering}m{2cm} >{\centering}m{7cm} >{\centering}m{0.5cm} >{\centering}m{7cm}}
 				\text{Left times} &
 				\startproof{$\pi$}
+				\noLine
 				\UnaryInfC{$\Gamma, A, B, \Gamma' \vdash C$}
 				\RightLabel{$\ltensor$}
 				\UnaryInfC{$\Gamma, A \otimes B, \Gamma' \vdash C$}
 				\DisplayProof & $\stackrel{R}{\lto}$ &
 				\startproof{$R(\pi)$}
+				\noLine
 				\UnaryInfC{$ \vdash\neg \Gamma, \neg A, \neg B,\neg \Gamma', C$}
 				\RightLabel{$\otimes$}
 				\UnaryInfC{$ \vdash\neg\Gamma, \neg A \otimes \neg B, \neg \Gamma', C$}
@@ -718,16 +745,20 @@
 			\begin{tabular}{ >{\centering}m{2cm} >{\centering}m{7cm} >{\centering}m{0.5cm} >{\centering}m{7cm}}
 				\text{Right times} &
 				\startproof{$\pi_1$}
+				\noLine
 				\UnaryInfC{$\Gamma \vdash A$}
 				\startproof{$\pi_2$}
+				\noLine
 				\UnaryInfC{$\Delta\vdash B$}
 				\RightLabel{$\rtensor$}
 				\BinaryInfC{$\Gamma, \Delta \vdash A \otimes B$}
 				\DisplayProof & $\stackrel{R}{\lto}$ &
 				% 
 				\startproof{$R(\pi_1)$}
+				\noLine
 				\UnaryInfC{$ \vdash \neg\Gamma, A$}
 				\startproof{$R(\pi_2)$}
+				\noLine
 				\UnaryInfC{$\vdash\neg \Delta, B$}
 				\RightLabel{$\otimes$}
 				\BinaryInfC{$ \vdash\neg \Gamma, \neg \Delta, A \otimes B$}
@@ -739,11 +770,13 @@
 			\begin{tabular}{ >{\centering}m{2cm} >{\centering}m{7cm} >{\centering}m{0.5cm} >{\centering}m{7cm}}
 				\text{Right implication} &
 				\startproof{$\pi$}
+				\noLine
 				\UnaryInfC{$\Gamma, A, \Gamma' \vdash B$}
 				\RightLabel{$\rimp$}
 				\UnaryInfC{$\Gamma, \Gamma' \vdash A \multimap B$}
 				\DisplayProof & $\stackrel{R}{\lto}$ &
 				\startproof{$R(\pi)$}
+				\noLine
 				\UnaryInfC{$ \vdash\neg\Gamma, \neg A, \neg\Gamma', B$}
 				\RightLabel{$\ex$}
 				\doubleLine
@@ -758,16 +791,20 @@
 			\begin{tabular}{ >{\centering}m{2cm} >{\centering}m{7cm} >{\centering}m{0.5cm} >{\centering}m{7cm}}
 				\text{Left implication} &
 				\startproof{$\pi_1$}
+				\noLine
 				\UnaryInfC{$\Gamma \vdash A$}
 				\startproof{$\pi_2$}
+				\noLine
 				\UnaryInfC{$\Delta, B, \Delta' \vdash C$}
 				\RightLabel{$\limp$}
 				\BinaryInfC{$A \multimap B, \Gamma, \Delta \vdash C$}
 				\DisplayProof & $\stackrel{R}{\lto}$ &
 				% \startproof{$\pi_1$}
 				\startproof{$R(\pi_1)$}
+				\noLine
 				\UnaryInfC{$ \vdash \neg\Gamma, A$}
 				\startproof{$R(\pi_2)$}
+				\noLine
 				\UnaryInfC{$ \vdash\neg \Delta, \neg B, \neg \Delta',C$}
 				\RightLabel{$\otimes$}
 				\BinaryInfC{$ \vdash \neg\Gamma, A \otimes \neg B, \neg\Delta, C$}
@@ -780,12 +817,14 @@
 				\text{Exchange} &
 				\begin{prooftree}
 					\startproof{$\pi$}
+					\noLine
 					\UnaryInfC{$ \Gamma, A, B, \Gamma' \vdash C$}
 					\RightLabel{$\ex$}
 					\UnaryInfC{$\Gamma, B, A, \Gamma' \vdash C$}
 				\end{prooftree} & $\stackrel{R}{\lto}$ &
 				\begin{prooftree}
 					\startproof{$\pi$}
+					\noLine
 					\UnaryInfC{$  \vdash \neg\Gamma, \neg A, \neg B, \neg \Gamma',C$}
 					\RightLabel{$\ex$}
 					\UnaryInfC{$ \vdash \neg\Gamma, \neg B, \neg A, \neg \Gamma', C$}
@@ -810,20 +849,24 @@
 		The map $R$ is not surjective.
 	\end{lemma}
 	\begin{proof}
-		There is not proof $\pi$ in $\Pi$ such that $R(\pi)$ is the following.
+		There is no proof $\pi$ in $\Pi$ such that $R(\pi)$ is the following, where $X$ is atomic.
 		\begin{prooftree}
 			\AxiomC{}
 			\RightLabel{$\ax$}
-			\UnaryInfC{$\vdash \neg A, A$}
+			\UnaryInfC{$\vdash X, \neg X$}
 		\end{prooftree}
 	\end{proof}
+
+In Section \ref{sec:sequentialisation} we will see what the image of the map $T$ is.
+
 	\begin{remark}
-		Neither of the maps $T,S$ are injective. By definition of proof nets, the map $T$ is surjective. The image of $S$ is the set of \textbf{multiplicative, intuitionistic proof nets}. These will not be considered again in these notes, but it would be interesting to find a correctness criterion for intuitionistic proof nets similar to the \emph{long trip condition} (Section \ref{sec:sequentialisation}).
+		Neither of the maps $T,S$ are injective. By definition of proof nets, the map $T$ is surjective. The image of $S$ is the set of \textbf{multiplicative, intuitionistic proof nets}. These will not be considered again in these notes, but it would be interesting to find a correctness criterion for intuitionistic proof nets similar to the \emph{long trip condition} for multiplicative proof nets (Section \ref{sec:sequentialisation}).
 	\end{remark}
-	In Section \ref{sec:sequentialisation} we will see what the image of the map $T$ is.
 	
 	\section{The Sequentialisation Theorem}\label{sec:sequentialisation}
-	\begin{defn}
+	As already mentioned, logic navigates the space of arguments and picks out the correct ones. The Sequentialisation Theorem \ref{thm:sequentialisation} formalises this by finding an algorithmic method for determining whether a proof \emph{structure} is in fact a proof \emph{net}. That is, whether a proof structure comes from a sequent style proof or not. The Sequentialisation Theorem was first proved by Girard in \cite{linearlogic}. The proof here follows the argument there but with some (mostly insignificant) changes and many extra details filled in.
+	
+	\begin{defn}\label{def:switching}
 		Let $\pi$ be a proof structure and denote the set of tensor and par links of $\pi$ by $\operatorname{Link}_{\otimes,\parr}\pi$ (or simply $\operatorname{Link}\pi$). A \textbf{switching} of $\pi$ is a function
 		\begin{equation}
 			S: \operatorname{Link}\pi \lto \lbrace L,R\rbrace
@@ -835,12 +878,13 @@
 		\begin{equation}
 			\call{U}(\pi) := \call{O}(\pi) \coprod \call{O}(\pi)
 		\end{equation}
-		where elements from the first copy are the \textbf{up elements}, and elements from the second copy are the \textbf{down elements}. We write $\uparrow A$ for the up element corresponding to an occurrence of a formula $A$ in $\pi$, and similarly for $A\downarrow$. Given a switching $S$ of $\pi$, a \textbf{pretrip of $\pi$ with respect to $S$} is a finite sequence $(x_1,...,x_n)$ of elements of $\call{U}(\pi)$ satisfying the following.
+		where elements from the first copy are the \textbf{up elements}, and elements from the second copy are the \textbf{down elements}. We write $\uparrow A$ for the up element corresponding to an occurrence of a formula $A$ in $\pi$, and $A\downarrow$ for the down element. Given a switching $S$ of $\pi$, a \textbf{pretrip of $\pi$ with respect to $S$} is a finite sequence $(x_1,...,x_n)$ of elements of $\call{U}(\pi)$ satisfying the following.
 		\begin{enumerate}
 			\item The sequence is a loop, that is, $x_1 = x_n$, and all elements (except the first and the last) are distinct.
-			\item\label{def:trip_axiom} If $x_j=\uparrow A$ and $A$ is part of an axiom link then $x_{j+1} = \negation A\downarrow$.
-			\item If $x_j = A\downarrow$ and $A$ is part of a cut link then $x_{j+1} = \uparrow \negation A$.
-			\item For any tensor link $l$ with premises $A,B$ such that $l$ has switching $L$, we have:
+			\item If $x_j = A \downarrow$ and $A$ is part of a conclusion link, then $x_{j + 1} = \uparrow A$, corresponding to the same conclusion link.
+			\item\label{def:trip_axiom} If $x_j=\uparrow A$ and $A$ is part of an axiom link then $x_{j+1} = \neg A\downarrow$, corresponding to the other conclusion of the axiom link.
+			\item If $x_j = A\downarrow$ and $A$ is part of a cut link then $x_{j+1} = \uparrow \neg A$, corresponding to the other premise of the cut link.
+			\item For any tensor link $l$ with premises $A,B$ such that $l$ has switching $L$, we have the following, where all formulas considered are part of the same tensor link:
 			\begin{itemize}
 				\item if $x_j = A \downarrow$ then $x_{j+1} = (A \otimes B)\downarrow$,
 				\item if $x_j = \uparrow (A \otimes B)$ then $x_{j+1} = \uparrow B_j$,
@@ -853,7 +897,7 @@
 				\item if $x_j = B \downarrow$ then $x_{j+1} = (A \otimes B) \downarrow$.
 			\end{itemize}
 			(see Figure \ref{fig:tensorswitching})
-			\item\label{def:trip_right_par} for any par link $l$ with premises $A,B$ such that $l$ has switching $L$, we have:
+			\item\label{def:trip_right_par} for any par link $l$ with premises $A,B$ such that $l$ has switching $L$, we have, where all formulas considered are part of the same par link:
 			\begin{itemize}
 				\item if $x_j = \uparrow (A \parr B)$ then $x_{j+1} = \uparrow A$,
 				\item if $x_j = A\downarrow$ then $x_{j+1} = (A \parr B)\downarrow$,
@@ -880,15 +924,15 @@
 			\label{fig:parrswitching}
 		\end{figure}
 		\begin{defn}
-			Let $\operatorname{Pre}\call{T}(\pi,S)$ denote the set of all pretrips of $\pi$ with respect to $S$. We define an equivalence relation on this set $\sim$ where two pretrips $(x_1,...,x_n)$ and $(y_1,...,y_m)$ are equivalent if $n = m$, and there exists an integer $k$ such that $x_{i + k} = y_i$ (where $i + k$ means $\operatorname{mod} n$) for all $i = 1,...,n$.
+			Let $\operatorname{Pre}\call{T}(\pi,S)$ denote the set of all pretrips of $\pi$ with respect to $S$. We define an equivalence relation $\sim$ on this set where two pretrips $(x_1,...,x_n)$ and $(y_1,...,y_m)$ are equivalent if $n = m$, and there exists an integer $k$ such that $x_{i + k} = y_i$ (where $i + k$ means $i + k\operatorname{mod} n$) for all $i = 1,...,n$.
 			
 			A \textbf{trip} of $\pi$ with respect to $S$ is an equivalence class of pretrips. We denote the set of all trips by $\call{T}(\pi,S)$.  If the set $\call{T}(\pi,S)$ admits more than one element, these elements are called \textbf{short trips}, and if it admits only one element, this element is the \textbf{long trip}. We refer to the statement ``for all switchings $S$, the set $\call{T}(\pi,S)$ contains exactly one element" as the \textbf{long trip condition}.
 			
-			A \textbf{short pretrip} is a choice of representative for a pretrip, and a \textbf{long pretrip} is a choice of representatitive of a long trip.
+			A \textbf{short pretrip} is a choice of representative for a short trip, and a \textbf{long pretrip} is a choice of representatitive of a long trip.
 		\end{defn}
 		
 	\end{defn}
-	Given a proof structure $\pi$ satisfying the long trip condition and a tensor link $l$ with premises $A,B$ say, let $S$ be a switching of $\pi$ and $t := (x_1,...,x_n)$ be the long pretrip of $\pi$ satisfying $x_1 =A\downarrow$. Since $\pi$ satisfies the long trip condition, it must be the case that $\uparrow (A \otimes B)$ and $B\downarrow$ occur somewhere in $t$, can we determine which occurs earlier? Let $m,l > 0$ be such that $x_m = \uparrow (A \otimes B), x_l = B\downarrow$ and assume $l < m$. Say $S(\tau) = L$, then $t$ has the shape
+	Given a proof structure $\pi$ satisfying the long trip condition and a tensor link $l$ with premises $A,B$ say, let $S$ be a switching of $\pi$ and $t := (x_1,...,x_n)$ be the long pretrip of $\pi$ satisfying $x_1 =A\downarrow$. Since $\pi$ satisfies the long trip condition, it must be the case that $\uparrow (A \otimes B)$ and $B\downarrow$ occur somewhere in $t$. Can we determine which occurs earlier? Let $m,l > 0$ be such that $x_m = \uparrow (A \otimes B), x_l = B\downarrow$ and assume $l < m$. Say $S(\tau) = L$, then $t$ has the shape
 	\begin{equation}\label{eq:sequence_left_switch_tensor}
 		(A\downarrow, (A \otimes B)\downarrow, ..., B \downarrow, \uparrow A, ..., \uparrow (A \otimes B), \uparrow B, ..., A\downarrow)
 	\end{equation}
@@ -940,9 +984,9 @@
 	\begin{remark}
 		Lemma \ref{lem:stays_contained_tensor} gives a nice interpretation of Lemma \ref{lem:stays_contained_tensor} that long trips \emph{return to where they left} at each tensor link.
 		
-		The situation is a bit different for par links; the relevant slogan is long tripes \emph{visit the premises before returning to the conclusion}.
+		The situation is a bit different for par links; the relevant slogan is long trips \emph{visit the premises before returning to the conclusion}.
 	\end{remark}
-	Say $\pi$ satisfies the long trip condition and moreover $\pi$ admits a tensor link $l$ (with premises $A,B$ say) such that if $l$ is removed, the resulting proof structure consists of two disjoint proof structures $\pi_1,\pi_2$ each satisfying the long trip condition. It is necessarily the case that any pretrip $\rho$ of $\pi$ starting at $\uparrow A$ visits the entirety of $\call{U}(\pi_1)$ before returning to the tensor link $l$, lest $\pi_1$ admit a short trip. Moreover, it must be the case that $\sigma$ admits no occurrence of formulas in $\pi_2$ lest the result of removing the tensor link $l$ not result in disjoint proof structures. Thus, if such a link $l$ exists, it is \emph{maximal} in the sense that there is no other tensor link $l'$ where a pretrip starting at a premise of $l'$ contains the entirety of any pretrip starting at $A$. The remainder of this Section will amount to proving the converse, that any such maximal tensor link ``splits" $\pi$.
+	Say $\pi$ satisfies the long trip condition and moreover $\pi$ admits a tensor link $l$ (with premises $A,B$ say) such that if $l$ is removed, the resulting proof structure consists of two disjoint proof structures $\pi_1,\pi_2$ each satisfying the long trip condition. It is necessarily the case that any pretrip $\rho$ of $\pi$ starting at $\uparrow A$ visits the entirety of $\call{U}(\pi_1)$ before returning to the tensor link $l$, lest $\pi_1$ admit a short trip. Moreover, it must be the case that $\sigma$ admits no occurrence of formulas in $\pi_2$ lest the result of removing the tensor link $l$ not result in disjoint proof structures. Thus, if such a link $l$ exists, it is \emph{maximal} in the sense that there is no other tensor link $l'$ where a pretrip starting at a premise of $l'$ contains the entirety of any pretrip starting at $A$. Most of the remainder of this Section will amount to proving the converse, that any such maximal tensor link ``splits" $\pi$. This is the \emph{splitting lemma} of \cite{linearlogic}. We then conclude with the Sequentialisation Theorem (Theorem \ref{thm:sequentialisation}).
 	\begin{defn}\label{def:pretrip_from_A}
 		Let $\pi$ be a proof structure satisfying the long trip condition, $S$ a switching of $\pi$, and $A$ an occurrence of a formula in $\pi$. Consider the long pretrip $(x_1,...,x_n)$ satisfying $x_1 = \uparrow A$. We denote by
 		\begin{equation}
@@ -964,13 +1008,16 @@
 		\end{equation}
 		The \textbf{down empire of $A$} is defined symmetrically.
 	\end{defn}
-	With this new terminology we now have some corollaries of Lemmas \ref{lem:stays_contained_tensor} and \ref{lem:stays_contained_par}:
+
+One point of difference between the proof presented here and the original proof \cite{linearlogic} is that Girard did \emph{not} consider \emph{down} empires, and instead only considered up empires. At the time of writing, the current author does \emph{not} see how to avoid down empires, and believes the proof in \cite{linearlogic} is too turse to extract a rigorous proof which avoids them.
+
+With the new terminology, we now have some corollaries of Lemmas \ref{lem:stays_contained_tensor} and \ref{lem:stays_contained_par}:
 	\begin{cor}\label{cor:pretrip_innards}
 		Let $\pi$ be a proof structure satisfying the long trip condition, and let $S$ be a switching of $\pi$, for a formula $A$ and $a \in \lbrace \uparrow, \downarrow\rbrace$, denote $\operatorname{PTrip}(\pi,S, A, a)$ by $\operatorname{PTrip}(A,a)$:
 		\begin{enumerate}
 			\item if $A$ is part of an axiom link then
 			\begin{equation}
-				\operatorname{PTrip}(A,\uparrow) = \uparrow A, \operatorname{PTrip}(\negation A, \downarrow), A \downarrow
+				\operatorname{PTrip}(A,\uparrow) = \uparrow A, \operatorname{PTrip}(\neg A, \downarrow), A \downarrow
 			\end{equation}
 			\item if $l$ is a tensor link with conclusion $A \otimes B$:
 			\begin{enumerate}
@@ -1345,7 +1392,11 @@
 		
 		Now say that $\pi$ contained cuts. We replace each cut with a tensor link to create a new proof $\zeta$. That there exists a proof $\Xi$ which maps to $\zeta$ follows from the part of the result proved already as $\zeta$ is cut-free. We adapt $\Xi$ appropriately by replacing $\otimes$-rules by $\operatorname{cut}$-rules and we are done.
 	\end{proof}
+
 \section{The dynamics of MLL}\label{sec:dynamics}
+
+Linear logic is a \emph{dynamic} system, in that it involves a proof \emph{re-write} procedure. This procedure is the \emph{cut-elimination} process and constitutes the content of this section.
+
 \begin{defn}
 	A subgraph of a proof structure $\pi$ of one of the following forms is an \emph{$a$-redex}.
 	\begin{center}
@@ -1369,7 +1420,7 @@
 			\tagarray{\label{eq:a_redex}}
 		\end{tabular}
 	\end{center}
-	A subgraph of a proof structure of the following form where $v_1,v_2,v_3,v_4$ are vertices in $\pi$ is an \emph{$m$-redex}.
+	A subgraph of a proof structure of the following form is an \emph{$m$-redex}.
 	\begin{center}
 		\begin{tabular}{ c c }
 			$
@@ -1500,11 +1551,11 @@
 	Every proof net $\pi$ admits a reduction sequence.
 \end{lemma}
 \begin{proof}
-	Given a cut link $l$ with premises $A, \neg A$ say, the \textbf{complexity of $l$}, $c(l)$ is the sum of the number of occurrences of $\otimes$ and the number of occurrences of $\parr$ in $A$. We proceed by induction on the maximum of the complexities of all cut links in $\pi$.
+	Given a cut link $l$ with premises $\neg A, A$ say, the \textbf{complexity of $l$}, $c(l)$ is the sum of the number of occurrences of $\otimes$ and the number of occurrences of $\parr$ in $A$. We proceed by induction on the maximum of the complexities of all cut links in $\pi$.
 	
-	Say this maximum is $0$. Then all cut-links have the shape of either \eqref{rule:ax_reduct_negation} or \eqref{rule:ax_reduct} (using the fact that $\pi$ is a \emph{proof net}, the hypthesis that $v_1 \neg v_2$ in Definition \ref{def:reduction} is satisfied). We can reduce these redexes (in any order) to deduce the result.
+	Say this maximum is $0$. Then all cut-links have the shape of either \eqref{rule:ax_reduct_negation} or \eqref{rule:ax_reduct}. We can reduce these redexes (in any order) to deduce the result.
 	
-	Now say the maximum is $n > 0$. We then apply \eqref{rule:tensor_reduct} to all cut links of complexity $n$ (in any order) to obtain a new proof structure $\zeta$. We wish to use the inductive hypothesis on $\zeta$ but we must make sure that $\zeta$ satisfies the longtrip condition. This follows easily by considering the contrapositive. Any pretrip (long or short) of $\zeta$ appears as a subsequent of some pretrip of $\pi$, so if $\zeta$ admits a short trip so does $\pi$. We can now apply the inductive hypothesis and we are done.
+	Now say the maximum is $n > 0$. We then apply \eqref{rule:tensor_reduct} to all cut links of complexity $n$ (in any order) to obtain a new proof structure $\zeta$. We wish to use the inductive hypothesis on $\zeta$ but we must make sure that $\zeta$ satisfies the longtrip condition. This follows easily by considering the contrapositive: any pretrip (long or short) of $\zeta$ appears as a subsequent of some pretrip of $\pi$, so if $\zeta$ admits a short trip so does $\pi$. We can now apply the inductive hypothesis and we are done.
 \end{proof}
 \begin{defn}
 	Let $\operatorname{Red}\pi$ denote the set of all reduction sequences of $\pi$. The \textbf{length} $l(\underline{x})$ of a reduction sequence $\underline{x} \in \operatorname{Red}\pi$ is the length of the sequence $\underline{x}$.
@@ -1577,11 +1628,13 @@ Due to the finiteness of proof nets and their formulas, the process of choosing 
 \end{defn}
 	
 	\section{Modelling the dynamics of MLL}
-	The distinction between \emph{sense} and \emph{reference}, due to Frege \cite{Frege}, which can crudely be explained as the \emph{means of description} of an object vs the object itself, has lead logicians to study the ``meaning" of proofs. From this angle, it makes sense to ignore the distinction between two proofs which differ only by a series of cut-reduction steps (either forwards or backwards ones), as surely these two proofs do not differ in their \emph{sense}. This is the \emph{denotational semantics} program, in which two proofs $\pi, \pi'$ which are cut-equivalent to each other are given the same interpretation $\llbracket \pi \rrbracket = \llbracket \pi' \rrbracket$.
+	The distinction between \emph{sense} and \emph{reference}, due to Frege \cite{Frege}, can crudely be explained as the \emph{means of description} of an object vs the object itself. From this angle, it makes sense to ignore the distinction between two proofs which differ only by a series of cut-reduction steps (either forwards or backwards ones), as surely these two proofs do not differ in their reference. This is the \emph{denotational semantics} program, in which two proofs $\pi, \pi'$ which are cut-equivalent to each other are given the same interpretation $\llbracket \pi \rrbracket = \llbracket \pi' \rrbracket$.
 	
-	On the other hand, the Curry-Howard correspondence and the Gentzen-Mints-Zucker Duality \cite{GMZ} relate the cut-elimination process to the dynamics of a system of computation ($\beta$-reduction in the simply typed $\lambda$-calculus, in both cases). Thus, it makes sense also to look for models of logical systems where two cut equivalent proofs $\pi, \pi'$ are \emph{not} given the same interpretation, but instead there exists some relationship between the two $\llbracket \pi \rrbracket \lto \llbracket \pi' \rrbracket$. This program is due to Girard and is referred to as the \emph{geometry of interaction}. In this section, we introduce the first two of these models which he created. The reference for Geometry of Interaction Zero is \cite{multiplicatives} and the reference for Geometry of Interaction One is \cite{girard}.
+	On the other hand, the Curry-Howard correspondence \cite{Sorensen} and the Gentzen-Mints-Zucker Duality \cite{GMZ} relate the cut-elimination process to the dynamics of a system of computation ($\beta$-reduction in the simply typed $\lambda$-calculus, in both cases). Thus, it makes sense also to look for models of logical systems where two cut equivalent proofs $\pi, \pi'$ are \emph{not} given the same interpretation, but instead there exists some relationship between the two $\llbracket \pi \rrbracket \lto \llbracket \pi' \rrbracket$. This program is due to Girard and is referred to as the \emph{geometry of interaction} \cite{multiplicatives}, \cite{girard}, \cite{GoI2}, \cite{GoI3}, \cite{GoI4}, \cite{GoI5}. In this section, we introduce the first two of these models which he created. The reference for Geometry of Interaction Zero is \cite{multiplicatives} and the reference for Geometry of Interaction One is \cite{girard}.
 	
-	We note that knowledge of the second model does \emph{not} require knowledge of the first as a prerequisite, however there are relationships between the two approaches is articulated at the beginning of Section \ref{sec:interal_sum_tens}. Both sections requires Definitions \ref{def:r}, \ref{def:tensor}, \ref{def:seq_set_two}, and Lemma \ref{lem:negation_map}.
+	See the Introduction of \cite{Seiller4} for more on the distinction between denotation semantics and Geometry of Interaction.
+	
+	Knowledge of the second model does \emph{not} require knowledge of the first as a prerequisite, however the relationship between the two approaches is articulated at the beginning of Section \ref{sec:interal_sum_tens}. Both sections require Definitions \ref{def:r}, \ref{def:tensor}, \ref{def:seq_set_two}, and Lemma \ref{lem:negation_map}.
 	
 	\begin{defn}\label{def:r}
 		Let $\call{F}$ denote the set of formulas (Definition \ref{def:formulas}), $\call{A}$ the set of oriented atoms, and $\call{A}^\ast = \bigcup_{n \geq 0}\call{A}^n$ the set of sequences of oriented atoms of length $\geq 0$. We define an involution $r$ on $\call{A}^\ast$ as follows:
@@ -1639,17 +1692,19 @@ Due to the finiteness of proof nets and their formulas, the process of choosing 
 	\end{defn}
 	
 	\subsection{Proofs as permutations}
+	To model proofs as permutations upon a set which in turn depends on the proof at hand is originally due to Girard \cite{multiplicatives}. The paper \cite{multiplicatives} is expounded upon in \cite{girard} and so is often overlooked. The most important difference between the current presentation and that of \cite{multiplicatives} is that we use \emph{unoriented atoms} (Definition \ref{def:seq_set_two}).
+	
 	\begin{defn}\label{def:atomic_atoms_ax_concs}
 		Let $\pi$ be a proof net. Let $\call{P}(\pi)$ denote the disjoint union of all the unoriented axioms of all formulas which are conclusions to axiom links in $\pi$.
 	\end{defn}
 	\begin{example}\label{ex:permutation_example}
-		Let $\pi$ denote the following proof net, where $X,Y$ are atomic. For simplicity, we usually attach artificial labels to the conclusions of axiom links. So, in the following example, for any integer $i$ and any $Z = X,Y$, the notation $Z_i$ simply means $Z$, also $Z$ means $(Z,+)$ and $\neg Z$ means $(Z,-)$.
+		Let $\pi$ denote the following proof net, where $X,Y$ are atomic. For simplicity, we attach artificial labels to the occurrences of atomic formulas which are part of conclusions to axiom links in $\pi$. So, in the following example, for any integer $i$ and the notation $X_i$ simply means $(X,+)$ and $\neg X_i$ means $(X,-)$.
 		% https://q.uiver.app/?q=WzAsMTEsWzAsMSwiKFggLCspIFxcb3RpbWVzIChZLC0pIl0sWzIsMSwiKFgsIC0pIFxccGFyciAoWSwrKSJdLFsxLDAsIlxcYXgiXSxbNSwwLCJcXGF4Il0sWzQsMSwiKFgsKykiXSxbNiwxLCIoWSwtKSJdLFszLDIsIlxcb3RpbWVzIl0sWzMsMywiKChYLC0pXFxwYXJyKFksKykpXFxvdGltZXMgKFgsKykiXSxbMCwyLCJcXG9wZXJhdG9ybmFtZXtjfSJdLFs2LDIsIlxcb3BlcmF0b3JuYW1le2N9Il0sWzMsNCwiXFxvcGVyYXRvcm5hbWV7Y30iXSxbMiwxLCIiLDAseyJjdXJ2ZSI6LTIsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbMiwwLCIiLDIseyJjdXJ2ZSI6Miwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFszLDQsIiIsMCx7ImN1cnZlIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzMsNSwiIiwyLHsiY3VydmUiOi0yLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzYsNywiIiwyLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFs0LDYsIiIsMSx7ImN1cnZlIjotMn1dLFsxLDYsIiIsMSx7ImN1cnZlIjoyfV0sWzcsMTBdLFs1LDldLFswLDhdXQ==
 		\[\begin{tikzcd}[column sep = tiny, row sep = small]
 			& \ax &&&& \ax \\
-			{X_1 \otimes \neg Y_2} && {\neg X_3 \parr Y_4} && {X_5} && {\neg Y_6} \\
+			{\neg X_1 \parr X_2} && {X_3 \otimes \neg X_4} && {\neg X_5} && {X_6} \\
 			{\operatorname{c}} &&& \otimes &&& {\operatorname{c}} \\
-			&&& {(\neg X_7\parr Y_8)\otimes X_9} \\
+			&&& {(X \otimes \neg X) \otimes X} \\
 			&&& {\operatorname{c}}
 			\arrow[curve={height=-12pt}, no head, from=1-2, to=2-3]
 			\arrow[curve={height=12pt}, no head, from=1-2, to=2-1]
@@ -1664,47 +1719,49 @@ Due to the finiteness of proof nets and their formulas, the process of choosing 
 		\end{tikzcd}\]
 		Then:
 		\begin{align}
-			\call{P}(\pi) &= \lbrace X \rbrace \coprod \lbrace Y \rbrace \coprod \lbrace X \rbrace \coprod \lbrace Y \rbrace \coprod \lbrace X \rbrace \coprod \lbrace Y \rbrace \coprod \lbrace X \rbrace \coprod \lbrace Y \rbrace \coprod \lbrace X \rbrace\\
-			&= \lbrace X_1,Y_2,X_3,Y_4,X_5,Y_6, X_7, Y_8, X_9\rbrace
+			\call{P}(\pi) &= \coprod_{i = 1}^6 \{ X \}\\
+			&= \lbrace X_1,X_2,X_3,X_4,X_5,X_6\rbrace
 		\end{align}
 		
 	\begin{defn}\label{def:permutations}
-		Let $\pi$ be a proof net with axiom links $l_1,...,l_n$ say. For each $i = 1,...,n$ the link $l_i$ defines a permutation $\tau_{l_i}$ on the set $\call{P}(\pi)$ in the following way: if $l_i$ has conclusions $A, \neg A$ then the $j^\text{th}$ element of the sequence of unoriented atoms of $A$ is mapped via $\tau_{l_i}$ to the $j^\text{th}$ element of the sequence of unoriented atoms of $\neg A$. We define $\alpha_\pi$ to be the product of all these permutations.
+		Let $\pi$ be a proof net with axiom links $l_1,...,l_n$ say. For each $i = 1,...,n$ the link $l_i$ defines a permutation $\tau_{l_i}$ on the set $\call{P}(\pi)$ in the following way: if $l_i$ has conclusions $\neg A, A$ then the $j^\text{th}$ element of the sequence of unoriented atoms of $A$ is mapped via $\tau_{l_i}$ to the $j^\text{th}$ element of the sequence of unoriented atoms of $\neg A$. We define $\alpha_\pi$ to be the product of all these permutations.
 		\begin{equation}
 			\alpha_\pi := \tau_{l_1}\hdots \tau_{l_n}
 		\end{equation}
 		We call this permutation the \textbf{axiom link permutation associated to $\pi$}.
 		
-		We define more permutations on $\call{P}(\pi)$. Let $S$ be a switching of $\pi$. For each unoriented axiom $X \in \call{P}(\pi)$, corresponding to the formula $A$ say, let $\beta_{\pi}^S(X)$ denote the unoriented axiom corresponding to the first occurrence in $\operatorname{PTrip}(\pi,S,A,\downarrow)$ (Definition \ref{def:pretrip_from_A}) of the form $\uparrow B$ where $B$ is a formula labelling a conclusion of an axiom link in $\pi$.
+		We define more permutations on $\call{P}(\pi)$. Recall the definitions of pretrips (Definition \ref{def:pretrip_from_A}) and switchings (Definition \ref{def:switching}). Let $S$ be a switching of $\pi$. For each unoriented axiom $X \in \call{P}(\pi)$, corresponding to a formula $A$ say, let $\beta_{\pi}^S(X)$ denote the unoriented axiom corresponding to the first occurrence in $\operatorname{PTrip}(\pi,S,A,\downarrow)$ of the form $\uparrow B$ where $B$ is a formula labelling a conclusion of an axiom link in $\pi$.
 		
-		The set of all premutations of the second form is denoted:
+		The set of all permutations of the second form is denoted:
 		\begin{equation}
 			\Sigma(\pi) := \lbrace \beta_{\pi}^S \mid S\text{ is a switching of }\pi\rbrace
 		\end{equation}
 		We will often denote elements of $\beta_{\pi}^S \in \Sigma(\pi)$ simply by $\beta$.
 	\end{defn}
 	\begin{example}
-		Continuing with Example \ref{ex:permutation_example}, and using the artifical labels we attributed to the atomic formulas of conclusions, we have $\alpha_\pi = (13)(24)(56)$.
-		
-		The set $\Sigma(\pi)$ is uninteresting so we consider a more complicated example.
+		Continuing with Example \ref{ex:permutation_example}, and using the artificial labels we attributed to the atomic formulas of conclusions, we have 
+		\begin{equation}
+			X_1 \leftrightarrow X_3,\quad X_2 \leftrightarrow X_4,\quad X_5 \leftrightarrow X_6
+			\end{equation}
+		The set $\Sigma(\pi)$ is relatively trivial in this case, so we present a more interesting example.
 	\end{example}
 	\begin{example}\label{ex:counter}
 		\begin{figure}[h]
 			\centering
-			\includegraphics[width = 17cm]{Permutations.png}
-			\caption{The set $\Sigma(\pi_1)$}
+			\includegraphics[width = 20cm]{Switching.jpg}
+			\caption{The switching $S$ of Example \ref{ex:counter}}
 			\label{fig:counter_one}
 		\end{figure}
-		Let $\pi$ be defined as follows, again, we explicitly place integer labells on the formulas, but $A_i$ denotes the formula $A$ for all $i$.
-		% https://q.uiver.app/?q=WzAsMjMsWzAsMSwiQSJdLFsyLDEsIlxcbmVnIEEiXSxbMywxLCJBIl0sWzUsMSwiXFxuZWcgQSJdLFsyLDMsIlxcb3RpbWVzIl0sWzIsNCwiQSBcXG90aW1lcyBBIl0sWzEsMCwiXFxheCJdLFs0LDAsIlxcYXgiXSxbNiwxLCJBIl0sWzgsMSwiXFxuZWcgQSJdLFs5LDEsIkEiXSxbMTEsMSwiXFxuZWcgQSJdLFsxMCwwLCJcXGF4Il0sWzcsMCwiXFxheCJdLFs4LDMsIlxcb3RpbWVzIl0sWzgsNCwiQSBcXG90aW1lcyBBIl0sWzUsNSwiXFxvdGltZXMiXSxbNSw2LCIoQSBcXG90aW1lcyBBKSBcXG90aW1lcyAoQSBcXG90aW1lcyBBKSJdLFs1LDcsIlxcb3BlcmF0b3JuYW1le2N9Il0sWzIsMiwiXFxvcGVyYXRvcm5hbWV7Y30iXSxbNSwyLCJcXG9wZXJhdG9ybmFtZXtjfSJdLFs4LDIsIlxcb3BlcmF0b3JuYW1le2N9Il0sWzExLDIsIlxcb3BlcmF0b3JuYW1le2N9Il0sWzAsNCwiIiwwLHsiY3VydmUiOjJ9XSxbMiw0LCIiLDIseyJjdXJ2ZSI6LTJ9XSxbNCw1LCIiLDAseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzYsMCwiIiwwLHsiY3VydmUiOjIsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbNiwxLCIiLDIseyJjdXJ2ZSI6LTIsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbNywyLCIiLDIseyJjdXJ2ZSI6Miwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFs3LDMsIiIsMCx7ImN1cnZlIjotMiwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFsxMyw4LCIiLDAseyJjdXJ2ZSI6Miwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFsxMyw5LCIiLDIseyJjdXJ2ZSI6LTIsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbMTIsMTAsIiIsMix7ImN1cnZlIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzEyLDExLCIiLDAseyJjdXJ2ZSI6LTIsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbOCwxNCwiIiwwLHsiY3VydmUiOjJ9XSxbMTAsMTQsIiIsMix7ImN1cnZlIjotMn1dLFsxNCwxNSwiIiwyLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFs1LDE2LCIiLDAseyJjdXJ2ZSI6Mn1dLFsxNSwxNiwiIiwyLHsiY3VydmUiOi0yfV0sWzE2LDE3LCIiLDIseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzE3LDE4XSxbMSwxOV0sWzMsMjBdLFs5LDIxXSxbMTEsMjJdXQ==
-		\[\begin{tikzcd}[column sep  = tiny, row sep = tiny]
+		Let $\pi$ denote the following proof structure with tensor links labelled $l_1, l_2, l_3$ as displayed. The formula $A$ denotes $\neg X \otimes \neg X$.
+		% https://q.uiver.app/?q=WzAsMjMsWzAsMSwiXFxuZWcgWF8xIl0sWzIsMSwiWF8yIl0sWzMsMSwiXFxuZWcgWF8zIl0sWzUsMSwiWF80Il0sWzIsMywiXFxvdGltZXMiXSxbMiw0LCJcXG5lZyBBIl0sWzEsMCwiXFxheCJdLFs0LDAsIlxcYXgiXSxbNiwxLCJcXG5lZyBYXzUiXSxbOCwxLCJYXzYiXSxbOSwxLCJcXG5lZyBYXzciXSxbMTEsMSwiWF84Il0sWzEwLDAsIlxcYXgiXSxbNywwLCJcXGF4Il0sWzgsMywiXFxvdGltZXMiXSxbOCw0LCJcXG5lZyBBIl0sWzUsNSwiXFxvdGltZXMiXSxbNSw2LCJcXG5lZyBBIFxcb3RpbWVzIFxcbmVnIEEiXSxbNSw3LCJcXG9wZXJhdG9ybmFtZXtjfSJdLFsyLDIsIlxcb3BlcmF0b3JuYW1le2N9Il0sWzUsMiwiXFxvcGVyYXRvcm5hbWV7Y30iXSxbOCwyLCJcXG9wZXJhdG9ybmFtZXtjfSJdLFsxMSwyLCJcXG9wZXJhdG9ybmFtZXtjfSJdLFswLDQsIiIsMCx7ImN1cnZlIjoyfV0sWzIsNCwiIiwyLHsiY3VydmUiOi0yfV0sWzQsNSwiIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFs2LDAsIiIsMCx7ImN1cnZlIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzYsMSwiIiwyLHsiY3VydmUiOi0yLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzcsMiwiIiwyLHsiY3VydmUiOjIsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbNywzLCIiLDAseyJjdXJ2ZSI6LTIsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbMTMsOCwiIiwwLHsiY3VydmUiOjIsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbMTMsOSwiIiwyLHsiY3VydmUiOi0yLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzEyLDEwLCIiLDIseyJjdXJ2ZSI6Miwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFsxMiwxMSwiIiwwLHsiY3VydmUiOi0yLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzgsMTQsIiIsMCx7ImN1cnZlIjoyfV0sWzEwLDE0LCIiLDIseyJjdXJ2ZSI6LTJ9XSxbMTQsMTUsIiIsMix7InN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbNSwxNiwiIiwwLHsiY3VydmUiOjJ9XSxbMTUsMTYsIiIsMix7ImN1cnZlIjotMn1dLFsxNiwxNywiIiwyLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFsxNywxOF0sWzEsMTldLFszLDIwXSxbOSwyMV0sWzExLDIyXV0=
+		\[\begin{tikzcd}[column sep = tiny, row sep = small]
 			& \ax &&& \ax &&& \ax &&& \ax \\
-			A_1 && {\neg A_2} & A_3 && {\neg A_4} & A_5 && {\neg A_6} & A_7 && {\neg A_8} \\
+			{\neg X_1} && {X_2} & {\neg X_3} && {X_4} & {\neg X_5} && {X_6} & {\neg X_7} && {X_8} \\
 			&& {\operatorname{c}} &&& {\operatorname{c}} &&& {\operatorname{c}} &&& {\operatorname{c}} \\
-			&& \otimes &&&&&& \otimes \\
-			&& {A \otimes A} &&&&&& A \otimes A \\
-			&&&&& \otimes \\
-			&&&&& {(A \otimes A) \otimes (A \otimes A)} \\
+			&& \stackrel{\textcolor{red}{l_1}}{\otimes} &&&&&& \stackrel{\textcolor{red}{l_2}}{\otimes} \\
+			&& {\neg A} &&&&&& {\neg A} \\
+			&&&&& \stackrel{\textcolor{red}{l_3}}{\otimes} \\
+			&&&&& {\neg A \otimes \neg A} \\
 			&&&&& {\operatorname{c}}
 			\arrow[curve={height=12pt}, from=2-1, to=4-3]
 			\arrow[curve={height=-12pt}, from=2-4, to=4-3]
@@ -1729,21 +1786,27 @@ Due to the finiteness of proof nets and their formulas, the process of choosing 
 			\arrow[from=2-9, to=3-9]
 			\arrow[from=2-12, to=3-12]
 		\end{tikzcd}\]
-		To ease notation yet further, in Figure \ref{fig:counter_one} we suppress the nodes, the edges leading to $\operatorname{c}$ nodes, and the direction of the edges. We see from Figure \ref{fig:counter_one} that we can write down $\Sigma(\pi)$:
-		\begin{equation}
-			\Sigma(\pi) = \lbrace (1375), (1357), (1753), (1573)\rbrace
+	Consider first the switching $S(l_1) = S(l_2) = S(l_3) = L$. Then we have
+	\begin{equation}
+		\beta_\pi^S: X_1 \mapsto X_7 \mapsto X_5 \mapsto X_3 \mapsto X_1, \quad X_i \mapsto X_i, i = 2,4,6,8
 		\end{equation}
+	The other permutations are as follows.
+	\begin{align*}
+		&X_1 \mapsto X_3 \mapsto X_7 \mapsto X_5 \mapsto X_1, \quad X_i \mapsto X_i, i = 2,4,6,8\\
+		&X_1 \mapsto X_3 \mapsto X_5 \mapsto X_7 \mapsto X_1, \quad X_i \mapsto X_i, i = 2,4,6,8\\
+		&X_1 \mapsto X_5 \mapsto X_7 \mapsto X_3 \mapsto X_1, \quad X_i \mapsto X_i, i = 2,4,6,8
+		\end{align*}
 	\end{example}
 	We can now rephrase the longtrip condition of Section \ref{sec:sequentialisation} in terms of permutations.
 	\begin{proposition}
 		Let $\pi$ be a proof structure, then $\pi$ is a proof net if and only if for all $\beta \in \Sigma(\pi)$ the permutation $\alpha_{\pi}\beta$ is cyclic.
 	\end{proposition}
-	If $\pi$ is a proof net admitting a single conclusion, then it is \emph{not} the case that $\alpha_\pi$ uniquely determines this proof net, for instance, the following pair of proof nets admit the same axiom link permutations, where $C$ denotes $(A \otimes B) \parr (\neg A \parr \neg B)$.
+	If $\pi$ is a proof net admitting a single conclusion, then it is \emph{not} the case that $\alpha_\pi$ uniquely determines this proof net. For instance, the following pair of proof nets admit the same axiom link permutations, where $C$ denotes $(A \otimes B) \parr (\neg A \parr \neg B)$.
 	\[\begin{tikzcd}[column sep = tiny, row sep = small]
 		& \ax &&& \ax &&& \ax \\
-		{A \otimes B} && {\neg A \parr \neg B} & A && {\neg A} & B && {\neg B } \\
-		& \parr &&& \otimes && \parr \\
-		& {C} &&& {A \otimes B} && {\neg A \parr \neg B} \\
+		{\neg A \parr \neg B} && {A \otimes B} & \neg A && {A} & \neg B && {B } \\
+		& \parr &&& \parr && \otimes \\
+		& {C} &&& {\neg A \parr \neg B} && {A \otimes B} \\
 		& {\operatorname{c}} &&&& \parr \\
 		&&&&& {C} \\
 		&&&&& {\operatorname{c}}
@@ -1768,18 +1831,17 @@ Due to the finiteness of proof nets and their formulas, the process of choosing 
 		\arrow[no head, from=3-2, to=4-2]
 		\arrow[from=4-2, to=5-2]
 	\end{tikzcd}\]
-	The following Proposition says that these are the only cases when this happens.
 	\begin{proposition}\label{prop:alpha_uniqueness}
 		Let $\pi$ be a cut-free proof net with only one conclusion, assume also that all conclusions of all axiom links are atomic. Then $\pi$ is determined uniquely by $\alpha_\pi$ and the conclusion $A$.
 	\end{proposition}
 	\begin{proof}
-		Let $A$ be the soul conclusion of $\pi$. Consider the typing tree of $A$, this is a binary tree with all leaves labelled by atomic propositions. The proof net $\pi$ is constructed from this by choosing axiom links, this choice of axiom links is determined by $\alpha_\pi$.
+		Let $A$ be the sole conclusion of $\pi$. Consider the typing tree of $A$, this is a binary tree with all leaves labelled by atomic propositions. The proof net $\pi$ is constructed from this by choosing axiom links, this choice of axiom links is determined by $\alpha_\pi$.
 	\end{proof}
 	\begin{cor}
 		Let $\pi$ be a cut-free proof net with conclusions $A_1,...,A_n$, assume also that all conclusions of all axiom links are atomic. Then $\pi$ is determined uniquely by $\alpha_\pi$ and the conclusions $A_1,...,A_n$.
 	\end{cor}\label{cor:super_normal_form}
 	\begin{proof}
-		Let $\pi_1,\pi_2$ be two such proof nets. Construct a new proof net $\pi_1'$ from $\pi_1$ by creating par links (in any order) so that $\pi_1'$ has a unique conclusion $A_1 \parr \hdots \parr A_n$. Construct a new proof net $\pi_2'$ in a similar way and make the same choices of par links made when $\pi_1'$ was constructed. No axiom links were altered in this process, and so $\alpha_{\pi_1} = \alpha_{\pi_2} = \alpha_{\pi_1'} = \alpha_{\pi_2'}$. It follows from Proposition \ref{prop:alpha_uniqueness} that $\pi_1' = \pi_2'$. For $i = 1,2$, remove the par links which appear in $\pi_i'$ but not in $\pi_i$ and conclude that $\pi_1 = \pi_2$.
+		Let $\pi_1,\pi_2$ be two such proof nets. Construct a new proof net $\pi_1'$ from $\pi_1$ by creating par links (in any order) so that $\pi_1'$ has a unique conclusion $A_1 \parr \hdots \parr A_n$. Construct a new proof net $\pi_2'$ in a similar way and make the same choices of par links made when $\pi_1'$ was constructed. No axiom links were altered in this process, and so $\alpha_{\pi_1} = \alpha_{\pi_1'} = \alpha_{\pi_2'} = \alpha_{\pi_2}$. It follows from Proposition \ref{prop:alpha_uniqueness} that $\pi_1 = \pi_2$.
 	\end{proof}
 	\begin{example}
 		% https://q.uiver.app/?q=WzAsMTUsWzMsNiwiXFxwYXJyIl0sWzEsNSwiQSBcXG90aW1lcyBBIl0sWzUsNSwiXFxuZWcgQSBcXHBhcnIgXFxuZWcgQSJdLFs0LDMsIlxcbmVnIEEiXSxbNiwzLCJcXG5lZyBBIl0sWzIsMywiQSJdLFswLDMsIkEiXSxbNSw0LCJcXHBhcnIiXSxbMSw0LCJcXG90aW1lcyJdLFszLDEsIlxcYXgiXSxbMywwLCJcXGF4Il0sWzQsMiwiXFxheCJdLFsyLDIsIlxcYXgiXSxbMyw3LCIoQSBcXG90aW1lcyBBKSBcXHBhcnIgKFxcbmVnIEEgXFxwYXJyIFxcbmVnIEEpIl0sWzMsOCwiXFxvcGVyYXRvcm5hbWV7Y30iXSxbMSwwLCIiLDAseyJjdXJ2ZSI6Mn1dLFsyLDAsIiIsMix7ImN1cnZlIjotMn1dLFs0LDddLFszLDddLFs3LDIsIiIsMCx7InN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbNSw4XSxbNiw4XSxbOCwxLCIiLDIseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzksMywiIiwwLHsiY3VydmUiOi0xLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifSwiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFs5LDUsIiIsMSx7ImN1cnZlIjoxLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifSwiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFsxMCw0LCIiLDIseyJjdXJ2ZSI6LTMsInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9LCJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzEwLDYsIiIsMSx7ImN1cnZlIjozLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifSwiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFsxMSw0LCIiLDEseyJjdXJ2ZSI6LTEsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbMTEsNSwiIiwxLHsiY3VydmUiOjMsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbMTIsNiwiIiwxLHsiY3VydmUiOjEsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbMTIsMywiIiwxLHsiY3VydmUiOi0zLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzAsMTMsIiIsMCx7InN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbMTMsMTRdXQ==
@@ -1814,33 +1876,44 @@ Due to the finiteness of proof nets and their formulas, the process of choosing 
 				\arrow[from=8-4, to=9-4]
 			\end{tikzcd}
 		\end{equation}
-		The proof net given by ignoring the dashed lines in \eqref{eq:counter_one} corresponds to the permutation $(12)(34)$ (ie, the permutation $X_1 \leftrightarrow X_2, X_3 \leftrightarrow X_4$), and that given by ignoring the axiom links and including the dashed lines is $(14)(23)$.
+		The proof net given by ignoring the dashed lines in \eqref{eq:counter_one} corresponds to the permutation
+		\begin{equation}
+			X_1 \leftrightarrow X_2, X_3 \leftrightarrow X_4
+			\end{equation}
+		and that given by ignoring the axiom links and including the dashed lines is
+		\begin{equation}
+			X_1 \leftrightarrow X_4, X_2 \leftrightarrow X_3
+			\end{equation}
 	\end{example}
 	
 	\subsection{Geometry of Interaction Zero}\label{sec:goi_zero}
 	We begin with the following crucial observation:
 	\begin{lemma}\label{lem:GoI_lemma}
-		Let $\pi$ be a proof structure such that every conclusion of every atom link is atomic. Assume there is a cut in $\pi$ of $A$ against $\neg A$. Write
+		Let $\pi$ be a proof structure such that every conclusion of every atom link is atomic. Assume there is a cut in $\pi$ with premises $A, \neg A$. Write
 		\begin{equation}
-			A :=  A_1 \boxtimes_1 \hdots \boxtimes_{n-1} A_n
+			A :=  X_1 \boxtimes_1 \hdots \boxtimes_{n-1} X_n
 		\end{equation}
-		where for each $i$ we have $\boxtimes_i \in \lbrace \otimes, \parr\rbrace$. Let $\zeta$ be a proof structure equivalent to $\pi$ under cut-reduction which is obtained by reducing all $m$-redexes (Definition \ref{def:reduction}). Then for each $i$ there exists a unique cut link $l_i$ with premises $A_i, \neg A_i$.
+		where for each $i = 1,\ldots, n-1$ we have $\boxtimes_i \in \lbrace \otimes, \parr\rbrace$ and for each $i = 1,\ldots,n$ we have that $X_i$ is atomic. Let $\zeta$ be a proof structure equivalent to $\pi$ under cut-reduction which is obtained by reducing all $m$-redexes (Definition \ref{def:reduction}). Then in $\zeta$, there exists for each $i$ a cut link $l_i$ with premises $X_i, \neg X_i$.
 	\end{lemma}
 	\begin{proof}
 		By induction on $n$, where the base case follows trivially and the inductive step by inspection of \eqref{rule:tensor_reduct}.
 	\end{proof}
-	\begin{defn}\label{perm_cut}
-		We define a permutation $\gamma_\pi$ on $\call{P}(\pi)$ (Definition \ref{def:atomic_atoms_ax_concs}). Let $l$ be a cut link in $\pi$ with premises $A, \neg A$, say. For each atomic formula $A_i$ of $A$ there exists by Lemma \ref{lem:GoI_lemma} a cut link $l_i$ in the normal form $\zeta$ of $\pi$ so that the premises of $l_i$ are $A_i, \neg A_i$. Let $A_i,\neg A_i$ have corresponding unoriented atoms $X_i^1,\ldots, X_i^n, Y_i^1,\ldots, Y_i^n$. Let $\gamma_\pi$ be the permutation which swaps $X_i^j$ and $Y_i^j$. For all other elements of $X \in \call{P}(\pi)$ we define $\gamma_\pi(X) = X$.
+Using Lemma \ref{lem:GoI_lemma}, if $\pi$ is a cut-free proof structure with all conclusions to all axiom links atomic, then we can identify the atoms in the premises of the cut links with the atoms in the conclusions of the axiom links. We will do this throughout this section.
+	\begin{defn}\label{def:perm_cut}
+		We define a permutation $\gamma_\pi$ on $\call{P}(\pi)$ (Definition \ref{def:atomic_atoms_ax_concs}). Let $l$ be a cut link in $\pi$ with premises $\neg A, A$, say. Let $\neg A,A$ have corresponding unoriented atoms $X_1,\ldots, X_n$ and  $Y_1,\ldots, Y_n$. Let $\gamma_l$ be the permutation which swaps $X_j$ and $Y_j$. Ranging over all cut links $l_1,\ldots, l_n$ we define
+		\begin{equation}
+			\gamma_\pi := \gamma_{l_1}\ldots \gamma_{l_n}
+			\end{equation}
 	\end{defn}
 	\begin{example}
-		We denote by $\pi$ the following proof net with artificial labels on the formulas.
+		We denote by $\pi$ the following proof net with artificial labels on the formulas. Assume $X_i$ for $i = 1,\ldots, 6$ is atomic.
 		% https://q.uiver.app/?q=WzAsMTYsWzAsMSwiQSJdLFsxLDAsIlxcYXgiXSxbMiwxLCJcXG5lZyBBIl0sWzMsMiwiXFxvdGltZXMiXSxbNCwxLCJBIl0sWzYsMSwiXFxuZWcgQSJdLFs1LDAsIlxcYXgiXSxbMywzLCJcXG5lZyBBIFxcb3RpbWVzIEEiXSxbNywxLCJBIl0sWzgsMCwiXFxheCJdLFs5LDEsIlxcbmVnIEEiXSxbOCwyLCJcXHBhcnIiXSxbOCwzLCJBIFxccGFyciBcXG5lZyBBIl0sWzYsNCwiXFxjdXQiXSxbNiwyLCJcXG9wZXJhdG9ybmFtZXtjfSJdLFswLDIsIlxcb3BlcmF0b3JuYW1le2N9Il0sWzEsMCwiIiwwLHsiY3VydmUiOjIsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbMSwyLCIiLDIseyJjdXJ2ZSI6LTIsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbNiw0LCIiLDIseyJjdXJ2ZSI6Miwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFs2LDUsIiIsMCx7ImN1cnZlIjotMiwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFs0LDMsIiIsMix7ImN1cnZlIjotMn1dLFsyLDMsIiIsMSx7ImN1cnZlIjoyfV0sWzMsNywiIiwxLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFs5LDgsIiIsMSx7ImN1cnZlIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzksMTAsIiIsMSx7ImN1cnZlIjotMiwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFs4LDExLCIiLDEseyJjdXJ2ZSI6Mn1dLFsxMCwxMSwiIiwxLHsiY3VydmUiOi0yfV0sWzExLDEyLCIiLDEseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzcsMTMsIiIsMSx7ImN1cnZlIjoyfV0sWzEyLDEzLCIiLDEseyJjdXJ2ZSI6LTJ9XSxbMCwxNV0sWzUsMTRdXQ==
 		\begin{equation}\label{eq:standard_example}
 			\begin{tikzcd}[column sep = small, row sep = small]
 				& \ax &&&& \ax &&& \ax \\
-				A_1 && {\neg A_2} && A_3 && {\neg A_4} & A_5 && {\neg A_6} \\
+				\neg X_1 && {X_2} && \neg X_3 && {X_4} & \neg X_5 && {X_6} \\
 				{\operatorname{c}} &&& \otimes &&& {\operatorname{c}} && \parr \\
-				&&& {\neg A_7 \otimes A_8} &&&&& {A_9 \parr \neg A_{10}} \\
+				&&& {X \otimes \neg X} &&&&& {\neg X \parr X} \\
 				&&&&&& \cut
 				\arrow[curve={height=12pt}, no head, from=1-2, to=2-1]
 				\arrow[curve={height=-12pt}, no head, from=1-2, to=2-3]
@@ -1860,33 +1933,12 @@ Due to the finiteness of proof nets and their formulas, the process of choosing 
 				\arrow[from=2-7, to=3-7]
 			\end{tikzcd}
 		\end{equation}
-		Reducing the cut-redex we obtain:
-		% https://q.uiver.app/?q=WzAsMTMsWzEsMCwiXFxheCJdLFswLDEsIkEiXSxbMiwxLCJcXG5lZyBBIl0sWzMsMSwiQSJdLFs0LDAsIlxcYXgiXSxbNSwxLCJcXG5lZyBBIl0sWzcsMCwiXFxheCJdLFs2LDEsIkEiXSxbOCwxLCJcXG5lZyBBIl0sWzQsMywiXFxjdXQiXSxbNiwzLCJcXGN1dCJdLFs1LDIsIlxcb3BlcmF0b3JuYW1le2N9Il0sWzAsMiwiXFxvcGVyYXRvcm5hbWV7Y30iXSxbMCwxLCIiLDAseyJjdXJ2ZSI6Miwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFswLDIsIiIsMix7ImN1cnZlIjotMiwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFs0LDMsIiIsMix7ImN1cnZlIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzQsNSwiIiwwLHsiY3VydmUiOi0yLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzYsNywiIiwwLHsiY3VydmUiOjIsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbNiw4LCIiLDIseyJjdXJ2ZSI6LTIsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbMiw5LCIiLDIseyJjdXJ2ZSI6Mn1dLFs3LDksIiIsMCx7ImN1cnZlIjotMn1dLFs4LDEwLCIiLDIseyJjdXJ2ZSI6LTJ9XSxbMywxMCwiIiwwLHsiY3VydmUiOjJ9XSxbNSwxMV0sWzEsMTJdXQ==
-		\[\begin{tikzcd}[column sep = small, row sep = small]
-			& \ax &&& \ax &&& \ax \\
-			A_1 && {\neg A_2} & A_3 && {\neg A_4} & A_5 && {\neg A_6} \\
-			{\operatorname{c}} &&&&& {\operatorname{c}} \\
-			&&&& \cut && \cut
-			\arrow[curve={height=12pt}, no head, from=1-2, to=2-1]
-			\arrow[curve={height=-12pt}, no head, from=1-2, to=2-3]
-			\arrow[curve={height=12pt}, no head, from=1-5, to=2-4]
-			\arrow[curve={height=-12pt}, no head, from=1-5, to=2-6]
-			\arrow[curve={height=12pt}, no head, from=1-8, to=2-7]
-			\arrow[curve={height=-12pt}, no head, from=1-8, to=2-9]
-			\arrow[curve={height=12pt}, from=2-3, to=4-5]
-			\arrow[curve={height=-12pt}, from=2-7, to=4-5]
-			\arrow[curve={height=-12pt}, from=2-9, to=4-7]
-			\arrow[curve={height=12pt}, from=2-4, to=4-7]
-			\arrow[from=2-6, to=3-6]
-			\arrow[from=2-1, to=3-1]
-		\end{tikzcd}\]
-	Say $A = X \otimes \neg X$ with $X$ atomic. We extend the artificial labels so that for each $i = 1,...,10$ we have $A_i = X_i^1 \otimes \neg X_i^2$. The permutation $\gamma_\pi$ is determined by the following rules and the property $\gamma_\pi^2 = \operatorname{id}$.
-	\begin{align*}
-		\gamma_\pi(X_i^j) &= X_i^j, i = 1, 4, j = 1, 2 & \gamma_{\pi}(\neg X_2^j) &= X_5^j, j = 1,2 & \gamma_{\pi}(X_3^j) = X_6^j, j = 1,2
-		\end{align*}
+		We have
+		\begin{equation}
+			\gamma_\pi: X_2 \leftrightarrow X_5,\quad X_3 \leftrightarrow X_6,\quad X_i \leftrightarrow X_i, i = 1,4
+			\end{equation}
 	\end{example}
-	Lemma \ref{lem:GoI_lemma} will be used to prove both Geometry of Interaction zero and Geometry of Interaction One.
-	
+
 	\begin{lemma}\label{lem:particular_redex_form}
 		The set $\call{P}(\pi)$ is invariant under reduction of $m$-redexes and $\eta$-expansion. More precisely, we have the following two statements.
 		\begin{itemize}
@@ -1899,12 +1951,12 @@ Due to the finiteness of proof nets and their formulas, the process of choosing 
 	\end{proof}
 	Hence, when considering $\call{P}(\pi)$, we can always assume without loss of generality that $\pi$ contains no $m$-redexes and that all conclusions of all axiom links of $\pi$ are atomic.
 	\begin{lemma}\label{lem:redexes_particular_form}
-		Let $\pi$ be a proof net admitting no $m$-redexes and assume that all conclusions of all axiom links of $\pi$ are atomic. All redexes $\pi \lto_{\cut} \pi'$ are necessarily of the following form.
+		Let $\pi$ be a proof net admitting no $m$-redexes and assume that all conclusions of all axiom links of $\pi$ are atomic. All redexes $\pi \lto_{\cut} \pi'$ are necessarily of the following form, with $X$ atomic.
 		% https://q.uiver.app/?q=WzAsMTQsWzEsMCwiXFxheCJdLFswLDEsIlgiXSxbMiwxLCJcXG5lZyBYIl0sWzMsMiwiXFxjdXQiXSxbNCwxLCJYIl0sWzUsMCwiXFxheCJdLFs2LDEsIlxcbmVnIFgiXSxbOSwwLCJcXGF4Il0sWzgsMSwiWCJdLFsxMCwxLCJcXG5lZyBYIl0sWzAsMiwiXFx2ZG90cyJdLFs2LDIsIlxcdmRvdHMiXSxbOCwyLCJcXHZkb3RzIl0sWzEwLDIsIlxcdmRvdHMiXSxbMCwxLCIiLDAseyJjdXJ2ZSI6Miwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFswLDIsIiIsMix7ImN1cnZlIjotMiwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFsxLDEwXSxbMiwzLCIiLDIseyJjdXJ2ZSI6Mn1dLFs0LDMsIiIsMCx7ImN1cnZlIjotMn1dLFs1LDQsIiIsMCx7ImN1cnZlIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzUsNiwiIiwyLHsiY3VydmUiOi0yLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzYsMTFdLFs3LDgsIiIsMix7ImN1cnZlIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzcsOSwiIiwwLHsiY3VydmUiOi0yLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzksMTNdLFs4LDEyXV0=
 		\begin{equation}\label{eq:redex_form}
 			\begin{tikzcd}[column sep = small, row sep = small]
 				& \ax &&&& \ax &&&& \ax \\
-				X && {\neg X} && X && {\neg X} && X && {\neg X} \\
+				\neg X && {X} && \neg X && {X} && \neg X && {X} \\
 				\vdots &&& \cut &&& \vdots && \vdots && \vdots
 				\arrow[curve={height=12pt}, no head, from=1-2, to=2-1]
 				\arrow[curve={height=-12pt}, no head, from=1-2, to=2-3]
@@ -1930,10 +1982,10 @@ Due to the finiteness of proof nets and their formulas, the process of choosing 
 		\begin{equation}\label{eq:inclusion_definition}
 		\begin{tikzcd}[column sep = small, row sep = small]
 			&&& \ax \\
-			&& X && {\neg X} \\
+			&& \neg X && {X} \\
 			&& \vdots && \vdots \\
 			& \ax &&&& \ax \\
-			X && {\neg X} && X && {\neg X} \\
+			\neg X && {X} && \neg X && {X} \\
 			\vdots &&& \cut &&& \vdots
 			\arrow[curve={height=12pt}, no head, from=4-2, to=5-1]
 			\arrow[curve={height=-12pt}, no head, from=4-2, to=5-3]
@@ -1971,6 +2023,10 @@ Due to the finiteness of proof nets and their formulas, the process of choosing 
 	
 	Now say $A$ is \emph{not} premise to a cut link and so $A$ is necessarily \emph{not} part of an $a$-redex. There are no $m$-redexes in $\pi$ and so all cut reductions reduce $a$-redexes. Hence $A$ survives the cut reduction process. In other words, $A \in \operatorname{im}\iota_\pi$.
 \end{proof}
+
+\begin{cor}
+	Let $\pi$ be a proof net and assume all conclusions of all axiom links are atomic. A formula $A$ in $\pi$ is in $\operatorname{im}\iota_\pi$ if an only if the unique maximal length directed path in $\pi$ starting at the edge labelled $A$ ends at the premise to a cut link.
+	\end{cor}
 	
 	\begin{defn}\label{def:GoI_permutation}
 		Let $\pi$ be a proof net. We describe a final permutation $\delta_\pi$ on $\call{P}(\pi)$. Recall the injective function $\iota_\pi$ of Definition \ref{def:snf_function}. For each $X \in \call{P}(\pi)$ let $d_i$ denote the least integer such that 
@@ -1979,7 +2035,7 @@ Due to the finiteness of proof nets and their formulas, the process of choosing 
 		\end{equation}
 		Notice that such an integer $d_i$ always exists as $\pi$ is a proof net (as $\pi$ satisfies the longtrip condition, see Section \ref{sec:sequentialisation}).
 		
-		We then define the following permutation on $\call{P}(\pi)$, the permutations $\alpha_\pi, \gamma_\pi$ are defined in Definition \ref{def:permutations}:
+		We then define the following permutation on $\call{P}(\pi)$, the permutations $\alpha_\pi, \gamma_\pi$ Definition \ref{def:permutations}, \ref{def:perm_cut} respectively:
 		\begin{equation}
 			\delta_{\pi}(X) = (\alpha_\pi \circ \gamma_\pi)^{d_i}(X)
 		\end{equation}
@@ -1997,7 +2053,7 @@ Due to the finiteness of proof nets and their formulas, the process of choosing 
 		% https://q.uiver.app/?q=WzAsMTQsWzEsMCwiXFxheCJdLFswLDEsIlgiXSxbMiwxLCJcXG5lZyBYIl0sWzMsMiwiXFxjdXQiXSxbNCwxLCJYIl0sWzUsMCwiXFxoZG90cyJdLFs2LDBdLFs2LDEsIlgiXSxbNywyLCJcXGN1dCJdLFs4LDEsIlxcbmVnIFgiXSxbOSwwLCJcXGF4Il0sWzEwLDEsIlgiXSxbMCwyLCJcXHZkb3RzIl0sWzEwLDIsIlxcdmRvdHMiXSxbMTAsMTEsIiIsMCx7ImN1cnZlIjotMiwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFsxMCw5LCIiLDIseyJjdXJ2ZSI6Miwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFs5LDgsIiIsMix7ImN1cnZlIjotMn1dLFs3LDgsIiIsMCx7ImN1cnZlIjoyfV0sWzUsNywiIiwwLHsiY3VydmUiOi0yLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzUsNCwiIiwyLHsiY3VydmUiOjIsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbNCwzLCIiLDIseyJjdXJ2ZSI6LTJ9XSxbMiwzLCIiLDAseyJjdXJ2ZSI6Mn1dLFswLDIsIiIsMCx7ImN1cnZlIjotMiwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFswLDEsIiIsMix7ImN1cnZlIjoyfV0sWzEsMTJdLFsxMSwxM11d
 		\[\begin{tikzcd}[column sep = tiny, row sep = small]
 			& \ax &&&& \hdots & {} &&& \ax \\
-			X && {\neg X} && X && X && {\neg X} && X \\
+			\neg X && {X} && \neg X && X && {\neg X} && X \\
 			\vdots &&& \cut &&&& \cut &&& \vdots
 			\arrow[curve={height=-12pt}, no head, from=1-10, to=2-11]
 			\arrow[curve={height=12pt}, no head, from=1-10, to=2-9]
@@ -2102,7 +2158,7 @@ In \cite[Proposition A.1]{AlgPnt} the relationship between the permutation $\del
 	\end{tikzcd}}\]
 	The proof net $\pi'$ admits $m$-redexes, we reduce these to obtain the following proof net which we denote by $\pi''$.
 	% https://q.uiver.app/?q=WzAsMjksWzksNSwiWF8zIFxcb3RpbWVzIFxcbmVnIFhfNCJdLFsxLDUsIlxcbmVnIFhfMSBcXHBhcnIgWF8yIl0sWzMsNiwiXFxwYXJyIl0sWzMsNywiXFxuZWcgQyJdLFszLDgsIlxcb3BlcmF0b3JuYW1le2N9Il0sWzAsMywiXFxuZWcgWF8xIl0sWzIsMywiWF8yIl0sWzgsMywiWF8zIl0sWzEwLDMsIlxcbmVnIFhfNCJdLFs3LDMsIlxcbmVnIFhfNSJdLFsxMSwzLCJYXzYiXSxbNCwzLCJYXzciXSxbMTQsMywiXFxuZWcgWF84Il0sWzYsMywiWF85Il0sWzEyLDMsIlhfezEwfSJdLFs1LDMsIlhfezExfSJdLFsxMywzLCJYX3sxMn0iXSxbMSw0LCJcXHBhcnIiXSxbOSw0LCJcXG90aW1lcyJdLFsxLDIsIlxcYXgiXSxbOSwwLCJcXGF4Il0sWzcsMiwiXFxheCJdLFsxMCwyLCJcXGF4Il0sWzUsMiwiXFxheCJdLFsxMiwyLCJcXGF4Il0sWzYsNCwiXFxjdXQiXSxbMTEsNCwiXFxjdXQiXSxbNCw0LCJcXGN1dCJdLFsxMyw0LCJcXGN1dCJdLFswLDIsIiIsMCx7ImN1cnZlIjotMn1dLFsxLDIsIiIsMSx7ImN1cnZlIjoxfV0sWzIsMywiIiwxLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFszLDRdLFs4LDE4LCIiLDAseyJjdXJ2ZSI6LTJ9XSxbNywxOCwiIiwwLHsiY3VydmUiOjJ9XSxbMTgsMCwiIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFs1LDE3LCIiLDIseyJjdXJ2ZSI6Mn1dLFsxNywxLCIiLDIseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzYsMTcsIiIsMCx7ImN1cnZlIjotMn1dLFsxOSw1LCIiLDIseyJjdXJ2ZSI6Miwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFsxOSwxMSwiIiwwLHsiY3VydmUiOi0yLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzIwLDYsIiIsMCx7ImN1cnZlIjozLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzIwLDEyLCIiLDIseyJjdXJ2ZSI6LTQsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbMjEsNywiIiwwLHsiY3VydmUiOi0xLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzIxLDksIiIsMix7InN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbMjIsOCwiIiwyLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFsyMiwxMCwiIiwwLHsiY3VydmUiOi0yLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzIzLDEzLCIiLDIseyJjdXJ2ZSI6LTIsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbMjMsMTUsIiIsMCx7InN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbMjQsMTQsIiIsMCx7InN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbMjQsMTYsIiIsMix7ImN1cnZlIjotMiwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFs5LDI1LCIiLDIseyJjdXJ2ZSI6LTJ9XSxbMTMsMjVdLFsxMCwyNl0sWzE0LDI2LCIiLDEseyJjdXJ2ZSI6LTJ9XSxbMTEsMjddLFsxNSwyNywiIiwxLHsiY3VydmUiOi0yfV0sWzEyLDI4LCIiLDIseyJjdXJ2ZSI6LTJ9XSxbMTYsMjhdXQ==
-	\begin{equation}\label{eq:GoI_example}\adjustbox{scale=0.7}{\begin{tikzcd}[column sep = small]
+	\begin{equation}\label{eq:GoI_example}\adjustbox{scale=0.65}{\begin{tikzcd}[column sep = small]
 				&&&&&&&&& \ax \\
 				\\
 				& \ax &&&& \ax && \ax &&& \ax && \ax \\
@@ -2144,8 +2200,10 @@ In \cite[Proposition A.1]{AlgPnt} the relationship between the permutation $\del
 				\arrow[from=4-14, to=5-14]
 		\end{tikzcd}}
 	\end{equation}
-	As was explained in the proof of Theorem \cite[Proposition A.1]{AlgPnt} we have that $\delta_{\pi} = \delta_{\pi''}$. It was also explained in the same proof that $\delta_{\pi''}$ is a product of transpositions which swaps two formulas which are at the extreme ends of a common ``chain". Hence, we read off \eqref{eq:GoI_example} that $\delta_\pi = (13)(24)$.
-	
+	As was explained in the proof of Theorem \cite[Proposition A.1]{AlgPnt} we have that $\delta_{\pi} = \delta_{\pi''}$. It was also explained in the same proof that $\delta_{\pi''}$ is a product of transpositions which swaps two formulas which are at the extreme ends of a common ``chain". Hence, we read off \eqref{eq:GoI_example} that
+	\begin{equation}
+		\delta_\pi: X_1 \leftrightarrow X_3, X_2 \leftrightarrow X_4
+		\end{equation}
 	On the other hand, we have that $\neg C = (\neg X_1 \parr X_2) \parr (X_3 \otimes \neg X_4)$, and so in the notation of Proposition \cite[Proposition 3.9]{AlgPnt} we have a sequence $(i_1,i_2) = (2,3)$ with complement $(j_1,j_2) = (1,4)$, and so the polynomial denoted $k[X_1,X_2]$ in the statement of Proposition \cite[Proposition 3.9]{AlgPnt} here is the polynomial $k[X_2,X_3]$ and the polynomial denoted $k[Y_1,Y_2]$ in Proposition \cite[Proposition 3.9]{AlgPnt} here is the polynomial $k[X_1,X_4]$. The following are elements of the defining ideal $I_\pi$ of $\pi$.
 	\begin{equation}
 		X_2 - X_8, \quad X_8'' - X_{12}'', \quad X_{12} - X_{10}, \quad X_{10}'' - X_{6}'', \quad X_{6} - X_4
@@ -2167,7 +2225,9 @@ A permutation $\sigma$ on a finite set $X$ induces a bounded linear operator on 
 
 In Section \ref{sec:interal_sum_tens} we will consider a particular choice of infinite dimensional Hilbert space $\bb{H}$ and then consider the space of bounded linear operators $\call{B}(\bb{H})$ on $\bb{H}$. Since $\call{B}(\bb{H})$ is infinite dimensional, we have that $\bb{H}^n \cong \bb{H}$ for every $n > 0$. Thus, if we read each entry $1$ of $M_\sigma$ as the identity operator, and each entry $0$ as the zero operator, then each $M_\sigma$ induces an operator $\bb{H} \lto \bb{H}$ (in other words, an element of $\call{B}(\call{H})$) allowing for each such matrix to be compared on the same footing. More precisely, each matrix is an element of \emph{the same} Hilbert space, even though they differ in size.
 
-We focus on the specific Hilbert space $\bb{H} = \ell^2$ of sequences $\underline{z} = (z_0,z_1,...)$ of complex numbers which are square summable, ie, $\sum_{n = 0}^\infty |z_n|^2$ converges. This has an inner product given as follows.
+We focus on the specific Hilbert space $\bb{H} = \ell^2$ of sequences $\underline{z} = (z_0,z_1,...)$ of complex numbers which are square summable, ie, $\sum_{n = 0}^\infty |z_n|^2$ converges. The idea of modelling proofs inside this Hilbert space is due to Girard \cite{girard} and the mathematics behind this model has been expounded upon by Hines \cite{Hines}.
+
+The space $\bb{H} = \ell^2$ has an inner product defined as follows.
 \begin{equation}
 	\big\langle \underline{z}, \underline{w}\big\rangle = \sum_{n = 0}^\infty z_n\overline{w}_n
 \end{equation}
@@ -2264,6 +2324,8 @@ In a similar way, given any $n > 0$ along with a bijection $\alpha: \bb{N} \lto 
 \end{example}
 
 \subsection{Persistent paths}
+It is somewhat remarkable that Girard's original presentation of Geometry of Interaction \cite{girard} never mentioned persistent paths, as this concept makes the ideas significantly more transparent. Persistent Paths were first defined by Regnier \cite{Regnier}. What is new here is the equivalence relation of Definition \ref{def:persistent_equivalence} used to define Persistent Paths (Definition \ref{def:persistent_paths}). This provides an \emph{intrinsic} definition which does not require knowledge of the result of any cut-reduction in order to define (unlike the definition given in \cite{Regnier}).
+
 An axiom link with conclusions $\neg X, X$ is the translation of an axiom rule, here we assume $X$ is atomic
 \begin{center}
 	\begin{prooftree}
@@ -2307,7 +2369,7 @@ Thus, a choice of unoriented atom in a proof structure has a set of edges associ
 In fact, this can only happen in a proof \emph{structure}, whereas \emph{any} choice of unoriented atom inside a proof net induces a conclusion-conclusion path. This is Lemma \ref{lem:looping_persistent}.
 \end{example}
 
-\begin{defn}\label{eq:persistent_equivalence}
+\begin{defn}\label{def:persistent_equivalence}
 	Let $\pi$ be a proof structure. We define an equivalence relation $\sim$ on the set $U_\pi$ of unoriented atoms of $\pi$. We do this by considering each non-conclusion link $l$ of $\pi$.
 	
 	If $l$ is an axiom (respectively cut) link, with conclusions (premises) $\neg A, A$, where $U_{\neg A} = \{ X_1, \ldots, X_n\}$ and $U_{A} = \{ X_1', \ldots, X_n' \}$ then we define
@@ -2319,7 +2381,7 @@ In fact, this can only happen in a proof \emph{structure}, whereas \emph{any} ch
 		X_i \sim X_i', \forall i = 1,\ldots, n \quad Y_i \sim Y_i', \forall j = 1,\ldots, m
 		\end{equation}
 	\end{defn}
-\begin{defn}
+\begin{defn}\label{def:persistent_paths}
 	Each equivalence class $[X_i]$ of formulas in $U_\pi$ is the underlying set of a sequence
 	\begin{equation}
 		(Z_1,\ldots, Z_n)
@@ -2328,7 +2390,7 @@ In fact, this can only happen in a proof \emph{structure}, whereas \emph{any} ch
 	\end{defn}
 
 \begin{remark}\label{def:persistent_maps}
-	Taking the string diagrams of Definition \ref{eq:persistent_equivalence} literally gives a visual conceptualisation of the links as ``plugging" wires together. The phrase ``plugging" is used imprecisely throughout the literature (\cite{girard}, \cite{linearlogic}, \cite{multiplicatives}). In what follows, $U_{\neg A} = \{ X_1, \ldots, X_n \}$ and $U_{A} = \{ X_1', \ldots, X_n' \}$.
+	The equivalence relation of Definition \ref{def:persistent_equivalence} gives a visual conceptualisation of the links as ``plugging" wires together. The phrase ``plugging" is used informally throughout the literature (\cite{girard}, \cite{linearlogic}, \cite{multiplicatives}). In what follows, $U_{\neg A} = \{ X_1, \ldots, X_n \}$ and $U_{A} = \{ X_1', \ldots, X_n' \}$.
 	% https://q.uiver.app/?q=WzAsMTQsWzEsMCwiXFxheCJdLFswLDEsIkEiXSxbMiwxLCJcXG5lZyBBIl0sWzAsMiwiXFx2ZG90cyJdLFsyLDIsIlxcdmRvdHMiXSxbMCwzLCJYXzEgXFxjb3Byb2QgXFxoZG90cyBcXGNvcHJvZCBYX24iXSxbMiwzLCJZXzEgXFxjb3Byb2QgXFxoZG90cyBcXGNvcHJvZCBZX24iXSxbNCwzLCJcXGN1dCJdLFszLDIsIkEiXSxbNSwyLCJcXG5lZyBBIl0sWzUsMSwiXFx2ZG90cyJdLFszLDEsIlxcdmRvdHMiXSxbMywwLCJYXzEgXFxjb3Byb2QgXFxoZG90cyBcXGNvcHJvZCBYX24iXSxbNSwwLCJZXzEgXFxjb3Byb2QgXFxoZG90cyBcXGNvcHJvZCBZX24iXSxbMCwxLCIiLDAseyJjdXJ2ZSI6Miwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFsxLDNdLFswLDIsIiIsMix7ImN1cnZlIjotMiwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFsyLDRdLFs1LDYsIkkiLDAseyJjb2xvdXIiOlsyNDAsNjAsNjBdLCJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJhcnJvd2hlYWQifX19LFsyNDAsNjAsNjAsMV1dLFs3LDksIiIsMCx7ImN1cnZlIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzksMTBdLFs3LDgsIiIsMix7ImN1cnZlIjotMiwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFs4LDExXSxbMTIsMTMsIkkiLDAseyJjb2xvdXIiOlsyNDAsNjAsNjBdLCJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJhcnJvd2hlYWQifX19LFsyNDAsNjAsNjAsMV1dXQ==
 	\[\begin{tikzcd}[ampersand replacement=\&, column sep = small, row sep = small]
 			\& \ax \&\& {\{X_1, \ldots, X_n\}} \&\& {\{X_1', \ldots, X_n'\}} \\
@@ -2426,12 +2488,10 @@ In fact, this can only happen in a proof \emph{structure}, whereas \emph{any} ch
 	\end{equation}
 \end{example}
 
-\begin{lemma}\label{lem:looping_persistent}
-	If a proof structure $\pi$ admits a looping persistent path then $\pi$ is not a proof net.
-	\end{lemma}
-\begin{proof}
-	One proceeds by extracting a short-trip from the looping persistent path (traverse the interior of the loop).
-	\end{proof}
+\begin{question}\label{lem:looping_persistent}
+	Is the following true? If a proof structure $\pi$ admits a looping persistent path then $\pi$ is not a proof net.
+	\end{question}
+	An obvious first attempt to answer this question is to attempt to extract a short-trip from the looping persistent path by ``traversing the interior of the loop". Does this proof technique work though?
 
 \subsection{Proofs as operators}\label{sec:proofs_operators}
 
@@ -2461,7 +2521,7 @@ In fact, this can only happen in a proof \emph{structure}, whereas \emph{any} ch
 		\arrow[curve={height=-12pt}, no head, from=1-2, to=2-3]
 		\arrow[curve={height=12pt}, no head, from=1-2, to=2-1]
 	\end{tikzcd}\]
-	Each persistent path $\rho = (e_1,\ldots, e_n)$ of $\pi$ consists of edges $e_i$ traversed $\pi$ either forwards, or backwards. If the $e_i$ is traversed forwards then we associate the symbol $w_i \in \{ p, q, \operatorname{id} \}$ to $e_i$ as determined by the label of $e_i$. If $e_i$ is traversed backwards then augment the label with an astrix $\ast$ and consider the symbol $w_i \in \{ p^\ast, q^\ast, \operatorname{id}^\ast\}$. For example, the unique, positively oriented persistent path in the above example has associated word
+	Each persistent path $\rho = (e_1,\ldots, e_n)$ of $\pi$ consists of edges $e_i$ traversed $\pi$ either forwards, or backwards. If the $e_i$ is traversed forwards then we associate the symbol $w_i \in \{ p, q, \operatorname{id} \}$ to $e_i$ as determined by the label of $e_i$. If $e_i$ is traversed backwards then we augment the label with an astrix $\ast$ and consider the symbol $w_i \in \{ p^\ast, q^\ast, \operatorname{id}^\ast\}$. For example, the unique (assuming $A$ is atomic), positively oriented persistent path in the above example has associated word
 	\begin{equation}
 	\operatorname{id}^\ast q \operatorname{id} \operatorname{id}^\ast q^\ast p \operatorname{id} \operatorname{id}^\ast p^\ast \operatorname{id}
 	\end{equation}
@@ -2469,7 +2529,7 @@ In fact, this can only happen in a proof \emph{structure}, whereas \emph{any} ch
 	\begin{equation}
 		o_{\rho} := \overline{w_n} \circ \hdots \circ \overline{w_1}
 		\end{equation}
-	So, in the above example, the associated operator is $qq^\ast pp^\ast = \operatorname{id}$.
+	So, in the above example, the associated operator is $qq^\ast pp^\ast = \operatorname{id}$. We will see that since we obtained $\operatorname{id}$, the above proof net is equivalent under cut reduction to a proof net consisting of a single axiom link.
 	\end{defn}
 
 \begin{defn}\label{def:matrix_interpretation}
@@ -2534,6 +2594,7 @@ Hence $\llbracket \pi \rrbracket$ is the following matrix $4 \times 4$ matrix, w
 	\end{example}
 
 \subsection{Geometry of Interaction One}
+Geometry of Interaction One is the program introduced by Girard in \cite{girard}. There, Girard did not consider unoriented atoms, whereas here we do. This is not a significant difference between the two presentations though.
 \begin{defn}\label{def:sigma}
 	Let $\pi$ be a proof structure and $\zeta$ the proof structure obtained by removing all cut-links in $\pi$ (and appending conclusion links to the premises of the cut links removed). Say $\pi$ has atomic atoms $X_1, \ldots, X_m$ amongst the premises to its conclusion links, and say it has atomic atoms $Y_1, \ldots, Y_n$ amongst the premises of the cut links. We will construct a $(2n + m) \times (2n + m)$ matrix $\sigma$ and use $X_1,\ldots, X_m, Y_1, Y_1',\ldots, Y_n,Y_n'$ as labels for the indices of this matrix.
 	
@@ -2563,13 +2624,17 @@ The point is that $\llbracket \pi \rrbracket$ contains the information of the pe
 \begin{proof}
 	Follows from Proposition \ref{prop:grip} along with the fact that persistent paths in proof nets are finite (Lemma \ref{lem:looping_persistent}).
 \end{proof}
+
 \begin{defn}\label{def:execution_formula}
 	We define
-	\begin{equation}
+	\begin{equation}\label{eq:execution_formula}
 		\operatorname{Ex}(\llbracket \pi \rrbracket) = (I - \sigma^2)(\llbracket \pi \rrbracket + \llbracket \pi \rrbracket \sigma \llbracket \pi \rrbracket + \llbracket \pi \rrbracket \sigma \llbracket \pi \rrbracket \sigma \llbracket \pi \rrbracket + \hdots)(I - \sigma^2)
 	\end{equation}
 	which by Corollary \ref{cor:nilpotent} is a well defined matrix. This is the \textbf{execution formula}.
 \end{defn}
+
+The Execution Formula \eqref{eq:execution_formula} is due to Girard \cite{girard}. The proof here that $\operatorname{Ex}(\llbracket \pi \rrbracket)$ is well defined (Corollary \ref{cor:nilpotent}) is new though, and differs significantly to that given in \cite{girard} (recall, Girard \emph{never} used persistent paths in his paper). The same comment holds for Theorem \ref{thm:GoI_one} below.
+
 \begin{example}
 	We continue with $\pi$ from Examples \ref{ex:favourite_example} and \ref{ex:favourite_example_interpretation}. Using the same indexing as Example \ref{ex:favourite_example_interpretation} we have that $\sigma$ is the following matrix.
 	\begin{equation}
@@ -2792,7 +2857,7 @@ The execution formula is thus
 \end{defn}
 
 \begin{thm}[Geometry of Interaction One]\label{thm:GoI_one}
-	Let $\pi$ be a proof net and $\zeta$ the cut-free proof equivalent under cut elimination to $\pi$. Then the matrix $\llbracket \zeta\rrbracket$ exists as a minor in $Ex(\llbracket \pi \rrbracket)$ and any entry in $\operatorname{Ex}(\llbracket \pi \rrbracket)$ which is not in the minor corresponding to $\llbracket \zeta \rrbracket$ is equal to 0.
+	Let $\pi$ be a proof net and $\zeta$ the cut-free proof equivalent under cut elimination to $\pi$. Then the matrix $\llbracket \zeta\rrbracket$ exists as a minor in $\operatorname{Ex}(\llbracket \pi \rrbracket)$ and any entry in $\operatorname{Ex}(\llbracket \pi \rrbracket)$ which is not in the minor corresponding to $\llbracket \zeta \rrbracket$ is equal to 0.
 \end{thm}
 \begin{proof}
 	It is clear by inspection of the rules in Definition \ref{def:persistency} that the transformations preserve persistency of paths. This establishes the first claim.
@@ -2810,13 +2875,36 @@ The execution formula is thus
 		
 		\bibitem{multiplicatives} \emph{Multiplicatives}, J.Y. Girard. Logic and Computer Science: New Trends and Applications. Rosenberg \& Sellier. pp. 11--34 (1987).
 		
-		\bibitem{girard} \emph{Geometry of Interaction I}, J.Y. Girard. Categories in Computer Science and Logic, pages 69 – 108, Providence, 1989.
+		\bibitem{girard} \emph{Geometry of Interaction: Interpretation of System F}, J.Y. Girard. Categories in Computer Science and Logic, pages 69 – 108, Providence, 1989.
+		
+		\bibitem{GoI2} \emph{Geometry of Interaction II, Deadlock Free Agorithms} Part of the Lecture Notes in Computer Science book series (LNCS,volume 417). 2005.
 		
 		\bibitem{GoI3} \emph{Geometry of Interaction III, Accomodation the Additives}, J.Y. Girard. Proceedings of the workshop on Advances in linear logic. June 1995
 		
 		\bibitem{GoI4} \emph{Geometry of Interaction IV, the Feedback Equation}, J.Y. Girard. Logic Colloquium 2003, December 9.
 		
 		\bibitem{GoI5} \emph{Geometry of Interaction V}, J.Y. Girard. Theoretical Computer ScienceVolume 412Issue 20April, 2011
+		
+		\bibitem{Regnier} \emph{Linear Logic and the Hilbert Space} Advances in Linear Logic , pp. 307 - 328, Cambridge University Press, 1995.
+		
+		\bibitem{Seiller1} \emph{Interaction Graphs: Multiplicatives} Annals of Pure and Applied Logic 163 (2012), pp. 1808-1837.
+		
+		\bibitem{Seiller2} \emph{Interaction Graphs: Additives} Annals of Pure and Applied Logic 167 (2016), pp. 95-154.
+		
+		\bibitem{Seiller3} \emph{Interaction Graphs: Nondeterministic Automata}, ACM Transactions in Computational Logic 19(3), 2018.
+		
+		\bibitem{Seiller4} \emph{Interaction Graphs: Exponentials} Logical Methods in Computer Science 15, 2019.
+		
+		\bibitem{Laurent} \emph{Olivier Laurent. A Token Machine for Full Geometry of Interaction}. 2001, pp.283-297. ⟨hal-00009137⟩
+		
+		\bibitem{HaghverdiScott} \emph{Towards a Typed Geometry of Interaction} CSL 2005: Computer Science Logic pp 216–231.
+		
+		\bibitem{Hines} \emph{From a conjecture of Collatz to Thompson's group F, via a conjunction of Girard}, \url{https://arxiv.org/abs/2202.04443}
+		
+		\bibitem{BS} \emph{The Blind Spot}. J.Y. Girard.
+		
+		\bibitem{AnalyticFunctors} \emph{Normal functors, power series and lambda-calculus} Annals of Pure and Applied Logic
+		Volume 37, Issue 2, February 1988, Pages 129-177.
 		
 		\bibitem{GMZ} \emph{Gentzen-Mints-Zucker Duality} D. Murfet, W. Troiani. \url{https://arxiv.org/abs/2008.10131}
 		
@@ -2825,6 +2913,8 @@ The execution formula is thus
 		\bibitem{AlgPnt} \emph{Elimination and cut-elimination in multiplicative linear logic}, W. Troiani, D. Murfet.
 		
 		\bibitem{Frege} \emph{Sense and Reference} G. Frege. Philosophical Review 57 (3):209-230 (1948)
+		
+		\bibitem{Sorensen} \emph{Lectures on the Curry-Howard Isomorphism} Published: July 4, 2006 Imprint: Elsevier Science
 		
 	\end{thebibliography}
 \end{document}
