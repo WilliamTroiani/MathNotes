@@ -1,0 +1,273 @@
+\documentclass[12pt]{article}
+
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{mathrsfs}
+\usepackage{array}
+\usepackage{amssymb}
+\usepackage{units}
+\usepackage{graphicx}
+\usepackage{tikz-cd}
+\usepackage{nicefrac}
+\usepackage{hyperref}
+\usepackage{bbm}
+\usepackage{color}
+\usepackage{tensor}
+\usepackage{tipa}
+\usepackage{bussproofs}
+\usepackage{ stmaryrd }
+\usepackage{ textcomp }
+\usepackage{leftidx}
+\usepackage{afterpage}
+\usepackage{varwidth}
+\usepackage{tasks}
+\usepackage{ cmll }
+
+\newcommand\blankpage{
+	\null
+	\thispagestyle{empty}
+	\addtocounter{page}{-1}
+	\newpage
+}
+
+\graphicspath{ {images/} }
+
+\theoremstyle{plain}
+\newtheorem{thm}{Theorem}[subsection] % reset theorem numbering for each chapter
+\newtheorem{proposition}[thm]{Proposition}
+\newtheorem{lemma}[thm]{Lemma}
+\newtheorem{fact}[thm]{Fact}
+\newtheorem{cor}[thm]{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{defn}[thm]{Definition} % definition numbers are dependent on theorem numbers
+\newtheorem{exmp}[thm]{Example} % same for example numbers
+\newtheorem{notation}[thm]{Notation}
+\newtheorem{remark}[thm]{Remark}
+\newtheorem{condition}[thm]{Condition}
+\newtheorem{question}[thm]{Question}
+\newtheorem{construction}[thm]{Construction}
+\newtheorem{exercise}[thm]{Exercise}
+\newtheorem{example}[thm]{Example}
+\newtheorem{aside}[thm]{Aside}
+
+\def\doubleunderline#1{\underline{\underline{#1}}}
+\newcommand{\bb}[1]{\mathbb{#1}}
+\newcommand{\scr}[1]{\mathscr{#1}}
+\newcommand{\call}[1]{\mathcal{#1}}
+\newcommand{\psheaf}{\text{\underline{Set}}^{\scr{C}^{\text{op}}}}
+\newcommand{\und}[1]{\underline{\hspace{#1 cm}}}
+\newcommand{\adj}[1]{\text{\textopencorner}{#1}\text{\textcorner}}
+\newcommand{\comment}[1]{}
+\newcommand{\lto}{\longrightarrow}
+\newcommand{\rone}{(\operatorname{R}\bold{1})}
+\newcommand{\lone}{(\operatorname{L}\bold{1})}
+\newcommand{\rimp}{(\operatorname{R} \multimap)}
+\newcommand{\limp}{(\operatorname{L} \multimap)}
+\newcommand{\rtensor}{(\operatorname{R}\otimes)}
+\newcommand{\ltensor}{(\operatorname{L}\otimes)}
+\newcommand{\rtrue}{(\operatorname{R}\top)}
+\newcommand{\rwith}{(\operatorname{R}\&)}
+\newcommand{\lwithleft}{(\operatorname{L}\&)_{\operatorname{left}}}
+\newcommand{\lwithright}{(\operatorname{L}\&)_{\operatorname{right}}}
+\newcommand{\rplusleft}{(\operatorname{R}\oplus)_{\operatorname{left}}}
+\newcommand{\rplusright}{(\operatorname{R}\oplus)_{\operatorname{right}}}
+\newcommand{\lplus}{(\operatorname{L}\oplus)}
+\newcommand{\prom}{(\operatorname{prom})}
+\newcommand{\ctr}{(\operatorname{ctr})}
+\newcommand{\der}{(\operatorname{der})}
+\newcommand{\weak}{(\operatorname{weak})}
+\newcommand{\exi}{(\operatorname{exists})}
+\newcommand{\fa}{(\operatorname{for\text{ }all})}
+\newcommand{\ex}{(\operatorname{ex})}
+\newcommand{\cut}{(\operatorname{cut})}
+\newcommand{\ax}{(\operatorname{ax})}
+\newcommand{\negation}{\sim}
+\newcommand{\true}{\top}
+\newcommand{\false}{\bot}
+\DeclareRobustCommand{\diamondtimes}{%
+	\mathbin{\text{\rotatebox[origin=c]{45}{$\boxplus$}}}%
+}
+\newcommand{\tagarray}{\mbox{}\refstepcounter{equation}$(\theequation)$}
+\newcommand{\startproof}[1]{
+	\AxiomC{#1}
+	\noLine
+	\UnaryInfC{$\vdots$}
+}
+\newenvironment{scprooftree}[1]%
+{\gdef\scalefactor{#1}\begin{center}\proofSkipAmount \leavevmode}%
+	{\scalebox{\scalefactor}{\DisplayProof}\proofSkipAmount \end{center} }
+
+
+\title{Elementary First order logic}
+\author{Will Troiani}
+\date{November 2021}
+
+\begin{document}
+
+We now have a notion of \emph{proof} and a notion of \emph{truth}. The obvious question to ask is: which of the provable formulas are true, and which of the true formulas are provable?
+
+\begin{thm}\label{thm:sound_complete}
+	Let $\phi$ be a formula other than $\bot$. If $\Gamma \vdash \phi$ then $\Gamma \models \phi$.
+\end{thm}
+\begin{proof}
+	Let $\pi$ be a proof of $\gamma$ with set of hypotheses $\Gamma$. We proceed by induction on the height of $\pi$. If $\pi$ has height $0$, then $\pi$ consists of a single assumption and single conclusion $\gamma$. This implies $\gamma \in \Gamma$. Thus, if $\call{I} \models \Gamma$ then in particular $\call{I} \models \gamma$.
+	
+	Now say that $\pi$ has heigh $n > 0$ and the result holds for all proofs $\pi'$ with height $k < n$. We proceed by cases on the deduction rule of $\pi$. Most of these cases are trivial. For instance, say the final rule is $\wedge I$ so that $\gamma = \phi \wedge \psi$ for some $\phi,\psi$.
+	\begin{center}
+		\AxiomC{$\pi_1$}
+		\noLine
+		\UnaryInfC{$\vdots$}
+		\noLine
+		\UnaryInfC{$\phi$}
+		\AxiomC{$\pi_1$}
+		\noLine
+		\UnaryInfC{$\vdots$}
+		\noLine
+		\UnaryInfC{$\phi$}
+		\RightLabel{$\wedge I$}
+		\BinaryInfC{$\phi \wedge \psi$}
+		\DisplayProof
+	\end{center}
+	By definition, $\Gamma \models \phi \wedge \psi$ if for all interpretations $\call{I}$ such that $\call{I} \models \Gamma$ we have $\call{I} \models \phi \wedge \psi$, in other words, $\call{I}_\nu(\phi \wedge \psi) = 1$ for all valuations $\nu$. By Definition \ref{def:interpretation} this holds if and only if $\call{I}_\nu(\phi) = \call{I}_\nu(\psi) = 1$ which holds by the inductive hypothesis.
+	
+	The cases when the final rule is $\wedge E1, \wedge E2, \vee I1, \vee I2$ are similarly simple.
+	
+	Say the final rule is $\wedge E^{i,j}$ for some $i,j$
+	\begin{center}
+		\AxiomC{$\pi'$}
+		\noLine
+		\UnaryInfC{$\vdots$}
+		\noLine
+		\UnaryInfC{$\phi \vee \psi$}
+		\AxiomC{$[\phi]^i$}
+		\noLine
+		\UnaryInfC{$\vdots$}
+		\noLine
+		\UnaryInfC{$\gamma$}
+		\AxiomC{$[\psi]^j$}
+		\noLine
+		\UnaryInfC{$\vdots$}
+		\noLine
+		\UnaryInfC{$\gamma$}
+		\RightLabel{$\wedge E^{i,j}$}
+		\TrinaryInfC{$\gamma$}
+		\DisplayProof
+	\end{center}
+	Say $\call{I}$ satisfies $\call{I} \models \Gamma$ and let $\nu$ be an arbitrary valuation. By the existence of $\pi'$ we have $\Gamma \vdash \phi \vee \psi$ and so by the inductive hypothesis $\Gamma \models \phi \vee \psi$, which is to say $\call{I}(\phi \vee \psi) =  1$. Thus either $\call{I}_\nu(\phi) = 1$ or $\call{I}_\nu(\psi) = 1$. We also have that $\Gamma \cup \{ \phi \} \vdash \gamma$ and so $\Gamma \cup \{ \phi \} \models\gamma$. Thus, if $\call{I}_\nu(\phi) = 1$ then $\Gamma \cup \{ \phi \} \models \gamma$ implies $\call{I}_\nu(\gamma) = 1$. Otherwise, we must have $\call{I}_\nu(\psi) = 1$ and then $\Gamma \cup \{ \psi \} \models \gamma$ implies $\call{I}_\nu(\gamma) = 1$. It follows that $\Gamma \models \gamma$.
+	
+	Say the final rule of $\pi$ is $\Rightarrow I^i$ so that $\gamma = \phi \Rightarrow \psi$ for some $\phi,\psi$ and let $\call{I}$ is such that $\call{I} \models \phi$.
+	\begin{center}
+		\AxiomC{$[\phi]^i$}
+		\noLine
+		\UnaryInfC{$\vdots$}
+		\noLine
+		\UnaryInfC{$\psi$}
+		\RightLabel{$\Rightarrow I^i$}
+		\UnaryInfC{$\phi \Rightarrow \psi$}
+		\DisplayProof
+	\end{center}
+	We need to show $\call{I}_\nu(\phi \Rightarrow \psi) = 1$ for each evaluation $\nu$ which amounts to showing that either $\call{I}_\nu(\phi) = 0$ or $\call{I}_\nu(\psi) = 1$. If $\call{I}_\nu(\phi) \neq 0$ then $\call{I}_\nu(\phi) = 1$. Thus, since $\Gamma \cup \{ \phi \} \vdash \psi$ and so $\Gamma \cup \{ \phi \} \models \psi$ we have $\call{I}_\nu(\psi) = 1$.
+	
+	Say the final rule of $\pi$ is $\Rightarrow E$.
+	\begin{center}
+		\AxiomC{$\pi'$}
+		\noLine
+		\UnaryInfC{$\vdots$}
+		\noLine
+		\UnaryInfC{$\phi \Rightarrow \gamma$}
+		\AxiomC{$\pi''$}
+		\noLine
+		\UnaryInfC{$\vdots$}
+		\noLine
+		\UnaryInfC{$\phi$}
+		\RightLabel{$\Rightarrow E$}
+		\BinaryInfC{$\gamma$}
+		\DisplayProof
+	\end{center}
+	We have $\Gamma \vdash \phi \Rightarrow \gamma$ and so $\Gamma \models \phi \Rightarrow \gamma$ which means $\call{I}_\nu(\phi) = 0$ or $\call{I}_\nu(\gamma) = 1$. Since $\Gamma \vdash \phi$ and hence $\Gamma \models \phi$ we have $\call{I}_\nu(\phi) = 1$, which implies $\call{I}_\nu(\gamma) = 1$.
+	
+	Say the final rule of $\pi$ is $\neg I^i$.
+	\begin{center}
+		\AxiomC{$[\phi]^i$}
+		\noLine
+		\UnaryInfC{$\vdots$}
+		\noLine
+		\UnaryInfC{$\bot$}
+		\RightLabel{$\neg I^i$}
+		\UnaryInfC{$\neg \phi$}
+		\DisplayProof
+	\end{center}
+	We need to show that $\call{I}_\nu(\neg \phi) = 1$ which amounts to showing $\call{I}_\nu(\phi) = 0$. We use proof by contradiction. Say $\call{I}_\nu(\phi) = 1$. Since $\Gamma \cup \{ \phi \} \vdash \bot$ we have $\Gamma \cup \{ \phi \} \models \bot$ which implies $\call{I}_\nu(\bot) = 1$, contradicting Definition \ref{def:interpretation}.
+	
+	Now say the last rule is $\forall I$.
+	\begin{center}
+		\AxiomC{$\pi'$}
+		\noLine
+		\UnaryInfC{$\vdots$}
+		\noLine
+		\UnaryInfC{$\phi[x := y]$}
+		\RightLabel{$\forall I$}
+		\UnaryInfC{$(\forall x: C) \phi$}
+		\DisplayProof
+	\end{center}
+	Say $\Gamma \not\models (\forall x: C)\phi$. Let $\nu$ be a valuation such that $\call{I}_\nu((\forall x:C)\phi) = 0$. Then there exists some $d \in \call{I}(C)$ such that $\call{I}_{\nu(x \mapsto d)}(\phi) = 0$. This means $\call{I}_{\nu(y \mapsto d)}(\phi) = 0$, which means $\call{I} \not\models \phi[x := y]$.
+	
+	Say the last rule is $\forall E$.
+	\begin{center}
+		\AxiomC{$\pi$}
+		\noLine
+		\UnaryInfC{$\vdots$}
+		\noLine
+		\UnaryInfC{$(\forall x:C)\phi$}
+		\RightLabel{$(\forall E)$}
+		\UnaryInfC{$\phi[x := t]$}
+		\DisplayProof
+	\end{center}
+	Say $\call{I} \not\models \phi[x := t]$ so there exists a valuation $\nu$ such that $\call{I}_\nu(\phi[x := t]) = 0$. Then $d := \call{I}_\nu(t)$ is some value in $\call{I}(C)$ and we see $\call{I}_{\nu(x \mapsto d)}(\phi) = 0$ and so $\call{I} \not \models (\forall x: C)\phi$.
+	
+	Say the last rule is $\exists I$.
+	\begin{center}
+		\AxiomC{$\pi$}
+		\noLine
+		\UnaryInfC{$\vdots$}
+		\noLine
+		\UnaryInfC{$\phi[x := t]$}
+		\RightLabel{$\exists I$}
+		\UnaryInfC{$(\exists x: C)\phi$}
+		\DisplayProof
+	\end{center}
+	If $\nu$ is a valuation such that $\call{I}_\nu \models \phi[x := t]$ then $\call{I}_{\nu(x \mapsto \call{I}_\nu(t))}(\phi) = 1$. Thus $\call{I} \models (\exists x:C)\phi$.
+	
+	Say the last rule is $\exists E^i$.
+	\begin{center}
+		\AxiomC{$\pi$}
+		\noLine
+		\UnaryInfC{$\vdots$}
+		\noLine
+		\UnaryInfC{$(\exists x:C)\phi$}
+		\AxiomC{$[\phi[x := y]]^i$}
+		\noLine
+		\UnaryInfC{$\vdots$}
+		\noLine
+		\UnaryInfC{$\gamma$}
+		\RightLabel{$\exists E^i$}
+		\BinaryInfC{$\gamma$}
+		\DisplayProof
+	\end{center}
+\end{proof}
+
+\begin{thm}
+	Let $\bb{T}$ be a first order theory, that is, a set of formulas in some first order language. There exists an interpretation $\call{I}$ so that $\call{I} \models \bb{T}$ if and only if for every finite subset $\bb{T}' \subseteq \bb{T}$ there exists an interpretation $\call{I}'$ such that $\call{I}' \models \bb{T}'$.
+\end{thm}
+\begin{proof}
+	For convenience, if a theory $\bb{S}$ admits an interpretation $\call{J}$ such that $\call{J} \models \bb{S}$ we will say that $\bb{S}$ \textbf{admits a model}.
+	
+	We prove the contrapositive. Assume that $\bb{T}$ does not admit a model.
+	
+	By the Completeness Theorem we have that $\bb{T}$ is inconsistent. Let $A$ denote a formula such that $\bb{T} \vdash A$ and $\bb{T} \vdash \neg A$. Let $\pi, \pi'$ respectively be proofs of $A, \neg A$. Since $\pi, \pi'$ are finite there exists finite subsets $\bb{T}',\bb{T}'' \subseteq \bb{T}$ so that $\bb{T}' \vdash A$ and $\bb{T}'' \vdash \neg A$. This implies that $\bb{T}' \cup \bb{T}'' \vdash A \wedge \neg A$. Thus the finite subset $\bb{T}' \cup \bb{T}''$ is inconsistent and thus does not admit a model.
+	
+	The other direction of the Theorem is trivial.
+\end{proof}
+\end{document}

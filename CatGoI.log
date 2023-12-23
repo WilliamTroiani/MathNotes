@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.5.21)  12 APR 2022 10:42
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.5.21)  5 OCT 2023 17:11
 entering extended mode
 **./CatGoI.tex
 (CatGoI.tex
@@ -756,79 +756,56 @@ Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
 )
 \c@thm=\count299
 
-(/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/latex/ge
-ometry/geometry.sty
-Package: geometry 2020/01/02 v5.9 Page Geometry
-
-(/Library/Application Support/MiKTeX/texmfs/install/tex/generic/iftex/ifvtex.st
-y
-Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
-)
-\Gm@cnth=\count300
-\Gm@cntv=\count301
-\c@Gm@tempcnt=\count302
-\Gm@bindingoffset=\dimen282
-\Gm@wd@mp=\dimen283
-\Gm@odd@mp=\dimen284
-\Gm@even@mp=\dimen285
-\Gm@layoutwidth=\dimen286
-\Gm@layoutheight=\dimen287
-\Gm@layouthoffset=\dimen288
-\Gm@layoutvoffset=\dimen289
-\Gm@dimlist=\toks45
-
-(/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/latex/ge
-ometry/geometry.cfg))
 (/Library/Application Support/MiKTeX/texmfs/install/tex/latex/l3backend/l3backe
 nd-pdftex.def
 File: l3backend-pdftex.def 2021-05-07 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count303
+\l__color_backend_stack_int=\count300
 \l__pdf_internal_box=\box69
 ) (CatGoI.aux)
 \openout1 = `CatGoI.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 65.
-LaTeX Font Info:    ... okay on input line 65.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 65.
-LaTeX Font Info:    ... okay on input line 65.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 65.
-LaTeX Font Info:    ... okay on input line 65.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 65.
-LaTeX Font Info:    ... okay on input line 65.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 65.
-LaTeX Font Info:    ... okay on input line 65.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 65.
-LaTeX Font Info:    ... okay on input line 65.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 65.
-LaTeX Font Info:    ... okay on input line 65.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 65.
-LaTeX Font Info:    ... okay on input line 65.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 65.
-LaTeX Font Info:    ... okay on input line 65.
-LaTeX Font Info:    Checking defaults for T3/cmr/m/n on input line 65.
-LaTeX Font Info:    Trying to load font information for T3+cmr on input line 65
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for T3/cmr/m/n on input line 64.
+LaTeX Font Info:    Trying to load font information for T3+cmr on input line 64
 .
 
 (/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/latex/ti
 pa/t3cmr.fd
 File: t3cmr.fd 2001/12/31 TIPA font definitions
 )
-LaTeX Font Info:    ... okay on input line 65.
+LaTeX Font Info:    ... okay on input line 64.
 
 (/Library/Application Support/MiKTeX/texmfs/install/tex/context/base/mkii/supp-
 pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count304
-\scratchdimen=\dimen290
+\scratchcounter=\count301
+\scratchdimen=\dimen282
 \scratchbox=\box70
-\nofMPsegments=\count305
-\nofMParguments=\count306
-\everyMPshowfont=\toks46
-\MPscratchCnt=\count307
-\MPscratchDim=\dimen291
-\MPnumerator=\count308
-\makeMPintoPDFobject=\count309
-\everyMPtoPDFconversion=\toks47
+\nofMPsegments=\count302
+\nofMParguments=\count303
+\everyMPshowfont=\toks45
+\MPscratchCnt=\count304
+\MPscratchDim=\dimen283
+\MPnumerator=\count305
+\makeMPintoPDFobject=\count306
+\everyMPtoPDFconversion=\toks46
 )
 (/Library/Application Support/MiKTeX/texmfs/install/tex/latex/epstopdf-pkg/epst
 opdf-base.sty
@@ -840,7 +817,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 -sys.cfg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
-Package hyperref Info: Link coloring OFF on input line 65.
+Package hyperref Info: Link coloring OFF on input line 64.
 
 (/Library/Application Support/MiKTeX/texmfs/install/tex/latex/hyperref/nameref.
 sty
@@ -854,160 +831,220 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count310
+\c@section@level=\count307
 )
-LaTeX Info: Redefining \ref on input line 65.
-LaTeX Info: Redefining \pageref on input line 65.
-LaTeX Info: Redefining \nameref on input line 65.
+LaTeX Info: Redefining \ref on input line 64.
+LaTeX Info: Redefining \pageref on input line 64.
+LaTeX Info: Redefining \nameref on input line 64.
  (CatGoI.out) (CatGoI.out)
 \@outlinefile=\write4
 \openout4 = `CatGoI.out'.
 
+LaTeX Font Info:    Trying to load font information for U+msa on input line 67.
 
-*geometry* driver: auto-detecting
-*geometry* detected driver: pdftex
-*geometry* verbose mode - [ preamble ] result:
-* driver: pdftex
-* paper: <default>
-* layout: <same size as paper>
-* layoutoffset:(h,v)=(0.0pt,0.0pt)
-* modes: 
-* h-part:(L,W,R)=(28.45274pt, 557.38951pt, 28.45274pt)
-* v-part:(T,H,B)=(28.45274pt, 738.0645pt, 28.45274pt)
-* \paperwidth=614.295pt
-* \paperheight=794.96999pt
-* \textwidth=557.38951pt
-* \textheight=738.0645pt
-* \oddsidemargin=-43.81725pt
-* \evensidemargin=-43.81725pt
-* \topmargin=-80.81725pt
-* \headheight=12.0pt
-* \headsep=25.0pt
-* \topskip=12.0pt
-* \footskip=30.0pt
-* \marginparwidth=44.0pt
-* \marginparsep=10.0pt
-* \columnsep=10.0pt
-* \skip\footins=10.8pt plus 4.0pt minus 2.0pt
-* \hoffset=0.0pt
-* \voffset=0.0pt
-* \mag=1000
-* \@twocolumnfalse
-* \@twosidefalse
-* \@mparswitchfalse
-* \@reversemarginfalse
-* (1in=72.27pt=25.4mm, 1cm=28.453pt)
-
-LaTeX Font Info:    Trying to load font information for U+msa on input line 75.
 
 (/Library/Application Support/MiKTeX/texmfs/install/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 75.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 67.
 
 (/Library/Application Support/MiKTeX/texmfs/install/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 75
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 67
 .
 
 (/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/latex/jk
 nappen/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
-LaTeX Font Info:    Trying to load font information for U+stmry on input line 7
-5.
+LaTeX Font Info:    Trying to load font information for U+stmry on input line 6
+7.
 
 (/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/latex/st
-maryrd/Ustmry.fd)
-LaTeX Font Info:    Trying to load font information for U+bbm on input line 76.
+maryrd/Ustmry.fd) (CatGoI.toc)
+\tf@toc=\write5
+\openout5 = `CatGoI.toc'.
 
-
-(/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/latex/bb
-m/ubbm.fd
-File: ubbm.fd 1999/03/15 V 1.2 Font definition for bbm font - TH
-) [1
+ [1
 
 {/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/data/pdftex/config/p
 dftex.map}]
+Overfull \hbox (42.37924pt too wide) in paragraph at lines 92--93
+\OT1/cmr/m/n/12 elements $\OML/cmm/m/it/12 []; [] ; []; []; [] ; [] \OMS/cm
+sy/m/n/12 2 \OML/cmm/m/it/12 E$\OT1/cmr/m/n/12 . These \OT1/cmr/bx/n/12 satisfy
+ the canonical anticommutation
+ []
 
-Package amsfonts Warning: Obsolete command \bold; \mathbf should be used instea
-d on input line 123.
+[2]
+Overfull \hbox (1.79039pt too wide) in paragraph at lines 115--116
+\OT1/cmr/m/n/12 ring $\OML/cmm/m/it/12 A$\OT1/cmr/m/n/12 , then $\OML/cmm/m/it/
+12 E$ \OT1/cmr/m/n/12 admitting a set of odd elements satisfying the anticommut
+ation
+ []
 
+[3] [4] [5]
+Overfull \hbox (18.66104pt too wide) in paragraph at lines 264--265
+[]\OT1/cmr/m/n/12 We will use the following Lemma to indirectly talk about matr
+ix factorisations
+ []
 
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 178.
+[6]
+Overfull \hbox (2.85805pt too wide) in paragraph at lines 319--321
+\OT1/cmr/m/n/12 Thus, by Lemma []4.0.14[] we obtain a matrix factorisation $(\O
+ML/cmm/m/it/12 X \OT1/cmr/m/n/12 = [] \OMS/cmsy/m/n/12 
+ \OML/cmm/m/it/12 k\OT1/cmr/m/n/12 [[]\OML/cmm/m/it/12 ; []\OT1/cmr/m/n/12 ]\OM
+L/cmm/m/it/12 ; @[]\OT1/cmr/m/n/12 )$. 
+ []
 
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\bigcap@' on input line 178.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\slimits@' on input line 178.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 178.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 178.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\new@ifnextchar' on input line 178.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 178.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\nu' on input line 178.
+[7]
+Overfull \hbox (4.70773pt too wide) in paragraph at lines 358--358
+[]\OT1/cmr/bx/n/17.28 The Bicategory of Landau-Ginzburg models
+ []
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 178.
+(hyperref)                removing `math shift' on input line 358.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 178.
+(hyperref)                removing `math shift' on input line 358.
 
-[2] [3] (CatGoI.aux)
+[8]
+Overfull \hbox (5.87749pt too wide) in paragraph at lines 369--370
+[][]\OT1/cmr/bx/n/12 Definition 5.0.2. []\OT1/cmr/m/n/12 The bicategory of Land
+au-Ginzburg models over $\OML/cmm/m/it/12 k$\OT1/cmr/m/n/12 , denoted
+ []
+
+
+Overfull \hbox (48.30597pt too wide) in paragraph at lines 372--373
+[]\OT1/cmr/m/n/12 The category of $1$-morphisms $(\OML/cmm/m/it/12 k\OT1/cmr/m/
+n/12 [[]]\OML/cmm/m/it/12 ; U\OT1/cmr/m/n/12 ([])) [][]\OMS/cmsy/m/n/12 ! \OT1/
+cmr/m/n/12 (\OML/cmm/m/it/12 k\OT1/cmr/m/n/12 [[]]\OML/cmm/m/it/12 ; V\OT1/cmr/
+m/n/12 ([]))$ is $[] [](\OML/cmm/m/it/12 k\OT1/cmr/m/n/12 [[]\OML/cmm/m/it/12 ;
+ []\OT1/cmr/m/n/12 ]\OML/cmm/m/it/12 ; V\OT1/cmr/m/n/12 ([]) \OMS/cmsy/m/n/12  
+
+ []
+
+
+Overfull \hbox (5.53157pt too wide) in paragraph at lines 383--384
+\OT1/cmr/m/n/12 polynomial ring $\OML/cmm/m/it/12 k\OT1/cmr/m/n/12 [[]\OML/cmm/
+m/it/12 ; [][]\OT1/cmr/m/n/12 ] = \OML/cmm/m/it/12 k\OT1/cmr/m/n/12 [\OML/cmm/m
+/it/12 x[]; [] ; x[]; x[]; [] ; x[]\OT1/cmr/m/n/12 ]$. The unit $1$-morphism
+ []
+
+
+Overfull \hbox (20.35191pt too wide) in paragraph at lines 393--394
+[][]\OT1/cmr/bx/n/12 Definition 6.0.1. []\OT1/cmr/m/n/12 Let $\OMS/cmsy/m/n/12 
+C$ \OT1/cmr/m/n/12 be a category. An \OT1/cmr/bx/n/12 idempotent \OT1/cmr/m/n/1
+2 in $\OMS/cmsy/m/n/12 C$ \OT1/cmr/m/n/12 is an endomorphism
+ []
+
+[9] [10]
+Overfull \hbox (5.6445pt too wide) in paragraph at lines 474--475
+\OT1/cmr/m/n/12 projection onto states of knowledge, which reduces entropy, and
+ the calculation
+ []
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 481.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 481.
+
+[11]
+Overfull \hbox (13.501pt too wide) in paragraph at lines 510--511
+[]\OT1/cmr/m/n/12 Consider an object $(\OML/cmm/m/it/12 k\OT1/cmr/m/n/12 [\OML/
+cmm/m/it/12 x\OT1/cmr/m/n/12 ]\OML/cmm/m/it/12 ; U\OT1/cmr/m/n/12 )$ where $\OM
+L/cmm/m/it/12 k\OT1/cmr/m/n/12 [\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 ] = \OML/cmm/
+m/it/12 k\OT1/cmr/m/n/12 [\OML/cmm/m/it/12 x[]; [] ; x[]\OT1/cmr/m/n/12 ]$ and 
+the polynomial
+ []
+
+
+Overfull \hbox (9.75279pt too wide) in paragraph at lines 515--516
+[]\OT1/cmr/m/n/12 Note that it is not clear that the tensor product is a well-d
+efined composition
+ []
+
+[12] [13]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 577.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 577.
+
+
+Overfull \hbox (16.16318pt too wide) in paragraph at lines 583--585
+\OT1/cmr/m/n/12 where $([])[]$ denotes th eidempotent completion and $([])[]$ i
+s the Clifford thickening. 
+ []
+
+[14] [15]
+Overfull \hbox (30.25299pt too wide) in paragraph at lines 628--630
+\OT1/cmr/m/n/12 as natural transformations $	[] [][]\OMS/cmsy/m/n/12 ! \OT1/cmr
+/m/n/12 	$. A \OT1/cmr/bx/n/12 superfunctor $\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 
+F; \OT1/cmr/m/n/12 )$ from a supercategory
+ []
+
+[16]
+Overfull \hbox (8.86412pt too wide) in paragraph at lines 684--685
+\OT1/cmr/m/n/12 morphisms are $\U/msb/m/n/12 Z[]$\OT1/cmr/m/n/12 -graded bimodu
+les and 2-morphisms are degree zero bimodule
+ []
+
+[17]
+Underfull \hbox (badness 10000) in paragraph at lines 703--704
+[]\OT1/cmr/m/n/12 T. Friedrich, \OT1/cmr/m/it/12 Dirac Operators in Riemannian 
+Geometry
+ []
+
+
+Underfull \hbox (badness 4291) in paragraph at lines 703--704
+\OT1/cmr/m/n/12 20MathematicsSubjectClasification.Primary58Jx; Secondary 53C27,
+
+ []
+
+[18] (CatGoI.aux)
 Package rerunfilecheck Info: File `CatGoI.out' has not changed.
-(rerunfilecheck)             Checksum: AE6B7CA5E7B820BB05E9CE7BDBC8B786;750.
+(rerunfilecheck)             Checksum: A090D1DFB1233E52F182D7DBFD6D179B;2606.
  ) 
 Here is how much of TeX's memory you used:
- 22647 strings out of 481099
- 423405 string characters out of 2904467
- 691150 words of memory out of 3000000
- 39562 multiletter control sequences out of 15000+600000
- 417480 words of font info for 86 fonts, out of 8000000 for 9000
+ 22689 strings out of 481099
+ 427156 string characters out of 2904467
+ 692934 words of memory out of 3000000
+ 39517 multiletter control sequences out of 15000+600000
+ 417535 words of font info for 85 fonts, out of 8000000 for 9000
  0 hyphenation exceptions out of 8191
- 98i,15n,103p,474b,1152s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 98i,15n,103p,889b,1150s stack positions out of 5000i,500n,10000p,200000b,80000s
  </Users/wtroiani/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljf
-our/public/bbm/dpi600/bbm12.pk> </Users/wtroiani/Library/Application Support/Mi
-KTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1200.pk></Library/Appli
-cation Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
-</Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts
-/cm/cmex10.pfb></Library/Application Support/MiKTeX/texmfs/install/fonts/type1/
-public/amsfonts/cm/cmmi10.pfb></Library/Application Support/MiKTeX/texmfs/insta
-ll/fonts/type1/public/amsfonts/cm/cmmi12.pfb></Library/Application Support/MiKT
-eX/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi8.pfb></Library/Applicatio
-n Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmr10.pfb></Libr
-ary/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cm
-r12.pfb></Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/
-amsfonts/cm/cmr6.pfb></Library/Application Support/MiKTeX/texmfs/install/fonts/
-type1/public/amsfonts/cm/cmsy10.pfb></Library/Application Support/MiKTeX/texmfs
-/install/fonts/type1/public/amsfonts/cm/cmsy6.pfb></Library/Application Support
-/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy8.pfb></Library/Appli
-cation Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-</Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/rsfs/rsf
-s10.pfb>
-Output written on CatGoI.pdf (3 pages, 141845 bytes).
+our/jknappen/ec/dpi600/tcrm1200.pk></Library/Application Support/MiKTeX/texmfs/
+install/fonts/type1/public/amsfonts/cm/cmbx12.pfb></Library/Application Support
+/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmex10.pfb></Library/Appl
+ication Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi12.pfb
+></Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfont
+s/cm/cmmi6.pfb></Library/Application Support/MiKTeX/texmfs/install/fonts/type1/
+public/amsfonts/cm/cmmi8.pfb></Library/Application Support/MiKTeX/texmfs/instal
+l/fonts/type1/public/amsfonts/cm/cmr12.pfb></Library/Application Support/MiKTeX
+/texmfs/install/fonts/type1/public/amsfonts/cm/cmr17.pfb></Library/Application 
+Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmr6.pfb></Library
+/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmr8.
+pfb></Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsf
+onts/cm/cmsy10.pfb></Library/Application Support/MiKTeX/texmfs/install/fonts/ty
+pe1/public/amsfonts/cm/cmsy6.pfb></Library/Application Support/MiKTeX/texmfs/in
+stall/fonts/type1/public/amsfonts/cm/cmsy8.pfb></Library/Application Support/Mi
+KTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmti12.pfb></Library/Applica
+tion Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmtt12.pfb></
+Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/s
+ymbols/msam10.pfb></Library/Application Support/MiKTeX/texmfs/install/fonts/typ
+e1/public/amsfonts/symbols/msbm10.pfb>
+Output written on CatGoI.pdf (18 pages, 285988 bytes).
 PDF statistics:
- 130 PDF objects out of 1000 (max. 8388607)
- 29 named destinations out of 1000 (max. 500000)
- 53 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 370 PDF objects out of 1000 (max. 8388607)
+ 131 named destinations out of 1000 (max. 500000)
+ 117 words of extra memory for PDF output out of 10000 (max. 10000000)
 

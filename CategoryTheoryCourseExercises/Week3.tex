@@ -1,0 +1,184 @@
+\documentclass[12pt]{article}
+
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{mathrsfs}
+\usepackage{array}
+\usepackage{amssymb}
+\usepackage{units}
+\usepackage{graphicx}
+\usepackage{tikz-cd}
+\usepackage{nicefrac}
+\usepackage{hyperref}
+\usepackage{bbm}
+\usepackage{color}
+\usepackage{tensor}
+\usepackage{tipa}
+\usepackage{bussproofs}
+\usepackage{ stmaryrd }
+\usepackage{ textcomp }
+\usepackage{leftidx}
+\usepackage{afterpage}
+\usepackage{varwidth}
+\usepackage{tasks}
+\usepackage{ cmll }
+\usepackage{adjustbox}
+
+\newcommand\blankpage{
+	\null
+	\thispagestyle{empty}
+	\addtocounter{page}{-1}
+	\newpage
+}
+
+\graphicspath{ {images/} }
+
+\theoremstyle{plain}
+\newtheorem{thm}{Theorem}[subsection] % reset theorem numbering for each chapter
+\newtheorem{proposition}[thm]{Proposition}
+\newtheorem{lemma}[thm]{Lemma}
+\newtheorem{fact}[thm]{Fact}
+\newtheorem{cor}[thm]{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{defn}[thm]{Definition} % definition numbers are dependent on theorem numbers
+\newtheorem{exmp}[thm]{Example} % same for example numbers
+\newtheorem{notation}[thm]{Notation}
+\newtheorem{remark}[thm]{Remark}
+\newtheorem{condition}[thm]{Condition}
+\newtheorem{question}[thm]{Question}
+\newtheorem{construction}[thm]{Construction}
+\newtheorem{exercise}[thm]{Exercise}
+\newtheorem{example}[thm]{Example}
+\newtheorem{aside}[thm]{Aside}
+
+\def\doubleunderline#1{\underline{\underline{#1}}}
+\newcommand{\bb}[1]{\mathbb{#1}}
+\newcommand{\scr}[1]{\mathscr{#1}}
+\newcommand{\call}[1]{\mathcal{#1}}
+\newcommand{\psheaf}{\text{\underline{Set}}^{\scr{C}^{\text{op}}}}
+\newcommand{\und}[1]{\underline{\hspace{#1 cm}}}
+\newcommand{\adj}[1]{\text{\textopencorner}{#1}\text{\textcorner}}
+\newcommand{\comment}[1]{}
+\newcommand{\lto}{\longrightarrow}
+\newcommand{\rone}{(\operatorname{R}\bold{1})}
+\newcommand{\lone}{(\operatorname{L}\bold{1})}
+\newcommand{\rimp}{(\operatorname{R} \multimap)}
+\newcommand{\limp}{(\operatorname{L} \multimap)}
+\newcommand{\rtensor}{(\operatorname{R}\otimes)}
+\newcommand{\ltensor}{(\operatorname{L}\otimes)}
+\newcommand{\rtrue}{(\operatorname{R}\top)}
+\newcommand{\rwith}{(\operatorname{R}\&)}
+\newcommand{\lwithleft}{(\operatorname{L}\&)_{\operatorname{left}}}
+\newcommand{\lwithright}{(\operatorname{L}\&)_{\operatorname{right}}}
+\newcommand{\rplusleft}{(\operatorname{R}\oplus)_{\operatorname{left}}}
+\newcommand{\rplusright}{(\operatorname{R}\oplus)_{\operatorname{right}}}
+\newcommand{\lplus}{(\operatorname{L}\oplus)}
+\newcommand{\prom}{(\operatorname{prom})}
+\newcommand{\ctr}{(\operatorname{ctr})}
+\newcommand{\der}{(\operatorname{der})}
+\newcommand{\weak}{(\operatorname{weak})}
+\newcommand{\exi}{(\operatorname{exists})}
+\newcommand{\fa}{(\operatorname{for\text{ }all})}
+\newcommand{\ex}{(\operatorname{ex})}
+\newcommand{\cut}{(\operatorname{cut})}
+\newcommand{\ax}{(\operatorname{ax})}
+\newcommand{\negation}{\sim}
+\newcommand{\true}{\top}
+\newcommand{\false}{\bot}
+\DeclareRobustCommand{\diamondtimes}{%
+	\mathbin{\text{\rotatebox[origin=c]{45}{$\boxplus$}}}%
+}
+\newcommand{\tagarray}{\mbox{}\refstepcounter{equation}$(\theequation)$}
+\newcommand{\startproof}[1]{
+	\AxiomC{#1}
+	\noLine
+	\UnaryInfC{$\vdots$}
+}
+\newenvironment{scprooftree}[1]%
+{\gdef\scalefactor{#1}\begin{center}\proofSkipAmount \leavevmode}%
+	{\scalebox{\scalefactor}{\DisplayProof}\proofSkipAmount \end{center} }
+
+
+\title{Category Theory exercise sheet 3}
+
+\begin{document}
+	
+	\maketitle
+	
+	\section{Category theory}
+	\begin{enumerate}
+		\item Suppose $\eta: F \Rightarrow G$ is a natural isomorphism. Show that the inverses of the component morphisms define the components of a natural isomorphism $\eta^{-1}: G \Rightarrow F$.
+		\end{enumerate}
+	
+	\section{Mathematics}
+	\begin{enumerate}
+		\item Prove that if $\eta: F \Rightarrow G$ is a natural transformation between functors $F,G: \call{A} \lto \call{B}$ where $\call{A}, \call{B}$ are both abelian groups thought of as categories, then $F = G$.
+		\end{enumerate}
+	
+	\section{Computer science}
+	In category theory, a lot of the information is usually suppressed, which can be annoying, but you will learn that it is ok. In fact, we have already been doing this, for instance, we call the category consisting of sets and functions between these sets (and function composition and identity functions) simply by the object, ie, we call this the \emph{category of sets}. In fact, we often describe natural transformations without reference to the relevant functors. We will use this convention inside this question.
+	\begin{enumerate}
+		\item Let $A$ be a set. Define $TA = A \coprod \{ \bullet \}$. Prove that there are natural transformations
+		\begin{align*}
+			\eta_A: A &\lto TA & \mu_A: TTA &\lto TA\\
+			a &\longmapsto a & a &\longmapsto
+			\begin{cases}
+				a, & a \in A\\
+				\bullet, & \text{else}
+				\end{cases}
+			\end{align*}
+		\item Let $A$ be a set. Define $TA = \call{P}_{\text{fin}}(A)$. Prove that there are natural transformations
+		\begin{align*}
+			\eta_A: A &\lto TA & \mu_A: TTA &\lto TA\\
+			a &\longmapsto \{ a \} & \{ \{ x_i^j \}_{j \in J_i} \}_{i \in I} &\longmapsto \{ x_i^j \}_{i \in I, j \in J_i}
+			\end{align*}
+		\end{enumerate}
+	
+	\section{Final presentation}
+	\begin{question} It is time to start thinking about the final presentation.
+		\begin{enumerate}
+			\item Decide if you want your presentation to be more mathematically oriented, or more computer science oriented.
+			\item Look up the following topics online and see if any interest you in particular:
+			\begin{itemize}
+				\item Monoidal categories, $\star$-autonomous categories, bicategories (mathematical topic),
+				\item Monads in Haskell (functional programming topic),
+				\item Kan extensions (category theory topic),
+				\item Elementary topoi (for those interested in logic),
+				\item Induction and coinduction (computer science topic),
+				\item $\lambda$-calculus and cartesian categories, or cartesian closed categories (category theory and logic topic),
+				\item The Theorem that any presheaf is the colimit of representables (see Corollary 3 of \cite[Page 42]{MM}).
+				\item The Theorem that a category $\scr{C}$ admits limits if and only if it admits a terminal object, products, and equalisers. See \url{https://ncatlab.org/nlab/show/finite+limit}
+				\end{itemize}
+			Don't forget that you may also cover a topic of your own choosing. Please speak to either Francesca or Will before doing so though.
+			\end{enumerate}
+		\end{question}
+	
+	\begin{thebibliography}{9}
+		\bibitem{MM} Mordeijk, Maclane, \emph{Sheaves in Geometry and Logic}
+		\end{thebibliography}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	\end{document}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.5.21)  18 JUL 2022 11:43
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.5.21)  12 DEC 2023 10:41
 entering extended mode
 **./LinearLogic.tex
 (LinearLogic.tex
@@ -1099,7 +1099,13 @@ ll/ucmllr.fd) (LinearLogic.toc)
 \tf@toc=\write5
 \openout5 = `LinearLogic.toc'.
 
- [1
+
+Overfull \hbox (6.13547pt too wide) in paragraph at lines 116--117
+\OT1/cmr/m/n/12 Mathematics is formalised in logical languages which in turn ar
+e designed around the ideas of mathematics.
+ []
+
+[1
 
 {/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/data/pdftex/config/p
 dftex.map}]
@@ -1340,7 +1346,7 @@ r/m/n/12 ,
  []
 
 [35] [36] [37] [38] [39]
-Overfull \hbox (12.36322pt too wide) in paragraph at lines 2663--2665
+Overfull \hbox (12.36322pt too wide) in paragraph at lines 2670--2672
 \OT1/cmr/m/n/12 Consider also $\U/stmry/m/n/12 J\OML/cmm/m/it/12 \U/stmry/m/n/
 12 K\OML/cmm/m/it/12 \U/stmry/m/n/12 J\OML/cmm/m/it/12 \U/stmry/m/n/12 K$\OT1
 /cmr/m/n/12 , which is a matrix whose $\OML/cmm/m/it/12 ij[]$ \OT1/cmr/m/n/12 e
@@ -1348,7 +1354,7 @@ ntry corresponds to the sum of operators corresponding
  []
 
 [40] [41]
-Overfull \hbox (4.30833pt too wide) in paragraph at lines 2863--2864
+Overfull \hbox (4.30833pt too wide) in paragraph at lines 2870--2871
 []\OT1/cmr/m/n/12 It is clear by inspection of the rules in Definition []4.6.6[
 ] that the transformations preserve persistency
  []
@@ -1361,8 +1367,8 @@ Package rerunfilecheck Info: File `LinearLogic.out' has not changed.
 (rerunfilecheck)             Checksum: 8D6912277212AB7B9698665D1AF8FEBC;1853.
  ) 
 Here is how much of TeX's memory you used:
- 32453 strings out of 481099
- 664524 string characters out of 2904467
+ 32454 strings out of 481099
+ 664538 string characters out of 2904467
  918360 words of memory out of 3000000
  48993 multiletter control sequences out of 15000+600000
  416890 words of font info for 86 fonts, out of 8000000 for 9000
@@ -1393,9 +1399,9 @@ eX/texmfs/install/fonts/type1/public/amsfonts/symbols/msam10.pfb></Library/Appl
 ication Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/symbols/msbm1
 0.pfb></Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/fonts/
 type1/public/hoekwater/stmary10.pfb>
-Output written on LinearLogic.pdf (43 pages, 1010899 bytes).
+Output written on LinearLogic.pdf (43 pages, 1011903 bytes).
 PDF statistics:
- 842 PDF objects out of 1000 (max. 8388607)
- 320 named destinations out of 1000 (max. 500000)
+ 843 PDF objects out of 1000 (max. 8388607)
+ 321 named destinations out of 1000 (max. 500000)
  108 words of extra memory for PDF output out of 10000 (max. 10000000)
 

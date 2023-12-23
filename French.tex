@@ -1,0 +1,455 @@
+\documentclass[12pt]{article}
+
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{mathrsfs}
+\usepackage{amssymb}
+\usepackage{units}
+\usepackage{graphicx}
+\usepackage{tikz-cd}
+\usepackage{nicefrac}
+\usepackage{hyperref}
+\usepackage{bbm}
+\usepackage{color}
+\usepackage{tensor}
+\usepackage{tipa}
+\usepackage{bussproofs}
+\usepackage{ stmaryrd }
+\usepackage{ textcomp }
+\usepackage{leftidx}
+\usepackage{afterpage}
+\usepackage{varwidth}
+\usepackage{physics}
+
+\newcommand\blankpage{
+	\null
+	\thispagestyle{empty}
+	\addtocounter{page}{-1}
+	\newpage
+}
+
+\graphicspath{ {images/} }
+
+\theoremstyle{plain}
+\newtheorem{thm}{Theorem}[subsection] % reset theorem numbering for each chapter
+\newtheorem{proposition}[thm]{Proposition}
+\newtheorem{lemma}[thm]{Lemma}
+\newtheorem{fact}[thm]{Fact}
+\newtheorem{cor}[thm]{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{defn}[thm]{Definition} % definition numbers are dependent on theorem numbers
+\newtheorem{exmp}[thm]{Example} % same for example numbers
+\newtheorem{notation}[thm]{Notation}
+\newtheorem{remark}[thm]{Remark}
+\newtheorem{condition}[thm]{Condition}
+\newtheorem{question}[thm]{Question}
+\newtheorem{construction}[thm]{Construction}
+\newtheorem{exercise}[thm]{Exercise}
+\newtheorem{example}[thm]{Example}
+\newtheorem{observation}[thm]{Observation}
+
+\newcommand{\bb}[1]{\mathbb{#1}}
+\newcommand{\scr}[1]{\mathscr{#1}}
+\newcommand{\call}[1]{\mathcal{#1}}
+\newcommand{\psheaf}{\text{\underline{Set}}^{\scr{C}^{\text{op}}}}
+\newcommand{\und}[1]{\underline{\hspace{#1 cm}}}
+\newcommand{\adj}[1]{\text{\textopencorner}{#1}\text{\textcorner}}
+\newcommand{\comment}[1]{}
+\newcommand{\lto}{\longrightarrow}
+
+\usepackage[margin=1.5cm]{geometry}
+
+\title{French for an English speaker}
+\author{Will Troiani}
+\date{August 2020}
+
+\begin{document}
+	\maketitle
+	
+	\section{Introduction}
+	Of course it is beneficial to be speaking as much of the foreign language as possible from as early as possible. Simultaneously though, it is senseless to disregard the surely invaluable resource of comfort with English when learning French. This note aims at striking this balance well, and presenting the language French to an English speaker as efficiently and as comfortably as possible.
+	
+	\section{Present tense grammar}
+	The primary parts of a french \textbf{sentence} are the verb, the subject, and the object(s). This is exactly similar to English. For example, we have the following table.
+	\begin{center}
+	\begin{tabular}{| c | c |}
+		\hline
+		\textbf{English} & \textbf{French}\\
+		I play a tune & Je joue un air\\
+		I take a bath & Je prends un bain\\
+		I make a coffee & Je fais un café\\
+		\hline
+		\end{tabular}
+	\end{center}
+	Simple. However, there are at least three dimensions of difficulty which are hidden by these examples. The first is the \textbf{pronoun} (``I"). The sentence changes if a different pronoun is used (for example``you", ``he/she", ``we", ``they"). The second is the \textbf{plurality}, all of ``steak", ``bath", and ``coffee" were used in the singular in these examples. The last is the most subtle, and that is the \textbf{gender} of the object; the translations of the words steak, bath, and coffee (respectively steak, bain, and café) are all \textbf{masculin}. The reason why this is subtle is because this is a concept which does \emph{not} exist in English.
+	
+	\subsection{Pronouns}
+	The first six pronouns which we consider are the translations of I, you, he/she, we, they/them. The reason why there are only five words here is because there are two translations corresponding to you, one for formal situations and one for informal situations.
+	\begin{center}
+		\begin{tabular}{| c | c |}
+			\hline
+			\textbf{English} & \textbf{French}\\
+			I & Je\\
+			You (informal) & Tu\\
+			You (formal) & Vous\\
+			He/she & Il/Elle\\
+			We & Nous\\
+			Them & Ils/Elles\\
+			\hline
+			\end{tabular}
+		\end{center}
+	The two options corresponding them are for when the group of people referred to as ``them" are entirely consistent of females (Elles) or when at least one of them is male (Ils).
+	
+	The structure of the sentence itself is not effected by the pronoun but the \textbf{conjugation} of the verbe is. Later we will learn that ``play" transaltes to a particularly simple verb, so we focus on this example for now.
+	
+	\begin{center}
+		\begin{tabular}{| c | c |}
+			\hline
+			\textbf{English} & \textbf{French}\\
+			I play a tune & Je joue un air\\
+			You play a tune (informal) & Tu joues un air\\
+			You play a tune (formal) & Vous jouez un air\\
+			We play a tune & Nous jouons un air\\
+			He/she plays a tune & Il/elle joue un air\\
+			They play a tune (all female/one male) & Ils/Elles jouent un air\\
+			\hline
+			\end{tabular}
+		\end{center}
+	This appears to be in sharp contrast to English but it is undeniable that the ``s" in ``plays" in the sentence ``He/she plays a tune" is strange.
+	
+	One must learn all conjugations of all french verbs essentially indivisually as although there are broad groups which verbs fit into, there are so many exceptions that a better technique is to ``become familiar with the religion", that is, learn what the conjugaitions most likely are and be willing to make mistakes.
+	
+	\subsubsection{Er-verbs}
+	In English, we say ``he plays a tune" where ``plays" is the verb and we see the conjugation is present, but in the sentence ``he wants to play a tune" we see that ``wants" is the verb and so the conjugation in ``play" is \emph{not} present. The same thing happens in French; the sentence ``he wants to play a tune" translates to ``il veut jouer un air" where ``veut" is the translation of ``wants" and ``jouer" is the translation of ``plays". Notice the spelling: ``jouer". This version of the verb is the \textbf{infinitive}, and since it does \emph{not} depend on the pronoun, it is convenient to refer to verbs via their infinitive when describing them in a pedagogical context.
+	
+	\begin{defn}
+		A verb is an \textbf{er-verb} if its infinitive ends in ``er".
+		\end{defn}
+	
+	\begin{example}\label{ex:example}
+		Examples of er-verbs are given as follows:
+		\begin{itemize}
+			\item Jouer (to play)
+			\item Aimer (to like)
+			\item Demander (to ask)
+			\item Écouter (to listen)
+			\item Habiter (to live)
+			\item Manquer (to miss)
+			\item Parler (to speak)
+			\item Penser (to think)
+			\item Visiter (to visit a place)
+			\item Trouver (to find)
+			\end{itemize}
+		\end{example}
+	There is a subset of er-verbs which are the \textbf{regular er-verbs} and these all conjugate according to the same rule. All the er-verbs in Example \ref{ex:example} are regular er-verbs, since we have already covered the case for ``jouer", we can accurately guess the conjugaitions of the verbs in Example \ref{ex:example}. For example, consider ``demander".
+	\begin{center}
+		\begin{tabular}{| c |}
+			\hline
+			Je demande\\
+			Tu demandes\\
+			Vous demandez\\
+			Nous demandons\\
+			Il/elle demande\\
+			Ils/Elles demandent\\
+			\hline
+			\end{tabular}
+		\end{center}
+	What about er-verbs which are not regular? Before considering this, one could ask ``how does one identify whether an er-verb is regular"? Almost all of the irregular er-verbs are easy to notice given the pattern of regular er-verbs. There is a soul exception, the verb ``Aller" (to go), for this verb one must rote learn the conjugaitions as they are very random.
+	
+	\begin{example}\label{ex:irregular_er}
+		The verb ``commencer" (to begin) is an er-verb which is not regular, and has the following table of conjugations.
+		\begin{center}
+			\begin{tabular}{|c|}
+				\hline
+				Je commence\\
+				Tu commences\\
+				Vous commencez\\
+				Nous commençons\\
+				Il/elle commonce\\
+				Ils/elles commencent\\
+				\hline
+				\end{tabular}
+			\end{center}
+		The only break to the pattern is ``Nous commençons", where a ``c" became a ``ç". This is in order to maintain the correct pronounciation, as ``commencons" (which is not a real french word) would be pronounced ``commen\textbf{k}ons", whereas the intended pronounciation is to be ``commen\textbf{s}ons" (recall: languages develop verbally before they develop in writing).
+		\end{example}
+	Example \ref{ex:irregular_er} is representative of the minute changes to the general pattern required for er-verbs which are not regular. They are so insignificant and predictable that one ought not concern themselves with learning every indivisual exception but instead mentally grouping all er-verbs into one group and using the general pattern, one becomes familiar with the exceptions (this last statement is ignoring ``aller", which is genuinely unpredictable, see Section \ref{sec:irregular}).
+	
+	\subsection{Irregular verbs}\label{sec:irregular}
+	We begin with an example. We present the conjugation table for ``aller".
+	\begin{center}
+		\begin{tabular}{|c|}
+			\hline
+			\textbf{Aller}\\
+			Je vais\\
+			Tu vas\\
+			Vous allez\\
+			Il/elle va\\
+			Nous allons\\
+			Ils/Elles vont\\
+			\hline
+		\end{tabular}
+	\end{center}
+	To make this easier to swallow, recall the bizarre conjugations of the verb ``to be" in English: ``I am", ``you are", ``he/she is". The conjugations for ``Aller" are similar to this in that they depart significantly from their infinitive, but this is familiar to an English speaker, for example, how could one have guessed ``am", ``are", or ``is" from ``be"?
+	
+	A difficult part of French is just how many commonly used verbs are irregular, and essentially all of these must be learnt one by one. There are four very commonly used irregular verbs in french, these are ``aller" (to go), ``être" (to be), ``avoir" (to have), ``faire" (to make). One might think that ``faire" could not possibly be that important, how much do French people talk about making things? The answer though is actually quite a lot. The reason why is because there is no translation of ``do" in French. This puts a lot of pressure on the verb ``to make" and so this is genuinely used very frequently.
+	
+	We present the conjugations of the remaining three of these four verbs.
+	\begin{center}
+		\begin{tabular}{|c|}
+			\hline
+			\textbf{Être}\\
+			Je suis\\
+			Tu es\\
+			Vous êtes\\
+			Il/elle est\\
+			Nous sommes\\
+			Ils/Elles sont\\
+			\hline
+			\end{tabular}
+		%
+		\begin{tabular}{|c|}
+			\hline
+			\textbf{Avoir}\\
+			J'ai\\
+			Tu as\\
+			Vous avez\\
+			Il/elle a\\
+			Nous avons\\
+			Ils/Elles ont\\
+			\hline
+		\end{tabular}
+	%
+	\begin{tabular}{|c|}
+		\hline
+		\textbf{Faire}\\
+		Je fais\\
+		Tu fais\\
+		Vous faites\\
+		Il/elle fait\\f
+		Nous faisons\\
+		Ils/Elles font\\
+		\hline
+	\end{tabular}
+		\end{center}
+	\begin{remark}
+		We notice that in the conjugations of ``avoir", rather than writing ``je ai", we write ``j'ai", this is in accordance with a soft rule which is widely followed throughout the French language where ``je" followed by a word which begins with a vowel can be contracted. This is similar to Example \ref{ex:irregular_er} in that the exception to the rule is so predictable and unoffensive that it does not warrant its own discussion. However, for completeness, we include this remark on the topic.
+		\end{remark}
+	Next we present the present tense conjugations of some more commonly used irregular verbs.
+	\begin{center}
+		\begin{tabular}{|c|}
+			\hline
+			\textbf{Pouvoir (can)}\\
+			Je peux\\
+			Tu peux\\
+			Vous pouvez\\
+			Il/elle peut\\
+			Nous pouvons\\
+			Ils/Elles peuvent\\
+			\hline
+		\end{tabular}
+		%
+		\begin{tabular}{|c|}
+			\hline
+			\textbf{Mettre (to put)}\\
+			Je mets\\
+			Tu mets\\
+			Vous mettez\\
+			Il/elle met\\
+			Nous mettons\\
+			Ils/Elles mettent\\
+			\hline
+		\end{tabular}
+		%
+		\begin{tabular}{|c|}
+			\hline
+			\textbf{Dire (to say)}\\
+			Je dis\\
+			Tu dis\\
+			Vous dites\\
+			Il/elle dit\\
+			Nous disons\\
+			Ils/Elles disent\\
+			\hline
+		\end{tabular}
+	%
+	\begin{tabular}{|c|}
+		\hline
+		\textbf{Devoir (to have to)}\\
+		Je dois\\
+		Tu dois\\
+		Vous devez\\
+		Il/elle doit\\
+		Nous devons\\
+		Ils/Elles doivent\\
+		\hline
+	\end{tabular}
+%
+\begin{tabular}{|c|}
+	\hline
+	\textbf{Prendre (to take)}\\
+	Je prends\\
+	Tu prends\\
+	Vous prenez\\
+	Il/elle prend\\
+	Nous prenons\\
+	Ils/Elles prennent\\
+	\hline
+\end{tabular}
+%
+\begin{tabular}{|c|}
+	\hline
+	\textbf{Vouloir (to want)}\\
+	Je veux\\
+	Tu veux\\
+	Vous voulez\\
+	Il/elle veut\\
+	Nous voulons\\
+	Ils/Elles veulent\\
+	\hline
+\end{tabular}
+	\begin{tabular}{|c|}
+	\hline
+	\textbf{Savoir (to know)}\\
+	Je sais\\
+	Tu sais\\
+	Vous savez\\
+	Il/elle sait\\
+	Nous savons\\
+	Ils/Elles savent\\
+	\hline
+\end{tabular}
+%
+\begin{tabular}{|c|}
+	\hline
+	\textbf{Voir (to see)}\\
+	Je vois\\
+	Tu vois\\
+	Vous voulez\\
+	Il/elle voit\\
+	Nous voyons\\
+	Ils/Elles voient\\
+	\hline
+\end{tabular}
+%
+\begin{tabular}{|c|}
+	\hline
+	\textbf{Venir (to come)}\\
+	Je viens\\
+	Tu viens\\
+	Vous venez\\
+	Il/elle vient\\
+	Nous venons\\
+	Ils/Elles viennent\\
+	\hline
+\end{tabular}
+	\end{center}
+	There are many more... see \url{https://www.linguasorb.com/french/verbs/irregular-verbs/}
+	
+	How does one learn so many common place irregular verbs? Notice that the ``je, tu, il/ell" conjugations are not very difficult, and in fact are quite uniform. Moreover, french has a useful word ``on" which means "we" but conjugates like ``il/ell". Thus, one can simply not learn the ``vous" nor ``ils/elles" conjugations and make it surprisingly far through every day conversation. Eventually it becomes frustrating to not know the ``ils/elles" conjugations, these can be learnt at that point.
+	
+	We have already mentioned that ``becoming familiar with the religion" and being willing to make mistakes is a good approach. Although there are a lot of particular differences, and spelling is difficult in French in general, many (if not all) of these details are not necessary to know for accurate verbal communication.
+	
+	\subsection{Ir-verbs}
+	We briefly discuss a third group of verbs, the \textbf{regular ir-verbs}, which is a subset of the verbs which end in ``ir". This is not a helpful group of verbs. Admittedly they all follow the same pattern of conjugation (like regular er-verbs) but they are not very common verbs. The main problem with this group is that there is no way to identify by looking at an ir-verb whether it is regular or irregular, and by consulting Section \ref{sec:irregular} one sees that many \emph{irregular} verbs are also ir-verbs, and the irregular verbs are more commonplace...
+	
+	We begin with a defining example.
+	\begin{center}
+		\begin{tabular}{|c|}
+			\hline
+			\textbf{Finir (to finish)}\\
+			Je finis\\
+			Tu finis\\
+			Vous finissez\\
+			Il/elle finit\\
+			Nous finnissons\\
+			Ils/elles finnissent\\
+			\hline
+			\end{tabular}
+		\end{center}
+	For a list of examples of other regular ir-verbs, see\\ \url{https://www.lawlessfrench.com/grammar/regular-ir-verbs/}
+
+	\subsection{Gender}\label{sec:gender}
+
+	\subsection{Plurality}
+	The vast majority of French words are pluralized with an -s. However, there are a few notable exceptions: 
+	\begin{itemize}
+		\item Words ending in -eu, -au, and -eau gain an -x instead of an -s.
+		\item Words ending in -al and many ending in -ail remove the l (and the -i- if there is one) and add -ux.
+		\item Many words ending in -ou gain an -x instead of an -s.
+		\item Words that end in -s, -z, or -x do not change at all.
+		\item The plural of œil is yeux, which is the only highly irregular plural in French.
+		\end{itemize}
+	\begin{remark}
+		Side note: words ending in -œuf (including œuf itself) gain an -s like normal, but the "f" becomes silent. The same is true for the word os, which is pronounced aws in singular and o in plural.
+		\end{remark}
+	
+	There is also the following table.
+	\begin{center}
+		\begin{tabular}{| c c c |}
+			\hline
+			 & \textbf{Singular} & \textbf{Plural} \\
+			\textbf{Definite articles} & le, la, l' & les\\
+			\textbf{Indefinite articles} & un, une & des\\
+			\hline
+			\end{tabular}
+		\end{center}
+	
+	\section{Speaking indirectly/implicitly}
+	It is awkward to constantly repeat the full names of subjects and objects when speaking. For instance, if somebody asks ``this is a good movie, isn't it?" It is clunky to reply with ``yes, this is a good movie." Instead it is more natural to respond with ``yes, it's great". The word ``it" refers to the movie \emph{indirectly}. We now learn how to do this in French.
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

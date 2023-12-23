@@ -1,0 +1,579 @@
+\documentclass[12pt]{article}
+
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{mathrsfs}
+\usepackage{array}
+\usepackage{amssymb}
+\usepackage{units}
+\usepackage{graphicx}
+\usepackage{tikz-cd}
+\usepackage{nicefrac}
+\usepackage{hyperref}
+\usepackage{bbm}
+\usepackage{color}
+\usepackage{tensor}
+\usepackage{tipa}
+\usepackage{bussproofs}
+\usepackage{ stmaryrd }
+\usepackage{ textcomp }
+\usepackage{leftidx}
+\usepackage{afterpage}
+\usepackage{varwidth}
+\usepackage{tasks}
+\usepackage{ cmll }
+\usepackage{quiver}
+\usepackage{adjustbox}
+\usepackage{kbordermatrix}
+\usepackage{braket}
+
+\newcommand\blankpage{
+	\null
+	\thispagestyle{empty}
+	\addtocounter{page}{-1}
+	\newpage
+}
+
+\graphicspath{ {images/} }
+
+\theoremstyle{plain}
+\newtheorem{thm}{Theorem}[subsection] % reset theorem numbering for each chapter
+\newtheorem{proposition}[thm]{Proposition}
+\newtheorem{lemma}[thm]{Lemma}
+\newtheorem{fact}[thm]{Fact}
+\newtheorem{cor}[thm]{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{defn}[thm]{Definition} % definition numbers are dependent on theorem numbers
+\newtheorem{exmp}[thm]{Example} % same for example numbers
+\newtheorem{notation}[thm]{Notation}
+\newtheorem{remark}[thm]{Remark}
+\newtheorem{condition}[thm]{Condition}
+\newtheorem{question}[thm]{Question}
+\newtheorem{construction}[thm]{Construction}
+\newtheorem{exercise}[thm]{Exercise}
+\newtheorem{example}[thm]{Example}
+\newtheorem{aside}[thm]{Aside}
+
+\def\doubleunderline#1{\underline{\underline{#1}}}
+\newcommand{\bb}[1]{\mathbb{#1}}
+\newcommand{\scr}[1]{\mathscr{#1}}
+\newcommand{\call}[1]{\mathcal{#1}}
+\newcommand{\psheaf}{\text{\underline{Set}}^{\scr{C}^{\text{op}}}}
+\newcommand{\und}[1]{\underline{\hspace{#1 cm}}}
+\newcommand{\adj}[1]{\text{\textopencorner}{#1}\text{\textcorner}}
+\newcommand{\comment}[1]{}
+\newcommand{\lto}{\longrightarrow}
+\newcommand{\rone}{(\operatorname{R}\bold{1})}
+\newcommand{\lone}{(\operatorname{L}\bold{1})}
+\newcommand{\rimp}{(\operatorname{R} \multimap)}
+\newcommand{\limp}{(\operatorname{L} \multimap)}
+\newcommand{\rtensor}{(\operatorname{R}\otimes)}
+\newcommand{\ltensor}{(\operatorname{L}\otimes)}
+\newcommand{\rtrue}{(\operatorname{R}\top)}
+\newcommand{\rwith}{(\operatorname{R}\&)}
+\newcommand{\lwithleft}{(\operatorname{L}\&)_{\operatorname{left}}}
+\newcommand{\lwithright}{(\operatorname{L}\&)_{\operatorname{right}}}
+\newcommand{\rplusleft}{(\operatorname{R}\oplus)_{\operatorname{left}}}
+\newcommand{\rplusright}{(\operatorname{R}\oplus)_{\operatorname{right}}}
+\newcommand{\lplus}{(\operatorname{L}\oplus)}
+\newcommand{\prom}{(\operatorname{prom})}
+\newcommand{\ctr}{(\operatorname{ctr})}
+\newcommand{\der}{(\operatorname{der})}
+\newcommand{\weak}{(\operatorname{weak})}
+\newcommand{\exi}{(\operatorname{exists})}
+\newcommand{\fa}{(\operatorname{for\text{ }all})}
+\newcommand{\ex}{(\operatorname{ex})}
+\newcommand{\cut}{(\operatorname{cut})}
+\newcommand{\ax}{(\operatorname{ax})}
+\newcommand{\negation}{\sim}
+\newcommand{\true}{\top}
+\newcommand{\false}{\bot}
+\DeclareRobustCommand{\diamondtimes}{%
+	\mathbin{\text{\rotatebox[origin=c]{45}{$\boxplus$}}}%
+}
+\newcommand{\tagarray}{\mbox{}\refstepcounter{equation}$(\theequation)$}
+\newcommand{\startproof}[1]{
+	\AxiomC{#1}
+	\noLine
+	\UnaryInfC{$\vdots$}
+}
+\newenvironment{scprooftree}[1]%
+{\gdef\scalefactor{#1}\begin{center}\proofSkipAmount \leavevmode}%
+	{\scalebox{\scalefactor}{\DisplayProof}\proofSkipAmount \end{center} }
+
+
+\title{Quantum Error Correcting Codes and Matrix Factorisations}
+\author{Will Troiani}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section{Quantum Error Correcting Codes}
+
+\begin{defn}\label{def:qubit}
+	A \textbf{qubit} is a copy of the $\bb{C}$-Hilbert space $\bb{C}^2$.
+		
+	The \textbf{state} of a qubit $\bb{C}^2$ is a vector $\ket{\psi} \in \bb{C}^2$ of norm 1.
+		
+	A pair $(\bb{C}^2,\ket{\psi})$ consisting of a qubit $\bb{C}^2$ and a state $\ket{\psi} \in \bb{C}^2$ is a \textbf{prepared qubit} and we say $\bb{C}^2$ has been \textbf{prepared} to $\ket{\psi}$.
+\end{defn}
+
+\begin{defn}\label{def:composite_system}
+	Let $\call{H}_1,\call{H}_2$ be two state spaces. The \textbf{composite state space} is $\call{H}_1 \otimes \call{H}_2$. A \textbf{state} of a composite system is a vector $\ket{\psi} \in \call{H}_1 \otimes \call{H}_2$ which can be written as a linear combination of pure tensors
+	\begin{equation*}\label{eq:sum_pure_tensors}
+			\alpha_{1}\ket{\psi_1} + \ldots + \alpha_n\ket{\psi_n} \in \call{H}_1 \otimes \call{H}_2
+	\end{equation*}
+	where the coefficients satisfy $|\alpha_1|^2 + \ldots + |\alpha_n|^2 = 1$.
+\end{defn}
+
+We define a measurement as a family of possible outcomes with assocaited probabilities. We allow for the possibility that measurements effect the state, and so measurements are operators upon the state space.
+
+\begin{defn}\label{def:measurement}
+	A \textbf{measurement} on a state space $\call{H}$ is a finite family of linear operators $\lbrace M_m: \call{H}\lto \call{H}\rbrace_{m \in \call{M}}$ satisfying the \textbf{completeness condition}.
+	\begin{equation}\label{eq:completeness}
+		\sum_{m \in \call{M}}M_m^{\dagger}M_m = I
+	\end{equation}
+	An element $m \in \call{M}$ is an \textbf{outcome}.
+	
+	The \textbf{resulting state} after measurement $\{ M_m \}_{m \in \call{M}}$ and outcome $m$ is:
+	\begin{equation}
+		\frac{M_m\ket{\psi}}{\sqrt{p(m)}}
+	\end{equation}
+\end{defn}
+
+\begin{remark}
+	Associated to every measurement and state vector $\ket{\psi}$ there is a value
+	\begin{equation}
+		p(m) := \bra{\psi}M^{\dagger}_mM_m\ket{\psi} = \lVert M_m \ket{\psi} \rVert^2
+	\end{equation}
+	It follows from \eqref{eq:completeness} that $p(m) \leq 1$ for all $m, \ket{\psi}$. We understand $p(m)$ as the probability of outcome $m$ on the measurement $\{ M_m \}_{m \in \call{M}}$.
+\end{remark}
+
+\begin{defn}
+	A linear transformation $P$ is a \textbf{projector} if $P^2 = P$.
+\end{defn}
+
+\begin{defn}\label{def:QECC}
+	A \textbf{quantum error correcting code (QECC)} is a pair $\call{Q} = (\call{H}, S)$ consisting of a state space $\call{H}$ along with a set of operators $S$ on $\call{H}$. The elements of $S$ are the \textbf{stabilisers}. The \textbf{codespace} $\call{H}^S$ of $\call{Q}$ is the maximal subspace of $\call{H}$ invariant under all the operators in $S$.
+	\end{defn}
+
+See Appendix \ref{sec:QECC_ex} for an example of a simple QECC.
+
+\section{Matrix factorisations}
+
+\subsection{Koszul Complex}
+
+Recall that a $\bb{Z}_2$-graded ring $R$ comes equipt with a choice of isomorphism $R \cong R_0 \oplus R_1$ where $R_0, R_1$ are subgroups of $R$. The elements of $R_1$ are \textbf{odd}.
+
+\begin{defn}
+	Let $E$ be a $\bb{Z}_2$-graded ring and consider a set of odd elements $\theta_1, \ldots, \theta_n, \theta^\ast_1, \ldots, \theta^\ast_n \in E$. These \textbf{satisfy the canonical anticommutation relations} if the following hold for all $i,j = 1, \ldots, n$.
+	\begin{itemize}
+		\item $\theta_i \theta_j + \theta_j \theta_i = 0$
+		\item $\theta_i^\ast \theta_j^\ast + \theta_j^\ast \theta_i^\ast = 0$
+		\item $\theta_i \theta_j^\ast + \theta_j \theta_i^\ast = \delta_{ij}$
+	\end{itemize}
+\end{defn}
+
+When $A \cong A_0 \oplus A_1,B \cong B_1 \oplus B_2$ are $\bb{Z}_2$-graded modules (over a graded ring $R$, say), a homomorphism $\varphi: A \lto B$ can be written as a matrix
+\begin{equation}
+\begin{pmatrix}
+\varphi_{00} & \varphi_{01}\\
+\varphi_{10} & \varphi_{11}
+\end{pmatrix}
+\end{equation}
+where $\varphi_{00}(A_0) \subseteq B_0, \varphi_{01}(A_0) \subseteq B_1, \varphi_{10}(A_1) \subseteq B_0, \varphi_{11}(A_1) \subseteq B_1$. Writing this matrix as a sum yields respectively an even and odd component of $\varphi$
+\begin{equation}
+\begin{pmatrix}
+\varphi_{00} & \varphi_{01}\\
+\varphi_{10} & \varphi_{11}
+\end{pmatrix}
+=
+\begin{pmatrix}
+\varphi_{00} & 0\\
+0 & \varphi_{11}
+\end{pmatrix}
++
+\begin{pmatrix}
+0 & \varphi_{01}\\
+\varphi_{10} & 0
+\end{pmatrix}
+\end{equation}
+In this way, $\operatorname{Hom}(A, B)$ is also a $\bb{Z}_2$-graded module over $R$.
+
+When $E$ is a $\bb{Z}_2$-graded ring of the form $E = \operatorname{End}(A)$ for some $\bb{Z}_2$-graded ring $A$, then $E$ admitting a set of odd elements satisfying the anticommutation relations is sufficient for $A$ to admit a Clifford algebra represenation \cite[Lemma 5.6.2]{Hitchcock}.
+
+\begin{defn}
+The Clifford Algebra $C_n$ is generated by elements $\mu_1, \ldots, \mu_n, \nu_1, \ldots, \nu_n$ subject to:
+	\begin{equation*}
+		[\mu_i, \mu_j] = -2\delta_{ij}\quad [\nu_i, \nu_j] = 2\delta_{ij}\quad [\mu_i, \nu_j] = 0
+		\end{equation*}
+	where $[\xi, \zeta] = \xi\zeta + \zeta\xi$ for $\xi, \zeta \in \{ \mu_1, \ldots, \mu_n, \nu_1, \ldots, \nu_n \}$.
+\end{defn}
+
+There is a $C_m$ action on $S_m$ and hence on $S_m \otimes_\bb{C} (Y \otimes X)$. This is induced by two canonical endomorphisms which exist on $S_m$. The \textbf{wedge} and \textbf{contraction} maps.
+\begin{align*}
+	\theta_i: \bigwedge^{d-1}(\bb{C}\theta_1 \oplus \ldots \oplus \bb{C}\theta_n) &\lto \bigwedge^d(\bb{C}\theta_1 \oplus \ldots \oplus \bb{C}\theta_n)\\
+	\theta_{j_1} \wedge \ldots \wedge \theta_{j_{d-1}} &\longmapsto \theta_i \wedge \theta_{j_1} \wedge \ldots \wedge \theta_{j_{d-1}}
+\end{align*}
+and
+\begin{align*}
+	\theta_i^\ast: \bigwedge^d(\bb{C}\theta_1 \oplus \ldots \oplus \bb{C}\theta_n) &\lto \bigwedge^{d-1}(\bb{C}\theta_1 \oplus \ldots \oplus \bb{C}\theta_n)\\
+	\theta_{j_1} \wedge \ldots \wedge \theta_{j_d} &\longmapsto \sum_{k = 1}^d(-1)^{k+1} \delta_{j_k = i}\theta_{j_1} \wedge \ldots \wedge \hat{\theta}_{j_k} \wedge \ldots \wedge \theta_{j_d}
+\end{align*}
+
+Given a free $R$-module $A = R\theta_1 \oplus \ldots \oplus R\theta_r$ of rank $r$, the multiplication and contraction operators satisfy the canonical anticommutation relations. Thus, $A$ admits a Clifford algebra representaiton.
+
+\subsection{Matrix factorisations}\label{sec:MatrixFactorisations}
+Let $k$ denote a ring.
+
+Recall that if $A,B$ are $\bb{Z}$-graded $k$-modules then $\operatorname{Hom}(A,B)$ is also $\bb{Z}$-graded \cite{TroianiSCA}. We have a similar definition for $\bb{Z}_2$-graded modules.
+\begin{defn}
+	Let $A,B$ be $\bb{Z}_2$-graded $k$-modules. A homomorphism $f: A \lto B$ is \textbf{even} if $f(A_0) \subseteq B_0$ and $f(A_1) \subseteq A_1$. The homomorphism $f$ is \textbf{odd} if $f(A_0) \subseteq B_1$ and $f(A_1) \subseteq B_0$.
+\end{defn}
+\begin{remark}
+	If $f: A \lto B$ is any module homomorphism then $f$ can be written as a matrix
+	\begin{equation}
+		\begin{pmatrix}
+			f_{00} & f_{01}\\
+			f_{10} & f_{11}
+		\end{pmatrix}
+	\end{equation}
+	The morphism $f$ is thus even if $f_{01} = f_{10} = 0$ and is odd if $f_{00} = f_{11} = 0$. This also shows that the morphism $f$ can be written as the sum of an even and an odd component.
+\end{remark}
+\begin{defn}
+	Let $f \in k$ be a non-zero divisor. A \textbf{linear factorisation of $f \in k$ over $k$} is a pair $(X,\partial_X)$ consisting of a $\bb{Z}_2$-graded $k$-module $X = X_0 \oplus X_1$ and an odd homomorphism $\partial_X: X \lto X$ satisfying
+	\begin{equation}
+		\partial_X^2 = f \cdot \operatorname{id}_{X}
+	\end{equation}
+	If $X$ is free then $(X, \partial_X)$ is a \textbf{matrix factorisation}.
+\end{defn}
+The theory of Matrix factorisations is motivated by the search for square roots to operators. As a toy example, multiplication by $x^2 - y^2$ in $\bb{C}[x,y]$ does not admit a square root, but it does if we allow matrix solutions.
+\begin{equation}
+	\begin{pmatrix}
+		0 & x - y\\
+		x+ y & 0
+	\end{pmatrix}^2 = (x^2 - y^2)
+	\begin{pmatrix}
+		1 & 0\\
+		0 & 1
+	\end{pmatrix}
+\end{equation}
+
+A more serious example is given by the square root of the Laplacian operator, see the Introduction of \cite{Friedrich}.
+
+Our interest in matrix factorsations comes from the fact that appropriate homotopy categories of matrix factorsations form the homcategories of the bicategory of Landau-Ginzburg models, which we anticipate to find within a model of multiplicative linear logic (proofs as hypersurface singularities).
+
+\begin{defn}\label{def:morphism_mf}
+	A \textbf{morphism of linear factorisations} $$\alpha: \Big(X = X_0 \oplus X_1, d_X = \begin{pmatrix}0 & p_X\\
+		q_X & 0\end{pmatrix}\Big) \lto \Big(Y = Y_0 \oplus Y_1, d_Y = \begin{pmatrix}0 & p_Y\\
+		q_Y & 0\end{pmatrix}\Big)$$
+	of $f \in R$ is a pair of morphisms $\alpha_0: X_0 \lto Y_0, \alpha_1:X_1 \lto Y_1$ rendering the following diagram commutative.
+	\begin{equation}
+		\begin{tikzcd}
+			X_0\arrow[r,"{p_X}"]\arrow[d,"{\alpha_0}"] & X_1\arrow[r, "{q_X}"]\arrow[d,"{\alpha_1}"] & X_0\arrow[d,"{\alpha_0}"]\\
+			Y_0\arrow[r,"{p_Y}"] & Y_1\arrow[r, "{q_Y}"] & Y_0
+		\end{tikzcd}
+	\end{equation}
+\end{defn}
+
+Given a matrix factorisation $(X = X_0 \oplus X_1, d_X) = \begin{pmatrix} 0 & p_X\\ q_X & 0\end{pmatrix}$ there is a sequence
+\begin{equation}
+	\ldots \stackrel{p_X}{\lto} X_1 \stackrel{q_X}{\lto} X_0 \stackrel{p_X}{\lto} X_1 \stackrel{q_X}{\lto} \ldots
+	\end{equation}
+however, we note that in general $d_X^2 = f\cdot I \neq 0$ and so strictly speaking this is \emph{not} a chain complex.
+\begin{defn}
+	We use the notation of Definition \ref{def:morphism_mf}. Let $\beta = (\beta_0, \beta_1)$ be another morphism of linear factorisations $(X, d_X) \lto (Y, d_Y)$. The morphisms $\alpha, \beta$ are \textbf{homotopic} if there exists a pair of morphisms $h_0: X_0 \lto Y_1, h_1: X_1 \lto Y_0$ such that the following holds
+	\begin{equation}
+		\alpha_0 - \beta_0 = q_Yh_0 + h_1 p_X,\qquad  \alpha_1 - \beta_1 = h_0 q_X + p_Y h_1
+		\end{equation}
+	\end{defn}
+% https://q.uiver.app/?q=WzAsMTIsWzAsMCwiXFxsZG90cyJdLFsxLDAsIlhfMCJdLFsyLDAsIlhfMSJdLFszLDAsIlhfMCJdLFs0LDAsIlhfMSJdLFs1LDAsIlxcbGRvdHMiXSxbMCwxLCJcXGxkb3RzIl0sWzEsMSwiWV8wIl0sWzIsMSwiWV8xIl0sWzMsMSwiWV8wIl0sWzQsMSwiWV8xIl0sWzUsMSwiXFxsZG90cyJdLFsxLDcsIlxcYWxwaGFfMCIsMix7Im9mZnNldCI6MX1dLFsxLDcsIlxcYmV0YV8wIiwwLHsib2Zmc2V0IjotMX1dLFsyLDgsIlxcYmV0YV8xIiwwLHsib2Zmc2V0IjotMX1dLFsyLDgsIlxcYWxwaGFfMSIsMix7Im9mZnNldCI6MX1dLFszLDksIlxcYmV0YV8wIiwwLHsib2Zmc2V0IjotMX1dLFszLDksIlxcYWxwaGFfMCIsMix7Im9mZnNldCI6MX1dLFs0LDEwLCJcXGJldGFfMSIsMCx7Im9mZnNldCI6LTF9XSxbNCwxMCwiXFxhbHBoYV8xIiwyLHsib2Zmc2V0IjoxfV0sWzEsMiwicF9YIl0sWzAsMSwicV9YIl0sWzIsMywicV9YIl0sWzMsNCwicF9YIl0sWzQsNSwicV9YIl0sWzYsNywicV9ZIiwyXSxbNyw4LCJwX1kiLDJdLFs4LDksInFfWSIsMl0sWzksMTAsInBfWSIsMl0sWzEwLDExLCJxX1kiLDJdLFsxLDYsImhfMCIsMl0sWzIsNywiaF8xIiwyXSxbMyw4LCJoXzAiLDJdLFs0LDksImhfMSIsMl0sWzUsMTAsImhfMCIsMl1d
+\[\begin{tikzcd}[column sep = large, row sep = large]
+	\ldots & {X_0} & {X_1} & {X_0} & {X_1} & \ldots \\
+	\ldots & {Y_0} & {Y_1} & {Y_0} & {Y_1} & \ldots
+	\arrow["{\alpha_0}"', shift right=1, from=1-2, to=2-2]
+	\arrow["{\beta_0}", shift left=1, from=1-2, to=2-2]
+	\arrow["{\beta_1}", shift left=1, from=1-3, to=2-3]
+	\arrow["{\alpha_1}"', shift right=1, from=1-3, to=2-3]
+	\arrow["{\beta_0}", shift left=1, from=1-4, to=2-4]
+	\arrow["{\alpha_0}"', shift right=1, from=1-4, to=2-4]
+	\arrow["{\beta_1}", shift left=1, from=1-5, to=2-5]
+	\arrow["{\alpha_1}"', shift right=1, from=1-5, to=2-5]
+	\arrow["{p_X}", from=1-2, to=1-3]
+	\arrow["{q_X}", from=1-1, to=1-2]
+	\arrow["{q_X}", from=1-3, to=1-4]
+	\arrow["{p_X}", from=1-4, to=1-5]
+	\arrow["{q_X}", from=1-5, to=1-6]
+	\arrow["{q_Y}"', from=2-1, to=2-2]
+	\arrow["{p_Y}"', from=2-2, to=2-3]
+	\arrow["{q_Y}"', from=2-3, to=2-4]
+	\arrow["{p_Y}"', from=2-4, to=2-5]
+	\arrow["{q_Y}"', from=2-5, to=2-6]
+	\arrow["{h_0}"', from=1-2, to=2-1]
+	\arrow["{h_1}"', from=1-3, to=2-2]
+	\arrow["{h_0}"', from=1-4, to=2-3]
+	\arrow["{h_1}"', from=1-5, to=2-4]
+	\arrow["{h_0}"', from=1-6, to=2-5]
+\end{tikzcd}\]
+
+The relation of homotopy defines an equivalence relation on the set of morphisms of linear factorisations.
+
+\begin{defn}
+	A linear transformation whose underlying $\bb{Z}_2$-graded $k$-module is free and of finite rank is a \textbf{matrix factorisation}. There is a category $\operatorname{hmf}(k[\underline{x}], f)$ where the objects are matrix factorisations of $f$ and the morphisms are homotopy equivalence classes of morphisms of matrix factorisations.
+	\end{defn}
+
+\begin{defn}
+	If $(X,d_X)$ is a matrix factorisation then so is $(X[1], -d_X)$. If we denote this by $\Psi(X,d_X)$ then $\Psi: \operatorname{hmf}(k[\underline{x}], f) \lto \operatorname{hmf}(k[\underline{x}], f)$ is extends to an endofunctor which induces a supercategorical structure on $\operatorname{hmf}(k[\underline{x}], f)$ if we take $\xi: \Psi^2 \lto 1_{\operatorname{hmf}(k[\underline{x}], f)}$ to be the identity.
+	\end{defn}
+
+\begin{defn}
+	Let $(X, \partial_X)$ be a linear factorisation of $f \in k$ over $k$ and $(Y, \partial_Y)$ a linear factorisation of $g \in k$ also over $k$. Then the \textbf{tensor product} of $(X, \partial_X)$ and $(Y, \partial_Y)$ consists of the following data:
+	\begin{equation}
+		X \otimes_k Y, \qquad \partial_{X \otimes_k Y} = d_X \otimes 1 + 1 \otimes d_Y
+	\end{equation}
+	where $X \otimes_k Y$ is the \emph{graded} tensor product, which satisfies the following for all $x_1, x_2 \in X, y_1, y_2 \in Y$.
+	\begin{equation}
+		(x_1 \otimes y_1)(x_2 \otimes y_2) = (-1)^{\operatorname{deg}(x_2)\operatorname{deg}(y_1)}(x_1 x_2 \otimes y_1 y_2)
+	\end{equation}
+\end{defn}
+
+\begin{lemma}
+	The tensor product $(X \otimes_k Y, \partial_{X \otimes_k Y})$ is a linear factorisation of $f + g$.
+\end{lemma}
+\begin{proof}
+	See \cite{Hitchcock}[Page 35].
+\end{proof}
+
+In the special case where there exists $f \in k[\underline{x}], g \in k[\underline{y}], h \in k[\underline{z}]$ and $(X, \partial_X)$ is a linear factorisation of $f - g \in k[\underline{x}, \underline{y}]$ and $(Y, \partial_Y)$ is a linear factorisation of $g - h \in k[\underline{y}, \underline{z}]$ then we also have the \emph{cut} of $(X, \partial_X)$ and $(Y, \partial_Y)$.
+
+\begin{defn}
+	For each $y_1, \ldots, y_n \in \underline{y}$ let $\partial_{y_i}g$ denote the formal partial derivative of $g$ with respect to $y_i$. Denote by $J_g$ the following $k[\underline{y}]$-module.
+	\begin{equation}
+		J_g := k[\underline{y}]/(\partial_{y_1}g, \ldots, \partial_{y_n}g)
+	\end{equation}
+	
+	The \textbf{cut} of $(X, \partial_X), (Y, \partial_Y)$ is the data of
+	\begin{equation}
+		X | Y := (X \otimes_{k[\underline{y}]} J_g \otimes_{k[\underline{y}]} Y), \qquad \partial_{X|Y} = d_X \otimes 1 \otimes 1 + 1 \otimes 1 \otimes d_Y
+	\end{equation}
+\end{defn}
+\begin{lemma}
+	The cut $X | Y$ is a matrix factorisation of $f - h$.
+\end{lemma}
+\begin{proof}
+	\textcolor{red}{Check this.}
+\end{proof}
+
+We will use the following Lemma to indirectly talk about matrix factorisations using $\bb{Z}_2$-graded modules over Clifford algebras.
+
+\begin{defn}\label{def:clifford_modules}
+	Let $k[\underline{x}], k[\underline{y}]$ denote polynomial rings over variables $x_1, \ldots, x_n$ and $y_1, \ldots, y_n$ respectively. Let $U(\underline{x}) = \sum_{i = 1}^n x_i^2$.
+	
+	We let $C_{U}$ denote the $\bb{Z}_2$-graded $k$-algebra with multiplicative generators $\mu_1, \ldots, \mu_n, \nu_1, \ldots, \mu_n$ satisfying the relations
+	\begin{equation}
+		[\mu_i, \mu_j] = -2\delta_{ij}\qquad [\mu_i, \nu_j] = 0\qquad [\nu_i, \nu_j] = 2\delta_{ij}
+	\end{equation}
+	where $\delta_{ij} = 1\text{ if and only if }i = j\text{ and }\delta_{ij} = 0\text{ otherwise}$ is the Kronecker delta.
+\end{defn}
+
+\begin{lemma}\label{lem:Matrix_fact_from_Cliff}
+	Let $\tilde{X}$ be a $\bb{Z}_2$-graded $C_{U}$-module which is free and finitely generated over $k$. Then $X := \tilde{X} \otimes_k k[\underline{x}, \underline{y}]$ coupled with the map
+	\begin{equation}\label{eq:differential_Cliff_mod}
+		\partial_X = \sum_{i = 1}^n \mu_i x_i + \sum_{j = 1}^n \nu_j y_j
+	\end{equation}
+	is a matrix factorisation of $U(\underline{y}) - U(\underline{x}) \in k[\underline{x}, \underline{y}]$.
+\end{lemma}
+\begin{proof}
+	See \cite{Hitchcock}[Lemma 5.6.1].
+\end{proof}
+\begin{remark}
+	The map \eqref{eq:differential_Cliff_mod} is odd because we consider $k[\underline{x}, \underline{y}]$ to admit the $\bb{Z}_2$-grading
+	\begin{equation}
+		k[\underline{x}, \underline{y}] \oplus 0
+	\end{equation}
+	That is, $k[\underline{x},\underline{y}]$ has $k[\underline{x},\underline{y}]$ entirely in degree $0$, and the zero module $0$ in degree $1$. For example, if $\underline{x},\underline{y}$ are both singleton sets $\underline{x} = \{ x \}, \underline{y} = \{ y \}$ then
+	\begin{align*}
+		\operatorname{deg}(\partial_X(x \otimes p)) &= \operatorname{deg}( \mu x \otimes x p+ \nu x \otimes y_j p )\\
+		&= \operatorname{deg}(\mu x)\text{ }(= \operatorname{deg}(\nu x))\\
+		&= \operatorname{deg}(x) + 1
+	\end{align*}
+\end{remark}
+
+\begin{example}\label{ex:}
+	Let $\underline{x}$ be a set of variables $\{ x_1, \ldots, x_n \}$ and $\sigma \in S_n$ a permutation on this set. Let $\tilde{X}$ denote the $\bb{Z}_2$-graded $k$-algebra
+	\begin{equation}
+		\tilde{X} := \bigwedge(k \theta_1 \oplus \ldots \oplus k \theta_n)
+	\end{equation}
+	which is a $C_{U}$-algebra (Definition \ref{def:clifford_modules}) with $C_{U}$-action induced by the following
+	\begin{align*}
+		\mu_i &= \theta_{\sigma^{-1}i} + \theta_{\sigma^{-1}i}^\ast\\
+		\nu_i &= \theta_i - \theta_i^\ast
+	\end{align*}
+	Thus, by Lemma \ref{lem:Matrix_fact_from_Cliff} we obtain a matrix factorisation $(X = \tilde{X} \otimes k[\underline{x}, \underline{y}], \partial_{X})$.
+	
+	Now say we had another similar matrix factorisation; let $\underline{y} = \{ y_1, \ldots, y_m \}$ be another set of variables and let $\tau$ be a permutation on this set. Let $\tilde{Y}$ denote the $\bb{Z}_2$-graded $k$-algebra
+	\begin{equation}
+		\tilde{Y} := \bigwedge (k\psi_1 \oplus \ldots \oplus k\psi_m)
+	\end{equation}
+	This is a $C_{U}$-module with $C_{U}$-action induced by the following
+	\begin{align*}
+		\overline{\nu_i} &= \psi_{\tau^{-1}i} + \psi_{\tau^{-1}i}^\ast\\
+		\omega_i &= \psi_i - \psi_i^\ast
+	\end{align*}
+	This induces a matrix factorisation $(Y = \tilde{Y} \otimes k[\underline{y}, \underline{z}], \partial_Y)$ of $U(\underline{y}) - U(\underline{z})$ where
+	\begin{equation}
+		\partial_Y := \sum_{i = 1}^n \overline{\nu}_i y_i + \sum_{i = 1}^n \omega_i z_i
+	\end{equation}
+	and $\underline{z} = \{ z_1, \ldots, z_n \}$ is another set of variables.
+	
+	We will first consider the cut $X | Y$. The sequence of partial derivatives $(\partial_{y_1}U(\underline{y}), \ldots, \partial_{y_n}U(\underline{y})) = (2y_1, \ldots, 2y_n)$ and so
+	\begin{equation}
+		J_{U(\underline{y})} = k[\underline{y}]/(y_1, \ldots, y_n) = k
+	\end{equation}
+	as a $k[\underline{y}]$-module with trivial $k[\underline{y}]$-action. We thus have
+	\begin{equation}
+		X | Y = X \otimes_{k[\underline{x}, \underline{y}]} k \otimes_{k[\underline{y}, \underline{z}]} Y,\qquad \partial_{X | Y} = d_X \otimes 1 \otimes 1 + 1 \otimes 1 \otimes d_Y
+	\end{equation}
+\end{example}
+
+Say $R$ is a commutative ring. We will consider an element $f \in R$ of the following particular form: say we have $a_1, \ldots, a_n, b_1, \ldots, b_n \in R$ such that $f = \sum_{i = 1}^n a_i b_n$. The guiding example of such an element is when $R$ is a polynomial ring and $f$ is a quadratic form.
+
+\begin{lemma}
+	Suppose $M$ is a $\bb{Z}_2$-graded $R$-module with odd $R$-linear maps $\theta_i, \theta_i^\ast : M \lto M, i = 1, \ldots, n$ satisfying the canonical anticommutation relations. Then, setting $\delta_+ = \sum_{i = 1}^n a_i \theta_i$ and $\delta_- = \sum_{i = 1}^n b_i \theta_i^\ast$ we have that $(M, \delta_- + \delta_+)$ is a linear factorisation of $f$. 
+\end{lemma}
+\begin{proof}
+	See \cite[Lemma 4.2.3]{Hitchcock}.
+\end{proof}
+
+Therefore, $(\bigwedge R^n, \delta_- + \delta_+)$ is a matrix factorisation of $f$. This is the \textbf{Koszul matrix factorisation of $f$}.
+
+\appendix
+\section{Quantum error correcting codes examples}
+\label{sec:QECC_ex}
+\begin{defn}[Bit flip correction]\label{alg:bit_flip_correction}
+	Input: a received message $\ket{\psi}$,
+	\begin{enumerate}
+		\item perform the following projective measurements:
+		\begin{equation}
+			\bra{\psi} Z_1 Z_2 \ket{\psi}\text{ with resulting state }\ket{\psi'},
+		\end{equation}
+		followed by
+		\begin{equation}
+			\bra{\psi'} Z_2 Z_3 \ket{\psi'}
+		\end{equation}
+		let $(r_1,r_2)$ be the pair of results from these measurements.
+		\item It will be shown that $r_1,r_2 \in \lbrace 1,-1\rbrace$, and the resulting state of the second measurement is $\ket{\psi}$.
+		\item Now retrieve $\ket{\varphi}$ based on the values of $r_1,r_2$:
+		\begin{itemize}
+			\item if $(r_1, r_2) = (1,1)$, return $\ket{\psi}$,
+			\item if $(r_1,r_2) = (-1,1)$, return $X_1 \ket{\psi}$,
+			\item if $(r_1,r_2) = (1,-1)$, return $X_3 \ket{\psi}$,
+			\item if $(r_1,r_2) = (-1,-1)$, return $X_2 \ket{\psi}$
+		\end{itemize}
+	\end{enumerate}
+\end{defn}
+We now prove correctness of Algorithm \ref{alg:bit_flip_correction}:
+\begin{proof}
+	It will be helpful to first notice:
+	\begin{align*}
+		Z_1Z_2\ket{000} &= \ket{000} & Z_1Z_2\ket{001} &= \ket{001}\\
+		Z_1Z_2\ket{010} &= -\ket{010} & Z_1Z_2\ket{011} &= -\ket{011}\\
+		Z_1Z_2\ket{100} &= -\ket{100} & Z_1Z_2\ket{101} &= -\ket{101}\\
+		Z_1Z_2\ket{110} &= \ket{110} &Z_1Z_2 \ket{111} &= \ket{111}
+	\end{align*}
+	Let $\ket{\psi}:= a\ket{010} + b\ket{101}$ be a state, ie, an element of $\bb{H}^{\otimes 3}$. We perform the measurement $Z_1Z_2$ followed by $Z_2Z_3$:
+	\begin{align*}
+		\bra{\psi}Z_1Z_2\ket{\psi} &= (a\bra{010} + b\bra{101})Z_1Z_2(a\ket{010} + b\ket{101})\\
+		&= (a\bra{010} + b\bra{101})(-a\ket{010} - b\ket{101})\\
+		&= -a^2 - b^2 = -1
+	\end{align*}
+	and
+	\begin{align*}
+		\bra{\psi}Z_2Z_3\ket{\psi} &= (a\bra{010} + b\bra{101})Z_1Z_2(a\ket{010} + b\ket{101})\\
+		&= (a\bra{010} + b\bra{101})(-a\ket{010} - b\ket{101})\\
+		&= -a^2 - b^2 = -1
+	\end{align*}
+	We can infer from the fact that both of these came out as $-1$ that it was the second bit which was flipped, and so we can correct this. However, what is the impact of this measurement on the state? Again we calculate:
+	\begin{align*}
+		Z_1Z_2(a\ket{010} + b\ket{101}) &= Z_1(-a\ket{010} + b\ket{101})\\
+		&= -a\ket{010} - b\ket{101}
+	\end{align*}
+	and
+	\begin{align*}
+		Z_2Z_3(-a\ket{010} - b\ket{101}) &= Z_2(-a\ket{010} + b\ket{101})\\
+		&= a\ket{010} + b\ket{101}
+	\end{align*}
+	and so the measurements (in the end) did not impact our state.
+\end{proof}
+
+\begin{thebibliography}{99}
+	\bibitem{Hitchcock} R. Hitchcock. \emph{Differentiation, Division and the Bicategory of Landau-Ginzburg Models}. Master's thesis. \url{http://therisingsea.org/notes/MScThesisRohanHitchcock.pdf}
+	
+	\bibitem{Borceux} F. Borceux. \emph{Handbook of Categorical Algebra 1: Basic Category Theory}. Vol. 50. Encyclopedia of Mathematics and its Applications. Cambridge University Press, 1994.
+	
+	\bibitem{TroianiSCA} W. Troiani. \emph{Secondary Commutative Algebra}.
+	
+	\bibitem{Friedrich} T. Friedrich, \emph{Dirac Operators in Riemannian Geometry} 20MathematicsSubjectClasification.Primary58Jx; Secondary 53C27, 53C28, 57R57, 58J05, 58J20, 58J50, 81R25.
+	
+	\bibitem{Cut_Operation} D. Murfet. \emph{The cut operation on matrix factorisations}
+	
+	\bibitem{quantum_computing} M. Nielsen, I. Chuang \emph{Quantum Computation and Quantum Information tenth anniversary} Cambridge University Press, 09 December 2010
+		
+	\bibitem{CommutativeAlgebra} W. Troiani \emph{Elementary Commutative Algebra} \url{https://williamtroiani.github.io/pdfs/CommutativeAlgebraWithLin.pdf}
+		
+	\bibitem{Baez} J. Baez. \url{https://math.ucr.edu/home/baez/quantum/node4.html}
+	
+	
+	
+	
+	
+	
+	
+	\end{thebibliography}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.5.21)  22 JUL 2022 12:33
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.5.21)  3 MAY 2023 18:06
 entering extended mode
 **./QuantumComputing.tex
 (QuantumComputing.tex
@@ -112,6 +112,17 @@ nappen/mathrsfs.sty
 Package: mathrsfs 1996/01/01 Math RSFS package v1.0 (jk)
 \symrsfs=\mathgroup6
 )
+(/Library/Application Support/MiKTeX/texmfs/install/tex/latex/latex-tools/array
+.sty
+Package: array 2020/10/01 v2.5c Tabular extension package (FMi)
+\col@sep=\dimen148
+\ar@mcellbox=\box49
+\extrarowheight=\dimen149
+\NC@list=\toks26
+\extratabsurround=\skip55
+\backup@length=\skip56
+\ar@cellbox=\box50
+)
 (/Library/Application Support/MiKTeX/texmfs/install/tex/latex/amsfonts/amssymb.
 sty
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
@@ -126,9 +137,9 @@ Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 (/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/latex/un
 its/nicefrac.sty
 Package: nicefrac 1998/08/04 v0.9b Nice fractions
-\L@UnitsRaiseDisplaystyle=\skip55
-\L@UnitsRaiseTextstyle=\skip56
-\L@UnitsRaiseScriptstyle=\skip57
+\L@UnitsRaiseDisplaystyle=\skip57
+\L@UnitsRaiseTextstyle=\skip58
+\L@UnitsRaiseScriptstyle=\skip59
 ))
 (/Library/Application Support/MiKTeX/texmfs/install/tex/latex/graphics/graphicx
 .sty
@@ -137,7 +148,7 @@ Package: graphicx 2020/09/09 v1.2b Enhanced LaTeX Graphics (DPC,SPQR)
 (/Library/Application Support/MiKTeX/texmfs/install/tex/latex/graphics/keyval.s
 ty
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
-\KV@toks@=\toks26
+\KV@toks@=\toks27
 )
 (/Library/Application Support/MiKTeX/texmfs/install/tex/latex/graphics/graphics
 .sty
@@ -156,8 +167,8 @@ Package graphics Info: Driver file: pdftex.def on input line 105.
 ex.def
 File: pdftex.def 2020/10/05 v1.2a Graphics/color driver for pdftex
 ))
-\Gin@req@height=\dimen148
-\Gin@req@width=\dimen149
+\Gin@req@height=\dimen150
+\Gin@req@width=\dimen151
 )
 (/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/latex/ti
 kz-cd/tikz-cd.sty
@@ -171,15 +182,15 @@ f.sty
 rcs.sty
 (/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/utilities/p
 gfutil-common.tex
-\pgfutil@everybye=\toks27
-\pgfutil@tempdima=\dimen150
-\pgfutil@tempdimb=\dimen151
+\pgfutil@everybye=\toks28
+\pgfutil@tempdima=\dimen152
+\pgfutil@tempdimb=\dimen153
 
 (/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/utilities/p
 gfutil-common-lists.tex))
 (/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/utilities/p
 gfutil-latex.def
-\pgfutil@abb=\box49
+\pgfutil@abb=\box51
 )
 (/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/utilities/p
 gfrcs.code.tex
@@ -199,32 +210,32 @@ Package: pgfsys 2021/05/15 v3.1.9a (3.1.9a)
 
 (/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/utilities/p
 gfkeys.code.tex
-\pgfkeys@pathtoks=\toks28
-\pgfkeys@temptoks=\toks29
+\pgfkeys@pathtoks=\toks29
+\pgfkeys@temptoks=\toks30
 
 (/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/utilities/p
 gfkeysfiltered.code.tex
-\pgfkeys@tmptoks=\toks30
+\pgfkeys@tmptoks=\toks31
 ))
-\pgf@x=\dimen152
-\pgf@y=\dimen153
-\pgf@xa=\dimen154
-\pgf@ya=\dimen155
-\pgf@xb=\dimen156
-\pgf@yb=\dimen157
-\pgf@xc=\dimen158
-\pgf@yc=\dimen159
-\pgf@xd=\dimen160
-\pgf@yd=\dimen161
+\pgf@x=\dimen154
+\pgf@y=\dimen155
+\pgf@xa=\dimen156
+\pgf@ya=\dimen157
+\pgf@xb=\dimen158
+\pgf@yb=\dimen159
+\pgf@xc=\dimen160
+\pgf@yc=\dimen161
+\pgf@xd=\dimen162
+\pgf@yd=\dimen163
 \w@pgf@writea=\write3
 \r@pgf@reada=\read2
 \c@pgf@counta=\count199
 \c@pgf@countb=\count266
 \c@pgf@countc=\count267
 \c@pgf@countd=\count268
-\t@pgf@toka=\toks31
-\t@pgf@tokb=\toks32
-\t@pgf@tokc=\toks33
+\t@pgf@toka=\toks32
+\t@pgf@tokb=\toks33
+\t@pgf@tokc=\toks34
 \pgf@sys@id@count=\count269
 
 (/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/systemlayer
@@ -281,12 +292,12 @@ hcalc.code.tex
 hutil.code.tex)
 (/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/math/pgfmat
 hparser.code.tex
-\pgfmath@dimen=\dimen162
+\pgfmath@dimen=\dimen164
 \pgfmath@count=\count272
-\pgfmath@box=\box50
-\pgfmath@toks=\toks34
-\pgfmath@stack@operand=\toks35
-\pgfmath@stack@operation=\toks36
+\pgfmath@box=\box52
+\pgfmath@toks=\toks35
+\pgfmath@stack@operand=\toks36
+\pgfmath@stack@operation=\toks37
 )
 (/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/math/pgfmat
 hfunctions.code.tex
@@ -315,52 +326,52 @@ hfloat.code.tex
 (/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/basiclayer/
 pgfcorepoints.code.tex
 File: pgfcorepoints.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgf@picminx=\dimen163
-\pgf@picmaxx=\dimen164
-\pgf@picminy=\dimen165
-\pgf@picmaxy=\dimen166
-\pgf@pathminx=\dimen167
-\pgf@pathmaxx=\dimen168
-\pgf@pathminy=\dimen169
-\pgf@pathmaxy=\dimen170
-\pgf@xx=\dimen171
-\pgf@xy=\dimen172
-\pgf@yx=\dimen173
-\pgf@yy=\dimen174
-\pgf@zx=\dimen175
-\pgf@zy=\dimen176
+\pgf@picminx=\dimen165
+\pgf@picmaxx=\dimen166
+\pgf@picminy=\dimen167
+\pgf@picmaxy=\dimen168
+\pgf@pathminx=\dimen169
+\pgf@pathmaxx=\dimen170
+\pgf@pathminy=\dimen171
+\pgf@pathmaxy=\dimen172
+\pgf@xx=\dimen173
+\pgf@xy=\dimen174
+\pgf@yx=\dimen175
+\pgf@yy=\dimen176
+\pgf@zx=\dimen177
+\pgf@zy=\dimen178
 )
 (/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/basiclayer/
 pgfcorepathconstruct.code.tex
 File: pgfcorepathconstruct.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgf@path@lastx=\dimen177
-\pgf@path@lasty=\dimen178
+\pgf@path@lastx=\dimen179
+\pgf@path@lasty=\dimen180
 )
 (/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/basiclayer/
 pgfcorepathusage.code.tex
 File: pgfcorepathusage.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgf@shorten@end@additional=\dimen179
-\pgf@shorten@start@additional=\dimen180
+\pgf@shorten@end@additional=\dimen181
+\pgf@shorten@start@additional=\dimen182
 )
 (/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/basiclayer/
 pgfcorescopes.code.tex
 File: pgfcorescopes.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgfpic=\box51
-\pgf@hbox=\box52
-\pgf@layerbox@main=\box53
+\pgfpic=\box53
+\pgf@hbox=\box54
+\pgf@layerbox@main=\box55
 \pgf@picture@serial@count=\count274
 )
 (/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/basiclayer/
 pgfcoregraphicstate.code.tex
 File: pgfcoregraphicstate.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgflinewidth=\dimen181
+\pgflinewidth=\dimen183
 )
 (/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/basiclayer/
 pgfcoretransformations.code.tex
 File: pgfcoretransformations.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgf@pt@x=\dimen182
-\pgf@pt@y=\dimen183
-\pgf@pt@temp=\dimen184
+\pgf@pt@x=\dimen184
+\pgf@pt@y=\dimen185
+\pgf@pt@temp=\dimen186
 )
 (/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/basiclayer/
 pgfcorequick.code.tex
@@ -377,12 +388,12 @@ File: pgfcorepathprocessing.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 (/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/basiclayer/
 pgfcorearrows.code.tex
 File: pgfcorearrows.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgfarrowsep=\dimen185
+\pgfarrowsep=\dimen187
 )
 (/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/basiclayer/
 pgfcoreshade.code.tex
 File: pgfcoreshade.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgf@max=\dimen186
+\pgf@max=\dimen188
 \pgf@sys@shading@range@num=\count275
 \pgf@shadingcount=\count276
 )
@@ -393,7 +404,7 @@ File: pgfcoreimage.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 (/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/basiclayer/
 pgfcoreexternal.code.tex
 File: pgfcoreexternal.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgfexternal@startupbox=\box54
+\pgfexternal@startupbox=\box56
 ))
 (/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/basiclayer/
 pgfcorelayers.code.tex
@@ -414,7 +425,7 @@ File: pgfcorerdf.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 (/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/modules/pgf
 moduleshapes.code.tex
 File: pgfmoduleshapes.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgfnodeparttextbox=\box55
+\pgfnodeparttextbox=\box57
 )
 (/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/modules/pgf
 moduleplot.code.tex
@@ -423,8 +434,8 @@ File: pgfmoduleplot.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 (/Library/Application Support/MiKTeX/texmfs/install/tex/latex/pgf/compatibility
 /pgfcomp-version-0-65.sty
 Package: pgfcomp-version-0-65 2021/05/15 v3.1.9a (3.1.9a)
-\pgf@nodesepstart=\dimen187
-\pgf@nodesepend=\dimen188
+\pgf@nodesepstart=\dimen189
+\pgf@nodesepend=\dimen190
 )
 (/Library/Application Support/MiKTeX/texmfs/install/tex/latex/pgf/compatibility
 /pgfcomp-version-1-18.sty
@@ -446,10 +457,10 @@ Package: pgffor 2021/05/15 v3.1.9a (3.1.9a)
 
 (/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/math/pgfmat
 h.code.tex)
-\pgffor@iter=\dimen189
-\pgffor@skip=\dimen190
-\pgffor@stack=\toks37
-\pgffor@toks=\toks38
+\pgffor@iter=\dimen191
+\pgffor@skip=\dimen192
+\pgffor@stack=\toks38
+\pgffor@toks=\toks39
 ))
 (/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/frontendlay
 er/tikz/tikz.code.tex
@@ -459,20 +470,20 @@ Package: tikz 2021/05/15 v3.1.9a (3.1.9a)
 gflibraryplothandlers.code.tex
 File: pgflibraryplothandlers.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 \pgf@plot@mark@count=\count277
-\pgfplotmarksize=\dimen191
+\pgfplotmarksize=\dimen193
 )
-\tikz@lastx=\dimen192
-\tikz@lasty=\dimen193
-\tikz@lastxsaved=\dimen194
-\tikz@lastysaved=\dimen195
-\tikz@lastmovetox=\dimen196
-\tikz@lastmovetoy=\dimen197
-\tikzleveldistance=\dimen198
-\tikzsiblingdistance=\dimen199
-\tikz@figbox=\box56
-\tikz@figbox@bg=\box57
-\tikz@tempbox=\box58
-\tikz@tempbox@bg=\box59
+\tikz@lastx=\dimen194
+\tikz@lasty=\dimen195
+\tikz@lastxsaved=\dimen196
+\tikz@lastysaved=\dimen197
+\tikz@lastmovetox=\dimen198
+\tikz@lastmovetoy=\dimen199
+\tikzleveldistance=\dimen256
+\tikzsiblingdistance=\dimen257
+\tikz@figbox=\box58
+\tikz@figbox@bg=\box59
+\tikz@tempbox=\box60
+\tikz@tempbox@bg=\box61
 \tikztreelevel=\count278
 \tikznumberofchildren=\count279
 \tikznumberofcurrentchild=\count280
@@ -504,10 +515,10 @@ File: tikzlibraryquotes.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 (/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/libraries/p
 gflibraryarrows.meta.code.tex
 File: pgflibraryarrows.meta.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgfarrowinset=\dimen256
-\pgfarrowlength=\dimen257
-\pgfarrowwidth=\dimen258
-\pgfarrowlinewidth=\dimen259
+\pgfarrowinset=\dimen258
+\pgfarrowlength=\dimen259
+\pgfarrowwidth=\dimen260
+\pgfarrowlinewidth=\dimen261
 )))
 (/Library/Application Support/MiKTeX/texmfs/install/tex/latex/hyperref/hyperref
 .sty
@@ -561,7 +572,7 @@ Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
 options/kvoptions.sty
 Package: kvoptions 2020-10-07 v3.14 Key value format for package options (HO)
 )
-\@linkdim=\dimen260
+\@linkdim=\dimen262
 \Hy@linkcounter=\count286
 \Hy@pagecounter=\count287
 
@@ -605,7 +616,7 @@ Package hyperref Info: Bookmarks ON on input line 4445.
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
 LaTeX Info: Redefining \url on input line 4804.
-\XeTeXLinkMargin=\dimen261
+\XeTeXLinkMargin=\dimen263
 
 (/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/generic/
 bitset/bitset.sty
@@ -617,8 +628,8 @@ Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
 )
 ))
 \Fld@menulength=\count290
-\Field@Width=\dimen262
-\Fld@charsize=\dimen263
+\Field@Width=\dimen264
+\Fld@charsize=\dimen265
 Package hyperref Info: Hyper figures OFF on input line 6075.
 Package hyperref Info: Link nesting OFF on input line 6080.
 Package hyperref Info: Hyper index ON on input line 6083.
@@ -665,7 +676,7 @@ Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 86.
 )
-\Hy@SectionHShift=\skip58
+\Hy@SectionHShift=\skip60
 )
 (/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/latex/bb
 m/bbm.sty
@@ -678,11 +689,11 @@ LaTeX Font Info:    Overwriting math alphabet `\mathbbmss' in version `bold'
 (/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/latex/te
 nsor/tensor.sty
 Package: tensor 2004/12/20 v2.1 tensor indices package (PGR)
-\tnsr@Sps=\toks39
-\tnsr@Sbs=\toks40
-\tnsr@Spe=\toks41
-\tnsr@Sbe=\toks42
-\ncld@Mno=\toks43
+\tnsr@Sps=\toks40
+\tnsr@Sbs=\toks41
+\tnsr@Spe=\toks42
+\tnsr@Sbe=\toks43
+\ncld@Mno=\toks44
 )
 (/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/latex/ti
 pa/tipa.sty
@@ -702,28 +713,28 @@ ssproofs/bussproofs.sty
 Proof Tree (bussproofs) style macros. Version 1.1.
 \theLevel=\count296
 \myMaxLevel=\count297
-\myBoxA=\box60
-\myBoxB=\box61
-\myBoxC=\box62
-\myBoxD=\box63
-\myBoxLL=\box64
-\myBoxRL=\box65
-\thisAboveSkip=\dimen264
-\thisBelowSkip=\dimen265
-\newScoreStart=\dimen266
-\newScoreEnd=\dimen267
-\newCenter=\dimen268
-\displace=\dimen269
-\leftLowerAmt=\dimen270
-\rightLowerAmt=\dimen271
-\scoreHeight=\dimen272
-\scoreDepth=\dimen273
-\htLbox=\dimen274
-\htRbox=\dimen275
-\htRRbox=\dimen276
-\htRRRbox=\dimen277
-\htAbox=\dimen278
-\htCbox=\dimen279
+\myBoxA=\box62
+\myBoxB=\box63
+\myBoxC=\box64
+\myBoxD=\box65
+\myBoxLL=\box66
+\myBoxRL=\box67
+\thisAboveSkip=\dimen266
+\thisBelowSkip=\dimen267
+\newScoreStart=\dimen268
+\newScoreEnd=\dimen269
+\newCenter=\dimen270
+\displace=\dimen271
+\leftLowerAmt=\dimen272
+\rightLowerAmt=\dimen273
+\scoreHeight=\dimen274
+\scoreDepth=\dimen275
+\htLbox=\dimen276
+\htRbox=\dimen277
+\htRRbox=\dimen278
+\htRRRbox=\dimen279
+\htAbox=\dimen280
+\htCbox=\dimen281
 )
 (/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/latex/st
 maryrd/stmaryrd.sty
@@ -742,24 +753,20 @@ Package: leftidx 2003/09/24 v1.03 Left indices
 (/Library/Application Support/MiKTeX/texmfs/install/tex/latex/latex-tools/after
 page.sty
 Package: afterpage 2014/10/28 v1.08 After-Page Package (DPC)
-\AP@output=\toks44
-\AP@partial=\box66
-\AP@footins=\box67
+\AP@output=\toks45
+\AP@partial=\box68
+\AP@footins=\box69
 )
 (/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/latex/va
 rwidth/varwidth.sty
 Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
-\@vwid@box=\box68
+\@vwid@box=\box70
 \sift@deathcycles=\count298
-\@vwid@loff=\dimen280
-\@vwid@roff=\dimen281
+\@vwid@loff=\dimen282
+\@vwid@roff=\dimen283
 )
-(/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/latex/ph
-ysics/physics.sty
-Package: physics 
-
-(/Library/Application Support/MiKTeX/texmfs/install/tex/latex/l3packages/xparse
-/xparse.sty
+(/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/latex/ta
+sks/tasks.sty
 (/Library/Application Support/MiKTeX/texmfs/install/tex/latex/l3kernel/expl3.st
 y
 Package: expl3 2021-05-11 L3 programming layer (loader) 
@@ -768,58 +775,203 @@ Package: expl3 2021-05-11 L3 programming layer (loader)
 nd-pdftex.def
 File: l3backend-pdftex.def 2021-05-07 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count299
-\l__pdf_internal_box=\box69
+\l__pdf_internal_box=\box71
 ))
+(/Library/Application Support/MiKTeX/texmfs/install/tex/latex/l3packages/xparse
+/xparse.sty
 (/Library/Application Support/MiKTeX/texmfs/install/tex/latex/l3packages/xparse
 /xparse-2020-10-01.sty
 (/Library/Application Support/MiKTeX/texmfs/install/tex/latex/l3packages/xparse
-/xparse-generic.tex))))
-\c@thm=\count300
+/xparse-generic.tex)))
+(/Library/Application Support/MiKTeX/texmfs/install/tex/latex/l3packages/xtempl
+ate/xtemplate.sty
+Package: xtemplate 2021-05-07 L3 Experimental prototype document functions
+\l__xtemplate_tmp_dim=\dimen284
+\l__xtemplate_tmp_int=\count300
+\l__xtemplate_tmp_muskip=\muskip18
+\l__xtemplate_tmp_skip=\skip61
+)
+Package: tasks 2021/02/20 v1.3a lists with columns filled horizontally
+\g__tasks_total_items_int=\count301
+\l__tasks_columns_int=\count302
+\g__tasks_rows_int=\count303
+\g__tasks_current_col_num_int=\count304
+\g__tasks_current_row_num_int=\count305
+\l__tasks_item_columns_int=\count306
+\g__tasks_env_int=\count307
+\l__tasks_start_int=\count308
+\l__tasks_item_indent_dim=\dimen285
+\l__tasks_item_default_indent_dim=\dimen286
+\l__tasks_item_width_dim=\dimen287
+\l__tasks_label_width_dim=\dimen288
+\l__tasks_label_default_width_dim=\dimen289
+\l__tasks_label_offset_dim=\dimen290
+\l__tasks_label_default_offset_dim=\dimen291
+\l__tasks_column_sep_dim=\dimen292
+\l__tasks_correction_dim=\dimen293
+\l__tasks_full_width_dim=\dimen294
+\l__tasks_after_item_skip=\skip62
+\l__tasks_custom_after_item_skip=\skip63
+\l__tasks_before_list_skip=\skip64
+\l__tasks_after_list_skip=\skip65
+\l__tasks_item_coffin=\box72
+\l__tasks_label_coffin=\box73
+\c@task=\count309
+\l__tasks_tmpa_int=\count310
+\l__tasks_tmpb_int=\count311
+\l__tasks_tmpa_coffin=\box74
+\l__tasks_tmpa_box=\box75
+
+Package xtemplate Info: Declaring object type 'tasks' taking 3 argument(s) on
+(xtemplate)             line 450.
+
+
+(/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/latex/ta
+sks/tasks.cfg))
+(/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/latex/cm
+ll/cmll.sty
+Package: cmll 2010/04/20 Linear Logic symbols for Computer Modern
+\symllsymbols=\mathgroup8
+LaTeX Font Info:    Overwriting symbol font `llsymbols' in version `bold'
+(Font)                  U/cmllr/m/n --> U/cmllr/bx/n on input line 49.
+) (quiver.sty
+Package: quiver 2021/01/11 quiver
+
+(/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/frontendlay
+er/tikz/libraries/tikzlibrarycalc.code.tex
+File: tikzlibrarycalc.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+)
+(/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/frontendlay
+er/tikz/libraries/tikzlibrarydecorations.pathmorphing.code.tex
+(/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/frontendlay
+er/tikz/libraries/tikzlibrarydecorations.code.tex
+(/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/modules/pgf
+moduledecorations.code.tex
+\pgfdecoratedcompleteddistance=\dimen295
+\pgfdecoratedremainingdistance=\dimen296
+\pgfdecoratedinputsegmentcompleteddistance=\dimen297
+\pgfdecoratedinputsegmentremainingdistance=\dimen298
+\pgf@decorate@distancetomove=\dimen299
+\pgf@decorate@repeatstate=\count312
+\pgfdecorationsegmentamplitude=\dimen300
+\pgfdecorationsegmentlength=\dimen301
+)
+\tikz@lib@dec@box=\box76
+)
+(/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/libraries/d
+ecorations/pgflibrarydecorations.pathmorphing.code.tex)))
+(/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/latex/ad
+justbox/adjustbox.sty
+Package: adjustbox 2020/08/19 v1.3 Adjusting TeX boxes (trim, clip, ...)
+
+(/Library/Application Support/MiKTeX/texmfs/install/tex/latex/xkeyval/xkeyval.s
+ty
+Package: xkeyval 2020/11/20 v2.8 package option processing (HA)
+
+(/Library/Application Support/MiKTeX/texmfs/install/tex/generic/xkeyval/xkeyval
+.tex
+(/Library/Application Support/MiKTeX/texmfs/install/tex/generic/xkeyval/xkvutil
+s.tex
+\XKV@toks=\toks46
+\XKV@tempa@toks=\toks47
+)
+\XKV@depth=\count313
+File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
+))
+(/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/latex/ad
+justbox/adjcalc.sty
+Package: adjcalc 2012/05/16 v1.1 Provides advanced setlength with multiple back
+-ends (calc, etex, pgfmath)
+)
+(/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/latex/ad
+justbox/trimclip.sty
+Package: trimclip 2020/08/19 v1.2 Trim and clip general TeX material
+
+(/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/latex/co
+llectbox/collectbox.sty
+Package: collectbox 2012/05/17 v0.4b Collect macro arguments as boxes
+\collectedbox=\box77
+)
+\tc@llx=\dimen302
+\tc@lly=\dimen303
+\tc@urx=\dimen304
+\tc@ury=\dimen305
+Package trimclip Info: Using driver 'tc-pdftex.def'.
+
+(/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/latex/ad
+justbox/tc-pdftex.def
+File: tc-pdftex.def 2019/01/04 v2.2 Clipping driver for pdftex
+))
+\adjbox@Width=\dimen306
+\adjbox@Height=\dimen307
+\adjbox@Depth=\dimen308
+\adjbox@Totalheight=\dimen309
+\adjbox@pwidth=\dimen310
+\adjbox@pheight=\dimen311
+\adjbox@pdepth=\dimen312
+\adjbox@ptotalheight=\dimen313
+
+(/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/latex/if
+oddpage/ifoddpage.sty
+Package: ifoddpage 2016/04/23 v1.1 Conditionals for odd/even page detection
+\c@checkoddpage=\count314
+))
+(/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/generic/
+genmisc/kbordermatrix.sty
+Package: kbordermatrix 2011/09/21 Bordered matrix with brackets
+\kbcolsep=\skip66
+\kbrowsep=\skip67
+\br@kwd=\skip68
+\k@bordht=\skip69
+)
+(/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/latex/br
+aket/braket.sty)
+\c@thm=\count315
  (QuantumComputing.aux)
 \openout1 = `QuantumComputing.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 69.
-LaTeX Font Info:    ... okay on input line 69.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 69.
-LaTeX Font Info:    ... okay on input line 69.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 69.
-LaTeX Font Info:    ... okay on input line 69.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 69.
-LaTeX Font Info:    ... okay on input line 69.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 69.
-LaTeX Font Info:    ... okay on input line 69.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 69.
-LaTeX Font Info:    ... okay on input line 69.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 69.
-LaTeX Font Info:    ... okay on input line 69.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 69.
-LaTeX Font Info:    ... okay on input line 69.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 69.
-LaTeX Font Info:    ... okay on input line 69.
-LaTeX Font Info:    Checking defaults for T3/cmr/m/n on input line 69.
-LaTeX Font Info:    Trying to load font information for T3+cmr on input line 69
-.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 111.
+LaTeX Font Info:    ... okay on input line 111.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 111.
+LaTeX Font Info:    ... okay on input line 111.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 111.
+LaTeX Font Info:    ... okay on input line 111.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 111.
+LaTeX Font Info:    ... okay on input line 111.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 111.
+LaTeX Font Info:    ... okay on input line 111.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 111.
+LaTeX Font Info:    ... okay on input line 111.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 111.
+LaTeX Font Info:    ... okay on input line 111.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 111.
+LaTeX Font Info:    ... okay on input line 111.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 111.
+LaTeX Font Info:    ... okay on input line 111.
+LaTeX Font Info:    Checking defaults for T3/cmr/m/n on input line 111.
+LaTeX Font Info:    Trying to load font information for T3+cmr on input line 11
+1.
 
 (/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/latex/ti
 pa/t3cmr.fd
 File: t3cmr.fd 2001/12/31 TIPA font definitions
 )
-LaTeX Font Info:    ... okay on input line 69.
+LaTeX Font Info:    ... okay on input line 111.
 
 (/Library/Application Support/MiKTeX/texmfs/install/tex/context/base/mkii/supp-
 pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count301
-\scratchdimen=\dimen282
-\scratchbox=\box70
-\nofMPsegments=\count302
-\nofMParguments=\count303
-\everyMPshowfont=\toks45
-\MPscratchCnt=\count304
-\MPscratchDim=\dimen283
-\MPnumerator=\count305
-\makeMPintoPDFobject=\count306
-\everyMPtoPDFconversion=\toks46
+\scratchcounter=\count316
+\scratchdimen=\dimen314
+\scratchbox=\box78
+\nofMPsegments=\count317
+\nofMParguments=\count318
+\everyMPshowfont=\toks48
+\MPscratchCnt=\count319
+\MPscratchDim=\dimen315
+\MPnumerator=\count320
+\makeMPintoPDFobject=\count321
+\everyMPtoPDFconversion=\toks49
 )
 (/Library/Application Support/MiKTeX/texmfs/install/tex/latex/epstopdf-pkg/epst
 opdf-base.sty
@@ -831,7 +983,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 -sys.cfg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
-Package hyperref Info: Link coloring OFF on input line 69.
+Package hyperref Info: Link coloring OFF on input line 111.
 
 (/Library/Application Support/MiKTeX/texmfs/install/tex/latex/hyperref/nameref.
 sty
@@ -845,39 +997,44 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count307
+\c@section@level=\count322
 )
-LaTeX Info: Redefining \ref on input line 69.
-LaTeX Info: Redefining \pageref on input line 69.
-LaTeX Info: Redefining \nameref on input line 69.
+LaTeX Info: Redefining \ref on input line 111.
+LaTeX Info: Redefining \pageref on input line 111.
+LaTeX Info: Redefining \nameref on input line 111.
  (QuantumComputing.out)
 (QuantumComputing.out)
 \@outlinefile=\write4
 \openout4 = `QuantumComputing.out'.
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 72.
-
+LaTeX Font Info:    Trying to load font information for U+msa on input line 114
+.
 
 (/Library/Application Support/MiKTeX/texmfs/install/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 72.
-
+LaTeX Font Info:    Trying to load font information for U+msb on input line 114
+.
 (/Library/Application Support/MiKTeX/texmfs/install/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 72
-.
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 11
+4.
 
 (/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/latex/jk
 nappen/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
-LaTeX Font Info:    Trying to load font information for U+stmry on input line 7
-2.
+LaTeX Font Info:    Trying to load font information for U+stmry on input line 1
+14.
 
 (/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/latex/st
-maryrd/Ustmry.fd) (QuantumComputing.toc)
+maryrd/Ustmry.fd)
+LaTeX Font Info:    Trying to load font information for U+cmllr on input line 1
+14.
+
+(/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/latex/cm
+ll/ucmllr.fd) (QuantumComputing.toc)
 \tf@toc=\write5
 \openout5 = `QuantumComputing.toc'.
 
@@ -885,124 +1042,217 @@ maryrd/Ustmry.fd) (QuantumComputing.toc)
 
 {/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/data/pdftex/config/p
 dftex.map}]
-Overfull \hbox (15.60597pt too wide) in paragraph at lines 91--92
+Overfull \hbox (15.60597pt too wide) in paragraph at lines 133--134
 []\OT1/cmr/m/n/12 We can now be more precise; our goal is to develop a theory o
 f communication
  []
 
 [2] [3]
-Overfull \hbox (8.76305pt too wide) in paragraph at lines 152--153
+Overfull \hbox (8.76305pt too wide) in paragraph at lines 194--195
 []\OT1/cmr/m/n/12 Assume such a measurement exists. Since $[] \OML/cmm/m/it/12 
 ; []$ \OT1/cmr/m/n/12 are non-orthogonal,
  []
 
 [4]
-Overfull \hbox (34.39699pt too wide) in paragraph at lines 178--180
+Overfull \hbox (34.39699pt too wide) in paragraph at lines 220--222
 \OT1/cmr/m/n/12 Since these are non-orthogonal though, Lemma []1.0.7[] renders 
 these indistinguishable.
  []
 
 
-Overfull \hbox (30.6762pt too wide) in paragraph at lines 178--180
+Overfull \hbox (30.6762pt too wide) in paragraph at lines 220--222
 \OT1/cmr/m/n/12 Desigining algorithms amongst the push and pull of superpositio
 n and measurement
  []
 
 [5]
-Overfull \hbox (5.97089pt too wide) in paragraph at lines 230--231
+Overfull \hbox (5.97089pt too wide) in paragraph at lines 272--273
 []\OT1/cmr/m/n/12 Orthogonal states can be distinguished via measurement, this 
 is the content
  []
 
 [6]
-Overfull \hbox (8.84308pt too wide) in paragraph at lines 262--263
+Overfull \hbox (8.84308pt too wide) in paragraph at lines 304--305
 []\OT1/cmr/m/n/12 The exact relationship between projective measurements and me
 asurements
  []
 
 [7] [8] [9]
-Overfull \hbox (2.96814pt too wide) in paragraph at lines 338--339
+Overfull \hbox (2.96814pt too wide) in paragraph at lines 380--381
 \OT1/cmr/m/n/12 system been described as a product, then we would have projecti
 on morphisms
  []
 
 [10]
-Overfull \hbox (2.1501pt too wide) in paragraph at lines 372--373
+Overfull \hbox (2.1501pt too wide) in paragraph at lines 414--415
 \OT1/cmr/m/n/12 generalises Definition []1.0.1[] in this way, and also generali
 ses further by allowing
  []
 
 
-Overfull \hbox (1.39732pt too wide) in paragraph at lines 376--377
+Overfull \hbox (1.39732pt too wide) in paragraph at lines 418--419
 \OT1/cmr/m/n/12 that positive operators on finite dimensional Hilbert spaces ar
 e diagonalisable.
  []
 
 [11] [12] [13] [14]
-Overfull \hbox (0.79002pt too wide) in paragraph at lines 480--481
+Overfull \hbox (0.79002pt too wide) in paragraph at lines 522--523
 [][]\OT1/cmr/bx/n/12 Example 2.1.10 \OT1/cmr/m/n/12 (Quantum teleportation)\OT1
 /cmr/bx/n/12 . []\OT1/cmr/m/n/12 Superposition states clearly have
  []
 
 [15]
-Overfull \hbox (14.02078pt too wide) in paragraph at lines 529--530
+Overfull \hbox (14.02078pt too wide) in paragraph at lines 571--572
 []\OT1/cmr/m/n/12 Alice can then send Bob the classical bits $00\OML/cmm/m/it/1
 2 ; \OT1/cmr/m/n/12 01\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 10\OML/cmm/m/it/12 ; \
 OT1/cmr/m/n/12 11$ respectively indicating
  []
 
 
-Overfull \hbox (3.27168pt too wide) in paragraph at lines 529--530
+Overfull \hbox (3.27168pt too wide) in paragraph at lines 571--572
 \OT1/cmr/m/n/12 that Bob should apply the Unitary matrix respectively $\OML/cmm
 /m/it/12 I; X; Z; ZX$\OT1/cmr/m/n/12 , recovering
  []
 
 [16] [17] [18] [19] [20]
-Overfull \hbox (21.02083pt too wide) in paragraph at lines 690--692
+Overfull \hbox (21.02083pt too wide) in paragraph at lines 732--734
 \OT1/cmr/m/n/12 then an encoding of a message with respect to this encoding mig
 ht be $[]$,
  []
 
-[21] [22] [23]
-Overfull \hbox (11.8164pt too wide) in paragraph at lines 815--817
+
+! LaTeX Error: Environment algorithm undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.746 \begin{algorithm}
+                       [Bit flip correction]\label{alg:bit_flip_correction}
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+[21]
+
+! LaTeX Error: \begin{document} ended by \end{algorithm}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.767 \end{algorithm}
+                     
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+[22]
+
+! LaTeX Error: Environment algorithm undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.804 \begin{algorithm}
+                       [Phase flip correction]
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: \begin{document} ended by \end{algorithm}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.825 \end{algorithm}
+                     
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+[23]
+
+! LaTeX Error: Environment algorithm undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.844 \begin{algorithm}
+                       
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+Overfull \hbox (11.8164pt too wide) in paragraph at lines 857--859
 \OT1/cmr/m/n/12 let $(\OML/cmm/m/it/12 r[]; r[]; r[]; r[]; r[]; r[]; r[]; r[]\O
 T1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 2 \U/msb/m/n/12 Z[]$ \OT1/cmr/m/n/12 be the re
 sults from these measurements.
  []
 
-[24] [25]
-Overfull \hbox (2.00658pt too wide) in paragraph at lines 915--916
+
+! LaTeX Error: Lonely \item--perhaps a missing list environment.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.866 	\item N
+              ow retrieve $\ket{\varphi}$ based on the values:
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Underfull \hbox (badness 10000) detected at line 866
+[][]
+ []
+
+[24]
+
+! LaTeX Error: \begin{document} ended by \end{algorithm}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.922 \end{algorithm}
+                     
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+[25]
+Overfull \hbox (2.00658pt too wide) in paragraph at lines 957--958
 \OT1/cmr/m/n/12 of this section. It presents the general error correction condi
 tions as advertised
  []
 
 [26] [27]
-Overfull \hbox (0.48009pt too wide) in paragraph at lines 950--951
+Overfull \hbox (0.48009pt too wide) in paragraph at lines 992--993
 []\OT1/cmr/m/n/12 Moreover, in Section []2[], the choice of operators $\OMS/cms
 y/m/n/12 f\OML/cmm/m/it/12 E[]; [] ; E[]\OMS/cmsy/m/n/12 g$ \OT1/cmr/m/n/12 for
  a quantum
  []
 
 
-Overfull \hbox (20.47664pt too wide) in paragraph at lines 950--951
+Overfull \hbox (20.47664pt too wide) in paragraph at lines 992--993
 \OT1/cmr/m/n/12 operation was also not given a canonical form. Indeed, the oper
 ators $\OMS/cmsy/m/n/12 f\OML/cmm/m/it/12 E[]; [] ; E[]\OMS/cmsy/m/n/12 g$
  []
 
 [28] [29] [30] [31]
-Overfull \hbox (3.28072pt too wide) in paragraph at lines 1058--1059
+Overfull \hbox (3.28072pt too wide) in paragraph at lines 1100--1101
 \OT1/cmr/bx/n/12 correctable set of errors \OT1/cmr/m/n/12 if there exists a tr
 ace-preserving quantum operator
  []
 
-
-Overfull \hbox (1.09766pt too wide) in paragraph at lines 1065--1066
-\OT1/cmr/m/n/12 (Algorithm []3.1.5[]) has \OT1/cmr/m/it/12 two \OT1/cmr/m/n/12 
-diagnoses involved, first that from the measurement
- []
-
 [32] [33]
-Overfull \hbox (47.04831pt too wide) in paragraph at lines 1120--1122
+Overfull \hbox (47.04831pt too wide) in paragraph at lines 1162--1164
 \OT1/cmr/m/n/12 We define $\OMS/cmsy/m/n/12 R \OT1/cmr/m/n/12 = \OMS/cmsy/m/n/1
 2 f\OML/cmm/m/it/12 U[]P[]; :::; U[]P[]\OMS/cmsy/m/n/12 g$ \OT1/cmr/m/n/12 with
  corresponding operator $\OMS/cmsy/m/n/12 R\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 \
@@ -1010,34 +1260,53 @@ OT1/cmr/m/n/12 ) = [][] \OML/cmm/m/it/12 U[]P[]P[]U[]$\OT1/cmr/m/n/12 .
  []
 
 [34]
-Overfull \hbox (12.47217pt too wide) in paragraph at lines 1135--1136
+Overfull \hbox (12.47217pt too wide) in paragraph at lines 1177--1178
 [][]\OT1/cmr/bx/n/12 Definition 4.0.10. []\OT1/cmr/m/n/12 The equations [] are 
 the \OT1/cmr/bx/n/12 error correction conditions\OT1/cmr/m/n/12 . 
  []
 
 
-Overfull \hbox (14.36728pt too wide) in paragraph at lines 1143--1144
+Overfull \hbox (14.36728pt too wide) in paragraph at lines 1185--1186
 \OT1/cmr/m/n/12 Moreover, we have that $[] = [] = \OML/cmm/m/it/12 P$ \OT1/cmr/
 m/n/12 and so the polar decomposition
  []
 
 [35] [36]
-Overfull \hbox (43.39061pt too wide) in paragraph at lines 1217--1218
-[][]\OT1/cmr/bx/n/12 Observation 5.0.3. []\OT1/cmr/m/n/12 Let $(\OML/cmm/m/it/1
-2 g; h\OT1/cmr/m/n/12 )$ be a pair of elements of $\OML/cmm/m/it/12 G[]$ \OT1/c
-mr/m/n/12 and let $\OML/cmm/m/it/12 g[]; :::; g[]; h[]; :::; h[] \OMS/cmsy/m/n/
-12 2
- []
+
+! LaTeX Error: Environment observation undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1258 \begin{observation}
+                          \label{obs:evenness}
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: \begin{document} ended by \end{observation}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1265 \end{observation}
+                        
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
 
 [37]
-Overfull \hbox (0.88422pt too wide) in paragraph at lines 1264--1266
+Overfull \hbox (0.88422pt too wide) in paragraph at lines 1306--1308
 \OT1/cmr/m/n/12 (here, the notation $\OMS/cmsy/m/n/12 h\OML/cmm/m/it/12 g[]; ::
 :; g[]\OMS/cmsy/m/n/12 i$ \OT1/cmr/m/n/12 denotes the group generated by these 
 elements). 
  []
 
 
-Overfull \hbox (20.62733pt too wide) in paragraph at lines 1268--1269
+Overfull \hbox (20.62733pt too wide) in paragraph at lines 1310--1311
 \OMS/cmsy/m/n/12 h\OML/cmm/m/it/12 g[]; :::; g[]\OMS/cmsy/m/n/12 i$\OT1/cmr/m/i
 t/12 , then the elements $\OML/cmm/m/it/12 g[]; :::; g[]$ \OT1/cmr/m/it/12 are 
 independent if and only if $\OML/cmm/m/it/12 r\OT1/cmr/m/n/12 (\OML/cmm/m/it/12
@@ -1045,67 +1314,111 @@ independent if and only if $\OML/cmm/m/it/12 r\OT1/cmr/m/n/12 (\OML/cmm/m/it/12
  g[]\OT1/cmr/m/n/12 )$
  []
 
-[38] [39] [40] [41] [42] [43]
-Overfull \hbox (1.98721pt too wide) in paragraph at lines 1490--1491
+[38]
+
+! LaTeX Error: Environment application undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1351 \begin{application}
+                          
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: \begin{document} ended by \end{application}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1366 	\end{application}
+                         
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+[39] [40] [41] [42] [43]
+Overfull \hbox (1.98721pt too wide) in paragraph at lines 1532--1533
 [][]\OT1/cmr/bx/n/12 Notation A.1.8. []\OT1/cmr/m/n/12 Given a complex matrix $
 \OML/cmm/m/it/12 A$\OT1/cmr/m/n/12 , the matrix given by conjugating
  []
 
 [44] [45] [46]
-Overfull \hbox (12.4015pt too wide) in paragraph at lines 1594--1595
+Overfull \hbox (12.4015pt too wide) in paragraph at lines 1636--1637
 [][]\OT1/cmr/bx/n/12 Corollary A.2.9. []\OT1/cmr/m/it/12 A normal matrix $\OML/
 cmm/m/it/12 A$ \OT1/cmr/m/it/12 is Hermitian if and only if its eigenvalues
  []
 
 [47]
-Overfull \hbox (2.2103pt too wide) in paragraph at lines 1637--1638
+Overfull \hbox (2.2103pt too wide) in paragraph at lines 1679--1680
 [][]\OT1/cmr/bx/n/12 Definition A.2.13. []\OT1/cmr/m/n/12 Let $\OML/cmm/m/it/12
  A; B$ \OT1/cmr/m/n/12 be matrices, then the \OT1/cmr/bx/n/12 commutator \OT1/c
 mr/m/n/12 is $[\OML/cmm/m/it/12 A; B\OT1/cmr/m/n/12 ] :=
  []
 
 
-Overfull \hbox (10.37729pt too wide) in paragraph at lines 1640--1641
+Overfull \hbox (10.37729pt too wide) in paragraph at lines 1682--1683
 \OT1/cmr/m/it/12 Hermitian operators. Then $\OT1/cmr/m/n/12 [\OML/cmm/m/it/12 A
 ; B\OT1/cmr/m/n/12 ] = 0$ \OT1/cmr/m/it/12 if and only if $\OML/cmm/m/it/12 A$ 
 \OT1/cmr/m/it/12 and $\OML/cmm/m/it/12 B$ \OT1/cmr/m/it/12 are simultaneously
  []
 
 [48]
-Overfull \hbox (20.72354pt too wide) detected at line 1650
-[]\OML/cmm/m/it/12 AB \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 U[]D[]UU[]D[]U \OT1/cm
-r/m/n/12 = \OML/cmm/m/it/12 U[]D[]D[]U \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 U[]D[
-]D[]U \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 U[]D[]UU[]D[]U \OT1/cmr/m/n/12 = \OML/
-cmm/m/it/12 BA
- []
+
+! LaTeX Error: Environment observation undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1708 \begin{observation}
+                          
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
 
 [49]
-Overfull \hbox (23.90117pt too wide) in paragraph at lines 1678--1680
+Overfull \hbox (23.90117pt too wide) in paragraph at lines 1724--1726
 \OT1/cmr/m/n/12 which indeed is unitary. In fact we read off from this that $\O
 MS/cmsy/m/n/12 f\OML/cmm/m/it/12 Tv[]=[]; :::; Tv[]=[]\OMS/cmsy/m/n/12 g$
  []
 
-[50] [51]
-Overfull \hbox (5.15395pt too wide) in paragraph at lines 1767--1768
-[][]\OT1/cmr/bx/n/12 Corollary B.0.5. []\OT1/cmr/m/it/12 For finite dimensional
- vector spaces, there is an adjunction: 
+
+! LaTeX Error: \begin{document} ended by \end{observation}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1740 \end{observation}
+                        
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+[50]
+Underfull \hbox (badness 10000) in paragraph at lines 1764--1765
+[]\OT1/cmr/m/n/12 W. Troiani \OT1/cmr/m/it/12 Elementary Commutative Algebra []
+$\OT1/cmtt/m/n/12 https : / /
  []
 
-[52]
-Overfull \hbox (13.18738pt too wide) detected at line 1809
-[][]
- []
+[51] (QuantumComputing.aux)
 
-[53] [54] [55] (QuantumComputing.aux)
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
 Package rerunfilecheck Info: File `QuantumComputing.out' has not changed.
-(rerunfilecheck)             Checksum: 933012BCE927B63E5FF44DF7A9916F32;1642.
+(rerunfilecheck)             Checksum: 73EC14A521E60B62086A87A0111AEEF7;1499.
  ) 
 Here is how much of TeX's memory you used:
- 23447 strings out of 481099
- 434245 string characters out of 2904467
- 703530 words of memory out of 3000000
- 40014 multiletter control sequences out of 15000+600000
- 416620 words of font info for 80 fonts, out of 8000000 for 9000
+ 24936 strings out of 481099
+ 476751 string characters out of 2904467
+ 732654 words of memory out of 3000000
+ 41462 multiletter control sequences out of 15000+600000
+ 416890 words of font info for 86 fonts, out of 8000000 for 9000
  0 hyphenation exceptions out of 8191
  98i,16n,103p,869b,1089s stack positions out of 5000i,500n,10000p,200000b,80000s
  </Users/wtroiani/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljf
@@ -1127,13 +1440,11 @@ stall/fonts/type1/public/amsfonts/cm/cmsy8.pfb></Library/Application Support/Mi
 KTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmti12.pfb></Library/Applica
 tion Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmtt12.pfb></
 Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/s
-ymbols/msam10.pfb></Library/Application Support/MiKTeX/texmfs/install/fonts/typ
-e1/public/amsfonts/symbols/msbm10.pfb></Library/Application Support/MiKTeX/texm
-fs/install/fonts/type1/public/rsfs/rsfs10.pfb></Users/wtroiani/Library/Applicat
-ion Support/MiKTeX/texmfs/install/fonts/type1/public/hoekwater/stmary10.pfb>
-Output written on QuantumComputing.pdf (55 pages, 453437 bytes).
+ymbols/msbm10.pfb></Library/Application Support/MiKTeX/texmfs/install/fonts/typ
+e1/public/rsfs/rsfs10.pfb>
+Output written on QuantumComputing.pdf (51 pages, 428228 bytes).
 PDF statistics:
- 929 PDF objects out of 1000 (max. 8388607)
- 377 named destinations out of 1000 (max. 500000)
- 109 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 858 PDF objects out of 1000 (max. 8388607)
+ 341 named destinations out of 1000 (max. 500000)
+ 101 words of extra memory for PDF output out of 10000 (max. 10000000)
 

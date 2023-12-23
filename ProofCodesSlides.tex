@@ -1,0 +1,683 @@
+\documentclass{beamer}
+\usefonttheme[onlymath]{serif}
+%Information to be included in the title page:
+\title{Quantum Error Correction and Cut-Elimination}
+\author{Daniel Murfet, William Troiani}
+\institute{University of Melbourne, University of Sorbonne Paris Nord}
+\date{2022}
+
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{algorithm}
+\usepackage{mathrsfs}
+\usepackage{array}
+\usepackage{amssymb}
+\usepackage{units}
+\usepackage{graphicx}
+\usepackage{tikz-cd}
+\usepackage{nicefrac}
+\usepackage{hyperref}
+\usepackage{bbm}
+\usepackage{color}
+\usepackage{tensor}
+\usepackage{tipa}
+\usepackage{bussproofs}
+\usepackage{ stmaryrd }
+\usepackage{ textcomp }
+\usepackage{leftidx}
+\usepackage{afterpage}
+\usepackage{varwidth}
+\usepackage{tasks}
+\usepackage{ cmll }
+\usepackage{makecell}
+\usepackage{MnSymbol}
+\usepackage{quiver}
+\usepackage{adjustbox}
+\usepackage{multirow}
+\usepackage{booktabs}
+\usepackage{xparse}
+\usepackage{calc}
+\usepackage{epigraph}
+\usepackage{physics}
+
+\newcommand\blankpage{
+	\null
+	\thispagestyle{empty}
+	\addtocounter{page}{-1}
+	\newpage
+}
+
+\graphicspath{ {images/} }
+
+\theoremstyle{plain}
+\newtheorem{thm}{Theorem}[subsection] % reset theorem numbering for each chapter
+\newtheorem{proposition}[thm]{Proposition}
+%\newtheorem{lemma}[thm]{Lemma}
+%\newtheorem{fact}[thm]{Fact}
+\newtheorem{cor}[thm]{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{defn}[thm]{Definition} % definition numbers are dependent on theorem numbers
+\newtheorem{exmp}[thm]{Example} % same for example numbers
+\newtheorem{notation}[thm]{Notation}
+\newtheorem{remark}[thm]{Remark}
+\newtheorem{condition}[thm]{Condition}
+\newtheorem{question}[thm]{Question}
+\newtheorem{construction}[thm]{Construction}
+\newtheorem{exercise}[thm]{Exercise}
+%\newtheorem{example}[thm]{Example}
+\newtheorem{aside}[thm]{Aside}
+
+\def\doubleunderline#1{\underline{\underline{#1}}}
+\newcommand{\bb}[1]{\mathbb{#1}}
+\newcommand{\scr}[1]{\mathscr{#1}}
+\newcommand{\call}[1]{\mathcal{#1}}
+\newcommand{\psheaf}{\text{\underline{Set}}^{\scr{C}^{\text{op}}}}
+\newcommand{\und}[1]{\underline{\hspace{#1 cm}}}
+\newcommand{\adj}[1]{\text{\textopencorner}{#1}\text{\textcorner}}
+\newcommand{\comment}[1]{}
+\newcommand{\lto}{\longrightarrow}
+\newcommand{\rone}{(\operatorname{R}\bold{1})}
+\newcommand{\lone}{(\operatorname{L}\bold{1})}
+\newcommand{\rimp}{(\operatorname{R} \multimap)}
+\newcommand{\limp}{(\operatorname{L} \multimap)}
+\newcommand{\rtensor}{(\operatorname{R}\otimes)}
+\newcommand{\ltensor}{(\operatorname{L}\otimes)}
+\newcommand{\rtrue}{(\operatorname{R}\top)}
+\newcommand{\rwith}{(\operatorname{R}\\&)}
+\newcommand{\lwithleft}{(\operatorname{L}\\&)_{\operatorname{left}}}
+\newcommand{\lwithright}{(\operatorname{L}\\&)_{\operatorname{right}}}
+\newcommand{\rplusleft}{(\operatorname{R}\oplus)_{\operatorname{left}}}
+\newcommand{\rplusright}{(\operatorname{R}\oplus)_{\operatorname{right}}}
+\newcommand{\lplus}{(\operatorname{L}\oplus)}
+\newcommand{\prom}{(\operatorname{prom})}
+\newcommand{\ctr}{(\operatorname{ctr})}
+\newcommand{\der}{(\operatorname{der})}
+\newcommand{\weak}{(\operatorname{weak})}
+\newcommand{\exi}{(\operatorname{exists})}
+\newcommand{\fa}{(\operatorname{for\text{ }all})}
+\newcommand{\ex}{(\operatorname{ex})}
+\newcommand{\cut}{(\operatorname{cut})}
+\newcommand{\ax}{(\operatorname{ax})}
+\newcommand{\negation}{\sim}
+\newcommand{\true}{\top}
+\newcommand{\false}{\bot}
+\DeclareRobustCommand{\diamondtimes}{%
+	\mathbin{\text{\rotatebox[origin=c]{45}{$\boxplus$}}}%
+}
+\newcommand{\tagarray}{\mbox{}\refstepcounter{equation}$(\theequation)$}
+\newcommand{\startproof}[1]{
+	\AxiomC{#1}
+	\noLine
+	\UnaryInfC{$\vdots$}
+}
+\newenvironment{scprooftree}[1]%
+{\gdef\scalefactor{#1}\begin{center}\proofSkipAmount \leavevmode}%
+	{\scalebox{\scalefactor}{\DisplayProof}\proofSkipAmount \end{center} }
+\newcommand\Wider[2][3em]{%
+	\makebox[\linewidth][c]{%
+		\begin{minipage}{\dimexpr\textwidth+#1\relax}
+			\raggedright#2
+		\end{minipage}%
+	}%
+}
+% https://tex.stackexchange.com/questions/63355/wrapping-cmidrule-in-a-macro
+\ExplSyntaxOn
+\makeatletter
+\newcommand{\CMidRule}{\noalign\bgroup\@CMidRule{}}
+\NewDocumentCommand{\@CMidRule}{
+	m % Material to reinsert before cmidrule.
+	O{0.0ex} % #1 = left adjust
+	O{0.0ex} % #1 = right adjust
+	m  %       #3 = columns to span
+}{
+	\peek_meaning_remove_ignore_spaces:NTF \CMidRule
+	{ \@CMidRule { #1 \cmidrule[\cmidrulewidth](l{#2}r{#3}){#4} } }
+	{ \egroup #1 \cmidrule[\cmidrulewidth](l{#2}r{#3}){#4} }
+}
+\makeatother
+\ExplSyntaxOff
+
+\newcommand{\PhantC}{\phantom{\colon}}%
+\newcommand{\PhantSQ}{\phantom{\sqrt{\hspace{0.3ex}}}}
+
+\newcommand\showdiv[1]{\overline{\smash{)}#1}}
+
+
+\begin{document}
+	
+	\begin{frame}
+		\begin{center}
+			\begin{Huge}
+				\textcolor{blue}{Quantum error correction and cut-elimination}\\
+				\end{Huge}
+			\vspace{0.5cm}
+			Daniel Murfet, William Troiani
+			\end{center}
+		\begin{equation*}\label{eq:cut_model_square}
+			\begin{tikzcd}[ampersand replacement=\&]
+				\call{H}_{\pi'}\arrow[r,"{\hat{\gamma}}"]\arrow[d,"{g'}"] \& \call{H}_{\pi}^{C_\pi}\arrow[d,swap,"{g}"]\\
+				\call{H}_{\pi'}\arrow[r,"\hat{\gamma}"] \& \call{H}_{\pi}^{C_\pi}
+			\end{tikzcd}
+		\end{equation*}
+	
+		\begin{footnotesize}``But as artificers do not work with perfect accuracy, it comes to pass that mechanics is so distinguished from geometry that what is perfectly accurate is called geometrical; what is less so, is called mechanical. However, the errors are not in the art, but in the artificers." I.~Newton, \textsl{Principia}
+		\end{footnotesize}
+		\end{frame}
+	
+	\begin{frame}
+		\frametitle{Geometry of Interaction}
+		\begin{center}
+			\emph{Proofs as codes, reduction as renormalisation.}
+		\end{center}
+	\[\adjustbox{scale=0.65}{\begin{tikzcd}[column sep = tiny, row sep = small, ampersand replacement=\&]
+			\& \ax \&\&\&\& \ax \&\&\& \ax \\
+			{\neg A_2} \&\& A_3 \&\& \neg A_{10} \&\& A_{11} \& \neg A_6 \&\& A_7 \\
+			\, \&\&\& \otimes \&\&\& \, \&\& \parr \\
+			\&\&\& A_4 \otimes \neg A_9 \&\&\&\&\& \neg A_5 \parr A_8 \\
+			\&\&\&\&\&\& \cut
+			\arrow[curve={height=12pt}, no head, from=1-2, to=2-1]
+			\arrow[curve={height=-12pt}, no head, from=1-2, to=2-3]
+			\arrow[from=2-1, to=3-1]
+			\arrow[curve={height=12pt}, no head, from=1-6, to=2-5]
+			\arrow[curve={height=-12pt}, no head, from=1-6, to=2-7]
+			\arrow[from=2-7, to=3-7]
+			\arrow[curve={height=-12pt}, from=2-5, to=3-4]
+			\arrow[curve={height=12pt}, from=2-3, to=3-4]
+			\arrow[curve={height=12pt}, no head, from=1-9, to=2-8]
+			\arrow[curve={height=-12pt}, no head, from=1-9, to=2-10]
+			\arrow[curve={height=-12pt}, from=2-10, to=3-9]
+			\arrow[curve={height=12pt}, from=2-8, to=3-9]
+			\arrow[no head, from=3-9, to=4-9]
+			\arrow[curve={height=-12pt}, from=4-9, to=5-7]
+			\arrow[curve={height=12pt}, from=4-4, to=5-7]
+			\arrow[no head, from=3-4, to=4-4]
+	\end{tikzcd}}\]
+	\[\adjustbox{scale=0.75}{\begin{tikzcd}[column sep = tiny, row sep = small, ampersand replacement=\&]
+			\&\&\&\&\& \ax \\
+			\& \ax \&\&\& \neg A_{10} \&\& A_{11} \&\& \ax \\
+			{\neg A_2} \&\& A_3 \&\&\&\& \, \& {\neg A_6} \&\& A_7 \\
+			\&\&\&\& \cut \&\&\& \cut \\
+			\,
+			\arrow[curve={height=12pt}, no head, from=2-2, to=3-1]
+			\arrow[curve={height=-12pt}, no head, from=2-2, to=3-3]
+			\arrow[from=3-1, to=5-1]
+			\arrow[curve={height=12pt}, no head, from=1-6, to=2-5]
+			\arrow[curve={height=-12pt}, no head, from=1-6, to=2-7]
+			\arrow[from=2-7, to=3-7]
+			\arrow[curve={height=12pt}, no head, from=2-9, to=3-8]
+			\arrow[curve={height=-12pt}, no head, from=2-9, to=3-10]
+			\arrow[curve={height=12pt}, from=3-3, to=4-5]
+			\arrow[curve={height=-12pt}, from=3-8, to=4-5]
+			\arrow[curve={height=12pt}, from=2-5, to=4-8]
+			\arrow[curve={height=-12pt}, from=3-10, to=4-8]
+	\end{tikzcd}}\]
+	\end{frame}
+
+\begin{frame}
+	\frametitle{Qubits}
+	Dirac notation: $\ket{0}: \bb{C} \lto \call{H}$ denotes the linear map $1 \longmapsto (1,0)$, and $\ket{1}$ denotes the linear map $1 \longmapsto (0,1)$.
+\begin{itemize}
+		\item A \textbf{qubit} is a copy of the $\bb{C}$-Hilbert space $\bb{C}^2$.
+		
+		\item The \textbf{state} of a qubit $\bb{C}^2$ is a vector $\ket{\psi} \in \bb{C}^2$ of norm 1.
+		
+	\item A \textbf{measurement} on a state space $\call{H}$ is a finite family of linear operators $\lbrace M_m: \call{H}\lto \call{H}\rbrace_{m \in \call{M}}$ satisfying the \textbf{completeness condition}.
+	\begin{equation}\label{eq:completeness}
+		\sum_{m \in \call{M}}M_m^{\dagger}M_m = I
+	\end{equation}
+	\item An element $m \in \call{M}$ is an \textbf{outcome} (simply a set of labels).
+	\item Associated to every measurement and state vector $\ket{\psi}$ there is a value, the \textbf{probability of outcome $m$}
+	\begin{equation*}
+		p(m) := \bra{\psi}M^{\dagger}_mM_m\ket{\psi} = \lVert M_m \ket{\psi} \rVert^2
+	\end{equation*}
+	\item The \textbf{resulting state} after measurement $\{ M_m \}_{m \in \call{M}}$ and outcome $m$ is:
+	\begin{equation}
+		\frac{M_m\ket{\psi}}{\sqrt{p(m)}}
+	\end{equation}
+\end{itemize}
+	\end{frame}
+
+\begin{frame}
+	\frametitle{Quantum Error Correction}
+		$Z :=
+		\begin{pmatrix}
+			1 & 0\\
+			0 & -1
+		\end{pmatrix}, X :=
+	\begin{pmatrix}
+	0 &1\\
+	1 &0
+\end{pmatrix}, \ket{\psi} \in (\bb{C}^2)^{\otimes 3}$
+		\begin{enumerate}
+			\item perform the following measurements:
+			\begin{equation*}
+				\bra{\psi} Z_1 Z_2 \ket{\psi}\text{ with resulting state }\ket{\psi'},
+			\end{equation*}
+			followed by
+			\begin{equation*}
+				\bra{\psi'} Z_2 Z_3 \ket{\psi'}
+			\end{equation*}
+			let $(r_1,r_2)$ be the values given by these measurements.
+			\item Now retrieve $\ket{\varphi}$ based on the values of $r_1,r_2$:
+			\begin{itemize}
+				\item if $(r_1, r_2) = (1,1)$, return $\ket{\psi}$,
+				\item if $(r_1,r_2) = (-1,1)$, return $X_1 \ket{\psi}$,
+				\item if $(r_1,r_2) = (1,-1)$, return $X_3 \ket{\psi}$,
+				\item if $(r_1,r_2) = (-1,-1)$, return $X_2 \ket{\psi}$
+			\end{itemize}
+		\end{enumerate}
+	\end{frame}
+
+\begin{frame}
+	\begin{align*}
+		Z_1Z_2\ket{000} &= \ket{000} & Z_1Z_2\ket{001} &= \ket{001}\\
+		Z_1Z_2\ket{010} &= -\ket{010} & Z_1Z_2\ket{011} &= -\ket{011}\\
+		Z_1Z_2\ket{100} &= -\ket{100} & Z_1Z_2\ket{101} &= -\ket{101}\\
+		Z_1Z_2\ket{110} &= \ket{110} &Z_1Z_2 \ket{111} &= \ket{111}
+	\end{align*}
+	Let $\ket{\psi}:= a\ket{010} + b\ket{101}$ be a state, ie, an element of $\bb{H}^{\otimes 3}$. We perform the measurement $Z_1Z_2$ followed by $Z_2Z_3$:
+	\begin{align*}
+		\bra{\psi}Z_1Z_2\ket{\psi} &= (a\bra{010} + b\bra{101})Z_1Z_2(a\ket{010} + b\ket{101})\\
+		&= (a\bra{010} + b\bra{101})(-a\ket{010} - b\ket{101})\\
+		&= -a^2 - b^2 = -1
+	\end{align*}
+	and
+	\begin{align*}
+		\bra{\psi}Z_2Z_3\ket{\psi} &= (a\bra{010} + b\bra{101})Z_1Z_2(a\ket{010} + b\ket{101})\\
+		&= (a\bra{010} + b\bra{101})(-a\ket{010} - b\ket{101})\\
+		&= -a^2 - b^2 = -1
+	\end{align*}
+	\end{frame}
+
+\begin{frame}
+	We can infer from the fact that both of these came out as $-1$ that it was the second bit which was flipped, and so we can correct this. However, what is the impact of this measurement on the state? Again we calculate:
+	\begin{align*}
+		Z_1Z_2(a\ket{010} + b\ket{101}) &= Z_1(-a\ket{010} + b\ket{101})\\
+		&= -a\ket{010} - b\ket{101}
+	\end{align*}
+	and
+	\begin{align*}
+		Z_2Z_3(-a\ket{010} - b\ket{101}) &= Z_2(-a\ket{010} + b\ket{101})\\
+		&= a\ket{010} + b\ket{101}
+	\end{align*}
+	and so the measurements (in the end) did not impact our state.
+	\end{frame}
+
+\begin{frame}
+	\begin{defn}\label{def:QECC}
+		A \textbf{quantum error correcting code (QECC)} is a pair $\call{Q} = (\call{H}, S)$ consisting of a state space $\call{H}$ along with a set of operators $S$ on $\call{H}$. The elements of $S$ are the \textbf{stabilisers}. The \textbf{codespace} $\call{H}^S$ of $\call{Q}$ is the maximal subspace of $\call{H}$ invariant under all the operators in $S$.
+	\end{defn}
+In the previous example, $S = \{ Z_1Z_2, Z_2Z_3 \}$ and $\call{H}^S = \operatorname{Span}\{ \ket{000}, \ket{111} \}$.
+	\end{frame}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\begin{frame}
+	\frametitle{Proof nets}
+	\begin{defn}\label{def:formulas}
+		There is an infinite set of \textbf{unoriented atoms} $X,Y,Z,...$ and an \textbf{oriented atom} (or \textbf{atomic proposition}) is a pair $(X,+)$ or $(X,-)$ where $X$ is an unoriented atom. The set of \textbf{pre-formulas} is defined as follows.
+		\begin{itemize}
+			\item Any atomic proposition is a pre-formula.
+			\item If $A,B$ are pre-formulas then so are $A \otimes B$, $A \parr B$.
+			\item If $A$ is a pre-formula then so is $\neg A$.
+		\end{itemize}
+		The set of \textbf{formulas} is the quotient of the set of pre-formulas by the equivalence relation $\sim$ generated by, for arbitrary formulas $A,B$ and unoriented atom $X$, the following.
+		\begin{align*}\label{eq:negation}
+			\neg (A \otimes B) \sim \neg A \parr \neg B,\qquad &\neg (A \parr B) \sim \neg A \otimes \neg B\\
+			\neg (X, +) \sim (X, -),\qquad &\neg (X,-) \sim (X,+)
+		\end{align*}
+	\end{defn}
+	\end{frame}
+
+\begin{frame}
+	\frametitle{Proof structures}
+		A \textbf{proof structure} is a directed multigraph. Edges: formulas. Nodes: $\lbrace \ax, \cut, \otimes, \parr, \operatorname{c} \rbrace$. Incoming edges: \textbf{premises}, outgoing edges: \textbf{conclusions}.
+		\begin{itemize}
+			\item Each node labelled $\ax$ has exactly two conclusions $\neg A, A$ and no premise.
+			\item Each node labelled $\cut$ has exactly two premises $A, \neg A$ and no conclusion.
+			\item Each node labelled $\otimes$ has exactly two premises $A, B$ and one conclusion $A \otimes B$. These two premises are ordered. Smallest one: \emph{left} premise $A$. Biggest one: \emph{right} premise $B$.
+			\item Each node labelled $\parr$ has exactly two ordered premises and one conclusion.
+			\item Each node labelled $\operatorname{c}$ has exactly one premise and no conclusion. \textbf{Conclusions} of the proof structure.
+		\end{itemize}
+	\end{frame}
+
+\begin{frame}
+	\frametitle{Links}
+	Let $\pi$ be a proof structure. A \textbf{conclusion link} consists of a node labelled $\operatorname{c}$ along with its premise. An \textbf{axiom link} of $\pi$ is a subgraph consisting of a node labelled $\ax$ along with its conclusions. A $\cut$ link consists of a node labelled $\cut$ along with its premises. A \textbf{tensor link} of $\pi$ consists of a node labelled $\otimes$ along with its premises and conclusion. A \textbf{par link} consists of a node labelled $\parr$ along with its premises and conclusion.
+	% https://q.uiver.app/?q=WzAsMjcsWzIsMCwiXFxheCJdLFsxLDEsIlxcbmVnIEEiXSxbMywxLCJBIl0sWzMsMiwiXFx2ZG90cyJdLFsxLDIsIlxcdmRvdHMiXSxbNSwyLCJcXGN1dCJdLFs0LDEsIlxcbmVnIEEiXSxbNiwxLCJBIl0sWzQsMCwiXFx2ZG90cyJdLFs2LDAsIlxcdmRvdHMiXSxbMSwzLCJcXHZkb3RzIl0sWzMsMywiXFx2ZG90cyJdLFsxLDQsIkEiXSxbMyw0LCJCIl0sWzIsNSwiXFxvdGltZXMiXSxbMiw2LCJBIFxcb3RpbWVzIEIiXSxbMiw3LCJcXHZkb3RzIl0sWzQsMywiXFx2ZG90cyJdLFs2LDMsIlxcdmRvdHMiXSxbNCw0LCJBIl0sWzYsNCwiQiJdLFs1LDUsIlxccGFyciJdLFs1LDYsIkEgXFxwYXJyIEIiXSxbNSw3LCJcXHZkb3RzIl0sWzAsMCwiXFx2ZG90cyJdLFswLDEsIkEiXSxbMCwyLCJcXG9wZXJhdG9ybmFtZXtjfSJdLFswLDEsIiIsMCx7ImN1cnZlIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzAsMiwiIiwyLHsiY3VydmUiOi0yLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzEsNF0sWzIsM10sWzEwLDEyLCIiLDAseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzEyLDE0LCIiLDAseyJjdXJ2ZSI6Mn1dLFsxMywxNCwiIiwyLHsiY3VydmUiOi0yfV0sWzExLDEzLCIiLDIseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzE0LDE1LCIiLDIseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzE1LDE2XSxbMTcsMTksIiIsMix7InN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbMTgsMjAsIiIsMix7InN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbMTksMjEsIiIsMix7ImN1cnZlIjoyfV0sWzIwLDIxLCIiLDEseyJjdXJ2ZSI6LTJ9XSxbMjEsMjIsIiIsMSx7InN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbMjIsMjNdLFsyNCwyNSwiIiwxLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFsyNSwyNl0sWzgsNiwiIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFs5LDcsIiIsMCx7InN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbNyw1LCIiLDAseyJjdXJ2ZSI6LTJ9XSxbNiw1LCIiLDEseyJjdXJ2ZSI6Mn1dXQ==
+	\[\adjustbox{scale=0.65}{\begin{tikzcd}[column sep = small, row sep = small, ampersand replacement=\&]
+		\vdots \&\& \ax \&\& \vdots \&\& \vdots \\
+		A \& {\neg A} \&\& A \& {\neg A} \&\& A \\
+		{\operatorname{c}} \& \vdots \&\& \vdots \&\& \cut \\
+		\& \vdots \&\& \vdots \& \vdots \&\& \vdots \\
+		\& A \&\& B \& A \&\& B \\
+		\&\& \otimes \&\&\& \parr \\
+		\&\& {A \otimes B} \&\&\& {A \parr B} \\
+		\&\& \vdots \&\&\& \vdots
+		\arrow[curve={height=12pt}, no head, from=1-3, to=2-2]
+		\arrow[curve={height=-12pt}, no head, from=1-3, to=2-4]
+		\arrow[from=2-2, to=3-2]
+		\arrow[from=2-4, to=3-4]
+		\arrow[no head, from=4-2, to=5-2]
+		\arrow[curve={height=12pt}, from=5-2, to=6-3]
+		\arrow[curve={height=-12pt}, from=5-4, to=6-3]
+		\arrow[no head, from=4-4, to=5-4]
+		\arrow[no head, from=6-3, to=7-3]
+		\arrow[from=7-3, to=8-3]
+		\arrow[no head, from=4-5, to=5-5]
+		\arrow[no head, from=4-7, to=5-7]
+		\arrow[curve={height=12pt}, from=5-5, to=6-6]
+		\arrow[curve={height=-12pt}, from=5-7, to=6-6]
+		\arrow[no head, from=6-6, to=7-6]
+		\arrow[from=7-6, to=8-6]
+		\arrow[no head, from=1-1, to=2-1]
+		\arrow[from=2-1, to=3-1]
+		\arrow[no head, from=1-5, to=2-5]
+		\arrow[no head, from=1-7, to=2-7]
+		\arrow[curve={height=-12pt}, from=2-7, to=3-6]
+		\arrow[curve={height=12pt}, from=2-5, to=3-6]
+	\end{tikzcd}}\]
+	\end{frame}
+
+\begin{frame}
+	\frametitle{Unoriented atoms of a \emph{link}}
+		Let $\pi$ be a proof structure. To each link $l$ in $\pi$ we associate a set of unoriented atoms, denoted $[l]$. This definition depends on what type of link $l$ is.
+		\begin{center}
+			\begin{tabular}{c c}
+				Conclusion link $l$:
+				&
+				$\begin{tikzcd}[row sep = small]
+					\vdots\arrow[d,dash]\\
+					A\arrow[d]\\
+					\operatorname{c}
+				\end{tikzcd}
+				$
+			\end{tabular}
+		\end{center}
+		We define $[l]$ to be the empty set.
+		\begin{equation}
+			[l] := \varnothing
+		\end{equation}
+	\end{frame}
+
+\begin{frame}
+	\frametitle{Axiom/Cut links}
+	For Axiom/Cut links:
+	\begin{center}
+		\begin{tabular}{c c c}
+			Axiom/Cut link $l$:
+			&
+			$
+			\begin{tikzcd}[column sep = small, row sep = small, ampersand replacement=\&]
+				\& \ax\arrow[dl,bend right, dash]\arrow[dr,bend left, dash]\\
+				\neg A\arrow[d] \& \& A\arrow[d]\\
+				\vdots \& \& \vdots
+			\end{tikzcd}$
+			&
+			$
+			\begin{tikzcd}[column sep = small, row sep = small, ampersand replacement=\&]
+				\vdots\arrow[d, dash] \& \& \vdots\arrow[d, dash]\\
+				\neg A\arrow[dr,bend right] \& \& A\arrow[dl, bend left]\\
+				\& \cut
+			\end{tikzcd}$
+		\end{tabular}
+	\end{center}
+	If $A$ has set of unoriented axioms given by $\lbrace X_1,...,X_n\rbrace$ then so does $\neg A$, and we define:
+	\begin{equation}
+		[l] := \lbrace X_1,...,X_n\rbrace
+	\end{equation}
+	\end{frame}
+
+\begin{frame}
+	\frametitle{Tensor/Par links}
+	\begin{center}
+		\begin{tabular}{ c c c }
+			
+			Tensor/Par link $l$:
+			&
+			% https://q.uiver.app/?q=WzAsNyxbMCwwLCJcXHZkb3RzIl0sWzAsMSwiQSJdLFsyLDEsIkIiXSxbMSwyLCJcXG90aW1lcyJdLFsxLDMsIkEgXFxvdGltZXMgQiJdLFsxLDQsIlxcdmRvdHMiXSxbMiwwLCJcXHZkb3RzIl0sWzQsNV0sWzIsMywiIiwwLHsiY3VydmUiOi0yfV0sWzEsMywiIiwyLHsiY3VydmUiOjJ9XSxbMyw0LCIiLDIseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzYsMiwiIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFswLDEsIiIsMix7InN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XV0=
+			$\begin{tikzcd}[column sep = small, row sep = small, ampersand replacement=\&]
+				\vdots \&\& \vdots \\
+				A \&\& B \\
+				\& \otimes \\
+				\& {A \otimes B} \\
+				\& \vdots
+				\arrow[from=4-2, to=5-2]
+				\arrow[curve={height=-12pt}, from=2-3, to=3-2]
+				\arrow[curve={height=12pt}, from=2-1, to=3-2]
+				\arrow[no head, from=3-2, to=4-2]
+				\arrow[no head, from=1-3, to=2-3]
+				\arrow[no head, from=1-1, to=2-1]
+			\end{tikzcd}$
+			&
+			% https://q.uiver.app/?q=WzAsNyxbMCwwLCJcXHZkb3RzIl0sWzAsMSwiQSJdLFsyLDEsIkIiXSxbMSwyLCJcXHBhcnIiXSxbMSwzLCJBIFxccGFyciBCIl0sWzEsNCwiXFx2ZG90cyJdLFsyLDAsIlxcdmRvdHMiXSxbNCw1XSxbMiwzLCIiLDAseyJjdXJ2ZSI6LTJ9XSxbMSwzLCIiLDIseyJjdXJ2ZSI6Mn1dLFszLDQsIiIsMix7InN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbNiwyLCIiLDAseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzAsMSwiIiwyLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dXQ==
+			$\begin{tikzcd}[column sep = small, row sep = small, ampersand replacement=\&]
+				\vdots \&\& \vdots \\
+				A \&\& B \\
+				\& \parr \\
+				\& {A \parr B} \\
+				\& \vdots
+				\arrow[from=4-2, to=5-2]
+				\arrow[curve={height=-12pt}, from=2-3, to=3-2]
+				\arrow[curve={height=12pt}, from=2-1, to=3-2]
+				\arrow[no head, from=3-2, to=4-2]
+				\arrow[no head, from=1-3, to=2-3]
+				\arrow[no head, from=1-1, to=2-1]
+			\end{tikzcd}$
+		\end{tabular}
+	\end{center}
+	If $A,B$ respectively have sets of unoriented atoms $\lbrace X_1,...,X_n\rbrace, \lbrace Y_1,...,Y_m\rbrace$ then the set of unoriented atoms of $A \otimes B$ and of $A \parr B$ is $\lbrace X_1,...,X_n, Y_1,...,Y_m\rbrace$, we define $[l]$ to be this set:
+	\begin{equation}
+		[l] := \lbrace X_1,...,X_n, Y_1,...,Y_m\rbrace
+	\end{equation}
+	\end{frame}
+
+\begin{frame}
+	\frametitle{Total space}
+	Let $\pi$ be a proof structure with associated set of links $\call{L}$. The exterior algebra of the complex Hilbert space freely generated by the set $[l]$ of unoriented atoms of $l$. $\psi_X^l$ is the basis element corresponding to $X \in [l]$.
+	\begin{equation*}
+		\call{H}_{l} := \bigwedge \bigoplus_{X \in [l]}\bb{C} \psi_X^l
+	\end{equation*}
+	\begin{equation*}
+		\call{H}_\pi := \bigwedge \bigoplus_{l \in \call{L}}\bigoplus_{X \in [l]}\bb{C}\psi_X^l \stackrel{\ast}{\cong} \otimes_{l \in \call{L}, X \in [l]}\bb{C} \psi_X^l
+	\end{equation*}
+The \emph{set of qubits} $[\pi]$ of $\pi$ is the following disjoint union, where $\call{L}$ is the set of links of $\pi$.
+\begin{equation}
+	[\pi] := \coprod_{l \in \call{L}}[l]
+\end{equation}
+Notice that there are two copies of the atomic axioms coming from premises to cut links in $[\pi]$.
+
+$(\ast)$ A \emph{qubit ordering} of $\pi$ is a bijection between $[\pi]$ and $\lbrace 1,...,r\rbrace$ where $r$ is the number of elements of $[\pi]$.
+	\end{frame}
+
+\begin{frame}
+	\frametitle{Annihilation and creation operators}
+	Given a generator $\psi_i$:
+	\begin{equation*}
+		\psi_i: \bigwedge^d \bb{C} \underline{\psi} \lto \bigwedge^{d+1}\bb{C} \underline{\psi}
+	\end{equation*}
+	which behaves as follows on the basis vectors:
+	\begin{equation*}
+		\psi_{i_1} \wedge \hdots \wedge \psi_{i_d} \longmapsto \psi_i \wedge \psi_{i_1} \wedge \hdots \wedge \psi_{i_d}
+	\end{equation*}
+	Associated to any element $\eta$ of the vector space $(\bigoplus_{i = 1}^n \bb{C} \psi_i)^\ast$ dual to the vector space $\bigoplus_{i = 1}^n \bb{C} \psi_i$ there is a linear map:
+	\begin{equation*}
+		\eta_{\lrcorner}: \bigwedge^d\bb{C}\underline{\psi} \lto \bigwedge^{d-1}\bb{C}\underline{\psi}
+	\end{equation*}
+	behaving as follows on the basis vectors:
+	\begin{equation*}\label{eq:explicit}
+		\psi_{i_1} \wedge \hdots \wedge \psi_{i_d} \lto \sum_{j = 1}^d (-1)^{j-1}\eta(\psi_{i_j})\psi_{i_1} \wedge \hdots \wedge \hat{\psi}_{i_j} \wedge \hdots \wedge \psi_{i_d}
+	\end{equation*}
+	\end{frame}
+
+\begin{frame}
+	\frametitle{Bit operators}
+	\begin{lemma}
+		Let $B_i : \{ 0,1\}^n \lto \{ 0,1 \}^n$ send $a_1 \ldots a_n$ to $a_1 \ldots \overline{a_i}\ldots a_n$ where $\overline{0} = 1, \overline{1} = 0$. Then
+		\begin{align*}
+			(\psi_i + \psi_i^\ast)\psi^{\underline{a}} &= (-1)^{a_1 + \ldots + a_{i-1}}\psi^{B_i(\underline{a})}\\
+			(\psi_i - \psi_i^\ast)\psi^{\underline{a}} &= (-1)^{a_1 + \ldots + a_i}\psi^{B_i(\underline{a})}
+		\end{align*}
+	\end{lemma}
+we define the following linear functions on $\bigwedge \bb{C}\psi_{U_1} \otimes \hdots \otimes \bigwedge \bb{C}\psi_{U_r}$, for $i = 1,...,r$, determined by linearity along with the following equations.
+\begin{equation*}
+	X_i(\psi^{\underline{a}}) = \psi^{B_i(\underline{a})}\qquad Z_i(\psi^{\underline{a}}) = 
+	\begin{cases}
+		\psi^{\underline{a}},& a_i = 0\\
+		-\psi^{\underline{a}}, & a_i = 1
+	\end{cases}
+\end{equation*}
+	\end{frame}
+
+\begin{frame}
+	\frametitle{Edges}
+	Let $\pi$ be a proof structure and $v,v'$ vertices respectively corresponding to links $l, l'$ which are not conclusion links. Let $e: v \lto v'$ be an edge and let $A$ be the formula labelling $e$. For every oriented atom $(U,y_u)$ of $A$ we have a corresponding generator $\psi_U \in \call{H}_l$ and $\psi_U'\in \call{H}_{l'}$. The \emph{edge operator} associated to $e$ and $U$ is:
+	\begin{equation*}
+		\Theta_U^{l \lto l'} := y_u(\psi_U' - y_u \psi_U'^{\ast})(\psi_U + y_u \psi_U^\ast): \call{H}_\pi \lto \call{H}_\pi
+	\end{equation*}
+	Ranging over all edges $e: v \lto v' \in E$ of $\pi$, where the vertices $v,v'$ respectively correspond to links $l,l'$ and every unoriented atom $U \in [A]$ of the formula $A$ labelling $e$, we obtain the \emph{stabilisers} of $\pi$.
+	\begin{equation*}
+		S_\pi := \lbrace \Theta_U^{l \lto l'}\rbrace_{e \in E, U \in [A]}
+	\end{equation*}
+	\end{frame}
+
+\begin{frame}
+	\begin{lemma}
+		Choose a qubit ordering $U_1 < \hdots < U_r$ of $\pi$. Choose an edge $e: v \lto v'$, where $v,v'$ respectively correspond to links $l, l'$ connecting non-conclusion links. Let $(U,y_u)$ be an oriented atom of the formula $A$ labelling $e$ and suppose the corresponding unoriented atoms of the links are $U_i \in [l], U_j \in [l']$ as in the diagram below.
+		% https://q.uiver.app/?q=WzAsNCxbMiwwLCJBIl0sWzEsMF0sWzAsMCwiXFxzdGFja3JlbHtsfXtcXGJ1bGxldH0iXSxbNCwwLCJcXHN0YWNrcmVse2wnfXtcXGJ1bGxldH0iXSxbMiwwLCJVX2kiLDAseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzAsMywiVV9qIl0sWzAsMiwiXFxjYWxse0h9X2kiLDAseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzMsMCwiXFxjYWxse0h9X2oiLDAseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV1d
+		\[\begin{tikzcd}[ampersand replacement=\&]
+			{\stackrel{l}{\bullet}} \& {} \& A \&\& {\stackrel{l'}{\bullet}}
+			\arrow["{U_i}", no head, from=1-1, to=1-3]
+			\arrow["{U_j}", from=1-3, to=1-5]
+			\arrow["{\call{H}_i}", no head, from=1-3, to=1-1]
+			\arrow["{\call{H}_j}", no head, from=1-5, to=1-3]
+		\end{tikzcd}\]
+		Let $\Theta_U$ be the corresponding edge operator on $\call{H}_\pi$.
+		\begin{enumerate}
+			\item If $y_u = +$ and $j < i$ the following diagram commutes, in what follows the morphism $Q$.
+			\begin{equation*}\label{eq:XZZX}
+				\begin{tikzcd}[ampersand replacement=\&]
+					\bigwedge \bb{C} \psi_{U_1} \otimes \hdots \otimes \bigwedge \bb{C}\psi_{U_r}\arrow[r,"{Q}"]\arrow[d,swap,"{X_jZ_{j+1}\hdots Z_{i-1}X_i}"] \& \call{H}_\pi\arrow[d,"{\Theta_U}"]\\
+					\bigwedge \bb{C} \psi_{U_1} \otimes \hdots \otimes \bigwedge \bb{C}\psi_{U_r}\arrow[r,swap,"{Q}"] \& \call{H}_\pi
+				\end{tikzcd}
+			\end{equation*}
+		\end{enumerate}
+	\end{lemma}
+\end{frame}
+
+\begin{frame}
+	\frametitle{The QECC corresponding to a proof net}
+	The \emph{Quantum Error Correcting Code} $\llbracket \pi \rrbracket$ associated to a proof structure $\pi$ is the pair consisting of the Hilbert space $\call{H}_\pi$ and the stabiliser code $S_\pi$.
+	\begin{equation*}
+		\llbracket \pi \rrbracket := (\call{H}_\pi, S_\pi)
+	\end{equation*}
+	The \emph{codespace} of $\pi$ is the invariant subspace
+	\begin{equation*}
+		\call{H}_{\pi}^{S_\pi} = \{ \ket{\varphi} \in \call{H}_\pi \mid \forall X \in S_\pi, X\ket{\psi} = \ket{\psi} \}
+	\end{equation*}
+	\end{frame}
+
+\begin{frame}
+	\frametitle{Dynamics}
+	\begin{thm}[The Reduction Theorem]\label{thm:cut_model}
+		For each reduction $\gamma: \pi \lto \pi'$ there exists a subset $C_\pi \subseteq S_\pi$ and an isomorphism:
+		\begin{equation}
+			\hat{\gamma}: \call{H}_{\pi'} \lto \call{H}_\pi^{C_\pi}
+		\end{equation}
+		such that for every $g \in S_\pi \setminus C_\pi$ there is a unique $g' \in S_{\pi'}$ making the following diagram commute:
+		\begin{equation}\label{eq:cut_model_square}
+			\begin{tikzcd}[ampersand replacement=\&]
+				\call{H}_{\pi'}\arrow[r,"{\hat{\gamma}}"]\arrow[d,"{g'}"] \& \call{H}_{\pi}^{C_\pi}\arrow[d,swap,"{g}"]\\
+				\call{H}_{\pi'}\arrow[r,"\hat{\gamma}"] \& \call{H}_{\pi}^{C_\pi}
+			\end{tikzcd}
+		\end{equation}
+		and this map $g \longmapsto g'$ is a bijection $S_\pi \setminus C_\pi \lto S_{\pi'}$.
+	\end{thm}
+	\end{frame}
+
+\begin{frame}
+	We label the relevant links of $\pi,\pi'$ according to the following diagram.
+	% https://q.uiver.app/?q=WzAsMTAsWzQsMCwiXFxzdGFja3JlbHtsfXtcXGJ1bGx9Il0sWzQsMSwiQSJdLFszLDIsIlxcc3RhY2tyZWx7bF97XFxjdXR9fXtcXGN1dH0iXSxbMiwxLCJcXG5lZyBBIl0sWzEsMCwiXFxzdGFja3JlbHtsX1xcYXh9e1xcYXh9Il0sWzAsMSwiQSJdLFswLDIsIlxcdmRvdHMiXSxbNSwwLCJcXHN0YWNrcmVse2x9e1xcYnVsbH0iXSxbNSwxLCJBIl0sWzUsMiwiXFx2ZG90cyJdLFs1LDZdLFs0LDUsIiIsMCx7ImN1cnZlIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzQsMywiIiwyLHsiY3VydmUiOi0yLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzMsMiwiIiwyLHsiY3VydmUiOjJ9XSxbMSwyLCIiLDAseyJjdXJ2ZSI6LTJ9XSxbMCwxLCIiLDAseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzcsOCwiIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFs4LDldXQ==
+	\begin{equation}\label{eq:a_redex_labelling}
+		\begin{tikzcd}[column sep = small, row sep = small, ampersand replacement=\&]
+			\& {\stackrel{l_{\ax}}{\ax}} \&\&\& {\stackrel{l}{\bullet}} \& {\stackrel{l}{\bullet}} \\
+			A \&\& {\neg A} \&\& A \& A \\
+			\stackrel{m}{\bullet} \&\&\& {\stackrel{l_{\cut}}{\cut}} \&\& \stackrel{m}{\bullet}
+			\arrow[from=2-1, to=3-1]
+			\arrow[curve={height=12pt}, no head, from=1-2, to=2-1]
+			\arrow[curve={height=-12pt}, no head, from=1-2, to=2-3]
+			\arrow[curve={height=12pt}, from=2-3, to=3-4]
+			\arrow[curve={height=-12pt}, from=2-5, to=3-4]
+			\arrow[no head, from=1-5, to=2-5]
+			\arrow[no head, from=1-6, to=2-6]
+			\arrow[from=2-6, to=3-6]
+		\end{tikzcd}
+	\end{equation}
+	For each oriented atom $(U,y)$ of $A$ we define a $\bb{Z}_2$-degree zero map for $y = +$ by:
+	\begin{align}
+		\gamma_U: \bigwedge \bb{C} \psi_U^l &\lto \bigwedge \bb{C} \psi_U^l \otimes \bigwedge \bb{C} \psi_U^{l_{\cut}} \otimes \bigwedge \bb{C} \psi_U^{l_{\ax}}\label{eq:oriented_ax_cod}\\
+		\ket{j} &\longmapsto \frac{1}{\sqrt{2}}(\ket{+++} + (-1)^j\ket{---})
+	\end{align}
+	If $y = -$ then $\gamma_U$ has the same domain and formula, but its codomain is:
+	\begin{equation}
+		\bigwedge \bb{C}\psi_{U}^{l_{\ax}} \otimes \bigwedge \bb{C}\psi_{U}^{l_{\cut}} \otimes \bigwedge \bb{C}\psi_U^{l}
+	\end{equation}
+	\end{frame}
+
+\begin{frame}
+	\frametitle{Making the dynamics of the model precise...}
+	The remaining question:
+		\begin{equation*}
+			\call{H} \longmapsto \call{H}^{C_\pi}
+			\end{equation*}
+		In fact, Quantum Error Correction can be recast in the framework of \emph{normalisation}, which is a deep idea coming from physics, which allows us to talk about the same quantum system but at different \emph{scales}. It is more natural to think of the process of transforming $\call{H}_\pi$ to $\call{H}_\pi^{C_\pi}$ in the language of renormalisation, and indeed that is what we are currently making precise.
+	\end{frame}
+
+\begin{frame}[allowframebreaks]
+	\begin{thebibliography}{9}
+		\bibitem{Boole} G.~Boole, \textsl{An Investigation into the Laws of Thought} (1854).
+		\bibitem{Grobner} D. Cox, J. Little, D. O'Shea, \emph{Ideals, Varieties, and Algorithms} Fourth Edition, Springer (2015).
+		
+		\bibitem{girard_llogic}
+		J.-Y.~Girard, \textsl{Linear Logic}, Theoretical Computer Science 50 (1), 1--102 (1987).
+		
+		\bibitem{Girard} J.-Y.~Girard, \emph{Multiplicatives}, Logic and Computer Science: New Trends and Applications. Rosenberg \& Sellier. pp. 11–34 (1987).
+		
+		\bibitem{towards_goi}
+		J.-Y.~Girard, \textsl{Towards a geometry of interaction}, In J.~W.~Gray and A.~Scedrov, editors, Categories in Computer Science and Logic, volume 92 of Contemporary Mathematics, 69--108, AMS (1989).
+		
+		\bibitem{bs}
+		J.-Y.~Girard, \textsl{The Blind Spot: lectures on logic}, European Mathematical Society, (2011).
+		
+		\bibitem{proofstypes}
+		J.-Y.~Girard, Y.~Lafont, and P.~Taylor, \textsl{Proofs and Types}, Cambridge Tracts in Theoretical Computer Science 7 ,Cambridge University Press (1989).
+		
+		\bibitem{howard} W.~A.~Howard, \textsl{The formulae-as-types notion of construction}, in Seldin and Hindley \textsl{To H.B.Curry: essays on Combinatory logic, Lambda calculus and Formalism}, Academic press (1980).
+		
+		\bibitem{Laurent} O. Laurent, \emph{An Introduction to Proof Nets}, \url{http://perso.ens-lyon.fr/olivier.laurent/pn.pdf} (2013).
+		
+		\bibitem{murfet_ll}
+		D.~Murfet, \textsl{Logic and Linear Algebra: An Introduction}, preprint \url{https://arxiv.org/abs/1407.2650v3} (2017).
+		
+		\bibitem{gmz} D.~Murfet and W.~Troiani, \textsl{{G}entzen-{M}ints-{Z}ucker duality}, preprint \url{https://arxiv.org/abs/2008.10131} (2020).
+		
+		\bibitem{Troiani} W. Troiani, \emph{Linear logic}, lecture notes \url{https://williamtroiani.github.io/MathNotes/LinearLogic.pdf} (2020).
+		\end{thebibliography}
+	\end{frame}
+	
+\end{document}

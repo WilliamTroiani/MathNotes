@@ -1,0 +1,491 @@
+\documentclass[english,letter paper,12pt,leqno]{article}
+
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{mathrsfs}
+\usepackage{amssymb}
+\usepackage{units}
+\usepackage{graphicx}
+\usepackage{tikz-cd}
+\usepackage{nicefrac}
+\usepackage{hyperref}
+\usepackage{bbm}
+\usepackage{color}
+\usepackage{tensor}
+\usepackage{tipa}
+\usepackage{bussproofs}
+\usepackage{ stmaryrd }
+\usepackage{ textcomp }
+\usepackage{leftidx}
+\usepackage{afterpage}\usepackage{array}
+\usepackage{stmaryrd}
+\usepackage[all]{xy}
+\xyoption{rotate}
+\usepackage{dsfont}
+\usepackage{bussproofs}
+\usepackage{tikz}
+\usepackage{epigraph}
+\usepackage{tikz-cd}
+\usepackage{bbm}
+\usepackage{csquotes}
+\newcommand{\call}[1]{\mathcal{#1}}
+\newcommand{\psheaf}{\text{\underline{Set}}^{\scr{C}^{\text{op}}}}
+\newcommand{\und}[1]{\underline{\hspace{#1 cm}}}
+\newcommand{\adj}[1]{\text{\textopencorner}{#1}\text{\textcorner}}
+\newcommand{\comment}[1]{}
+
+% Operators
+\def\can{\operatorname{can}}
+\def\Hom{\operatorname{Hom}}
+\def\be{\begin{equation}}
+	\def\ee{\end{equation}}
+\def\nN{\mathds{N}}
+\def\nZ{\mathds{Z}}
+\def\nQ{\mathds{Q}}
+\def\nR{\mathds{R}}
+\def\nC{\mathds{C}}
+\def\ldot{\,.\,}
+\def\FV{\operatorname{FV}}
+\def\jac{\operatorname{Jac}_W}
+\DeclareMathOperator{\id}{id}
+\def\typearrow{\rightarrow}
+\def\imp{\supset}
+\newcommand{\bb}[1]{\mathbb{#1}}
+\newcommand{\scr}[1]{\mathscr{#1}}
+
+\def\can{\operatorname{can}}
+\def\Hom{\operatorname{Hom}}
+\def\be{\begin{equation}}
+	\def\ee{\end{equation}}
+\def\nN{\mathds{N}}
+\def\nZ{\mathds{Z}}
+\def\nQ{\mathds{Q}}
+\def\nR{\mathds{R}}
+\def\nC{\mathds{C}}
+\def\ldot{\,.\,}
+\def\typearrow{\Rightarrow}
+\def\FV{\operatorname{FV}}
+\def\jac{\operatorname{Jac}_W}
+% Commands
+\newcommand{\proofvdots}[1]{\overset{\displaystyle #1}{\rvdots}}
+\def\Res{\res\!}
+\newcommand{\ud}{\mathrm{d}}
+\newcommand{\Ress}[1]{\res_{#1}\!}
+\newcommand{\cat}[1]{\mathcal{#1}}
+\newcommand{\lto}{\longrightarrow}
+\newcommand{\xlto}[1]{\stackrel{#1}\lto}
+\newcommand{\md}[1]{\mathscr{#1}}
+\def\sus{\l}
+\def\l{\,|\,}
+\def\sgn{\textup{sgn}}
+\def\samp{\zeta}
+\def\Samp{Z}
+\def\traff{N}
+
+
+\SelectTips{cm}{}
+
+\setlength{\evensidemargin}{0.1in}
+\setlength{\oddsidemargin}{0.1in}
+\setlength{\textwidth}{6.3in}
+\setlength{\topmargin}{0.0in}
+\setlength{\textheight}{8.5in}
+\setlength{\headheight}{0in}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{thm}[theorem]{Theorem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{cor}[theorem]{Corollary}
+\newtheorem{setup}[theorem]{Setup}
+\newtheorem{defn}[theorem]{Definition}
+\newtheorem{algorithm}[theorem]{Algorithm}
+\newtheorem{question}{Question}
+
+% Labels in tabular
+\newcommand{\tagarray}{\mbox{}\refstepcounter{equation}$(\theequation)$}
+
+\newtheoremstyle{example}{\topsep}{\topsep}
+{}
+{}
+{\bfseries}
+{.}
+{2pt}
+{\thmname{#1}\thmnumber{ #2}\thmnote{ #3}}
+
+\theoremstyle{example}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{desi}[theorem]{Desiderata}
+
+\numberwithin{equation}{section}
+
+% Will stuff}
+
+% Operators
+\def\can{\operatorname{can}}
+\def\Hom{\operatorname{Hom}}
+\def\be{\begin{equation}}
+\def\ee{\end{equation}}
+\def\nN{\mathds{N}}
+\def\nZ{\mathds{Z}}
+\def\nQ{\mathds{Q}}
+\def\nR{\mathds{R}}
+\def\nC{\mathds{C}}
+\def\ldot{\,.\,}
+\def\FV{\operatorname{FV}}
+\def\jac{\operatorname{Jac}_W}
+\def\typearrow{\rightarrow}
+\def\imp{\supset}
+
+\title{Shadows of Computation, Lecture 5}
+\author{Will Troiani}
+\date{September 2022}
+
+\begin{document}
+
+\maketitle
+
+\section{The untyped $\lambda$-calculus}
+\begin{defn}
+	\label{lambdacalc}
+	Let $\scr{V}$ be a (countably) infinite set of variables, and let $\scr{L}$ be the language consisting of $\scr{V}$ along with the special symbols 
+	\[\lambda \qquad . \qquad ( \qquad )\]
+	Let $\scr{L}^\ast$ be the set of words of $\scr{L}$, more precisely, an element $w \in \scr{L}^\ast$ is a finite sequence $(w_1,...,w_n)$ where each $w_i$ is in $\scr{L}$, for convenience, such an element will be written as $w_1...w_n$. Now let $\Lambda_p$ denote the smallest subset of $\scr{L}^\ast$ such that
+	\begin{itemize}
+		\item if $x \in \scr{V}$ then $x \in \Lambda_p$,
+		\item if $M,N \in \Lambda_p$ then $(MN) \in \Lambda_p$,
+		\item if $x \in \scr{V}$ and $M \in \Lambda_p$ then $(\lambda x. M) \in \Lambda_p$
+	\end{itemize}
+	$\Lambda_p$ is the set of \textbf{preterms}. A preterm $M$ such that $M \in \scr{V}$ is a \textbf{variable}, if $M = (M_1M_2)$ for some preterms $M_1,M_2$, then $M$ is an \textbf{application}, and if $M = (\lambda x, M')$ for some $x \in \scr{V}$ and $M' \in \Lambda_p$ then $M$ is an \textbf{abstraction}.
+\end{defn}
+In practice, it becomes unwieldy to use this notation for the preterms exactly, and so the following notation is adopted:
+\begin{defn}
+	\begin{itemize}
+		\item For preterms $M_1,M_2,M_3$, the preterm $M_1M_2M_3$ means $((M_1M_2)M_3))$,
+		\item For variables $x,y$ and a preterm $M$, the preterm $\lambda xy. M$ means $(\lambda x. (\lambda y. M))$.
+	\end{itemize}
+\end{defn}
+The variables $x$ which appear in the subpreterm $M$ of a preterm $\lambda x. M$ are viewed as ``markers for substitution", (see Remark \ref{markersforsubstitution}). For this reason, a distinction is made between the variable $x$ and the variable $y$ in, for example, the preterm $\lambda x. xy$:
+\begin{defn}
+	Given a preterm $M$, let $\text{FV}(M)$ be the following set of variables, defined recursively
+	\begin{itemize}
+		\item if $M = x$ where $x$ is a variable then $\text{FV}(M) = \lbrace x \rbrace$,
+		\item if $M = M_1M_2$ then $\text{FV}(M) = \text{FV}(M_1) \cup \text{FV}(M_2)$,
+		\item if $M = \lambda x. M'$ then $\text{FV}(M) = \text{FV}(M') \setminus \lbrace x \rbrace$.
+	\end{itemize}
+	A variable $x \in \text{FV}(M)$ is a \textbf{free variable} of $M$, a variable $x$ which appears in $M$ but is not a free variable is a \textbf{bound variable}.
+\end{defn}
+As mentioned, bound variables will be viewed as ``markers for substitution", so we define the following equivalence relation on $\Lambda_p$ which relates a preterm $M$ to $M'$ if $M$ can be obtained by replacing every bound occurrence of a variable $x$ in $M'$ with another variable $y$:
+\begin{defn}
+	For any term $M$, let $M[x := y]$ be the preterm given by replacing every bound occurrence of $x$ in $M$ with $y$. Define the following equivalence relation on $\Lambda_p$: $M \sim_\alpha M'$ if there exists $x,y \in \scr{V}$ such that $M[x := y] = M'$, where no free variable of $M$ becomes bound in $M[x := y]$. In such a case, we say that $M$ is \textbf{$\alpha$-equivalent} to $M'$.
+\end{defn}
+\begin{remark}
+	The reason why we need to let $x$ and $y$ be such that no free variable of $M$ becomes bound in $M[x:=y]$ is so that a preterm such as $\lambda x. y$ does not get identified with the preterm $\lambda y. y$.
+\end{remark}
+We are now in a position to define the underlying language of $\lambda$-calculus:
+\begin{defn}
+	Let $\Lambda = \nicefrac{\Lambda_p}{\sim_\alpha}$ be the set of \textbf{$\lambda$-terms}. The set of \textbf{free variables} of a $\lambda$-term $[M]$ is $\text{FV}(M)$, which can be shown to be well defined. For convenience, $M$ will be written instead of $[M]$.
+\end{defn}
+Now the dynamics of the computation of $\lambda$-terms will be defined.
+\begin{defn}
+	\textbf{Single step $\beta$-reduction} $\to_\beta$ is the smallest relation on $\Lambda$ satisfying:
+	\begin{itemize}
+		\item the \textbf{reduction axiom}:
+		\begin{itemize}
+			\item for all variables $x$ and $\lambda$-terms $M,M'$, $(\lambda x. M)M' \to_\beta M[x := M']$, where $M[x:= M']$ is the term given by replacing every free occurrence of $x$ in $M$ with $M'$,
+		\end{itemize}
+		\item the following \textbf{compatibility axioms}:
+		\begin{itemize}
+			\item if $M \to_\beta M'$ then $(MN) \to_\beta (M'N)$ and $(NM) \to_\beta (NM')$,
+			\item if $M \to_\beta M'$ then for any variable $x$, $\lambda x. M \to_\beta \lambda x M'$.
+		\end{itemize}
+	\end{itemize}
+	A subterm of the form $(\lambda x. M)M'$ is a \textbf{$\beta$-redex}, and $(\lambda x. M)M'$ \textbf{single step $\beta$-reduces} to $M[x := M']$.
+\end{defn}
+\begin{remark}
+	Strictly, single step $\beta$-reduction should be defined on preterms and then shown that a well defined relation is induced on terms, but this level of detail has been omitted for the sake of clarity.
+\end{remark}
+\begin{remark}
+	\label{markersforsubstitution}
+	The reduction axiom shows precisely in what sense a bound variable is a ``marker for substitution". For example, $(\lambda x.x)M \to_\beta M$ and $(\lambda y.y)M \to_\beta M$, which is why $\lambda x.x$ is identified with $\lambda y.y$.
+\end{remark}
+It is through single step $\beta$-reduction that computation may be performed. In fact, $\lambda$-calculus is capable of performing natural number addition:
+\begin{example}
+	\label{plusonetwo}
+	Define the following $\lambda$-terms:
+	\begin{itemize}
+		\item ONE := $\lambda f x . fx$,
+		\item TWO := $\lambda f x . ffx$,
+		\item THREE := $\lambda fx. fffx$,
+		\item PLUS := $\lambda mnfx. mf(nfx)$
+	\end{itemize}
+	then
+	\begin{align*}
+		PLUS\text{ }ONE\text{ }TWO &= (\lambda mnfx. \underline{m}f(nfx))\underline{(\lambda f x . fx)}(\lambda f x . ffx)\\
+		&\to_\beta (\lambda nfx. (\lambda f x . \underline{f}x)\underline{f}(nfx))(\lambda f x . ffx)\\
+		&\to_\beta (\lambda nfx. (\lambda x . f\underline{x})\underline{(nfx)})(\lambda f x . ffx)\\
+		&\to_\beta (\lambda nfx. f\underline{n}fx)\underline{(\lambda f x . ffx)}\\
+		&\to_\beta (\lambda fx. f(\lambda f x . \underline{f}\underline{f}x)\underline{f}x)\\
+		&\to_\beta (\lambda fx. f(\lambda  x . ff\underline{x})\underline{x})\\
+		&\to_\beta (\lambda fx. fffx) = THREE
+	\end{align*}
+	where each step is obtained by substituting the right most underlined $\lambda$-term inplace of the left most underlined variable.
+\end{example}
+Historically, this is how Church first defined computable functions.
+
+There is also $\eta$-expansion, which is defined similarly.
+
+\begin{defn}\label{def:eta}
+	\textbf{Single step $\eta$-expansion} $\lto_\eta$ is the smallest, compatible relation on $\Lambda$ satisfying:
+	\begin{equation}
+		M \lto_\eta \lambda x. Mx
+	\end{equation}
+	where $x$ is a variable not in the free variable set of $M$. \textbf{Multi step $\eta$-expansion} is the reflexive closure of single step $\eta$-expansion. \textbf{$\eta$-equivalence} is the reflexive, symmetric closure of multi step $\eta$-expansion.
+	
+	\textbf{$\beta\eta$-equivalence} is the union of $\eta$-equivalence and $\beta$-equivalence.
+\end{defn}
+
+\section{Simply typed $\lambda$-calculus}
+In the simply-typed $\lambda$-calculus \cite[Chapter 3]{sorensen} there is an infinite set of \emph{atomic types} and the set $\Phi_{\typearrow}$ of \emph{simple types} is built up from the atomic types using $\typearrow$. Let $\Lambda'$ denote the set of untyped $\lambda$-calculus preterms in these variables, as defined in \cite[Chapter 1]{sorensen}. We define a subset $\Lambda'_{wt} \subseteq \Lambda'$ of \emph{well-typed} preterms, together with a function $t: \Lambda'_{wt} \lto \Phi_{\typearrow}$ by induction:
+\begin{itemize}
+	\item all variables $x : \sigma$ are well-typed and $t(x) = \sigma$,
+	\item if $M = (P \, Q)$ and $P,Q$ are well-typed with $t(P) = \sigma \typearrow \tau$ and $t(Q) = \sigma$ for some $\sigma, \tau$ then $M$ is well-typed and $t(M) = \tau$,
+	\item if $M = \lambda x\ldot N$ with $N$ well-typed, then $M$ is well-typed and $T(M) = t(x) \typearrow t(N)$.
+\end{itemize}
+We define $\Lambda'_\sigma = \{ M \in \Lambda'_{wt} \l t(M) = \sigma \}$ and call these \emph{preterms of type $\sigma$}. Next we observe that $\Lambda'_{wt} \subseteq \Lambda'$ is closed under the relation of $\alpha$-equivalence on $\Lambda'$, as long as we understand $\alpha$-equivalence type by type, that is, we take
+\[
+\lambda x \ldot M =_\alpha \lambda y\ldot M[x := y]
+\]
+as long as $t(x) = t(y)$. Denoting this relation by $=_\alpha$, we may therefore define the sets of \emph{well-typed $\lambda$-terms} and \emph{well-typed $\lambda$-terms of type $\sigma$}, respectively:
+\begin{align}
+	\Lambda_{wt} &= \Lambda'_{wt} / =_\alpha\,\\
+	\Lambda_\sigma &= \Lambda'_\sigma / =_\alpha\,.
+\end{align}
+Note that $\Lambda_{wt}$ is the disjoint union over all $\sigma \in \Phi_{\typearrow}$ of $\Lambda_\sigma$. We write $M: \sigma$ as a synonym for $[M] \in \Lambda_\sigma$, and call these equivalence classes \emph{terms of type $\sigma$}. Since terms are, by definition, $\alpha$-equivalence classes, the expression $M = N$ henceforth means $M =_\alpha N$ unless indicated otherwise. We denote the set of free variables of a term $M$ by $\FV(M)$.
+
+\section{The category of $\lambda$-terms}
+We define a category $\call{L}$ whose objects are the types of simply-typed $\lambda$-calculus, and whose morphisms are the terms of that calculus. The natural desiderata for such a category are that the fundamental algebraic structure of $\lambda$-calculus, function application and lambda abstraction, should be realised by categorical algebra.
+
+Following Church's original presentation our $\lambda$-calculus only contains function types and $\Phi_{\typearrow}$ denotes the set of simple types. We write $\Lambda_\sigma$ for the set of $\alpha$-equivalence classes of $\lambda$-terms of type $\sigma$, and we write $=_{\beta\eta}$ for the equivalence relation generated by $\beta\eta$ equivalence.
+
+\begin{definition}[(Category of $\lambda$-terms)]\label{definition:lambda_cat} The category $\call{L}$ has objects
+	\[
+	\operatorname{ob}(\call{L}) = \Phi_{\typearrow} \cup \{ \bold{1} \}
+	\]
+	and morphisms given for types $\sigma, \tau \in \Phi_{\typearrow}$ by
+	\begin{align*}
+		\call{L}(\sigma, \tau) &= \Lambda_{\sigma \typearrow \tau}/\!=_{\beta\eta}\,\\
+		\call{L}(\bold{1}, \sigma) &= \Lambda_{\sigma}/\!=_{\beta\eta}\,\\
+		\call{L}(\sigma, \bold{1}) &= \{ \star \}\,\\
+		\call{L}(\bold{1},\bold{1}) &= \{ \star \}\,,
+	\end{align*}
+	where $\star$ is a new symbol. For $\sigma, \tau, \rho \in \Phi_{\typearrow}$ the composition rule is the function
+	\begin{align}
+		\label{eq:tttt}\call{L}(\tau, \rho) \times \call{L}(\sigma, \tau) &\longrightarrow \call{L}(\sigma, \rho)\\
+		(N,M) &\longmapsto \lambda x^\sigma \ldot (N (M x))
+	\end{align}
+	where $x \not\in \FV(N) \cup \FV(M)$. We write the composite as $N \circ M$. In the remaining special cases the composite is given by the rules
+	\begin{align}
+		\label{eq:ttct}\call{L}(\tau, \rho) \times \call{L}(\bold{1}, \tau) \longrightarrow \call{L}(\bold{1}, \rho)\,, \qquad & N \circ M = (N \, M)\,,\\
+		\label{eq:ctcc}\call{L}(\bold{1}, \rho) \times \call{L}(\bold{1}, \bold{1}) \longrightarrow \call{L}(\bold{1}, \rho)\,, \qquad & N \circ \star = N\,,\\
+		\label{eq:cttc}\call{L}(\bold{1}, \rho) \times \call{L}(\sigma, \bold{1}) \longrightarrow \call{L}(\sigma, \rho)\,, \qquad & N \circ \star = \lambda t^\sigma \ldot N\,,
+	\end{align}
+	where in the final rule $t \notin \FV(N)$. Notice that these functions, although their rules depend on representatives of equivalence classes, are none-the-less well defined.
+\end{definition}
+
+For terms $M,N$ the expression $M = N$ always means equality of terms (that is, up to $\alpha$-equivalence) and we write $M =_{\beta\eta} N$ if we want to indicate equality up to $\beta\eta$-equivalence (for example as morphisms in the category $\call{L}$). Let $\twoheadrightarrow_\beta$ denote multi-step $\beta$-reduction \cite[Definition 1.3.3]{sorensen}.
+
+\begin{lemma}\label{lemma:beta_reduce_FV} If $M \twoheadrightarrow_\beta N$ then $\FV(N) \subseteq \FV(M)$.
+\end{lemma}
+%\begin{proof}
+%In a one-step $\beta$-reduction $((\lambda x \ldot P) Q) \rightarrow_\beta P[x:=Q]$ the free variables on the reduced term were either already free in $P$ or $Q$.
+%\end{proof}
+
+\begin{definition} Given a term $M$ we define
+	\[
+	\FV_\beta(M) = \bigcap_{N =_{\beta} M} \FV(N)
+	\]
+	where the intersection is over all terms $N$ which are $\beta$-equivalent to $M$. 
+\end{definition}
+
+We prove that we have a category.
+
+The following calculation shows that $\id_\sigma \in \cat{L}(\sigma, \sigma)$ is an identity at $\sigma$.
+Observe that for a term $M: \sigma \typearrow \tau$, we have
+\begin{align*}
+	\lambda t^\sigma \ldot (M (\id_\sigma t)) &= \lambda t^\sigma \ldot (M ((\lambda x^\sigma \ldot x) t))\\
+	&=_\beta \lambda t \ldot (M t)\\
+	&=_\eta M\,,
+\end{align*}
+and similarly $\lambda s^\tau \ldot (\id_\tau (M s)) =_{\beta\eta} M$. Moreover, $\star$ is clearly an identity at $\bold{1}$. For associativity there are a few cases to check:
+\begin{itemize}
+	\item Consider a diagram of objects and morphisms in $\cat{L}$ of the form:
+	\be
+	\xymatrix@C+2pc{
+		\delta & \rho \ar[l]_-{P} & \tau \ar[l]_-{N} & \sigma \ar[l]_-{M}\,.
+	}
+	\ee
+	\begin{align*}
+		P \circ (N \circ M) &= \lambda y^\sigma \ldot (P (N \circ M \,y))\\
+		&= \lambda y^\sigma \ldot (P ((\lambda x^\sigma \ldot (N (M x))) y))\\
+		&=_\beta \lambda y^\sigma \ldot (P (N (M y)))\\
+		&=_\beta (P \circ N) \circ M\,.
+	\end{align*}
+	\item Consider a diagram of objects and morphisms in $\cat{L}$ of the form
+	\be
+	\xymatrix@C+2pc{
+		\delta & \rho \ar[l]_-{P} & \tau \ar[l]_-{N} & \bold{1} \ar[l]_-{M}\,.
+	}
+	\ee
+	\begin{align*}
+		P \circ (N \circ M) &= P \circ (N M)\\
+		&= (P (N M))\\
+		&= (\lambda y^\tau \ldot (P (N y)) M)\\
+		&= (P \circ N) \circ M\,.
+	\end{align*}
+	\item Consider a diagram of objects and morphisms in $\cat{L}$ of the form
+	\be
+	\xymatrix@C+2pc{
+		\delta & \rho \ar[l]_-{P} & \bold{1} \ar[l]_-{N} & \sigma \ar[l]_-{\star}\,.
+	}
+	\ee
+	\begin{align*}
+		(P \circ N) \circ \star &= (P N) \circ \star\\
+		&= \lambda t^\sigma \ldot (P N)\\
+		&= \lambda t^\sigma (P ((\lambda z^\sigma \ldot N) t))\\
+		&= P \circ (N \circ \star)\,.
+	\end{align*}
+	\item Consider a diagram of objects and morphisms in $\cat{L}$ of the form
+	\be
+	\xymatrix@C+2pc{
+		\delta & \bold{1} \ar[l]_-{P} & \tau \ar[l]_-{\star} & \sigma \ar[l]_-{M}\,.
+	}
+	\ee
+	\begin{align*}
+		(P \circ \star) \circ M &= (\lambda t^\tau \ldot P) \circ M\\
+		&= \lambda q^\sigma \ldot ( (\lambda t^\tau \ldot P) (M q))\\
+		&= \lambda q^\sigma \ldot P\\
+		&= P \circ ( \star \circ M)\,.
+	\end{align*}
+\end{itemize}
+The other cases are trivial.
+
+\bibliographystyle{amsalpha}
+\providecommand{\bysame}{\leavevmode\hbox to3em{\hrulefill}\thinspace}
+\providecommand{\href}[2]{#2}
+\begin{thebibliography}{BHLS03}
+	
+	\bibitem{atiyah}
+	M.~Atiyah, \textsl{Duality in mathematics and physics}, in: lecutre notes from Institut de Matematica de la Universitat de Barcelona (IMUB), (2007) available at: \url{https://fme.upc.edu/ca/arxius/butlleti-digital/riemann/071218_conferencia_atiyah-d_article.pdf}.
+	
+	\bibitem{cutctr}
+	M.~Borisavljevic, K.~Dosen, Z.~Petric, \textsl{On Permuting Cut with Contraction}, preprint arXiv:math/9911065v1.
+	
+	\bibitem{church}
+	A.~Church, \textsl{A set of postulates for the foundation of logic}, Annals of Mathematics \textbf{33}, no.2 pp.346--366 (1932).
+	
+	\bibitem{curry}
+	H.~B.~Curry and R.~Feys, \textsl{Combinatory logic, volume I}, Studies in Logic and the Foundations of Mathematics, North-Holland, Amsterdam, (1958).
+	
+	\bibitem{dosen_1996}
+	K.~Do\v{s}en, \textsl{Deductive completeness}, Bulletin of symbolic logic 2.3, pp.243--283 (1996).
+	
+	\bibitem{dosen_2001}
+	K.~Do\v{s}en, \textsl{Abstraction and application in adjunction}, arXiv preprint math/0111061 (2001).
+	
+	\bibitem{dyckhoffpinto}
+	R.~Dyckhoff, L.~Pinto, \textsl{Permutability of proofs in intuitionistic sequent calculi}, Theoretical Computer Science \textbf{212}, pp.141-155, (1999).
+	
+	\bibitem{gallier}
+	J.~H.~Gallier, \textsl{Constructive logics Part I: A tutorial on proof systems and typed lambda-calculi}, Theoretical Computer Science, 110(2) pp.249--339, (1993).
+	
+	\bibitem{gentzen}
+	G.~Gentzen, \textsl{Untersuchungen \"uber das logische Schliessen}, Mathematische Zeitschrift \textbf{39} (1935) 176--210, 405--431, translation in \textsl{The collected papers of Gerhard Gentzen}, edited by M.~E.~Szabo, 1969.
+	
+	\bibitem{girard_blind}
+	J.-Y.~Girard, \textsl{The Blind Spot: lectures on logic}, European Mathematical Society, (2011).
+	
+	\bibitem{girard}
+	J.-Y.~Girard, Y.~Lafont, and P.~Taylor, \textsl{Proofs and Types}, Cambridge Tracts in Theoretical Computer Science 7 ,Cambridge University Press, 1989.
+	
+	\bibitem{herbelin}
+	H.~Herbelin, \textsl{A Lambda-Calculus structure isomorphic to a Gentzen-style sequent calculus structure}, in L.~Pacholski and J.~Tiuryn, editors, \textsl{Computer Science Logic}, 8th workshop, CSL'94, volume 933 of Lecture Notes in Computer Science, pp.61--75, Springer-Verlag (1995).
+	
+	\bibitem{hermida}
+	C.~Hermida and B.~Jacobs, \textsl{Fibrations with indeterminates: Contextual and functional completeness for polymorphic lambda calculi}, Math. Structures Comput. Sci. 5 (1995), 501--531.
+	
+	\bibitem{heyting}
+	A.~Heyting, \textsl{Intuitionism, an introduction}, Studies in Logic and the Foundations of Mathematics, North-Holland, (1956). Third edition (1971).
+	
+	\bibitem{howard}
+	W.~A.~Howard, \textsl{The formulae-as-types notion of construction}, in Seldin and Hindley \textsl{To H.B.Curry: essays on Combinatory logic, Lambda calculus and Formalism}, Academic press (1980).
+	
+	\bibitem{virtues_eta}
+	C.~B.~Jay, N.~Ghani, \textsl{The virtues of eta-expansion}, J. Functional Programming \textbf{1} (1): 1--000, Cambridge University Press, (1993).
+	
+	\bibitem{kleene}
+	S.~C.~Kleene, \textsl{Two papers on the predicate calculus}, Memoirs of the American Mathematical Society, \textbf{10}, (1952).
+	
+	\bibitem{lambek_func} J.~Lambek, \textsl{Functional completeness of cartesian categories}, Annals of Mathematical Logic \emph{6.3-4} pp.259--292, (1974).
+	
+	\bibitem{lambek_scott}
+	J.~Lambek and P.J.~Scott, \textsl{Introduction to higher-order categorical logic}, Camrbidge Studies in Advanced Mathematics, Cambridge University Press, (1986).
+	
+	\bibitem{lawvere}
+	F.W.~Lawvere, \textsl{Adjointness in foundations}, Dialectica \textbf{23} No. 3/4, pp.281--296, (1969).
+	
+	\bibitem{maclane}
+	S.~Mac Lane, \textsl{The Lambda Calculus and Adjoint Functors}, Logic, Meaning and Computation, Springer Netherlands, pp.181--184 (2001).
+	
+	\bibitem{mints}
+	G.~Mints, \textsl{Normal forms for sequent derivations}, in: P.~Odifreddi (Ed.), Kreiseliana, A.~K.~Peters, Wellesley, Massachusetts, 1996, pp. 469--492; also part of Stanford Univ. Report CSLI-94-193, November 1994.
+	
+	\bibitem{negri}
+	S.~Negri, \textsl{Varieties of linear calculi}, Journal of Philosophical Logic \textbf{31}, pp.569--590, (2002).
+	
+	\bibitem{negriplato}
+	S.~Negri and J.~von Plato, \textsl{Structural proof theory}, Cambridge University Press, (2008).
+	
+	\bibitem{pottinger}
+	G.~Pottinger, \textsl{Normalization as a homomorphic image of cut-elimination}, Annals of Mathematical Logic \textbf{12} pp.323--357, (1977).
+	
+	\bibitem{prawitz}
+	D.~Prawitz, \textsl{Natural deduction: a proof-theoretical study}, Almqvist \& Wicksell, Stockholm (1965).
+	
+	\bibitem{prawitz_phil}
+	D.~Prawitz, \textsl{Philosophical aspects of proof theory}, Contemporary philosophy: a new survey, \textbf{1}, pp.235--277, Martinus Nijhoff Publishers, The Hague/Boston/London (1981).
+	
+	\bibitem{selinger}
+	P.~Selinger, \textsl{Lecture notes on the lambda calculus}, preprint \href{https://arxiv.org/abs/0804.3434}[arXiv:0804.3434], (2008).
+	
+	\bibitem{sorensen}
+	M.~S\o rensen and P.~Urzyczyn, \textsl{Lectures on the Curry-Howard isomorphism}, Studies in Logic and the Foundations of Mathematics Vol. 149, Elsevier New York, (2006).
+	
+	\bibitem{troelstra_margin}
+	A.~S.~Troelstra, \textsl{Marginalia on Sequent Calculi}, Studia Logica \textbf{62}, pp.291--303, (1999).
+	
+	\bibitem{troelstra}
+	A~.S.~Troelstra and D.~van Dalen, \textsl{Constructivism in Mathematics}, Vol. 1, Studies in Logic and the Foundations of Mathematics, 121, Amsterdam: North-Holland, (1988).
+	
+	\bibitem{troelstra_sch}
+	A.~S.~Troelstra, H.~Schwichtenberg, \textsl{Basic proof theory}, Cambridge University Press, Cambridge, (1996).
+	
+	\bibitem{wadler}
+	P.~L.~Wadler, \textsl{Proofs are programs: 19th century logic and 21st century computing}, Manuscript (2000).
+	
+	\bibitem{ungar}
+	A.~M.~Ungar, \textsl{Normalization, cut-elimination and the theory of proofs}, Center for the Study of Language and Information Lecture Notes No. 28, (1992).
+	
+	\bibitem{zucker}
+	J.~Zucker, \textsl{The correspondence between cut-elimination and normalization}, Annals of Mathematical Logic \textbf{7} 1--112 (1974).
+	
+	
+\end{thebibliography}
+
+
+
+\end{document}

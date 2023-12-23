@@ -1,9 +1,11 @@
 \documentclass[12pt]{article}
 
+
 \usepackage{amsthm}
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{mathrsfs}
+\usepackage{array}
 \usepackage{amssymb}
 \usepackage{units}
 \usepackage{graphicx}
@@ -20,7 +22,12 @@
 \usepackage{leftidx}
 \usepackage{afterpage}
 \usepackage{varwidth}
-\usepackage{physics}
+\usepackage{tasks}
+\usepackage{ cmll }
+\usepackage{quiver}
+\usepackage{adjustbox}
+\usepackage{kbordermatrix}
+\usepackage{braket}
 
 \newcommand\blankpage{
 	\null
@@ -37,7 +44,6 @@
 \newtheorem{lemma}[thm]{Lemma}
 \newtheorem{fact}[thm]{Fact}
 \newtheorem{cor}[thm]{Corollary}
-\newtheorem{post}[thm]{Postulate}
 
 \theoremstyle{definition}
 \newtheorem{defn}[thm]{Definition} % definition numbers are dependent on theorem numbers
@@ -49,10 +55,9 @@
 \newtheorem{construction}[thm]{Construction}
 \newtheorem{exercise}[thm]{Exercise}
 \newtheorem{example}[thm]{Example}
-\newtheorem{observation}[thm]{Observation}
-\newtheorem{algorithm}[thm]{Algorithm}
-\newtheorem{application}[thm]{Application}
+\newtheorem{aside}[thm]{Aside}
 
+\def\doubleunderline#1{\underline{\underline{#1}}}
 \newcommand{\bb}[1]{\mathbb{#1}}
 \newcommand{\scr}[1]{\mathscr{#1}}
 \newcommand{\call}[1]{\mathcal{#1}}
@@ -61,6 +66,43 @@
 \newcommand{\adj}[1]{\text{\textopencorner}{#1}\text{\textcorner}}
 \newcommand{\comment}[1]{}
 \newcommand{\lto}{\longrightarrow}
+\newcommand{\rone}{(\operatorname{R}\bold{1})}
+\newcommand{\lone}{(\operatorname{L}\bold{1})}
+\newcommand{\rimp}{(\operatorname{R} \multimap)}
+\newcommand{\limp}{(\operatorname{L} \multimap)}
+\newcommand{\rtensor}{(\operatorname{R}\otimes)}
+\newcommand{\ltensor}{(\operatorname{L}\otimes)}
+\newcommand{\rtrue}{(\operatorname{R}\top)}
+\newcommand{\rwith}{(\operatorname{R}\&)}
+\newcommand{\lwithleft}{(\operatorname{L}\&)_{\operatorname{left}}}
+\newcommand{\lwithright}{(\operatorname{L}\&)_{\operatorname{right}}}
+\newcommand{\rplusleft}{(\operatorname{R}\oplus)_{\operatorname{left}}}
+\newcommand{\rplusright}{(\operatorname{R}\oplus)_{\operatorname{right}}}
+\newcommand{\lplus}{(\operatorname{L}\oplus)}
+\newcommand{\prom}{(\operatorname{prom})}
+\newcommand{\ctr}{(\operatorname{ctr})}
+\newcommand{\der}{(\operatorname{der})}
+\newcommand{\weak}{(\operatorname{weak})}
+\newcommand{\exi}{(\operatorname{exists})}
+\newcommand{\fa}{(\operatorname{for\text{ }all})}
+\newcommand{\ex}{(\operatorname{ex})}
+\newcommand{\cut}{(\operatorname{cut})}
+\newcommand{\ax}{(\operatorname{ax})}
+\newcommand{\negation}{\sim}
+\newcommand{\true}{\top}
+\newcommand{\false}{\bot}
+\DeclareRobustCommand{\diamondtimes}{%
+	\mathbin{\text{\rotatebox[origin=c]{45}{$\boxplus$}}}%
+}
+\newcommand{\tagarray}{\mbox{}\refstepcounter{equation}$(\theequation)$}
+\newcommand{\startproof}[1]{
+	\AxiomC{#1}
+	\noLine
+	\UnaryInfC{$\vdots$}
+}
+\newenvironment{scprooftree}[1]%
+{\gdef\scalefactor{#1}\begin{center}\proofSkipAmount \leavevmode}%
+	{\scalebox{\scalefactor}{\DisplayProof}\proofSkipAmount \end{center} }
 
 \title{Mathematician's introduction to quantum error correction}
 \author{Will Troiani}
@@ -72,7 +114,7 @@
 	\tableofcontents
 	
 	\section{Quantum computing}\label{sec:quantum_computing}
-	The goal of this document to define a mathematical system of \emph{qubits} as well as their \emph{measurements}, \emph{time evolutions}, etc, and then to develop a theory of error correction upon this foundation. An optional next step after understanding this mathematics is to find a physical phenomena adhering to these conditions. This step which we refer to as optional though is not part of this document.
+	The goal of this document is to define a mathematical theory of \emph{qubits} as well as their \emph{measurements}, \emph{time evolutions}, etc, and then to develop a theory of error correction upon this foundation. An optional next step after understanding this mathematics is to find a physical phenomena adhering to these conditions. This step which we refer to as optional though is not part of this document.
 	
 	Our standard of \emph{information} will be sequences of binary integers. The form this information can be encoded into during transmission however will be more liberal. A bit of \emph{quantum information}, that is, a \emph{qubit}, will be any norm 1 element of the complex Hilbert space $\call{H} := \bb{C}^2$. Actually, we identify elements of $\call{H}$ with linear operators from $\bb{C}$ into $\call{H}$ and use Dirac notation. For example, $\ket{0}: \bb{C} \lto \call{H}$ denotes the map defined by linearity and the rule $1 \longmapsto (1,0)$, whereas $\ket{1}$ denotes the map defined by linearity and the rule $1 \longmapsto (0,1)$.
 	\begin{defn}\label{def:qubit}
@@ -261,7 +303,7 @@ Since these are non-orthogonal though, Lemma \ref{lem:nonorthogonal_indistinguis
 	
 	The exact relationship between projective measurements and measurements is given by Proposition \ref{prop:projective_vs_measurement} below which says in a precise sense that general measurements are projective measurements augmented by a unitary operator.
 	
-		\begin{lemma}\label{lem:unitary_extension}
+	\begin{lemma}\label{lem:unitary_extension}
 		Let $W \subseteq V$ be a subspace of a Hilbert space $V$, and let $U: W \lto V$ be a unitary operator. Then $U$ extends to a unitary $U'$ operator on all of $V$.
 	\end{lemma}
 	\begin{proof}[Proof sketch]
@@ -304,7 +346,7 @@ Since these are non-orthogonal though, Lemma \ref{lem:nonorthogonal_indistinguis
 		\end{align*}
 	\end{proof}
 	\begin{remark}
-		The defining equation \eqref{eq:measurement_equation} of the linear map \eqref{eq:measurement} may look opaque. We derive it from a more natural starting point here. See Appendix \ref{sec:commutative_algebra} for a justification of the natural isomorphisms used in the following calculation.
+		The defining equation \eqref{eq:measurement_equation} of the linear map \eqref{eq:measurement} may look opaque. We derive it from a more natural starting point here. See \cite[\S Partial Trace]{CommutativeAlgebra} for a justification of the natural isomorphisms used in the following calculation.
 		\begin{align}
 			\operatorname{Hom}(Q, \operatorname{Hom}(\call{H}, \call{H})) &\cong \operatorname{Hom}(Q \otimes \call{H}, \call{H})\\
 			&\cong\operatorname{Hom}(\call{H}, \call{H} \otimes Q^\ast)
@@ -554,7 +596,7 @@ We observe a few convenient properties of the trace operator, then give the defi
 		\begin{equation}\label{eq:partial_trace_exp_form}
 			\operatorname{Trace}_{\call{H}_e}(f) = \sum_{i = 1}^n (\operatorname{id} \otimes \bra{i})f(\operatorname{id} \otimes \ket{i})
 		\end{equation}
-		See Appendix \ref{sec:commutative_algebra} for background.
+		See \cite{CommutativeAlgebra} for background.
 	\end{remark}
 	We let $\ket{1},...,\ket{n}$ be a basis for $\bb{H}_e$ and use \eqref{eq:partial_trace_exp_form} to rewrite \eqref{eq:quant_op_general_form} in the special case where $\rho_e = \ket{j}\bra{j}$.We have
 	\begin{align}
@@ -1515,7 +1557,7 @@ Throughout, $V$ is a complex vector space.
 \end{defn}
 Clearly, all Hermitian matrices are normal.
 \begin{thm}[Spectral decomposition]\label{thm:spectral}
-	Let $V$ be a finite dimensional, complex vector space and $A$ a matrix representation of an operator on $V$. The matrix $A$ is normal if and only if it is diagonalisable with respect to some orthonormal basis for $V$.
+	Let $V$ be a finite dimensional complex inner product space and $A$ a matrix representation of an operator on $V$. The matrix $A$ is normal if and only if it is diagonalisable with respect to some orthonormal basis for $V$.
 \end{thm}
 \begin{proof}
 	We prove that normal matrices are diagonalisable.
@@ -1645,9 +1687,13 @@ Notice that the spectral decomposition (\ref{thm:spectral}) states that the matr
 		A = U^{-1}D_1U,\qquad B = U^{-1}D_2U
 	\end{equation}
 	We then have:
-	\begin{equation}
-		AB = U^{-1}D_1UU^{-1}D_2U = U^{-1}D_1D_2U = U^{-1}D_2D_1U = U^{-1}D_2UU^{-1}D_1U = BA
-	\end{equation}
+	\begin{align*}
+		AB &= U^{-1}D_1UU^{-1}D_2U\\
+		&= U^{-1}D_1D_2U\\
+		&= U^{-1}D_2D_1U\\
+		&= U^{-1}D_2UU^{-1}D_1U\\
+		&= BA
+	\end{align*}
 	Conversely, say $[A,B] = 0$. We have that $A$ is Hermitian and so admits a spectral decomposition. Let $a_1,...,a_n$ be the eigenvalues corresponding to this decomposition and let $V_{a_i}$ denote the $a_i$-eigenspace. We first notice that $B$ maps $V_{a_i}$ into itself: for any $v \in V_{a_i}$
 	\begin{equation}
 		ABv = BAv = a_{i}Bv
@@ -1711,131 +1757,13 @@ If we have such a decomposition $T = UJ$, then $J$ is diagonalisable, being posi
 		Hence, in light of Corollary \ref{cor:unitary_simple} we have that $U$ is unitary if and only if for all $v \in \bb{H}$ we have $\bra{v}U^\dagger U \ket{v} = \bra{v}\ket{v}$. This is the condition which is checked throughout the body of this paper.
 	\end{itemize}
 \end{remark}
-
-\section{Commutative algebra}\label{sec:commutative_algebra}
-The following is a copy and paste from my commutative algebra notes \cite{CommutativeAlgebra}. We have put this here to keep the referencing within this document consistent.
-\begin{lemma}\label{lem:embedding_tensor}
-	For arbitrary vector spaces $X,Y,X',Y'$ there exists a natural injection
-	\begin{equation}
-		\operatorname{Hom}(X,X') \otimes \operatorname{Hom}(Y,Y') \rightarrowtail \operatorname{Hom}(X \otimes Y, X'\otimes Y')
-	\end{equation}
-	which is an isomorphism if $X,Y,X',Y'$ are finite dimensional.
-\end{lemma}
-\begin{remark}
-	The map described in Lemma \ref{lem:embedding_tensor} sends a formal tensor element $f \otimes g$ to the tensor product of the two maps $f$ and $g$, which is also denoted $f \otimes g$. Hence we clearly have an injection, and the argument above shows surjectivity in the finite dimensional case.
-	
-	It follows easily from this presentation that this map is natural in all arguments.
-\end{remark}
-\begin{cor}\label{cor:hom_dual}
-	There is a natural isomorphism (recall that $V,W$ are finite dimensional).
-	\begin{align}
-		\operatorname{Hom}(V,W) &\lto V^\ast \otimes W\\
-		f &\longmapsto \sum_{i = 1}^n v_i^\ast \otimes f(v_i)
-	\end{align}
-	where $\lbrace v_1,..., v_n\rbrace$ is ar arbitrary basis for $V$.
-\end{cor}
-\begin{proof}
-	By Lemma \ref{lem:embedding_tensor} we have:
-	\begin{equation}
-		\operatorname{Hom}(V \otimes k, k\otimes W) \cong \operatorname{Hom}(V, k) \otimes \operatorname{Hom}(k, W)
-	\end{equation}
-	hence we can perform the following calculation, where $s: V \otimes k \lto k \otimes V$ is the swap map, for $i=1,...,n$ we denote by $E_{i}: V \lto k$ is the linear map sending $v_i \longmapsto 1$ and $F_{j}: k \lto V$ the linear map sending $1 \longmapsto v_i$.
-	\begin{equation}
-		f \longmapsto 1 \otimes f \circ s = \sum_{i = 1}^n E_{i} \otimes f F_{i} \longmapsto \sum_{i = 1}^n v_i^\ast \otimes f(v_i)
-	\end{equation}
-\end{proof}
-We will generalise the definition of the trace operator to the definition of a \emph{partial} trace operator, to do this we use the natural isomorphism of Corollary \ref{cor:hom_dual} and combine it with the following adjunction, the \textbf{tensor-hom} adjunction.
-\begin{fact}
-	There is an adjunction
-	\begin{align}
-		\operatorname{Hom}(V \otimes W, U) &\cong \operatorname{Hom}(W, \operatorname{Hom}(V,U))\\
-		f &\longmapsto \big(w \mapsto (v \mapsto f(v\otimes w))\big)\\
-		\big(v \otimes w \mapsto g(v)(w) \big) &\longmapsfrom g
-	\end{align}
-	with counit given by the evaluation map (we simply write $h$ for $\operatorname{Hom}$)
-	\begin{align*}
-		V \otimes h(V,U) &\lto U\\
-		v \otimes f &\longmapsto f(v)
-	\end{align*}
-	and unit given by tensor:
-	\begin{align*}
-		U &\lto h(V,V \otimes U)\\
-		u &\longmapsto (v \mapsto v \otimes u)
-	\end{align*}
-\end{fact}
-\begin{cor}
-	For finite dimensional vector spaces, there is an adjunction:
-	\begin{align}\label{eq:tensor_dual_adjunction}
-		\operatorname{Hom}(V \otimes W, U) &\lto \operatorname{Hom}(W, U \otimes V^\ast)\\
-		f &\longmapsto \big(w \mapsto \sum_{i = 1}^n v_i^\ast \otimes f(u_i \otimes w)\big)
-	\end{align}
-	where $\lbrace u_1,...,u_n\rbrace$ is an arbitrary choice of basis for $V$.
-	
-	The counit of this adjunction is given by
-	\begin{align*}
-		V \otimes U \otimes V^\ast &\lto U\\
-		x \otimes u \otimes y^\ast &\longmapsto y^\ast(x )u
-	\end{align*}
-	and unit given by (where $v_1,...,v_n$ is an arbitrary basis for $V$)
-	\begin{align*}
-		W &\lto W \otimes V \otimes V^\ast\\
-		w &\longmapsto w \otimes (\sum_{i = 1}^n v_i \otimes v_i^\ast)
-	\end{align*}
-\end{cor}
-\begin{proof}
-	For existence of the adjunction, we observe the following algebra.
-	\begin{align}
-		\operatorname{Hom}(V \otimes W, U) &\cong \operatorname{Hom}(W, \operatorname{Hom}(V,U))\\
-		&\cong \operatorname{Hom}(W, V^\ast \otimes U )
-	\end{align}
-	Now we unwind definitions and find the unit and counit. Writing simply $h$ for $\operatorname{Hom}$ the map:
-	\begin{equation}
-		h(V,V) \lto h(V \otimes k, k \otimes V) \lto h(V,k) \otimes h(k,V) \lto V^\ast \otimes V
-	\end{equation}
-	acts on $\operatorname{id}_V$ in the following way, where $s$ denotes the \emph{swap map} and $v_1,...,v_n$ is an arbitrary basis for $V$,
-	\begin{equation}
-		\operatorname{id}_V \longmapsto s \longmapsto \sum_{i = 1}^n v_i^\ast \otimes (1 \mapsto v_i) \longmapsto \sum_{i = 1}^nv_i^\ast \otimes v_i
-	\end{equation}
-	which describes the unit. The counit is calculated similarly.
-\end{proof}
-With this language, we come up with a description of the trace operator.
-\begin{observation}
-	Let $f: V \lto V$ be a linear map. Then the map $k \lto k$ given by $1 \longmapsto \operatorname{Trace}f$ is given by the following composite, where $\eta,\epsilon$ are respectively the unit and counit of the adjunction \eqref{eq:tensor_dual_adjunction} and $v_1,...,v_n$ is an arbitrary basis for $V$:
-	\begin{equation}
-		\begin{tikzcd}
-			k\arrow[r,"{\eta}"] & V \otimes V^\ast\arrow[r, "{f \otimes 1}"] & V \otimes V^\ast\arrow[r,"{\epsilon}"] & k\\
-			1\arrow[r,mapsto] & \sum_{i = 1}^n v_i \otimes v_i^\ast\arrow[r,mapsto] & \sum_{i = 1}^n f(v_i) \otimes v_i^\ast\arrow[r,mapsto] & \sum_{i = 1}^n v_i^{\ast}(f(v_i)) = \operatorname{Trace}f
-		\end{tikzcd}
-	\end{equation}
-\end{observation}
-We use this observation to make a definition:
-\begin{defn}
-	Let $f: W \otimes V \lto W \otimes V$ be a linear map. We define the \textbf{partial trace operator} $\operatorname{Trace}_Vf$ as the following composite:
-	\begin{equation}\label{eq:partial_trace}
-		\begin{tikzcd}
-			W\arrow[r,"{1 \otimes \eta}"] & W \otimes V \otimes V^\ast\arrow[d,"{f \otimes 1}"]\\
-			W & W \otimes V \otimes V^\ast\arrow[l,"{1 \otimes \epsilon}"]\\
-			w\arrow[r,mapsto] & w \otimes (\sum_{i = 1}^n v_i \otimes v_i^\ast) = \sum_{i = 1}^n(w \otimes v_i) \otimes v_i^\ast\arrow[d,mapsto]\\
-			 \hdots & \sum_{i = 1}^n f(w \otimes v_i) \otimes v_i^\ast\arrow[l,mapsto]
-		\end{tikzcd}
-	\end{equation}
-	the final formula is a bit difficult to write out, in the special case where $f = f_1 \otimes f_2$ for $f_1: W \lto W, f_2: V \lto V$ we obtain
-	\begin{equation}
-		(\operatorname{Trace}_Vf)(w) = \sum_{i = 1}^n f_1(w)v_i^\ast\big(f_2(v_i)\big) = (\operatorname{Trace}f_2)f_1(w)
-	\end{equation}
-\end{defn}
-In fact we can write out a formula for \eqref{eq:partial_trace} if we use Dirac notation. Let $\ket{1},...,\ket{n}$ be a basis for $V$, we think of these as operators $k \lto V$.  We write $\operatorname{id} \otimes \ket{i}$ for the composite $W \lto W \otimes k \lto W \otimes V$.  Also, we denote the multiplication map $W \otimes k \lto W$ defined by $w \otimes x \longmapsto xw$ by $\operatorname{Mult}$. We have
-\begin{align*}
-	\operatorname{Trace}_V f &= \epsilon\Big(\sum_{i = 1}^n f(\operatorname{id} \otimes \ket{i}) \otimes \bra{i}\Big)\\
-	&= \operatorname{Mult}\Big(\sum_{i = 1}^n (\operatorname{id} \otimes \bra{i})f (\operatorname{id} \otimes \ket{i})\Big)
-\end{align*}
 	
 	\begin{thebibliography}{9}
-		\bibitem{quantum_computing} Nielsen, Chuang.
+		\bibitem{quantum_computing} M. Nielsen, I. Chuang \emph{Quantum Computation and Quantum Information tenth anniversary} Cambridge University Press, 09 December 2010
 		
-		\bibitem{CommutativeAlgebra} W. Troiani \emph{Commutative Algebra}
+		\bibitem{CommutativeAlgebra} W. Troiani \emph{Elementary Commutative Algebra} \url{https://williamtroiani.github.io/pdfs/CommutativeAlgebraWithLin.pdf}
 		
-		\bibitem{Baez}, J. Baez. \url{https://math.ucr.edu/home/baez/quantum/node4.html}
+		\bibitem{Baez} J. Baez. \url{https://math.ucr.edu/home/baez/quantum/node4.html}
 	\end{thebibliography}
 \end{document}
 

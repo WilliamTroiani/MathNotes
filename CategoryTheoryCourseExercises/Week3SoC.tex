@@ -1,0 +1,176 @@
+\documentclass[12pt]{article}
+
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{mathrsfs}
+\usepackage{array}
+\usepackage{amssymb}
+\usepackage{units}
+\usepackage{graphicx}
+\usepackage{tikz-cd}
+\usepackage{nicefrac}
+\usepackage{hyperref}
+\usepackage{bbm}
+\usepackage{color}
+\usepackage{tensor}
+\usepackage{tipa}
+\usepackage{bussproofs}
+\usepackage{ stmaryrd }
+\usepackage{ textcomp }
+\usepackage{leftidx}
+\usepackage{afterpage}
+\usepackage{varwidth}
+\usepackage{tasks}
+\usepackage{ cmll }
+\usepackage{adjustbox}
+
+\newcommand\blankpage{
+	\null
+	\thispagestyle{empty}
+	\addtocounter{page}{-1}
+	\newpage
+}
+
+\graphicspath{ {images/} }
+
+\theoremstyle{plain}
+\newtheorem{thm}{Theorem}[subsection] % reset theorem numbering for each chapter
+\newtheorem{proposition}[thm]{Proposition}
+\newtheorem{lemma}[thm]{Lemma}
+\newtheorem{fact}[thm]{Fact}
+\newtheorem{cor}[thm]{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{defn}[thm]{Definition} % definition numbers are dependent on theorem numbers
+\newtheorem{exmp}[thm]{Example} % same for example numbers
+\newtheorem{notation}[thm]{Notation}
+\newtheorem{remark}[thm]{Remark}
+\newtheorem{condition}[thm]{Condition}
+\newtheorem{question}[thm]{Question}
+\newtheorem{construction}[thm]{Construction}
+\newtheorem{exercise}[thm]{Exercise}
+\newtheorem{example}[thm]{Example}
+\newtheorem{aside}[thm]{Aside}
+
+\def\doubleunderline#1{\underline{\underline{#1}}}
+\newcommand{\bb}[1]{\mathbb{#1}}
+\newcommand{\scr}[1]{\mathscr{#1}}
+\newcommand{\call}[1]{\mathcal{#1}}
+\newcommand{\psheaf}{\text{\underline{Set}}^{\scr{C}^{\text{op}}}}
+\newcommand{\und}[1]{\underline{\hspace{#1 cm}}}
+\newcommand{\adj}[1]{\text{\textopencorner}{#1}\text{\textcorner}}
+\newcommand{\comment}[1]{}
+\newcommand{\lto}{\longrightarrow}
+\newcommand{\rone}{(\operatorname{R}\bold{1})}
+\newcommand{\lone}{(\operatorname{L}\bold{1})}
+\newcommand{\rimp}{(\operatorname{R} \multimap)}
+\newcommand{\limp}{(\operatorname{L} \multimap)}
+\newcommand{\rtensor}{(\operatorname{R}\otimes)}
+\newcommand{\ltensor}{(\operatorname{L}\otimes)}
+\newcommand{\rtrue}{(\operatorname{R}\top)}
+\newcommand{\rwith}{(\operatorname{R}\&)}
+\newcommand{\lwithleft}{(\operatorname{L}\&)_{\operatorname{left}}}
+\newcommand{\lwithright}{(\operatorname{L}\&)_{\operatorname{right}}}
+\newcommand{\rplusleft}{(\operatorname{R}\oplus)_{\operatorname{left}}}
+\newcommand{\rplusright}{(\operatorname{R}\oplus)_{\operatorname{right}}}
+\newcommand{\lplus}{(\operatorname{L}\oplus)}
+\newcommand{\prom}{(\operatorname{prom})}
+\newcommand{\ctr}{(\operatorname{ctr})}
+\newcommand{\der}{(\operatorname{der})}
+\newcommand{\weak}{(\operatorname{weak})}
+\newcommand{\exi}{(\operatorname{exists})}
+\newcommand{\fa}{(\operatorname{for\text{ }all})}
+\newcommand{\ex}{(\operatorname{ex})}
+\newcommand{\cut}{(\operatorname{cut})}
+\newcommand{\ax}{(\operatorname{ax})}
+\newcommand{\negation}{\sim}
+\newcommand{\true}{\top}
+\newcommand{\false}{\bot}
+\DeclareRobustCommand{\diamondtimes}{%
+	\mathbin{\text{\rotatebox[origin=c]{45}{$\boxplus$}}}%
+}
+\newcommand{\tagarray}{\mbox{}\refstepcounter{equation}$(\theequation)$}
+\newcommand{\startproof}[1]{
+	\AxiomC{#1}
+	\noLine
+	\UnaryInfC{$\vdots$}
+}
+\newenvironment{scprooftree}[1]%
+{\gdef\scalefactor{#1}\begin{center}\proofSkipAmount \leavevmode}%
+	{\scalebox{\scalefactor}{\DisplayProof}\proofSkipAmount \end{center} }
+
+
+\title{Category Theory exercise sheet 8}
+
+\begin{document}
+	
+	\maketitle
+	
+	\section{Category theory}
+	\begin{enumerate}
+		\item So when do we have an isomorphism?
+		\begin{defn}
+			A \textbf{split monomorphism} is a morphism $f: X \lto Y$ which is right inverse to some morphism $g: Y \lto X$. That is, $g \circ f = \operatorname{id}_X$.
+			
+			A \textbf{split epimorphism} is left inverse to some morphism $h: Y \lto X$. That is, $f \circ h = \operatorname{id}_{Y}$.
+			\end{defn}
+		
+		Prove that an epic section is an isomorphism. Prove also that a monic retraction is also an isomorphism.
+		
+		\item Show that a morphism $f: X \lto Y$ is a split epimorphism in a category $\scr{C}$ if and only if for all $Z \in \scr{C}$ post composition
+		\begin{align*}
+			\operatorname{Hom}(Z, X) &\lto \operatorname{Hom}(Z, Y)\\
+			h &\lto f \circ h
+			\end{align*}
+		defines a surjective function.
+		
+		Show that $f$ is a split monomorphism if and only if for all $Z \in \scr{C}$ pre-composition
+		\begin{align*}
+			\operatorname{Hom}(Y, Z) &\lto \operatorname{Hom}(X, Z)\\
+			h &\lto h \circ f
+			\end{align*}
+		defines a surjective function.
+		\end{enumerate}
+	
+	\section{Mathematics}
+	\begin{enumerate}
+	\item What are the monomorphisms in the category of fields?
+	
+	\item The following conceals some research-level problem.
+	
+	Consider the functors $\underline{\operatorname{Ab}} \lto \underline{\operatorname{Group}}$ (inclusion), $\underline{\operatorname{Ring}} \lto \underline{\operatorname{Ab}}$ (forgetting the multiplication), $(\und{0.2}^{\times}): \underline{\operatorname{Ring}} \lto \underline{\operatorname{Group}}$ (inclusion), $\underline{\operatorname{Mod}}_R \lto \underline{\operatorname{Ab}}$ (forgetful). Determine which functors are full, which are faithful, and which are essentially surjective. Do any define equivalence of categories?
+	\end{enumerate}
+	\section{Computer science}
+	Speaking loosely, a computer program $\texttt{F}$ induces a function $\operatorname{IO}(\texttt{F})$ by its input/output behaviour. Given two programs $\texttt{P}, \texttt{Q}$ it is in general too turse to analyse these two functions on the level of their underlying functions $\operatorname{IO}(\texttt{P}), \operatorname{IO}(\texttt{Q})$ because these two programs might differ in their complexity, or their resource consumption, or their side effects, etc. We will discuss \emph{notions of computation} later in the course more thoroughly, but for now, we will attempt to model some of these concepts in the category $\underline{\operatorname{Set}}$ of sets and functions. For instance, non-termination can be modelled by introducing a formal symbole $\bot$ which represents failure.
+	\begin{align*}
+		\eta_X: X &\lto X \coprod \{ \bot \}\\
+		x &\longmapsto x
+		\end{align*}
+	More generally, given a set $E$ of \emph{exceptions}, we can relate the set of values a program takes $X$ to the same set along with its exceptions in the following way.
+	\begin{align*}
+		\eta_X: X &\lto X \coprod E\\
+		x &\longmapsto x
+		\end{align*}
+	Lastly, we can relate a set $X$ to its nondeterministic counterpart as follows:
+	\begin{align*}
+		\eta_X: X &\lto \call{P}_{\text{fin}}(X)\\
+		x &\longmapsto \{ x \}
+		\end{align*}
+	Clearly, all three of these maps are injective. By proving that a morphism $f$ in $\underline{\operatorname{Set}}$ is a monomorphism if and only if it is injective, show that in fact all these morphisms are monomorphisms.
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	\end{document}

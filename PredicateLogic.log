@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.5.21)  21 JUL 2022 13:32
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.5.21)  15 SEP 2022 13:28
 entering extended mode
 **./PredicateLogic.tex
 (PredicateLogic.tex
@@ -942,41 +942,49 @@ LaTeX Font Info:    Trying to load font information for U+cmllr on input line 1
 10.
 
 (/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/latex/cm
-ll/ucmllr.fd) (PredicateLogic.toc)
-\tf@toc=\write5
-\openout5 = `PredicateLogic.toc'.
+ll/ucmllr.fd)
+Overfull \hbox (30.96785pt too wide) in paragraph at lines 113--114
+\OT1/cmr/m/n/12 After developing synicism, after perhaps learning about foundat
+ions of mathematics
+ []
 
 
-Overfull \hbox (3.63304pt too wide) in paragraph at lines 112--113
-\OT1/cmr/m/n/12 A baby correctly moves to the softer floor to crawl on. Immedia
-tely interacting
+Overfull \hbox (0.35506pt too wide) in paragraph at lines 113--114
+\OT1/cmr/m/n/12 something \OT1/cmr/m/it/12 happens \OT1/cmr/m/n/12 when we perf
+orm mathematics (take for instance Wigner's
+ []
+
+
+Overfull \hbox (8.35143pt too wide) in paragraph at lines 113--114
+\OT1/cmr/m/n/12 Perhaps these survival techniques are imprinted in our brains, 
+and mathematics
  []
 
 [1
 
 {/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/data/pdftex/config/p
 dftex.map}]
-Overfull \hbox (3.3774pt too wide) in paragraph at lines 120--121
+Overfull \hbox (3.3774pt too wide) in paragraph at lines 119--120
 []\OT1/cmr/m/n/12 Another example. One does not stumble over the lack of rigoro
 us definition
  []
 
 [2]
-Overfull \hbox (7.14171pt too wide) in paragraph at lines 125--126
+Overfull \hbox (7.14171pt too wide) in paragraph at lines 124--125
 \OT1/cmr/m/n/12 What does an author ask of the reader when the author is defini
 ng foundations?
  []
 
-[3]
-Overfull \hbox (5.64035pt too wide) in paragraph at lines 135--136
-\OT1/cmr/m/n/12 definition in Definition []2.0.1[], but we will remark afterwar
-ds that this Definition
+[3] [4] [5] [6]
+Overfull \hbox (9.88335pt too wide) in paragraph at lines 257--258
+[]\OT1/cmr/m/n/12 Another work around is the accept to vague definition given a
+t the beginning
  []
 
-[4] [5] [6]
-Overfull \hbox (14.53978pt too wide) in paragraph at lines 256--257
-\OT1/cmr/m/n/12 beginning of this Section. Mathematics is an inherently philoso
-phical endeavour,
+
+Overfull \hbox (13.88701pt too wide) in paragraph at lines 257--258
+\OT1/cmr/m/n/12 of this Section. Mathematics is an inherently philosophical end
+eavour, especially
  []
 
 [7] [8] [9]
@@ -993,71 +1001,71 @@ phical endeavour,
 \myCenter3=\dimen304
 \myScoreEnd3=\dimen305
  [10] [11]
-Overfull \hbox (22.42072pt too wide) in paragraph at lines 510--511
+Overfull \hbox (22.42072pt too wide) in paragraph at lines 511--512
 []\OT1/cmr/m/n/12 This is a platonist viewpoint: that mathematical (along with 
 other theoretical)
  []
 
-[12]
-Overfull \hbox (12.47507pt too wide) in paragraph at lines 545--546
-[][]\OT1/cmr/bx/n/12 Theorem 4.0.6. []\OT1/cmr/m/it/12 Classical natural deduct
-ion is both sound for natural deduction
+[12] [13] [14] [15] [16]
+Overfull \hbox (1.51051pt too wide) in paragraph at lines 689--690
+[]\OT1/cmr/m/n/12 Let $\OML/cmm/m/it/12 x[]; [] ; x[]$ \OT1/cmr/m/n/12 denote t
+he variables bound by a universal quantifier, assume
  []
 
-[13] [14] [15] [16]
-Overfull \hbox (1.41403pt too wide) in paragraph at lines 714--716
-\OT1/cmr/m/n/12 which is given by adding all the function symbols $\OML/cmm/m/i
-t/12 f[]$ \OT1/cmr/m/n/12 to $\U/msb/m/n/12 T$\OT1/cmr/m/n/12 . The \OT1/cmr/bx
-/n/12 Skolemisation
- []
-
-[17] [18]
-
-LaTeX Warning: Reference `??' on page 19 undefined on input line 768.
-
-
-Overfull \hbox (2.8985pt too wide) in paragraph at lines 791--792
-\OT1/cmr/m/it/12 with one sort $\OML/cmm/m/it/12 A$ \OT1/cmr/m/it/12 which admi
-ts an model $\OMS/cmsy/m/n/12 I$ \OT1/cmr/m/it/12 so that $\OMS/cmsy/m/n/12 I\O
-T1/cmr/m/n/12 (\OML/cmm/m/it/12 A\OT1/cmr/m/n/12 )$ \OT1/cmr/m/it/12 is infinit
-e in cardinality.
- []
-
-[19]
-Overfull \hbox (0.11182pt too wide) in paragraph at lines 822--823
-[]\OT1/cmr/m/n/12 A \OT1/cmr/bx/n/12 morphism of $\OT1/cmr/m/n/12 $\OT1/cmr/bx
-/n/12 -structures $\OML/cmm/m/it/12  \OT1/cmr/m/n/12 : \OML/cmm/m/it/12 M [][]
-\OMS/cmsy/m/n/12 ! \OML/cmm/m/it/12 M[]$ \OT1/cmr/m/n/12 is a collection of mor
-phisms
- []
-
-[20]
-Overfull \hbox (2.6571pt too wide) in paragraph at lines 844--845
-[]\OT1/cmr/m/n/12 Given a first order theory $\U/msb/m/n/12 T$ \OT1/cmr/m/n/12 
-the subcategory $[](\OMS/cmsy/m/n/12 E\OT1/cmr/m/n/12 )$ of $[]$ consisting
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 848--849
+[17] [18] [19]
+Underfull \hbox (badness 10000) in paragraph at lines 786--787
 []\OT1/cmr/m/n/12 W. Troiani, \OT1/cmr/m/it/12 (Finite) simplicial sets are alg
 orithms\OT1/cmr/m/n/12 , []$\OT1/cmtt/m/n/12 http :
  []
 
-[21] [22] (PredicateLogic.aux)
+[20]
+Underfull \hbox (badness 10000) in paragraph at lines 788--789
+[]\OT1/cmr/m/n/12 W. Troiani, \OT1/cmr/m/it/12 The internal language and finite
 
-LaTeX Warning: There were undefined references.
+ []
 
+
+Underfull \hbox (badness 10000) in paragraph at lines 788--789
+\OT1/cmr/m/it/12 colimits []$\OT1/cmtt/m/n/12 https : / / williamtroiani . gith
+ub . io / pdfs /
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 796--797
+[]\OT1/cmr/m/n/12 W. Troiani, \OT1/cmr/m/it/12 Godel's First Incompleteness Th
+eorem []$\OT1/cmtt/m/n/12 https :
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 796--797
+\OT1/cmtt/m/n/12 / / williamtroiani . github . io / Notes / FirstIncompleteness
+Theorem .
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 801--804
+[]\OT1/cmr/m/it/12 Matematicka sekce  \OT1/cmr/m/n/12 Matematicko-fyzikaln 
+fakulta Univerzita
+ []
+
+
+Underfull \hbox (badness 6675) in paragraph at lines 801--804
+\OT1/cmr/m/n/12 Karlova Lecture 6 []$\OT1/cmtt/m/n/12 https : / / www2 . karlin
+ . mff . cuni . cz/$[]\OT1/cmr/m/n/12 , []$\OT1/cmtt/m/n/12 https :
+ []
+
+[21] (PredicateLogic.aux)
 Package rerunfilecheck Info: File `PredicateLogic.out' has not changed.
-(rerunfilecheck)             Checksum: 451FDD2559B922A1E7C9FD399222FA13;1035.
+(rerunfilecheck)             Checksum: 47152D269D565B49EA97B8DB8D2F4AF8;967.
  ) 
 Here is how much of TeX's memory you used:
- 22994 strings out of 481099
- 434542 string characters out of 2904467
- 691506 words of memory out of 3000000
- 39794 multiletter control sequences out of 15000+600000
+ 22909 strings out of 481099
+ 432315 string characters out of 2904467
+ 691792 words of memory out of 3000000
+ 39706 multiletter control sequences out of 15000+600000
  417204 words of font info for 87 fonts, out of 8000000 for 9000
  0 hyphenation exceptions out of 8191
- 98i,15n,103p,1315b,1149s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 98i,15n,103p,1500b,1149s stack positions out of 5000i,500n,10000p,200000b,80000s
  </Users/wtroiani/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljf
 our/jknappen/ec/dpi600/tcrm1200.pk></Library/Application Support/MiKTeX/texmfs/
 install/fonts/type1/public/amsfonts/cm/cmbx12.pfb></Library/Application Support
@@ -1079,10 +1087,11 @@ tion Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmtt12.pfb></
 Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/s
 ymbols/msam10.pfb></Library/Application Support/MiKTeX/texmfs/install/fonts/typ
 e1/public/amsfonts/symbols/msbm10.pfb></Library/Application Support/MiKTeX/texm
-fs/install/fonts/type1/public/rsfs/rsfs10.pfb>
-Output written on PredicateLogic.pdf (22 pages, 276111 bytes).
+fs/install/fonts/type1/public/rsfs/rsfs10.pfb></Library/Application Support/MiK
+TeX/texmfs/install/fonts/type1/public/rsfs/rsfs5.pfb>
+Output written on PredicateLogic.pdf (21 pages, 283193 bytes).
 PDF statistics:
- 358 PDF objects out of 1000 (max. 8388607)
- 122 named destinations out of 1000 (max. 500000)
- 61 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 360 PDF objects out of 1000 (max. 8388607)
+ 128 named destinations out of 1000 (max. 500000)
+ 53 words of extra memory for PDF output out of 10000 (max. 10000000)
 

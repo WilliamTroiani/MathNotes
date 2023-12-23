@@ -101,8 +101,6 @@
 {\gdef\scalefactor{#1}\begin{center}\proofSkipAmount \leavevmode}%
 	{\scalebox{\scalefactor}{\DisplayProof}\proofSkipAmount \end{center} }
 
-\usepackage[margin=1cm]{geometry}
-
 \title{Three algorithms}
 \author{Will Troiani}
 \date{\today}
@@ -155,15 +153,17 @@
 				\RightLabel{$(\wedge E)_1$}
 				\UnaryInfC{$A \wedge B \vdash A$}
 				\DisplayProof
-				\qquad
-				\AxiomC{}
-				\RightLabel{$(\wedge E)_2$}
-				\UnaryInfC{$A\wedge B \vdash B$}
-				\DisplayProof
-				\qquad
-				\AxiomC{}
-				\RightLabel{$\in_{A,B}$}
-				\UnaryInfC{$(B \Longrightarrow A) \wedge B \vdash A$}
+			\end{center}
+		\begin{center}
+			\AxiomC{}
+			\RightLabel{$(\wedge E)_2$}
+			\UnaryInfC{$A\wedge B \vdash B$}
+			\DisplayProof
+			\qquad
+			\AxiomC{}
+			\RightLabel{$\in_{A,B}$}
+			\UnaryInfC{$(B \Rightarrow A) \wedge B \vdash A$}
+			\DisplayProof
 			\end{center}
 		\item There are also the \textbf{constructor rules:}
 		\begin{center}
@@ -178,16 +178,85 @@
 			\RightLabel{$(\wedge I)$}
 			\BinaryInfC{$C \vdash \langle A, B \rangle$}
 			\DisplayProof
-			\qquad
-			\AxiomC{$A \wedge B \vdash C$}
-			\RightLabel{$(\Rightarrow I)$}
-			\UnaryInfC{$A \vdash B \Rightarrow C$}
-			\DisplayProof
+		\end{center}
+	\begin{center}
+		\AxiomC{$A \wedge B \vdash C$}
+		\RightLabel{$(\Rightarrow I)$}
+		\UnaryInfC{$A \vdash B \Rightarrow C$}
+		\DisplayProof
 		\end{center}
 		\end{itemize}
 	\end{defn}
 	
+	\begin{defn}[$\lambda$-Type theory]\label{def:lambda_type_theory}
+		A \textbf{$\lambda$-type theory} consists of the following.
+		\begin{itemize}
+			\item A class of \textbf{types}, including special types $\mathbbm{1}$. Also, for each type $A$, there is a countably infinite set of \textbf{variables} of type $A$.
+			\item A class of \textbf{terms}, where to each term $t$ there is an associated type, $A$. The notation $t:A$ means ``$t$ is of type $A$". Also, there is an associated set $\operatorname{FV}(t)$ of \textbf{free variables} of $t$.
+			\item For every finite set $X = \{ x_1:A_1, \ldots, x_n:A_n \}$ of variables, a relation $\lto_X$ of \textbf{reduction} between terms of the same type and whose free variables appear in $X$. We write $t \lto_X s$ when the pair $(t,s)$ is in the relation $\lto_X$. The set $X$ in $t\lto_X s$ is the \textbf{context} and a context is \textbf{valid} if the free variables of $t$ and $s$ are a subset of $X$.
+			\end{itemize}
+		This data is required to be subject to the following.
+		\begin{enumerate}
+			\item If $A, B$ are types, then so are $A \times B$ and $B^A$.
+			\item The class of \textbf{preterms} satisfy the following.
+			\begin{itemize}
+				\item There is a class of \textbf{atomic preterms}, containing all the variables, as well as a special term $\ast: \mathbbm{1}$.
+				\item The preterms are closed under the following \textbf{preterm formation rules}.
+				\begin{itemize}
+					\item If $t:A, s:B$ are preterms then $\langle t, s \rangle: A \times B$ is a perterm.
+					\item If $t: A \times B$ is a preterm then $\pi(t): A, \pi'(t): B$ are preterms.
+					\item If $t: B^A, s:A$ are preterms then $ts: B$ is a preterm.
+					\item If $t: A$ is a preterm and $x:B$ a variable then $\lambda x:A. t: B^A$ is a preterm.
+					\end{itemize}
+				\item The preterms have free variable sets satisfying the following.
+				\begin{itemize}
+					\item $\operatorname{FV}(\ast) = \varnothing$.
+					\item $\operatorname{FV}(x: A) = \{ x : A \}$ where $x:A$ is a variable.
+					\item $\operatorname{FV}(\langle t, s \rangle) = \operatorname{FV}(t) \cup \operatorname{FV}(s)$.
+					\item $\operatorname{FV}(\pi(t)) = \operatorname{FV}(\pi'(t)) = \operatorname{FV}(t)$.
+					\item $\operatorname{FV}(ts) = \operatorname{t} \cup \operatorname{s}$.
+					\item $\operatorname{FV}(\lambda x:A. t) = \operatorname{FV}(t) \setminus \{ x \}$.
+					\end{itemize}
+				An \textbf{occurrence} of a variable $x$ in a term will mean any which is not the ``$x:A$" part of a term of the form $\lambda x:A. t$. Any occurrence of a variable which is not part of a term's free variable set is a \textbf{bound variable}.
+				\item The terms are $\alpha$-equivalence $\sim_\alpha$ classes of preterms where $\alpha$-equivalence is the smallest relation on the collection of preterms subject to the following.
+				\begin{itemize}
+					\item If $t \sim_\alpha s$ then $t, s$ have the same type.
+					\item If $t \sim_\alpha t'$ and $s \sim_\alpha s'$ then $\langle t, s \rangle \sim_\alpha \langle t', s' \rangle$.
+					\item If $t \sim_\alpha s$ then $\pi(t) \sim_\alpha \pi(s)$ and $\pi'(t) \sim_\alpha \pi'(s)$.
+					\item If $t \sim_\alpha t', s \sim_\alpha s'$ then $ts \sim_\alpha t's'$.
+					\item If $t \sim_\alpha s$ then $\lambda x:A. t \sim_\alpha \lambda x:A. s$.
+					\item The following is the core clause for $\alpha$-equivalence, the notation $t[x := y]$ denotes the term $t$ with all occurrences of $x$ in $t$ replaced by $y$. If $t$ is a term and $x,y$ a variables such that no occurrence of $y$ becomes bound in $t[x := y]$, then
+					\begin{equation}
+						\lambda x:A. t \sim_\alpha \lambda y. t[x := y]
+					\end{equation}
+				\end{itemize}
+				\item The free variable set of a term $[t]$ is $\operatorname{FV}(t)$ where $t$ is any representative of $[t]$. For convenience, equivalence class brackets will be dropped.
+				\end{itemize}
+			\item The equality relations are subject to the following, where $X$ is a valid context in all situations.
+			\begin{itemize}
+				\item $x \lto_X \ast$ for all variables $x: \mathbbm{1}$.
+				\item $\pi(\langle t, s \rangle) \lto_X t, \pi'(\langle t, s \rangle) \lto_X s$.
+				\item $\langle \pi(t), \pi'(t) \rangle \lto_X t$.
+				\item $(\lambda x:A. t)s \lto_X t[x := s]$, provided no free occurrence of a variable in $s$ becomes bound in $t[x := s]$.
+				\item $\lambda x:A. tx \lto_X t$.
+			\end{itemize}
+			\end{enumerate}
+		\end{defn}
+	\begin{remark}
+		By replacing $\lto_X$ in Definition \ref{def:lambda_type_theory} by the smallest equivalence relation generated by $\lto_X$, we obtain $=_X$ of \cite{Lambek_Scott}.
+		\end{remark}
 	
+	\begin{thm}[Functional Completeness]
+		Let $\call{C}$ be a cartesian closed category and $\call{C}[x_1: A_1,\ldots, x_n: A_n]$ the cartesian closed category freely generated by $\call{C}$ and indeterminants $x_i: \textbf{1} \lto A_i$, $i = 1 , \ldots, n$. We consider $\call{C}$ as a subcategory of $\call{C}[x_1:A_1, \ldots, x_n : A_n]$.
+		\end{thm}
+	
+	\begin{lemma}
+		Let $\call{C}$ be a cartesian closed category and $A, B \in \call{C}$ objects of $\call{C}$. There exists a bijection
+		\begin{align}
+			\operatorname{Hom}_{\scr{CL}\call{C}}(A,B) &\cong \operatorname{Hom}_{\call{C}}(A,B)\\
+			(x:A, t(x)) &\longmapsto
+			\end{align}
+		\end{lemma}
 	
 	
 	
@@ -200,11 +269,13 @@
 		
 		\bibitem{Gentzen} G. Gentzen. \emph{Investigations into logical deduction}
 		
-		\item{Godel} K. G\"{o}del, \emph{On Formally Undecidable Propositions of Principia Mathematica}
+		\bibitem{Godel} K. G\"{o}del, \emph{On Formally Undecidable Propositions of Principia Mathematica}
 		
-		\item{LambekScott} J. Lambek, P. J. Scott
+		\bibitem{LambekScott} J. Lambek, P. J. Scott
 		
-		\item{lambek} J. Lambek, \emph{Functional Completeness}.
+		\bibitem{lambek} J. Lambek, \emph{Functional Completeness}.
+		
+		\bibitem{Lambek_Scott} J. Lambek, P. J. Scott. \emph{Introduction to Higher Categorical Logic}
 	\end{thebibliography}
 	
 \end{document}

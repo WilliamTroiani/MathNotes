@@ -1,0 +1,141 @@
+\documentclass[12pt]{article}
+
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{mathrsfs}
+\usepackage{array}
+\usepackage{amssymb}
+\usepackage{units}
+\usepackage{graphicx}
+\usepackage{tikz-cd}
+\usepackage{nicefrac}
+\usepackage{hyperref}
+\usepackage{bbm}
+\usepackage{color}
+\usepackage{tensor}
+\usepackage{tipa}
+\usepackage{bussproofs}
+\usepackage{ stmaryrd }
+\usepackage{ textcomp }
+\usepackage{leftidx}
+\usepackage{afterpage}
+\usepackage{varwidth}
+\usepackage{tasks}
+\usepackage{ cmll }
+\usepackage{quiver}
+\usepackage{adjustbox}
+
+\newcommand\blankpage{
+	\null
+	\thispagestyle{empty}
+	\addtocounter{page}{-1}
+	\newpage
+}
+
+\graphicspath{ {images/} }
+
+\theoremstyle{plain}
+\newtheorem{thm}{Theorem}[subsection] % reset theorem numbering for each chapter
+\newtheorem{proposition}[thm]{Proposition}
+\newtheorem{lemma}[thm]{Lemma}
+\newtheorem{fact}[thm]{Fact}
+\newtheorem{cor}[thm]{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{defn}[thm]{Definition} % definition numbers are dependent on theorem numbers
+\newtheorem{exmp}[thm]{Example} % same for example numbers
+\newtheorem{notation}[thm]{Notation}
+\newtheorem{remark}[thm]{Remark}
+\newtheorem{condition}[thm]{Condition}
+\newtheorem{question}[thm]{Question}
+\newtheorem{construction}[thm]{Construction}
+\newtheorem{exercise}[thm]{Exercise}
+\newtheorem{example}[thm]{Example}
+\newtheorem{aside}[thm]{Aside}
+
+\def\doubleunderline#1{\underline{\underline{#1}}}
+\newcommand{\bb}[1]{\mathbb{#1}}
+\newcommand{\scr}[1]{\mathscr{#1}}
+\newcommand{\call}[1]{\mathcal{#1}}
+\newcommand{\psheaf}{\text{\underline{Set}}^{\scr{C}^{\text{op}}}}
+\newcommand{\und}[1]{\underline{\hspace{#1 cm}}}
+\newcommand{\adj}[1]{\text{\textopencorner}{#1}\text{\textcorner}}
+\newcommand{\comment}[1]{}
+\newcommand{\lto}{\longrightarrow}
+\newcommand{\rone}{(\operatorname{R}\bold{1})}
+\newcommand{\lone}{(\operatorname{L}\bold{1})}
+\newcommand{\rimp}{(\operatorname{R} \multimap)}
+\newcommand{\limp}{(\operatorname{L} \multimap)}
+\newcommand{\rtensor}{(\operatorname{R}\otimes)}
+\newcommand{\ltensor}{(\operatorname{L}\otimes)}
+\newcommand{\rtrue}{(\operatorname{R}\top)}
+\newcommand{\rwith}{(\operatorname{R}\&)}
+\newcommand{\lwithleft}{(\operatorname{L}\&)_{\operatorname{left}}}
+\newcommand{\lwithright}{(\operatorname{L}\&)_{\operatorname{right}}}
+\newcommand{\rplusleft}{(\operatorname{R}\oplus)_{\operatorname{left}}}
+\newcommand{\rplusright}{(\operatorname{R}\oplus)_{\operatorname{right}}}
+\newcommand{\lplus}{(\operatorname{L}\oplus)}
+\newcommand{\prom}{(\operatorname{prom})}
+\newcommand{\ctr}{(\operatorname{ctr})}
+\newcommand{\der}{(\operatorname{der})}
+\newcommand{\weak}{(\operatorname{weak})}
+\newcommand{\exi}{(\operatorname{exists})}
+\newcommand{\fa}{(\operatorname{for\text{ }all})}
+\newcommand{\ex}{(\operatorname{ex})}
+\newcommand{\cut}{(\operatorname{cut})}
+\newcommand{\ax}{(\operatorname{ax})}
+\newcommand{\negation}{\sim}
+\newcommand{\true}{\top}
+\newcommand{\false}{\bot}
+\DeclareRobustCommand{\diamondtimes}{%
+	\mathbin{\text{\rotatebox[origin=c]{45}{$\boxplus$}}}%
+}
+\newcommand{\tagarray}{\mbox{}\refstepcounter{equation}$(\theequation)$}
+\newcommand{\startproof}[1]{
+	\AxiomC{#1}
+	\noLine
+	\UnaryInfC{$\vdots$}
+}
+\newenvironment{scprooftree}[1]%
+{\gdef\scalefactor{#1}\begin{center}\proofSkipAmount \leavevmode}%
+	{\scalebox{\scalefactor}{\DisplayProof}\proofSkipAmount \end{center} }
+
+
+\title{Topoi and first order logic}
+
+\begin{document}
+
+
+\section{Topoi}
+We have mentioned several times that one need not place ZFC sets on any pedistool above any other topos. This section takes this seriously and works on the level of generality of topos theory. For an Introduction we refer the reader to \cite{TroianiThesis}, \cite{TroianiColimits}, \cite{Johnstone}, \cite{MM}.
+
+\begin{defn}
+	Let $\call{E}$ be a topos and $\Sigma$ a first order language. A \textbf{$\Sigma$-structure} $M$ is a choice of object $ME$ for each object $E \in \call{E}$, a choice of morphism $Mf: ME_1 \times \ldots \times ME_n \lto MF$ for each function symbol $f: E_1 \times \ldots \times E_n \lto F$ and a choice of subobject $MR \rightarrowtail ME_1 \times \ldots \times E_n$ for each relation symbol $R \subseteq E_1 \times \ldots \times E_n$ of a first order language $\Sigma$.
+	
+	A \textbf{morphism of $\Sigma$-structures} $\eta: M \lto M'$ is a collection of morphisms $\eta = \{ \eta_E: ME \lto M'E \}_{E \in \cal{E}}$, indexed by the objects of $\call{E}$, satisfying the following conditions.
+	\begin{itemize}
+		\item For each function symbol $f: E_1 \times \ldots \times E_n \lto F$ the following diagram commutes
+		\begin{equation}
+			\begin{tikzcd}
+				ME_1 \times \ldots \times ME_n\arrow[r,"{Mf}"]\arrow[d,swap,"{\eta_{E_1} \times \ldots \times \eta_{E_n}}"] & MF\arrow[d,"{\eta_F}"]\\
+				M'E_1 \times \ldots \times M'E_n\arrow[r,"{M'f}"] & M'F
+			\end{tikzcd}
+		\end{equation}
+		\item For each relation symbol $R \subseteq E_1 \times \ldots \times E_n$ the following diagram commutes
+		\begin{equation}
+			\begin{tikzcd}
+				MR\arrow[r,rightarrowtail]\arrow[d,swap,"{\eta_R}"] & ME_1 \times \ldots \times ME_n\arrow[d,"{\eta_{E_1} \times \ldots \times \eta_{E_n}}"]\\
+				M'R\arrow[r,rightarrowtail] & M'E_1 \times \ldots \times M'E_n
+			\end{tikzcd}
+		\end{equation}
+	\end{itemize}
+\end{defn}
+
+\begin{defn}
+	Given a topos $\call{E}$ and a first order language $\Sigma$ the collection of all $\Sigma$-structrues along with the collection of morphisms of $\Sigma$-structures forms a category $\underline{\Sigma-\operatorname{Str}}$.
+	
+	Given a first order theory $\bb{T}$ the subcategory $\underline{\operatorname{Mod}_{\bb{T}}}(\call{E})$ of $\underline{\Sigma-\operatorname{Str}}$ consisting of the models of $\bb{T}$ is the \textbf{category of models} of $\bb{T}$ in $\call{E}$.
+\end{defn}
+
+\end{document}

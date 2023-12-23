@@ -1,0 +1,13 @@
+\contentsline {section}{\numberline {1}Equality of variables in Geometry and logic}{2}{section.1}%
+\contentsline {section}{\numberline {2}Clifford algebras}{2}{section.2}%
+\contentsline {section}{\numberline {3}Koszul Complex}{2}{section.3}%
+\contentsline {section}{\numberline {4}Matrix factorisations}{3}{section.4}%
+\contentsline {section}{\numberline {5}The Bicategory of Landau-Ginzburg models (over $k$)}{8}{section.5}%
+\contentsline {section}{\numberline {6}Splitting idempotents}{9}{section.6}%
+\contentsline {subsection}{\numberline {6.1}The superbicategorical structure on the homotopy category of matrix factorisations}{12}{subsection.6.1}%
+\contentsline {section}{\numberline {7}The superbicategory $\mathcal {LG}$}{12}{section.7}%
+\contentsline {section}{\numberline {8}Clifford thickening}{13}{section.8}%
+\contentsline {section}{\numberline {9}Material I don't think I need}{14}{section.9}%
+\contentsline {subsection}{\numberline {9.1}The superbicategory $\mathcal {C}$}{14}{subsection.9.1}%
+\contentsline {subsection}{\numberline {9.2}Super(bi)categories}{16}{subsection.9.2}%
+\contentsline {subsubsection}{\numberline {9.2.1}Supercategories}{16}{subsubsection.9.2.1}%

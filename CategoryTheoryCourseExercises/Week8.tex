@@ -1,0 +1,184 @@
+\documentclass[12pt]{article}
+
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{mathrsfs}
+\usepackage{array}
+\usepackage{amssymb}
+\usepackage{units}
+\usepackage{graphicx}
+\usepackage{tikz-cd}
+\usepackage{nicefrac}
+\usepackage{hyperref}
+\usepackage{bbm}
+\usepackage{color}
+\usepackage{tensor}
+\usepackage{tipa}
+\usepackage{bussproofs}
+\usepackage{ stmaryrd }
+\usepackage{ textcomp }
+\usepackage{leftidx}
+\usepackage{afterpage}
+\usepackage{varwidth}
+\usepackage{tasks}
+\usepackage{ cmll }
+\usepackage{adjustbox}
+
+\newcommand\blankpage{
+	\null
+	\thispagestyle{empty}
+	\addtocounter{page}{-1}
+	\newpage
+}
+
+\graphicspath{ {images/} }
+
+\theoremstyle{plain}
+\newtheorem{thm}{Theorem}[subsection] % reset theorem numbering for each chapter
+\newtheorem{proposition}[thm]{Proposition}
+\newtheorem{lemma}[thm]{Lemma}
+\newtheorem{fact}[thm]{Fact}
+\newtheorem{cor}[thm]{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{defn}[thm]{Definition} % definition numbers are dependent on theorem numbers
+\newtheorem{exmp}[thm]{Example} % same for example numbers
+\newtheorem{notation}[thm]{Notation}
+\newtheorem{remark}[thm]{Remark}
+\newtheorem{condition}[thm]{Condition}
+\newtheorem{question}[thm]{Question}
+\newtheorem{construction}[thm]{Construction}
+\newtheorem{exercise}[thm]{Exercise}
+\newtheorem{example}[thm]{Example}
+\newtheorem{aside}[thm]{Aside}
+
+\def\doubleunderline#1{\underline{\underline{#1}}}
+\newcommand{\bb}[1]{\mathbb{#1}}
+\newcommand{\scr}[1]{\mathscr{#1}}
+\newcommand{\call}[1]{\mathcal{#1}}
+\newcommand{\psheaf}{\text{\underline{Set}}^{\scr{C}^{\text{op}}}}
+\newcommand{\und}[1]{\underline{\hspace{#1 cm}}}
+\newcommand{\adj}[1]{\text{\textopencorner}{#1}\text{\textcorner}}
+\newcommand{\comment}[1]{}
+\newcommand{\lto}{\longrightarrow}
+\newcommand{\rone}{(\operatorname{R}\bold{1})}
+\newcommand{\lone}{(\operatorname{L}\bold{1})}
+\newcommand{\rimp}{(\operatorname{R} \multimap)}
+\newcommand{\limp}{(\operatorname{L} \multimap)}
+\newcommand{\rtensor}{(\operatorname{R}\otimes)}
+\newcommand{\ltensor}{(\operatorname{L}\otimes)}
+\newcommand{\rtrue}{(\operatorname{R}\top)}
+\newcommand{\rwith}{(\operatorname{R}\&)}
+\newcommand{\lwithleft}{(\operatorname{L}\&)_{\operatorname{left}}}
+\newcommand{\lwithright}{(\operatorname{L}\&)_{\operatorname{right}}}
+\newcommand{\rplusleft}{(\operatorname{R}\oplus)_{\operatorname{left}}}
+\newcommand{\rplusright}{(\operatorname{R}\oplus)_{\operatorname{right}}}
+\newcommand{\lplus}{(\operatorname{L}\oplus)}
+\newcommand{\prom}{(\operatorname{prom})}
+\newcommand{\ctr}{(\operatorname{ctr})}
+\newcommand{\der}{(\operatorname{der})}
+\newcommand{\weak}{(\operatorname{weak})}
+\newcommand{\exi}{(\operatorname{exists})}
+\newcommand{\fa}{(\operatorname{for\text{ }all})}
+\newcommand{\ex}{(\operatorname{ex})}
+\newcommand{\cut}{(\operatorname{cut})}
+\newcommand{\ax}{(\operatorname{ax})}
+\newcommand{\negation}{\sim}
+\newcommand{\true}{\top}
+\newcommand{\false}{\bot}
+\DeclareRobustCommand{\diamondtimes}{%
+	\mathbin{\text{\rotatebox[origin=c]{45}{$\boxplus$}}}%
+}
+\newcommand{\tagarray}{\mbox{}\refstepcounter{equation}$(\theequation)$}
+\newcommand{\startproof}[1]{
+	\AxiomC{#1}
+	\noLine
+	\UnaryInfC{$\vdots$}
+}
+\newenvironment{scprooftree}[1]%
+{\gdef\scalefactor{#1}\begin{center}\proofSkipAmount \leavevmode}%
+	{\scalebox{\scalefactor}{\DisplayProof}\proofSkipAmount \end{center} }
+
+
+\title{Category Theory exercise sheet 8}
+
+\begin{document}
+	
+	\maketitle
+	
+	\section{Category theory}
+	\begin{enumerate}
+		\item Let $F: \scr{C} \lto \scr{D}$ be a functor which is left adjoint to $G: \scr{D} \lto \scr{C}$. Consider the endofunctor $GF: \scr{C} \lto \scr{C}$ along with the natural transformations $\eta: \operatorname{id} \Rightarrow GF$ and $\mu = G(\epsilon_F): GFGF \Rightarrow GF$ where $\epsilon: FG \Rightarrow \operatorname{id}$ is the counit of the adjunction. Prove that
+		\begin{equation}
+			(GF, \eta, \mu)
+		\end{equation}
+		is a monad.
+		\item Let $\scr{C}$ be a category and consider a monad $(T, \eta, \mu)$ over $\scr{C}$. Define:
+		\begin{align*}
+			\operatorname{Obj}(\scr{C}_T) &= \operatorname{Obj}(\scr{C})\\
+			\operatorname{Hom}_{\scr{C_T}}(X,Y) &= \operatorname{Hom}_{\scr{C}}(X, TY)
+			\end{align*}
+			We define composition to be:
+			\begin{equation}\label{eq:kleisli_comp}
+				g \circ_{\scr{C}_T} f = \mu_C \circ Tg \circ f: A \lto TB \lto T^2C \lto TC
+			\end{equation}
+			The identity morphism for $X \in \scr{C}_T$ is $\eta_X$.
+			Prove that $\scr{C}_T$ is a category. This category is called the \textbf{Kleisli category} of $T$.
+		\end{enumerate}		
+		Recall from the lectures that to every monad $(T, \mu, \eta)$ there exists a corresponding Kleisli triple $(T, \eta, \und{0.2}^\ast)$, where if $g: B \lto TC$ is a morphisim in $\scr{C}$ then $g^\ast: TB \lto TC$ is $\mu_C \circ Tf$. Thus, given $f: A\lto TB$ the Kleisli triple allows us to ``compose" $g$ and $f$ using $g^\ast$:
+		\begin{equation}
+			g^\ast \circ f = \mu_B \circ Tg \circ f
+			\end{equation}
+		which is exactly \eqref{eq:kleisli_comp}. So now we see exactly why it is that monads are so helpful for modelling programs. We start by identifying programs with input/output pairs (by identifying programs with morphisms in $\underline{\operatorname{Set}})$ and then we choose a notion of computation of particular interest, modelled by a monad $T$. Programs can then be compared with consideration of this notion of computation by comparing morphisms in the Kleisli category of $T$.
+	\section{Mathematics}
+	Let $M$ be a monoid, define the functor
+	\begin{align*}
+		T: \underline{\operatorname{Set}} &\lto \underline{\operatorname{Set}}\\
+		X &\longmapsto X \times M\\
+		(f: X \to Y) &\lto (Tf(x,m) = (f(x),m))
+		\end{align*}
+	Then define $\eta: \operatorname{id} \Rightarrow T$ by
+	\begin{align*}
+		\eta_X: X &\lto TX\\
+		x &\longmapsto (x, e)
+		\end{align*}
+	where $e$ is the identity element of $M$. Define $\mu: T^2 \Rightarrow T$ by
+	\begin{align*}
+		\mu_X: T^2(X) &\lto T(X)\\
+		((x,m_1), m_2) &\lto (x, m_1 \cdot m_2)
+		\end{align*}
+	Prove that
+	\begin{equation}
+		(T, \eta, \mu)
+		\end{equation}
+	is a monad.
+	
+	\section{Computer science}
+	\begin{enumerate}
+	\item Consider the category $\underline{\operatorname{Set}}$ of sets. Define the following notion of computation corresponding to exceptions. Let $E$ be a set of exceptions.
+	\begin{align*}
+		TA &= A \coprod E\\
+		\eta_A(x) &= x\text{ (the canonical inclusion map)}\\
+		(f: A \lto TB) &\lto f^\ast(a) = 
+		\begin{cases}
+			a,& a \in A\\
+			e, & e \in E
+			\end{cases}
+		\end{align*}
+	Prove that this is a Kleisli triple.
+	\item Define
+	\begin{align*}
+		TA &= \call{P}_{\text{fin}}(A)\\
+		\eta_A(a) &= \{ a \}\\
+		(f: A \lto TB) &\longrightarrow \big(f^\ast(a) = \bigcup_{x \in a}f(x)\big)
+	\end{align*}
+	Prove that this is a Kleisli triple. What notion of computation does this model?
+	\end{enumerate}
+	
+	
+	
+	
+	
+	
+	\end{document}

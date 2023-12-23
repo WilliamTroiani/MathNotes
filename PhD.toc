@@ -1,0 +1,42 @@
+\contentsline {section}{\numberline {1}Introduction}{2}{section.1}%
+\contentsline {section}{\numberline {2}Gentzen-Mints-Zucker duality and patterns of equality}{4}{section.2}%
+\contentsline {subsection}{\numberline {2.1}The category of proofs}{6}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Simply typed $\lambda $-calculus and the category of terms}{8}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}From $\lambda $-calculus to Linear Logic}{11}{subsection.2.3}%
+\contentsline {subsubsection}{\numberline {2.3.1}$\lambda $-terms as normal functions}{13}{subsubsection.2.3.1}%
+\contentsline {subsubsection}{\numberline {2.3.2}The $\lambda $-calculus model}{15}{subsubsection.2.3.2}%
+\contentsline {subsubsection}{\numberline {2.3.3}Linear proofs as linear functions}{17}{subsubsection.2.3.3}%
+\contentsline {section}{\numberline {3}Multiplicative Exponential Linear Logic (Sequent Calculus)}{19}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Proof nets}{21}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}The dynamics of MELL}{25}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Linear Logic proofs as normal functions}{28}{subsection.3.3}%
+\contentsline {section}{\numberline {4}Multiplicative Linear Logic}{32}{section.4}%
+\contentsline {subsection}{\numberline {4.1}The Sequentialisation Theorem}{32}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Modelling the dynamics of MLL}{44}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Proofs as permutations (Geometry of Interaction Zero)}{46}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}Persistent paths}{54}{subsection.4.4}%
+\contentsline {subsection}{\numberline {4.5}Proofs as operators}{58}{subsection.4.5}%
+\contentsline {subsection}{\numberline {4.6}Geometry of Interaction One}{63}{subsection.4.6}%
+\contentsline {section}{\numberline {5}Algebra}{67}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Graded rings, modules, and algebras}{67}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Exterior algebra}{70}{subsection.5.2}%
+\contentsline {subsubsection}{\numberline {5.2.1}Category theoretic properties of the exterior algebra}{72}{subsubsection.5.2.1}%
+\contentsline {subsubsection}{\numberline {5.2.2}Completion and quasi-regularity}{74}{subsubsection.5.2.2}%
+\contentsline {subsection}{\numberline {5.3}Clifford algebras}{75}{subsection.5.3}%
+\contentsline {subsubsection}{\numberline {5.3.1}Bilinear/Quadratic forms}{75}{subsubsection.5.3.1}%
+\contentsline {subsubsection}{\numberline {5.3.2}Clifford algebras}{78}{subsubsection.5.3.2}%
+\contentsline {subsubsection}{\numberline {5.3.3}Clifford algebras of real or complex bilinear forms}{81}{subsubsection.5.3.3}%
+\contentsline {subsection}{\numberline {5.4}Splitting Idempotents}{86}{subsection.5.4}%
+\contentsline {section}{\numberline {6}Quantum computing}{88}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Error correction}{93}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Bit flip error correction}{93}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.3}Stabilisers}{96}{subsection.6.3}%
+\contentsline {section}{\numberline {7}Geometry of interaction models, MLL}{99}{section.7}%
+\contentsline {section}{\numberline {A}Operator Theory}{99}{appendix.A}%
+\contentsline {subsection}{\numberline {A.1}Adjoint operators}{99}{subsection.A.1}%
+\contentsline {subsection}{\numberline {A.2}Hermitian and unitary operators}{104}{subsection.A.2}%
+\contentsline {section}{\numberline {A}The Untyped $\lambda $-Calculus}{109}{appendix.A}%
+\contentsline {section}{\numberline {B}Regular and quasi-regular sequences}{111}{appendix.B}%
+\contentsline {subsubsection}{\numberline {B.0.1}Regular sequences and the Koszul complex}{112}{subsubsection.B.0.1}%
+\contentsline {subsubsection}{\numberline {B.0.2}Koszul Complex and lengths of maximal regular sequences}{114}{subsubsection.B.0.2}%
+\contentsline {subsection}{\numberline {B.1}Regular sequences are quasi-regular}{120}{subsection.B.1}%

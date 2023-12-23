@@ -115,7 +115,7 @@
 	\section{Multiplicatives}
 	Mathematics is formalised in logical languages which in turn are designed around the ideas of mathematics. So which, of mathematics or logic, is more fundamental? To explore this question, this note presents the Geometry of Interaction program, which seeks to define a model for Linear Logic inside some ``geometric" (or topological, or functional...) category (interpreted either formally or informally).
 	
-	The Geometry of Interaction program has been intiated by Girard \cite{girard}, \cite{GoI2}, \cite{GoI3}, \cite{GoI4}, \cite{GoI5}, and further developed by Regnier \cite{Regnier}, Seiller \cite{Seiller1}, \cite{Seiller2}, \cite{Seiller3}, \cite{Seiller4}, as well as many others \cite{Laurent}, \cite{Hines}. The work presented in this current note is an entrance point to this body of work, in particular, none of the ideas presented here are new (although the presentation has been personalised and is different to their original presentations). The standard textbook reference is \cite{BS} however this note was developed from the original papers.
+	The Geometry of Interaction program has been initiated by Girard \cite{girard}, \cite{GoI2}, \cite{GoI3}, \cite{GoI4}, \cite{GoI5}, and further developed by Regnier \cite{Regnier}, Seiller \cite{Seiller1}, \cite{Seiller2}, \cite{Seiller3}, \cite{Seiller4}, as well as many others \cite{Laurent}, \cite{Hines}. The work presented in this current note is an entrance point to this body of work, in particular, none of the ideas presented here are new (although the presentation has been personalised and is different to their original presentations). The standard textbook reference is \cite{BS} however this note was developed from the original papers.
 	
 	\begin{defn}\label{def:formulas}
 		There is an infinite set of \textbf{unoriented atoms} $X,Y,Z,...$ and an \textbf{oriented atom} (or \textbf{atomic proposition}) is a pair $(X,+)$ or $(X,-)$ where $X$ is an unoriented atom. The set of \textbf{pre-formulas} is defined as follows.
@@ -158,7 +158,7 @@ The following system of logic is due to Girard \cite{linearlogic}, \cite{Analyti
 		\begin{itemize}
 			\item the \textbf{identity group}:
 			\begin{itemize}
-				\item \textbf{Axiom}
+				\item \textbf{Axiom}:
 				\begin{prooftree}
 					\AxiomC{}
 					\RightLabel{$\ax$}
@@ -172,7 +172,7 @@ The following system of logic is due to Girard \cite{linearlogic}, \cite{Analyti
 					\BinaryInfC{$\vdash \Gamma, \Gamma', \Delta, \Delta'$}
 				\end{prooftree}
 			\end{itemize}
-			\item the \textbf{multiplicative rules}
+			\item the \textbf{multiplicative rules}:
 			\begin{itemize}
 				\item \textbf{Times}:
 				\begin{prooftree}
@@ -181,7 +181,7 @@ The following system of logic is due to Girard \cite{linearlogic}, \cite{Analyti
 					\RightLabel{$\otimes$}
 					\BinaryInfC{$\vdash \Gamma, \Gamma', A \otimes B, \Delta, \Delta'$}
 				\end{prooftree}
-				\item \textbf{Par}
+				\item \textbf{Par}:
 				\begin{prooftree}
 					\AxiomC{$\vdash \Gamma, A, B, \Gamma'$}
 					\RightLabel{$\parr$}
@@ -190,7 +190,7 @@ The following system of logic is due to Girard \cite{linearlogic}, \cite{Analyti
 			\end{itemize}
 			\item the \textbf{structural rule}:
 			\begin{itemize}
-				\item \textbf{Exchange}
+				\item \textbf{Exchange}:
 				\begin{prooftree}
 					\AxiomC{$\vdash \Gamma, A, B, \Gamma'$}
 					\RightLabel{$\ex$}
@@ -887,7 +887,7 @@ In Section \ref{sec:sequentialisation} we will see what the image of the map $T$
 			\item For any tensor link $l$ with premises $A,B$ such that $l$ has switching $L$, we have the following, where all formulas considered are part of the same tensor link:
 			\begin{itemize}
 				\item if $x_j = A \downarrow$ then $x_{j+1} = (A \otimes B)\downarrow$,
-				\item if $x_j = \uparrow (A \otimes B)$ then $x_{j+1} = \uparrow B_j$,
+				\item if $x_j = \uparrow (A \otimes B)$ then $x_{j+1} = \uparrow B$,
 				\item if $x_j = B \downarrow$ then $x_{j+1} = \uparrow A$.
 			\end{itemize}
 			and if $l$ has switching $R$, we have:
@@ -2386,7 +2386,7 @@ In fact, this can only happen in a proof \emph{structure}, whereas \emph{any} ch
 	\begin{equation}
 		(Z_1,\ldots, Z_n)
 		\end{equation}
-	where $Z_i \sim Z_{i+1} \forall i = 1,\ldots, n-1$. Such a sequence is called a \textbf{persistent path}. Notice that the reverse sequence $(Z_n, \ldots, Z_1)$ of any persistent path $(Z_1, \ldots, Z_n)$ is itself a persistent path. If $Z_1$ is positive, then the persistent path $(Z_1,\ldots, Z_n)$ is \textbf{positively oriented}.
+	where $Z_i \sim Z_{i+1}, \forall i = 1,\ldots, n-1$. Such a sequence is called a \textbf{persistent path}. Notice that the reverse sequence $(Z_n, \ldots, Z_1)$ of any persistent path $(Z_1, \ldots, Z_n)$ is itself a persistent path. If $Z_1$ is positive, then the persistent path $(Z_1,\ldots, Z_n)$ is \textbf{positively oriented}.
 	\end{defn}
 
 \begin{remark}\label{def:persistent_maps}
@@ -2594,6 +2594,13 @@ Hence $\llbracket \pi \rrbracket$ is the following matrix $4 \times 4$ matrix, w
 	\end{example}
 
 \subsection{Geometry of Interaction One}
+
+
+\begin{equation}
+	\int_a^bf(x)dx = F(b)- F(a)
+	\end{equation}
+
+
 Geometry of Interaction One is the program introduced by Girard in \cite{girard}. There, Girard did not consider unoriented atoms, whereas here we do. This is not a significant difference between the two presentations though.
 \begin{defn}\label{def:sigma}
 	Let $\pi$ be a proof structure and $\zeta$ the proof structure obtained by removing all cut-links in $\pi$ (and appending conclusion links to the premises of the cut links removed). Say $\pi$ has atomic atoms $X_1, \ldots, X_m$ amongst the premises to its conclusion links, and say it has atomic atoms $Y_1, \ldots, Y_n$ amongst the premises of the cut links. We will construct a $(2n + m) \times (2n + m)$ matrix $\sigma$ and use $X_1,\ldots, X_m, Y_1, Y_1',\ldots, Y_n,Y_n'$ as labels for the indices of this matrix.

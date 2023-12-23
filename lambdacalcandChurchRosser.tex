@@ -1,0 +1,335 @@
+\documentclass[12pt]{article}
+
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{mathrsfs}
+\usepackage{amssymb}
+\usepackage{units}
+\usepackage{graphicx}
+\usepackage{tikz-cd}
+\usepackage{nicefrac}
+\usepackage{hyperref}
+\usepackage{bbm}
+\usepackage{color}
+\usepackage{tensor}
+\usepackage{tipa}
+\usepackage{bussproofs}
+\usepackage{ stmaryrd }
+\usepackage{ textcomp }
+\usepackage{leftidx}
+\usepackage{afterpage}
+
+\newcommand\blankpage{
+	\null
+	\thispagestyle{empty}
+	\addtocounter{page}{-1}
+	\newpage
+}
+
+\graphicspath{ {images/} }
+
+\theoremstyle{plane}
+\newtheorem{thm}{Theorem}
+
+\theoremstyle{definition}
+\newtheorem{defn}{Definition}
+\newtheorem{Lemma}{Lemma}
+\newtheorem{example}{Example}
+\newtheorem{notation}{Notation}
+\newtheorem{cor}{Corollary}
+\newtheorem{remark}{Remark}
+
+\newcommand{\bb}[1]{\mathbb{#1}}
+\newcommand{\scr}[1]{\mathscr{#1}}
+\newcommand{\call}[1]{\mathcal{#1}}
+\newcommand{\psheaf}{\text{\underline{Set}}^{\scr{C}^{\text{op}}}}
+\newcommand{\und}[1]{\underline{\hspace{#1 cm}}}
+\newcommand{\adj}[1]{\text{\textopencorner}{#1}\text{\textcorner}}
+
+\usepackage[margin=3cm]{geometry}
+
+\title{An Introduction to untyped $\lambda$-calculus}
+\author{Will Troiani}
+\date{August 2019}
+
+\begin{document}
+	\maketitle
+	
+	\section{Introduction}
+	Across the different definitions of an \emph{algorithm} the execution of a computation is in some way a process of allowed transformations to an expression which either continues indefinitely or terminates after a finite number of steps. For example,
+	\begin{equation}
+		\label{six}
+		1 + 2 + 3
+	\end{equation}
+	is not \emph{computed} yet, as it may be transformed to
+	\[3 + 3\]
+	which can then be transformed to 6. Of course, there is another route of computation which could have been taken, performing the second addition of (\ref{six}) first obtains $1 + 5$, which then yields $6$. The property that there exists the term $6$ which both computation paths $1 + 2 + 3 \to 3 + 3$ and $1 + 2 + 3 \to 1 + 5$ can be computed to is the property of \emph{confluence} of natural number addition.\\\\
+	%
+	The goal of this note is to introduce a system of computation, the \emph{untyped $\lambda$-calculus}, and prove the Church-Rosser theorem which states that the untyped $\lambda$-calculus is \emph{confluent}.
+	
+	\section{The Untyped $\lambda$-Calculus}
+	The untyped $\lambda$-calculus sits among a collection of \emph{type theories} which have been used as a foundation for mathematics \cite{lambekscott}, a foundation for logic \cite{ChurchOne}, (although it was later found to be inconsistent \cite{ChurchTwo}), and a foundation of certain programming languages such as AGDA, Lisp, Haskell, Coq, COC, etc. The untyped $\lambda$-calculus is the simplest of these theories, and although is rarely used in its original form, is a good entry point to many of the important ideas concerning the more modern type theories.\\\\
+	%
+	The main reference for this section is \cite[\S3.3]{SU}.
+	%
+	\begin{defn}
+		\label{lambdacalc}
+		Let $\scr{V}$ be a (countably) infinite set of variables, and let $\scr{L}$ be the language consisting of $\scr{V}$ along with the special symbols 
+		\[\lambda \qquad . \qquad ( \qquad )\]
+		Let $\scr{L}^\ast$ be the set of words of $\scr{L}$, more precisely, an element $w \in \scr{L}^\ast$ is a finite sequence $(w_1,...,w_n)$ where each $w_i$ is in $\scr{L}$, for convenience, such an element will be written as $w_1...w_n$. Now let $\Lambda_p$ denote the smallest subset of $\scr{L}^\ast$ such that
+		\begin{itemize}
+			\item if $x \in \scr{V}$ then $x \in \Lambda_p$,
+			\item if $M,N \in \Lambda_p$ then $(MN) \in \Lambda_p$,
+			\item if $x \in \scr{V}$ and $M \in \Lambda_p$ then $(\lambda x. M) \in \Lambda_p$
+		\end{itemize}
+		$\Lambda_p$ is the set of \textbf{preterms}. A preterm $M$ such that $M \in \scr{V}$ is a \textbf{variable}, if $M = (M_1M_2)$ for some preterms $M_1,M_2$, then $M$ is an \textbf{application}, and if $M = (\lambda x, M')$ for some $x \in \scr{V}$ and $M' \in \Lambda_p$ then $M$ is an \textbf{abstraction}.
+	\end{defn}
+	In practice, it becomes unwieldy to use this notation for the preterms exactly, and so the following notation is adopted:
+	\begin{defn}
+		\begin{itemize}
+			\item For preterms $M_1,M_2,M_3$, the preterm $M_1M_2M_3$ means $((M_1M_2)M_3))$,
+			\item For variables $x,y$ and a preterm $M$, the preterm $\lambda xy. M$ means $(\lambda x. (\lambda y. M))$.
+		\end{itemize}
+	\end{defn}
+	The variables $x$ which appear in the subpreterm $M$ of a preterm $\lambda x. M$ are viewed as ``markers for substitution", (see Remark \ref{markersforsubstitution}). For this reason, a distinction is made between the variable $x$ and the variable $y$ in, for example, the preterm $\lambda x. xy$:
+	\begin{defn}
+		Given a preterm $M$, let $\text{FV}(M)$ be the following set of variables, defined recursively
+		\begin{itemize}
+			\item if $M = x$ where $x$ is a variable then $\text{FV}(M) = \lbrace x \rbrace$,
+			\item if $M = M_1M_2$ then $\text{FV}(M) = \text{FV}(M_1) \cup \text{FV}(M_2)$,
+			\item if $M = \lambda x. M'$ then $\text{FV}(M) = \text{FV}(M') \setminus \lbrace x \rbrace$.
+		\end{itemize}
+		A variable $x \in \text{FV}(M)$ is a \textbf{free variable} of $M$, a variable $x$ which appears in $M$ but is not a free variable is a \textbf{bound variable}.
+	\end{defn}
+	As mentioned, bound variables will be viewed as ``markers for substitution", so we define the following equivalence relation on $\Lambda_p$ which relates a preterm $M$ to $M'$ if $M$ can be obtained by replacing every bound occurrence of a variable $x$ in $M'$ with another variable $y$:
+	\begin{defn}
+		For any term $M$, let $M[x := y]$ be the preterm given by replacing every bound occurrence of $x$ in $M$ with $y$. Define the following equivalence relation on $\Lambda_p$: $M \sim_\alpha M'$ if there exists $x,y \in \scr{V}$ such that $M[x := y] = M'$, where no free variable of $M$ becomes bound in $M[x := y]$. In such a case, we say that $M$ is \textbf{$\alpha$-equivalent} to $M'$.
+	\end{defn}
+	\begin{remark}
+		The reason why we need to let $x$ and $y$ be such that no free variable of $M$ becomes bound in $M[x:=y]$ is so that a preterm such as $\lambda x. y$ does not get identified with the preterm $\lambda y. y$.
+	\end{remark}
+	We are now in a position to define the underlying language of $\lambda$-calculus:
+	\begin{defn}
+		Let $\Lambda = \nicefrac{\Lambda_p}{\sim_\alpha}$ be the set of \textbf{$\lambda$-terms}. The set of \textbf{free variables} of a $\lambda$-term $[M]$ is $\text{FV}(M)$, which can be shown to be well defined. For convenience, $M$ will be written instead of $[M]$.
+	\end{defn}
+	Now the dynamics of the computation of $\lambda$-terms will be defined.
+	\begin{defn}
+		\textbf{Single step $\beta$-reduction} $\to_\beta$ is the smallest relation on $\Lambda$ satisfying:
+		\begin{itemize}
+			\item the \textbf{reduction axiom}:
+			\begin{itemize}
+				\item for all variables $x$ and $\lambda$-terms $M,M'$, $(\lambda x. M)M' \to_\beta M[x := M']$, where $M[x:= M']$ is the term given by replacing every free occurrence of $x$ in $M$ with $M'$,
+			\end{itemize}
+			\item the following \textbf{compatibility axioms}:
+			\begin{itemize}
+				\item if $M \to_\beta M'$ then $(MN) \to_\beta (M'N)$ and $(NM) \to_\beta (NM')$,
+				\item if $M \to_\beta M'$ then for any variable $x$, $\lambda x. M \to_\beta \lambda x M'$.
+			\end{itemize}
+		\end{itemize}
+		A subterm of the form $(\lambda x. M)M'$ is a \textbf{$\beta$-redex}, and $(\lambda x. M)M'$ \textbf{single step $\beta$-reduces} to $M[x := M']$.
+	\end{defn}
+	\begin{remark}
+		Strictly, single step $\beta$ reduction should be defined on preterms and then shown that a well defined relation is induced on terms, but this level of detail has been omitted for the sake of clarity.
+	\end{remark}
+	\begin{remark}
+		\label{markersforsubstitution}
+		The reducition axiom shows precisely in what sense a bound variable is a ``marker for substitution". For example, $(\lambda x.x)M \to_\beta M$ and $(\lambda y.y)M \to_\beta M$, which is why $\lambda x.x$ is identified with $\lambda y.y$.
+	\end{remark}
+	It is through single step $\beta$-reduction that computation may be performed. In fact, $\lambda$-calculus is capable of performing natural number addition:
+	\begin{example}
+		\label{plusonetwo}
+		Define the following $\lambda$-terms:
+		\begin{itemize}
+			\item ONE := $\lambda f x . fx$,
+			\item TWO := $\lambda f x . ffx$,
+			\item THREE := $\lambda fx. fffx$,
+			\item PLUS := $\lambda mnfx. mf(nfx)$
+		\end{itemize}
+		then
+		\begin{align*}
+			PLUS\text{ }ONE\text{ }TWO &= (\lambda mnfx. \underline{m}f(nfx))\underline{(\lambda f x . fx)}(\lambda f x . ffx)\\
+			&\to_\beta (\lambda nfx. (\lambda f x . \underline{f}x)\underline{f}(nfx))(\lambda f x . ffx)\\
+			&\to_\beta (\lambda nfx. (\lambda x . f\underline{x})\underline{(nfx)})(\lambda f x . ffx)\\
+			&\to_\beta (\lambda nfx. f\underline{n}fx)\underline{(\lambda f x . ffx)}\\
+			&\to_\beta (\lambda fx. f(\lambda f x . \underline{f}\underline{f}x)\underline{f}x)\\
+			&\to_\beta (\lambda fx. f(\lambda  x . ff\underline{x})\underline{x})\\
+			&\to_\beta (\lambda fx. fffx) = THREE
+		\end{align*}
+		where each step is obtained by substituting the right most underlined $\lambda$-term inplace of the left most underlined variable.
+	\end{example}
+	Historically, is this how Church first defined computable functions.
+	
+	\section{The Church-Rosser Theorem}
+	Example \ref{plusonetwo} shows one possible sequence of $\beta$-reductions which reduces PLUS ONE TWO to THREE, however, different valid sequences exist. Moreover, no matter what path is taken, one can always find a path to THREE. The following theorem, which is the main point of this note, states that such a term always exists:
+	\begin{defn}
+		\textbf{Multi step $\beta$-reduction} $\twoheadrightarrow$ (or simply \textbf{$\beta$-reduction}) is the smallest relation on $\Lambda$ satisfying
+		\begin{itemize}
+			\item the \textbf{reduction axiom}:
+			\begin{itemize}
+				\item if $M \to_\beta M'$ then $M \twoheadrightarrow M'$,
+			\end{itemize}
+			\item \textbf{reflexivity}:
+			\begin{itemize}
+				\item if $M = M'$ then $M \twoheadrightarrow M'$,
+			\end{itemize}
+			\item \textbf{transitivity}:
+			\begin{itemize}
+				\item if $M_1 \twoheadrightarrow M_2$ and $M_2 \twoheadrightarrow M_3$ then $M_1 \twoheadrightarrow M_3$
+			\end{itemize}
+		\end{itemize}
+		If $M \twoheadrightarrow M'$, then $M$ \textbf{multistep $\beta$-reduces} to $M'$.
+	\end{defn}
+	\begin{thm}[The Church Rosser Theorem]
+		If $M_1 \twoheadrightarrow M_2$ and $M_1 \twoheadrightarrow M_3$ then there exists a term $M_4$ such that the diagram
+		\[
+		\begin{tikzcd}
+			M_1\arrow[r,twoheadrightarrow]\arrow[d,twoheadrightarrow] & M_2\arrow[d,twoheadrightarrow]\\
+			M_3\arrow[r,twoheadrightarrow] & M_4
+		\end{tikzcd}
+		\]
+		commutes. That is, multi step $\beta$ reduction is \textbf{confluent}.
+	\end{thm}
+	\begin{proof}
+		The proof will proceed by introducing a new relation $\Rightarrow$ on $\Lambda$ which satisfies the following:
+		\begin{itemize}
+			\item if $M \to_\beta M'$ then $M \Rightarrow M'$,
+			\item if $M \Rightarrow M'$ then $M \twoheadrightarrow M'$,
+			\item if $M_1 \Rightarrow M_2$ and $M_1 \Rightarrow M_3$ then there exists $M_4 \in \Lambda$ which makes the following diagram commute
+			\[
+			\begin{tikzcd}
+				M_1\arrow[r,Rightarrow]\arrow[d,Rightarrow] & M_2\arrow[d,Rightarrow]\\
+				M_3\arrow[r,Rightarrow] & M_4
+			\end{tikzcd}
+			\]
+		\end{itemize}
+		This is sufficient as if $M_1 = M^{11},...,M^{1m}$ and $M_1 = M^{11},...,M^{n1}$ are sequences of $\lambda$-terms such that
+		\[M^{11} \to_\beta M^{12} \to_\beta \hdots \to_\beta M^{1m}\]
+		and
+		\[M^{11} \to_\beta M^{21} \to_\beta \hdots \to_\beta M^{n1}\]
+		then the diagram
+		\[
+		\begin{tikzcd}
+			M_1 = M^{11}\arrow[r,Rightarrow]\arrow[d,Rightarrow] & M^{12}\arrow[r,Rightarrow] & \hdots\arrow[r,Rightarrow] & M^{1m} = M_2\\
+			M^{21}\arrow[d,Rightarrow]\\
+			\vdots\arrow[d,Rightarrow]\\
+			M_3 = M^{n1}
+		\end{tikzcd}
+		\]
+		can be completed to the following commuting diagram
+		\[
+		\begin{tikzcd}
+			M_1 = M^{11}\arrow[r,Rightarrow]\arrow[d,Rightarrow] & M^{12}\arrow[r,Rightarrow]\arrow[d,Rightarrow] & \hdots\arrow[r,Rightarrow]\arrow[d,Rightarrow] & M^{1m} = M_2\arrow[d,Rightarrow]\\
+			M^{21}\arrow[d,Rightarrow]\arrow[r,Rightarrow] & M^{22}\arrow[r,Rightarrow]\arrow[d,Rightarrow] & \hdots\arrow[r,Rightarrow]\arrow[d,Rightarrow] & M^{2m}\arrow[d,Rightarrow]\\
+			\vdots\arrow[d,Rightarrow]\arrow[r,Rightarrow] & \vdots\arrow[d,Rightarrow]\arrow[r,Rightarrow] & \ddots\arrow[d,Rightarrow]\arrow[r,Rightarrow] & \vdots\arrow[d,Rightarrow]\\
+			M_3 = M^{n1}\arrow[r,Rightarrow] & M^{n2}\arrow[r,Rightarrow] & \hdots\arrow[r,Rightarrow] & M^{nm}
+		\end{tikzcd}
+		\]
+		from which it follows that $M^{nm}$ satisfies the required properties of $M_4$.\\\\
+		%
+		Towards this end, define the following relation on $\Lambda$:
+		\begin{defn}
+			\textbf{Parallel $\beta$ reduction} $\Rightarrow$ is the smallest relation on $\Lambda$ satisfying
+			\begin{itemize}
+				\item the \textbf{reduction axiom}:
+				\begin{itemize}
+					\item if $M \Rightarrow M'$ and $N \Rightarrow N'$ then $(\lambda x.M)N \Rightarrow M'[x := N']$,
+				\end{itemize}
+				\item \textbf{reflexivity}:
+				\begin{itemize}
+					\item if $M = M'$ then $M \Rightarrow M'$,
+				\end{itemize}
+				\item the following \textbf{compatibility axioms}:
+				\begin{itemize}
+					\item if $M \Rightarrow M'$ and $N \Rightarrow N'$ then $(MN) \Rightarrow (M'N')$,
+					\item if $M \Rightarrow M'$ then $\lambda x. M \Rightarrow \lambda x. M'$.
+				\end{itemize}
+			\end{itemize}
+		\end{defn}
+		\begin{remark}
+			$\beta$-reduction might introduce new $\beta$-redexes which are not ``visible" in the original term. For example
+			\[(\lambda x. xxx)(\lambda x.x) \twoheadrightarrow (\lambda x.x)(\lambda x.x)(\lambda x.x)\]
+			By transitivity, $(\lambda x.xxx)(\lambda x.x) \twoheadrightarrow \lambda x.x$. However, parallel $\beta$-reduction is not transitive, so $(\lambda x.xxx)(\lambda x.x)\not\Rightarrow \lambda x.x$. So $M \Rightarrow N$ only if $N$ is obtained from $M$ by reducing a collection of the $\beta$ redexes in $M$ and not ones which are introduced by this reduction process.
+		\end{remark}
+		Clearly, if $M \to_\beta M'$ then $M \Rightarrow M'$ and if $M \Rightarrow M'$ then $M \twoheadrightarrow M'$. It remains to show that parallel $\beta$ reduction is confluent.\\\\
+		%
+		First, we claim that if $M_1 \Rightarrow M_2$ and $N_1 \Rightarrow N_2$ then $M_1[x := N_1] \Rightarrow M_2[x := N_2]$. To prove this claim, we proceed by inducting on the ``minimum number of usages of the axioms of parallel $\beta$ reduction required to prove that $M_1 \Rightarrow M_2$". More precisely, let
+		\[S_0 := \lbrace (M,M) \mid M \in \Lambda \rbrace\]
+		and for $i>0$, let $S_i$ be the smallest set such that
+		\begin{itemize}
+			\item $S_{i-1} \subseteq S_i$,
+			\item if $(M_1,M_2),(N_1,N_2) \in S_{i - 1}$ then $((M_1N_1),(M_2N_2)) \in S_i$,
+			\item if $(M,N) \in S_{i-1}$ then $(\lambda x. M,\lambda x. N) \in S_{i}$,
+			\item if $(M_1,M_2),(N_1,N_2) \in S_{i-1}$ then $((\lambda x. M_1)N_1,N_2[x := M_2]) \in S_i$
+		\end{itemize}
+		Clearly, $M \Rightarrow N$ if and only if $(M,N) \in S := \cup_{i = 0}^\infty S_i$. Define the following function:
+		\begin{align*}
+			\varphi: S &\to \bb{N}\\
+			(M,N) &\mapsto \operatorname{min}\lbrace i \in \bb{N} \mid (M,N) \in S_i\rbrace
+		\end{align*}
+		we proceed by (strong) induction on $\varphi(M_1,M_2)$. If $\varphi(M_1,M_2) = 0$ then $M_1 = M_2$ from which it follows that $M_1[x := N_1] \Rightarrow M_2[x := N_2]$. Say the result holds true for $\varphi(M_1,M_2) < k$. Then there are three cases, corresponding to $M_1$ being a variable, an application, or an abstraction (see Definition \ref{lambdacalc}). If $M_1$ is a variable, then $\varphi(M_1,M_2) = 0$ and we have reduced to the base case. If $M_1 = \lambda y. M_1'$ then $M_1 \Rightarrow M_2$ implies that $M_2 = \lambda x. M_2'$. By the inductive hypothesis $M_1'[x := N_1] \Rightarrow M_2'[x :=N_2]$ which implies
+		\begin{align*}
+			\lambda y. (M_1'[x := N_1]) &\Rightarrow \lambda y. (M_2'[x :=N_2])\\
+			\text{so, }(\lambda y. M_1')[x := N_1] &\Rightarrow (\lambda y. M_2')[x :=N_2]\\
+			\text{so, }M_1[x := N_1] &\Rightarrow M_2[x := N_2]
+		\end{align*}
+		Lastly, say $M_1 = (M_1^1 M_1^2)$. Then either $M_1^1$ is an abstraction or it is not. If it is not then the proof is similar to the case where $M_1$ is an abstraction. Say $M_1^1 = (\lambda x. M_1^{1'})$. Now, either $M_2 = (\lambda x. M_2^{1'})M_2^2$, in which case the proof is similar to the case when $M_1$ is an abstraction, or $M_2 = M_2^{1'}[x := M_2^2]$. In this case, by the inductive hypothesis we have
+		\[M_1^{1'}[x = N_1] \Rightarrow M_2^{1'}[x = N_2]\]
+		and
+		\[M_1^2[x = N_1] \Rightarrow M_2^2[x = N_2]\]
+		from which it follows that
+		\[(\lambda x. M_1^{1'}[x := N_1])(M_1^2[x := N_1]) \Rightarrow (\lambda x. M_2^{1'}[x := N_2])(M_2^2[x := N_2])\]
+		which implies
+		\[M_1[x := N_1] = \big((\lambda x. M_1^{1'})M_1^2\big)[x := N_1] \Rightarrow \big((\lambda x. M_2^{1'})M_2^2\big)[x := N_2] = M_2[x := N_2]\]
+		which establishes the claim.\\\\
+		%
+		To finish the proof, say $M_1 \Rightarrow M_2$ and $M_1 \Rightarrow M_3$, we will show that there exists an appropriate term $M_4$ by induction on $l(M_1)$, the length of $M_1$. This is broken up into cases in a similar way to the proof of the claim above, the only non-trivial case is when
+		\[M_1 = (\lambda x. M_1^{1'})M_1^2,\qquad M_2 = M_2^{1'}[x := M_2^2],\qquad M_3 = M_3^{1'}[x := M_3^2]\]
+		By the inductive hypothesis, there exists $M_4^{1'}$ and $M_4^2$ such that the diagrams
+		\[
+		\begin{tikzcd}
+			M_1^{1'}\arrow[r,Rightarrow]\arrow[d,Rightarrow] & M_2^{1'}\arrow[d,Rightarrow]\\
+			M_3^{1'}\arrow[r,Rightarrow] & M_4^{1'}
+		\end{tikzcd}
+		%
+		\qquad
+		%
+		\begin{tikzcd}
+			M_1^{2}\arrow[r,Rightarrow]\arrow[d,Rightarrow] & M_2^{2}\arrow[d,Rightarrow]\\
+			M_3^{2}\arrow[r,Rightarrow] & M_4^{2}
+		\end{tikzcd}
+		\]
+		both commute. Now, by the claim proved above,
+		\[M_2^{1'}[x := M_2^2] \Rightarrow M_4^{1'}[x := M_4^2]\qquad M_3^{1'}[x := M_3^2] \Rightarrow M_4^{1'}[x := M_4^2]\]
+		and so,
+		\[(\lambda x. M_2^{1'})M_2^2 \Rightarrow (\lambda x. M_4^{1'})M_4^2\qquad (\lambda x. M_3^{1'})M_3^2\Rightarrow (\lambda x. M_4^{1'})M_4^2\]
+		ie, the diagram
+		\[
+		\begin{tikzcd}
+			M_1\arrow[r,Rightarrow]\arrow[d,Rightarrow] &M_2\arrow[d,Rightarrow]\\
+			M_3\arrow[r,Rightarrow] & M_4
+		\end{tikzcd}
+		\]
+		commutes, as required.
+	\end{proof}
+	
+	\begin{thebibliography}{9}
+		\bibitem{ChurchOne} A. Church, \emph{An Unsolvable Problem of Elementary Number Theory}, American Journal of Mathematics, Vol. 58, No. 2. (Apr., 1936), pp. 345-363.
+		
+		\bibitem{ChurchTwo} A. Church, \emph{A Set of Postulates for the Foundation of Logic} Annals of Mathematics
+		Second Series, Vol. 33, No. 2 (Apr., 1932), pp. 346-366 
+		
+		\bibitem{ChurchThree} A. Church, \emph{A Set of Postulates for the Foundation of Logic (Second Paper)}, Annals of Mathematics
+		Vol. 34, No. 4 (Oct., 1933), pp. 839-864
+		
+		\bibitem{SU} M. Sørensen, P. Urzyczyn, \emph{Lectures on the Curry-Howard Isomorphism}, Studies in Logic and the Foundations of Mathematics, 4th July 2006.
+		
+		\bibitem{ChurchTuring} A. Turing, [Delivered to the Society November 1936], ``On Computable Numbers, with an Application to the Entscheidungsproblem" (PDF), Proceedings of the London Mathematical Society, 2, 42, pp. 230–65, doi:10.1112/plms/s2-42.1.230 and Turing, A.M. (1938). ``On Computable Numbers, with an Application to the Entscheidungsproblem: A correction". Proceedings of the London Mathematical Society. 2. 43 (published 1937). pp. 544–6, 1937
+		
+		\bibitem{Godel} K. Gödel ``On Undecidable Propositions of Formal Mathematical Systems". In Davis, Martin (ed.). The Undecidable. Kleene and Rosser (lecture note-takers); Institute for Advanced Study (lecture sponsor). New York: Raven Press, 1934.
+		
+		\bibitem{lambekscott} J. Lambek, P.J. Scott, \emph{Introduction to Higher Order Categorical Logic}, Cambridge University Press, New York, 1986.
+	\end{thebibliography}
+	
+	
+\end{document}

@@ -62,9 +62,7 @@
 \newcommand{\comment}[1]{}
 \newcommand{\lto}{\longrightarrow}
 
-\usepackage[margin=1cm]{geometry}
-
-\title{Varieties}
+\title{Introduction to varieties}
 \author{Will Troiani}
 \date{December 2020}
 
@@ -300,7 +298,8 @@ This has a satisfying answer (Corollary \ref{lem:quasi_dimension}). We will use:
 \begin{lemma}\label{lem:the_lemma_never_stated}
 Let $X$ be any topological space and $U \subseteq X$ any open subset. Then there is a bijection
 \begin{align}
-    \Phi: \lbrace \text{Irreducible, closed subsets }C \subseteq X, C \cap U \neq \varnothing \rbrace &\lto \lbrace \text{Irreducible, closed subsets }D \subseteq U\rbrace\\
+    \Phi: &\lbrace \text{Irreducible, closed subsets }C \subseteq X, C \cap U \neq \varnothing \rbrace\\
+    &\qquad\lto \lbrace \text{Irreducible, closed subsets }D \subseteq U\rbrace\\
     C &\longmapsto C \cap U
 \end{align}
 with inverse given by $\Phi^{-1}(D) = \overline{D}$. Moreover, this bijection preserves strict inclusion, that is,
@@ -339,7 +338,7 @@ Let $A$ be a finitely generated $k$-integral domain, with $k$ a field. Then
 \end{enumerate}
 \end{thm}
 \begin{proof}
-See \cite{dimension}
+See \cite{algebra}
 \end{proof}
 \begin{cor}\label{lem:quasi_dimension}
 Let $Y$ be a quasi-affine variety. Then
@@ -393,7 +392,7 @@ Let $U_l$ denote the $\bb{P}^n\setminus Z(x_l)$. Then the map
 \end{align*}
 is a homeomorphism.
 \end{thm}
-We delay the proof for now. Any non-homogeneous polynomial can be made so as we describe in Definition \ref{def:homogenisation}. This process has an \emph{inverse} (as made precises by Lemma \ref{lem:poly_homog_bij}) called \emph{projection} (Definition \ref{def:projection}). Theorem \ref{thm:proj_covered_aff} can be thought of as the geometric repercussions of these transformations of polynomials.
+We delay the proof for now. To any non-homogeneous polynomial is an associated homogeneous polynomial, see Definition \ref{def:homogenisation} below. This process has an \emph{inverse} (as made precises by Lemma \ref{lem:poly_homog_bij}) called \emph{projection} (Definition \ref{def:projection}). Theorem \ref{thm:proj_covered_aff} can be thought of as the geometric repercussions of these transformations of polynomials.
 %
 \begin{defn}\label{def:projection}
 Let $f \in k[x_1,...,x_n]$ be a polynomial. The \textbf{$i^{\text{th}}$ projection} of $f$, denoted $\operatorname{Proj}_l(f)$ is the polynomial given by setting $x_{i} = 1$ and substituting $x_j$ for $x_{j-1}$ for each $j > i$.
@@ -406,7 +405,7 @@ The $2^{\text{nd}}$ projection of $x_1x_2 + 3x_3^2 \in \bb{C}[x_1,x_2,x_3]$:
     \operatorname{Proj}_2(x_1x_2 + 3x_3^2) = x_1 + 3x_2^2
 \end{equation}
 \end{example}
-\begin{defn}
+\begin{defn}\label{def:homogenisation}
 Let $f \in k[x_1,...,x_n]$ be a polynomial of degree $d$. The \textbf{$i^{\text{th}}$ homogenisation} of $f$ is the polynoial in $k[x_0,...,x_n]$ given by
 \begin{equation}
     x_i^{\operatorname{deg}f}\big(f(x_0/x_i,...,x_n/x_i)\big)
@@ -716,9 +715,10 @@ For uniqueness, say $(P,Q),(P',Q') \in \bb{P}^r \times \bb{P}^s$ were such that 
     &= [P_0'Q_0':...:P_0'Q_s':......:P_r'Q_0':...:P_r'Q_s'] = \psi(P',Q')
 \end{align*}
 and let $\lambda \neq 0$ be such that 
-\begin{equation}\label{eq:scaler}
-(P_0Q_0:...:P_0Q_s:......:P_rQ_0:...:P_rQ_s) = \lambda (P_0'Q_0':...:P_0'Q_s':......:P_r'Q_0':...:P_r'Q_s')
-\end{equation}
+\begin{align}\label{eq:scaler}
+(P_0Q_0:...:&P_0Q_s:......:P_rQ_0:...:P_rQ_s)\\
+&=\lambda (P_0'Q_0':...:P_0'Q_s':......:P_r'Q_0':...:P_r'Q_s')
+\end{align}
 From the above, there exists pairs of integers $(a,b),(a',b')$ such that
 \begin{equation}\label{eq:image_type}
     \frac{P_{a}Q_j}{P_{a}Q_b}P_kQ_b = P_kQ_j\qquad\text{and}\qquad \frac{P_{a'}'Q_j'}{P_{a'}'Q_b'}P_k'Q_b' = P_k'Q_j'
@@ -748,7 +748,7 @@ Thus, for any $R \in \operatorname{im}(\psi)$ we can choose a lift $(P,Q) \in \b
 \begin{equation}
     ([P_{0}Q_b:...:P_{r}Q_b],[\frac{P_aQ_0}{P_aQ_b}:...:\frac{P_aQ_s}{P_aQ_b}]) = (P,Q)
 \end{equation}
-which by Lemma \ref{cor:segre:injectivity} defines a well defined function $\psi^{-1}: \operatorname{im}\psi \lto \bb{P}^r \times \bb{P}^s$, which indeed is inverse to $\psi$.
+which by Lemma \ref{cor:segre_injectivity} induces a well defined function $\psi^{-1}: \operatorname{im}\psi \lto \bb{P}^r \times \bb{P}^s$, which indeed is inverse to $\psi$.
 \begin{lemma}\label{lem:segre_continuous}
 The Segre embedding is continuous and closed.
 \end{lemma}
@@ -768,9 +768,10 @@ for some homogeneous polynomial $h_{ij}$. Similarly, for $i' = 1,...,m, j' = 1,.
     y_{i'}^{e_j'}f_{j'}(x_0,...,x_r) = l_{i'j'}(x_0y_0,...,x_ry_s)
 \end{equation}
 for some homogeneous polynomial $l_{i'j'}$. We now let
-\begin{equation}
-    \frak{c} := \Big(\lbrace h_{ij}(z_{00},...,z_{rs})\rbrace_{i = 1,...,r, j = 1,...,m}, \lbrace l_{i'j'}(z_{00},...,z_{rs})\rbrace_{i' = 1,...,n, j' = 1,...,s}\Big) \subseteq k[z_{00},...,z_{rs}]
-\end{equation}
+\begin{align*}
+    \frak{c} :&= \Big(\lbrace h_{ij}(z_{00},...,z_{rs})\rbrace_{i = 1,...,r, j = 1,...,m}, \lbrace l_{i'j'}(z_{00},...,z_{rs})\rbrace_{i' = 1,...,n, j' = 1,...,s}\Big)\\
+    &\subseteq k[z_{00},...,z_{rs}]
+\end{align*}
 We claim:
 \begin{equation}
     \psi\big(Z(\frak{a}) \times Z(\frak{b})\big) = Z(\frak{c}) \cap \operatorname{im}\psi
@@ -792,7 +793,7 @@ By nature of being a continuous, closed, injective map.
 If $X,Y$ are quasi-projective varieties then $\psi(X, Y)$ is quasi-projective.
 \end{cor}
 \begin{proof}
-By Corollary \ref{cor:homeo} the map $\psi$ is injective, and by Lemma \ref{lem:segre_image_kernel} the image of an open set is a subset of a projective variety.
+By Corollary \ref{cor:homeo} the map $\psi$ is injective. Also, the image of an open set is a subset of a projective variety.
 \end{proof}
 \begin{defn}
 Let $X$ be a topological space which is a topological product of two varieties, write $X = X_1 \times X_2$. Let $V \subseteq X$ be an open subset and $\varphi: V \lto k$ a function. The map $\varphi$ is \textbf{``regular"} at a point $P \in V$ if there exists an open neighbourhood $U_P \subseteq V$ of $P$ and polynomials $f_P,g_P$ such that $\varphi\restriction_{U_P} = f_P/g_P$.
@@ -814,7 +815,7 @@ Later, when we study singularity theory, the following definition will be centra
 \begin{defn}
 Let $X = Z(f_1,...,f_m)$ be an affine variety of dimension $n$ and $P \in X$ a point on $X$. Then $X$ is \textbf{nonsingular} at $P$ if the \emph{jacobian matrix} $||(\partial f_i/\partial x_j)P ||$ has rank $n - m$, otherwise $X$ is \textbf{singular} at $P$. The affine variety $X$ is \textbf{nonsingular} if it is nonsingular at all of its points, otherwise it is \textbf{singular}.
 \end{defn}
-It will be shown later (Lemma \ref{}) that this definition is independent of the choice of $f_i$ taken as generators of $X$, however it is not clear that this definition is invariant under isomorphism. In fact, a notion of singularity at a point $P$ can (and will) be defined independent of the embedding of $X$, and in the special case of algebraic curves a definition will be given in terms of the \emph{local ring} $\call{O}_P$. Thus the notion of regular functions defined on quasi-affine varieties is central, so we need an appropriate definition.
+It will be shown later (Lemma \ref{lem:equivalence_singularity}) that this definition is independent of the choice of $f_i$ taken as generators of $X$, however it is not clear that this definition is invariant under isomorphism. In fact, a notion of singularity at a point $P$ can (and will) be defined independent of the embedding of $X$, and in the special case of algebraic curves a definition will be given in terms of the \emph{local ring} $\call{O}_P$. Thus the notion of regular functions defined on quasi-affine varieties is central, so we need an appropriate definition.
 \begin{defn}
 Let $X$ be a quasi-affine variety. Then a function $f: X \lto \bb{A}^1$ is \textbf{regular} at $P \in X$ if there exists an open neighbourhood $U$ containing $P$ and polynomials $g,h$ with $h$ nowhere zero on $U$ such that $f\restriction_U = g/h$. The function $f$ is \textbf{regular} if it is regular at every point $X$.
 \end{defn}
@@ -897,7 +898,7 @@ We now describe an inverse to $\alpha$. Let $f: A(Y) \lto X$ be a $k$-algebra ho
 \[f(g(\bar{x}_1,...,\bar{x}_n))(P) = 0\]
 However, $g$ is a polynomial and $f$ is a $k$-algebra homomorphism, so
 \[f(g(\bar{x}_1,...,\bar{x}_n))(P) = g\big(f(\bar{x}_1)(P),...,\bar{x}_n(P)\big) = 0\]
-and so $(f(\bar{x}_1)(P),...,f(\bar{x}_n)(P)) \in ZI(Y) = Y$.  In fact, this is a morphism, this follows from Lemma \ref{lem:variable_functions} below. We have described a function
+and so $(f(\bar{x}_1)(P),...,f(\bar{x}_n)(P)) \in ZI(Y) = Y$.  In fact, this is a morphism, this follows from Lemma \ref{lem:check_variables} below. We have described a function
 \begin{equation}
     \beta: \operatorname{Hom}_{k\operatorname{Alg}}(A(Y),\call{O}(X)) \lto \operatorname{Hom}_{\operatorname{Var}}(X,Y)
 \end{equation}
@@ -963,7 +964,10 @@ Let $X$ be a variety and $Y$ an affine variety. Then there is a natural bijectio
 Moreover, a morphism $X \lto Y$ is \emph{dominant} (that is, it has dense image) if and only if the corresponding homomorphism $A(Y) \lto \call{O}(X)$ is injective.
 \end{proposition}
 \begin{proof}
-We only need to prove the last claim. \textcolor{red}{How do we get injective implies dominant?}
+We only need to prove the last claim. Here, I have a question:
+\begin{question}
+	How do we prove that injective implies dominant?
+	\end{question}
 \end{proof}
 %
 %
@@ -994,7 +998,10 @@ See Sol $2.14$ \cite{hartshorne_solutions}.
 Let $X \subseteq \bb{P}^n$ and $Y \subseteq \bb{P}^m$ be projective varieties. Then the image of $X \times Y \subseteq \bb{P}^r \times \bb{P}^s$ under the Segre embedding is a project in the category of varieties.
 \end{proposition}
 \begin{proof}
-This is partly worked out in Sol $3.16$ of \cite{hartshorne_solutions}. However, \textcolor{red}{there is a hole here, how do we know we have a product}?
+This is partly worked out in Sol $3.16$ of \cite{hartshorne_solutions}. However, I have another question.
+\begin{question}
+	How do we know this gives a product?
+	\end{question}
 \end{proof}
 
 
@@ -1067,7 +1074,7 @@ so since $(Y - Y \cap H) - (\overline{Y} \cap H) = (Y - Y \cap H) - (Y \cap \ove
 \end{align*}
 proving the result.
 \end{proof}
-\begin{lemma}
+\begin{lemma}\label{lem:ambient_hypersurface_affine}
 Let $H$ be a hypersurface $f(x_1,...,x_n) = 0$ and assume $H \subseteq \bb{A}^n$. Then $\bb{A}^n - H$ is affine.
 \end{lemma}
 \begin{proof}
@@ -1279,7 +1286,7 @@ X\setminus Z = (X \setminus Z) \bigcup_{i \in I}U_i = \bigcup_{i \in I}(U_i \set
 Let $Y$ be a variety. Then the set $\operatorname{Sing}Y$ of singular points of $Y$ is a proper closed subset of $Y$.
 \end{thm}
 \begin{proof}
-First we show $\operatorname{Sing}Y$ is a closed subset.  We make use of Fact \ref{fact:cover_closed_with_open} and Proposition \ref{prop:affine_basics} (that open affines form a basis for the Zariski topology) to reduce to the case where $Y$ is affine.  By \ref{lem:max_ideal_lemma} and the proof of \eqref{lem:equivalence_singularity} the set of singular points is the set of points where the rank of the Jacobian matrix is $< n - r$, where $r = \operatorname{dim}Y$. Thus, $\operatorname{Sing}Y$ is the algebraic set defined by the ideal generated by $I(Y)$ together with all determinants of $(n - r) \times (n - r)$ submatrices of the matrix $||\partial f_i/\partial x_j||$. (see \cite{linear_algebra}) Hence $\operatorname{Sing}Y$ is closed.
+First we show $\operatorname{Sing}Y$ is a closed subset.  We make use of Fact \ref{fact:cover_closed_with_open} and Proposition \ref{prop:affine_basics} (that open affines form a basis for the Zariski topology) to reduce to the case where $Y$ is affine.  By \ref{lem:max_ideal_lemma} and the proof of \eqref{lem:equivalence_singularity} the set of singular points is the set of points where the rank of the Jacobian matrix is $< n - r$, where $r = \operatorname{dim}Y$. Thus, $\operatorname{Sing}Y$ is the algebraic set defined by the ideal generated by $I(Y)$ together with all determinants of $(n - r) \times (n - r)$ submatrices of the matrix $||\partial f_i/\partial x_j||$ (see \cite{algebra}). Hence $\operatorname{Sing}Y$ is closed.
 
 We now show that $\operatorname{Sing}Y$ is a proper subset. By Proposition \ref{prop:hypersurface} we have that $Y$ is birationally equivalent to a hypersurface $H$ in $\bb{A}^n$. By Corollary \ref{cor:function_field_birational}, there exists open subsets $U,V$ of $Y,H$ respectively which are isomorphic. Since $V$ is open and $\operatorname{Sing}H$ is closed, we have that $\operatorname{Sing}H$ is a proper subset of $H$ if and only if $\operatorname{Sing}H$ is a proper subset of $V$. Since $U$ and $V$ are isomorphic, we thus reduce to the case of a hypersurface in $\bb{A}^n$, assume $Y = Z(f)$ with $f$ irreducible.
 
@@ -1395,11 +1402,7 @@ so $Z(\bar{f},y - zx) \subseteq \tilde{Y}$. Conversely, we clearly have $\varphi
 
 \bibitem{hartshorne_solutions} \emph{Hartshorne Solutions}, W. Troiani.
 
-\bibitem{algebra} \emph{Notes on Commutative Algebra}, W. Troiani
-
-\bibitem{dimension} \emph{Dimension Theory}, W. Troiani
-
-\bibitem{linear_algebra} \emph{Notes on linear algebra}, W.Troiani
+\bibitem{algebra} \emph{Elementary commutative algebra}, W. Troiani
 
 \bibitem{grobner} Cox, Little, O-Shea, \emph{Ideal, Varieties, and Algorithms}, Springer Cham Heidelberg New York Dordrecht London 1998.
 

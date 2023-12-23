@@ -1,0 +1,2825 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.5.21)  23 DEC 2023 19:34
+entering extended mode
+**./PhD.tex
+(PhD.tex
+LaTeX2e <2020-10-01> patch level 4
+L3 programming layer <2021-05-11>
+(/Library/Application Support/MiKTeX/texmfs/install/tex/latex/base/article.cls
+Document Class: article 2020/04/10 v1.4m Standard LaTeX document class
+(/Library/Application Support/MiKTeX/texmfs/install/tex/latex/base/size12.clo
+File: size12.clo 2020/04/10 v1.4m Standard LaTeX file (size option)
+)
+\c@part=\count179
+\c@section=\count180
+\c@subsection=\count181
+\c@subsubsection=\count182
+\c@paragraph=\count183
+\c@subparagraph=\count184
+\c@figure=\count185
+\c@table=\count186
+\abovecaptionskip=\skip47
+\belowcaptionskip=\skip48
+\bibindent=\dimen138
+)
+(/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/latex/al
+gorithms/algorithm.sty
+Package: algorithm 2009/08/24 v0.1 Document Style `algorithm' - floating enviro
+nment
+
+(/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/latex/fl
+oat/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count187
+\float@exts=\toks15
+\float@box=\box47
+\@float@everytoks=\toks16
+\@floatcapt=\box48
+)
+(/Library/Application Support/MiKTeX/texmfs/install/tex/latex/base/ifthen.sty
+Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
+)
+\@float@every@algorithm=\toks17
+\c@algorithm=\count188
+)
+(/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/latex/al
+gorithmicx/algpseudocode.sty
+Package: algpseudocode 
+
+(/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/latex/al
+gorithmicx/algorithmicx.sty
+Package: algorithmicx 2005/04/27 v1.2 Algorithmicx
+
+Document Style algorithmicx 1.2 - a greatly improved `algorithmic' style
+\c@ALG@line=\count189
+\c@ALG@rem=\count190
+\c@ALG@nested=\count191
+\ALG@tlm=\skip49
+\ALG@thistlm=\skip50
+\c@ALG@Lnr=\count192
+\c@ALG@blocknr=\count193
+\c@ALG@storecount=\count194
+\c@ALG@tmpcounter=\count195
+\ALG@tmplength=\skip51
+)
+Document Style - pseudocode environments for use with the `algorithmicx' style
+)
+(/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/latex/am
+scls/amsthm.sty
+Package: amsthm 2020/05/29 v2.20.6
+\thm@style=\toks18
+\thm@bodyfont=\toks19
+\thm@headfont=\toks20
+\thm@notefont=\toks21
+\thm@headpunct=\toks22
+\thm@preskip=\skip52
+\thm@postskip=\skip53
+\thm@headsep=\skip54
+\dth@everypar=\toks23
+)
+(/Library/Application Support/MiKTeX/texmfs/install/tex/latex/amsmath/amsmath.s
+ty
+Package: amsmath 2020/09/23 v2.17i AMS math features
+\@mathmargin=\skip55
+
+For additional information on amsmath, use the `?' option.
+
+(/Library/Application Support/MiKTeX/texmfs/install/tex/latex/amsmath/amstext.s
+ty
+Package: amstext 2000/06/29 v2.01 AMS text
+
+(/Library/Application Support/MiKTeX/texmfs/install/tex/latex/amsmath/amsgen.st
+y
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks24
+\ex@=\dimen139
+))
+(/Library/Application Support/MiKTeX/texmfs/install/tex/latex/amsmath/amsbsy.st
+y
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen140
+)
+(/Library/Application Support/MiKTeX/texmfs/install/tex/latex/amsmath/amsopn.st
+y
+Package: amsopn 2016/03/08 v2.02 operator names
+)
+\inf@bad=\count196
+LaTeX Info: Redefining \frac on input line 234.
+\uproot@=\count197
+\leftroot@=\count198
+LaTeX Info: Redefining \overline on input line 399.
+\classnum@=\count199
+\DOTSCASE@=\count266
+LaTeX Info: Redefining \ldots on input line 496.
+LaTeX Info: Redefining \dots on input line 499.
+LaTeX Info: Redefining \cdots on input line 620.
+\Mathstrutbox@=\box49
+\strutbox@=\box50
+\big@size=\dimen141
+LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
+\macc@depth=\count267
+\c@MaxMatrixCols=\count268
+\dotsspace@=\muskip16
+\c@parentequation=\count269
+\dspbrk@lvl=\count270
+\tag@help=\toks25
+\row@=\count271
+\column@=\count272
+\maxfields@=\count273
+\andhelp@=\toks26
+\eqnshift@=\dimen142
+\alignsep@=\dimen143
+\tagshift@=\dimen144
+\tagwidth@=\dimen145
+\totwidth@=\dimen146
+\lineht@=\dimen147
+\@envbody=\toks27
+\multlinegap=\skip56
+\multlinetaggap=\skip57
+\mathdisplay@stack=\toks28
+LaTeX Info: Redefining \[ on input line 2923.
+LaTeX Info: Redefining \] on input line 2924.
+)
+(/Library/Application Support/MiKTeX/texmfs/install/tex/latex/amsfonts/amsfonts
+.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+)
+(/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/latex/jk
+nappen/mathrsfs.sty
+Package: mathrsfs 1996/01/01 Math RSFS package v1.0 (jk)
+\symrsfs=\mathgroup6
+)
+(/Library/Application Support/MiKTeX/texmfs/install/tex/latex/latex-tools/array
+.sty
+Package: array 2020/10/01 v2.5c Tabular extension package (FMi)
+\col@sep=\dimen148
+\ar@mcellbox=\box51
+\extrarowheight=\dimen149
+\NC@list=\toks29
+\extratabsurround=\skip58
+\backup@length=\skip59
+\ar@cellbox=\box52
+)
+(/Library/Application Support/MiKTeX/texmfs/install/tex/latex/amsfonts/amssymb.
+sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+)
+(/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/latex/un
+its/units.sty
+Package: units 1998/08/04 v0.9b Typesetting units
+
+(/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/latex/un
+its/nicefrac.sty
+Package: nicefrac 1998/08/04 v0.9b Nice fractions
+\L@UnitsRaiseDisplaystyle=\skip60
+\L@UnitsRaiseTextstyle=\skip61
+\L@UnitsRaiseScriptstyle=\skip62
+))
+(/Library/Application Support/MiKTeX/texmfs/install/tex/latex/graphics/graphicx
+.sty
+Package: graphicx 2020/09/09 v1.2b Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/Library/Application Support/MiKTeX/texmfs/install/tex/latex/graphics/keyval.s
+ty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks30
+)
+(/Library/Application Support/MiKTeX/texmfs/install/tex/latex/graphics/graphics
+.sty
+Package: graphics 2020/08/30 v1.4c Standard LaTeX Graphics (DPC,SPQR)
+
+(/Library/Application Support/MiKTeX/texmfs/install/tex/latex/graphics/trig.sty
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+(/Library/Application Support/MiKTeX/texmfs/install/tex/latex/graphics-cfg/grap
+hics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 105.
+
+(/Library/Application Support/MiKTeX/texmfs/install/tex/latex/graphics-def/pdft
+ex.def
+File: pdftex.def 2020/10/05 v1.2a Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen150
+\Gin@req@width=\dimen151
+)
+(/Library/Application Support/MiKTeX/texmfs/install/tex/latex/pgf/frontendlayer
+/tikz.sty
+(/Library/Application Support/MiKTeX/texmfs/install/tex/latex/pgf/basiclayer/pg
+f.sty
+(/Library/Application Support/MiKTeX/texmfs/install/tex/latex/pgf/utilities/pgf
+rcs.sty
+(/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/utilities/p
+gfutil-common.tex
+\pgfutil@everybye=\toks31
+\pgfutil@tempdima=\dimen152
+\pgfutil@tempdimb=\dimen153
+
+(/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/utilities/p
+gfutil-common-lists.tex))
+(/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/utilities/p
+gfutil-latex.def
+\pgfutil@abb=\box53
+)
+(/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/utilities/p
+gfrcs.code.tex
+(/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/pgf.revisio
+n.tex)
+Package: pgfrcs 2021/05/15 v3.1.9a (3.1.9a)
+))
+Package: pgf 2021/05/15 v3.1.9a (3.1.9a)
+
+(/Library/Application Support/MiKTeX/texmfs/install/tex/latex/pgf/basiclayer/pg
+fcore.sty
+(/Library/Application Support/MiKTeX/texmfs/install/tex/latex/pgf/systemlayer/p
+gfsys.sty
+(/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/systemlayer
+/pgfsys.code.tex
+Package: pgfsys 2021/05/15 v3.1.9a (3.1.9a)
+
+(/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/utilities/p
+gfkeys.code.tex
+\pgfkeys@pathtoks=\toks32
+\pgfkeys@temptoks=\toks33
+
+(/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/utilities/p
+gfkeysfiltered.code.tex
+\pgfkeys@tmptoks=\toks34
+))
+\pgf@x=\dimen154
+\pgf@y=\dimen155
+\pgf@xa=\dimen156
+\pgf@ya=\dimen157
+\pgf@xb=\dimen158
+\pgf@yb=\dimen159
+\pgf@xc=\dimen160
+\pgf@yc=\dimen161
+\pgf@xd=\dimen162
+\pgf@yd=\dimen163
+\w@pgf@writea=\write3
+\r@pgf@reada=\read2
+\c@pgf@counta=\count274
+\c@pgf@countb=\count275
+\c@pgf@countc=\count276
+\c@pgf@countd=\count277
+\t@pgf@toka=\toks35
+\t@pgf@tokb=\toks36
+\t@pgf@tokc=\toks37
+\pgf@sys@id@count=\count278
+
+(/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/systemlayer
+/pgf.cfg
+File: pgf.cfg 2021/05/15 v3.1.9a (3.1.9a)
+)
+Driver file for pgf: pgfsys-pdftex.def
+
+(/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/systemlayer
+/pgfsys-pdftex.def
+File: pgfsys-pdftex.def 2021/05/15 v3.1.9a (3.1.9a)
+
+(/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/systemlayer
+/pgfsys-common-pdf.def
+File: pgfsys-common-pdf.def 2021/05/15 v3.1.9a (3.1.9a)
+)))
+(/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/systemlayer
+/pgfsyssoftpath.code.tex
+File: pgfsyssoftpath.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgfsyssoftpath@smallbuffer@items=\count279
+\pgfsyssoftpath@bigbuffer@items=\count280
+)
+(/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/systemlayer
+/pgfsysprotocol.code.tex
+File: pgfsysprotocol.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+))
+(/Library/Application Support/MiKTeX/texmfs/install/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
+
+(/Library/Application Support/MiKTeX/texmfs/install/tex/latex/graphics-cfg/colo
+r.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 225.
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1352.
+Package xcolor Info: Model `RGB' extended on input line 1364.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1366.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1367.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
+)
+(/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/basiclayer/
+pgfcore.code.tex
+Package: pgfcore 2021/05/15 v3.1.9a (3.1.9a)
+
+(/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/math/pgfmat
+h.code.tex
+(/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/math/pgfmat
+hcalc.code.tex
+(/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/math/pgfmat
+hutil.code.tex)
+(/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/math/pgfmat
+hparser.code.tex
+\pgfmath@dimen=\dimen164
+\pgfmath@count=\count281
+\pgfmath@box=\box54
+\pgfmath@toks=\toks38
+\pgfmath@stack@operand=\toks39
+\pgfmath@stack@operation=\toks40
+)
+(/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/math/pgfmat
+hfunctions.code.tex
+(/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/math/pgfmat
+hfunctions.basic.code.tex)
+(/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/math/pgfmat
+hfunctions.trigonometric.code.tex)
+(/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/math/pgfmat
+hfunctions.random.code.tex)
+(/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/math/pgfmat
+hfunctions.comparison.code.tex)
+(/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/math/pgfmat
+hfunctions.base.code.tex)
+(/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/math/pgfmat
+hfunctions.round.code.tex)
+(/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/math/pgfmat
+hfunctions.misc.code.tex)
+(/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/math/pgfmat
+hfunctions.integerarithmetics.code.tex)))
+(/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/math/pgfmat
+hfloat.code.tex
+\c@pgfmathroundto@lastzeros=\count282
+))
+(/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/math/pgfint
+.code.tex)
+(/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/basiclayer/
+pgfcorepoints.code.tex
+File: pgfcorepoints.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgf@picminx=\dimen165
+\pgf@picmaxx=\dimen166
+\pgf@picminy=\dimen167
+\pgf@picmaxy=\dimen168
+\pgf@pathminx=\dimen169
+\pgf@pathmaxx=\dimen170
+\pgf@pathminy=\dimen171
+\pgf@pathmaxy=\dimen172
+\pgf@xx=\dimen173
+\pgf@xy=\dimen174
+\pgf@yx=\dimen175
+\pgf@yy=\dimen176
+\pgf@zx=\dimen177
+\pgf@zy=\dimen178
+)
+(/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/basiclayer/
+pgfcorepathconstruct.code.tex
+File: pgfcorepathconstruct.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgf@path@lastx=\dimen179
+\pgf@path@lasty=\dimen180
+)
+(/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/basiclayer/
+pgfcorepathusage.code.tex
+File: pgfcorepathusage.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgf@shorten@end@additional=\dimen181
+\pgf@shorten@start@additional=\dimen182
+)
+(/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/basiclayer/
+pgfcorescopes.code.tex
+File: pgfcorescopes.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgfpic=\box55
+\pgf@hbox=\box56
+\pgf@layerbox@main=\box57
+\pgf@picture@serial@count=\count283
+)
+(/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/basiclayer/
+pgfcoregraphicstate.code.tex
+File: pgfcoregraphicstate.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgflinewidth=\dimen183
+)
+(/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/basiclayer/
+pgfcoretransformations.code.tex
+File: pgfcoretransformations.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgf@pt@x=\dimen184
+\pgf@pt@y=\dimen185
+\pgf@pt@temp=\dimen186
+)
+(/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/basiclayer/
+pgfcorequick.code.tex
+File: pgfcorequick.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+)
+(/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/basiclayer/
+pgfcoreobjects.code.tex
+File: pgfcoreobjects.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+)
+(/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/basiclayer/
+pgfcorepathprocessing.code.tex
+File: pgfcorepathprocessing.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+)
+(/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/basiclayer/
+pgfcorearrows.code.tex
+File: pgfcorearrows.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgfarrowsep=\dimen187
+)
+(/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/basiclayer/
+pgfcoreshade.code.tex
+File: pgfcoreshade.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgf@max=\dimen188
+\pgf@sys@shading@range@num=\count284
+\pgf@shadingcount=\count285
+)
+(/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/basiclayer/
+pgfcoreimage.code.tex
+File: pgfcoreimage.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+
+(/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/basiclayer/
+pgfcoreexternal.code.tex
+File: pgfcoreexternal.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgfexternal@startupbox=\box58
+))
+(/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/basiclayer/
+pgfcorelayers.code.tex
+File: pgfcorelayers.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+)
+(/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/basiclayer/
+pgfcoretransparency.code.tex
+File: pgfcoretransparency.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+)
+(/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/basiclayer/
+pgfcorepatterns.code.tex
+File: pgfcorepatterns.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+)
+(/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/basiclayer/
+pgfcorerdf.code.tex
+File: pgfcorerdf.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+)))
+(/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/modules/pgf
+moduleshapes.code.tex
+File: pgfmoduleshapes.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgfnodeparttextbox=\box59
+)
+(/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/modules/pgf
+moduleplot.code.tex
+File: pgfmoduleplot.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+)
+(/Library/Application Support/MiKTeX/texmfs/install/tex/latex/pgf/compatibility
+/pgfcomp-version-0-65.sty
+Package: pgfcomp-version-0-65 2021/05/15 v3.1.9a (3.1.9a)
+\pgf@nodesepstart=\dimen189
+\pgf@nodesepend=\dimen190
+)
+(/Library/Application Support/MiKTeX/texmfs/install/tex/latex/pgf/compatibility
+/pgfcomp-version-1-18.sty
+Package: pgfcomp-version-1-18 2021/05/15 v3.1.9a (3.1.9a)
+))
+(/Library/Application Support/MiKTeX/texmfs/install/tex/latex/pgf/utilities/pgf
+for.sty
+(/Library/Application Support/MiKTeX/texmfs/install/tex/latex/pgf/utilities/pgf
+keys.sty
+(/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/utilities/p
+gfkeys.code.tex))
+(/Library/Application Support/MiKTeX/texmfs/install/tex/latex/pgf/math/pgfmath.
+sty
+(/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/math/pgfmat
+h.code.tex))
+(/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/utilities/p
+gffor.code.tex
+Package: pgffor 2021/05/15 v3.1.9a (3.1.9a)
+
+(/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/math/pgfmat
+h.code.tex)
+\pgffor@iter=\dimen191
+\pgffor@skip=\dimen192
+\pgffor@stack=\toks41
+\pgffor@toks=\toks42
+))
+(/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/frontendlay
+er/tikz/tikz.code.tex
+Package: tikz 2021/05/15 v3.1.9a (3.1.9a)
+
+(/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/libraries/p
+gflibraryplothandlers.code.tex
+File: pgflibraryplothandlers.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgf@plot@mark@count=\count286
+\pgfplotmarksize=\dimen193
+)
+\tikz@lastx=\dimen194
+\tikz@lasty=\dimen195
+\tikz@lastxsaved=\dimen196
+\tikz@lastysaved=\dimen197
+\tikz@lastmovetox=\dimen198
+\tikz@lastmovetoy=\dimen199
+\tikzleveldistance=\dimen256
+\tikzsiblingdistance=\dimen257
+\tikz@figbox=\box60
+\tikz@figbox@bg=\box61
+\tikz@tempbox=\box62
+\tikz@tempbox@bg=\box63
+\tikztreelevel=\count287
+\tikznumberofchildren=\count288
+\tikznumberofcurrentchild=\count289
+\tikz@fig@count=\count290
+
+(/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/modules/pgf
+modulematrix.code.tex
+File: pgfmodulematrix.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgfmatrixcurrentrow=\count291
+\pgfmatrixcurrentcolumn=\count292
+\pgf@matrix@numberofcolumns=\count293
+)
+\tikz@expandcount=\count294
+
+(/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/frontendlay
+er/tikz/libraries/tikzlibrarytopaths.code.tex
+File: tikzlibrarytopaths.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+)))
+(/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/latex/ti
+kz-cd/tikzlibrarycd.code.tex
+(/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/frontendlay
+er/tikz/libraries/tikzlibrarymatrix.code.tex
+File: tikzlibrarymatrix.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+)
+(/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/frontendlay
+er/tikz/libraries/tikzlibraryquotes.code.tex
+File: tikzlibraryquotes.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+)
+(/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/libraries/p
+gflibraryarrows.meta.code.tex
+File: pgflibraryarrows.meta.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgfarrowinset=\dimen258
+\pgfarrowlength=\dimen259
+\pgfarrowwidth=\dimen260
+\pgfarrowlinewidth=\dimen261
+))
+(/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/frontendlay
+er/tikz/libraries/tikzlibraryfit.code.tex
+File: tikzlibraryfit.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+)
+(/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/frontendlay
+er/tikz/libraries/tikzlibrarypatterns.code.tex
+File: tikzlibrarypatterns.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+
+(/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/libraries/p
+gflibrarypatterns.code.tex
+File: pgflibrarypatterns.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+))
+(/Library/Application Support/MiKTeX/texmfs/install/tex/latex/hyperref/hyperref
+.sty
+Package: hyperref 2021-02-27 v7.00k Hypertext links for LaTeX
+
+(/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/generic/
+ltxcmds/ltxcmds.sty
+Package: ltxcmds 2020-05-10 v1.25 LaTeX kernel commands for general use (HO)
+)
+(/Library/Application Support/MiKTeX/texmfs/install/tex/generic/iftex/iftex.sty
+Package: iftex 2020/03/06 v1.0d TeX engine tests
+)
+(/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pdftexcmds/pdft
+excmds.sty
+Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+(/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/generic/
+infwarerr/infwarerr.sty
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+)
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+(/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/generic/
+kvsetkeys/kvsetkeys.sty
+Package: kvsetkeys 2019/12/15 v1.18 Key value parser (HO)
+)
+(/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/generic/
+kvdefinekeys/kvdefinekeys.sty
+Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
+)
+(/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/generic/
+pdfescape/pdfescape.sty
+Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
+)
+(/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/latex/hy
+color/hycolor.sty
+Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
+)
+(/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/latex/le
+tltxmacro/letltxmacro.sty
+Package: letltxmacro 2019/12/03 v1.6 Let assignment for LaTeX macros (HO)
+)
+(/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/latex/au
+xhook/auxhook.sty
+Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
+)
+(/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/latex/kv
+options/kvoptions.sty
+Package: kvoptions 2020-10-07 v3.14 Key value format for package options (HO)
+)
+\@linkdim=\dimen262
+\Hy@linkcounter=\count295
+\Hy@pagecounter=\count296
+
+(/Library/Application Support/MiKTeX/texmfs/install/tex/latex/hyperref/pd1enc.d
+ef
+File: pd1enc.def 2021-02-27 v7.00k Hyperref: PDFDocEncoding definition (HO)
+Now handling font encoding PD1 ...
+... no UTF-8 mapping file for font encoding PD1
+)
+(/Library/Application Support/MiKTeX/texmfs/install/tex/latex/hyperref/hyperref
+-langpatches.def
+File: hyperref-langpatches.def 2021-02-27 v7.00k Hyperref: patches for babel la
+nguages
+)
+(/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/generic/
+intcalc/intcalc.sty
+Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
+)
+(/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/generic/
+etexcmds/etexcmds.sty
+Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
+)
+\Hy@SavedSpaceFactor=\count297
+
+(/Library/Application Support/MiKTeX/texmfs/install/tex/latex/hyperref/puenc.de
+f
+File: puenc.def 2021-02-27 v7.00k Hyperref: PDF Unicode definition (HO)
+Now handling font encoding PU ...
+... no UTF-8 mapping file for font encoding PU
+)
+Package hyperref Info: Hyper figures OFF on input line 4192.
+Package hyperref Info: Link nesting OFF on input line 4197.
+Package hyperref Info: Hyper index ON on input line 4200.
+Package hyperref Info: Plain pages OFF on input line 4207.
+Package hyperref Info: Backreferencing OFF on input line 4212.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4445.
+\c@Hy@tempcnt=\count298
+ (/Library/Application Support/MiKTeX/texmfs/install/tex/latex/url/url.sty
+\Urlmuskip=\muskip17
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 4804.
+\XeTeXLinkMargin=\dimen263
+
+(/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/generic/
+bitset/bitset.sty
+Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
+
+(/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/generic/
+bigintcalc/bigintcalc.sty
+Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
+)
+))
+\Fld@menulength=\count299
+\Field@Width=\dimen264
+\Fld@charsize=\dimen265
+Package hyperref Info: Hyper figures OFF on input line 6075.
+Package hyperref Info: Link nesting OFF on input line 6080.
+Package hyperref Info: Hyper index ON on input line 6083.
+Package hyperref Info: backreferencing OFF on input line 6090.
+Package hyperref Info: Link coloring OFF on input line 6095.
+Package hyperref Info: Link coloring with OCG OFF on input line 6100.
+Package hyperref Info: PDF/A mode OFF on input line 6105.
+LaTeX Info: Redefining \ref on input line 6145.
+LaTeX Info: Redefining \pageref on input line 6149.
+
+(/Library/Application Support/MiKTeX/texmfs/install/tex/latex/base/atbegshi-ltx
+.sty
+Package: atbegshi-ltx 2020/08/17 v1.0a Emulation of the original atbegshi packa
+ge
+with kernel methods
+)
+\Hy@abspage=\count300
+\c@Item=\count301
+\c@Hfootnote=\count302
+)
+Package hyperref Info: Driver (autodetected): hpdftex.
+
+(/Library/Application Support/MiKTeX/texmfs/install/tex/latex/hyperref/hpdftex.
+def
+File: hpdftex.def 2021-02-27 v7.00k Hyperref driver for pdfTeX
+
+(/Library/Application Support/MiKTeX/texmfs/install/tex/latex/base/atveryend-lt
+x.sty
+Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atvery packag
+e
+with kernel methods
+)
+\Fld@listcount=\count303
+\c@bookmark@seq@number=\count304
+
+(/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/latex/re
+runfilecheck/rerunfilecheck.sty
+Package: rerunfilecheck 2019/12/05 v1.9 Rerun checks for auxiliary files (HO)
+
+(/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/generic/
+uniquecounter/uniquecounter.sty
+Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
+)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
+86.
+)
+\Hy@SectionHShift=\skip63
+)
+(/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/latex/bb
+m/bbm.sty
+Package: bbm 1999/03/15 V 1.2 provides fonts for set symbols - TH
+LaTeX Font Info:    Overwriting math alphabet `\mathbbm' in version `bold'
+(Font)                  U/bbm/m/n --> U/bbm/bx/n on input line 33.
+LaTeX Font Info:    Overwriting math alphabet `\mathbbmss' in version `bold'
+(Font)                  U/bbmss/m/n --> U/bbmss/bx/n on input line 35.
+)
+(/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/latex/te
+nsor/tensor.sty
+Package: tensor 2004/12/20 v2.1 tensor indices package (PGR)
+\tnsr@Sps=\toks43
+\tnsr@Sbs=\toks44
+\tnsr@Spe=\toks45
+\tnsr@Sbe=\toks46
+\ncld@Mno=\toks47
+)
+(/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/latex/ti
+pa/tipa.sty
+Package: tipa 2002/08/08 TIPA version 1.1
+
+(/Library/Application Support/MiKTeX/texmfs/install/tex/latex/base/fontenc.sty
+Package: fontenc 2020/08/10 v2.0s Standard LaTeX package
+
+(/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/latex/ti
+pa/t3enc.def
+File: t3enc.def 2001/12/31 T3 encoding
+Now handling font encoding T3 ...
+... no UTF-8 mapping file for font encoding T3
+)))
+(/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/latex/bu
+ssproofs/bussproofs.sty
+Proof Tree (bussproofs) style macros. Version 1.1.
+\theLevel=\count305
+\myMaxLevel=\count306
+\myBoxA=\box64
+\myBoxB=\box65
+\myBoxC=\box66
+\myBoxD=\box67
+\myBoxLL=\box68
+\myBoxRL=\box69
+\thisAboveSkip=\dimen266
+\thisBelowSkip=\dimen267
+\newScoreStart=\dimen268
+\newScoreEnd=\dimen269
+\newCenter=\dimen270
+\displace=\dimen271
+\leftLowerAmt=\dimen272
+\rightLowerAmt=\dimen273
+\scoreHeight=\dimen274
+\scoreDepth=\dimen275
+\htLbox=\dimen276
+\htRbox=\dimen277
+\htRRbox=\dimen278
+\htRRRbox=\dimen279
+\htAbox=\dimen280
+\htCbox=\dimen281
+)
+(/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/latex/st
+maryrd/stmaryrd.sty
+Package: stmaryrd 1994/03/03 St Mary's Road symbol package
+\symstmry=\mathgroup7
+LaTeX Font Info:    Overwriting symbol font `stmry' in version `bold'
+(Font)                  U/stmry/m/n --> U/stmry/b/n on input line 89.
+)
+(/Library/Application Support/MiKTeX/texmfs/install/tex/latex/base/textcomp.sty
+Package: textcomp 2020/02/02 v2.0n Standard LaTeX package
+)
+(/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/latex/le
+ftidx/leftidx.sty
+Package: leftidx 2003/09/24 v1.03 Left indices
+)
+(/Library/Application Support/MiKTeX/texmfs/install/tex/latex/latex-tools/after
+page.sty
+Package: afterpage 2014/10/28 v1.08 After-Page Package (DPC)
+\AP@output=\toks48
+\AP@partial=\box70
+\AP@footins=\box71
+)
+(/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/latex/va
+rwidth/varwidth.sty
+Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
+\@vwid@box=\box72
+\sift@deathcycles=\count307
+\@vwid@loff=\dimen282
+\@vwid@roff=\dimen283
+)
+(/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/latex/ta
+sks/tasks.sty
+(/Library/Application Support/MiKTeX/texmfs/install/tex/latex/l3kernel/expl3.st
+y
+Package: expl3 2021-05-11 L3 programming layer (loader) 
+
+(/Library/Application Support/MiKTeX/texmfs/install/tex/latex/l3backend/l3backe
+nd-pdftex.def
+File: l3backend-pdftex.def 2021-05-07 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count308
+\l__pdf_internal_box=\box73
+))
+(/Library/Application Support/MiKTeX/texmfs/install/tex/latex/l3packages/xparse
+/xparse.sty
+(/Library/Application Support/MiKTeX/texmfs/install/tex/latex/l3packages/xparse
+/xparse-2020-10-01.sty
+(/Library/Application Support/MiKTeX/texmfs/install/tex/latex/l3packages/xparse
+/xparse-generic.tex)))
+(/Library/Application Support/MiKTeX/texmfs/install/tex/latex/l3packages/xtempl
+ate/xtemplate.sty
+Package: xtemplate 2021-05-07 L3 Experimental prototype document functions
+\l__xtemplate_tmp_dim=\dimen284
+\l__xtemplate_tmp_int=\count309
+\l__xtemplate_tmp_muskip=\muskip18
+\l__xtemplate_tmp_skip=\skip64
+)
+Package: tasks 2021/02/20 v1.3a lists with columns filled horizontally
+\g__tasks_total_items_int=\count310
+\l__tasks_columns_int=\count311
+\g__tasks_rows_int=\count312
+\g__tasks_current_col_num_int=\count313
+\g__tasks_current_row_num_int=\count314
+\l__tasks_item_columns_int=\count315
+\g__tasks_env_int=\count316
+\l__tasks_start_int=\count317
+\l__tasks_item_indent_dim=\dimen285
+\l__tasks_item_default_indent_dim=\dimen286
+\l__tasks_item_width_dim=\dimen287
+\l__tasks_label_width_dim=\dimen288
+\l__tasks_label_default_width_dim=\dimen289
+\l__tasks_label_offset_dim=\dimen290
+\l__tasks_label_default_offset_dim=\dimen291
+\l__tasks_column_sep_dim=\dimen292
+\l__tasks_correction_dim=\dimen293
+\l__tasks_full_width_dim=\dimen294
+\l__tasks_after_item_skip=\skip65
+\l__tasks_custom_after_item_skip=\skip66
+\l__tasks_before_list_skip=\skip67
+\l__tasks_after_list_skip=\skip68
+\l__tasks_item_coffin=\box74
+\l__tasks_label_coffin=\box75
+\c@task=\count318
+\l__tasks_tmpa_int=\count319
+\l__tasks_tmpb_int=\count320
+\l__tasks_tmpa_coffin=\box76
+\l__tasks_tmpa_box=\box77
+
+Package xtemplate Info: Declaring object type 'tasks' taking 3 argument(s) on
+(xtemplate)             line 450.
+
+
+(/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/latex/ta
+sks/tasks.cfg))
+(/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/latex/cm
+ll/cmll.sty
+Package: cmll 2010/04/20 Linear Logic symbols for Computer Modern
+\symllsymbols=\mathgroup8
+LaTeX Font Info:    Overwriting symbol font `llsymbols' in version `bold'
+(Font)                  U/cmllr/m/n --> U/cmllr/bx/n on input line 49.
+)
+(/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/latex/ma
+kecell/makecell.sty
+Package: makecell 2009/08/03 V0.1e Managing of Tab Column Heads and Cells
+\rotheadsize=\dimen295
+\c@nlinenum=\count321
+\TeXr@lab=\toks49
+)
+(/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/latex/mn
+symbol/MnSymbol.sty
+Package: MnSymbol 2007/01/21 v1.4 support for the MnSymbol font
+LaTeX Info: Redefining \dagger on input line 84.
+LaTeX Info: Redefining \ddagger on input line 84.
+LaTeX Info: Redefining \mathparagraph on input line 84.
+LaTeX Info: Redefining \mathsection on input line 84.
+LaTeX Info: Redefining \mathdollar on input line 84.
+LaTeX Info: Redefining \mathsterling on input line 84.
+LaTeX Info: Redefining \yen on input line 84.
+LaTeX Info: Redefining \circledR on input line 84.
+LaTeX Info: Redefining \circledS on input line 84.
+LaTeX Info: Redefining \Re on input line 84.
+LaTeX Info: Redefining \Im on input line 84.
+LaTeX Info: Redefining \dotplus on input line 84.
+LaTeX Info: Redefining \thicksim on input line 84.
+LaTeX Info: Redefining \thickapprox on input line 84.
+LaTeX Info: Redefining \veebar on input line 84.
+LaTeX Info: Redefining \barwedge on input line 84.
+LaTeX Info: Redefining \doublebarwedge on input line 84.
+LaTeX Info: Redefining \centerdot on input line 84.
+LaTeX Info: Redefining \divideontimes on input line 84.
+\symMnSyA=\mathgroup9
+\symMnSyB=\mathgroup10
+\symMnSyC=\mathgroup11
+\symMnSyD=\mathgroup12
+LaTeX Font Info:    Redeclaring symbol font `largesymbols' on input line 119.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
+(Font)                  OMX/cmex/m/n --> OMX/MnSymbolE/m/n on input line 119.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
+(Font)                  OMX/cmex/m/n --> OMX/MnSymbolE/m/n on input line 119.
+LaTeX Font Info:    Redeclaring symbol font `symbols' on input line 120.
+LaTeX Font Info:    Encoding `OMS' has changed to `U' for symbol font
+(Font)              `symbols' in the math version `normal' on input line 120.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
+(Font)                  OMS/cmsy/m/n --> U/MnSymbolF/m/n on input line 120.
+LaTeX Font Info:    Encoding `OMS' has changed to `U' for symbol font
+(Font)              `symbols' in the math version `bold' on input line 120.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
+(Font)                  OMS/cmsy/b/n --> U/MnSymbolF/m/n on input line 120.
+LaTeX Font Info:    Overwriting symbol font `MnSyA' in version `bold'
+(Font)                  U/MnSymbolA/m/n --> U/MnSymbolA/b/n on input line 121.
+LaTeX Font Info:    Overwriting symbol font `MnSyB' in version `bold'
+(Font)                  U/MnSymbolB/m/n --> U/MnSymbolB/b/n on input line 122.
+LaTeX Font Info:    Overwriting symbol font `MnSyC' in version `bold'
+(Font)                  U/MnSymbolC/m/n --> U/MnSymbolC/b/n on input line 123.
+LaTeX Font Info:    Overwriting symbol font `MnSyD' in version `bold'
+(Font)                  U/MnSymbolD/m/n --> U/MnSymbolD/b/n on input line 124.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
+(Font)                  OMX/MnSymbolE/m/n --> OMX/MnSymbolE/b/n on input line 1
+25.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
+(Font)                  U/MnSymbolF/m/n --> U/MnSymbolF/b/n on input line 126.
+LaTeX Font Info:    Redeclaring math alphabet \mathcal on input line 241.
+LaTeX Font Info:    Overwriting math alphabet `\mathcal' in version `bold'
+(Font)                  OMS/MnSymbolS/m/n --> OMS/MnSymbolS/b/n on input line 2
+41.
+LaTeX Info: Redefining \longrightarrow on input line 548.
+LaTeX Info: Redefining \longleftarrow on input line 549.
+LaTeX Info: Redefining \longleftrightarrow on input line 550.
+LaTeX Info: Redefining \Longrightarrow on input line 551.
+LaTeX Info: Redefining \Longleftarrow on input line 552.
+LaTeX Info: Redefining \Longleftrightarrow on input line 553.
+LaTeX Info: Redefining \longmapsto on input line 554.
+LaTeX Info: Redefining \vdots on input line 868.
+LaTeX Font Info:    Redeclaring math symbol \braceld on input line 1721.
+LaTeX Font Info:    Redeclaring math symbol \bracelu on input line 1722.
+LaTeX Font Info:    Redeclaring math symbol \bracerd on input line 1723.
+LaTeX Font Info:    Redeclaring math symbol \braceru on input line 1724.
+LaTeX Info: Redefining \downbracefill on input line 1799.
+LaTeX Info: Redefining \upbracefill on input line 1800.
+LaTeX Info: Redefining \overbrace on input line 1819.
+LaTeX Info: Redefining \underbrace on input line 1820.
+LaTeX Info: Redefining \surd on input line 1843.
+LaTeX Font Info:    Redeclaring math accent \widehat on input line 1845.
+LaTeX Font Info:    Redeclaring math accent \widetilde on input line 1846.
+LaTeX Font Info:    Redeclaring math accent \vec on input line 1848.
+)
+(/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/latex/ad
+justbox/adjustbox.sty
+Package: adjustbox 2020/08/19 v1.3 Adjusting TeX boxes (trim, clip, ...)
+
+(/Library/Application Support/MiKTeX/texmfs/install/tex/latex/xkeyval/xkeyval.s
+ty
+Package: xkeyval 2020/11/20 v2.8 package option processing (HA)
+
+(/Library/Application Support/MiKTeX/texmfs/install/tex/generic/xkeyval/xkeyval
+.tex
+(/Library/Application Support/MiKTeX/texmfs/install/tex/generic/xkeyval/xkvutil
+s.tex
+\XKV@toks=\toks50
+\XKV@tempa@toks=\toks51
+)
+\XKV@depth=\count322
+File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
+))
+(/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/latex/ad
+justbox/adjcalc.sty
+Package: adjcalc 2012/05/16 v1.1 Provides advanced setlength with multiple back
+-ends (calc, etex, pgfmath)
+)
+(/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/latex/ad
+justbox/trimclip.sty
+Package: trimclip 2020/08/19 v1.2 Trim and clip general TeX material
+
+(/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/latex/co
+llectbox/collectbox.sty
+Package: collectbox 2012/05/17 v0.4b Collect macro arguments as boxes
+\collectedbox=\box78
+)
+\tc@llx=\dimen296
+\tc@lly=\dimen297
+\tc@urx=\dimen298
+\tc@ury=\dimen299
+Package trimclip Info: Using driver 'tc-pdftex.def'.
+
+(/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/latex/ad
+justbox/tc-pdftex.def
+File: tc-pdftex.def 2019/01/04 v2.2 Clipping driver for pdftex
+))
+\adjbox@Width=\dimen300
+\adjbox@Height=\dimen301
+\adjbox@Depth=\dimen302
+\adjbox@Totalheight=\dimen303
+\adjbox@pwidth=\dimen304
+\adjbox@pheight=\dimen305
+\adjbox@pdepth=\dimen306
+\adjbox@ptotalheight=\dimen307
+
+(/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/latex/if
+oddpage/ifoddpage.sty
+Package: ifoddpage 2016/04/23 v1.1 Conditionals for odd/even page detection
+\c@checkoddpage=\count323
+))
+(/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/latex/mu
+ltirow/multirow.sty
+Package: multirow 2021/03/15 v2.8 Span multiple rows of a table
+\multirow@colwidth=\skip69
+\multirow@cntb=\count324
+\multirow@dima=\skip70
+\bigstrutjot=\dimen308
+)
+(/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/latex/bo
+oktabs/booktabs.sty
+Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
+\heavyrulewidth=\dimen309
+\lightrulewidth=\dimen310
+\cmidrulewidth=\dimen311
+\belowrulesep=\dimen312
+\belowbottomsep=\dimen313
+\aboverulesep=\dimen314
+\abovetopsep=\dimen315
+\cmidrulesep=\dimen316
+\cmidrulekern=\dimen317
+\defaultaddspace=\dimen318
+\@cmidla=\count325
+\@cmidlb=\count326
+\@aboverulesep=\dimen319
+\@belowrulesep=\dimen320
+\@thisruleclass=\count327
+\@lastruleclass=\count328
+\@thisrulewidth=\dimen321
+)
+(/Library/Application Support/MiKTeX/texmfs/install/tex/latex/latex-tools/calc.
+sty
+Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count329
+\calc@Bcount=\count330
+\calc@Adimen=\dimen322
+\calc@Bdimen=\dimen323
+\calc@Askip=\skip71
+\calc@Bskip=\skip72
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count331
+\calc@Cskip=\skip73
+)
+(/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/latex/st
+ackengine/stackengine.sty
+Package: stackengine 2021/07/22 v4.11\ Stacking text and objects in convenient 
+ways
+
+(/Library/Application Support/MiKTeX/texmfs/install/tex/latex/etoolbox/etoolbox
+.sty
+Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count332
+)
+(/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/latex/li
+stofitems/listofitems.sty
+(/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/generic/
+listofitems/listofitems.tex
+\loi_cnt_foreach_nest=\count333
+\loi_nestcnt=\count334
+)
+Package: listofitems 2019/08/21 v1.63 Grab items in lists using user-specified 
+sep char (CT)
+)
+\c@@stackindex=\count335
+\@boxshift=\skip74
+\stack@tmplength=\skip75
+\temp@stkl=\skip76
+\@stackedboxwidth=\skip77
+\@addedbox=\box79
+\@anchorbox=\box80
+\@insetbox=\box81
+\se@backgroundbox=\box82
+\stackedbox=\box83
+\@centerbox=\box84
+\c@ROWcellindex@=\count336
+)
+(/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/latex/cs
+quotes/csquotes.sty
+Package: csquotes 2021-02-22 v5.2l context-sensitive quotations (JAW)
+\csq@reset=\count337
+\csq@gtype=\count338
+\csq@glevel=\count339
+\csq@qlevel=\count340
+\csq@maxlvl=\count341
+\csq@tshold=\count342
+\csq@ltx@everypar=\toks52
+
+(/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/latex/cs
+quotes/csquotes.def
+File: csquotes.def 2021-02-22 v5.2l csquotes generic definitions (JAW)
+)
+Package csquotes Info: Trying to load configuration file 'csquotes.cfg'...
+Package csquotes Info: ... configuration file loaded successfully.
+
+(/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/latex/cs
+quotes/csquotes.cfg
+File: csquotes.cfg 
+))
+(/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/latex/en
+umitem/enumitem.sty
+Package: enumitem 2019/06/20 v3.9 Customized lists
+\labelindent=\skip78
+\enit@outerparindent=\dimen324
+\enit@toks=\toks53
+\enit@inbox=\box85
+\enit@count@id=\count343
+\enitdp@description=\count344
+) (quiver.sty
+Package: quiver 2021/01/11 quiver
+
+(/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/latex/ti
+kz-cd/tikz-cd.sty
+Package: tikz-cd 2021/05/04 v1.0 Commutative diagrams with TikZ
+)
+(/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/frontendlay
+er/tikz/libraries/tikzlibrarycalc.code.tex
+File: tikzlibrarycalc.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+)
+(/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/frontendlay
+er/tikz/libraries/tikzlibrarydecorations.pathmorphing.code.tex
+(/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/frontendlay
+er/tikz/libraries/tikzlibrarydecorations.code.tex
+(/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/modules/pgf
+moduledecorations.code.tex
+\pgfdecoratedcompleteddistance=\dimen325
+\pgfdecoratedremainingdistance=\dimen326
+\pgfdecoratedinputsegmentcompleteddistance=\dimen327
+\pgfdecoratedinputsegmentremainingdistance=\dimen328
+\pgf@decorate@distancetomove=\dimen329
+\pgf@decorate@repeatstate=\count345
+\pgfdecorationsegmentamplitude=\dimen330
+\pgfdecorationsegmentlength=\dimen331
+)
+\tikz@lib@dec@box=\box86
+)
+(/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/libraries/d
+ecorations/pgflibrarydecorations.pathmorphing.code.tex)))
+(/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/latex/pr
+ftree/prftree.sty
+Package: prftree 2019/06/19 Natural Deduction Proofs
+\prflinepadbefore=\dimen332
+\prflinepadafter=\dimen333
+\prflineextra=\dimen334
+\prflinethickness=\dimen335
+\prfemptylinethickness=\dimen336
+\prfrulenameskip=\dimen337
+\prflabelskip=\dimen338
+\prfinterspace=\dimen339
+\prfdoublelineinterspace=\dimen340
+\prfboundedstyle=\count346
+\prfsummarystyle=\count347
+\prf@@fancysummarybox=\box87
+\prf@@fancysymmarylen=\dimen341
+\prf@Lassum=\skip79
+\prf@Rassum=\skip80
+\prf@assumptionsbox=\box88
+\prf@conclusionbox=\box89
+\prf@rulenamebox=\box90
+\prf@labelbox=\box91
+\prf@linebox=\box92
+\prf@summarybox=\box93
+\prf@fancybox=\box94
+\c@prfassumptioncounter=\count348
+\c@prfsummarycounter=\count349
+\prf@summary@label=\box95
+\prf@@@@proofbox=\box96
+)
+(/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/generic/
+genmisc/kbordermatrix.sty
+Package: kbordermatrix 2011/09/21 Bordered matrix with brackets
+\kbcolsep=\skip81
+\kbrowsep=\skip82
+\br@kwd=\skip83
+\k@bordht=\skip84
+)
+(/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/latex/br
+aket/braket.sty)
+(/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/generic/
+xypic/xy.sty
+(/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/generic/
+xypic/xy.tex Bootstrap'ing: catcodes, docmode,
+(/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/generic/
+xypic/xyrecat.tex)
+(/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/generic/
+xypic/xyidioms.tex)
+
+ Xy-pic version 3.8.9 <2013/10/06>
+ Copyright (c) 1991-2013 by Kristoffer H. Rose <krisrose@tug.org> and others
+ Xy-pic is free software: see the User's Guide for details.
+
+Loading kernel: messages; fonts; allocations: state,
+\X@c=\dimen342
+\Y@c=\dimen343
+\U@c=\dimen344
+\D@c=\dimen345
+\L@c=\dimen346
+\R@c=\dimen347
+\Edge@c=\toks54
+\X@p=\dimen348
+\Y@p=\dimen349
+\U@p=\dimen350
+\D@p=\dimen351
+\L@p=\dimen352
+\R@p=\dimen353
+\Edge@p=\toks55
+\X@origin=\dimen354
+\Y@origin=\dimen355
+\X@xbase=\dimen356
+\Y@xbase=\dimen357
+\X@ybase=\dimen358
+\Y@ybase=\dimen359
+\X@min=\dimen360
+\Y@min=\dimen361
+\X@max=\dimen362
+\Y@max=\dimen363
+\lastobjectbox@=\box97
+\zerodotbox@=\box98
+\almostz@=\dimen364
+ direction,
+\d@X=\dimen365
+\d@Y=\dimen366
+\K@=\count350
+\KK@=\count351
+\Direction=\count352
+\K@dXdY=\dimen367
+\K@dYdX=\dimen368
+\xyread@=\read3
+\xywrite@=\write4
+\csp@=\count353
+\quotPTK@=\dimen369
+
+utility macros; pictures: \xy, positions,
+\swaptoks@@=\toks56
+\connectobjectbox@@=\box99
+ objects,
+\styletoks@=\toks57
+ decorations;
+kernel objects: directionals, circles, text; options; algorithms: directions,
+edges, connections;  Xy-pic loaded)
+(/Library/Application Support/MiKTeX/texmfs/install/tex/generic/iftex/ifpdf.sty
+Package: ifpdf 2019/10/25 v3.4 ifpdf legacy package. Use iftex instead.
+)
+Package: xy 2013/10/06 Xy-pic version 3.8.9
+
+(/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/generic/
+xypic/xyall.tex  Xy-pic option: All features v.3.8
+(/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/generic/
+xypic/xycurve.tex  Xy-pic option: Curve and Spline extension v.3.12 curve,
+\crv@cnt@=\count354
+\crvpts@=\toks58
+\splinebox@=\box100
+\splineval@=\dimen370
+\splinedepth@=\dimen371
+\splinetol@=\dimen372
+\splinelength@=\dimen373
+
+circles,
+\L@=\dimen374
+ loaded)
+(/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/generic/
+xypic/xyframe.tex  Xy-pic option: Frame and Bracket extension v.3.14 loaded)
+(/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/generic/
+xypic/xycmtip.tex  Xy-pic option: Computer Modern tip extension v.3.7
+(/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/generic/
+xypic/xytips.tex  Xy-pic option: More Tips extension v.3.11 loaded) loaded)
+(/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/generic/
+xypic/xyline.tex  Xy-pic option: Line styles extension v.3.10
+\xylinethick@=\dimen375
+ loaded)
+(/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/generic/
+xypic/xyrotate.tex  Xy-pic option: Rotate and Scale extension v.3.8 loaded)
+(/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/generic/
+xypic/xycolor.tex  Xy-pic option: Colour extension v.3.11 loaded)
+(/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/generic/
+xypic/xymatrix.tex  Xy-pic option: Matrix feature v.3.14
+\Row=\count355
+\Col=\count356
+\queue@=\toks59
+\queue@@=\toks60
+\qcount@=\count357
+\qcount@@=\count358
+\matrixsize@=\count359
+ loaded)
+(/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/generic/
+xypic/xyarrow.tex  Xy-pic option: Arrow and Path feature v.3.9 path, \ar,
+loaded)
+(/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/generic/
+xypic/xygraph.tex  Xy-pic option: Graph feature v.3.11 loaded) loaded)
+(/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/generic/
+xypic/xypdf.tex  Xy-pic option: PDF driver v.1.7
+Xy-pic pdf driver: `color' extension support
+(/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/generic/
+xypic/xypdf-co.tex loaded) Xy-pic pdf driver: `curve' extension support
+(/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/generic/
+xypic/xypdf-cu.tex loaded) Xy-pic pdf driver: `frame' extension support
+(/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/generic/
+xypic/xypdf-fr.tex loaded) Xy-pic pdf driver: `line' extension support
+(/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/generic/
+xypic/xypdf-li.tex loaded) Xy-pic pdf driver: `rotate' extension support
+(/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/generic/
+xypic/xypdf-ro.tex loaded) loaded))
+\c@thm=\count360
+LaTeX Info: Redefining \diamondtimes on input line 126.
+
+(/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/latex/ge
+ometry/geometry.sty
+Package: geometry 2020/01/02 v5.9 Page Geometry
+
+(/Library/Application Support/MiKTeX/texmfs/install/tex/generic/iftex/ifvtex.st
+y
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
+)
+\Gm@cnth=\count361
+\Gm@cntv=\count362
+\c@Gm@tempcnt=\count363
+\Gm@bindingoffset=\dimen376
+\Gm@wd@mp=\dimen377
+\Gm@odd@mp=\dimen378
+\Gm@even@mp=\dimen379
+\Gm@layoutwidth=\dimen380
+\Gm@layoutheight=\dimen381
+\Gm@layouthoffset=\dimen382
+\Gm@layoutvoffset=\dimen383
+\Gm@dimlist=\toks61
+
+(/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/latex/ge
+ometry/geometry.cfg))
+Package csquotes Info: Checking for multilingual support...
+Package csquotes Info: ... none found.
+ (PhD.aux
+
+LaTeX Warning: Label `eq:standard_example' multiply defined.
+
+)
+\openout1 = `PhD.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 162.
+LaTeX Font Info:    ... okay on input line 162.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 162.
+LaTeX Font Info:    ... okay on input line 162.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 162.
+LaTeX Font Info:    ... okay on input line 162.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 162.
+LaTeX Font Info:    ... okay on input line 162.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 162.
+LaTeX Font Info:    ... okay on input line 162.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 162.
+LaTeX Font Info:    ... okay on input line 162.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 162.
+LaTeX Font Info:    ... okay on input line 162.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 162.
+LaTeX Font Info:    ... okay on input line 162.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 162.
+LaTeX Font Info:    ... okay on input line 162.
+LaTeX Font Info:    Checking defaults for T3/cmr/m/n on input line 162.
+LaTeX Font Info:    Trying to load font information for T3+cmr on input line 16
+2.
+
+(/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/latex/ti
+pa/t3cmr.fd
+File: t3cmr.fd 2001/12/31 TIPA font definitions
+)
+LaTeX Font Info:    ... okay on input line 162.
+
+(/Library/Application Support/MiKTeX/texmfs/install/tex/context/base/mkii/supp-
+pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count364
+\scratchdimen=\dimen384
+\scratchbox=\box101
+\nofMPsegments=\count365
+\nofMParguments=\count366
+\everyMPshowfont=\toks62
+\MPscratchCnt=\count367
+\MPscratchDim=\dimen385
+\MPnumerator=\count368
+\makeMPintoPDFobject=\count369
+\everyMPtoPDFconversion=\toks63
+)
+(/Library/Application Support/MiKTeX/texmfs/install/tex/latex/epstopdf-pkg/epst
+opdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+
+(/Library/Application Support/MiKTeX/texmfs/install/tex/latex/00miktex/epstopdf
+-sys.cfg
+File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
+))
+Package hyperref Info: Link coloring OFF on input line 162.
+
+(/Library/Application Support/MiKTeX/texmfs/install/tex/latex/hyperref/nameref.
+sty
+Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
+
+(/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/latex/re
+fcount/refcount.sty
+Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
+)
+(/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/generic/
+gettitlestring/gettitlestring.sty
+Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
+)
+\c@section@level=\count370
+)
+LaTeX Info: Redefining \ref on input line 162.
+LaTeX Info: Redefining \pageref on input line 162.
+LaTeX Info: Redefining \nameref on input line 162.
+ (PhD.out) (PhD.out)
+\@outlinefile=\write5
+\openout5 = `PhD.out'.
+
+LaTeX Font Info:    Trying to load font information for U+msa on input line 162
+.
+
+(/Library/Application Support/MiKTeX/texmfs/install/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 162
+.
+(/Library/Application Support/MiKTeX/texmfs/install/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 16
+2.
+
+(/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/latex/jk
+nappen/ursfs.fd
+File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
+)
+LaTeX Font Info:    Trying to load font information for U+stmry on input line 1
+62.
+
+(/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/latex/st
+maryrd/Ustmry.fd)
+LaTeX Font Info:    Trying to load font information for U+cmllr on input line 1
+62.
+
+(/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/latex/cm
+ll/ucmllr.fd)
+Package xypdf Info: Line width: 0.5397pt on input line 162.
+
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: <default>
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(85.35826pt, 443.57848pt, 85.35826pt)
+* v-part:(T,H,B)=(85.35826pt, 624.25346pt, 85.35826pt)
+* \paperwidth=614.295pt
+* \paperheight=794.96999pt
+* \textwidth=443.57848pt
+* \textheight=624.25346pt
+* \oddsidemargin=13.08827pt
+* \evensidemargin=13.08827pt
+* \topmargin=-23.91173pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=12.0pt
+* \footskip=30.0pt
+* \marginparwidth=44.0pt
+* \marginparsep=10.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.8pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+(PhD.toc [1
+
+{/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/data/pdftex/config/p
+dftex.map}])
+\tf@toc=\write6
+\openout6 = `PhD.toc'.
+
+
+
+LaTeX Warning: Citation `howard' on page 2 undefined on input line 172.
+
+
+LaTeX Warning: Citation `sorensen' on page 2 undefined on input line 174.
+
+[2]
+
+LaTeX Warning: Citation `howard' on page 3 undefined on input line 176.
+
+
+LaTeX Warning: Citation `gentzen' on page 3 undefined on input line 176.
+
+
+LaTeX Warning: Citation `prawitz' on page 3 undefined on input line 176.
+
+
+LaTeX Warning: Citation `sorensen' on page 3 undefined on input line 178.
+
+
+LaTeX Warning: Citation `wadler' on page 3 undefined on input line 178.
+
+
+LaTeX Warning: Citation `selinger' on page 3 undefined on input line 178.
+
+
+LaTeX Warning: Citation `howard' on page 3 undefined on input line 178.
+
+
+LaTeX Warning: Citation `sorensen' on page 3 undefined on input line 178.
+
+
+Overfull \hbox (3.4391pt too wide) in paragraph at lines 180--181
+\OT1/cmr/m/n/12 fragment of intuitionistic sequent calculus'', and the main the
+orem there is an equivalence
+ []
+
+\myBox1=\box102
+\myScoreStart1=\dimen386
+\myCenter1=\dimen387
+\myScoreEnd1=\dimen388
+\myBox2=\box103
+\myScoreStart2=\dimen389
+\myCenter2=\dimen390
+\myScoreEnd2=\dimen391
+\myBox3=\box104
+\myScoreStart3=\dimen392
+\myCenter3=\dimen393
+\myScoreEnd3=\dimen394
+[3]
+Overfull \hbox (1.54607pt too wide) in paragraph at lines 199--200
+\OT1/cmr/m/n/12 makes precise the variable occurrences which are identified and
+ those which are genuinely
+ []
+
+
+Overfull \hbox (2.70856pt too wide) in paragraph at lines 213--214
+\OT1/cmr/m/n/12 in a single $\OML/cmm/m/it/12 $\OT1/cmr/m/n/12 -reduction step
+, whereas the sequent calculus proof mapping onto $\OML/cmm/m/it/12 t$ \OT1/cmr
+/m/n/12 explicates
+ []
+
+
+Overfull \hbox (41.00723pt too wide) in paragraph at lines 219--219
+[]\OT1/cmr/bx/n/17.28 Gentzen-Mints-Zucker duality and patterns of equality 
+ []
+
+
+LaTeX Warning: Citation `gentzen' on page 4 undefined on input line 222.
+
+
+Overfull \hbox (9.0103pt too wide) in paragraph at lines 222--223
+[]\OT1/cmr/m/n/12 Our intuitionistic sequent calculus is the system LJ of [[], 
+\TS1/cmr/m/n/12 ß\OT1/cmr/m/n/12 III] restricted to implication,
+ []
+
+[4] [5]
+
+LaTeX Warning: Citation `gentzen' on page 6 undefined on input line 328.
+
+
+LaTeX Warning: Reference `lemma:strict_vs_liberal' on page 6 undefined on input
+ line 328.
+
+
+LaTeX Warning: Citation `cutctr' on page 6 undefined on input line 330.
+
+
+LaTeX Warning: Citation `gentzen' on page 6 undefined on input line 333.
+
+
+LaTeX Warning: Reference `lemma:preimage_app' on page 6 undefined on input line
+ 333.
+
+
+LaTeX Warning: Reference `section:normal_form_seq' on page 6 undefined on input
+ line 333.
+
+
+LaTeX Warning: Citation `troelstra' on page 6 undefined on input line 339.
+
+
+Overfull \hbox (2.09053pt too wide) in paragraph at lines 366--367
+ []|[][]$\OMX/MnSymbolE/m/n/12 à\OT1/cmr/m/n/12 1\OMX/MnSymbolE/m/n/12 ç$[]| 
+ []
+
+[6]
+
+LaTeX Warning: Reference `alpha_L' on page 7 undefined on input line 369.
+
+
+LaTeX Warning: Reference `alpha_cut' on page 7 undefined on input line 369.
+
+
+Overfull \hbox (2.09053pt too wide) in paragraph at lines 384--385
+ []|[][]$\OMX/MnSymbolE/m/n/12 à\OT1/cmr/m/n/12 2\OMX/MnSymbolE/m/n/12 ç$[]| 
+ []
+
+
+LaTeX Font Warning: Font shape `U/stmry/b/n' undefined
+(Font)              using `U/stmry/m/n' instead on input line 393.
+
+
+Overfull \hbox (2.09053pt too wide) in paragraph at lines 420--421
+ []|[][]$\OMX/MnSymbolE/m/n/12 à\OT1/cmr/m/n/12 3\OMX/MnSymbolE/m/n/12 ç$[]| 
+ []
+
+
+Overfull \hbox (2.09053pt too wide) in paragraph at lines 441--442
+ []|[][]$\OMX/MnSymbolE/m/n/12 à\OT1/cmr/m/n/12 4\OMX/MnSymbolE/m/n/12 ç$[]| 
+ []
+
+
+Overfull \hbox (2.09053pt too wide) in paragraph at lines 457--458
+ []|[][]$\OMX/MnSymbolE/m/n/12 à\OT1/cmr/m/n/12 5\OMX/MnSymbolE/m/n/12 ç$[]| 
+ []
+
+
+LaTeX Warning: Reference `alpha_R' on page 7 undefined on input line 463.
+
+
+LaTeX Warning: Reference `alpha_cut' on page 7 undefined on input line 463.
+
+[7]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 477.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\lambda' on input line 477.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 477.
+
+
+LaTeX Warning: Reference `section:intro_lambda' on page 8 undefined on input li
+ne 481.
+
+
+Overfull \hbox (5.53181pt too wide) in paragraph at lines 481--482
+\OT1/cmr/m/n/12 Appendix []. Following Church's original presentation our lambd
+a calculus only contains
+ []
+
+
+Package amsfonts Warning: Obsolete command \bold; \mathbf should be used instea
+d on input line 485.
+
+
+LaTeX Warning: Command \! invalid in math mode on input line 493.
+
+
+LaTeX Warning: Command \! invalid in math mode on input line 493.
+
+
+LaTeX Warning: Command \! invalid in math mode on input line 493.
+
+
+LaTeX Warning: Command \! invalid in math mode on input line 493.
+
+
+LaTeX Warning: Command \! invalid in math mode on input line 493.
+
+
+LaTeX Warning: Command \! invalid in math mode on input line 493.
+
+
+LaTeX Warning: Command \! invalid in math mode on input line 493.
+
+
+LaTeX Warning: Command \! invalid in math mode on input line 493.
+
+[8]
+
+LaTeX Warning: Citation `sorensen' on page 9 undefined on input line 508.
+
+
+LaTeX Warning: Citation `sorensen' on page 9 undefined on input line 548.
+
+
+LaTeX Warning: Citation `sorensen' on page 9 undefined on input line 548.
+
+
+LaTeX Warning: Command \l invalid in math mode on input line 561.
+
+
+LaTeX Warning: Command \l invalid in math mode on input line 561.
+
+
+LaTeX Warning: Command \l invalid in math mode on input line 561.
+
+
+LaTeX Warning: Command \l invalid in math mode on input line 561.
+
+[9] <xymatrix 3x2 144>
+
+LaTeX Warning: Citation `lambek_scott' on page 10 undefined on input line 581.
+
+
+Overfull \hbox (7.96547pt too wide) in paragraph at lines 598--599
+ []|[][]$\OMX/MnSymbolE/m/n/12 à\OT1/cmr/m/n/12 10\OMX/MnSymbolE/m/n/12 ç$[]| 
+ []
+
+
+Overfull \hbox (7.96547pt too wide) in paragraph at lines 610--611
+ []|[][]$\OMX/MnSymbolE/m/n/12 à\OT1/cmr/m/n/12 11\OMX/MnSymbolE/m/n/12 ç$[]| 
+ []
+
+[10]
+Overfull \hbox (7.96547pt too wide) in paragraph at lines 621--622
+ []|[][]$\OMX/MnSymbolE/m/n/12 à\OT1/cmr/m/n/12 12\OMX/MnSymbolE/m/n/12 ç$[]| 
+ []
+
+
+Overfull \hbox (7.96547pt too wide) in paragraph at lines 632--633
+ []|[][]$\OMX/MnSymbolE/m/n/12 à\OT1/cmr/m/n/12 13\OMX/MnSymbolE/m/n/12 ç$[]| 
+ []
+
+
+Overfull \hbox (7.96547pt too wide) in paragraph at lines 643--644
+ []|[][]$\OMX/MnSymbolE/m/n/12 à\OT1/cmr/m/n/12 14\OMX/MnSymbolE/m/n/12 ç$[]| 
+ []
+
+
+Overfull \hbox (7.96547pt too wide) in paragraph at lines 654--655
+ []|[][]$\OMX/MnSymbolE/m/n/12 à\OT1/cmr/m/n/12 15\OMX/MnSymbolE/m/n/12 ç$[]| 
+ []
+
+
+Overfull \hbox (7.96547pt too wide) in paragraph at lines 666--667
+ []|[][]$\OMX/MnSymbolE/m/n/12 à\OT1/cmr/m/n/12 16\OMX/MnSymbolE/m/n/12 ç$[]| 
+ []
+
+
+LaTeX Warning: Reference `alpha_cut' on page 11 undefined on input line 669.
+
+
+LaTeX Warning: Reference `alpha_ctr' on page 11 undefined on input line 669.
+
+
+LaTeX Warning: Reference `alpha_R' on page 11 undefined on input line 669.
+
+
+LaTeX Warning: Reference `alpha_L' on page 11 undefined on input line 669.
+
+
+Overfull \hbox (6.95981pt too wide) in paragraph at lines 669--670
+\OT1/cmr/m/n/12 Given a well-labelled preproof $\OML/cmm/m/it/12 $ \OT1/cmr/m/
+n/12 annotated as above, $\OML/cmm/m/it/12 f[]\OMX/MnSymbolE/m/n/12 à\OML/cmm/m
+/it/12 \OMX/MnSymbolE/m/n/12 ç$ \OT1/cmr/m/n/12 is the lambda term annotating
+ []
+
+
+LaTeX Warning: Citation `Lemma 4.11' on page 11 undefined on input line 679.
+
+
+Overfull \hbox (23.08551pt too wide) in paragraph at lines 684--685
+[][]\OT1/cmr/bx/n/12 Theorem 2.2.12 \OT1/cmr/m/n/12 (Gentzen-Mints-Zucker duali
+ty)\OT1/cmr/bx/n/12 . []\OT1/cmr/m/it/12 If $\OT1/cmr/m/n/12  $ \OT1/cmr/m/it/1
+2 is repetition-free then the translation
+ []
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 689.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\lambda' on input line 689.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 689.
+
+
+Overfull \hbox (2.67337pt too wide) in paragraph at lines 690--691
+\OT1/cmr/m/n/12 Simultaneously, we are interested in inherently infinite struct
+ures. Modern mathematical
+ []
+
+
+Overfull \hbox (1.72014pt too wide) in paragraph at lines 690--691
+\OT1/cmr/m/n/12 foundations threads this needle with great success; we indulge 
+ourselves in the hypothesis
+ []
+
+
+LaTeX Warning: Reference `sec:lambda_calculus' on page 11 undefined on input li
+ne 692.
+
+[11]
+
+LaTeX Warning: Citation `ll' on page 12 undefined on input line 697.
+
+
+LaTeX Warning: Citation `NormalFunctors' on page 12 undefined on input line 697
+.
+
+
+LaTeX Warning: Citation `Kock' on page 12 undefined on input line 697.
+
+
+LaTeX Warning: Citation `Taylor1989' on page 12 undefined on input line 697.
+
+
+LaTeX Warning: Citation `Hasegawa' on page 12 undefined on input line 697.
+
+
+LaTeX Warning: Citation `FinsterMimramLucasSeiller' on page 12 undefined on inp
+ut line 697.
+
+
+LaTeX Warning: Citation `Galal21' on page 12 undefined on input line 697.
+
+
+LaTeX Warning: Citation `FioreGalalPaquet' on page 12 undefined on input line 6
+97.
+
+
+LaTeX Warning: Citation `NormalFunctors' on page 12 undefined on input line 699
+.
+
+
+LaTeX Warning: Citation `Joyal' on page 12 undefined on input line 699.
+
+
+LaTeX Warning: Citation `ScottOutline' on page 12 undefined on input line 700.
+
+
+LaTeX Warning: Citation `Scott1976' on page 12 undefined on input line 700.
+
+
+LaTeX Warning: Citation `Scott1982' on page 12 undefined on input line 700.
+
+
+LaTeX Warning: Citation `domainsbook' on page 12 undefined on input line 700.
+
+
+LaTeX Warning: Citation `NormalFunctors' on page 12 undefined on input line 704
+.
+
+
+LaTeX Warning: Citation `GirardSystemF' on page 12 undefined on input line 704.
+
+
+
+LaTeX Warning: Citation `ll' on page 12 undefined on input line 704.
+
+
+LaTeX Warning: Citation `WeightedRel' on page 12 undefined on input line 706.
+
+
+LaTeX Warning: Citation `Ehrhard2012' on page 12 undefined on input line 706.
+
+[12]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 708.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\lambda' on input line 708.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 708.
+
+
+Overfull \hbox (0.772pt too wide) in paragraph at lines 711--712
+\OT1/cmr/m/n/12 particular representatives of finite sets (the Von Neumann inte
+gers). Moreover, requiring
+ []
+
+
+LaTeX Warning: Citation `Sequel' on page 13 undefined on input line 713.
+
+
+LaTeX Warning: Reference `theorem:normal_form_theorem' on page 13 undefined on 
+input line 724.
+
+[13]
+
+LaTeX Warning: Reference `sec:NFmodel' on page 14 undefined on input line 754.
+
+[14]
+Overfull \hbox (2.0224pt too wide) in paragraph at lines 805--806
+[]\OT1/cmr/m/n/12 We will show directly that $[]$ preserves filtered suprema. L
+et $\OMX/MnSymbolE/m/n/12 ò\OML/cmm/m/it/12 f[]\OMX/MnSymbolE/m/n/12 ù[] \U/MnS
+ymbolD/m/n/12 b \OMS/MnSymbolS/m/n/12 Q\OMX/MnSymbolE/m/n/12 à\OMS/MnSymbolS/m/
+n/12 I\OMX/MnSymbolE/m/n/12 à\OML/cmm/m/it/12 A\OMX/MnSymbolE/m/n/12 ç \U/MnSym
+bolC/m/n/12 
+ []
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 823.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\lambda' on input line 823.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 823.
+
+
+LaTeX Warning: Reference `def:context' on page 15 undefined on input line 827.
+
+
+LaTeX Warning: Reference `def:functor_model' on page 15 undefined on input line
+ 849.
+
+[15] [16] [17] [18] [19] [20]
+Overfull \hbox (11.55972pt too wide) in paragraph at lines 1129--1131
+\OT1/cmr/m/n/12 incoming edges of a vertex are called its \OT1/cmr/bx/n/12 prem
+ises\OT1/cmr/m/n/12 , the outgoing edges are its \OT1/cmr/bx/n/12 conclusions\O
+T1/cmr/m/n/12 .
+ []
+
+
+Overfull \hbox (13.51996pt too wide) in paragraph at lines 1131--1132
+[]\OT1/cmr/m/n/12 Each vertex labelled $\OMX/MnSymbolE/m/n/12 à[]ç$ \OT1/cmr/m/
+n/12 has exactly two conclusions and no premise, the conclusions
+ []
+
+[21] [22]
+Overfull \hbox (1.67662pt too wide) in paragraph at lines 1180--1181
+\OT1/cmr/m/n/12 speaking, there is orthogonal to this though, is a concept whic
+h exists for proof structures
+ []
+
+
+Overfull \hbox (3.55391pt too wide) in paragraph at lines 1200--1200
+ []|$[]$| 
+ []
+
+[23]
+Overfull \hbox (3.55391pt too wide) in paragraph at lines 1226--1226
+ []|$[]$| 
+ []
+
+
+Overfull \hbox (73.89195pt too wide) in paragraph at lines 1215--1238
+ [] 
+ []
+
+
+Overfull \hbox (3.55391pt too wide) in paragraph at lines 1252--1252
+ []|$[]$| 
+ []
+
+
+Overfull \hbox (73.89195pt too wide) in paragraph at lines 1241--1268
+ [] 
+ []
+
+
+Overfull \hbox (3.55391pt too wide) in paragraph at lines 1279--1279
+ []|$[]$| 
+ []
+
+
+Overfull \hbox (73.89195pt too wide) in paragraph at lines 1271--1295
+ [] 
+ []
+
+
+Overfull \hbox (3.55391pt too wide) in paragraph at lines 1306--1306
+ []|$[]$| 
+ []
+
+
+Overfull \hbox (73.89195pt too wide) in paragraph at lines 1298--1311
+ [] 
+ []
+
+[24] [25] [26] [27] [28] [29] [30] [31] [32] [33]
+<TensorSwitch.jpg, id=559, 2425.06pt x 774.895pt>
+File: TensorSwitch.jpg Graphic file (type jpg)
+<use TensorSwitch.jpg>
+Package pdftex.def Info: TensorSwitch.jpg  used on input line 1763.
+(pdftex.def)             Requested size: 354.86412pt x 113.39148pt.
+<ParSwitch.jpg, id=560, 2400.97pt x 662.475pt>
+File: ParSwitch.jpg Graphic file (type jpg)
+<use ParSwitch.jpg>
+Package pdftex.def Info: ParSwitch.jpg  used on input line 1769.
+(pdftex.def)             Requested size: 354.86412pt x 97.91133pt.
+ [34 <./TensorSwitch.jpg> <./ParSwitch.jpg>] [35]
+Overfull \hbox (9.70914pt too wide) detected at line 1855
+[] [][] \OML/cmm/m/it/12 A \U/MnSymbolC/m/n/12 \U/MnSymbolD/m/n/12   \OMX/MnSy
+mbolE/m/n/12 ò\OML/cmm/m/it/12 C \U/MnSymbolD/m/n/12 > \OMS/MnSymbolS/m/n/12 O\
+OMX/MnSymbolE/m/n/12 à\OML/cmm/m/it/12 \OMX/MnSymbolE/m/n/12 ç S []\OML/cmm/m/
+it/12 S[] \U/MnSymbolA/m/n/12  \OML/cmm/m/it/12 C; C \U/MnSymbolA/m/n/12  [] 
+[]\OMX/MnSymbolE/m/n/12 à\OML/cmm/m/it/12 ; S; A; \U/MnSymbolA/m/n/12 \OMX/Mn
+SymbolE/m/n/12 çù
+ []
+
+[36] [37] [38] [39] [40] [41] [42] [43] [44] [45] [46]
+<Switching.jpg, id=743, 2105.8675pt x 1337.99875pt>
+File: Switching.jpg Graphic file (type jpg)
+<use Switching.jpg>
+Package pdftex.def Info: Switching.jpg  used on input line 2368.
+(pdftex.def)             Requested size: 569.05511pt x 361.55032pt.
+
+Overfull \hbox (125.47664pt too wide) in paragraph at lines 2368--2369
+ [][] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Overfull \hbox (24.93477pt too wide) detected at line 2406
+[][]
+ []
+
+[47] [48 <./Switching.jpg>]
+Overfull \hbox (10.68486pt too wide) in paragraph at lines 2434--2435
+[]\OT1/cmr/m/n/12 The proof net given by ignoring the dashed lines in [] corres
+ponds to the permutation 
+ []
+
+
+Overfull \hbox (35.56114pt too wide) detected at line 2488
+[][]
+ []
+
+[49]
+Overfull \hbox (9.29321pt too wide) in paragraph at lines 2496--2498
+[][]\OT1/cmr/bx/n/12 Lemma 4.3.11. []\OT1/cmr/m/it/12 The set $\OMS/MnSymbolS/m
+/n/12 P\OMX/MnSymbolE/m/n/12 à\OML/cmm/m/it/12 \OMX/MnSymbolE/m/n/12 ç$ \OT1/c
+mr/m/it/12 is invariant under reduction of $\OML/cmm/m/it/12 m$\OT1/cmr/m/it/12
+ -redexes and $\OML/cmm/m/it/12 $\OT1/cmr/m/it/12 -expansion.
+ []
+
+
+LaTeX Warning: Reference `rule:tensor_reduct' on page 50 undefined on input lin
+e 2498.
+
+
+LaTeX Warning: Reference `def:eta_expansion' on page 50 undefined on input line
+ 2499.
+
+
+LaTeX Warning: Reference `rule:tensor_reduct' on page 50 undefined on input lin
+e 2503.
+
+
+LaTeX Warning: Reference `rule:ax_reduct_negation' on page 50 undefined on inpu
+t line 2530.
+
+
+LaTeX Warning: Reference `rule:ax_reduct' on page 50 undefined on input line 25
+30.
+
+
+LaTeX Warning: Reference `rule:ax_reduct_negation' on page 50 undefined on inpu
+t line 2530.
+
+
+LaTeX Warning: Reference `rule:ax_reduct' on page 50 undefined on input line 25
+30.
+
+[50]
+
+LaTeX Warning: Reference `prop:church_rosser' on page 51 undefined on input lin
+e 2568.
+
+[51]
+Overfull \hbox (4.62964pt too wide) in paragraph at lines 2591--2592
+[]\OT1/cmr/m/n/12 We then define the following permutation on $\OMS/MnSymbolS/m
+/n/12 P\OMX/MnSymbolE/m/n/12 à\OML/cmm/m/it/12 \OMX/MnSymbolE/m/n/12 ç$\OT1/cm
+r/m/n/12 , the permutations $\OML/cmm/m/it/12 []; []$ \OT1/cmr/m/n/12 Definit
+ion
+ []
+
+
+LaTeX Warning: Reference `def:normal_form' on page 52 undefined on input line 2
+597.
+
+
+LaTeX Warning: Reference `rule:tensor_reduct' on page 52 undefined on input lin
+e 2603.
+
+
+LaTeX Warning: Reference `eq:eta_expansion' on page 52 undefined on input line 
+2603.
+
+
+LaTeX Warning: Reference `rule:ax_reduct_negation' on page 52 undefined on inpu
+t line 2624.
+
+
+LaTeX Warning: Reference `rule:ax_reduct' on page 52 undefined on input line 26
+24.
+
+
+Overfull \hbox (102.72777pt too wide) detected at line 2656
+[]
+ []
+
+[52]
+Overfull \hbox (53.66986pt too wide) detected at line 2711
+[]
+ []
+
+
+Overfull \hbox (35.21915pt too wide) detected at line 2755
+[][]
+ []
+
+[53] [54] [55]
+Overfull \hbox (12.9801pt too wide) in paragraph at lines 2828--2830
+\OT1/cmr/m/n/12 then if we write $\OML/cmm/m/it/12 U[] \U/MnSymbolD/m/n/12   \O
+MX/MnSymbolE/m/n/12 ò\OML/cmm/m/it/12 X[]; [] ; X[]\OMX/MnSymbolE/m/n/12 ù\OML/
+cmm/m/it/12 ; U[] \U/MnSymbolD/m/n/12   \OMX/MnSymbolE/m/n/12 ò\OML/cmm/m/it/12
+ Y[]; [] ; Y[]\OMX/MnSymbolE/m/n/12 ù$ \OT1/cmr/m/n/12 and $\OML/cmm/m/it/12 U[
+] \U/MnSymbolD/m/n/12   \OMX/MnSymbolE/m/n/12 ò\OML/cmm/m/it/12 X[]; [] ; X[]; 
+Y[]; [] ; Y[]\OMX/MnSymbolE/m/n/12 ù$
+ []
+
+
+Overfull \hbox (16.32321pt too wide) in paragraph at lines 2843--2845
+[][]\OT1/cmr/bx/n/12 Remark 4.4.3. []\OT1/cmr/m/n/12 The equivalence relation o
+f Definition []4.4.1[] gives a visual conceptualisation
+ []
+
+
+Overfull \hbox (4.91454pt too wide) detected at line 2860
+[]
+ []
+
+[56]
+Overfull \hbox (4.7046pt too wide) detected at line 2907
+[][]
+ []
+
+
+Overfull \hbox (57.92867pt too wide) detected at line 2934
+[][]
+ []
+
+[57]
+
+LaTeX Warning: Reference `sec:interal_sum_tens' on page 58 undefined on input l
+ine 2950.
+
+[58] [59]
+
+LaTeX Warning: Reference `sec:interal_sum_tens' on page 60 undefined on input l
+ine 3051.
+
+[60]
+
+LaTeX Warning: Reference `sec:interal_sum_tens' on page 61 undefined on input l
+ine 3091.
+
+
+Overfull \hbox (63.66222pt too wide) detected at line 3117
+[][]
+ []
+
+[61]
+Overfull \hbox (11.48453pt too wide) in paragraph at lines 3150--3151
+\OT1/cmr/m/n/12 links. We will construct a $\OMX/MnSymbolE/m/n/12 à\OT1/cmr/m/n
+/12 2\OML/cmm/m/it/12 n \U/MnSymbolC/m/n/12  \OML/cmm/m/it/12 m\OMX/MnSymbolE/
+m/n/12 ç \U/MnSymbolC/m/n/12  \OMX/MnSymbolE/m/n/12 à\OT1/cmr/m/n/12 2\OML/cmm
+/m/it/12 n \U/MnSymbolC/m/n/12  \OML/cmm/m/it/12 m\OMX/MnSymbolE/m/n/12 ç$ \OT
+1/cmr/m/n/12 matrix $\OML/cmm/m/it/12 $ \OT1/cmr/m/n/12 and use $\OML/cmm/m/it
+/12 X[]; [] ; X[]; Y[]; Y[]; [] ; Y[]; Y[]$
+ []
+
+[62] [63] [64] [65] [66]
+LaTeX Font Info:    Trying to load font information for U+bbm on input line 342
+3.
+
+(/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/latex/bb
+m/ubbm.fd
+File: ubbm.fd 1999/03/15 V 1.2 Font definition for bbm font - TH
+)
+Overfull \hbox (13.78456pt too wide) in paragraph at lines 3423--3424
+\OT1/cmr/m/n/12 where $\U/bbm/m/n/12 k\OMX/MnSymbolE/m/n/12  \OML/cmm/m/it/12 x
+[]; [] ; x[]\OMX/MnSymbolE/m/n/12 []$ \OT1/cmr/m/n/12 is the abelian group of 
+polynomials of degree $\OML/cmm/m/it/12 d$\OT1/cmr/m/n/12 . Graded rings/module
+s
+ []
+
+[67]
+Overfull \hbox (9.08478pt too wide) in paragraph at lines 3465--3467
+\OT1/cmr/m/n/12 This multiplication law is necessary for the differential cases
+ in order to make $[]\OMX/MnSymbolE/m/n/12 à\OML/cmm/m/it/12 A; B\OMX/MnSymbolE
+/m/n/12 ç \U/MnSymbolC/m/n/12 a
+ []
+
+[68] [69] [70] [71] [72]
+Overfull \hbox (2.5445pt too wide) detected at line 3695
+[]
+ []
+
+
+Overfull \hbox (0.10017pt too wide) detected at line 3699
+\OML/cmm/m/it/12 H\OMX/MnSymbolE/m/n/12 à\OML/cmm/m/it/12 M \U/MnSymbolC/m/n/12
+ ` \OML/cmm/m/it/12 N; M \U/MnSymbolC/m/n/12 ` \OML/cmm/m/it/12 N\OMX/MnSymbolE
+/m/n/12 ç \U/MnSymbolC/m/n/12  \OML/cmm/m/it/12 H\OMX/MnSymbolE/m/n/12 à\OML/c
+mm/m/it/12 M \U/MnSymbolC/m/n/12 ` \OML/cmm/m/it/12 N; M \U/MnSymbolC/m/n/12 ` 
+\OML/cmm/m/it/12 N\OMX/MnSymbolE/m/n/12 ç \U/MnSymbolA/m/n/12 –[]  \OML/cmm/m/i
+t/12 H\OMX/MnSymbolE/m/n/12 à\OML/cmm/m/it/12 M \U/MnSymbolC/m/n/12 ` \OML/cmm/
+m/it/12 N; M \U/MnSymbolC/m/n/12 ` \OML/cmm/m/it/12 N\OMX/MnSymbolE/m/n/12 ç \U
+/MnSymbolA/m/n/12 –[]  \OML/cmm/m/it/12 H\OMX/MnSymbolE/m/n/12 à\U/MnSymbolC/m/
+n/12 ,\OMX/MnSymbolE/m/n/12 à\OML/cmm/m/it/12 M \U/MnSymbolC/m/n/12 ` \OML/cmm/
+m/it/12 N\OMX/MnSymbolE/m/n/12 ç\OML/cmm/m/it/12 ; \U/MnSymbolC/m/n/12 ,\OMX/Mn
+SymbolE/m/n/12 à\OML/cmm/m/it/12 M \U/MnSymbolC/m/n/12 ` \OML/cmm/m/it/12 N\OMX
+/MnSymbolE/m/n/12 çç
+ []
+
+[73] [74] [75]
+Overfull \hbox (2.78773pt too wide) in paragraph at lines 3807--3809
+\OT1/cmr/m/n/12 where we have used both the assumptions that $\OML/cmm/m/it/12 
+B$ \OT1/cmr/m/n/12 is symmetric and that the characteristic
+ []
+
+
+Overfull \hbox (20.23567pt too wide) in paragraph at lines 3816--3817
+[][]\OT1/cmr/bx/n/12 Remark 5.3.6. []\OT1/cmr/m/n/12 In the proof of Propsition
+ []5.3.5[] we used the fact that a linear transformation
+ []
+
+[76] [77]
+Overfull \hbox (13.12245pt too wide) in paragraph at lines 3888--3889
+[][]\OT1/cmr/bx/n/12 Definition 5.3.11. []\OT1/cmr/m/n/12 A pair $\OMX/MnSymbol
+E/m/n/12 à\OML/cmm/m/it/12 C[]; j\OMX/MnSymbolE/m/n/12 ç$ \OT1/cmr/m/n/12 consi
+sting of a $\OML/cmm/m/it/12 k$\OT1/cmr/m/n/12 -algebra $\OML/cmm/m/it/12 C[]$ 
+\OT1/cmr/m/n/12 and a linear transformation
+ []
+
+
+Overfull \hbox (1.47575pt too wide) in paragraph at lines 3905--3906
+\OT1/cmr/m/it/12 unique (unique up to unique isomorphism) amongst those algebra
+s satisfying the unversal
+ []
+
+[78] [79] [80] [81] [82] [83] [84] [85]
+
+LaTeX Warning: Citation `Hitchcock' on page 86 undefined on input line 4314.
+
+
+LaTeX Warning: Citation `Borceux' on page 86 undefined on input line 4314.
+
+
+LaTeX Warning: Reference `lem:split_idempotent_equiv' on page 86 undefined on i
+nput line 4329.
+
+[86]
+
+LaTeX Warning: Reference `lem:split_idemp_and_im' on page 87 undefined on input
+ line 4372.
+
+[87]
+
+LaTeX Warning: Reference `thm:general_error_correction' on page 88 undefined on
+ input line 4402.
+
+[88]
+
+LaTeX Warning: Citation `Baez' on page 89 undefined on input line 4426.
+
+[89] [90]
+Overfull \hbox (1.93399pt too wide) in paragraph at lines 4504--4505
+[]\OT1/cmr/m/n/12 An \OT1/cmr/bx/n/12 evolution \OT1/cmr/m/n/12 of $\OMS/MnSymb
+olS/m/n/12 H$ \OT1/cmr/m/n/12 is a sequence of unitary operators $\OMX/MnSymbol
+E/m/n/12 à\OML/cmm/m/it/12 U[]; :::; U[]\OMX/MnSymbolE/m/n/12 ç$ \OT1/cmr/m/n/1
+2 on $\OMS/MnSymbolS/m/n/12 H$\OT1/cmr/m/n/12 , an \OT1/cmr/bx/n/12 evolution
+ []
+
+
+Overfull \hbox (78.00018pt too wide) in paragraph at lines 4504--4505
+\OT1/cmr/m/n/12 of a state vector $[]$ with respect to the evolution $\OMX/MnSy
+mbolE/m/n/12 à\OML/cmm/m/it/12 U[]; :::; U[]\OMX/MnSymbolE/m/n/12 ç$ \OT1/cmr/m
+/n/12 is the sequence $\OMX/MnSymbolE/m/n/12 à[] \OML/cmm/m/it/12 ; U[] [] ; ::
+:; U[]\U/MnSymbolC/m/n/12 \OML/cmm/m/it/12 U[] []\OMX/MnSymbolE/m/n/12 ç$\OT1/
+cmr/m/n/12 . 
+ []
+
+
+LaTeX Warning: Reference `ex:2_bits' on page 91 undefined on input line 4507.
+
+
+LaTeX Warning: Reference `eq:orthogonal_states' on page 91 undefined on input l
+ine 4507.
+
+[91]
+Overfull \hbox (12.6173pt too wide) in paragraph at lines 4535--4537
+\OT1/cmr/m/n/12 written $[] \OML/cmm/m/it/12 M[] \U/MnSymbolC/m/n/12 a []$ \OT1
+/cmr/m/n/12 for the linear functional which sends $\OML/cmm/m/it/12 a \U/MnSymb
+olC/m/n/12 a \OML/cmm/m/it/12 b$ \OT1/cmr/m/n/12 to the product $[] \OML/cmm/m/
+it/12 M[]a [] b$\OT1/cmr/m/n/12 . 
+ []
+
+
+LaTeX Warning: Citation `CommutativeAlgebra' on page 92 undefined on input line
+ 4560.
+
+[92]
+
+LaTeX Warning: Citation `CommutativeAlgebra' on page 93 undefined on input line
+ 4575.
+
+[93]
+
+! LaTeX Error: Unknown float option `B'.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.4658 \begin{algorithm}[Bit flip correction]
+                                             \label{alg:bit_flip_correction}
+Option `B' ignored and `p' used.
+
+
+! LaTeX Error: Unknown float option `i'.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.4658 \begin{algorithm}[Bit flip correction]
+                                             \label{alg:bit_flip_correction}
+Option `i' ignored and `p' used.
+
+
+! LaTeX Error: Unknown float option `f'.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.4658 \begin{algorithm}[Bit flip correction]
+                                             \label{alg:bit_flip_correction}
+Option `f' ignored and `p' used.
+
+
+! LaTeX Error: Unknown float option `l'.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.4658 \begin{algorithm}[Bit flip correction]
+                                             \label{alg:bit_flip_correction}
+Option `l' ignored and `p' used.
+
+
+! LaTeX Error: Unknown float option `i'.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.4658 \begin{algorithm}[Bit flip correction]
+                                             \label{alg:bit_flip_correction}
+Option `i' ignored and `p' used.
+
+
+! LaTeX Error: Unknown float option `c'.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.4658 \begin{algorithm}[Bit flip correction]
+                                             \label{alg:bit_flip_correction}
+Option `c' ignored and `p' used.
+
+
+! LaTeX Error: Unknown float option `o'.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.4658 \begin{algorithm}[Bit flip correction]
+                                             \label{alg:bit_flip_correction}
+Option `o' ignored and `p' used.
+
+
+! LaTeX Error: Unknown float option `r'.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.4658 \begin{algorithm}[Bit flip correction]
+                                             \label{alg:bit_flip_correction}
+Option `r' ignored and `p' used.
+
+
+! LaTeX Error: Unknown float option `r'.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.4658 \begin{algorithm}[Bit flip correction]
+                                             \label{alg:bit_flip_correction}
+Option `r' ignored and `p' used.
+
+
+! LaTeX Error: Unknown float option `e'.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.4658 \begin{algorithm}[Bit flip correction]
+                                             \label{alg:bit_flip_correction}
+Option `e' ignored and `p' used.
+
+
+! LaTeX Error: Unknown float option `c'.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.4658 \begin{algorithm}[Bit flip correction]
+                                             \label{alg:bit_flip_correction}
+Option `c' ignored and `p' used.
+
+
+! LaTeX Error: Unknown float option `i'.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.4658 \begin{algorithm}[Bit flip correction]
+                                             \label{alg:bit_flip_correction}
+Option `i' ignored and `p' used.
+
+
+! LaTeX Error: Unknown float option `o'.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.4658 \begin{algorithm}[Bit flip correction]
+                                             \label{alg:bit_flip_correction}
+Option `o' ignored and `p' used.
+
+
+! LaTeX Error: Unknown float option `n'.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.4658 \begin{algorithm}[Bit flip correction]
+                                             \label{alg:bit_flip_correction}
+Option `n' ignored and `p' used.
+
+[94] [95] [96]
+Overfull \hbox (9.98679pt too wide) in paragraph at lines 4813--4814
+[][]\OT1/cmr/bx/n/12 Definition 6.3.5. []\OT1/cmr/m/n/12 A set of elements $\OM
+L/cmm/m/it/12 g[]; :::; g[] \U/MnSymbolD/m/n/12 > \OML/cmm/m/it/12 G[]$ \OT1/cm
+r/m/n/12 of the Pauli group $\OML/cmm/m/it/12 G[]$ \OT1/cmr/m/n/12 are \OT1/cmr
+/bx/n/12 independent
+ []
+
+
+LaTeX Warning: Citation `quantum_computing' on page 97 undefined on input line 
+4823.
+
+[97] [98] [99] [100] [101] [102]
+Overfull \hbox (11.18976pt too wide) in paragraph at lines 5047--5048
+\U/msb/m/n/12 H[]$ \OT1/cmr/m/it/12 be orthonormal bases for $\U/msb/m/n/12 H[]
+\OML/cmm/m/it/12 ; \U/msb/m/n/12 H[]$ \OT1/cmr/m/it/12 respectively. If $\OML/c
+mm/m/it/12 ' \U/MnSymbolC/m/n/12  \U/msb/m/n/12 H[] \U/MnSymbolA/m/n/12 –[]  \
+U/msb/m/n/12 H[]$ \OT1/cmr/m/it/12 is a linear transformation
+ []
+
+
+Overfull \hbox (4.22389pt too wide) in paragraph at lines 5047--5048
+\OT1/cmr/m/it/12 and $\OML/cmm/m/it/12 A$ \OT1/cmr/m/it/12 its matrix represent
+ation with respect to these bases, then the matrix representation
+ []
+
+[103] [104] [105]
+Overfull \hbox (17.9764pt too wide) in paragraph at lines 5176--5177
+[][]\OT1/cmr/bx/n/12 Proposition A.2.12. []\OT1/cmr/m/it/12 A positive operator
+ on a finite dimensional vector space is necessarily
+ []
+
+[106] [107] [108]pdfTeX warning (ext4): destination with the same identifier (n
+ame{appendix.A}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.5274 \section{The Untyped $\lambda$-Calculus}
+                                               
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 5274.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\lambda' on input line 5274.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 5274.
+
+
+LaTeX Warning: Citation `lambekscott' on page 109 undefined on input line 5275.
+
+
+
+LaTeX Warning: Citation `ChurchOne' on page 109 undefined on input line 5275.
+
+
+LaTeX Warning: Citation `ChurchTwo' on page 109 undefined on input line 5275.
+
+
+LaTeX Warning: Citation `SU' on page 109 undefined on input line 5277.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 5275--5279
+
+ []
+
+
+Overfull \hbox (46.065pt too wide) in paragraph at lines 5294--5295
+[]\OT1/cmr/m/n/12 For preterms $\OML/cmm/m/it/12 M[]; M[]; M[]$\OT1/cmr/m/n/12 
+, the preterm $\OML/cmm/m/it/12 M[]M[]M[]$ \OT1/cmr/m/n/12 means $\OMX/MnSymbol
+E/m/n/12 àà\OML/cmm/m/it/12 M[]M[]\OMX/MnSymbolE/m/n/12 ç\OML/cmm/m/it/12 M[]\O
+MX/MnSymbolE/m/n/12 çç$\OT1/cmr/m/n/12 , 
+ []
+
+[109]
+Overfull \hbox (3.49483pt too wide) in paragraph at lines 5321--5323
+[][]\OT1/cmr/bx/n/12 Definition A.0.7. []Single step $\OML/cmm/m/it/12 $\OT1/c
+mr/bx/n/12 -reduction $\U/MnSymbolA/m/n/12  []$ \OT1/cmr/m/n/12 is the smallest
+ relation on $$ satisfying: 
+ []
+
+[110] [111]
+
+Package hyperref Warning: Difference (2) between bookmark levels is greater 
+(hyperref)                than one, level fixed on input line 5401.
+
+[112] [113]
+Overfull \hbox (4.2639pt too wide) in paragraph at lines 5520--5521
+\OT1/cmr/m/n/12 nonzerodivisor, as follows straight from the definition. Now we
+ investigate $\OML/cmm/m/it/12 H[]\OMX/MnSymbolE/m/n/12 à\OML/cmm/m/it/12 K\OMX
+/MnSymbolE/m/n/12 à\OML/cmm/m/it/12 x; y\OMX/MnSymbolE/m/n/12 çç \U/MnSymbolD/m
+/n/12 
+ []
+
+[114]
+
+Package amsfonts Warning: Obsolete command \frak; \mathfrak should be used inst
+ead on input line 5540.
+
+
+! LaTeX Error: Too many math alphabets used in version normal.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.5540 ... local ring with maximal ideal $\frak{m}
+                                                  $ and let $(x_1,...,x_n)$ ...
+
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: Too many math alphabets used in version normal.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.5540 ... with each $x_i$ an element of $\frak{m}
+                                                  $. Then any for any permut...
+
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+[115]
+
+! LaTeX Error: Too many math alphabets used in version normal.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.5554 ...ed module over a local ring $(R,\frak{m}
+                                                  )$. Suppose $x_1,...,x_n \...
+
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: Too many math alphabets used in version normal.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.5554 ...{m})$. Suppose $x_1,...,x_n \in \frak{m}
+                                                  $. If for some $k$ we have:
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+[116]
+
+Package amsmath Warning: Foreign command \atopwithdelims;
+(amsmath)                \frac or \genfrac should be used instead
+(amsmath)                 on input line 5605.
+
+
+Overfull \hbox (69.1296pt too wide) detected at line 5621
+[][]
+ []
+
+
+Overfull \hbox (9.06287pt too wide) detected at line 5626
+[]
+ []
+
+[117]
+
+LaTeX Warning: Citation `view' on page 118 undefined on input line 5664.
+
+[118]
+Overfull \hbox (6.01825pt too wide) in paragraph at lines 5689--5691
+\OT1/cmr/m/n/12 Moreover, using Lemma []B.0.15[] we have $\OML/cmm/m/it/12 K\OM
+X/MnSymbolE/m/n/12 à\OML/cmm/m/it/12 x[]; :::; x[]; \OT1/cmr/m/n/12 0\OML/cmm/m
+/it/12 ; :::; \OT1/cmr/m/n/12 0\OMX/MnSymbolE/m/n/12 ç \U/MnSymbolD/m/n/12  \O
+ML/cmm/m/it/12 K\OMX/MnSymbolE/m/n/12 à\OML/cmm/m/it/12 x[]; :::; x[]\OMX/MnSym
+bolE/m/n/12 ç \U/MnSymbolC/m/n/12 a \OML/cmm/m/it/12 K\OMX/MnSymbolE/m/n/12 à\O
+T1/cmr/m/n/12 0\OML/cmm/m/it/12 ; :::; \OT1/cmr/m/n/12 0\OMX/MnSymbolE/m/n/12 ç
+ \U/MnSymbolD/m/n/12 
+ []
+
+[119]
+Overfull \hbox (7.60481pt too wide) in paragraph at lines 5724--5725
+[][]\OT1/cmr/bx/n/12 Definition B.1.1. []\OT1/cmr/m/n/12 Such a sequence is \OT
+1/cmr/bx/n/12 quasi-regular \OT1/cmr/m/n/12 if the above map is an isomorphism.
+ 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 5731--5734
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 5734--5740
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 5734--5740
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 5740--5746
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 5740--5746
+
+ []
+
+[120]
+Underfull \hbox (badness 10000) in paragraph at lines 5746--5750
+
+ []
+
+
+Overfull \hbox (15.42667pt too wide) detected at line 5750
+[] [] [] \OML/cmm/m/it/12 []f[][]f[] \U/MnSymbolD/m/n/12   [] []\OML/cmm/m/it/
+12 []f[] \U/MnSymbolC/m/n/12  \OML/cmm/m/it/12 f[][]f[][]f[] \U/MnSymbolC/m/
+n/12  [] [] [] \OML/cmm/m/it/12 []f[][]f[] \U/MnSymbolD/m/n/12   \OT1/cmr/m/n
+/12 0
+ []
+
+[121]
+Underfull \hbox (badness 6204) in paragraph at lines 5778--5779
+[]\OT1/cmr/m/it/12 Interaction Graphs: Nondeterministic Automata\OT1/cmr/m/n/12
+ , ACM Transactions in
+ []
+
+[122] (PhD.aux)
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
+
+Package rerunfilecheck Warning: File `PhD.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `PhD.out':
+(rerunfilecheck)             Before: 71FBE58A43D09E820305161A2E9E78BA;8575
+(rerunfilecheck)             After:  FDF942E29AC2254F01739CCF5F920DAE;8741.
+ ) 
+Here is how much of TeX's memory you used:
+ 42144 strings out of 481099
+ 814108 string characters out of 2904467
+ 1078729 words of memory out of 3000000
+ 57911 multiletter control sequences out of 15000+600000
+ 445667 words of font info for 193 fonts, out of 8000000 for 9000
+ 0 hyphenation exceptions out of 8191
+ 84i,24n,89p,3216b,1262s stack positions out of 5000i,500n,10000p,200000b,80000s
+pdfTeX warning (dest): name{equation.B.331} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{equation.A.296} has been referenced but does not ex
+ist, replaced by a fixed one
+
+pdfTeX warning (dest): name{equation.6.248} has been referenced but does not ex
+ist, replaced by a fixed one
+
+pdfTeX warning (dest): name{equation.6.246} has been referenced but does not ex
+ist, replaced by a fixed one
+
+pdfTeX warning (dest): name{thm.3.2.1} has been referenced but does not exist, 
+replaced by a fixed one
+
+{/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/fonts/enc/dv
+ips/mnsymbol/MnSymbolE.enc} </Users/wtroiani/Library/Application Support/MiKTeX
+/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm0600.pk>{/Users/wtroiani/Li
+brary/Application Support/MiKTeX/texmfs/install/fonts/enc/dvips/mnsymbol/MnSymb
+olA.enc} </Users/wtroiani/Library/Application Support/MiKTeX/texmfs/data/fonts/
+pk/ljfour/jknappen/ec/dpi600/tcti0800.pk> </Users/wtroiani/Library/Application 
+Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm0800.pk> </Us
+ers/wtroiani/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/pub
+lic/bbm/dpi600/bbm12.pk>{/Users/wtroiani/Library/Application Support/MiKTeX/tex
+mfs/install/fonts/enc/dvips/mnsymbol/MnSymbolC.enc}{/Users/wtroiani/Library/App
+lication Support/MiKTeX/texmfs/install/fonts/enc/dvips/mnsymbol/MnSymbolD.enc}{
+/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/fonts/enc/dvi
+ps/mnsymbol/MnSymbolS.enc}{/Users/wtroiani/Library/Application Support/MiKTeX/t
+exmfs/install/fonts/enc/dvips/mnsymbol/MnSymbolF.enc} </Users/wtroiani/Library/
+Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1
+200.pk></Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/fonts
+/type1/public/mnsymbol/MnSymbol12.pfb></Users/wtroiani/Library/Application Supp
+ort/MiKTeX/texmfs/install/fonts/type1/public/mnsymbol/MnSymbol6.pfb></Users/wtr
+oiani/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/mnsy
+mbol/MnSymbol8.pfb></Library/Application Support/MiKTeX/texmfs/install/fonts/ty
+pe1/public/amsfonts/cm/cmbx10.pfb></Library/Application Support/MiKTeX/texmfs/i
+nstall/fonts/type1/public/amsfonts/cm/cmbx12.pfb></Library/Application Support/
+MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmbx8.pfb></Users/wtroiani
+/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/cmll/cmll
+r12.pfb></Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/font
+s/type1/public/cmll/cmllr8.pfb></Library/Application Support/MiKTeX/texmfs/inst
+all/fonts/type1/public/amsfonts/cm/cmmi12.pfb></Library/Application Support/MiK
+TeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi6.pfb></Library/Applicati
+on Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi8.pfb></Lib
+rary/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/c
+mr10.pfb></Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public
+/amsfonts/cm/cmr12.pfb></Library/Application Support/MiKTeX/texmfs/install/font
+s/type1/public/amsfonts/cm/cmr17.pfb></Library/Application Support/MiKTeX/texmf
+s/install/fonts/type1/public/amsfonts/cm/cmr6.pfb></Library/Application Support
+/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmr7.pfb></Library/Applic
+ation Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmr8.pfb></L
+ibrary/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm
+/cmti12.pfb></Library/Application Support/MiKTeX/texmfs/install/fonts/type1/pub
+lic/amsfonts/cm/cmtt12.pfb></Library/Application Support/MiKTeX/texmfs/install/
+fonts/type1/public/amsfonts/symbols/msbm10.pfb></Library/Application Support/Mi
+KTeX/texmfs/install/fonts/type1/public/rsfs/rsfs10.pfb></Users/wtroiani/Library
+/Application Support/MiKTeX/texmfs/install/fonts/type1/public/hoekwater/stmary1
+0.pfb></Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/fonts/
+type1/public/xypic/xyatip10.pfb></Users/wtroiani/Library/Application Support/Mi
+KTeX/texmfs/install/fonts/type1/public/xypic/xybtip10.pfb>
+Output written on PhD.pdf (122 pages, 1531237 bytes).
+PDF statistics:
+ 2003 PDF objects out of 2073 (max. 8388607)
+ 857 named destinations out of 1000 (max. 500000)
+ 356 words of extra memory for PDF output out of 10000 (max. 10000000)
+

@@ -1,0 +1,6 @@
+\contentsline {section}{\numberline {1}Background}{1}{section.1}%
+\contentsline {section}{\numberline {2}Reduction}{8}{section.2}%
+\contentsline {section}{\numberline {3}Geometry of Interaction Zero, Exponentials}{16}{section.3}%
+\contentsline {section}{\numberline {4}Geometry of Interaction One, Exponentials}{27}{section.4}%
+\contentsline {section}{\numberline {5}The equivariant Buchberger algorithm}{27}{section.5}%
+\contentsline {section}{\numberline {6}Elimination Theory}{32}{section.6}%

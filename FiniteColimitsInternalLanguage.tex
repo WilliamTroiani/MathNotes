@@ -108,7 +108,7 @@
 \title[The internal logic and finite colimits]
 {The internal logic and finite colimits}
 \author[William Troiani]{William Troiani}
-\subjclass{Primary 03Fxx; Secondary 18Dxx}
+\subjclass{Primary 03F50; Secondary 18C10}
 \keywords{Topos, finite colimits, internal language, type theory, logic.}
 
 \begin{document}
@@ -130,7 +130,7 @@
 	\end{equation}
 	then the morphisms $f,g$ are equal. More generally, the internal logic is \emph{sound} in that any formula which is provable inside the internal logic represents some true statement about the topos in question (see \cite[\S D1.3.2, D4.2.3, D4.3.3, D4.4.6]{Johnstone} for a discussion on soundness). In this paper we show how the type theory can be used to describe finite coproducts \ref{sec:coproducts} and coequalisers \ref{sec:coequaliser}, which then leads to a description of finite colimits \ref{sec:colimits}. We remark that one must also describe an initial object, but this is easy and is done in Section \ref{sec:initial_object}.
 	
-	The internal logic offers many syntactical similarities with ZF set theory, in fact, due to the existence of the internal logic, elementary topoi are often referred to as ``generalised theories of sets" \cite[\S Prologue, page 1]{MM}. Hence, our approach will be to use the standard set-theoretic descriptions of finite coproducts and of coequalisers to form terms in the interal logic whose interpretations (ie, associated objects/morphisms) will be finite coproducts and coequalisers respectively \emph{of the original topos}. Here, we must observe a subtlety: recall the standard construction of the coequaliser $\operatorname{Coeq}(f,g)$ of two functions of sets $f,g:A \lto B$: first we define for each $n > 0$ a relation $R_n$ on $B$ as follows, a pair $(b,b')$ of elements in $B$ is in $R_n$ if and only if there exists a sequence $(a_0,...,a_n)$ of elements in $A$ such that for each $i = 0,...,n-1$ we either have $f(a_i) = g(a_{i+1})$ or $f(a_{i+1}) = g(a_i)$. Then, the Coequaliser $\operatorname{Coeq}(f,g)$ is given by the quotient $B/\cup_{n = 1}^\infty R_n$. Our method for mimicking this description using the internal logic will require for each object $C$ in our topos $\call{E}$ that the category $\operatorname{Sub}(C)$ of subobjects of $C$ admits countably infinite coproducts. A circumstance where this holds is when $\call{E}$ admits countably infinite coproducts, hence we assume this is true of the topoi that we work with.
+	The internal logic offers many syntactical similarities with ZF set theory, in fact, due to the existence of the internal logic, elementary topoi are often referred to as ``generalised theories of sets" \cite[\S Prologue, page 1]{MM}. Hence, our approach will be to use the standard set-theoretic descriptions of finite coproducts and of coequalisers to form terms in the interal logic whose interpretations (ie, associated objects/morphisms) will be finite coproducts and coequalisers respectively \emph{of the original topos}. Here, we must observe a subtlety: recall the standard construction of the coequaliser $\operatorname{Coeq}(f,g)$ of two functions of sets $f,g:A \lto B$: first we define for each $n > 0$ a relation $R_n$ on $B$ as follows, a pair $(b,b')$ of elements in $B$ is in $R_n$ if and only if there exists a sequence $(a_0,...,a_n)$ of elements in $A$ such that for each $i = 0,...,n-1$ we either have $f(a_i) = g(a_{i+1})$ or $f(a_{i+1}) = g(a_i)$. Then, the Coequaliser $\operatorname{Coeq}(f,g)$ is given by the quotient $B/\cup_{n = 1}^\infty R_n$. Our method for mimicking this description using the internal logic will require for each object $C$ in our topos $\call{E}$ that the Heyting algebra $\operatorname{Sub}(C)$ of subobjects of $C$ admits countably infinite coproducts. A circumstance where this holds is when $\call{E}$ admits countably infinite coproducts, hence we assume this is true of the topoi that we work with.
 	
 	Despite what has been said, to describe finite colimits using the internal logic of a topos, it is not as simple as directly translating the standard constructions in ZF, as there is a subtle but significant difference between the interal logic and ZF set theory. In ZF set theory, the set constructor union is \emph{extensional} and in the internal logic it is \emph{intensional}. We now explain what we mean by this point along with our solution.
 	
@@ -184,7 +184,27 @@
 			\coprod_{i = 1}^n X_i\arrow[u,rightarrowtail]
 		\end{tikzcd}
 	\end{equation}
-	Moving towards a finite colimit, we now consider a finite set $\lbrace f_1,...,f_m\rbrace$ of functions where each $f_i$ has domain $\operatorname{dom}f_i$ and codomain $\operatorname{cod}f_i$ with $\operatorname{dom}f_i, \operatorname{cod}f_i \in J$. We define two morphisms, both with domain $\prod_{i = 1}^m \call{P}\operatorname{dom}f_i$ and codomain $\prod_{i = 1}^n \call{P}X_i$. The first of these morphisms is easy to describe, it is the product of the morphisms $\operatorname{id}_{\call{P}\operatorname{dom}f_i}$ which we denote by $f$. The second morphism is more complicated. In general, any function $g: D \lto E$ induces a function $\call{P}f: \call{P}D \lto \call{P}E$ which given a subset $C \subseteq D$ applies the function $f$ to each element $d \in D$ to obtain a subset $f(D) \in \call{P}E$. We consider the product of each of these morphisms $\call{P} f_i$ (for $i = 1,...,m$) and denote this product $h$.  Both $f$ and $h$ descend to morphisms $g_0,g_1: \coprod_{i = 1}^m \operatorname{dom}f_i\lto \coprod_{i = 1}^n X_i$ where $g_0$ is the descendent of $f$ and $g_1$ is the descendent of $h$. We now have two commuting diagrams, the first is the square given by removing the bottom most functions from both the top and bottom rows of Diagram \ref{eq:product_diag_set}, the second is the square given by removing the top most functions.
+	Moving towards a finite colimit, we now consider a finite set $\lbrace f_1,...,f_m\rbrace$ of functions where each $f_i$ has domain $\operatorname{dom}f_i$ and codomain $\operatorname{cod}f_i$ with $\operatorname{dom}f_i, \operatorname{cod}f_i \in J$. We define two morphisms, both with domain $\prod_{i = 1}^m \call{P}\operatorname{dom}f_i$ and codomain $\prod_{i = 1}^n \call{P}X_i$. The first of these is given by the universal property of the product $\prod_{i = 1}^m\call{P} \operatorname{dom}f_i$ induced by the identity functions as in the following diagram, where we notice that for each $i$, $\operatorname{dom}f_i = \call{P}X_j$ for some $j$:
+ % https://q.uiver.app/#q=WzAsNCxbMCwxLCJcXHByb2Rfe2kgPSAxfV5uIFxcY2FsbHtQfVxcb3BlcmF0b3JuYW1le2RvbX1mX2kiXSxbMCwwLCJcXGNhbGx7UH1cXG9wZXJhdG9ybmFtZXtkb219Zl9pIl0sWzEsMCwiXFxjYWxse1B9XFxvcGVyYXRvcm5hbWV7ZG9tfWZfaSA9IFxcY2FsbHtQfVhfaiJdLFsxLDEsIlxccHJvZF97aiA9IDF9Xm0gXFxjYWxse1B9WF9pIl0sWzEsMiwiXFxvcGVyYXRvcm5hbWV7aWR9Il0sWzAsMywiIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzAsMSwiXFxwaV9pIl0sWzMsMiwiXFxwaV9qIl1d
+\[\begin{tikzcd}
+	{\call{P}\operatorname{dom}f_i} & {\call{P}\operatorname{dom}f_i = \call{P}X_j} \\
+	{\prod_{i = 1}^n \call{P}\operatorname{dom}f_i} & {\prod_{j = 1}^m \call{P}X_i}
+	\arrow["{\operatorname{id}}", from=1-1, to=1-2]
+	\arrow[dashed, "{f}", from=2-1, to=2-2]
+	\arrow["{\pi_i}", from=2-1, to=1-1]
+	\arrow["{\pi_j}", from=2-2, to=1-2]
+\end{tikzcd}\]
+The second morphism is described as follows. In general, any function $g: D \lto E$ induces a function $\call{P}g: \call{P}D \lto \call{P}E$ which given a subset $C \subseteq D$ applies the function $g$ to each element $d \in D$ to obtain a subset $g(D) \in \call{P}E$. We consider the product of each of these morphisms $\call{P} f_i$ (for $i = 1,...,m$) and denote the result $h$.
+% https://q.uiver.app/#q=WzAsNCxbMCwxLCJcXHByb2Rfe2kgPSAxfV5uXFxjYWxse1B9XFxvcGVyYXRvcm5hbWV7ZG9tfWZfaSJdLFsxLDEsIlxccHJvZF97aiA9IDF9Xm0gXFxjYWxse1B9WF9qIl0sWzAsMCwiXFxjYWxse1B9XFxvcGVyYXRvcm5hbWV7ZG9tfWZfaSJdLFsxLDAsIlxcY2FsbHtQfVxcb3BlcmF0b3JuYW1le2NvZG9tfWZfaSA9IFxcY2FsbHtQfVhfaiJdLFsxLDMsIlxccGlfaiJdLFswLDIsIlxccGlfaSJdLFsyLDMsIlxcY2FsbHtQfShmX2kpIl0sWzAsMSwiIiwxLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV1d
+\[\begin{tikzcd}
+	{\call{P}\operatorname{dom}f_i} & {\call{P}\operatorname{codom}f_i = \call{P}X_j} \\
+	{\prod_{i = 1}^n\call{P}\operatorname{dom}f_i} & {\prod_{j = 1}^m \call{P}X_j}
+	\arrow["{\pi_j}", from=2-2, to=1-2]
+	\arrow["{\pi_i}", from=2-1, to=1-1]
+	\arrow["{\call{P}(f_i)}", from=1-1, to=1-2]
+	\arrow[dashed, "h", from=2-1, to=2-2]
+\end{tikzcd}\]
+Both $f$ and $h$ descend to morphisms $g_0,g_1: \coprod_{i = 1}^m \operatorname{dom}f_i\lto \coprod_{i = 1}^n X_i$ where $g_0$ is the descendent of $f$ and $g_1$ is the descendent of $h$. We now have two commuting diagrams, the first is the square given by removing the bottom most functions from both the top and bottom rows of Diagram \ref{eq:product_diag_set}, the second is the square given by removing the top most functions.
 	\begin{equation}\label{eq:product_diag_set}
 		\begin{tikzcd}
 			\prod_{i = 1}^m \call{P}\operatorname{dom}f_i\arrow[r,shift left, "{f}"]\arrow[r,shift right, swap, "{h}"] & \prod_{i  =1}^n \call{P} X_i\\
@@ -423,257 +443,6 @@
 		Notice that Definition \ref{def:type_theory} admits no deduction rules associated to terms of the form $\lbrace x:\tau \mid p\rbrace$ nor to terms of the form $\bigvee_{i = 0}^\infty p_i$. Such rules do exist but are given as \emph{derived rules} later on (Proposition \ref{prop:derived_rules}) once the internal logic of a topos has been defined.
 	\end{remark}
 	
-	\subsection{Some helpful type theory lemmas}\label{sec:helpful_lemmas}
-	\label{helpfulLemmas}
-	Many reasonable sounding statements concerning the entailment relation do in fact follow from the axioms and deduction rules, this section provides a collection of particularly helpful ones. Many of these will be used in Section \ref{sec:arbitrary_topos}. In what follows, $\Delta,x:\tau$ will always mean the context given by appending $x:\tau$ to the end of the sequence $\Delta$, we give full proofs to illustrate the basic methods involved in working with type theories.
-	\begin{lemma}
-		\label{weakening}
-		Let $p,q,r$ be arbtirary formulas and $x:\tau$ an arbitrary variable.
-		\begin{enumerate}
-			\item $p \wedge q \vdash_\Delta r$ if and only if $q \wedge p \vdash_\Delta r$
-			\item $p \vdash_\Delta \neg(\neg p)$,
-			\item if $p \vdash_\Delta q$, then $p \wedge r \vdash_\Delta q$,
-			\item $\neg q \vdash_\Delta \neg(q \wedge p)$,
-			\item $p \wedge (q \vee r) \vdash_\Delta (p \wedge q) \vee (p \wedge r)$,
-			\item $(p \vee q) \wedge \neg q \vdash_\Delta p$, and
-			\item $(\exists x:\tau, p) \wedge q \vdash_{\Delta}\exists x:\tau, p \wedge q$ and $\exists x:\tau, p \wedge q \vdash_{\Delta} (\exists x:\tau, p) \wedge q$
-		\end{enumerate}
-	\end{lemma}
-	\begin{proof}
-		\begin{enumerate}
-			%
-			\item There is the following proof tree.
-			\begin{prooftree}
-				\AxiomC{$q \wedge p \vdash_\Delta q \wedge p$}
-				\RightLabel{$\eqref{rule:conjunction}$}
-				\UnaryInfC{$q \wedge p \vdash_\Delta p$}
-				\AxiomC{$q \wedge p \vdash_\Delta q \wedge p$}
-				\RightLabel{$\eqref{rule:conjunction}$}
-				\UnaryInfC{$q \wedge p \vdash_\Delta q$}
-				\RightLabel{$\eqref{rule:conjunction}$}
-				\BinaryInfC{$q \wedge p \vdash_\Delta p \wedge q$}
-				\AxiomC{$\vdots$}
-				\noLine
-				\UnaryInfC{$p \wedge q \vdash_\Delta r$}
-				\RightLabel{$\eqref{rule:cut}$}
-				\BinaryInfC{$q \wedge p \vdash_\Delta r$}
-			\end{prooftree}
-			%
-			\item Let $\pi$ denote the following proof tree.
-			%
-			\begin{scprooftree}{0.9}
-				\AxiomC{$p \wedge (p \Rightarrow \bot) \vdash_\Delta p \wedge (p \Rightarrow \bot)$}
-				\RightLabel{$\eqref{rule:conjunction}$}
-				\UnaryInfC{$p \wedge (p \Rightarrow \bot) \vdash_\Delta p \Rightarrow \bot$}
-				\AxiomC{$p \wedge (p \Rightarrow \bot) \vdash_\Delta p \wedge (p \Rightarrow \bot)$}
-				\RightLabel{$\eqref{rule:conjunction}$}
-				\UnaryInfC{$p \wedge (p \Rightarrow \bot) \vdash_\Delta p$}
-				\RightLabel{$\eqref{rule:conjunction}$}
-				\BinaryInfC{$p \wedge (p \Rightarrow \bot) \vdash_\Delta (p \Rightarrow \bot) \wedge p$}
-			\end{scprooftree}
-			Then, there is the following proof tree.
-			\begin{prooftree}
-				\AxiomC{$\pi$}
-				\noLine
-				\UnaryInfC{$\vdots$}
-				\noLine
-				\UnaryInfC{$p \wedge (p \Rightarrow \bot) \vdash_\Delta (p \Rightarrow \bot) \wedge p$}
-				\AxiomC{$p \Rightarrow \bot \vdash_\Delta p \Rightarrow \bot$}
-				\RightLabel{$\eqref{rule:implication}$}
-				\UnaryInfC{$(p \Rightarrow \bot) \wedge p \vdash_\Delta \bot$}
-				\RightLabel{$\eqref{rule:cut}$}
-				\BinaryInfC{$p \wedge (p \Rightarrow \bot) \vdash_\Delta \bot$}
-				\RightLabel{$\eqref{rule:implication}$}
-				\UnaryInfC{$p \vdash_\Delta(p \Rightarrow \bot) \Rightarrow \bot$}
-			\end{prooftree}
-			%
-			\item Observe the following proof tree.
-			%
-			\begin{prooftree}
-				\AxiomC{$\vdots$}
-				\noLine
-				\UnaryInfC{$p \vdash_\Delta q$}
-				\AxiomC{$q \wedge r \vdash_\Delta q \wedge r$}
-				\RightLabel{$\eqref{rule:implication}$}
-				\UnaryInfC{$q \vdash_\Delta r \Rightarrow (q \wedge r)$}
-				\RightLabel{$\eqref{rule:cut}$}
-				\BinaryInfC{$p \vdash_\Delta r \Rightarrow (q \wedge r)$}
-				\RightLabel{$\eqref{rule:implication}$}
-				\UnaryInfC{$p \wedge r \vdash_\Delta q \wedge r$}
-				\RightLabel{$\eqref{rule:conjunction}$}
-				\UnaryInfC{$p \wedge r \vdash_\Delta q$}
-			\end{prooftree}
-			%
-			\item By axiom $\eqref{rule:implication}$, it suffices to show $(q \Rightarrow \bot) \wedge (q \wedge p) \vdash_\Delta \bot$, for which it suffices to show $((q \Rightarrow \bot) \wedge q) \wedge p) \vdash_\Delta \bot$. By part 2 of this Lemma, it suffices to show $(q \Rightarrow \bot) \wedge q \vdash \bot$, which follows from axiom $\eqref{rule:implication}$, as $q \Rightarrow \bot \vdash_\Delta q \Rightarrow \bot$.
-			%
-			\item By $\eqref{rule:implication}$, it suffices to show $q \vee r \vdash_\Delta p \Rightarrow ((p \wedge q) \vee (p \wedge r))$, for which by $\eqref{rule:disjunction}$, it suffices to show both $q \vdash_\Delta p \Rightarrow ((p \wedge q) \vee (p \wedge r))$, and $r \vdash_\Delta p \Rightarrow ((p \wedge q) \vee (p \wedge r))$. The first sequent can be proved by the following, 
-			where the label $(1)$ is referring to the first part of this Lemma.
-			\begin{prooftree}
-				\AxiomC{$(p \wedge q) \vee (p \wedge r) \vdash_\Delta (p \wedge q) \vee (p \wedge q)$}
-				\RightLabel{$\eqref{rule:disjunction}$}
-				\UnaryInfC{$p \wedge q \vdash_\Delta (p \wedge q) \vee (p \wedge q)$}
-				\RightLabel{$(1)$}
-				\UnaryInfC{$q \wedge p \vdash_\Delta (p \wedge q) \vee (p \wedge q)$}
-				\RightLabel{$\eqref{rule:implication}$}
-				\UnaryInfC{$q \vdash_\Delta p \Rightarrow ((p \wedge q) \vee (p \wedge r))$}
-			\end{prooftree}
-			There is a similar proof tree for the remaining sequent.
-			%
-			\item From part 4 of this Lemma, it suffices to show $(p \wedge \neg q) \vee (\neg q \wedge q) \vdash_\Delta p$, for which there is the following proof tree.
-			\begin{scprooftree}{0.7}
-				\AxiomC{$p \wedge (q \Rightarrow \bot) \vdash_{\Delta} p \wedge (q \Rightarrow \bot)$}
-				\RightLabel{$\eqref{rule:conjunction}$}
-				\UnaryInfC{$p \wedge (q \Rightarrow \bot) \vdash_{\Delta} p$}
-				\AxiomC{$(q \Rightarrow \bot) \vdash_\Delta (q \Rightarrow \bot)$}
-				\RightLabel{$\eqref{rule:implication}$}
-				\UnaryInfC{$(q \Rightarrow \bot) \wedge q \vdash_\Delta \bot$}
-				\AxiomC{}
-				\RightLabel{$\eqref{rule:true_false}$}
-				\UnaryInfC{$\bot \vdash_\Delta p$}
-				\RightLabel{$\eqref{rule:cut}$}
-				\BinaryInfC{$(q \Rightarrow \bot) \wedge q \vdash_\Delta p$}
-				\RightLabel{$\eqref{rule:disjunction}$}
-				\BinaryInfC{$(p \wedge (q \Rightarrow \bot)) \vee ((q \Rightarrow \bot) \wedge q) \vdash_\Delta p$}
-			\end{scprooftree}
-			%
-			%
-			\item Observe the following proof tree.
-			\begin{prooftree}
-				\AxiomC{$\exists x:\tau, p \wedge q \vdash_\Delta \exists x:\tau, p \wedge q$}
-				\RightLabel{$\eqref{rule:existential}$}
-				\UnaryInfC{$p \wedge q \vdash_{\Delta,x:\tau}\exists x:\tau, p \wedge q$}
-				\RightLabel{$\eqref{rule:implication}$}
-				\UnaryInfC{$p \vdash_{\Delta, x:\tau} q \Rightarrow (\exists x:\tau, p \wedge q)$}
-				\RightLabel{$\eqref{rule:existential}$}
-				\UnaryInfC{$\exists x:\tau, p \vdash_\Delta q \Rightarrow (\exists x : \tau, p \wedge q)$}
-				\RightLabel{$\eqref{rule:implication}$}
-				\UnaryInfC{$(\exists x: \tau, p) \wedge q \vdash_\Delta \exists x:\tau, p \wedge q$}
-			\end{prooftree}
-		\end{enumerate}
-		Reading this same proof tree from bottom to top gives a proof tree for the second sequent.
-	\end{proof}
-	%
-	%
-	%
-	%
-	%
-	\begin{lemma}
-		\label{lem:variablesub}
-		If $x:\tau$ is a variable, and $t:\tau$ is a term, then
-		\[x = t \vdash_{\Delta,x:\tau}s \qquad \text{if and only if}\qquad \vdash_{\Delta}s[x := t]\]
-	\end{lemma}
-	\begin{proof} The ``only if" direction follows from the following proof tree.
-		\begin{prooftree}
-			\AxiomC{}
-			\RightLabel{$\eqref{rule:equality}$}
-			\UnaryInfC{$\vdash_{\Delta}t = t$}
-			\AxiomC{$\vdots$}
-			\noLine
-			\UnaryInfC{$x = t \vdash_{\Delta,x:\tau}s$}
-			\RightLabel{$\eqref{rule:sub}$}
-			\UnaryInfC{$t = t \vdash_{\Delta}s[x := t]$}
-			\RightLabel{$\eqref{rule:cut}$}
-			\BinaryInfC{$\vdash_{\Delta}s[x := t]$}
-		\end{prooftree}
-		For the other direction, let $x':\tau$ be such that $x' \not\in\text{FV}(s)$, then there is the following proof tree.
-		\begin{prooftree}
-			\AxiomC{$\vdots$}
-			\noLine
-			\UnaryInfC{$\vdash_{x,\Delta}s[x := t]$}
-			\AxiomC{}
-			\RightLabel{$\eqref{rule:equality}$}
-			\UnaryInfC{$x = x' \wedge s[x := x']\vdash_{\Delta,x:\tau,x':\tau}s$}
-			\RightLabel{$\eqref{rule:sub}$}
-			\UnaryInfC{$x = t \wedge s[x := t]\vdash_{\Delta,x:\tau}s$}
-			\RightLabel{$\eqref{weakening}$}
-			\UnaryInfC{$s[x := t] \wedge x = t \vdash_{\Delta,x:\tau}s$}
-			\RightLabel{$\eqref{rule:implication}$}
-			\UnaryInfC{$s[x := t]\vdash_{\Delta,x:\tau}(x = t)\Rightarrow s$}
-			\RightLabel{$\eqref{rule:cut}$}
-			\BinaryInfC{$\vdash_{\Delta,x:\tau}(x = t)\Rightarrow s[x := t]$}
-			\RightLabel{$\eqref{rule:implication}$}
-			\UnaryInfC{$x = t\vdash_{\Delta,x:\tau}s[x:=t]$}
-		\end{prooftree}
-	\end{proof}
-	%
-	%
-	%
-	%
-	%
-	\begin{lemma}
-		\label{dansaside}
-		If $p \vdash_{\Delta, x:\tau} q$, then $\exists x : \tau,p \vdash_\Delta \exists x : \tau, q$.
-	\end{lemma}
-	\begin{proof}
-		First, let $\pi$ denote the following proof tree.
-		\begin{prooftree}
-			\AxiomC{$\forall x : \tau, q \vdash_\Delta \forall x : \tau, q$}
-			\RightLabel{$\eqref{rule:universal}$}
-			\UnaryInfC{$\forall x : \tau, q \vdash_{\Delta,x:\tau} q$}
-			\AxiomC{$\exists x : \tau, q \vdash_\Delta \exists x : \tau, q$}
-			\RightLabel{$\eqref{rule:existential}$}
-			\UnaryInfC{$q \vdash_{\Delta, x:\tau} \exists x : \tau, q$}
-			\RightLabel{$\eqref{rule:cut}$}
-			\BinaryInfC{$\forall x : \tau, q \vdash_{\Delta,x:\tau}\exists x : \tau, q$}
-		\end{prooftree}
-		Then there is the following.
-		\begin{prooftree}
-			\AxiomC{$\vdots$}
-			\noLine
-			\UnaryInfC{$p \vdash_{\Delta,x:\tau} q$}
-			\RightLabel{$\eqref{rule:universal}$}
-			\UnaryInfC{$p \vdash_\Delta \forall x : \tau, q$}
-			\RightLabel{$\eqref{rule:sub}$}
-			\UnaryInfC{$p \vdash_{\Delta, x:\tau} \forall x : \tau, q$}
-			\AxiomC{$\pi$}
-			\noLine
-			\UnaryInfC{$\vdots$}
-			\noLine
-			\UnaryInfC{$\forall x : \tau, q \vdash_{\Delta, x:\tau}\exists x : \tau, q$}
-			\RightLabel{$\eqref{rule:cut}$}
-			\BinaryInfC{$p \vdash_{\Delta, x:\tau} \exists x : \tau, q$}
-			\RightLabel{$\eqref{rule:existential}$}
-			\UnaryInfC{$\exists x : \tau, p \vdash_\Delta \exists x : \tau, q$}
-		\end{prooftree}
-	\end{proof}
-	%
-	%
-	%
-	%
-	%
-	%
-	\begin{lemma}
-		\label{lem:witness}
-		Let $t:\tau$ be a term and $p$ a formula. Then
-		\[p[x := t] \vdash_{\Delta} \exists x : \tau, p\]
-	\end{lemma}
-	The term $t$ can be thought of as a witness of the statement $p$, so this Lemma states that to entail $\exists x : \tau, p$, it suffices to bear a witness $t$.
-	%
-	\begin{proof} Observe the following proof tree,
-		\begin{prooftree}
-			\AxiomC{$\exists x : \tau, p \vdash_{\Delta}\exists x : \tau, p$}
-			\RightLabel{$\eqref{rule:existential}$}
-			\UnaryInfC{$p \vdash_{\Delta, x:\tau}\exists x : \tau, p$}
-			\RightLabel{$\eqref{rule:sub}$}
-			\UnaryInfC{$p[x := t]\vdash_{\Delta} \exists x:\tau, p$}
-		\end{prooftree}
-	\end{proof}
-	
-	\begin{lemma}\label{lem:disjunction_right}
-		If $p \vdash q$ then $p \vdash q \vee r$.
-	\end{lemma}
-	\begin{proof}
-		Observe the following proof tree.
-		\begin{prooftree}
-			\AxiomC{$p \vdash q$}
-			\AxiomC{$q \vee r \vdash q \vee r$}
-			\RightLabel{\eqref{rule:disjunction}}
-			\UnaryInfC{$q \vdash q \vee r$}
-			\RightLabel{\eqref{rule:cut}}
-			\BinaryInfC{$p \vdash q \vee r$}
-		\end{prooftree}
-	\end{proof}
-	
 	\subsection{Internal logic}
 	\label{MitchellBenabou}
 	%
@@ -719,11 +488,11 @@
 		\llbracket A_1 \rrbracket \times ... \times \llbracket A_n \rrbracket\arrow[r,"{\llbracket \Delta . t\rrbracket}"] & \llbracket B \rrbracket
 	\end{tikzcd}
 	\]
-	If $p$ is a formula for which $\Delta$ is a suitable context, then $\llbracket \Delta . p \rrbracket$ is a subobject. We will use $\llbracket \Delta. p \rrbracket$ to denote both this morphism and the domain of this morphism.
+	If $p$ is a formula for which $\Delta$ is a suitable context, then $\llbracket \Delta . p \rrbracket$ is a subobject.
 	\begin{equation}
 		\llbracket \Delta. p \rrbracket \rightarrowtail \llbracket A_1 \rrbracket \times \hdots \times \llbracket A_n \rrbracket
 	\end{equation}
-	In what follows, we will make use of the Heyting algebra structure on the category of subobjects $\operatorname{C}$ associated to an object $C \in \call{E}$ and the perspective on quantifiers as adjoint functors between such categories. For a review of this material, see the Appendix Section \ref{sec:topos_struc}. Also, we introduce some notation.
+	In what follows, we will make use of the Heyting algebra structure on Heyting algebra of subobjects $\operatorname{C}$ associated to an object $C \in \call{E}$ and the perspective on quantifiers as adjoint functors between such categories. For a review of this material, see the Appendix Section \ref{sec:topos_struc}. Also, we introduce some notation.
 	\begin{notation}\label{not:adj}
 		Recall that any topos $\call{E}$ admits all exponentials. That is, for triple $A,B,C$ of objects in $\call{E}$ there is an object $C^A$ and a natural bijection $\operatorname{Hom}(A \times B, C) \cong \operatorname{Hom}(B,C^A)$. We denote the image of $f:A \times B \lto C$ under this bijection by $\adj{f}_C: B \lto C^A$. In the setting where there is low risk of ambiguity we simply write $\adj{f}$ for $\adj{f}_C$.
 	\end{notation}
@@ -930,7 +699,7 @@
 		\begin{equation}
 			\llbracket \Delta. p\rrbracket \leq \llbracket \Delta. t(a) \in \lbrace b:B \mid q\rbrace \rrbracket\text{ if and only if }\llbracket \Delta. p\rrbracket \leq \llbracket \Delta. q[b:=t(a)]\rrbracket
 		\end{equation}
-		In other words, we must show that there exists a morphism $c: \llbracket \Delta. p\rrbracket \lto \llbracket \Delta. t(a) \in \lbrace b:B \mid q \rbrace \rrbracket$ such that the Diagram on the left of \eqref{eq:entails_interp} commutes if and only if there exists a morphism $d: \llbracket \Delta. p(a)\rrbracket \lto \llbracket \Delta. q[b:=t(a)]\rrbracket$ so that the Diagram on the right of \eqref{eq:entails_interp} commutes. The proof of both directions are similar to each other so we only show the forwards implication, we have labelled the morphism $\llbracket \Delta. p(a)\rrbracket \rightarrowtail \overline{\Delta}$ by $\delta$ for the sake of future reference.
+		In other words, we must show that there exists a morphism $c: \llbracket \Delta. p\rrbracket \lto \llbracket \Delta. t(a) \in \lbrace b:B \mid q \rbrace \rrbracket$ such that the Diagram on the left of \eqref{eq:entails_interp} commutes if and only if there exists a morphism $d: \llbracket \Delta. p(a)\rrbracket \lto \llbracket \Delta. q[b:=t(a)]\rrbracket$ so that the Diagram on the right of \eqref{eq:entails_interp} commutes. The proof of both directions are similar to each other so we only show the forwards implication, we have labelled the subobject $\llbracket \Delta. p(a)\rrbracket \rightarrowtail \overline{\Delta}$ by $\delta$ for the sake of future reference.
 		\begin{equation}\label{eq:entails_interp}
 			\begin{tikzcd}
 				\llbracket \Delta. p(a)\rrbracket\arrow[r,"c"]\arrow[dr,rightarrowtail,swap,"{\delta}"] & \llbracket \Delta. t(a) \in \lbrace b:B \mid q \rbrace \rrbracket\arrow[d,rightarrowtail]\\
@@ -985,7 +754,7 @@
 		\end{equation}
 		Hence, by observing commutativity of Diagram \eqref{eq:intermediate_commuting}, we see that $\delta$ is an appropriate choice for $\gamma$.
 		
-		Now we prove \eqref{rule:infinite}. We notice that the collection of subobjects $\llbracket \Sigma. p_i\rrbracket$ factors through the subobject $\llbracket \Sigma. q\rrbracket$ if and only if the coproduct $\bigvee_{i \geq 0}\llbracket \Sigma. p_i \rrbracket$ (in the category $\operatorname{Sub}(\overline{\Sigma})$) factors through $\llbracket \Sigma. q \rrbracket$. This statement is exactly the statement that $(\bigvee I)$ and $(\bigvee E)_i$ in \eqref{rule:infinite} are derived rules.
+		Now we prove \eqref{rule:infinite}. We notice that the collection of subobjects $\llbracket \Sigma. p_i\rrbracket$ factors through the subobject $\llbracket \Sigma. q\rrbracket$ if and only if the coproduct $\bigvee_{i \geq 0}\llbracket \Sigma. p_i \rrbracket$ (in the Heyting algebra $\operatorname{Sub}(\overline{\Sigma})$) factors through $\llbracket \Sigma. q \rrbracket$. This statement is exactly the statement that $(\bigvee I)$ and $(\bigvee E)_i$ in \eqref{rule:infinite} are derived rules.
 		
 		Finally, we prove \eqref{rule:set}. In light of the derived deduction rules \eqref{rule:element} it suffices to show the following are derived deduction rules.
 		\begin{center}
@@ -1001,7 +770,7 @@
 			\UnaryInfC{$\vdash_{\Delta} \lbrace a:A \mid p \rbrace = \lbrace a:A \mid q \rbrace$}
 			\DisplayProof
 		\end{center}
-		Recall from Definition \ref{def:interpretation} that $\llbracket \Delta. \lbrace a:A \mid p \rbrace = \lbrace a:A \mid q\rbrace\rrbracket \rightarrowtail \overline{\Delta}$ is the monomorphism rendering the following an equaliser diagram.
+		Recall from Definition \ref{def:interpretation} that $\llbracket \Delta. \lbrace a:A \mid p \rbrace = \lbrace a:A \mid q\rbrace\rrbracket \rightarrowtail \overline{\Delta}$ is the subobject rendering the following an equaliser diagram.
 		\begin{equation}
 			\begin{tikzcd}[column sep = large]
 				\llbracket \Delta. \lbrace a:A \mid p \rbrace = \lbrace a:A \mid q\rbrace\rrbracket\arrow[r,rightarrowtail] & \overline{\Delta}\arrow[rr,shift left, "{\llbracket \Delta. \lbrace a:A \mid p \rbrace\rrbracket}"]\arrow[rr,shift right,swap,"{\llbracket \Delta. \lbrace a:A \mid q \rbrace \rrbracket}"] && \Omega^A
@@ -1086,8 +855,8 @@
 		Let $u:U$ be a variable. Then there is a unique isomorphism $U \lto \llbracket z: \call{P}U. \exists u:U, z = \lbrace u \rbrace \rrbracket$ such that the following Diagram commutes.
 		\begin{equation}
 			\begin{tikzcd}
-				U\arrow[r,"{\llbracket u:U. \lbrace u \rbrace \rrbracket}"]\arrow[dr] & \Omega^U\\
-				& \llbracket z: \call{P}U . \exists u :U, z = \lbrace u \rbrace \rrbracket\arrow[u,rightarrowtail]
+				U\arrow[dr,swap,"{\llbracket u:U. \lbrace u \rbrace \rrbracket}"]\arrow[r] & \llbracket z: \call{P}U . \exists u :U, z = \lbrace u \rbrace \rrbracket\arrow[d,rightarrowtail]\\
+				& \Omega^U
 			\end{tikzcd}
 		\end{equation}
 	\end{corollary}
@@ -1132,7 +901,7 @@
 			\end{equation}
 			This subobject $\llbracket \Delta. u \in Z_1\rrbracket$ can be thought of as all pairs $(u, U)$ where $u$ ``is an element" of $U$.
 			\item The construction of $\llbracket \Delta. u \in Z_2\rrbracket$ is similar, but the morphism $\pi_{(13)}$, the projecto onto the first and third components, is used in place of $\pi_{(12)}$.
-			\item The subobject $\llbracket \Delta. u \in Z_1 \vee u \in Z_2\rrbracket$ is given by the coproduct of $\llbracket \Delta. u \in Z_1 \rrbracket$ and $\llbracket \Delta. u \in Z_2 \rrbracket$ in the category $\operatorname{Sub}(U \times \Omega^U \times \Omega^U)$. This subobject can be thought of as all triples $(u,U_1,U_2)$ where $u \in U_1 \cup U_2$.
+			\item The subobject $\llbracket \Delta. u \in Z_1 \vee u \in Z_2\rrbracket$ is given by the coproduct of $\llbracket \Delta. u \in Z_1 \rrbracket$ and $\llbracket \Delta. u \in Z_2 \rrbracket$ in the Heyting algebra $\operatorname{Sub}(U \times \Omega^U \times \Omega^U)$. This subobject can be thought of as all triples $(u,U_1,U_2)$ where $u \in U_1 \cup U_2$.
 			\item Lastly, the morphism $\llbracket Z_1:\call{P}U, Z_2:\call{P}U. \lbrace u:U \mid u \in Z_1 \vee u \in Z_2 \rbrace \rrbracket$ is the transpose of the morphism $U \times \Omega^U \times \Omega^U \lto \Omega$ with codomain $\Omega$ which in turn corresponding to the subobject $\llbracket \Delta. u \in Z_1 \vee u \in Z_2 \rrbracket$. Hence
 			\begin{equation}
 				\llbracket Z_1:\call{P}U, Z_2:\call{P}U. \lbrace u : U \mid u \in Z_1 \vee u \in Z_2 \rbrace \rrbracket : \Omega^U \times \Omega^U \lto \Omega^U
@@ -1152,7 +921,7 @@
 				\end{tikzcd}
 			\end{equation}
 			This subobject can be thought of as pairs $(a,f(a))$.
-			\item We then take the intersection in the category $\operatorname{Sub}(A \times B \times \Omega^A)$ of these two subobjects to obtain $\llbracket \Delta. a \in Z \wedge b = fa\rrbracket$. This can be thought of as the set of triples $(a,f(a),U)$ where $a \in U$.
+			\item We then take the intersection in the Heyting algebra $\operatorname{Sub}(A \times B \times \Omega^A)$ of these two subobjects to obtain $\llbracket \Delta. a \in Z \wedge b = fa\rrbracket$. This can be thought of as the set of triples $(a,f(a),U)$ where $a \in U$.
 			\item The subobject $\llbracket a:A, U: \call{P}A. \exists a:A, a \in Z \wedge b = fa\rrbracket$ is the image of this subobject given the functor $\exists_{\pi_{B \times \Omega^A}}$. This can be thought of as the set of pairs $(f(a),U)$ where $a$ is some element of $U$.
 			\item Lastly, we consider the corresponding morphism $B \times \Omega^A \lto \Omega$ with domain $\Omega$ and then take the transpose $\Omega^A \lto \Omega^B$. This can be thought of as a function which maps a subset $U$ of $A$ to the set $f(U)$. Hence why we denote this term $f(Z)$.
 		\end{enumerate}
@@ -1322,7 +1091,7 @@
 	\begin{remark}
 		The top row of Diagram \eqref{eq:existence_simple_diagram} is exactly the top row of the Diagram in the middle of page 27 of \cite{Mikkelson}. We note however that we were not aware of this paper when the Diagram \eqref{eq:existence_simple_diagram} was first constructed.
 	\end{remark}
-	The above is \emph{not} sufficient in order to prove that an elementary topos admits finite coproducts, the reason why is because the formula \eqref{eq:coprod_formula} makes use of the conjunction $\wedge$ which according to Definition \ref{def:interpretation} is interpreted as the disjoint union in a subobject category. To ensure that this exists, we use the fact a priori that an elementary topos admits finite colimits.
+	The above is \emph{not} sufficient in order to prove that an elementary topos admits finite coproducts, the reason why is because the formula \eqref{eq:coprod_formula} makes use of the conjunction $\wedge$ which according to Definition \ref{def:interpretation} is interpreted as the disjoint union in a subobject Heyting algebra. To ensure that this exists, we use the fact a priori that an elementary topos admits finite colimits.
 	
 	Indeed, the point is to come up with a \emph{description} of these finite coproducts using the internal language. Hence, we cannot simply use the fact that we have a description of \emph{binary} coproducts in order to obtain for free a descritpion of \emph{arbitrary finite} coproducts.
 	
@@ -1362,7 +1131,7 @@
 		where $\mathbb{Z}_2^n$ is the set of length $n$ sequences of elements of $\mathbb{Z}_{2}$. 
 	\end{definition}
 	\begin{remark}
-		As mentioned in the Introduction, we require that every object $C$ in the topos in question $\call{E}$ satisfies the property that the category $\operatorname{Sub}(C)$ admits countable disjoint union (this is satisfied, for example, when the topos $\call{E}$ admits all countably infinite colimits). This is needed so that the term given in Definition \ref{def:relation} admits an interpretation inside $\call{E}$ (see Remark \ref{rmk:countable_colimits})
+		As mentioned in the Introduction, we require that every object $C$ in the topos in question $\call{E}$ satisfies the property that the Heyting algebra $\operatorname{Sub}(C)$ admits countable disjoint union (this is satisfied, for example, when the topos $\call{E}$ admits all countably infinite colimits). This is needed so that the term given in Definition \ref{def:relation} admits an interpretation inside $\call{E}$ (see Remark \ref{rmk:countable_colimits})
 	\end{remark}
 	
 	The idea of this term is that it is a generalisation of the smallest equivalence relation $\sim$ such that for all $a$, $t_0(a) \sim t_1(a)$. It does this by declaring $\langle b_1,b_2\rangle$ to be in the relation if either $b_1 = b_2$, or there exists a sequence $(a_1,...,a_{n})$ which ``connect" $b_1$ and $b_2$ by the images of these $a_i$ under $t_0$ and $t_1$. A diagram representing an example of this is the following,
@@ -1415,7 +1184,7 @@
 				& C
 			\end{tikzcd}
 		\end{equation}
-		By Corollary \ref{cor:embedded_subobject} there is an isomorphism $C \lto \llbracket z: \Omega^C \mid \exists c:C, z = \lbrace c \rbrace \rrbracket$ rendering the following Diagram commutative.
+		By Corollary \ref{cor:embedded_subobject} there is an isomorphism $C \lto \llbracket z: \Omega^C . \exists c:C, z = \lbrace c \rbrace \rrbracket$ rendering the following Diagram commutative.
 		\begin{equation}
 			\begin{tikzcd}[column sep = large]
 				C\arrow[r,"{\llbracket c:C. \lbrace c \rbrace \rrbracket}"]\arrow[dr] & \Omega^C\\
@@ -1790,9 +1559,259 @@
 	\end{definition}
 	\begin{remark}
 		\label{rmk:countable_colimits}
-		If $\call{E}$ admits countably infinite coproducts, then for any object $E \in \call{E}$, the category $\operatorname{Sub}(E)$ also admits arbitrary coproducts. See \cite[\S A1.4]{Johnstone}. If $\lbrace p_i \rbrace_{i \geq 0}$ is a countably infinite set of elements of $\operatorname{Sub}(E)$ then the coproduct will be denoted by $\bigvee_{i\geq 0}p_i$.
+		If $\call{E}$ admits countably infinite coproducts, then for any object $E \in \call{E}$, the Heyting algebra $\operatorname{Sub}(E)$ also admits arbitrary coproducts. See \cite[\S A1.4]{Johnstone}. If $\lbrace p_i \rbrace_{i \geq 0}$ is a countably infinite set of elements of $\operatorname{Sub}(E)$ then the coproduct will be denoted by $\bigvee_{i\geq 0}p_i$.
 	\end{remark}
+
+ \subsection{Some helpful type theory lemmas}\label{sec:helpful_lemmas}
+	\label{helpfulLemmas}
+	Many reasonable sounding statements concerning the entailment relation do in fact follow from the axioms and deduction rules, this section provides a collection of particularly helpful ones. Many of these will be used in Section \ref{sec:arbitrary_topos}. In what follows, $\Delta,x:\tau$ will always mean the context given by appending $x:\tau$ to the end of the sequence $\Delta$, we give full proofs to illustrate the basic methods involved in working with type theories.
+	\begin{lemma}
+		\label{weakening}
+		Let $p,q,r$ be arbtirary formulas and $x:\tau$ an arbitrary variable.
+		\begin{enumerate}
+			\item $p \wedge q \vdash_\Delta r$ if and only if $q \wedge p \vdash_\Delta r$
+			\item $p \vdash_\Delta \neg(\neg p)$,
+			\item if $p \vdash_\Delta q$, then $p \wedge r \vdash_\Delta q$,
+			\item $\neg q \vdash_\Delta \neg(q \wedge p)$,
+			\item $p \wedge (q \vee r) \vdash_\Delta (p \wedge q) \vee (p \wedge r)$,
+			\item $(p \vee q) \wedge \neg q \vdash_\Delta p$, and
+			\item $(\exists x:\tau, p) \wedge q \vdash_{\Delta}\exists x:\tau, p \wedge q$ and $\exists x:\tau, p \wedge q \vdash_{\Delta} (\exists x:\tau, p) \wedge q$
+		\end{enumerate}
+	\end{lemma}
+	\begin{proof}
+		\begin{enumerate}
+			%
+			\item There is the following proof tree.
+			\begin{prooftree}
+				\AxiomC{$q \wedge p \vdash_\Delta q \wedge p$}
+				\RightLabel{$\eqref{rule:conjunction}$}
+				\UnaryInfC{$q \wedge p \vdash_\Delta p$}
+				\AxiomC{$q \wedge p \vdash_\Delta q \wedge p$}
+				\RightLabel{$\eqref{rule:conjunction}$}
+				\UnaryInfC{$q \wedge p \vdash_\Delta q$}
+				\RightLabel{$\eqref{rule:conjunction}$}
+				\BinaryInfC{$q \wedge p \vdash_\Delta p \wedge q$}
+				\AxiomC{$\vdots$}
+				\noLine
+				\UnaryInfC{$p \wedge q \vdash_\Delta r$}
+				\RightLabel{$\eqref{rule:cut}$}
+				\BinaryInfC{$q \wedge p \vdash_\Delta r$}
+			\end{prooftree}
+			%
+			\item Let $\pi$ denote the following proof tree.
+			%
+			\begin{scprooftree}{0.9}
+				\AxiomC{$p \wedge (p \Rightarrow \bot) \vdash_\Delta p \wedge (p \Rightarrow \bot)$}
+				\RightLabel{$\eqref{rule:conjunction}$}
+				\UnaryInfC{$p \wedge (p \Rightarrow \bot) \vdash_\Delta p \Rightarrow \bot$}
+				\AxiomC{$p \wedge (p \Rightarrow \bot) \vdash_\Delta p \wedge (p \Rightarrow \bot)$}
+				\RightLabel{$\eqref{rule:conjunction}$}
+				\UnaryInfC{$p \wedge (p \Rightarrow \bot) \vdash_\Delta p$}
+				\RightLabel{$\eqref{rule:conjunction}$}
+				\BinaryInfC{$p \wedge (p \Rightarrow \bot) \vdash_\Delta (p \Rightarrow \bot) \wedge p$}
+			\end{scprooftree}
+			Then, there is the following proof tree.
+			\begin{prooftree}
+				\AxiomC{$\pi$}
+				\noLine
+				\UnaryInfC{$\vdots$}
+				\noLine
+				\UnaryInfC{$p \wedge (p \Rightarrow \bot) \vdash_\Delta (p \Rightarrow \bot) \wedge p$}
+				\AxiomC{$p \Rightarrow \bot \vdash_\Delta p \Rightarrow \bot$}
+				\RightLabel{$\eqref{rule:implication}$}
+				\UnaryInfC{$(p \Rightarrow \bot) \wedge p \vdash_\Delta \bot$}
+				\RightLabel{$\eqref{rule:cut}$}
+				\BinaryInfC{$p \wedge (p \Rightarrow \bot) \vdash_\Delta \bot$}
+				\RightLabel{$\eqref{rule:implication}$}
+				\UnaryInfC{$p \vdash_\Delta(p \Rightarrow \bot) \Rightarrow \bot$}
+			\end{prooftree}
+			%
+			\item Observe the following proof tree.
+			%
+			\begin{prooftree}
+				\AxiomC{$\vdots$}
+				\noLine
+				\UnaryInfC{$p \vdash_\Delta q$}
+				\AxiomC{$q \wedge r \vdash_\Delta q \wedge r$}
+				\RightLabel{$\eqref{rule:implication}$}
+				\UnaryInfC{$q \vdash_\Delta r \Rightarrow (q \wedge r)$}
+				\RightLabel{$\eqref{rule:cut}$}
+				\BinaryInfC{$p \vdash_\Delta r \Rightarrow (q \wedge r)$}
+				\RightLabel{$\eqref{rule:implication}$}
+				\UnaryInfC{$p \wedge r \vdash_\Delta q \wedge r$}
+				\RightLabel{$\eqref{rule:conjunction}$}
+				\UnaryInfC{$p \wedge r \vdash_\Delta q$}
+			\end{prooftree}
+			%
+			\item By axiom $\eqref{rule:implication}$, it suffices to show $(q \Rightarrow \bot) \wedge (q \wedge p) \vdash_\Delta \bot$, for which it suffices to show $((q \Rightarrow \bot) \wedge q) \wedge p) \vdash_\Delta \bot$. By part 2 of this Lemma, it suffices to show $(q \Rightarrow \bot) \wedge q \vdash \bot$, which follows from axiom $\eqref{rule:implication}$, as $q \Rightarrow \bot \vdash_\Delta q \Rightarrow \bot$.
+			%
+			\item By $\eqref{rule:implication}$, it suffices to show $q \vee r \vdash_\Delta p \Rightarrow ((p \wedge q) \vee (p \wedge r))$, for which by $\eqref{rule:disjunction}$, it suffices to show both $q \vdash_\Delta p \Rightarrow ((p \wedge q) \vee (p \wedge r))$, and $r \vdash_\Delta p \Rightarrow ((p \wedge q) \vee (p \wedge r))$. The first sequent can be proved by the following, 
+			where the label $(1)$ is referring to the first part of this Lemma.
+			\begin{prooftree}
+				\AxiomC{$(p \wedge q) \vee (p \wedge r) \vdash_\Delta (p \wedge q) \vee (p \wedge q)$}
+				\RightLabel{$\eqref{rule:disjunction}$}
+				\UnaryInfC{$p \wedge q \vdash_\Delta (p \wedge q) \vee (p \wedge q)$}
+				\RightLabel{$(1)$}
+				\UnaryInfC{$q \wedge p \vdash_\Delta (p \wedge q) \vee (p \wedge q)$}
+				\RightLabel{$\eqref{rule:implication}$}
+				\UnaryInfC{$q \vdash_\Delta p \Rightarrow ((p \wedge q) \vee (p \wedge r))$}
+			\end{prooftree}
+			There is a similar proof tree for the remaining sequent.
+			%
+			\item From part 4 of this Lemma, it suffices to show $(p \wedge \neg q) \vee (\neg q \wedge q) \vdash_\Delta p$, for which there is the following proof tree.
+			\begin{scprooftree}{0.7}
+				\AxiomC{$p \wedge (q \Rightarrow \bot) \vdash_{\Delta} p \wedge (q \Rightarrow \bot)$}
+				\RightLabel{$\eqref{rule:conjunction}$}
+				\UnaryInfC{$p \wedge (q \Rightarrow \bot) \vdash_{\Delta} p$}
+				\AxiomC{$(q \Rightarrow \bot) \vdash_\Delta (q \Rightarrow \bot)$}
+				\RightLabel{$\eqref{rule:implication}$}
+				\UnaryInfC{$(q \Rightarrow \bot) \wedge q \vdash_\Delta \bot$}
+				\AxiomC{}
+				\RightLabel{$\eqref{rule:true_false}$}
+				\UnaryInfC{$\bot \vdash_\Delta p$}
+				\RightLabel{$\eqref{rule:cut}$}
+				\BinaryInfC{$(q \Rightarrow \bot) \wedge q \vdash_\Delta p$}
+				\RightLabel{$\eqref{rule:disjunction}$}
+				\BinaryInfC{$(p \wedge (q \Rightarrow \bot)) \vee ((q \Rightarrow \bot) \wedge q) \vdash_\Delta p$}
+			\end{scprooftree}
+			%
+			%
+			\item Observe the following proof tree.
+			\begin{prooftree}
+				\AxiomC{$\exists x:\tau, p \wedge q \vdash_\Delta \exists x:\tau, p \wedge q$}
+				\RightLabel{$\eqref{rule:existential}$}
+				\UnaryInfC{$p \wedge q \vdash_{\Delta,x:\tau}\exists x:\tau, p \wedge q$}
+				\RightLabel{$\eqref{rule:implication}$}
+				\UnaryInfC{$p \vdash_{\Delta, x:\tau} q \Rightarrow (\exists x:\tau, p \wedge q)$}
+				\RightLabel{$\eqref{rule:existential}$}
+				\UnaryInfC{$\exists x:\tau, p \vdash_\Delta q \Rightarrow (\exists x : \tau, p \wedge q)$}
+				\RightLabel{$\eqref{rule:implication}$}
+				\UnaryInfC{$(\exists x: \tau, p) \wedge q \vdash_\Delta \exists x:\tau, p \wedge q$}
+			\end{prooftree}
+		\end{enumerate}
+		Reading this same proof tree from bottom to top gives a proof tree for the second sequent.
+	\end{proof}
+	%
+	%
+	%
+	%
+	%
+	\begin{lemma}
+		\label{lem:variablesub}
+		If $x:\tau$ is a variable, and $t:\tau$ is a term, then
+		\[x = t \vdash_{\Delta,x:\tau}s \qquad \text{if and only if}\qquad \vdash_{\Delta}s[x := t]\]
+	\end{lemma}
+	\begin{proof} The ``only if" direction follows from the following proof tree.
+		\begin{prooftree}
+			\AxiomC{}
+			\RightLabel{$\eqref{rule:equality}$}
+			\UnaryInfC{$\vdash_{\Delta}t = t$}
+			\AxiomC{$\vdots$}
+			\noLine
+			\UnaryInfC{$x = t \vdash_{\Delta,x:\tau}s$}
+			\RightLabel{$\eqref{rule:sub}$}
+			\UnaryInfC{$t = t \vdash_{\Delta}s[x := t]$}
+			\RightLabel{$\eqref{rule:cut}$}
+			\BinaryInfC{$\vdash_{\Delta}s[x := t]$}
+		\end{prooftree}
+		For the other direction, let $x':\tau$ be such that $x' \not\in\text{FV}(s)$, then there is the following proof tree.
+		\begin{prooftree}
+			\AxiomC{$\vdots$}
+			\noLine
+			\UnaryInfC{$\vdash_{x,\Delta}s[x := t]$}
+			\AxiomC{}
+			\RightLabel{$\eqref{rule:equality}$}
+			\UnaryInfC{$x = x' \wedge s[x := x']\vdash_{\Delta,x:\tau,x':\tau}s$}
+			\RightLabel{$\eqref{rule:sub}$}
+			\UnaryInfC{$x = t \wedge s[x := t]\vdash_{\Delta,x:\tau}s$}
+			\RightLabel{$\eqref{weakening}$}
+			\UnaryInfC{$s[x := t] \wedge x = t \vdash_{\Delta,x:\tau}s$}
+			\RightLabel{$\eqref{rule:implication}$}
+			\UnaryInfC{$s[x := t]\vdash_{\Delta,x:\tau}(x = t)\Rightarrow s$}
+			\RightLabel{$\eqref{rule:cut}$}
+			\BinaryInfC{$\vdash_{\Delta,x:\tau}(x = t)\Rightarrow s[x := t]$}
+			\RightLabel{$\eqref{rule:implication}$}
+			\UnaryInfC{$x = t\vdash_{\Delta,x:\tau}s[x:=t]$}
+		\end{prooftree}
+	\end{proof}
+	%
+	%
+	%
+	%
+	%
+	\begin{lemma}
+		\label{dansaside}
+		If $p \vdash_{\Delta, x:\tau} q$, then $\exists x : \tau,p \vdash_\Delta \exists x : \tau, q$.
+	\end{lemma}
+	\begin{proof}
+		First, let $\pi$ denote the following proof tree.
+		\begin{prooftree}
+			\AxiomC{$\forall x : \tau, q \vdash_\Delta \forall x : \tau, q$}
+			\RightLabel{$\eqref{rule:universal}$}
+			\UnaryInfC{$\forall x : \tau, q \vdash_{\Delta,x:\tau} q$}
+			\AxiomC{$\exists x : \tau, q \vdash_\Delta \exists x : \tau, q$}
+			\RightLabel{$\eqref{rule:existential}$}
+			\UnaryInfC{$q \vdash_{\Delta, x:\tau} \exists x : \tau, q$}
+			\RightLabel{$\eqref{rule:cut}$}
+			\BinaryInfC{$\forall x : \tau, q \vdash_{\Delta,x:\tau}\exists x : \tau, q$}
+		\end{prooftree}
+		Then there is the following.
+		\begin{prooftree}
+			\AxiomC{$\vdots$}
+			\noLine
+			\UnaryInfC{$p \vdash_{\Delta,x:\tau} q$}
+			\RightLabel{$\eqref{rule:universal}$}
+			\UnaryInfC{$p \vdash_\Delta \forall x : \tau, q$}
+			\RightLabel{$\eqref{rule:sub}$}
+			\UnaryInfC{$p \vdash_{\Delta, x:\tau} \forall x : \tau, q$}
+			\AxiomC{$\pi$}
+			\noLine
+			\UnaryInfC{$\vdots$}
+			\noLine
+			\UnaryInfC{$\forall x : \tau, q \vdash_{\Delta, x:\tau}\exists x : \tau, q$}
+			\RightLabel{$\eqref{rule:cut}$}
+			\BinaryInfC{$p \vdash_{\Delta, x:\tau} \exists x : \tau, q$}
+			\RightLabel{$\eqref{rule:existential}$}
+			\UnaryInfC{$\exists x : \tau, p \vdash_\Delta \exists x : \tau, q$}
+		\end{prooftree}
+	\end{proof}
+	%
+	%
+	%
+	%
+	%
+	%
+	\begin{lemma}
+		\label{lem:witness}
+		Let $t:\tau$ be a term and $p$ a formula. Then
+		\[p[x := t] \vdash_{\Delta} \exists x : \tau, p\]
+	\end{lemma}
+	The term $t$ can be thought of as a witness of the statement $p$, so this Lemma states that to entail $\exists x : \tau, p$, it suffices to bear a witness $t$.
+	%
+	\begin{proof} Observe the following proof tree,
+		\begin{prooftree}
+			\AxiomC{$\exists x : \tau, p \vdash_{\Delta}\exists x : \tau, p$}
+			\RightLabel{$\eqref{rule:existential}$}
+			\UnaryInfC{$p \vdash_{\Delta, x:\tau}\exists x : \tau, p$}
+			\RightLabel{$\eqref{rule:sub}$}
+			\UnaryInfC{$p[x := t]\vdash_{\Delta} \exists x:\tau, p$}
+		\end{prooftree}
+	\end{proof}
 	
+	\begin{lemma}\label{lem:disjunction_right}
+		If $p \vdash q$ then $p \vdash q \vee r$.
+	\end{lemma}
+	\begin{proof}
+		Observe the following proof tree.
+		\begin{prooftree}
+			\AxiomC{$p \vdash q$}
+			\AxiomC{$q \vee r \vdash q \vee r$}
+			\RightLabel{\eqref{rule:disjunction}}
+			\UnaryInfC{$q \vdash q \vee r$}
+			\RightLabel{\eqref{rule:cut}}
+			\BinaryInfC{$p \vdash q \vee r$}
+		\end{prooftree}
+	\end{proof}
 	\begin{thebibliography}{99}
 	\bibitem [May, 1999]{May} J. May, \emph{A Crash Course in Algebraic Topology}, University of Chicago Press, Chicago, 1999.
 	\bibitem [Borceux, 1994]{borceux} F. Borceux, \emph{Handbook of Categorical Algebra 1, Basic Category Theory}, University Press, Cambridge, 1994.

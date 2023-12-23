@@ -1,0 +1,272 @@
+\documentclass[12pt]{article}
+
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{mathrsfs}
+\usepackage{array}
+\usepackage{amssymb}
+\usepackage{units}
+\usepackage{graphicx}
+\usepackage{tikz-cd}
+\usepackage{nicefrac}
+\usepackage{hyperref}
+\usepackage{bbm}
+\usepackage{color}
+\usepackage{tensor}
+\usepackage{tipa}
+\usepackage{bussproofs}
+\usepackage{ stmaryrd }
+\usepackage{ textcomp }
+\usepackage{leftidx}
+\usepackage{afterpage}
+\usepackage{varwidth}
+\usepackage{tasks}
+\usepackage{ cmll }
+\usepackage{quiver}
+\usepackage{adjustbox}
+\usepackage{kbordermatrix}
+
+\newcommand\blankpage{
+	\null
+	\thispagestyle{empty}
+	\addtocounter{page}{-1}
+	\newpage
+}
+
+\graphicspath{ {images/} }
+
+\theoremstyle{plain}
+\newtheorem{thm}{Theorem}[subsection] % reset theorem numbering for each chapter
+\newtheorem{proposition}[thm]{Proposition}
+\newtheorem{lemma}[thm]{Lemma}
+\newtheorem{fact}[thm]{Fact}
+\newtheorem{cor}[thm]{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{defn}[thm]{Definition} % definition numbers are dependent on theorem numbers
+\newtheorem{exmp}[thm]{Example} % same for example numbers
+\newtheorem{notation}[thm]{Notation}
+\newtheorem{remark}[thm]{Remark}
+\newtheorem{condition}[thm]{Condition}
+\newtheorem{question}[thm]{Question}
+\newtheorem{construction}[thm]{Construction}
+\newtheorem{exercise}[thm]{Exercise}
+\newtheorem{example}[thm]{Example}
+\newtheorem{aside}[thm]{Aside}
+
+\def\doubleunderline#1{\underline{\underline{#1}}}
+\newcommand{\bb}[1]{\mathbb{#1}}
+\newcommand{\scr}[1]{\mathscr{#1}}
+\newcommand{\call}[1]{\mathcal{#1}}
+\newcommand{\psheaf}{\text{\underline{Set}}^{\scr{C}^{\text{op}}}}
+\newcommand{\und}[1]{\underline{\hspace{#1 cm}}}
+\newcommand{\adj}[1]{\text{\textopencorner}{#1}\text{\textcorner}}
+\newcommand{\comment}[1]{}
+\newcommand{\lto}{\longrightarrow}
+\newcommand{\rone}{(\operatorname{R}\bold{1})}
+\newcommand{\lone}{(\operatorname{L}\bold{1})}
+\newcommand{\rimp}{(\operatorname{R} \multimap)}
+\newcommand{\limp}{(\operatorname{L} \multimap)}
+\newcommand{\rtensor}{(\operatorname{R}\otimes)}
+\newcommand{\ltensor}{(\operatorname{L}\otimes)}
+\newcommand{\rtrue}{(\operatorname{R}\top)}
+\newcommand{\rwith}{(\operatorname{R}\&)}
+\newcommand{\lwithleft}{(\operatorname{L}\&)_{\operatorname{left}}}
+\newcommand{\lwithright}{(\operatorname{L}\&)_{\operatorname{right}}}
+\newcommand{\rplusleft}{(\operatorname{R}\oplus)_{\operatorname{left}}}
+\newcommand{\rplusright}{(\operatorname{R}\oplus)_{\operatorname{right}}}
+\newcommand{\lplus}{(\operatorname{L}\oplus)}
+\newcommand{\prom}{(\operatorname{prom})}
+\newcommand{\ctr}{(\operatorname{ctr})}
+\newcommand{\der}{(\operatorname{der})}
+\newcommand{\weak}{(\operatorname{weak})}
+\newcommand{\exi}{(\operatorname{exists})}
+\newcommand{\fa}{(\operatorname{for\text{ }all})}
+\newcommand{\ex}{(\operatorname{ex})}
+\newcommand{\cut}{(\operatorname{cut})}
+\newcommand{\ax}{(\operatorname{ax})}
+\newcommand{\negation}{\sim}
+\newcommand{\true}{\top}
+\newcommand{\false}{\bot}
+\DeclareRobustCommand{\diamondtimes}{%
+	\mathbin{\text{\rotatebox[origin=c]{45}{$\boxplus$}}}%
+}
+\newcommand{\tagarray}{\mbox{}\refstepcounter{equation}$(\theequation)$}
+\newcommand{\startproof}[1]{
+	\AxiomC{#1}
+	\noLine
+	\UnaryInfC{$\vdots$}
+}
+\newenvironment{scprooftree}[1]%
+{\gdef\scalefactor{#1}\begin{center}\proofSkipAmount \leavevmode}%
+	{\scalebox{\scalefactor}{\DisplayProof}\proofSkipAmount \end{center} }
+
+\usepackage[margin=1.5cm]{geometry}
+
+
+\title{Execution formula for \emph{all} of MELL}
+\author{Will Troiani}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\begin{defn}
+\label{def:atomic_atoms}
+There is an infinite set of \textbf{unoriented atoms} $X,Y,Z,\ldots$ and an \textbf{oriented atom} (or \textbf{atomic proposition}) is a pair $(X,+)$ or $(X,-)$ where $X$ is an unoriented atom. Let $\call{A}$ denote the set of oriented atoms.
+\end{defn}
+
+For $x \in \{ +, - \}$ we write $\overline{x}$ for the negation, so $\overline{+} = -, \overline{-} = +$.
+
+\begin{defn}
+The set of \textbf{pre-formulas} is defined as follows:
+\begin{itemize}
+	\item Any atomic proposition is a preformula.
+	\item If $A,B$ are pre-formulas then so are $A \otimes B, A \parr B$.
+	\item If $A$ is a pre-formula then so are $\neg A, ! A, ? A$.
+\end{itemize}
+The set of \textbf{multiplicative exponential linear logic formulas (MELL formulas)} is the quotient of the set of pre-formulas by the equivalence relation generated, for arbitrary formulas $A, B$ and unoriented atom $X$, by
+\begin{align*}
+\neg(A \otimes B) &= \neg B \parr \neg A,\quad \neg(A \parr B) = \neg B \otimes A,\quad \neg(X, x) = (X, \overline{x})\\
+\neg !A &= ? \neg A,\quad \neg ?A = !\neg A
+\end{align*}
+\end{defn}
+
+Recall that in the multiplicative case, the set of words $\call{A}^\ast$ over $\call{A}$ forms a monoid under the operation of concatination. This monoidal structure extends to maps reflecting the connectives $\otimes, \parr, \neg$, for instance if $c: \call{A}^\ast \times \call{A}^\ast \lto \call{A}^\ast$ denotes concatination, and $\otimes: \call{F} \times \call{F} \lto \call{F}$ is the map sending a pair of formulas $A,B$ to the formula $A \otimes B$ then the following diagram commutes for some unique map $a: \call{F} \lto \call{A}^\ast$.
+\begin{equation}
+\begin{tikzcd}
+\call{F} \times \call{F}\arrow[r,"{a \times a}"]\arrow[d,swap,"{\otimes}"] & \call{A}^\ast \times \call{A}^\ast\arrow[d,"{c}"]\\
+\call{F}\arrow[r,"{a}"] & \call{A}^\ast
+\end{tikzcd}
+\end{equation}
+See \cite[Definition 3.5, 3.6]{MT} for the full list of commutative diagrams. This map $a$ induces the \textbf{sequence of oriented atoms} of a formula $A$.
+\begin{equation}
+a(A) = (X_1, x_1), \ldots, (X_n, x_n)
+\end{equation}
+The \textbf{set of unoriented atoms} of $A$ is then the disjoint union
+\begin{equation}
+U_A = \{ X_1 \} \coprod \ldots \coprod \{ X_n \}
+\end{equation}
+We use this notation in the following Definition.
+\begin{defn}\label{def:unoriented_atoms}
+Let $A$ be a multiplicative exponential linear logic formula. The \textbf{set of unoriented atoms} $U_A$ of $A$ is defined by induction on the structure of $A$ as follows.
+\begin{itemize}
+	\item If $A = A_1 \otimes A_2$ or $A_1 \parr A_2$ then $U_A := U_{A_1} \coprod U_{A_2}$.
+	\item If $A = \neg A'$ then $U_{A} := U_{A'}$.
+	\item If $A = ?A'$ or $A = !A'$ then $U_A := \coprod_{j = 0}^\infty U_{A'}$.
+\end{itemize}
+\end{defn}
+
+The set of unoriented atoms only depends on the formula, and not its placement inside some proof. Next we take into account the \emph{depth} of a formula inside a proof net.
+
+\begin{defn}
+Let $A$ be an occurrence of a formula inside a proof net and say $A$ has depth $d$. Then we define the set
+\begin{equation}
+\bb{N}^d \times U_A
+\end{equation}
+\end{defn}
+
+\begin{defn}
+Let $\pi$ be a proof net and let $E$ be its set of edges. Let $k$ denote a ring. The \textbf{polynomial ring of $\pi$} $P_{\pi}$ is
+\begin{equation}
+P_{\pi} = \bigotimes_{e \in E}k[\operatorname{Dep}U_{A_e}]
+\end{equation}
+where $A_e$ is the formula labelling edge $e$.
+\end{defn}
+
+Recall that in \cite{AlgPntExponentials} we defined MELL proof nets and we had the following clause for promotion links: Each promotion link must come equipt with a subset $(V, E)$ of the links and edges of the proof structure such that the following conditions hold:
+	\begin{itemize}
+		\item The following process must result in a proof structure: for every edge $e \in E$ such that the target $t(e)$ is \emph{not} an element of $V$, we introduce a conclusion vertex and set $t(e)$ to be this conclusion vertex.
+		\item All edges $e \in E$ such that $t(e) \not\in V$, the label of $e$ is $?A$ for some $A$.
+		\item The premise to the promotion link is an element of $E$.
+			\item Each vertex labelled $c$ has exactly one premise and no conclusion. Such a premise of a vertex labelled $c$ is called a \textbf{conclusion} of the proof structure.
+	\end{itemize}
+
+
+\begin{defn}
+If $e \in E$ is an edge in a subset $(V,E)$ of $\pi$ corresponding to some promotion link, and the target of $e$ does not lie in $V$, then the source of $e$ is on the \textbf{boarder of a box}.
+\end{defn}
+
+\begin{remark}
+We notice that all vertices labelled $!$ are on the boarder of a box.
+\end{remark}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\bibliographystyle{amsalpha}
+	\providecommand{\bysame}{\leavevmode\hbox to3em{\hrulefill}\thinspace}
+	\providecommand{\href}[2]{#2}
+	\begin{thebibliography}{99}
+		\bibitem{AlgPntExponentials} \emph{AlgPntExponentials}
+
+		\bibitem{linearlogic} \emph{Linear Logic}, J.Y. Girard. Theoretical Computer Science, Volume 50, Issue 1, Jan. 30, 1987.
+		
+		\bibitem{multiplicatives} \emph{Multiplicatives}, J.Y. Girard. Logic and Computer Science: New Trends and Applications. Rosenberg \& Sellier. pp. 11--34 (1987).
+		
+		\bibitem{girard} \emph{Geometry of Interaction: Interpretation of System F}, J.Y. Girard. Categories in Computer Science and Logic, pages 69 – 108, Providence, 1989.
+		
+		\bibitem{GoI2} \emph{Geometry of Interaction II, Deadlock Free Agorithms} Part of the Lecture Notes in Computer Science book series (LNCS,volume 417). 2005.
+		
+		\bibitem{GoI3} \emph{Geometry of Interaction III, Accomodation the Additives}, J.Y. Girard. Proceedings of the workshop on Advances in linear logic. June 1995
+		
+		\bibitem{GoI4} \emph{Geometry of Interaction IV, the Feedback Equation}, J.Y. Girard. Logic Colloquium 2003, December 9.
+		
+		\bibitem{GoI5} \emph{Geometry of Interaction V}, J.Y. Girard. Theoretical Computer ScienceVolume 412Issue 20April, 2011
+		
+		\bibitem{Regnier} \emph{Linear Logic and the Hilbert Space} Advances in Linear Logic , pp. 307 - 328, Cambridge University Press, 1995.
+		
+		\bibitem{Seiller1} \emph{Interaction Graphs: Multiplicatives} Annals of Pure and Applied Logic 163 (2012), pp. 1808-1837.
+		
+		\bibitem{Seiller2} \emph{Interaction Graphs: Additives} Annals of Pure and Applied Logic 167 (2016), pp. 95-154.
+		
+		\bibitem{Seiller3} \emph{Interaction Graphs: Nondeterministic Automata}, ACM Transactions in Computational Logic 19(3), 2018.
+		
+		\bibitem{Seiller4} \emph{Interaction Graphs: Exponentials} Logical Methods in Computer Science 15, 2019.
+		
+		\bibitem{Laurent} \emph{Olivier Laurent. A Token Machine for Full Geometry of Interaction}. 2001, pp.283-297. ⟨hal-00009137⟩
+		
+		\bibitem{HaghverdiScott} \emph{Towards a Typed Geometry of Interaction} CSL 2005: Computer Science Logic pp 216–231.
+		
+		\bibitem{Hines} \emph{From a conjecture of Collatz to Thompson's group F, via a conjunction of Girard}, \url{https://arxiv.org/abs/2202.04443}
+		
+		\bibitem{BS} \emph{The Blind Spot}. J.Y. Girard.
+		
+		\bibitem{AnalyticFunctors} \emph{Normal functors, power series and lambda-calculus} Annals of Pure and Applied Logic
+		Volume 37, Issue 2, February 1988, Pages 129-177.
+		
+		\bibitem{GMZ} \emph{Gentzen-Mints-Zucker Duality} D. Murfet, W. Troiani. \url{https://arxiv.org/abs/2008.10131}
+		
+		\bibitem{laurent} \emph{An introduction to proof nets}. O. Laurent. \url{http://perso.ens-lyon.fr/olivier.laurent/pn.pdf}
+		
+		\bibitem{AlgPnt} \emph{Elimination and cut-elimination in multiplicative linear logic}, W. Troiani, D. Murfet.
+		
+		\bibitem{Frege} \emph{Sense and Reference} G. Frege. Philosophical Review 57 (3):209-230 (1948)
+		
+		\bibitem{Sorensen} \emph{Lectures on the Curry-Howard Isomorphism} Published: July 4, 2006 Imprint: Elsevier Science
+
+		\bibitem{MT} \emph{Elimination and cut-elimination in multiplicative linear logic}
+		
+	\end{thebibliography}
+
+\end{document}

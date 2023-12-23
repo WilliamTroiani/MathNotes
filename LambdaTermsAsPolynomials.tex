@@ -1,0 +1,314 @@
+\documentclass[12pt]{article}
+
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{mathrsfs}
+\usepackage{array}
+\usepackage{amssymb}
+\usepackage{units}
+\usepackage{graphicx}
+\usepackage{tikz-cd}
+\usepackage{nicefrac}
+\usepackage{hyperref}
+\usepackage{bbm}
+\usepackage{color}
+\usepackage{tensor}
+\usepackage{tipa}
+\usepackage{bussproofs}
+\usepackage{ stmaryrd }
+\usepackage{ textcomp }
+\usepackage{leftidx}
+\usepackage{afterpage}
+\usepackage{varwidth}
+\usepackage{tasks}
+\usepackage{ cmll }
+\usepackage{quiver}
+\usepackage{kbordermatrix}
+
+\newcommand\blankpage{
+	\null
+	\thispagestyle{empty}
+	\addtocounter{page}{-1}
+	\newpage
+}
+
+\graphicspath{ {images/} }
+
+\theoremstyle{plain}
+\newtheorem{thm}{Theorem}[subsection] % reset theorem numbering for each chapter
+\newtheorem{proposition}[thm]{Proposition}
+\newtheorem{lemma}[thm]{Lemma}
+\newtheorem{fact}[thm]{Fact}
+\newtheorem{cor}[thm]{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{defn}[thm]{Definition} % definition numbers are dependent on theorem numbers
+\newtheorem{exmp}[thm]{Example} % same for example numbers
+\newtheorem{notation}[thm]{Notation}
+\newtheorem{remark}[thm]{Remark}
+\newtheorem{condition}[thm]{Condition}
+\newtheorem{question}[thm]{Question}
+\newtheorem{construction}[thm]{Construction}
+\newtheorem{exercise}[thm]{Exercise}
+\newtheorem{example}[thm]{Example}
+\newtheorem{aside}[thm]{Aside}
+
+\def\doubleunderline#1{\underline{\underline{#1}}}
+\newcommand{\bb}[1]{\mathbb{#1}}
+\newcommand{\scr}[1]{\mathscr{#1}}
+\newcommand{\call}[1]{\mathcal{#1}}
+\newcommand{\psheaf}{\text{\underline{Set}}^{\scr{C}^{\text{op}}}}
+\newcommand{\und}[1]{\underline{\hspace{#1 cm}}}
+\newcommand{\adj}[1]{\text{\textopencorner}{#1}\text{\textcorner}}
+\newcommand{\comment}[1]{}
+\newcommand{\lto}{\longrightarrow}
+\newcommand{\rone}{(\operatorname{R}\bold{1})}
+\newcommand{\lone}{(\operatorname{L}\bold{1})}
+\newcommand{\rimp}{(\operatorname{R} \multimap)}
+\newcommand{\limp}{(\operatorname{L} \multimap)}
+\newcommand{\rtensor}{(\operatorname{R}\otimes)}
+\newcommand{\ltensor}{(\operatorname{L}\otimes)}
+\newcommand{\rtrue}{(\operatorname{R}\top)}
+\newcommand{\rwith}{(\operatorname{R}\&)}
+\newcommand{\lwithleft}{(\operatorname{L}\&)_{\operatorname{left}}}
+\newcommand{\lwithright}{(\operatorname{L}\&)_{\operatorname{right}}}
+\newcommand{\rplusleft}{(\operatorname{R}\oplus)_{\operatorname{left}}}
+\newcommand{\rplusright}{(\operatorname{R}\oplus)_{\operatorname{right}}}
+\newcommand{\lplus}{(\operatorname{L}\oplus)}
+\newcommand{\prom}{(\operatorname{prom})}
+\newcommand{\ctr}{(\operatorname{ctr})}
+\newcommand{\der}{(\operatorname{der})}
+\newcommand{\weak}{(\operatorname{weak})}
+\newcommand{\exi}{(\operatorname{exists})}
+\newcommand{\fa}{(\operatorname{for\text{ }all})}
+\newcommand{\ex}{(\operatorname{ex})}
+\newcommand{\cut}{(\operatorname{cut})}
+\newcommand{\ax}{(\operatorname{ax})}
+\newcommand{\negation}{\sim}
+\newcommand{\true}{\top}
+\newcommand{\false}{\bot}
+\DeclareRobustCommand{\diamondtimes}{%
+	\mathbin{\text{\rotatebox[origin=c]{45}{$\boxplus$}}}%
+}
+\newcommand{\tagarray}{\mbox{}\refstepcounter{equation}$(\theequation)$}
+\newcommand{\startproof}[1]{
+	\AxiomC{#1}
+	\noLine
+	\UnaryInfC{$\vdots$}
+}
+\newenvironment{scprooftree}[1]%
+{\gdef\scalefactor{#1}\begin{center}\proofSkipAmount \leavevmode}%
+	{\scalebox{\scalefactor}{\DisplayProof}\proofSkipAmount \end{center} }
+
+\usepackage[margin=1.5cm]{geometry}
+
+
+\title{$\lambda$-terms as polynomials}
+\author{Will Troiani}
+\date{\today}
+
+\begin{document}
+	\maketitle
+	Let $t$ be a $\lambda$-term and let $\{ x_1, \ldots, x_n \}$ be a valid context for $t$, that is
+	\begin{equation}
+		\operatorname{FV}(t) \subseteq \{ x_1, \ldots, x_n \}
+	\end{equation}
+We define an integer $m$ and an interpretation for $t$ as a polynomial map:
+	\begin{align*}
+		\llbracket x_1, \ldots, x_n \mid t \rrbracket: \bb{N}[x_1, \ldots, x_n]^{m} &\lto \bb{N}[x_1,\ldots, x_n]\\
+		(X_1, \ldots, X_{m}) &\longmapsto q(X_1, \ldots, X_{m})
+	\end{align*}
+	What we mean by $\llbracket x_1, \ldots, x_n \mid t \rrbracket$ being a polynomial, is that
+	\begin{equation}
+		q(X_1, \ldots, X_{m}) \in (\bb{N}[x_1, \ldots, x_n])[X_1, \ldots, X_{m}]
+	\end{equation}
+	
+	\begin{defn}
+		\textbf{Say $t = x_i$ is a variable}. Then $m = 1$ and:
+		\begin{align*}
+			\llbracket x_1, \ldots, x_n \mid x_i \rrbracket: \bb{N}[x_1, \ldots, x_n] = \bb{N}[x_1, \ldots, x_n] &\lto \bb{N}[x_1, \ldots, x_n]\\
+			X &\longmapsto x_i
+			\end{align*}
+		\textbf{Say $t = \lambda x_{n+1}. t$ is an abstraction}: assume we have
+		\begin{align*}
+			\llbracket x_1, \ldots, x_n, x_{n+1} \mid t \rrbracket: \bb{N}[x_1, \ldots, x_n, x_{n+1}]^{m} &\longmapsto \bb{N}[x_1, \ldots, x_{n}, x_{n+1}]\\
+			(X_1, \ldots, X_{m}) &\longmapsto q(X_1, \ldots, X_{m})
+			\end{align*}
+		We notice that
+		\begin{equation}
+			q(X_1, \ldots, X_{m}) \in (\bb{N}[x_1, \ldots, x_{n+1}])[X_1, \ldots, X_{m}]
+			\end{equation}
+		and so there exists a polynomial $q' \in \bb{N}[x_1, \ldots, x_{n+1}, X_1, \ldots, X_{m}]$ such that
+		\begin{equation}
+			q'(x_1, \ldots, x_{n+1}, X_1, \ldots, X_{m}) = q(X_1, \ldots, X_{m})
+			\end{equation}
+		We introduce a new variable $X_{m+1}$ and consider
+		\begin{equation}
+			q'(x_1, \ldots, x_{n}, X_{m+1}, X_1, \ldots, X_{m}) \in (\bb{N}[x_1, \ldots, x_n])[X_1, \ldots, X_{m+1}]
+			\end{equation}
+		There exists a polynomial $q'' \in (\bb{N}[x_1, \ldots, x_n])[X_1, \ldots, X_{m+1}]$ such that
+		\begin{equation}
+			q''(X_1, \ldots, X_{m+1}) = q'(x_1, \ldots, x_n, X_{m+1}, X_1, \ldots, X_{m})
+			\end{equation}
+		We define
+		\begin{align*}
+			\llbracket x_1, \ldots, x_n \mid \lambda x_{n+1}. t\rrbracket: \bb{N}[x_1, \ldots, x_{n}]^{m+1} &\lto \bb{N}[x_1, \ldots, x_n]\\
+			(X_1, \ldots, X_{m+1}) &\longmapsto q''(X_1, \ldots, X_{m+1})
+			\end{align*}
+		\textbf{Say $t = uv$ is an application}: say we have
+		\begin{align*}
+			\llbracket x_1,\ldots, x_n \mid u \rrbracket: \bb{N}[x_1, \ldots, x_n]^{m_1} &\lto \bb{N}[x_1, \ldots, x_n]\\
+			(X_1, \ldots, X_{m_1}) &\lto q_1(X_1, \ldots, X_{m_1})
+			\end{align*}
+		and
+		\begin{align*}
+			\llbracket x_1, \ldots, x_n \mid v \rrbracket: \bb{N}[x_1, \ldots, x_n]^{m_2} &\lto \bb{N}[x_1, \ldots, x_n]\\
+			(X_1, \ldots, X_{m_2}) &\longmapsto q_2(X_1, \ldots, X_{m_2})
+			\end{align*}
+		We define
+		\begin{align*}
+			\llbracket x_1, \ldots, x_n \mid uv \rrbracket: \bb{N}[x_1, \ldots, x_n]^{m_1 + m_2 -1} &\lto \bb{N}[x_1, \ldots, x_n]\\
+			(X_1, \ldots, X_{m_1 + m_2 -1}) &\longmapsto q_1(X_{m_2 + 1}, \ldots, X_{m_2 + m_1 - 1}, q_2(X_{1}, \ldots, X_{m_2}))
+			\end{align*}
+		\end{defn}
+	
+\begin{proposition}
+	This is a model of the untyped $\lambda$-calculus.
+	\end{proposition}
+\begin{proof}
+	We show that
+	\begin{equation}
+		\llbracket x_1, \ldots, x_n \mid (\lambda x_{n+1}.t)s\rrbracket = \llbracket x_1, \ldots, x_n \mid t[x_{n+1} := s] \rrbracket
+		\end{equation}
+	We prove this by induction on the structure of $t$.
+	
+	\textbf{Say $t = x_i$ is a variable}. If $i \neq n+1$ then $t[x_{n+1} := s] = x_i$ and
+	\begin{align*}
+		\llbracket x_1, \ldots, x_n \mid x_i\rrbracket: \bb{N}[x_1, \ldots, x_n] &\lto \bb{N}[x_1, \ldots, x_n]\\
+		X &\longmapsto x_i
+		\end{align*}
+	On the other hand,
+	\begin{align*}
+		\llbracket x_1, \ldots, x_n \mid \lambda x_{n+1}. x_i\rrbracket: \bb{N}[x_1, \ldots, x_n]^2 &\lto \bb{N}[x_1, \ldots, x_n]\\
+		(X_1, X_2) &\longmapsto x_i
+		\end{align*}
+	and so
+	\begin{align*}
+		\llbracket x_1, \ldots, x_n \mid (\lambda x_{n+1}. x_i)s \rrbracket: \bb{N}[x_1, \ldots, x_n]^2 &\lto \bb{N}[x_1, \ldots, x_n]\\
+		(X_1, X_2d) &\longmapsto x_i
+		\end{align*}
+	If $i = n+1$ then $t[x_{n+1} := s] = s$ and
+	\begin{align*}
+		\llbracket x_1, \ldots, x_n \mid \lambda x_{n+1}. x_{n+1} \rrbracket: \bb{N}[x_1, \ldots, x_n]^m &\lto \bb{N}[x_1, \ldots, x_n]\\
+		(X_1, \ldots, X_m) &\longmapsto X_m
+		\end{align*}
+	Thus
+	\begin{align*}
+		\llbracket x_1, \ldots, x_n \mid (\lambda x_{n+1}.x_{n+1})s \rrbracket: \bb{N}[x_1, \ldots, x_n]^m &\lto \bb{N}[x_1, \ldots, x_n]\\
+		(X_1, \ldots, X_m) &\longmapsto \llbracket x_1, \ldots, x_n \mid s\rrbracket(X_1, \ldots, X_m)
+		\end{align*}
+	\textbf{Say $t = \lambda x_{n+2}.u$ is an abstraction}. Write
+	\begin{equation}
+		\llbracket x_1, \ldots, x_n \mid u \rrbracket = q(X_1, \ldots, X_m),\quad \llbracket x_1, \ldots, x_n \mid s \rrbracket = p(X_1, \ldots, X_{m'})
+		\end{equation}
+	Then
+	\begin{align*}
+		\llbracket x_1, \ldots, x_n &\mid \lambda x_{n+2}. (\lambda x_{n+1}.u)s \rrbracket\\
+		&= q(x_1, \ldots, x_n, p(X_1, \ldots, X_{m'}), X_{m + m' + 1}, X_{m' + 1}, \ldots, X_{m' + m})
+		\end{align*}
+	Also,
+	\begin{equation}
+		\llbracket x_1, \ldots, x_n \mid \lambda x_{n+1}x_{n+2}. u \rrbracket = q(x_1, \ldots, x_n, X_{m+2}, X_{m+1}, X_1, \ldots, X_m)
+		\end{equation}
+	it follows that
+	\begin{align*}
+		\llbracket x_1, \ldots, x_n &\mid (\lambda x_{n+1}x_{n+2}.u)s \rrbracket\\
+		&= q(x_1, \ldots, x_n, p(X_1, \ldots, X_{m'}), X_{m' + m + 1}, X_{m' + 1}, \ldots, X_{m' + m})
+		\end{align*}
+	By the inductive hypothesis, we have
+	\begin{equation}
+		\llbracket x_1, \ldots, x_n, x_{n+2} \mid u[x_{1} := s] \rrbracket = 
+		\llbracket x_1, \ldots, x_n, x_{n+2} \mid (\lambda x_{n+1}.u)s \rrbracket
+		\end{equation}
+	It follows that
+	\begin{equation}
+		\llbracket x_1, \ldots, x_n \mid \lambda x_{n+2}(u[x_1 := s])\rrbracket = \llbracket x_1, \ldots, x_n \mid \lambda x_{n+2}.(\lambda x_{n+1}.u)s\rrbracket
+		\end{equation}
+	Combining this with the above, we have
+	\begin{align*}
+		\llbracket x_1, \ldots, x_n \mid (\lambda x_{n+1}x_{n+2}.u)s \rrbracket &= \llbracket x_1, \ldots, x_n \mid \lambda x_{n+2}.(u[x_1 := s])\rrbracket\\
+		&= \llbracket x_1, \ldots, x_n \mid (\lambda x_{n+2}. u)[x_1 := s]\rrbracket
+		\end{align*}
+	as required.
+	\textbf{Say $t = t_1t_2$ is an application}. Write
+	\begin{equation}
+		\llbracket x_1, \ldots, x_n\mid t_i\rrbracket = q_1(X_1, \ldots, X_{m_i})\text{, for }i = 1,2
+		\end{equation}
+	and again we write
+	\begin{equation}
+		\llbracket x_1, \ldots, x_n \mid s \rrbracket = p(x_1, \ldots, x_n, X_1, \ldots, X_{m'})
+		\end{equation}
+	For $i = 1, 2 $ we have
+	\begin{align*}
+		&\llbracket x_1, \ldots, x_n \mid (\lambda x_{n+1}. t_i)s\rrbracket\\
+		&= q_i(x_1, \ldots, x_n, p(x_1, \ldots, x_n, X_{1}, \ldots, X_{m'}), X_{m' + 1}, \ldots, X_{m' + m_i})
+		\end{align*}
+	Thus,
+	\begin{align*}
+		&\llbracket x_1, \ldots, x_n \mid \big[(\lambda x_{n+1}. t_1)s\big]\big[ (\lambda x_{n+1}.t_2)s\big]\rrbracket\\
+		&= q_1(x_1, \ldots, x_n, p(x_1, \ldots, x_n, X_1, \ldots, X_{m'}),\\
+		&\qquad X_{m' + m_2 + 1}, \ldots, X_{m' + m_2 + m_1 - 1},  q_2(x_1, \ldots, x_n, p(x_1, \ldots, x_n, X_1, \ldots, X_{m'})\\
+		&\qquad X_{m' + 1}, \ldots, X_{m' + m_2}))
+		\end{align*}
+	On the other hand, we have
+	\begin{align*}
+		&\llbracket x_1, \ldots, x_n, x_{n+1} \mid t_1 t_2 \rrbracket\\
+		&= q_1(x_1, \ldots, x_n, x_{n+1}, X_{m_2 + 1}, \ldots, X_{m_2 + m_1 - 1}, q_2(x_1, \ldots, x_n, x_{n+1}, X_{1}, \ldots, X_{m_2}))
+		\end{align*}
+	Thus,
+	\begin{align*}
+		&\llbracket x_1, \ldots, x_n \mid (\lambda x_{n+1}. t_1 t_2)s\rrbracket\\
+		&= q_1(x_1, \ldots, x_n, p(x_1, \ldots, x_n, X_{1}, \ldots, X_{m'}), \\
+		&\qquad X_{m' + m_2 + 1}, \ldots, X_{m' + m_2 + m_1 - 1}, q_2(x_1, \ldots, x_n, p(x_1, \ldots, x_n, X_{1}, \ldots, X_{ m'}),\\
+		&\qquad X_{m' + 1}, \ldots, X_{m' + m_2}))
+		\end{align*}
+	By the inductive hypothesis, we have for $i = 1,2$:
+	\begin{equation}
+		\llbracket x_1, \ldots, x_n \mid (\lambda x_{n+1}. t_i)s\rrbracket = \llbracket x_1, \ldots, x_n \mid t_i[x_{n+1} := s]\rrbracket
+		\end{equation}
+	It follows that
+	\begin{equation}
+		\llbracket x_1, \ldots, x_n \mid \big[(\lambda x_{n+1}. t_1)s\big]\big[(\lambda x_{n+1}. t_2)s\big] = \llbracket x_1, \ldots, x_n \mid t_1[x_{n+1} := s]t_2[x_{n+1} := s]\rrbracket\\
+		\end{equation}
+	Combining this with above we have
+	\begin{align*}
+		\llbracket x_1, \ldots, x_n \mid (\lambda x_{n+1}.t_1t_2)s\rrbracket &= \llbracket x_1, \ldots, x_n \mid t_1[x_{n+1} := s]t_2[x_{n+1} := s]\rrbracket\\
+		&= \llbracket x_1, \ldots, x_n \mid (t_1 t_2)[x_{n+1} := s] \rrbracket
+		\end{align*}
+	as required.
+	\end{proof}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	\end{document}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.5.21)  4 MAY 2022 14:36
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.5.21)  10 AUG 2023 15:33
 entering extended mode
 **./Varieties.tex
 (Varieties.tex
@@ -795,79 +795,56 @@ Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
 )
 \c@thm=\count308
 
-(/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/latex/ge
-ometry/geometry.sty
-Package: geometry 2020/01/02 v5.9 Page Geometry
-
-(/Library/Application Support/MiKTeX/texmfs/install/tex/generic/iftex/ifvtex.st
-y
-Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
-)
-\Gm@cnth=\count309
-\Gm@cntv=\count310
-\c@Gm@tempcnt=\count311
-\Gm@bindingoffset=\dimen282
-\Gm@wd@mp=\dimen283
-\Gm@odd@mp=\dimen284
-\Gm@even@mp=\dimen285
-\Gm@layoutwidth=\dimen286
-\Gm@layoutheight=\dimen287
-\Gm@layouthoffset=\dimen288
-\Gm@layoutvoffset=\dimen289
-\Gm@dimlist=\toks48
-
-(/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/latex/ge
-ometry/geometry.cfg))
 (/Library/Application Support/MiKTeX/texmfs/install/tex/latex/l3backend/l3backe
 nd-pdftex.def
 File: l3backend-pdftex.def 2021-05-07 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count312
+\l__color_backend_stack_int=\count309
 \l__pdf_internal_box=\box71
 ) (Varieties.aux)
 \openout1 = `Varieties.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 71.
-LaTeX Font Info:    ... okay on input line 71.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 71.
-LaTeX Font Info:    ... okay on input line 71.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 71.
-LaTeX Font Info:    ... okay on input line 71.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 71.
-LaTeX Font Info:    ... okay on input line 71.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 71.
-LaTeX Font Info:    ... okay on input line 71.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 71.
-LaTeX Font Info:    ... okay on input line 71.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 71.
-LaTeX Font Info:    ... okay on input line 71.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 71.
-LaTeX Font Info:    ... okay on input line 71.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 71.
-LaTeX Font Info:    ... okay on input line 71.
-LaTeX Font Info:    Checking defaults for T3/cmr/m/n on input line 71.
-LaTeX Font Info:    Trying to load font information for T3+cmr on input line 71
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 69.
+LaTeX Font Info:    ... okay on input line 69.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 69.
+LaTeX Font Info:    ... okay on input line 69.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 69.
+LaTeX Font Info:    ... okay on input line 69.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 69.
+LaTeX Font Info:    ... okay on input line 69.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 69.
+LaTeX Font Info:    ... okay on input line 69.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 69.
+LaTeX Font Info:    ... okay on input line 69.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 69.
+LaTeX Font Info:    ... okay on input line 69.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 69.
+LaTeX Font Info:    ... okay on input line 69.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 69.
+LaTeX Font Info:    ... okay on input line 69.
+LaTeX Font Info:    Checking defaults for T3/cmr/m/n on input line 69.
+LaTeX Font Info:    Trying to load font information for T3+cmr on input line 69
 .
 
 (/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/latex/ti
 pa/t3cmr.fd
 File: t3cmr.fd 2001/12/31 TIPA font definitions
 )
-LaTeX Font Info:    ... okay on input line 71.
+LaTeX Font Info:    ... okay on input line 69.
 
 (/Library/Application Support/MiKTeX/texmfs/install/tex/context/base/mkii/supp-
 pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count313
-\scratchdimen=\dimen290
+\scratchcounter=\count310
+\scratchdimen=\dimen282
 \scratchbox=\box72
-\nofMPsegments=\count314
-\nofMParguments=\count315
-\everyMPshowfont=\toks49
-\MPscratchCnt=\count316
-\MPscratchDim=\dimen291
-\MPnumerator=\count317
-\makeMPintoPDFobject=\count318
-\everyMPtoPDFconversion=\toks50
+\nofMPsegments=\count311
+\nofMParguments=\count312
+\everyMPshowfont=\toks48
+\MPscratchCnt=\count313
+\MPscratchDim=\dimen283
+\MPnumerator=\count314
+\makeMPintoPDFobject=\count315
+\everyMPtoPDFconversion=\toks49
 )
 (/Library/Application Support/MiKTeX/texmfs/install/tex/latex/epstopdf-pkg/epst
 opdf-base.sty
@@ -879,7 +856,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 -sys.cfg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
-Package hyperref Info: Link coloring OFF on input line 71.
+Package hyperref Info: Link coloring OFF on input line 69.
 
 (/Library/Application Support/MiKTeX/texmfs/install/tex/latex/hyperref/nameref.
 sty
@@ -893,61 +870,27 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count319
+\c@section@level=\count316
 )
-LaTeX Info: Redefining \ref on input line 71.
-LaTeX Info: Redefining \pageref on input line 71.
-LaTeX Info: Redefining \nameref on input line 71.
+LaTeX Info: Redefining \ref on input line 69.
+LaTeX Info: Redefining \pageref on input line 69.
+LaTeX Info: Redefining \nameref on input line 69.
  (Varieties.out) (Varieties.out)
 \@outlinefile=\write4
 \openout4 = `Varieties.out'.
 
+LaTeX Font Info:    Trying to load font information for U+msa on input line 72.
 
-*geometry* driver: auto-detecting
-*geometry* detected driver: pdftex
-*geometry* verbose mode - [ preamble ] result:
-* driver: pdftex
-* paper: <default>
-* layout: <same size as paper>
-* layoutoffset:(h,v)=(0.0pt,0.0pt)
-* modes: 
-* h-part:(L,W,R)=(28.45274pt, 557.38951pt, 28.45274pt)
-* v-part:(T,H,B)=(28.45274pt, 738.0645pt, 28.45274pt)
-* \paperwidth=614.295pt
-* \paperheight=794.96999pt
-* \textwidth=557.38951pt
-* \textheight=738.0645pt
-* \oddsidemargin=-43.81725pt
-* \evensidemargin=-43.81725pt
-* \topmargin=-80.81725pt
-* \headheight=12.0pt
-* \headsep=25.0pt
-* \topskip=12.0pt
-* \footskip=30.0pt
-* \marginparwidth=44.0pt
-* \marginparsep=10.0pt
-* \columnsep=10.0pt
-* \skip\footins=10.8pt plus 4.0pt minus 2.0pt
-* \hoffset=0.0pt
-* \voffset=0.0pt
-* \mag=1000
-* \@twocolumnfalse
-* \@twosidefalse
-* \@mparswitchfalse
-* \@reversemarginfalse
-* (1in=72.27pt=25.4mm, 1cm=28.453pt)
-
-LaTeX Font Info:    Trying to load font information for U+msa on input line 74.
 
 (/Library/Application Support/MiKTeX/texmfs/install/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 74.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 72.
 
 (/Library/Application Support/MiKTeX/texmfs/install/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 74
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 72
 .
 
 (/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/latex/jk
@@ -955,7 +898,7 @@ nappen/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
 LaTeX Font Info:    Trying to load font information for U+stmry on input line 7
-4.
+2.
 
 (/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/latex/st
 maryrd/Ustmry.fd) (Varieties.toc)
@@ -968,67 +911,227 @@ maryrd/Ustmry.fd) (Varieties.toc)
 dftex.map}]
 
 Package amsfonts Warning: Obsolete command \frak; \mathfrak should be used inst
-ead on input line 81.
+ead on input line 79.
 
-LaTeX Font Info:    Trying to load font information for U+euf on input line 81.
+LaTeX Font Info:    Trying to load font information for U+euf on input line 79.
 
 (/Library/Application Support/MiKTeX/texmfs/install/tex/latex/amsfonts/ueuf.fd
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
-) [2] [3] [4] [5] [6] [7]
-
-LaTeX Warning: Reference `def:homogenisation' on page 8 undefined on input line
- 396.
-
-[8] [9] [10]
-Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
-put line 571.
- [11] [12] [13]
-
-LaTeX Warning: Reference `cor:segre:injectivity' on page 14 undefined on input 
-line 751.
-
-[14]
-
-LaTeX Warning: Reference `lem:segre_image_kernel' on page 15 undefined on input
- line 795.
-
-[15]
-
-LaTeX Warning: Reference `' on page 16 undefined on input line 817.
-
-[16] [17]
-
-LaTeX Warning: Reference `lem:variable_functions' on page 18 undefined on input
- line 900.
-
-[18] [19]
-
-LaTeX Warning: Reference `lem:ambient_hypersurface_affine' on page 20 undefined
- on input line 1037.
-
-[20] [21]
-Overfull \hbox (6.00601pt too wide) in paragraph at lines 1119--1120
-[]\OT1/cmr/m/n/12 For the second claim, let $\OML/cmm/m/it/12 K=k$ \OT1/cmr/m/n
-/12 be a finitely generated field extension and $\OML/cmm/m/it/12 []; :::; []
-$ \OT1/cmr/m/n/12 be such that $\OML/cmm/m/it/12 k\OT1/cmr/m/n/12 (\OML/cmm/m/i
-t/12 []; :::; []\OT1/cmr/m/n/12 ) =
+) [2] [3] [4]
+Overfull \hbox (17.15623pt too wide) in paragraph at lines 174--175
+[]\OT1/cmr/m/n/12 We know by Hilbert's Basis Theorem (see [[]]) that $\OML/cmm/
+m/it/12 k\OT1/cmr/m/n/12 [\OML/cmm/m/it/12 x[]; :::; x[]\OT1/cmr/m/n/12 ]$ is a
+ Noetherian
  []
 
-[22] [23] [24] [25] [26] [27] [28] (Varieties.aux)
 
-LaTeX Warning: There were undefined references.
+Overfull \hbox (10.51811pt too wide) in paragraph at lines 194--195
+\OT1/cmr/m/it/12 irreducible subsets \OT1/cmr/m/n/12 of an affine variety. This
+ Section establishes some elementary
+ []
 
+[5] [6] [7]
+Overfull \hbox (2.33783pt too wide) in paragraph at lines 270--271
+[][]\OT1/cmr/bx/n/12 Definition 2.3.2. []\OT1/cmr/m/n/12 The \OT1/cmr/bx/n/12 d
+imension \OT1/cmr/m/n/12 of a (quasi)-affine variety is the supremum
+ []
+
+[8] [9] [10] [11]
+Overfull \hbox (21.55916pt too wide) in paragraph at lines 395--397
+\OT1/cmr/m/n/12 (Definition []3.1.2[]). Theorem []3.1.1[] can be thought of as 
+the geometric repercussions
+ []
+
+
+Overfull \hbox (10.90309pt too wide) in paragraph at lines 398--399
+\OT1/cmr/m/n/12 of $\OML/cmm/m/it/12 f$\OT1/cmr/m/n/12 , denoted $[][](\OML/cmm
+/m/it/12 f\OT1/cmr/m/n/12 )$ is the polynomial given by setting $\OML/cmm/m/it/
+12 x[] \OT1/cmr/m/n/12 = 1$ and substituting
+ []
+
+[12]
+Overfull \hbox (37.37393pt too wide) detected at line 427
+[]
+ []
+
+
+Overfull \hbox (26.26868pt too wide) in paragraph at lines 450--451
+[]\OT1/cmr/m/n/12 3.1[] how to obtain a corresponding set of homogeneous polyno
+mials $\OML/cmm/m/it/12 \OT1/cmr/m/n/12 (\OML/cmm/m/it/12 f[]\OT1/cmr/m/n/12 )
+\OML/cmm/m/it/12 ; :::; \OT1/cmr/m/n/12 (\OML/cmm/m/it/12 f[]\OT1/cmr/m/n/12 )
+$.
+ []
+
+[13]
+Overfull \hbox (7.1203pt too wide) in paragraph at lines 473--474
+\OT1/cmr/m/n/12 Definition []3.2.5[]. This definition requires the preliminary 
+notion of \OT1/cmr/m/it/12 lexicographic
+ []
+
+
+Overfull \hbox (1.91954pt too wide) in paragraph at lines 486--487
+[]\OT1/cmr/m/n/12 Monomial orders induce total orders on the set of monomials i
+n polynomial
+ []
+
+[14]
+Overfull \hbox (1.54578pt too wide) in paragraph at lines 508--509
+[][]\OT1/cmr/bx/n/12 Lemma 3.2.8. []\OT1/cmr/m/it/12 Let $\OML/cmm/m/it/12 f[];
+ :::; f[]$ \OT1/cmr/m/it/12 be a Grobner basis for and ideal $\OML/cmm/m/it/12
+ I \OMS/cmsy/m/n/12  \OML/cmm/m/it/12 k\OT1/cmr/m/n/12 [\OML/cmm/m/it/12 x[]; 
+:::; x[]\OT1/cmr/m/n/12 ]$\OT1/cmr/m/it/12 .
+ []
+
+[15]
+Overfull \hbox (12.83562pt too wide) in paragraph at lines 522--523
+[][]\OT1/cmr/bx/n/12 Lemma 3.2.11 \OT1/cmr/m/n/12 (Dickson's Lemma)\OT1/cmr/bx/
+n/12 . []\OT1/cmr/m/it/12 For every monomial ideal $\OML/cmm/m/it/12 I \OMS/cms
+y/m/n/12  \OML/cmm/m/it/12 k\OT1/cmr/m/n/12 [\OML/cmm/m/it/12 x[]; :::; x[]\OT
+1/cmr/m/n/12 ]$\OT1/cmr/m/it/12 ,
+ []
+
+[16]
+Overfull \hbox (17.35965pt too wide) in paragraph at lines 548--549
+\OT1/cmr/m/n/12 degrees. Let $\OML/cmm/m/it/12  \OT1/cmr/m/n/12 = ([]\OMS/cmsy
+/m/n/12 f\OML/cmm/m/it/12 []; []\OMS/cmsy/m/n/12 g\OML/cmm/m/it/12 ; [] ; []\
+OMS/cmsy/m/n/12 f\OML/cmm/m/it/12 []; []\OMS/cmsy/m/n/12 g\OT1/cmr/m/n/12 )$,
+ the \OT1/cmr/bx/n/12 least common multiple
+ []
+
+Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
+put line 570.
+[17] [18]
+Overfull \hbox (1.22789pt too wide) in paragraph at lines 608--609
+[]\OT1/cmr/m/n/12 We establish some notation for the two instances of the Divis
+ion Algorithm
+ []
+
+[19]
+Overfull \hbox (29.78645pt too wide) in paragraph at lines 649--651
+\OT1/cmr/m/n/12 For any indeterminant $\OML/cmm/m/it/12 z \OMS/cmsy/m/n/12 2 f\
+OML/cmm/m/it/12 x[]; [] ; x[]; x[]\OMS/cmsy/m/n/12 g$ \OT1/cmr/m/n/12 and any p
+olynomial $\OML/cmm/m/it/12 g \OMS/cmsy/m/n/12 2 \OML/cmm/m/it/12 k\OT1/cmr/m/n
+/12 [\OML/cmm/m/it/12 x[]; [] ; x[]; x[]\OT1/cmr/m/n/12 ]$
+ []
+
+
+Overfull \hbox (44.89377pt too wide) in paragraph at lines 665--667
+\OT1/cmr/m/n/12 Finally, we observe that by [] we have $[]([] \OML/cmm/m/it/12 
+f[]; [] f[]\OT1/cmr/m/n/12 ) = []([] \OML/cmm/m/it/12 f[]; [] f[]\OT1/cmr/m/n
+/12 )$
+ []
+
+[20]
+Overfull \hbox (0.57033pt too wide) in paragraph at lines 690--691
+[]\OT1/cmr/m/n/12 As an application we can solve Question []3.2.3[]: if $(\OML/
+cmm/m/it/12 f[]; :::; f[]\OT1/cmr/m/n/12 )$ is a generating
+ []
+
+
+Overfull \hbox (45.68475pt too wide) in paragraph at lines 698--699
+[][]\OT1/cmr/bx/n/12 Definition 3.3.1. []\OT1/cmr/m/n/12 We define a function $
+\OML/cmm/m/it/12  \OT1/cmr/m/n/12 : \OML/cmm/m/it/12 k\OT1/cmr/m/n/12 [\OMS/cm
+sy/m/n/12 f\OML/cmm/m/it/12 z[]\OMS/cmsy/m/n/12 g[]\OT1/cmr/m/n/12 ] [][]\OMS/c
+msy/m/n/12 ! \OML/cmm/m/it/12 k\OT1/cmr/m/n/12 [\OML/cmm/m/it/12 x[]; :::; x[];
+ y[]; :::; y[]\OT1/cmr/m/n/12 ]$
+ []
+
+[21] [22] [23]
+Overfull \hbox (1.10431pt too wide) in paragraph at lines 793--794
+[][]\OT1/cmr/bx/n/12 Corollary 3.3.8. []\OT1/cmr/m/it/12 If $\OML/cmm/m/it/12 X
+; Y$ \OT1/cmr/m/it/12 are quasi-projective varieties then $\OML/cmm/m/it/12  \O
+T1/cmr/m/n/12 (\OML/cmm/m/it/12 X; Y\OT1/cmr/m/n/12 )$ \OT1/cmr/m/it/12 is quas
+i-
+ []
+
+
+Overfull \hbox (1.62267pt too wide) in paragraph at lines 799--800
+[][]\OT1/cmr/bx/n/12 Definition 3.3.9. []\OT1/cmr/m/n/12 Let $\OML/cmm/m/it/12 
+X$ \OT1/cmr/m/n/12 be a topological space which is a topological product
+ []
+
+[24] [25] [26]
+Overfull \hbox (5.6939pt too wide) in paragraph at lines 864--866
+\OT1/cmr/m/n/12 finitely generated $\OML/cmm/m/it/12 k$\OT1/cmr/m/n/12 -algebra
+, and so the extension $\OML/cmm/m/it/12 k=K\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 X
+\OT1/cmr/m/n/12 )$ is finitely generated. 
+ []
+
+
+Overfull \hbox (3.36014pt too wide) in paragraph at lines 875--876
+\OML/cmm/m/it/12 B$ \OT1/cmr/m/n/12 we have $[][] \OML/cmm/m/it/12 B[] \OT1/cmr
+/m/n/12 = \OML/cmm/m/it/12 B$ \OT1/cmr/m/n/12 (where both are considered inside
+ the field of fractions).
+ []
+
+[27]
+Overfull \hbox (5.9166pt too wide) in paragraph at lines 883--884
+[]$[] \OML/cmm/m/it/12 A\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 X\OT1/cmr/m/n/12 ) []
+ \OML/cmm/m/it/12 K\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 X\OT1/cmr/m/n/12 )$ \OT1/c
+mr/m/it/12 and the transcendence degree of the finitely generated
+ []
+
+[28] [29] [30] [31] [32] [33]
+Overfull \hbox (18.98802pt too wide) in paragraph at lines 1084--1085
+[][]\OT1/cmr/bx/n/12 Example 4.4.7. []\OT1/cmr/m/n/12 As an easy example, $\U/m
+sb/m/n/12 A[] \OMS/cmsy/m/n/12   \OML/cmm/m/it/12 Z\OT1/cmr/m/n/12 (\OML/cmm/m/
+it/12 x\OT1/cmr/m/n/12 )$ is isomorphic to the hypersurface
+ []
+
+[34] [35] [36]
+Overfull \hbox (16.38606pt too wide) in paragraph at lines 1179--1180
+\OT1/cmr/m/n/12 The point $\OML/cmm/m/it/12 P$ \OT1/cmr/m/n/12 is \OT1/cmr/bx/n
+/12 nonsingular \OT1/cmr/m/n/12 if the rank of the \OT1/cmr/m/it/12 jacobian ma
+trix $\OMS/cmsy/m/n/12 jj\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 @f[]=@x[]\OT1/cmr/m/
+n/12 )(\OML/cmm/m/it/12 P\OT1/cmr/m/n/12 )\OMS/cmsy/m/n/12 jj \OT1/cmr/m/n/12 =
+
+ []
+
+[37]
+Overfull \hbox (8.50143pt too wide) in paragraph at lines 1211--1212
+[][]\OT1/cmr/bx/n/12 Lemma 5.1.5. []\OT1/cmr/m/it/12 Let $\OML/cmm/m/it/12 X \O
+T1/cmr/m/n/12 = \OML/cmm/m/it/12 Z\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 f[]; :::; f
+[]\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12  \U/msb/m/n/12 P[]$ \OT1/cmr/m/it/12 be a
+ projective variety of dimension
+ []
+
+[38]
+Overfull \hbox (43.17957pt too wide) in paragraph at lines 1240--1242
+\OT1/cmr/m/n/12 these components. First, by definition of the map $\OML/cmm/m/i
+t/12 []$ \OT1/cmr/m/n/12 we have that $[] \OMS/cmsy/m/n/12 jj\OT1/cmr/m/n/12 (
+\OML/cmm/m/it/12 @f[]=@x[]\OT1/cmr/m/n/12 )(\OML/cmm/m/it/12 P\OT1/cmr/m/n/12 )
+\OMS/cmsy/m/n/12 jj$
+ []
+
+[39] [40]
+Overfull \hbox (3.59097pt too wide) in paragraph at lines 1280--1281
+[]\OT1/cmr/m/n/12 This fact is seen to be true easily when the complements are 
+considered: 
+ []
+
+[41]
+Overfull \hbox (58.48312pt too wide) detected at line 1325
+\OML/cmm/m/it/12 X \OT1/cmr/m/n/12 := \OMS/cmsy/m/n/12 f[]\OT1/cmr/m/n/12 (\OML
+/cmm/m/it/12 x[]; :::; x[]\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 [
+\OML/cmm/m/it/12 P[] \OT1/cmr/m/n/12 : \OML/cmm/m/it/12 ::: \OT1/cmr/m/n/12 : \
+OML/cmm/m/it/12 P[]\OT1/cmr/m/n/12 ])[] \OMS/cmsy/m/n/12  \U/msb/m/n/12 A[] \O
+MS/cmsy/m/n/12  \U/msb/m/n/12 P[] \OMS/cmsy/m/n/12 j \OML/cmm/m/it/12 x[]P[] \
+OT1/cmr/m/n/12 = \OML/cmm/m/it/12 x[]P[][]i; j \OT1/cmr/m/n/12 = 1\OML/cmm/m/it
+/12 ; :::; n\OMS/cmsy/m/n/12 g
+ []
+
+[42] [43] [44] [45] (Varieties.aux)
 Package rerunfilecheck Info: File `Varieties.out' has not changed.
 (rerunfilecheck)             Checksum: EA1EB0CD14090CCD78EA944CB5CEAC51;2251.
  ) 
 Here is how much of TeX's memory you used:
- 23639 strings out of 481099
- 438049 string characters out of 2904467
- 707729 words of memory out of 3000000
- 40294 multiletter control sequences out of 15000+600000
+ 23185 strings out of 481099
+ 430867 string characters out of 2904467
+ 687157 words of memory out of 3000000
+ 39829 multiletter control sequences out of 15000+600000
  419534 words of font info for 93 fonts, out of 8000000 for 9000
  0 hyphenation exceptions out of 8191
- 98i,17n,103p,794b,1052s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 98i,17n,103p,787b,1052s stack positions out of 5000i,500n,10000p,200000b,80000s
  </Users/wtroiani/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljf
 our/jknappen/ec/dpi600/tcrm1200.pk></Library/Application Support/MiKTeX/texmfs/
 install/fonts/type1/public/amsfonts/cm/cmbx12.pfb></Library/Application Support
@@ -1055,9 +1158,9 @@ X/texmfs/install/fonts/type1/public/amsfonts/symbols/msam10.pfb></Library/Appli
 cation Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/symbols/msbm10
 .pfb></Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/rsf
 s/rsfs10.pfb>
-Output written on Varieties.pdf (28 pages, 419249 bytes).
+Output written on Varieties.pdf (45 pages, 441990 bytes).
 PDF statistics:
- 739 PDF objects out of 1000 (max. 8388607)
- 268 named destinations out of 1000 (max. 500000)
+ 821 PDF objects out of 1000 (max. 8388607)
+ 286 named destinations out of 1000 (max. 500000)
  149 words of extra memory for PDF output out of 10000 (max. 10000000)
 

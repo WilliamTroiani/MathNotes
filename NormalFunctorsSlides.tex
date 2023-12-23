@@ -1,0 +1,485 @@
+\documentclass{beamer}
+
+\usecolortheme{orchid}
+
+\usefonttheme[onlymath]{serif}
+%Information to be included in the title page:
+\title{Normal funct\sout{ors}[ions], [the irrelevance of] power series, and [a new model of] $\lambda$-calculus.}
+\author{Morgan Rogers, Thomas Seiller, William Troiani}
+\institute{University of Sorbonne Paris Nord, University of Melbourne}
+\date{2022}
+
+\setbeamercolor{background canvas}{bg=gray!20}
+
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{algorithm}
+\usepackage{mathrsfs}
+\usepackage{array}
+\usepackage{amssymb}
+\usepackage{units}
+\usepackage{graphicx}
+\usepackage{tikz-cd}
+\usepackage{nicefrac}
+\usepackage{hyperref}
+\usepackage{bbm}
+\usepackage{color}
+\usepackage{tensor}
+\usepackage{tipa}
+\usepackage{bussproofs}
+\usepackage{ stmaryrd }
+\usepackage{ textcomp }
+\usepackage{leftidx}
+\usepackage{afterpage}
+\usepackage{varwidth}
+\usepackage{tasks}
+\usepackage{ cmll }
+\usepackage{makecell}
+\usepackage{MnSymbol}
+\usepackage{quiver}
+\usepackage{adjustbox}
+\usepackage{multirow}
+\usepackage{booktabs}
+\usepackage{xparse}
+\usepackage{calc}
+\usepackage[normalem]{ulem}
+
+\newcommand\blankpage{
+	\null
+	\thispagestyle{empty}
+	\addtocounter{page}{-1}
+	\newpage
+}
+
+\graphicspath{ {images/} }
+
+\theoremstyle{plain}
+\newtheorem{thm}{Theorem}[subsection] % reset theorem numbering for each chapter
+\newtheorem{proposition}[thm]{Proposition}
+%\newtheorem{lemma}[thm]{Lemma}
+%\newtheorem{fact}[thm]{Fact}
+\newtheorem{cor}[thm]{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{defn}[thm]{Definition} % definition numbers are dependent on theorem numbers
+\newtheorem{exmp}[thm]{Example} % same for example numbers
+\newtheorem{notation}[thm]{Notation}
+\newtheorem{remark}[thm]{Remark}
+\newtheorem{condition}[thm]{Condition}
+\newtheorem{question}[thm]{Question}
+\newtheorem{construction}[thm]{Construction}
+\newtheorem{exercise}[thm]{Exercise}
+%\newtheorem{example}[thm]{Example}
+\newtheorem{aside}[thm]{Aside}
+
+\def\doubleunderline#1{\underline{\underline{#1}}}
+\newcommand{\bb}[1]{\mathbb{#1}}
+\newcommand{\scr}[1]{\mathscr{#1}}
+\newcommand{\call}[1]{\mathcal{#1}}
+\newcommand{\psheaf}{\text{\underline{Set}}^{\scr{C}^{\text{op}}}}
+\newcommand{\und}[1]{\underline{\hspace{#1 cm}}}
+\newcommand{\adj}[1]{\text{\textopencorner}{#1}\text{\textcorner}}
+\newcommand{\comment}[1]{}
+\newcommand{\lto}{\longrightarrow}
+\newcommand{\rone}{(\operatorname{R}\bold{1})}
+\newcommand{\lone}{(\operatorname{L}\bold{1})}
+\newcommand{\rimp}{(\operatorname{R} \multimap)}
+\newcommand{\limp}{(\operatorname{L} \multimap)}
+\newcommand{\rtensor}{(\operatorname{R}\otimes)}
+\newcommand{\ltensor}{(\operatorname{L}\otimes)}
+\newcommand{\rtrue}{(\operatorname{R}\top)}
+\newcommand{\rwith}{(\operatorname{R}\\&)}
+\newcommand{\lwithleft}{(\operatorname{L}\\&)_{\operatorname{left}}}
+\newcommand{\lwithright}{(\operatorname{L}\\&)_{\operatorname{right}}}
+\newcommand{\rplusleft}{(\operatorname{R}\oplus)_{\operatorname{left}}}
+\newcommand{\rplusright}{(\operatorname{R}\oplus)_{\operatorname{right}}}
+\newcommand{\lplus}{(\operatorname{L}\oplus)}
+\newcommand{\prom}{(\operatorname{prom})}
+\newcommand{\ctr}{(\operatorname{ctr})}
+\newcommand{\der}{(\operatorname{der})}
+\newcommand{\weak}{(\operatorname{weak})}
+\newcommand{\exi}{(\operatorname{exists})}
+\newcommand{\fa}{(\operatorname{for\text{ }all})}
+\newcommand{\ex}{(\operatorname{ex})}
+\newcommand{\cut}{(\operatorname{cut})}
+\newcommand{\ax}{(\operatorname{ax})}
+\newcommand{\negation}{\sim}
+\newcommand{\true}{\top}
+\newcommand{\false}{\bot}
+\DeclareRobustCommand{\diamondtimes}{%
+	\mathbin{\text{\rotatebox[origin=c]{45}{$\boxplus$}}}%
+}
+\newcommand{\tagarray}{\mbox{}\refstepcounter{equation}$(\theequation)$}
+\newcommand{\startproof}[1]{
+	\AxiomC{#1}
+	\noLine
+	\UnaryInfC{$\vdots$}
+}
+\newenvironment{scprooftree}[1]%
+{\gdef\scalefactor{#1}\begin{center}\proofSkipAmount \leavevmode}%
+	{\scalebox{\scalefactor}{\DisplayProof}\proofSkipAmount \end{center} }
+\newcommand\Wider[2][3em]{%
+	\makebox[\linewidth][c]{%
+		\begin{minipage}{\dimexpr\textwidth+#1\relax}
+			\raggedright#2
+		\end{minipage}%
+	}%
+}
+% https://tex.stackexchange.com/questions/63355/wrapping-cmidrule-in-a-macro
+\ExplSyntaxOn
+\makeatletter
+\newcommand{\CMidRule}{\noalign\bgroup\@CMidRule{}}
+\NewDocumentCommand{\@CMidRule}{
+	m % Material to reinsert before cmidrule.
+	O{0.0ex} % #1 = left adjust
+	O{0.0ex} % #1 = right adjust
+	m  %       #3 = columns to span
+}{
+	\peek_meaning_remove_ignore_spaces:NTF \CMidRule
+	{ \@CMidRule { #1 \cmidrule[\cmidrulewidth](l{#2}r{#3}){#4} } }
+	{ \egroup #1 \cmidrule[\cmidrulewidth](l{#2}r{#3}){#4} }
+}
+\makeatother
+\ExplSyntaxOff
+
+\DeclareMathOperator{\set}{Set}
+\DeclareMathOperator{\finset}{FinSet}
+\DeclareMathOperator{\vect}{Vect}
+\DeclareMathOperator{\cat}{Cat}
+\DeclareMathOperator{\CAT}{CAT}
+\DeclareMathOperator{\psh}{PSh}
+\DeclareMathOperator{\ind}{Ind}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\Fun}{Fun}
+\DeclareMathOperator{\ob}{ob}
+\DeclareMathOperator{\colim}{colim}
+
+\newcommand{\PhantC}{\phantom{\colon}}%
+\newcommand{\PhantSQ}{\phantom{\sqrt{\hspace{0.3ex}}}}
+
+\newcommand\showdiv[1]{\overline{\smash{)}#1}}
+
+
+\begin{document}
+	
+	\frame{\titlepage}
+	
+	\begin{frame}
+	\frametitle{Where did Linear Logic come from?}
+	Girard was considering a categorical model of the untyped $\lambda$-calculus where each term $t$ in context $\{ x_1, \ldots, x_n \}$ is interpretted as a normal functor:
+
+	\begin{equation*}
+	\llbracket x_1, \ldots, x_n \mid t \rrbracket: \big(\underline{\operatorname{Set}}^{A}\big)^n \lto \underline{\operatorname{Set}}^{A}
+	\end{equation*}
+	where $A$ is any countably infinite set.
+
+\begin{defn}
+A functor $F: \underline{\operatorname{Set}}^A \lto \underline{\operatorname{Set}}$ is \textbf{normal} if it
+\begin{itemize}
+	\item preserves wide pullbacks,
+	\item preserves filtered colimits.
+\end{itemize}
+\end{defn}
+	\end{frame}
+	\begin{frame}
+	\frametitle{Girard's Normal Functor Theorem}
+	\begin{thm}\label{thm:normal_form_theorem}
+    Let $\scr{F}: \set^A \lto \set$ be a functor. Then the following are equivalent.
+    \begin{itemize}
+        \item The functor $\scr{F}$ is normal.
+        \item The functor $\scr{F}$ is isomorphic to an analytic functor.
+        \item The functor $\scr{F}$ satisfies the finite normal form property.
+    \end{itemize}
+\end{thm}
+\begin{defn}\label{def:analytic}
+		A functor $\scr{F}: \set^A \lto \set$ is \textbf{analytic} if there exists a family of sets $\lbrace C_{G}\rbrace_{G \in \set^A}$ such that for all objects $F \in \set^A$ and all morphisms $\mu: F \lto G$ we have
+		\begin{equation*}
+			\scr{F}(F) = \coprod_{G \in \operatorname{Int}(A) }( C_G\times \set^A(G,F))
+			\end{equation*}
+		\end{defn}
+	\end{frame}
+\begin{frame}
+\frametitle{Is all of this machinery necessary?}
+A critical definition of Girard's is the following.
+\begin{defn}
+Let $A$ be a set. Define
+\begin{equation*}
+\operatorname{Int}(A) \subseteq \set^A
+\end{equation*}
+to be the set of integral functors $G$. That is
+\begin{equation*}
+|\bigcup_{a \in A}G(a)| < \infty
+\end{equation*}
+and each $G(a) \in \bb{N}$. Ie, $G(a)$ is one of the following sets
+\begin{equation*}
+0 = \varnothing,\quad 1 = \{ 0 \} = \{ \varnothing \},\quad n = \{ 0, \ldots, n-1 \}, \ldots
+\end{equation*}
+\end{defn}
+So... why not replace $\operatorname{I}(A)$ with the set of finite multisets of $A$?
+\end{frame}
+
+\begin{frame}
+\frametitle{Our new model}
+Girard's setup seems categorically unnatural. So we ``decategorified'' his model and came up with the following.
+\begin{center}
+\begin{tabular}{ |c|c| }
+\hline
+\textbf{Girard} & \textbf{Us} \\
+$\set^A$ & $\call{Q}(A) := \{f: A \lto \bb{N} \cup \{ \infty \} \}$\\
+$\operatorname{Int}(A)$ & $\call{I}(A) := \{ f: A \lto \bb{N} \mid f\text{ has finite support}\}$\\
+\text{Normal} & \text{Preserves supremums}\\
+\hline
+\end{tabular}
+\end{center}
+We have the following important observation: let $f: \call{Q}(A) \lto \call{Q}(A)$ be an order preserving function which preserves supremums, and let $\underline{a} \in \call{Q}(A)$ be arbitrary.
+\begin{align*}
+f(\underline{a}) &= f(\operatorname{sup}_{\underline{a'} \in \call{I}(A)}\underline{a}'\cdot \delta_{\underline{a}' \leq \underline{a}})\\
+&= \operatorname{sup}_{\underline{a}' \in \call{I}(A)}f(\underline{a}'\cdot \delta_{\underline{a}' \leq \underline{a}})\\
+&= \operatorname{sup}_{\underline{a}' \leq \underline{a}}f(\underline{a}')
+\end{align*}
+Thus $f$ is determined by its restriction to $\call{I}(A)$.
+\end{frame}
+\begin{frame}
+In fact we have a pair of functions
+\begin{equation*}
+\begin{tikzcd}[ampersand replacement = \&]
+\operatorname{Norm}\Big(\call{Q}(A)^n \times \call{Q}(A), \call{Q}(A)\Big)\arrow[d,shift left, "(-)^+"]\\
+\operatorname{Norm}\Big(\call{Q}(A)^n, \call{Q}(\call{I}(A) \times A)\Big)\arrow[u, shift left, "{(-)^{-}}"]
+\end{tikzcd}
+\end{equation*}
+defined as follows, where $\alpha \in \call{Q}(A)^n, (\underline{a}, a) \in \call{I}(A) \times A$.
+\begin{align*}
+f^+(\alpha)(\underline{a}, a) &= f(\alpha, \underline{a})(a)\\
+g^-(\underline{\alpha}, \underline{a})(a) &= \operatorname{sup}_{\underline{a}' \in \call{I}(A)}g(\alpha)(\underline{a}', a)\cdot \delta_{\underline{a}' \leq \underline{a}}
+\end{align*}
+We think of this as currying.
+
+\begin{lemma}
+We have that $(f^+)^- = f$, but in general $(g^-)^+ \neq g$.
+\end{lemma}
+\end{frame}
+
+\begin{frame}
+\frametitle{Terms}
+\begin{defn}
+		Let $\underline{x} = \{ x_1, \ldots, x_n \}$ be a set of variables and let $t$ be a $\lambda$-term for which $\underline{x}$ is a valid context.
+		\begin{itemize}
+			\item \textbf{The term $t$ is a variable $x_i \in \underline{x}$}. We define
+			\begin{align*}
+				\llbracket \underline{x} \mid x_i \rrbracket: \call{Q}(A)^n &\lto \call{Q}(A)\\
+				(\underline{a}_1, \ldots, \underline{a}_n) &\longmapsto \underline{a}_i
+			\end{align*}
+			to be the projection map.
+		\end{itemize}
+	\end{defn}
+\end{frame}
+
+\begin{frame}
+\frametitle{Application and abstraction}
+Since $A$ is countably infinite, so is $\call{I}(A) \times A$. We fix a bijection $q: \call{I}(A) \times A \lto A$ which induces a bijection $\overline{q}: \call{Q}(A) \lto \call{Q}(\call{I}(A)\times A)$.
+\begin{defn}
+\textbf{The term $t$ is an application $t = t_1 t_2$}.
+			\begin{equation*}
+				(\overline{q} \llbracket \underline{x} \mid t_1 \rrbracket)^- \circ \llbracket \underline{x} \mid t_2 \rrbracket: \call{Q}(A)^n \lto \call{Q}(A)
+			\end{equation*}
+			\textbf{The term $t$ is an abstraction $t = \lambda y. t'$}.
+			\begin{equation*}
+				\llbracket \underline{x}, y \mid t' \rrbracket: \call{Q}(A)^{n+1} \lto \call{Q}(A)
+			\end{equation*}
+			We assume that this function is normal. We define
+			\begin{equation*}
+				\llbracket \underline{x} \mid t \rrbracket := \overline{q}^{-1} \llbracket \underline{x}, y \mid t' \rrbracket^+: \call{Q}(A)^n \lto \call{Q}(A)
+			\end{equation*}
+		\end{defn}
+\end{frame}
+
+\begin{frame}
+\frametitle{Substitution Lemma, and denotation model Theorem}
+\begin{lemma}
+		Let $t,s$ be $\lambda$-terms and $\underline{x} = \{ x_1, \ldots, x_{n} \}$ and $y$ be such that $\underline{x} \cup \{ y \}$ is a valid context for $t$ and $\underline{x}$ is a valid context for $s$. Then for any $\alpha\in \call{Q}(A)^{n}$ we have
+		\begin{equation*}\label{eq:sub_lem_cond}
+			\llbracket \underline{x} \mid t[y := s]\rrbracket(\alpha) = \llbracket \underline{x}, y \mid t \rrbracket(\alpha, \llbracket \underline{x} \mid s \rrbracket (\alpha))
+			\end{equation*}
+		\end{lemma}
+
+\begin{thm}\label{thm:denotational_model}
+		This is a denotational model of the $\lambda$-calculus. That is, if $t$ is a $\lambda$-term and $\underline{x}$ a valid context for $t$ and for $s$, then we have the following equality.
+		\begin{equation*}
+			\llbracket \underline{x} \mid (\lambda y. t)s\rrbracket = \llbracket \underline{x} \mid t[y:=s]\rrbracket
+			\end{equation*}
+		\end{thm}
+\end{frame}
+	\begin{frame}
+	\frametitle{Extending to Linear Logic}
+\begin{itemize}
+	\item $\call{I}(A)$ looks a lot like $!A$
+\item Recall that a normal function $f: \call{Q}(A) \lto \call{Q}(A)$ is equivalent to an order preserving function $\call{I}(A) \lto \call{Q}(A)$.
+\item Is there a property which $f$ may satisfy which means it is determined by its restriction to $A$? Yes! Assume $f$ is linear:
+\end{itemize}
+	  Let $\underline{a} \in \call{Q}(A)$
+	\begin{align*}
+	f(\underline{a}) &= f(\sum_{a \in A}\underline{a}(a) \cdot \delta_{a})\\
+	&=\sum_{a \in A}\underline{a}(a)\cdot f(\delta_a)
+	\end{align*}
+	So this model has a concept of linearity: \emph{linearity}.
+	\end{frame}
+	\begin{frame}
+	\frametitle{A genuine bijection}
+	In fact we have a pair of bijections.
+	\begin{equation*}
+\begin{tikzcd}
+\operatorname{Add}\big(\prod_{i = 1}^n \call{Q}(A_i) \times \call{Q}(A), \call{Q}(B)\big)\arrow[d, shift left, "{(-)^\times}"]\\
+\operatorname{Add}\big(\prod_{i = 1}^n\call{Q}(A_i), \call{Q}(A \times B)\big)\arrow[u, shift left, "{(-)^\div}"]
+\end{tikzcd}
+\end{equation*}
+Defined as follows, for $\alpha \in \prod_{i = 1}^n\call{Q}(A_i), \underline{a} \in \call{Q}(A), (a,b) \in A \times B$.
+\begin{align*}
+f^\times(\alpha)(a,b) &= f(\alpha, \delta_a)(b)\\
+g^\div(\alpha, \underline{a}) &= \sum_{a \in A}\underline{a}(a)\cdot g(\alpha)(a,b)
+\end{align*}
+We use this to define a model of multiplicative, exponential linear logic.
+	\end{frame}
+
+\begin{frame}
+\frametitle{A taste}
+Say the last rule of $\pi$ is given by $\rimp$.
+			\begin{center}
+				\startproof{$\pi'$}
+				\noLine
+				\UnaryInfC{$\Gamma, A, \Delta \vdash B$}
+				\RightLabel{$\rimp$}
+				\UnaryInfC{$\Gamma, \Delta \vdash A \multimap B$}
+				\DisplayProof
+			\end{center}
+			We define
+			\begin{equation*}
+				\llbracket \pi \rrbracket := \llbracket \pi' \rrbracket^\times
+			\end{equation*}
+\begin{center}
+Say $\Gamma = A_1, \ldots, A_n, \Delta = B_1, \ldots, B_m$\vspace{1em}
+\AxiomC{$\llbracket \pi' \rrbracket: \prod_{i = 1}^n\call{Q}(A_i) \times \call{Q}(A) \times \prod_{i = 1}^m\call{Q}(B_i) \lto \call{Q}(B)$}
+\RightLabel{$\times$}
+\UnaryInfC{$\llbracket \pi \rrbracket = \llbracket \pi' \rrbracket^\times: \prod_{i = 1}^n\call{Q}(A_i) \times \prod_{i = 1}^m\call{Q}(B_i) \lto \call{Q}(A \times B)$}
+\DisplayProof
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{A taste}
+\begin{center}
+	\startproof{$\pi'$}
+	\noLine
+	\UnaryInfC{$\Gamma \vdash A$}
+	\startproof{$\pi''$}
+	\noLine
+	\UnaryInfC{$B, \Delta \vdash C$}
+	\RightLabel{$(\operatorname{L}\multimap)$}
+	\BinaryInfC{$A \multimap B, \Gamma, \Delta \vdash C$}
+	\DisplayProof
+\end{center}
+\begin{align*}
+	\llbracket \pi' \rrbracket: \prod_{i = 1}^n \call{Q}(A_i) &\lto \call{Q}(A)\\
+	\llbracket \pi'' \rrbracket: \prod_{i = 1}^m \call{Q}(B) \times \call{Q}(B_i) &\lto \call{Q}(C)
+\end{align*}
+We define
+\begin{align*}
+\llbracket \pi \rrbracket : &\call{Q}(A \times B) \times \prod_{i = 1}^n \call{Q}(A_i) \times \prod_{i = 1}^m \call{Q}(B_i) \lto \call{Q}(C)\\
+&(f, \underline{\alpha}, \beta) \longmapsto \llbracket \pi''\rrbracket\big(\beta, \sum_{a \in A}\llbracket \pi' \rrbracket(\alpha)(a) \cdot f(a, (-)\big)
+\end{align*}
+\end{frame}
+
+\begin{frame}
+\frametitle{$\cut$-reduction invariance}
+In the special case where $f = \llbracket \zeta \rrbracket^\times(\gamma)$ for some $\gamma \in \prod_{i = 1}^k \call{Q}(C_i)$, we obtain
+\begin{align*}
+(\alpha, \beta, \gamma) &\longmapsto \llbracket \pi''\rrbracket\Big(\beta, \sum_{a \in A} \llbracket \pi' \rrbracket(\alpha)(a) \cdot \llbracket \zeta\rrbracket(\gamma)(a,-)\Big)\\
+&= \llbracket \pi''\rrbracket\Big(\beta, (\llbracket \zeta\rrbracket^\times)^\div(\gamma, \llbracket \pi'\rrbracket)(\alpha)\Big)\\
+&= \llbracket \pi''\rrbracket\Big(\beta, \llbracket \zeta\rrbracket(\gamma, \llbracket \pi'\rrbracket)(\alpha)\Big)
+\end{align*}
+This calculation proves equality of the interpretations of the two proofs:
+\end{frame}
+
+\begin{frame}
+\begin{align*}
+(\alpha, \beta, \gamma) &\longmapsto \llbracket \pi''\rrbracket\Big(\beta, \sum_{a \in A} \llbracket \pi' \rrbracket(\alpha)(a) \cdot \llbracket \zeta\rrbracket(\gamma)(a,-)\Big)\\
+(\alpha, \beta, \gamma) &\longmapsto \llbracket \pi''\rrbracket\Big(\beta, \llbracket \zeta\rrbracket(\gamma, \llbracket \pi'\rrbracket(\alpha))\Big)
+\end{align*}
+\begin{center}
+\startproof{$\zeta$}
+\noLine
+\UnaryInfC{$\Theta, A \vdash B$}
+\RightLabel{$(\operatorname{R}\multimap)$}
+\UnaryInfC{$\Theta \vdash A \multimap B$}
+\startproof{$\pi'$}
+\noLine
+\UnaryInfC{$\Gamma \vdash A$}
+\startproof{$\pi''$}
+\noLine
+\UnaryInfC{$\Delta, B \vdash C$}
+\RightLabel{$(\operatorname{L}\multimap)$}
+\BinaryInfC{$A \multimap B, \Gamma, \Delta \vdash C$}
+\RightLabel{$\cut$}
+\BinaryInfC{$\Theta, \Gamma, \Delta \vdash C$}
+\DisplayProof\\
+\vspace{0.5em}
+$\lto$\\\vspace{0.5em}
+\startproof{$\pi'$}
+\noLine
+\UnaryInfC{$\Gamma \vdash A$}
+\startproof{$\zeta$}
+\noLine
+\UnaryInfC{$\Theta, A \vdash B$}
+\RightLabel{$\cut$}
+\BinaryInfC{$\Gamma, \Theta \vdash B$}
+\startproof{$\pi''$}
+\noLine
+\UnaryInfC{$\Delta, B \vdash C$}
+\RightLabel{$\cut$}
+\BinaryInfC{$\Gamma, \Theta, \Delta \vdash C$}
+\DisplayProof
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Can we go further?}
+\begin{itemize}
+	\item Now that we have decategorified Girard's model, can we re-categorify it? At the moment, we are \emph{not} anticipating our model to be an instance of a $\ast$-autonomous category with a comonad satisfying the relevant conditions, it seems as though we have something else.
+	\item Once a more general framework is established, can we recover the famous relational model? Taking $\call{Q} = \call{P}$ and relaxing the requirement that our functions be order preserving is a start...
+	\item Once we have recovered the relational model, can we transfer the differential structure across to obtain a model of the differential $\lambda$-calculus?
+\end{itemize}
+\end{frame}
+
+\begin{frame}[allowframebreaks]
+	\begin{thebibliography}{9}
+		\bibitem{Boole} G.~Boole, \textsl{An Investigation into the Laws of Thought} (1854).
+		\bibitem{Grobner} D. Cox, J. Little, D. O'Shea, \emph{Ideals, Varieties, and Algorithms} Fourth Edition, Springer (2015).
+		
+		\bibitem{girard_llogic}
+		J.-Y.~Girard, \textsl{Linear Logic}, Theoretical Computer Science 50 (1), 1--102 (1987).
+		
+		\bibitem{Girard} J.-Y.~Girard, \emph{Multiplicatives}, Logic and Computer Science: New Trends and Applications. Rosenberg \& Sellier. pp. 11–34 (1987).
+		
+		\bibitem{towards_goi}
+		J.-Y.~Girard, \textsl{Towards a geometry of interaction}, In J.~W.~Gray and A.~Scedrov, editors, Categories in Computer Science and Logic, volume 92 of Contemporary Mathematics, 69--108, AMS (1989).
+		
+		\bibitem{bs}
+		J.-Y.~Girard, \textsl{The Blind Spot: lectures on logic}, European Mathematical Society, (2011).
+		
+		\bibitem{proofstypes}
+		J.-Y.~Girard, Y.~Lafont, and P.~Taylor, \textsl{Proofs and Types}, Cambridge Tracts in Theoretical Computer Science 7 ,Cambridge University Press (1989).
+		
+		\bibitem{howard} W.~A.~Howard, \textsl{The formulae-as-types notion of construction}, in Seldin and Hindley \textsl{To H.B.Curry: essays on Combinatory logic, Lambda calculus and Formalism}, Academic press (1980).
+		
+		\bibitem{Laurent} O. Laurent, \emph{An Introduction to Proof Nets}, \url{http://perso.ens-lyon.fr/olivier.laurent/pn.pdf} (2013).
+		
+		\bibitem{murfet_ll}
+		D.~Murfet, \textsl{Logic and Linear Algebra: An Introduction}, preprint \url{https://arxiv.org/abs/1407.2650v3} (2017).
+		
+		\bibitem{gmz} D.~Murfet and W.~Troiani, \textsl{{G}entzen-{M}ints-{Z}ucker duality}, preprint \url{https://arxiv.org/abs/2008.10131} (2020).
+		
+		\bibitem{Troiani} W. Troiani, \emph{Linear logic}, lecture notes \url{https://williamtroiani.github.io/MathNotes/LinearLogic.pdf} (2020).
+		\end{thebibliography}
+	\end{frame}
+	
+\end{document}

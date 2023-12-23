@@ -1,0 +1,15 @@
+\contentsline {section}{\numberline {1}Graded rings, modules, and algebras}{1}{section.1}%
+\contentsline {subsection}{\numberline {1.1}General Theory}{1}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Exterior algebra}{4}{subsection.1.2}%
+\contentsline {subsubsection}{\numberline {1.2.1}Category theoretic properties of the exterior algebra}{7}{subsubsection.1.2.1}%
+\contentsline {section}{\numberline {2}Regular and quasi-regular sequences}{8}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Regular sequences and the Koszul complex}{8}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Koszul Complex and lengths of maximal regular sequences}{9}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Regular sequences are quasi-regular}{14}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Completion and quasi-regularity}{15}{subsection.2.4}%
+\contentsline {section}{\numberline {3}Clifford algebras}{16}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Bilinear/Quadratic forms}{16}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Clifford algebras}{19}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Clifford algebras of real or complex bilinear forms}{21}{subsection.3.3}%
+\contentsline {section}{\numberline {4}The residue}{26}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Hochschild Cohomology}{26}{subsection.4.1}%

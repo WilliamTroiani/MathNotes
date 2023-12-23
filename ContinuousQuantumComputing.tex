@@ -82,4 +82,29 @@
 	What is important, is the mathematical \emph{definition} \ref{def:cont_time_evolution}. We will not need any continuous analogue to the second half of Definition \ref{def:time_evolution}.
 \end{remark}
 
+\section{introduction}
+\textcolor{red}{Insert explanation as to why $\ket{0}, \ket{1}$ are labelled the way they are (because they are eigenvalues of particular operators). Then generalise this to continuous quantum variables.}
+
+Let $p \in \bb{R}$ and consider the function
+\begin{align*}
+	\bb{C} &\lto \bb{C}\\
+	x &\longmapsto e^{-i x p}
+\end{align*}
+We notice that
+\begin{equation}
+	-i\frac{d}{dx}e^{-i x p} = p e^{-i x p}
+\end{equation}
+That is, $p$ is an eigenvalue of the \textcolor{blue}{linear function} $-i\frac{d}{dx}$. We therefore let $\ket{p}$ denote the function $e^{-i x p}$, and this is an example of a continuous quantum variable.
+
+\section{Triple modula redundancy for continuous variables}
+Triple modula redundancy is a simple binary error-correcting routine for classical discrete systems, where each bit $x \in \{ 0, 1 \}$ is sent three times $xxx$ so that if a single error occurs $xx\overline{x}$(where $\overline{0} = 1, \overline{1} = 0$) we can achieve correction by looking at the majority bit $xx\overline{x} \longmapsto xxx$. We now adapt this methodology to continuous classical variables.
+
+Let $x_1, x_2, x_3$ be continuous variables, that is $x_1, x_2, x_3 \in \bb{R}$ and assume that they are all initially set to some value $x \in \bb{R}$. That is, let $x = x_1 = x_2 = x_3$. Then assume errors occured $x_1 \longmapsto x_1', x_2 \longmapsto x_2', x_3 \longmapsto x_3'$, that is, let $x_1', x_2', x_3' \in \bb{R}$ and assume that the classical information $x_1 x_2 x_3$ was sent through some channel of communication and the received information was $x_1'x_2'x_3'$. Assume without loss of generality that $|x_1'| < |x_2'| < |x_3'|$, that is, $x_1'$ experienced the least dramatic change in error, and $x_3'$ the most, with $x_2'$ in the middle. Then we let $x' = (x_1' + x_2')/2$ and replace $x_1'x_2'x_3'$ by $x'x'x'$. We remark this process does not achieve perfect error correction, nor is it reversible.
+
+We now describe a similar routine which can be used to protect against some forms of quantum error. Consider three continuous quantum variables $\ket{x_1 x_2 x_3}$ and 
+
+
+
+
+
 \end{document}

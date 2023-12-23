@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.5.21)  19 JUL 2022 11:44
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.5.21)  28 FEB 2023 18:16
 entering extended mode
 **./CommutativeAlgebra.tex
 (CommutativeAlgebra.tex
@@ -891,15 +891,15 @@ LaTeX Info: Redefining \nameref on input line 68.
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
 * modes: 
-* h-part:(L,W,R)=(28.45274pt, 557.38951pt, 28.45274pt)
-* v-part:(T,H,B)=(28.45274pt, 738.0645pt, 28.45274pt)
+* h-part:(L,W,R)=(42.67912pt, 528.93675pt, 42.67912pt)
+* v-part:(T,H,B)=(42.67912pt, 709.61174pt, 42.67912pt)
 * \paperwidth=614.295pt
 * \paperheight=794.96999pt
-* \textwidth=557.38951pt
-* \textheight=738.0645pt
-* \oddsidemargin=-43.81725pt
-* \evensidemargin=-43.81725pt
-* \topmargin=-80.81725pt
+* \textwidth=528.93675pt
+* \textheight=709.61174pt
+* \oddsidemargin=-29.59087pt
+* \evensidemargin=-29.59087pt
+* \topmargin=-66.59087pt
 * \headheight=12.0pt
 * \headsep=25.0pt
 * \topskip=12.0pt
@@ -946,206 +946,235 @@ dftex.map}])
 \openout5 = `CommutativeAlgebra.toc'.
 
  [2] [3] [4]
+Overfull \hbox (9.57765pt too wide) detected at line 278
+[]
+ []
+
 
 Package amsfonts Warning: Obsolete command \frak; \mathfrak should be used inst
-ead on input line 263.
+ead on input line 284.
 
-LaTeX Font Info:    Trying to load font information for U+euf on input line 263
+LaTeX Font Info:    Trying to load font information for U+euf on input line 284
 .
 (/Library/Application Support/MiKTeX/texmfs/install/tex/latex/amsfonts/ueuf.fd
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
-) [5] [6] [7] [8] [9] [10] [11] [12]
+) [5] [6] [7]
+Overfull \hbox (0.34888pt too wide) in paragraph at lines 389--391
+\OT1/cmr/m/n/12 each subquotient is an $\OML/cmm/m/it/12 A=\U/euf/m/n/12 m[]$\O
+T1/cmr/m/n/12 -vector space for some $\OML/cmm/m/it/12 i$\OT1/cmr/m/n/12 , and 
+in fact is finite dimensional as these subquotients
+ []
 
-LaTeX Warning: Citation `matsumura' on page 13 undefined on input line 653.
-
-
-Overfull \hbox (11.78001pt too wide) in paragraph at lines 658--659
-\OT1/cmr/m/n/12 Given a field $\OML/cmm/m/it/12 F$ \OT1/cmr/m/n/12 and maximal 
-ideal $\U/euf/m/n/12 m$ \OT1/cmr/m/n/12 of the polynomial ring $\OML/cmm/m/it/1
-2 F\OT1/cmr/m/n/12 [\OML/cmm/m/it/12 x[]; :::; x[]\OT1/cmr/m/n/12 ]$ we obtain 
-a field extension $\OML/cmm/m/it/12 F\OT1/cmr/m/n/12 [\OML/cmm/m/it/12 x[]; :::
-; x[]\OT1/cmr/m/n/12 ]\OML/cmm/m/it/12 =\U/euf/m/n/12 m$
+[8] [9] [10] [11] [12] [13]
+Overfull \hbox (0.52449pt too wide) in paragraph at lines 663--664
+[][]\OT1/cmr/bx/n/12 Fact 2.3.29. []\OT1/cmr/m/it/12 Every finitely generated m
+odule over a Noetherian ring admits an irreducible decomposition. 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 679--682
+Underfull \hbox (badness 10000) in paragraph at lines 700--703
 
  []
 
-[13]
-Underfull \hbox (badness 10000) in paragraph at lines 682--686
-
- []
-
-[14] [15] [16] [17]
-Underfull \hbox (badness 10000) in paragraph at lines 849--864
+[14]
+Underfull \hbox (badness 10000) in paragraph at lines 703--707
 
  []
 
 
-Overfull \hbox (7.02075pt too wide) in paragraph at lines 849--864
-\OT1/cmr/m/n/12 Next we prove the following statement by induction on $\OML/cmm
-/m/it/12 n$\OT1/cmr/m/n/12 : if $\OML/cmm/m/it/12 E=J$ \OT1/cmr/m/n/12 is any f
-ield extension, and $\OML/cmm/m/it/12 B \OT1/cmr/m/n/12 = \OMS/cmsy/m/n/12 f\OM
-L/cmm/m/it/12 b[]; :::; b[]\OMS/cmsy/m/n/12 g\OML/cmm/m/it/12 ; B[] \OT1/cmr/m/
-n/12 =
+Overfull \hbox (5.56703pt too wide) in paragraph at lines 719--719
+\OT1/cmr/m/n/12 kernel of the map $\OML/cmm/m/it/12 F\OT1/cmr/m/n/12 (\OML/cmm/
+m/it/12 k[]; :::; k[]\OT1/cmr/m/n/12 )[\OML/cmm/m/it/12 x[]; :::; x[]\OT1/cmr/m
+/n/12 ] \OMS/cmsy/m/n/12 ! \OML/cmm/m/it/12 F\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 
+k[]; :::; k[]\OT1/cmr/m/n/12 )$ which maps $\OML/cmm/m/it/12 x[]$ \OT1/cmr/m/n/
+12 to $\OML/cmm/m/it/12 k[]$ \OT1/cmr/m/n/12 is given by $(\OML/cmm/m/it/12 f[]
+; :::; f[]\OT1/cmr/m/n/12 )$.
+ []
+
+[15]
+Overfull \hbox (5.72975pt too wide) in paragraph at lines 739--740
+[]\OT1/cmr/m/n/12 Consider the set $ \OMS/cmsy/m/n/12 [ f\OT1/cmr/m/n/12 1 \OM
+S/cmsy/m/n/12   \OML/cmm/m/it/12 fy\OMS/cmsy/m/n/12 g  \OML/cmm/m/it/12 F\OT1/
+cmr/m/n/12 [\OML/cmm/m/it/12 x[]; :::; x[]; y\OT1/cmr/m/n/12 ]$. Then by the as
+sumption
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 849--864
-
+Overfull \hbox (9.3524pt too wide) in paragraph at lines 746--747
+[]\OT1/cmr/m/n/12 Assume that $() \OMS/cmsy/m/n/12 6\OT1/cmr/m/n/12 = \OML/cmm
+/m/it/12 F\OT1/cmr/m/n/12 [\OML/cmm/m/it/12 x[]; :::; x[]\OT1/cmr/m/n/12 ]$ and
+ let $\U/euf/m/n/12 m$ \OT1/cmr/m/n/12 be a maximal ideal containing
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 849--864
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 849--864
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 849--864
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 849--864
+[16] [17] [18]
+Underfull \hbox (badness 10000) in paragraph at lines 870--885
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 849--864
+Underfull \hbox (badness 10000) in paragraph at lines 870--885
 
  []
 
 
-Overfull \hbox (9.20184pt too wide) in paragraph at lines 873--875
-\OT1/cmr/m/n/12 Throughout, $\OML/cmm/m/it/12 k$ \OT1/cmr/m/n/12 is a completel
-y arbitrary field, possibly not algebraically closed, possibly of positive char
-acteristic.
+Underfull \hbox (badness 10000) in paragraph at lines 870--885
+
  []
 
-[18]
-Overfull \hbox (0.49257pt too wide) in paragraph at lines 901--902
-[][]\OT1/cmr/bx/n/12 Definition 4.3.5. []\OT1/cmr/m/n/12 The \OT1/cmr/bx/n/12 f
-ormal derivative \OT1/cmr/m/n/12 (often abbreviated to \OT1/cmr/bx/n/12 derivat
-ive\OT1/cmr/m/n/12 ) of a polynomial $\OML/cmm/m/it/12 f \OT1/cmr/m/n/12 = [][]
- \OML/cmm/m/it/12 a[]x[] \OMS/cmsy/m/n/12 2
+
+Overfull \hbox (5.48872pt too wide) in paragraph at lines 870--885
+\OT1/cmr/m/n/12 Now say $\OML/cmm/m/it/12 n > \OT1/cmr/m/n/12 0$. Since $\OML/c
+mm/m/it/12 B[]$ \OT1/cmr/m/n/12 is a basis, there exists a polynomial $\OML/cmm
+/m/it/12 f \OMS/cmsy/m/n/12 2 \OML/cmm/m/it/12 J\OT1/cmr/m/n/12 [\OML/cmm/m/it/
+12 x; y[]; :::; y[]\OT1/cmr/m/n/12 ]$ such that $\OML/cmm/m/it/12 f\OT1/cmr/m/n
+/12 (\OML/cmm/m/it/12 b[]; b[]; :::; b[]\OT1/cmr/m/n/12 ) =
  []
 
-[19] [20] [21] [22] [23]
-Overfull \hbox (31.2959pt too wide) in paragraph at lines 1131--1132
-\OMS/cmsy/m/n/12 f\OML/cmm/m/it/12 []; :::; []\OMS/cmsy/m/n/12 g$\OT1/cmr/m/n
-/12 . Extend $\OMS/cmsy/m/n/12 f\OML/cmm/m/it/12 []; :::; []\OMS/cmsy/m/n/12 
-g$ \OT1/cmr/m/n/12 to a generating set $\OMS/cmsy/m/n/12 f\OML/cmm/m/it/12 [];
- :::; []; []; :::; []\OMS/cmsy/m/n/12 g$\OT1/cmr/m/n/12 , then $\OML/cmm/m/i
-t/12 K \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 k\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 [
-]; :::; []\OT1/cmr/m/n/12 )(\OML/cmm/m/it/12 []; []; :::; []\OT1/cmr/m/n/12
- )$
+
+Underfull \hbox (badness 10000) in paragraph at lines 870--885
+
  []
 
-[24]
+
+Underfull \hbox (badness 10000) in paragraph at lines 870--885
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 870--885
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 870--885
+
+ []
+
+[19]
+Overfull \hbox (12.88277pt too wide) in paragraph at lines 897--898
+[][]\OT1/cmr/bx/n/12 Definition 4.3.1. []\OT1/cmr/m/n/12 A field is \OT1/cmr/bx
+/n/12 perfect \OT1/cmr/m/n/12 if the characteristic is $0$, or it is not $0$ an
+d the Frobenius Endomorphism
+ []
+
+[20] [21]
+Overfull \hbox (23.33336pt too wide) in paragraph at lines 999--1000
+[]\OT1/cmr/bx/n/12 separably generated \OT1/cmr/m/n/12 if $\OML/cmm/m/it/12 K=k
+$ \OT1/cmr/m/n/12 is finitely generated, and there exists a transcendence basis
+ $\OMS/cmsy/m/n/12 f\OML/cmm/m/it/12 []; :::; []\OMS/cmsy/m/n/12 g 
+ []
+
+[22] [23] [24] [25]
 
 Package amsfonts Warning: Obsolete command \bold; \mathbf should be used instea
-d on input line 1161.
+d on input line 1182.
 
-[25]
-Underfull \hbox (badness 10000) in paragraph at lines 1208--1211
+[26]
+Underfull \hbox (badness 10000) in paragraph at lines 1229--1232
 
  []
 
-[26]
+[27]
 
-LaTeX Warning: Reference `cor:lying_over_cor' on page 27 undefined on input lin
-e 1254.
+LaTeX Warning: Reference `cor:lying_over_cor' on page 28 undefined on input lin
+e 1275.
 
-[27] [28]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1348.
-
+[28] [29] [30]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1348.
+(hyperref)                removing `math shift' on input line 1369.
 
 
-LaTeX Warning: Citation `com_alg_notes' on page 29 undefined on input line 1368
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 1369.
+
+
+LaTeX Warning: Citation `com_alg_notes' on page 31 undefined on input line 1389
 .
 
 
-LaTeX Warning: Citation `com_alg_notes' on page 29 undefined on input line 1374
+LaTeX Warning: Citation `com_alg_notes' on page 31 undefined on input line 1395
 .
 
-[29] [30]
+[31] [32]
 
-LaTeX Warning: Citation `com_alg_notes' on page 31 undefined on input line 1448
-.
-
-[31]
-
-Package amsmath Warning: Foreign command \atopwithdelims;
-(amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 1494.
-
-[32]
-
-LaTeX Warning: Citation `com_alg_notes' on page 33 undefined on input line 1513
+LaTeX Warning: Citation `com_alg_notes' on page 33 undefined on input line 1469
 .
 
 [33] [34]
 
-LaTeX Warning: Citation `completion' on page 35 undefined on input line 1599.
+Package amsmath Warning: Foreign command \atopwithdelims;
+(amsmath)                \frac or \genfrac should be used instead
+(amsmath)                 on input line 1515.
+
+
+LaTeX Warning: Citation `com_alg_notes' on page 35 undefined on input line 1534
+.
 
 [35] [36]
 
-LaTeX Warning: Reference `' on page 37 undefined on input line 1669.
+LaTeX Warning: Citation `completion' on page 37 undefined on input line 1620.
+
+[37] [38]
+
+LaTeX Warning: Reference `' on page 39 undefined on input line 1690.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1681--1686
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1681--1686
-
- []
-
-[37] [38] [39] [40] [41] [42] [43] [44] [45] [46] [47] [48] [49] [50]
-
-LaTeX Warning: Citation `view' on page 51 undefined on input line 2390.
-
-[51]
-Underfull \hbox (badness 10000) in paragraph at lines 2459--2462
+Underfull \hbox (badness 10000) in paragraph at lines 1702--1707
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2462--2468
+Underfull \hbox (badness 10000) in paragraph at lines 1702--1707
+
+ []
+
+[39] [40] [41] [42]
+Overfull \hbox (8.09378pt too wide) in paragraph at lines 1898--1899
+[]\OT1/cmr/m/n/12 We conclude by describing the relationship between a topologi
+cal basis and a system of neighbourhoods. 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1919--1922
+
+ []
+
+[43]
+Underfull \hbox (badness 10000) in paragraph at lines 1936--1941
+
+ []
+
+[44] [45]
+Overfull \hbox (17.58356pt too wide) in paragraph at lines 2029--2030
+[]\OT1/cmr/m/n/12 Let $\OML/cmm/m/it/12 G$ \OT1/cmr/m/n/12 be a topological gro
+up and $(\OML/cmm/m/it/12 G[]\OT1/cmr/m/n/12 )[]$ a countable fundamental syste
+m of subgroup neighbourhoods.
+ []
+
+[46] [47]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 2124.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 2124.
+
+[48] [49] [50] [51]
+Underfull \hbox (badness 10000) in paragraph at lines 2277--2280
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2462--2468
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 2468--2474
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 2468--2474
+Underfull \hbox (badness 10000) in paragraph at lines 2280--2283
 
  []
 
 [52]
-Underfull \hbox (badness 10000) in paragraph at lines 2474--2478
 
- []
+LaTeX Warning: Citation `commutative_algebra' on page 53 undefined on input lin
+e 2303.
 
 [53] [54] [55] [56] [57] [58] [59] [60] [61] [62] (CommutativeAlgebra.aux)
 
@@ -1155,49 +1184,52 @@ LaTeX Warning: There were undefined references.
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `CommutativeAlgebra.out' has not changed.
-(rerunfilecheck)             Checksum: E45AB5B3237804DCE3009E2F0F530383;8500.
+(rerunfilecheck)             Checksum: 5815B728EFA0D9F762742F5CF8ACB9BD;8487.
  ) 
 Here is how much of TeX's memory you used:
- 25486 strings out of 481099
- 478009 string characters out of 2904467
- 758004 words of memory out of 3000000
- 41847 multiletter control sequences out of 15000+600000
+ 25002 strings out of 481099
+ 466092 string characters out of 2904467
+ 742710 words of memory out of 3000000
+ 41438 multiletter control sequences out of 15000+600000
  419634 words of font info for 91 fonts, out of 8000000 for 9000
  0 hyphenation exceptions out of 8191
- 98i,19n,103p,1332b,1091s stack positions out of 5000i,500n,10000p,200000b,80000s
- </Users/wtroiani/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljf
-our/jknappen/ec/dpi600/tcrm1200.pk></Library/Application Support/MiKTeX/texmfs/
-install/fonts/type1/public/amsfonts/cm/cmbx12.pfb></Library/Application Support
-/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></Library/Ap
-plication Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmex10.p
-fb></Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfo
-nts/cmextra/cmex8.pfb></Library/Application Support/MiKTeX/texmfs/install/fonts
-/type1/public/amsfonts/cm/cmmi12.pfb></Library/Application Support/MiKTeX/texmf
-s/install/fonts/type1/public/amsfonts/cm/cmmi6.pfb></Library/Application Suppor
-t/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi8.pfb></Library/Appl
-ication Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmr12.pfb>
-</Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts
-/cm/cmr17.pfb></Library/Application Support/MiKTeX/texmfs/install/fonts/type1/p
-ublic/amsfonts/cm/cmr6.pfb></Library/Application Support/MiKTeX/texmfs/install/
-fonts/type1/public/amsfonts/cm/cmr8.pfb></Library/Application Support/MiKTeX/te
-xmfs/install/fonts/type1/public/amsfonts/cm/cmsy10.pfb></Library/Application Su
-pport/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy6.pfb></Library/
-Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy8.
-pfb></Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsf
-onts/cm/cmti12.pfb></Library/Application Support/MiKTeX/texmfs/install/fonts/ty
-pe1/public/amsfonts/cm/cmti8.pfb></Library/Application Support/MiKTeX/texmfs/in
-stall/fonts/type1/public/amsfonts/cm/cmtt12.pfb></Library/Application Support/M
-iKTeX/texmfs/install/fonts/type1/public/amsfonts/euler/eufm10.pfb></Library/App
-lication Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/euler/eufm7.
-pfb></Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsf
-onts/symbols/msam10.pfb></Library/Application Support/MiKTeX/texmfs/install/fon
-ts/type1/public/amsfonts/symbols/msbm10.pfb></Library/Application Support/MiKTe
-X/texmfs/install/fonts/type1/public/rsfs/rsfs10.pfb></Users/wtroiani/Library/Ap
-plication Support/MiKTeX/texmfs/install/fonts/type1/public/hoekwater/stmary10.p
-fb>
-Output written on CommutativeAlgebra.pdf (62 pages, 702217 bytes).
+ 98i,16n,103p,1332b,1088s stack positions out of 5000i,500n,10000p,200000b,80000s
+pdfTeX warning (dest): name{equation.10.67} has been referenced but does not 
+exist, replaced by a fixed one
+
+ </Users/wtroiani/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfou
+r/jknappen/ec/dpi600/tcrm1200.pk></Library/Application Support/MiKTeX/texmfs/in
+stall/fonts/type1/public/amsfonts/cm/cmbx12.pfb></Library/Application Support/M
+iKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></Library/Appl
+ication Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmex10.pfb
+></Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfont
+s/cmextra/cmex8.pfb></Library/Application Support/MiKTeX/texmfs/install/fonts/t
+ype1/public/amsfonts/cm/cmmi12.pfb></Library/Application Support/MiKTeX/texmfs/
+install/fonts/type1/public/amsfonts/cm/cmmi6.pfb></Library/Application Support/
+MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi8.pfb></Library/Applic
+ation Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmr12.pfb></
+Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/c
+m/cmr17.pfb></Library/Application Support/MiKTeX/texmfs/install/fonts/type1/pub
+lic/amsfonts/cm/cmr6.pfb></Library/Application Support/MiKTeX/texmfs/install/fo
+nts/type1/public/amsfonts/cm/cmr8.pfb></Library/Application Support/MiKTeX/texm
+fs/install/fonts/type1/public/amsfonts/cm/cmsy10.pfb></Library/Application Supp
+ort/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy6.pfb></Library/Ap
+plication Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy8.pf
+b></Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfon
+ts/cm/cmti12.pfb></Library/Application Support/MiKTeX/texmfs/install/fonts/type
+1/public/amsfonts/cm/cmti8.pfb></Library/Application Support/MiKTeX/texmfs/inst
+all/fonts/type1/public/amsfonts/cm/cmtt12.pfb></Library/Application Support/MiK
+TeX/texmfs/install/fonts/type1/public/amsfonts/euler/eufm10.pfb></Library/Appli
+cation Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/euler/eufm7.pf
+b></Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfon
+ts/symbols/msam10.pfb></Library/Application Support/MiKTeX/texmfs/install/fonts
+/type1/public/amsfonts/symbols/msbm10.pfb></Library/Application Support/MiKTeX/
+texmfs/install/fonts/type1/public/rsfs/rsfs10.pfb></Users/wtroiani/Library/Appl
+ication Support/MiKTeX/texmfs/install/fonts/type1/public/hoekwater/stmary10.pfb
+>
+Output written on CommutativeAlgebra.pdf (62 pages, 693492 bytes).
 PDF statistics:
- 1398 PDF objects out of 1440 (max. 8388607)
- 566 named destinations out of 1000 (max. 500000)
+ 1337 PDF objects out of 1440 (max. 8388607)
+ 491 named destinations out of 1000 (max. 500000)
  357 words of extra memory for PDF output out of 10000 (max. 10000000)
 

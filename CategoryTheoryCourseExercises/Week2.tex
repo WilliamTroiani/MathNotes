@@ -1,0 +1,338 @@
+\documentclass[12pt]{article}
+
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{mathrsfs}
+\usepackage{array}
+\usepackage{amssymb}
+\usepackage{units}
+\usepackage{graphicx}
+\usepackage{tikz-cd}
+\usepackage{nicefrac}
+\usepackage{hyperref}
+\usepackage{bbm}
+\usepackage{color}
+\usepackage{tensor}
+\usepackage{tipa}
+\usepackage{bussproofs}
+\usepackage{ stmaryrd }
+\usepackage{ textcomp }
+\usepackage{leftidx}
+\usepackage{afterpage}
+\usepackage{varwidth}
+\usepackage{tasks}
+\usepackage{ cmll }
+\usepackage{adjustbox}
+
+\newcommand\blankpage{
+	\null
+	\thispagestyle{empty}
+	\addtocounter{page}{-1}
+	\newpage
+}
+
+\graphicspath{ {images/} }
+
+\theoremstyle{plain}
+\newtheorem{thm}{Theorem}[subsection] % reset theorem numbering for each chapter
+\newtheorem{proposition}[thm]{Proposition}
+\newtheorem{lemma}[thm]{Lemma}
+\newtheorem{fact}[thm]{Fact}
+\newtheorem{cor}[thm]{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{defn}[thm]{Definition} % definition numbers are dependent on theorem numbers
+\newtheorem{exmp}[thm]{Example} % same for example numbers
+\newtheorem{notation}[thm]{Notation}
+\newtheorem{remark}[thm]{Remark}
+\newtheorem{condition}[thm]{Condition}
+\newtheorem{question}[thm]{Question}
+\newtheorem{construction}[thm]{Construction}
+\newtheorem{exercise}[thm]{Exercise}
+\newtheorem{example}[thm]{Example}
+\newtheorem{aside}[thm]{Aside}
+
+\def\doubleunderline#1{\underline{\underline{#1}}}
+\newcommand{\bb}[1]{\mathbb{#1}}
+\newcommand{\scr}[1]{\mathscr{#1}}
+\newcommand{\call}[1]{\mathcal{#1}}
+\newcommand{\psheaf}{\text{\underline{Set}}^{\scr{C}^{\text{op}}}}
+\newcommand{\und}[1]{\underline{\hspace{#1 cm}}}
+\newcommand{\adj}[1]{\text{\textopencorner}{#1}\text{\textcorner}}
+\newcommand{\comment}[1]{}
+\newcommand{\lto}{\longrightarrow}
+\newcommand{\rone}{(\operatorname{R}\bold{1})}
+\newcommand{\lone}{(\operatorname{L}\bold{1})}
+\newcommand{\rimp}{(\operatorname{R} \multimap)}
+\newcommand{\limp}{(\operatorname{L} \multimap)}
+\newcommand{\rtensor}{(\operatorname{R}\otimes)}
+\newcommand{\ltensor}{(\operatorname{L}\otimes)}
+\newcommand{\rtrue}{(\operatorname{R}\top)}
+\newcommand{\rwith}{(\operatorname{R}\&)}
+\newcommand{\lwithleft}{(\operatorname{L}\&)_{\operatorname{left}}}
+\newcommand{\lwithright}{(\operatorname{L}\&)_{\operatorname{right}}}
+\newcommand{\rplusleft}{(\operatorname{R}\oplus)_{\operatorname{left}}}
+\newcommand{\rplusright}{(\operatorname{R}\oplus)_{\operatorname{right}}}
+\newcommand{\lplus}{(\operatorname{L}\oplus)}
+\newcommand{\prom}{(\operatorname{prom})}
+\newcommand{\ctr}{(\operatorname{ctr})}
+\newcommand{\der}{(\operatorname{der})}
+\newcommand{\weak}{(\operatorname{weak})}
+\newcommand{\exi}{(\operatorname{exists})}
+\newcommand{\fa}{(\operatorname{for\text{ }all})}
+\newcommand{\ex}{(\operatorname{ex})}
+\newcommand{\cut}{(\operatorname{cut})}
+\newcommand{\ax}{(\operatorname{ax})}
+\newcommand{\negation}{\sim}
+\newcommand{\true}{\top}
+\newcommand{\false}{\bot}
+\DeclareRobustCommand{\diamondtimes}{%
+	\mathbin{\text{\rotatebox[origin=c]{45}{$\boxplus$}}}%
+}
+\newcommand{\tagarray}{\mbox{}\refstepcounter{equation}$(\theequation)$}
+\newcommand{\startproof}[1]{
+	\AxiomC{#1}
+	\noLine
+	\UnaryInfC{$\vdots$}
+}
+\newenvironment{scprooftree}[1]%
+{\gdef\scalefactor{#1}\begin{center}\proofSkipAmount \leavevmode}%
+	{\scalebox{\scalefactor}{\DisplayProof}\proofSkipAmount \end{center} }
+
+
+\title{Category Theory exercise sheet 2}
+
+\begin{document}
+	
+	\maketitle
+	
+	\section{Category theory}
+	\begin{question}
+		Consider the category $\scr{C}$ induced by the following diagram.
+		\begin{equation}
+			\begin{tikzcd}
+				\bullet \arrow[r,"{t}"] & \ast
+			\end{tikzcd}
+		\end{equation}
+		We define:
+		\begin{align*}
+			&F(\bullet) = F(\ast) = \bb{N}\\
+			&F(\operatorname{id}_\bullet) = F(\operatorname{id}_{\ast}) = \operatorname{id}_{\bb{N}}\\
+			&F(t) = \operatorname{Succ}: \bb{N} \lto \bb{N}
+		\end{align*}
+		where $\operatorname{Succ}$ is the \textbf{successor function} defined by $\operatorname{Succ}(n) = n + 1$ for all $n \in \bb{N}$.
+		\begin{enumerate}
+			\item 
+			Prove that $F: \scr{C} \lto \underline{\operatorname{Set}}$ is a functor.
+		
+			\item Prove that the image of $F$ is \emph{not} a category.
+			\end{enumerate}
+		\end{question}
+	
+	\section{Mathematics}
+	\begin{question}
+		Introducing: monoids and rings.
+		\begin{defn}
+			A \textbf{monoid} consists of a set $M$ along with a \textbf{multiplication} function
+			\begin{align*}
+				\cdot: M \times M &\lto M\\
+				(m_1, m_2) &\longmapsto m_1 \cdot m_2
+			\end{align*}
+			and an identity element $e \in M$, subject to the following conditions:
+			\begin{itemize}
+				\item $\forall m_1, m_2, m_3 \in M, (m_1 \cdot m_2) \cdot m_3 = m_1 \cdot (m_2 \cdot m_3)$.
+				\item $\forall m \in M, m \cdot e = e \cdot m = m$.
+			\end{itemize}
+		\begin{remark}
+			Notice that if we also required the following axiom
+			\begin{equation}
+				\forall m \exists m, m \cdot m' = m' \cdot m = e
+			\end{equation}
+			then we would obtain exactly the definition of a \emph{group}. This will help you think about monoids.
+			
+			The canonical example of a monoid is the set $\bb{N}$ of natural numbers (including $0$) with multiplication given by addition, and identity element given by $0$.
+		\end{remark}
+		\end{defn}
+	\begin{defn}
+		A \textbf{ring} consists of an abelian group $(R, +, 0)$ along with a \textbf{multiplication} function
+		\begin{align*}
+			\cdot: R \times R &\lto R\\
+			(r_1, r_2) &\longmapsto r_1 \cdot r_2
+		\end{align*}
+		and an identity element $1 \in R$ satisfying the following properties:
+		\begin{itemize}
+			\item $\forall r_1, r_2, r_3 \in R, (r_1 \cdot r_2) \cdot r_3 = r_1 \cdot (r_2 \cdot r_3)$.
+			\item $\forall r \in R, 1 \cdot r = r \cdot 1 = r$.
+			\item $\forall r_1, r_2, r_3 \in R, r_1\cdot(r_2 + r_3) = r_1 \cdot r_2 + r_1 \cdot r_2$.
+			\item $\forall r_1, r_2, r_3 \in R, (r_1 + r_2) \cdot r_3 = r_1 \cdot r_3 + r_2 \cdot r_3$.
+		\end{itemize}
+	\end{defn}
+		\begin{enumerate}
+			\item Guess the definitions of \emph{morphisms of monoids} and \emph{morphisms of rings}.
+			
+			\item Let $\scr{C}$ be a category consisting of a single object $\operatorname{Obj}(\scr{C}) = \{ \bullet \}$. Prove that $\operatorname{Hom}(\bullet, \bullet)$ is a monoid with multiplication given by composition, and identity element given by $\operatorname{id}_{\bullet}$.
+			
+			\item Consider the inclusion morphism of the integers into the rational numbers.
+			\begin{equation}
+				\iota: \bb{Z} \rightarrowtail \bb{Q}
+				\end{equation}
+			This is both a morphism of rings, and a morphism of groups, when $\bb{Z}, \bb{Q}$ are appropriately interpreted. Prove that:
+			\begin{itemize}
+				\item $\iota$ is a monomorphism in the category of rings and in the category of groups.
+				\item $\iota$ is an epimorphism in the category of rings but \emph{not} in the category of groups.
+				\end{itemize}
+			This exercise shows you that the \emph{ambient category matters}. The map $\iota$ did not change, but the ambient category did, and we ended up with a new property about it. These kinds of situations are where the power of category theory shines.
+			
+			Also, notice that $\iota$ is clearly not an isomoprhism (it is not surjective), yet in the category of groups we have that $\iota$ is a monomorphism and an epimorphism. Thus, it is \emph{not} the case that a morphism is an isomorphism if  if it is a monomorphism and an epimorphism. However, the converse \emph{does} hold, that is, any isomorphism \emph{is} a monomorphism and an epimorphism (prove this).
+			\end{enumerate}
+		\end{question}
+	
+	\section{Computer Science}
+		The computer science question for this week is to read and appreciate the following.
+		
+		Assume we have a countably infinite collection of \textbf{variable types} $X, Y, Z, \ldots$ (just formal symbols). We consider the following type construction rules:
+		\begin{itemize}
+			\item If $A, B$ are types then so is $A \times B$.
+			\item If $A$ is a type then so is $A^\ast$.
+			\item If $A, B$ are types then so is $A \lto B$.
+			\item If $A(X)$ is a type depending on a variable $X$ then $\forall X. A(X)$ is a type.
+			\end{itemize}
+		In case the last dotpoint is confusing, we provide an example.
+		
+		\begin{example}
+			Consider $\forall X. B \times X$ where $B$ is an arbitrary type and $X$ is a variable type. Spelling this out: we let $A(X)$ denote $B \times X$ (which is a type depending on a variable), and so $\forall X. A(X) = \forall X. B \times X$.
+			\end{example}
+		
+		We define an interpretation $\llbracket \cdot \rrbracket$ of these types as relations.
+		\begin{itemize}
+			\item We interpret each variable type $X$ as the identity relation on some choice of set $\hat{X}$
+			\begin{equation}
+				\llbracket X \rrbracket := \operatorname{id}_{\hat{X}} \subseteq \hat{X} \times \hat{X}
+				\end{equation}
+			That is, for each variable $X$ we choose a set $\hat{X}$ and interpret $X$ as the identity relation $\llbracket X \rrbracket = \operatorname{id}_{\hat{X}}$.
+			%
+			\item Given interpretations $\llbracket A\rrbracket, \llbracket B \rrbracket$ of types $A,B$ respectively, define $\llbracket A \times B \rrbracket \subseteq \llbracket A \rrbracket \times \llbracket B \rrbracket$ to be the relation defined by
+				\begin{equation*}
+					\big((x,y), (x',y')\big) \in \llbracket A \times B \rrbracket
+					\end{equation*}
+				if and only if
+				\begin{equation*}
+				(x,x') \in \llbracket A \rrbracket\text{ and }(y,y') \in \llbracket B \rrbracket
+				\end{equation*}
+			\item Given an interpretation $\llbracket A \rrbracket$ define $\llbracket A^\ast \rrbracket \subseteq \bigcup_{i = 1}^\infty \prod_{j = 1}^i \llbracket A \rrbracket$ to be the relation:
+			\begin{equation*}
+				\big([x_1, \ldots, x_n], [x_1', \ldots, x_n']\big) \in \llbracket A^\ast \rrbracket
+				\end{equation*}
+			if and only if for all $i = 1, \ldots, n$:
+				\begin{equation*}
+					 (x_i, x_i') \in \llbracket A \rrbracket
+				\end{equation*}
+			\item Given interpretations $\llbracket A\rrbracket, \llbracket B \rrbracket$ the relation $\llbracket A \lto B \rrbracket \subseteq \llbracket A \rrbracket \times \llbracket B \rrbracket$ consists of pairs $(f,f')$ of functions from $\llbracket A \rrbracket$ to $\llbracket B \rrbracket$ given by
+			\begin{equation*}
+				(f,f') \in \llbracket A \lto B \rrbracket
+				\end{equation*}
+			if and only if
+				\begin{equation*}
+				(x,x') \in \llbracket A \rrbracket\text{ implies }(fx, f'x) \in \llbracket B \rrbracket
+				\end{equation*}
+			\item If $X= \operatorname{id}_{\hat{X}}$ is a variable and $A(X)$ is a type depending on $X$ then $\llbracket \forall X. A(X)\rrbracket$ is the relation on the set of functions $r$ which take a type $B$ and return a relation $r_B \in \llbracket A(B) \rrbracket$ where $A(B)$ is such that $\llbracket A(B) \rrbracket \subseteq \llbracket C_1 \rrbracket \times \llbracket C_2 \rrbracket$ given by:
+			\begin{equation*}
+				(r,r') \in \llbracket \forall X. A(X) \rrbracket
+				\end{equation*}
+			if and only if
+			\begin{equation*}
+				(r_C, r'_{C'}) \in \llbracket A(B) \rrbracket
+				\end{equation*}
+			\end{itemize}
+		Now we make the \emph{assumption of parametricity}.
+		\begin{proposition}
+			If $t$ is a closed term of type $T$ then $(t,t) \in \llbracket T \rrbracket$.
+			\end{proposition}
+		\begin{proof}
+			This is difficult (and outside the scope of the course), but the interested reader can look at \cite{Wadler}
+			\end{proof}
+		
+		We now show an example of how a theorem about a closed terms can be derived from knowledge of their type alone.
+		
+		Let $r$ be a closed term of type
+		\begin{equation}
+			r: \forall X. X^\ast \lto X^\ast
+			\end{equation}
+		By Parametricity, we have
+		\begin{equation}
+			(r,r) \in \llbracket \forall X. X^\ast \lto X^\ast \rrbracket
+			\end{equation}
+		That is, for any relation $\llbracket A \rrbracket \subseteq \llbracket C_1 \rrbracket \times \llbracket C_2 \rrbracket$ we have
+		\begin{equation}
+			(r_{C_1}, r_{C_2}) \in \llbracket A^\ast \lto A^\ast \rrbracket
+			\end{equation}
+		This in turn means that for any pair of lists $([x_1, \ldots, x_n], [x_1',\ldots, x_n']) \in \llbracket A^\ast \rrbracket$ we have
+		\begin{equation}
+			\big(r_{C_1}[x_1, \ldots, x_n], r_{C_2}[x_1', \ldots, x_n']\big) \in \llbracket A^\ast \rrbracket
+			\end{equation}
+		Now we consider the case when the relation $\llbracket A \rrbracket$ is a function $\gamma: \llbracket C_1 \rrbracket \lto \llbracket C_2 \rrbracket$. In this setting we have
+		\begin{equation}
+			\gamma^\ast\big(r_{C_1}[x_1, \ldots, x_n]\big) = r_{C_2}[x_1', \ldots, x_n']
+			\end{equation}
+		where $\gamma^\ast$ is the extension of $\gamma$ to lists. Noticing that $\gamma(x_i) = x_i'$ for each $i = 1, \ldots, n$ we now have
+		\begin{equation}
+			\gamma^\ast(r_{C_1})[x_1, \ldots, x_n] = r_{C_2}\gamma^\ast\big([x_1, \ldots, x_n]\big)
+			\end{equation}
+		That is, we have the following equality of functions.
+		\begin{equation}
+			\gamma^\ast \circ r_{C_1} = r_{C_2} \circ \gamma^\ast
+			\end{equation}
+		This is non-trivial and was derived purely from knowledge of the type of $r$.
+		
+		As an example of this, take $r$ to be the function $\texttt{reverse}: \forall X. X^\ast \lto X^\ast$ that reverses a list, and $\gamma$ might be the function $\texttt{code}: \texttt{Char} \lto \texttt{Int}$ that converts a character to its ASCII code. Then we have
+		\begin{align*}
+			\texttt{code}^\ast(\texttt{reverse}_{\texttt{Char}}[a,b,c]) &= \texttt{code}^\ast[c,b,a]\\
+			&= [99, 98, 97]\\
+			&= \texttt{reverse}_{\texttt{Int}}([97,98,99])\\
+			&= \texttt{reverse}_{\texttt{Int}}(\texttt{code}^\ast[a,b,c])
+			\end{align*}
+		that is,
+		\begin{equation}
+			\texttt{code}^\ast \circ \texttt{reverse}_{\texttt{Char}} = \texttt{reverse}_{\texttt{Int}}\circ \texttt{code}^\ast
+			\end{equation}
+		as predicted by the theorem.
+		
+		The above is an analysis of a simple typing system using set theoretic semantics. Taking formal systems (be them logical or computational) and interpretting them inside abstract categories (such as the category of sets, as done above) is a very active area of current research, and involves a lot of category theory. The interested reader can learn more by consulting \cite{Girard}, \cite{Scott}, \cite{Manzonetto}.
+	
+	\begin{thebibliography}{99}
+		\bibitem{Wadler} P. Wadler \emph{Theorems for free}.  University of Glasgow. June 1989
+		
+		\bibitem{Girard} J.Y. Girard, \emph{Geometry of Interaction, Interpretation of System F}, Studies in logic and the foundations of mathematics, 1989.
+		
+		\bibitem{Scott} D. Scott, \emph{Toward a mathematical theory semantics for computer lanuages} Oxford University Computing Laboratory, 1971
+		
+		\bibitem{Manzonetto} G. Manzonetto, \emph{Models and theories of lambda-calculus} \url{https://tel.archives-ouvertes.fr/tel-00715207/document}
+		
+		\end{thebibliography}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	\end{document}

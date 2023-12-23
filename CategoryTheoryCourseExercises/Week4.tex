@@ -1,0 +1,155 @@
+\documentclass[12pt]{article}
+
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{mathrsfs}
+\usepackage{array}
+\usepackage{amssymb}
+\usepackage{units}
+\usepackage{graphicx}
+\usepackage{tikz-cd}
+\usepackage{nicefrac}
+\usepackage{hyperref}
+\usepackage{bbm}
+\usepackage{color}
+\usepackage{tensor}
+\usepackage{tipa}
+\usepackage{bussproofs}
+\usepackage{ stmaryrd }
+\usepackage{ textcomp }
+\usepackage{leftidx}
+\usepackage{afterpage}
+\usepackage{varwidth}
+\usepackage{tasks}
+\usepackage{ cmll }
+\usepackage{adjustbox}
+
+\newcommand\blankpage{
+	\null
+	\thispagestyle{empty}
+	\addtocounter{page}{-1}
+	\newpage
+}
+
+\graphicspath{ {images/} }
+
+\theoremstyle{plain}
+\newtheorem{thm}{Theorem}[subsection] % reset theorem numbering for each chapter
+\newtheorem{proposition}[thm]{Proposition}
+\newtheorem{lemma}[thm]{Lemma}
+\newtheorem{fact}[thm]{Fact}
+\newtheorem{cor}[thm]{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{defn}[thm]{Definition} % definition numbers are dependent on theorem numbers
+\newtheorem{exmp}[thm]{Example} % same for example numbers
+\newtheorem{notation}[thm]{Notation}
+\newtheorem{remark}[thm]{Remark}
+\newtheorem{condition}[thm]{Condition}
+\newtheorem{question}[thm]{Question}
+\newtheorem{construction}[thm]{Construction}
+\newtheorem{exercise}[thm]{Exercise}
+\newtheorem{example}[thm]{Example}
+\newtheorem{aside}[thm]{Aside}
+
+\def\doubleunderline#1{\underline{\underline{#1}}}
+\newcommand{\bb}[1]{\mathbb{#1}}
+\newcommand{\scr}[1]{\mathscr{#1}}
+\newcommand{\call}[1]{\mathcal{#1}}
+\newcommand{\psheaf}{\text{\underline{Set}}^{\scr{C}^{\text{op}}}}
+\newcommand{\und}[1]{\underline{\hspace{#1 cm}}}
+\newcommand{\adj}[1]{\text{\textopencorner}{#1}\text{\textcorner}}
+\newcommand{\comment}[1]{}
+\newcommand{\lto}{\longrightarrow}
+\newcommand{\rone}{(\operatorname{R}\bold{1})}
+\newcommand{\lone}{(\operatorname{L}\bold{1})}
+\newcommand{\rimp}{(\operatorname{R} \multimap)}
+\newcommand{\limp}{(\operatorname{L} \multimap)}
+\newcommand{\rtensor}{(\operatorname{R}\otimes)}
+\newcommand{\ltensor}{(\operatorname{L}\otimes)}
+\newcommand{\rtrue}{(\operatorname{R}\top)}
+\newcommand{\rwith}{(\operatorname{R}\&)}
+\newcommand{\lwithleft}{(\operatorname{L}\&)_{\operatorname{left}}}
+\newcommand{\lwithright}{(\operatorname{L}\&)_{\operatorname{right}}}
+\newcommand{\rplusleft}{(\operatorname{R}\oplus)_{\operatorname{left}}}
+\newcommand{\rplusright}{(\operatorname{R}\oplus)_{\operatorname{right}}}
+\newcommand{\lplus}{(\operatorname{L}\oplus)}
+\newcommand{\prom}{(\operatorname{prom})}
+\newcommand{\ctr}{(\operatorname{ctr})}
+\newcommand{\der}{(\operatorname{der})}
+\newcommand{\weak}{(\operatorname{weak})}
+\newcommand{\exi}{(\operatorname{exists})}
+\newcommand{\fa}{(\operatorname{for\text{ }all})}
+\newcommand{\ex}{(\operatorname{ex})}
+\newcommand{\cut}{(\operatorname{cut})}
+\newcommand{\ax}{(\operatorname{ax})}
+\newcommand{\negation}{\sim}
+\newcommand{\true}{\top}
+\newcommand{\false}{\bot}
+\DeclareRobustCommand{\diamondtimes}{%
+	\mathbin{\text{\rotatebox[origin=c]{45}{$\boxplus$}}}%
+}
+\newcommand{\tagarray}{\mbox{}\refstepcounter{equation}$(\theequation)$}
+\newcommand{\startproof}[1]{
+	\AxiomC{#1}
+	\noLine
+	\UnaryInfC{$\vdots$}
+}
+\newenvironment{scprooftree}[1]%
+{\gdef\scalefactor{#1}\begin{center}\proofSkipAmount \leavevmode}%
+	{\scalebox{\scalefactor}{\DisplayProof}\proofSkipAmount \end{center} }
+
+
+\title{Category Theory exercise sheet 4}
+
+\begin{document}
+	
+	\maketitle
+	
+	\section{Category theory}
+	Try the following on your own, if you get stuck look at \cite[Page 31]{Reihl}
+	\begin{enumerate}
+		\item Prove that an equivalence of categories $F: \scr{C} \lto \scr{D}$ is fully faithful and essentially surjective.
+		\item Prove that if a functor $F: \scr{C} \lto \scr{D}$ is fully faithful and essentially surjective, then it is an equivalence of categories.
+		\item Prove the contravariant version of the Yoneda Lemma without looking at the proof of the covariant version.
+		\end{enumerate}
+	
+	\section{Mathematics}
+	The following conceals some research-level problem.
+	\begin{enumerate}
+		\item Consider the functors $\underline{\operatorname{Ab}} \lto \underline{\operatorname{Group}}$ (inclusion), $\underline{\operatorname{Ring}} \lto \underline{\operatorname{Ab}}$ (forgetting the multiplication), $(\und{0.2}^{\times}): \underline{\operatorname{Ring}} \lto \underline{\operatorname{Group}}$ (inclusion), $\underline{\operatorname{Mod}}_R \lto \underline{\operatorname{Ab}}$ (forgetful). Determine which functors are full, which are faithful, and which are essentially surjective. Do any define equivalence of categories?
+		\end{enumerate}
+	
+	\section{Computer science}
+	It is quite difficult to give simple exercises in category theory relevant to computer science which are authentic, genuinely simple, and also compelling. For this reason, we have dedicated the first assignment to a non-trivial category which arrises naturally in computer science, the category of $\lambda$-terms. Indeed, it turns out that this category is equivalent to the category of \emph{sequent calculus proofs} which is a category arrising from logic. The first result of this form, the \emph{Curry-Howard Isomorphism}, lead to the ``proofs as programs" dichotomy, which has inspired the modern approach to type theory which places some aspects of logic and some aspects of computing on the same level. For a full proof that the category of $\lambda$-terms is equivalent to the category of sequent calculus proofs, see \cite{GMZ}.
+	
+	\begin{thebibliography}{9}
+		\bibitem{Reihl} E. Reihl, \emph{Categories in context}.
+		
+		\bibitem{GMZ} D. Murfet, W. Troiani, \emph{The Gentzen-Mints-Zucker Duality}. \url{https://arxiv.org/abs/2008.10131}
+		\end{thebibliography}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	\end{document}

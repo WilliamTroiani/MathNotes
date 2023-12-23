@@ -57,134 +57,662 @@
 \newcommand{\comment}[1]{}
 \newcommand{\lto}{\longrightarrow}
 
-\usepackage[margin=1cm]{geometry}
-
-\title{CatGoI}
+\title{Thesis}
+\author{William Troiani}
 \date{August 2020}
 
 \begin{document}
 
-\section{Bicategory Theory}
-\section{Bicategory Theory}
-Often one motivates the notion of a \emph{bicategory} by observing the definition of a category and then ``suping up" the hom-sets. From this angle though there are multiple reasonable generalisations, ought associativity hold strictly or up to natural isomorphism?
+\maketitle
+\tableofcontents
 
-So instead we seek our motivation from a different source, recall:
+\section{Equality of variables in Geometry and logic}
+
+
+\section{Clifford algebras}
+
+We work over the complex numbers $k = \bb{C}$.
+
 \begin{defn}
-A \textbf{monoidal category} consists of
-\begin{itemize}
-\item a category $\scr{C}$,
-\item a special object $\mathbbm{1} \in \scr{C}$,
-\item a functor $\otimes: \scr{C} \times \scr{C} \lto \scr{C}$
-\end{itemize}
-along with three natural isomorphisms $\lambda: \mathbbm{1} \times \operatorname{id}_{\scr{C}} \lto \operatorname{id}_{\scr{C}}, \rho: \operatorname{id}_{\scr{C}} \times \mathbbm{1} \lto \operatorname{\scr{C}}, \alpha: (\operatorname{id}_{\scr{C}} \times \operatorname{id}_{\scr{C}}) \times \operatorname{id}_{\scr{C}} \lto \operatorname{id}_{\scr{C}} \times (\operatorname{id}_{\scr{C}} \times \operatorname{id}_{\scr{C}})$,
-with all of this data satisfying:
-\begin{itemize}
-\item the \textbf{pentagon diagram}, ie, commutativity for all $A,B,C,D \in \scr{C}$ of the following:
-\begin{equation}
-\begin{tikzcd}[column sep = tiny]
-& A \otimes (B \otimes (C \otimes D))\arrow[r]\arrow[dl]  & A \otimes ((B \otimes C) \otimes D)\arrow[dr] \\
-(A \otimes B) \otimes (C \otimes D)\arrow[drr]& & & (A \otimes (B \otimes C)) \otimes D\arrow[dl]\\
-& & ((A \otimes B) \otimes C) \otimes D
-\end{tikzcd}
-\end{equation}
-\item the \textbf{identity diagrams}, ie, commutativity for all $A,B,C \in \scr{C}$ of the following:
-\begin{equation}
-\begin{tikzcd}
-(A \otimes \mathbbm{1}) \otimes B\arrow[r]\arrow[dr] & A \otimes (\mathbbm{1} \otimes B)\arrow[d]\\
-& A \otimes B
-\end{tikzcd}
-\end{equation}
-\end{itemize}
+	
+	\end{defn}
+
+\begin{defn}\label{def:the_idempotent}
+	For $n \geq 0$ let $e_n \in C_n$ denote the element
+	\begin{equation}
+		e_n = \gamma_1 \ldots \gamma_n \gamma_n^\dagger \ldots \gamma_1^\dagger
+		\end{equation}
 \end{defn}
-We wish to define a \emph{bicategory} so that a monoidal category is a bicategory with a single object. Thus, we see that we take associativity and identity up to natural isomorphism, hence:
-\begin{defn}
-A \textbf{bicategory} $\scr{C}$ consists of
-\begin{itemize}
-\item a collection $\operatorname{Obj}\scr{C}$ of \textbf{objects},
-\item for every pair $X,Y$ of objects, a category
-\begin{equation}
-\operatorname{Hom}_{\scr{C}}(X,Y)
-\end{equation}
-whose objects are \textbf{$1$-morphisms} with \textbf{domain} $X$ and \textbf{codomain} $Y$, and whose morphisms are \textbf{$2$-morphisms},
-\item for every triple $X,Y,Z$ of objects, a functor called \textbf{horizontal composition}
-\begin{align*}
-\circ_{X,Y,Z}: \operatorname{Hom}_{\scr{C}}(Y,Z) \times \operatorname{Hom}_{\scr{C}}(X,Y) &\lto \operatorname{Hom}_{\scr{C}}(X,Z)\\
-(f,g) &\longmapsto f \circ g\\
-(\alpha: f \Rightarrow g, \beta: h \Rightarrow j) &\longmapsto \beta \ast \alpha
-\end{align*}
-\item for each tuple of objects $X,Y,Z,W$ a natural isomorphism $\alpha_{X,Y,Z,W}$ from the functor defined by the composite:
-\begin{equation}
-\operatorname{Hom}_{\scr{C}}(Z,W) \times \operatorname{Hom}_{\scr{C}}(Y,Z) \times \operatorname{Hom}_{\scr{C}}(X,Y) \lto \operatorname{Hom}_{\scr{C}}(Z,W) \times \operatorname{Hom}_{\scr{C}}(X,Z) \lto \operatorname{Hom}_{\scr{C}}(X,W)
-\end{equation}
-and the functor defined by the composite
-\begin{equation}
-\operatorname{Hom}_{\scr{C}}(Z,W) \times \operatorname{Hom}_{\scr{C}}(Y,Z) \times \operatorname{Hom}_{\scr{C}}(X,Y) \lto \operatorname{Hom}_{\scr{C}}(Y,W) \times \operatorname{Hom}_{\scr{C}}(X,Y) \lto \operatorname{Hom}_{\scr{C}}(X,W)
-\end{equation}
-\item for every object $X \in \scr{C}$ a functor $\mathbbm{1}_X: \bold{1} \lto \operatorname{Hom}(X,X)$, where $\bold{1}$ is the category with a single object and single morphism,
-\item for every pair of objects $X,Y$ a pair of natural isomorphisms, $\rho$ which maps from the functor defined by the composite:
-\begin{equation}
-\bold{1} \times \operatorname{Hom}(X,Y) \lto \operatorname{Hom}(Y,Y) \times \operatorname{Hom}(X,Y) \lto \operatorname{Hom}(X,Y)
-\end{equation}
-to the functor defined by the composite
-\begin{equation}
-\bold{1} \times \operatorname{Hom}(X,Y) \stackrel{\sim}{\lto} \operatorname{Hom}(X,Y)
-\end{equation}
-and $\lambda$, which is defined similarly,
-\end{itemize}
-satisfying:
-\begin{itemize}
-\item for all objects $X,Y,Z,W$ the following diagram commutes
-\begin{equation}
-\begin{tikzcd}[column sep = tiny]
-& X \circ (Y \circ (Z \circ W))\arrow[r]\arrow[dl]  & X \circ ((Y \circ Z) \circ W)\arrow[dr] \\
-(X \circ Y) \circ (Z \circ W)\arrow[drr]& & & (X \circ (Y \circ Z)) \circ W\arrow[dl]\\
-& & ((X \circ Y) \circ Z) \circ W
-\end{tikzcd}
-\end{equation}
-\item for all objects $X,Y$ the following diagram commutes:
-\begin{equation}
-\begin{tikzcd}
-(X \circ \mathbbm{1}) \circ Y\arrow[r]\arrow[dr] & X \circ (\mathbbm{1} \circ Y)\arrow[d]\\
-& X \circ Y
-\end{tikzcd}
-\end{equation}
-\end{itemize}
 
+\section{Koszul Complex}
+
+Recall that a $\bb{Z}_2$-graded ring $R$ comes equipt with a choice of isomorphism $R \cong R_0 \oplus R_1$ where $R_0, R_1$ are subgroups of $R$. In such a setting we call elements of $R_1$ \textbf{odd}.
+
+\begin{defn}
+	Let $E$ be a $\bb{Z}_2$-graded ring and consider a set of odd elements $\theta_1, \ldots, \theta_n, \theta^\ast_1, \ldots, \theta^\ast_n \in E$. These \textbf{satisfy the canonical anticommutation relations} if the following hold for all $i,j = 1, \ldots, n$.
+	\begin{itemize}
+		\item $\theta_i \theta_j + \theta_j \theta_i = 0$
+		\item $\theta_i^\ast \theta_j^\ast + \theta_j^\ast \theta_i^\ast = 0$
+		\item $\theta_i \theta_j^\ast + \theta_j \theta_i^\ast = \delta_{ij}$
+	\end{itemize}
+\end{defn}
+
+Recall that when $A,B$ are $\bb{Z}_2$-graded modules (over a graded ring $R$, say) then $\operatorname{Hom}(A, B)$ is also a $\bb{Z}_2$-graded module over $R$.
+
+\begin{defn}
+	Let $R$ be a commutative ring and $E$ a finitely generated free $R$-module (of rank $r$ say). Assume we are given an $R$-linear map $s: E \lto R$. Then we define the \textbf{Koszul Complex} to be the following chain complex of $R$-modules.
+	\begin{equation}
+		0 \lto \bigwedge^rE \stackrel{d_r}{\lto} \bigwedge^{r-1}E \stackrel{d_{r-1}}{\lto} \ldots\lto \bigwedge^1E \stackrel{d_1}{\lto} R \lto 0
+	\end{equation}
+	where for $i = 1, \ldots, r$:
+	\begin{align*}
+		d_i : \bigwedge^i E &\lto \bigwedge^{i-1} E\\
+		e_{j_1} \wedge \ldots \wedge e_{j_i} &\longmapsto \sum_{k = 1}^i s(e_{j_k})(-1)^{k-1}e_{j_1} \wedge \ldots \wedge \hat{e}_{j_k} \wedge \ldots \wedge e_{j_i}
+	\end{align*}
+	where $\hat{e_{j_k}}$ means to omit $e_{j_k}$.
+\end{defn}
+
+When $E$ is a $\bb{Z}_2$-graded ring of the form $E = \operatorname{End}(A)$ for some $\bb{Z}_2$-graded ring $A$, then $E$ admitting a set of odd elements satisfying the anticommutation relations is sufficient for $A$ to admit a Clifford algebra represenation. See Lemma \cite[Lemma 5.6.2]{Hitchcock}.
+
+Given a free $R$-module $A = R\theta_1 \oplus \ldots \oplus R\theta_r$ of rank $r$, the standard multiplication and contraction operators
+\begin{equation}
+	\theta_i \wedge \und{0.2}\qquad \theta_i^\ast \lrcorner \und{0.2}
+\end{equation}
+satisfy the canonical anticommutation relations. Thus, $A$ admits a Clifford algebra representaiton.
+
+\section{Matrix factorisations}\label{sec:MatrixFactorisations}
+Let $k$ denote a ring.
+
+Recall that if $A,B$ are $\bb{Z}$-graded $k$-modules then $\operatorname{Hom}(A,B)$ is also $\bb{Z}$-graded \cite{TroianiSCA}. We have a similar definition for $\bb{Z}_2$-graded modules.
+\begin{defn}
+	Let $A,B$ be $\bb{Z}_2$-graded $k$-modules. A homomorphism $f: A \lto B$ is \textbf{even} if $f(A_0) \subseteq B_0$ and $f(A_1) \subseteq A_1$. The homomorphism $f$ is \textbf{odd} if $f(A_0) \subseteq B_1$ and $f(A_1) \subseteq B_0$.
 \end{defn}
 \begin{remark}
-The point is the following:
-\begin{enumerate}
-\item hom sets have become categories,
-\item composition has become a functor
-\item identity morphisms are not an element of a set now,  they are an object of a category,
-\item composition now has the freedom to hold only up to isomorphism,
-\item associativity only holds up to isomorphism,
-\item that units act like units only holds up to isomorphism,
-\item these are 3-ary and 2-ary isomorphisms so we need compatibility diagrams.
-\end{enumerate}
+	If $f: A \lto B$ is any module homomorphism then $f$ can be written as a matrix
+	\begin{equation}
+		\begin{pmatrix}
+			f_{00} & f_{01}\\
+			f_{10} & f_{11}
+		\end{pmatrix}
+	\end{equation}
+	The morphism $f$ is thus even if $f_{01} = f_{10} = 0$ and is odd if $f_{00} = f_{11} = 0$. This also shows that the morphism $f$ can be written as the sum of an even and an odd component.
 \end{remark}
-The example we are chiefly concerned with is the \emph{bicategory of Landau-Ginzburg models}, we now head towards this definition.
 \begin{defn}
-A \textbf{potential} is 
+	Let $f \in k$ be a non-zero divisor. A \textbf{linear factorisation of $f \in k$ over $k$} is a pair $(X,\partial_X)$ consisting of a $\bb{Z}_2$-graded $k$-module $X = X_0 \oplus X_1$ and an odd homomorphism $\partial_X: X \lto X$ satisfying
+	\begin{equation}
+		\partial_X^2 = f \cdot \operatorname{id}_{X}
+	\end{equation}
+	If $X$ is free then $(X, \partial_X)$ is a \textbf{matrix factorisation}.
+\end{defn}
+The theory of Matrix factorisations is motivated by the search for square roots to operators. As a toy example, multiplication by $x^2 - y^2$ in $\bb{C}[x,y]$ does not admit a square root, but it does if we allow matrix solutions.
+\begin{equation}
+	\begin{pmatrix}
+		0 & x - y\\
+		x+ y & 0
+	\end{pmatrix}^2 = (x^2 - y^2)
+	\begin{pmatrix}
+		1 & 0\\
+		0 & 1
+	\end{pmatrix}
+\end{equation}
+
+A more serious example is given by the square root of the Laplacian operator, see the Introduction of \cite{Friedrich}.
+
+Our interest in matrix factorsations comes from the fact that appropriate homotopy categories of matrix factorsations form the homcategories of the bicategory of Landau-Ginzburg models, which we anticipate to find within a model of multiplicative linear logic (proofs as hypersurface singularities).
+
+\begin{defn}\label{def:morphism_mf}
+	A \textbf{morphism of linear factorisations} $$\alpha: \Big(X = X_0 \oplus X_1, d_X = \begin{pmatrix}0 & p_X\\
+		q_X & 0\end{pmatrix}\Big) \lto \Big(Y = Y_0 \oplus Y_1, d_Y = \begin{pmatrix}0 & p_Y\\
+		q_Y & 0\end{pmatrix}\Big)$$
+	of $f \in R$ is a pair of morphisms $\alpha_0: X_0 \lto Y_0, \alpha_1:X_1 \lto Y_1$ rendering the following diagram commutative.
+	\begin{equation}
+		\begin{tikzcd}
+			X_0\arrow[r,"{p_X}"]\arrow[d,"{\alpha_0}"] & X_1\arrow[r, "{q_X}"]\arrow[d,"{\alpha_1}"] & X_0\arrow[d,"{\alpha_0}"]\\
+			Y_0\arrow[r,"{p_Y}"] & Y_1\arrow[r, "{q_Y}"] & Y_0
+		\end{tikzcd}
+	\end{equation}
 \end{defn}
 
-\section{The semantics}
+Given a matrix factorisation $(X = X_0 \oplus X_1, d_X) = \begin{pmatrix} 0 & p_X\\ q_X & 0\end{pmatrix}$ there is a sequence
+\begin{equation}
+	\ldots \stackrel{p_X}{\lto} X_1 \stackrel{q_X}{\lto} X_0 \stackrel{p_X}{\lto} X_1 \stackrel{q_X}{\lto} \ldots
+	\end{equation}
+however, we note that in general $d_X^2 = f\cdot I \neq 0$ and so strictly speaking this is \emph{not} a chain complex.
+\begin{defn}
+	We use the notation of Definition \ref{def:morphism_mf}. Let $\beta = (\beta_0, \beta_1)$ be another morphism of linear factorisations $(X, d_X) \lto (Y, d_Y)$. The morphisms $\alpha, \beta$ are \textbf{homotopic} if there exists a pair of morphisms $h_0: X_0 \lto Y_1, h_1: X_1 \lto Y_0$ such that the following holds
+	\begin{equation}
+		\alpha_0 - \beta_0 = q_Yh_0 + h_1 p_X,\qquad  \alpha_1 - \beta_1 = h_0 q_X + p_Y h_1
+		\end{equation}
+	\end{defn}
+% https://q.uiver.app/?q=WzAsMTIsWzAsMCwiXFxsZG90cyJdLFsxLDAsIlhfMCJdLFsyLDAsIlhfMSJdLFszLDAsIlhfMCJdLFs0LDAsIlhfMSJdLFs1LDAsIlxcbGRvdHMiXSxbMCwxLCJcXGxkb3RzIl0sWzEsMSwiWV8wIl0sWzIsMSwiWV8xIl0sWzMsMSwiWV8wIl0sWzQsMSwiWV8xIl0sWzUsMSwiXFxsZG90cyJdLFsxLDcsIlxcYWxwaGFfMCIsMix7Im9mZnNldCI6MX1dLFsxLDcsIlxcYmV0YV8wIiwwLHsib2Zmc2V0IjotMX1dLFsyLDgsIlxcYmV0YV8xIiwwLHsib2Zmc2V0IjotMX1dLFsyLDgsIlxcYWxwaGFfMSIsMix7Im9mZnNldCI6MX1dLFszLDksIlxcYmV0YV8wIiwwLHsib2Zmc2V0IjotMX1dLFszLDksIlxcYWxwaGFfMCIsMix7Im9mZnNldCI6MX1dLFs0LDEwLCJcXGJldGFfMSIsMCx7Im9mZnNldCI6LTF9XSxbNCwxMCwiXFxhbHBoYV8xIiwyLHsib2Zmc2V0IjoxfV0sWzEsMiwicF9YIl0sWzAsMSwicV9YIl0sWzIsMywicV9YIl0sWzMsNCwicF9YIl0sWzQsNSwicV9YIl0sWzYsNywicV9ZIiwyXSxbNyw4LCJwX1kiLDJdLFs4LDksInFfWSIsMl0sWzksMTAsInBfWSIsMl0sWzEwLDExLCJxX1kiLDJdLFsxLDYsImhfMCIsMl0sWzIsNywiaF8xIiwyXSxbMyw4LCJoXzAiLDJdLFs0LDksImhfMSIsMl0sWzUsMTAsImhfMCIsMl1d
+\[\begin{tikzcd}[column sep = large, row sep = large]
+	\ldots & {X_0} & {X_1} & {X_0} & {X_1} & \ldots \\
+	\ldots & {Y_0} & {Y_1} & {Y_0} & {Y_1} & \ldots
+	\arrow["{\alpha_0}"', shift right=1, from=1-2, to=2-2]
+	\arrow["{\beta_0}", shift left=1, from=1-2, to=2-2]
+	\arrow["{\beta_1}", shift left=1, from=1-3, to=2-3]
+	\arrow["{\alpha_1}"', shift right=1, from=1-3, to=2-3]
+	\arrow["{\beta_0}", shift left=1, from=1-4, to=2-4]
+	\arrow["{\alpha_0}"', shift right=1, from=1-4, to=2-4]
+	\arrow["{\beta_1}", shift left=1, from=1-5, to=2-5]
+	\arrow["{\alpha_1}"', shift right=1, from=1-5, to=2-5]
+	\arrow["{p_X}", from=1-2, to=1-3]
+	\arrow["{q_X}", from=1-1, to=1-2]
+	\arrow["{q_X}", from=1-3, to=1-4]
+	\arrow["{p_X}", from=1-4, to=1-5]
+	\arrow["{q_X}", from=1-5, to=1-6]
+	\arrow["{q_Y}"', from=2-1, to=2-2]
+	\arrow["{p_Y}"', from=2-2, to=2-3]
+	\arrow["{q_Y}"', from=2-3, to=2-4]
+	\arrow["{p_Y}"', from=2-4, to=2-5]
+	\arrow["{q_Y}"', from=2-5, to=2-6]
+	\arrow["{h_0}"', from=1-2, to=2-1]
+	\arrow["{h_1}"', from=1-3, to=2-2]
+	\arrow["{h_0}"', from=1-4, to=2-3]
+	\arrow["{h_1}"', from=1-5, to=2-4]
+	\arrow["{h_0}"', from=1-6, to=2-5]
+\end{tikzcd}\]
+
+The relation of homotopy defines an equivalence relation on the set of morphisms of linear factorisations.
+
+\begin{defn}
+	A linear transformation whose underlying $\bb{Z}_2$-graded $k$-module is free and of finite rank is a \textbf{matrix factorisation}. There is a category $\operatorname{hmf}(k[\underline{x}], f)$ where the objects are matrix factorisations of $f$ and the morphisms are homotopy equivalence classes of morphisms of matrix factorisations.
+	\end{defn}
+
+\begin{defn}
+	If $(X,d_X)$ is a matrix factorisation then so is $(X[1], -d_X)$. If we denote this by $\Psi(X,d_X)$ then $\Psi: \operatorname{hmf}(k[\underline{x}], f) \lto \operatorname{hmf}(k[\underline{x}], f)$ is extends to an endofunctor which induces a supercategorical structure on $\operatorname{hmf}(k[\underline{x}], f)$ if we take $\xi: \Psi^2 \lto 1_{\operatorname{hmf}(k[\underline{x}], f)}$ to be the identity.
+	\end{defn}
+
+\begin{defn}
+	Let $(X, \partial_X)$ be a linear factorisation of $f \in k$ over $k$ and $(Y, \partial_Y)$ a linear factorisation of $g \in k$ also over $k$. Then the \textbf{tensor product} of $(X, \partial_X)$ and $(Y, \partial_Y)$ consists of the following data:
+	\begin{equation}
+		X \otimes_k Y, \qquad \partial_{X \otimes_k Y} = d_X \otimes 1 + 1 \otimes d_Y
+	\end{equation}
+	where $X \otimes_k Y$ is the \emph{graded} tensor product, which satisfies the following for all $x_1, x_2 \in X, y_1, y_2 \in Y$.
+	\begin{equation}
+		(x_1 \otimes y_1)(x_2 \otimes y_2) = (-1)^{\operatorname{deg}(x_2)\operatorname{deg}(y_1)}(x_1 x_2 \otimes y_1 y_2)
+	\end{equation}
+\end{defn}
+
+\begin{lemma}
+	The tensor product $(X \otimes_k Y, \partial_{X \otimes_k Y})$ is a linear factorisation of $f + g$.
+\end{lemma}
+\begin{proof}
+	See \cite{Hitchcock}[Page 35].
+\end{proof}
+
+In the special case where there exists $f \in k[\underline{x}], g \in k[\underline{y}], h \in k[\underline{z}]$ and $(X, \partial_X)$ is a linear factorisation of $f - g \in k[\underline{x}, \underline{y}]$ and $(Y, \partial_Y)$ is a linear factorisation of $g - h \in k[\underline{y}, \underline{z}]$ then we also have the \emph{cut} of $(X, \partial_X)$ and $(Y, \partial_Y)$.
+
+\begin{defn}
+	For each $y_1, \ldots, y_n \in \underline{y}$ let $\partial_{y_i}g$ denote the formal partial derivative of $g$ with respect to $y_i$. Denote by $J_g$ the following $k[\underline{y}]$-module.
+	\begin{equation}
+		J_g := k[\underline{y}]/(\partial_{y_1}g, \ldots, \partial_{y_n}g)
+	\end{equation}
+	
+	The \textbf{cut} of $(X, \partial_X), (Y, \partial_Y)$ is the data of
+	\begin{equation}
+		X | Y := (X \otimes_{k[\underline{y}]} J_g \otimes_{k[\underline{y}]} Y), \qquad \partial_{X|Y} = d_X \otimes 1 \otimes 1 + 1 \otimes 1 \otimes d_Y
+	\end{equation}
+\end{defn}
+\begin{lemma}
+	The cut $X | Y$ is a matrix factorisation of $f - h$.
+\end{lemma}
+\begin{proof}
+	\textcolor{red}{Check this.}
+\end{proof}
+
+We will use the following Lemma to indirectly talk about matrix factorisations using $\bb{Z}_2$-graded modules over Clifford algebras.
+
+\begin{defn}\label{def:clifford_modules}
+	Let $k[\underline{x}], k[\underline{y}]$ denote polynomial rings over variables $x_1, \ldots, x_n$ and $y_1, \ldots, y_n$ respectively. Let $U(\underline{x}) = \sum_{i = 1}^n x_i^2$.
+	
+	We let $C_{U}$ denote the $\bb{Z}_2$-graded $k$-algebra with multiplicative generators $\mu_1, \ldots, \mu_n, \nu_1, \ldots, \mu_n$ satisfying the relations
+	\begin{equation}
+		[\mu_i, \mu_j] = -2\delta_{ij}\qquad [\mu_i, \nu_j] = 0\qquad [\nu_i, \nu_j] = 2\delta_{ij}
+	\end{equation}
+	where $\delta_{ij} = 1\text{ if and only if }i = j\text{ and }\delta_{ij} = 0\text{ otherwise}$ is the Kronecker delta.
+\end{defn}
+
+\begin{remark}
+	The algebra $C_{U}$ described in Definition \ref{def:clifford_modules} is the Clifford algebra corresponding to the quadratic form
+	\begin{equation}
+		\begin{pmatrix}
+			I_n & 0\\
+			0 & -I_n
+		\end{pmatrix}
+	\end{equation}
+	where $I_n$ is the $n \times n$ identity matrix, on the space $k^{2n}$.
+\end{remark}
+
+\begin{lemma}\label{lem:Matrix_fact_from_Cliff}
+	Let $\tilde{X}$ be a $\bb{Z}_2$-graded $C_{U}$-module which is free and finitely generated over $k$. Then $X := \tilde{X} \otimes_k k[\underline{x}, \underline{y}]$ coupled with the map
+	\begin{equation}\label{eq:differential_Cliff_mod}
+		\partial_X = \sum_{i = 1}^n \mu_i x_i + \sum_{j = 1}^n \nu_j y_j
+	\end{equation}
+	is a matrix factorisation of $U(\underline{y}) - U(\underline{x}) \in k[\underline{x}, \underline{y}]$.
+\end{lemma}
+\begin{proof}
+	See \cite{Hitchcock}[Lemma 5.6.1].
+\end{proof}
+\begin{remark}
+	The map \eqref{eq:differential_Cliff_mod} is odd because we consider $k[\underline{x}, \underline{y}]$ to admit the $\bb{Z}_2$-grading
+	\begin{equation}
+		k[\underline{x}, \underline{y}] \oplus 0
+	\end{equation}
+	That is, $k[\underline{x},\underline{y}]$ has $k[\underline{x},\underline{y}]$ entirely in degree $0$, and the zero module $0$ in degree $1$. For example, if $\underline{x},\underline{y}$ are both singleton sets $\underline{x} = \{ x \}, \underline{y} = \{ y \}$ then
+	\begin{align*}
+		\operatorname{deg}(\partial_X(x \otimes p)) &= \operatorname{deg}( \mu x \otimes x p+ \nu x \otimes y_j p )\\
+		&= \operatorname{deg}(\mu x)\text{ }(= \operatorname{deg}(\nu x))\\
+		&= \operatorname{deg}(x) + 1
+	\end{align*}
+\end{remark}
+
+\begin{example}\label{ex:}
+	Let $\underline{x}$ be a set of variables $\{ x_1, \ldots, x_n \}$ and $\sigma \in S_n$ a permutation on this set. Let $\tilde{X}$ denote the $\bb{Z}_2$-graded $k$-algebra
+	\begin{equation}
+		\tilde{X} := \bigwedge(k \theta_1 \oplus \ldots \oplus k \theta_n)
+	\end{equation}
+	which is a $C_{U}$-algebra (Definition \ref{def:clifford_modules}) with $C_{U}$-action induced by the following
+	\begin{align*}
+		\mu_i &= \theta_{\sigma^{-1}i} + \theta_{\sigma^{-1}i}^\ast\\
+		\nu_i &= \theta_i - \theta_i^\ast
+	\end{align*}
+	Thus, by Lemma \ref{lem:Matrix_fact_from_Cliff} we obtain a matrix factorisation $(X = \tilde{X} \otimes k[\underline{x}, \underline{y}], \partial_{X})$.
+	
+	Now say we had another similar matrix factorisation; let $\underline{y} = \{ y_1, \ldots, y_m \}$ be another set of variables and let $\tau$ be a permutation on this set. Let $\tilde{Y}$ denote the $\bb{Z}_2$-graded $k$-algebra
+	\begin{equation}
+		\tilde{Y} := \bigwedge (k\psi_1 \oplus \ldots \oplus k\psi_m)
+	\end{equation}
+	This is a $C_{U}$-module with $C_{U}$-action induced by the following
+	\begin{align*}
+		\overline{\nu_i} &= \psi_{\tau^{-1}i} + \psi_{\tau^{-1}i}^\ast\\
+		\omega_i &= \psi_i - \psi_i^\ast
+	\end{align*}
+	This induces a matrix factorisation $(Y = \tilde{Y} \otimes k[\underline{y}, \underline{z}], \partial_Y)$ of $U(\underline{y}) - U(\underline{z})$ where
+	\begin{equation}
+		\partial_Y := \sum_{i = 1}^n \overline{\nu}_i y_i + \sum_{i = 1}^n \omega_i z_i
+	\end{equation}
+	and $\underline{z} = \{ z_1, \ldots, z_n \}$ is another set of variables.
+	
+	We will first consider the cut $X | Y$. The sequence of partial derivatives $(\partial_{y_1}U(\underline{y}), \ldots, \partial_{y_n}U(\underline{y})) = (2y_1, \ldots, 2y_n)$ and so
+	\begin{equation}
+		J_{U(\underline{y})} = k[\underline{y}]/(y_1, \ldots, y_n) = k
+	\end{equation}
+	as a $k[\underline{y}]$-module with trivial $k[\underline{y}]$-action. We thus have
+	\begin{equation}
+		X | Y = X \otimes_{k[\underline{x}, \underline{y}]} k \otimes_{k[\underline{y}, \underline{z}]} Y,\qquad \partial_{X | Y} = d_X \otimes 1 \otimes 1 + 1 \otimes 1 \otimes d_Y
+	\end{equation}
+\end{example}
+
+Say $R$ is a commutative ring. We will consider an element $f \in R$ of the following particular form: say we have $a_1, \ldots, a_n, b_1, \ldots, b_n \in R$ such that $f = \sum_{i = 1}^n a_i b_n$. The guiding example of such an element is when $R$ is a polynomial ring and $f$ is a quadratic form.
+
+\begin{lemma}
+	Suppose $M$ is a $\bb{Z}_2$-graded $R$-module with odd $R$-linear maps $\theta_i, \theta_i^\ast : M \lto M, i = 1, \ldots, n$ satisfying the canonical anticommutation relations. Then, setting $\delta_+ = \sum_{i = 1}^n a_i \theta_i$ and $\delta_- = \sum_{i = 1}^n b_i \theta_i^\ast$ we have that $(M, \delta_- + \delta_+)$ is a linear factorisation of $f$. 
+\end{lemma}
+\begin{proof}
+	See \cite[Lemma 4.2.3]{Hitchcock}.
+\end{proof}
+
+Therefore, $(\bigwedge R^n, \delta_- + \delta_+)$ is a matrix factorisation of $f$. This is the \textbf{Koszul matrix factorisation of $f$}.
+
+\section{The Bicategory of Landau-Ginzburg models (over $k$)}
+Let $k$ be a commutative ring.
+\begin{defn}
+	A polynomial $U(\underline{x}) \in k[\underline{x}] = k[x_1, \ldots, x_n]$ is a \textbf{potential} if
+	\begin{itemize}
+		\item The sequence of partial derivatives $(\partial_{x_1}U(\underline{x}), \ldots, \partial_{x_{n}}U(\underline{x}))$ is Koszul-regular.
+		\item The Jacobi ring $k[\underline{x}]/(\partial_{x_1}U(\underline{x}), \ldots, \partial_{x_n}U(\underline{x}))$ is a finitely generated free $k$-module.
+		\end{itemize}
+	\end{defn}
+
+\begin{defn}
+	The bicategory of Landau-Ginzburg models over $k$, denoted $\call{LG}_k$, consists of the following data:
+	\begin{itemize}
+		\item The objects of $\call{LG}_k$ are paris $(k[\underline{x}], U(\underline{x}))$ where $k[\underline{x}]$ is a polynomial ring and $U(\underline{x}) \in k[\underline{x}]$ is a potential.
+		\item The category of $1$-morphisms $(k[\underline{x}], U(\underline{x})) \lto (k[\underline{y}], V(\underline{y}))$ is $\big(\operatorname{hmf}(k[\underline{x}, \underline{y}], V(\underline{y}) - U(\underline{x}))\big)^\omega$, the idempotent completion of the category of finite rank matrix factorisations (with morphisms homotopy equivalence classes of morphisms of linear factorisations).
+		\item Composition of the 1-morphisms
+		\begin{equation}
+			\begin{tikzcd}
+			(k[\underline{x}], U(\underline{x}))\arrow[r,"{(X, d_X)}"] & (k[\underline{y}], V(\underline{y}))\arrow[r,"{(Y, d_Y)}"] & (k[\underline{z}], W(\underline{z}))
+			\end{tikzcd}
+			\end{equation}
+		is given by taking the tensor product of linear factorisations over $k[\underline{y}]$
+		\begin{equation}
+			(X, d_X) \otimes_{k[\underline{y}]} (Y, d_Y) = (X \otimes_{k[\underline{y}]} Y, d_X \otimes 1 + 1 \otimes d_Y)
+			\end{equation}
+		\item Consider an object $(k[\underline{x}], U(\underline{x}))$ where $k[\underline{x}] = k[x_1, \ldots, x_n]$ and the polynomial ring $k[\underline{x}, \underline{x}'] = k[x_1, \ldots, x_n, x_1', \ldots, x_n']$. The unit $1$-morphism $(I_{U(\underline{x})}, d_{I_{U(\underline{x})}})$ of $(k[\underline{x}], U(\underline{x}))$ is a Koszul matrix factorisation of $U(\underline{x}') - U(\underline{x}) \in k[\underline{x}, \underline{x}']$ arising from the Koszul complex of the sequence $(x_1 - x_1', \ldots, x_n - x_n')$ in $k[\underline{x}, \underline{x}']$.
+		\end{itemize}
+	\end{defn}
+
+\section{Splitting idempotents}
+In this thesis we defend the proposition that the splitting of idempotents has fundamental relevance to computation.
+
+Throughout, we work with a $k$-linear category $\call{C}$, that is, the category $\call{C}$ has $k$-modules for homsets.
+
+\begin{defn}
+	Let $\call{C}$ be a category. An \textbf{idempotent} in $\call{C}$ is an endomorphism $e: C \lto C$ such that $e^2 = e$.
+	
+	An idempotent $e$ is \textbf{split} if there exists a pair of morphisms $s: R \lto C, r: C \lto R$ such that $sr = e, rs = \operatorname{id}_R$.
+\end{defn}
+
+\begin{lemma}\label{lem:split_idempotent_equiv}
+	Let $e: C \lto C$ be an idempotent in $\call{C}$. Then the following are equivalent.
+	\begin{itemize}
+		\item $e = sr$ is split where $s: R \lto C, r: C \lto R$.
+		\item The Equaliser $\operatorname{Eq}(e, \operatorname{id}_e)$ exists and is equal to $s: R \lto C$.
+		\item The Coequaliser $\operatorname{Coeq}(e, \operatorname{id}_e)$ exists and is equal to $r: C \lto R$.
+	\end{itemize}
+\end{lemma}
+\begin{proof}
+	See \cite{Hitchcock}[Lemma B.1] or \cite{Borceux}[Proposition 6.5.4].
+\end{proof}
 
 
 
+\begin{lemma}
+	Assume $\call{C}$ is the category of vector spaces over some field $k$. Let $e:C \lto C$ be an idempotent. Assume $e = sr$ is split with $s: R \lto C, r: C \lto R$ and $1 - e = s'r'$ is also split with $s': R' \lto C, r': C \lto R'$. Then there is a split short exact sequence
+	\begin{equation}
+		0\lto R \stackrel{s}{\lto} C \stackrel{r'}{\lto} R' \lto 0
+	\end{equation}
+\end{lemma}
+\begin{proof}
+	Consider the morphism $(r,r'): C \lto R \oplus R'$. Then $\forall x \in R$ we have
+	\begin{align*}
+		(r,r')s(x) &= (rs(x), r's(x))\\
+		&= (x, r's(x))
+	\end{align*}
+	we claim $r's(x) = 0$. By Lemma \ref{lem:split_idempotent_equiv} we have that $r': C \lto R'$ is the coequaliser $\operatorname{Coeq}(1-e, \operatorname{id}_C)$. Thus $r's(x) = r'(1-e)s(x)) = r's(x) - r'es(x)$. On the other hand, $s: R \lto C$ is the equaliser $\operatorname{Eq}(e, \operatorname{id}_C)$ and so $es = s$.
+	
+	Thus we have a commuting diagram
+	% https://q.uiver.app/?q=WzAsNixbMCwwLCIwIl0sWzEsMCwiUiJdLFsyLDAsIkMiXSxbMywwLCJSJyJdLFs0LDAsIjAiXSxbMiwxLCJSIFxcb3BsdXMgUiciXSxbMCwxXSxbMSw1XSxbNSwzXSxbMyw0XSxbMiw1LCIocixyJykiLDJdLFsxLDIsInIiXSxbMiwzLCJyJyJdXQ==
+	\[\begin{tikzcd}
+		0 & R & C & {R'} & 0 \\
+		&& {R \oplus R'}
+		\arrow[from=1-1, to=1-2]
+		\arrow[from=1-2, to=2-3]
+		\arrow[from=2-3, to=1-4]
+		\arrow[from=1-4, to=1-5]
+		\arrow["{(r,r')}"', from=1-3, to=2-3]
+		\arrow["r", from=1-2, to=1-3]
+		\arrow["{r'}", from=1-3, to=1-4]
+	\end{tikzcd}\]
+	Moreover, the homomorphism $(r,r')$ is an isomorphism. To see this, say $x,x' \in C$ are such that $(r,r')(x) = (r,r')(x')$. Then $r(x) = r(x')$ implies $s(r(x)) = s(r(x'))$ which implies $e(x) = e(x')$ and similarly $(1 - e)(x) = (1 - e)(x')$. Thus we have
+	\begin{align*}
+		x &= (1 - e)(x) + e(x)\\
+		&= (1 - e)(x') + e(x')\\
+		&= x'
+	\end{align*}
+	For surjectivity, notice if $(x,x') \in R \oplus R'$ are given, then $(r,r')(s,s')(x,x') = (x,x')$.
+\end{proof}
 
-\section{Relevant calculations}
+The next Lemma states that splitting an idempotent is equivalent to finding its image.
 
-\subsection{Calculating $\bigcap_{i = 1}^m \operatorname{Ker}(\bar{\nu}_i + \nu_i)$}
-``A typical element of $\wedge k \underline{\psi} \otimes \wedge k \underline{\theta}$ annihilated by $\bar{\nu}_i + \nu_i$ is an \emph{entangled bit}":
+\begin{lemma}\label{lem:split_idemp_and_im}
+	Let $\call{C}$ be linear and admit kernels and cokernels. Then if $e:C \lto C$ is split we have
+	\begin{equation}
+		\operatorname{Eq}(\operatorname{id}, e) \cong \operatorname{im}(e) \cong \operatorname{Coeq}(\operatorname{id},e)
+	\end{equation}
+\end{lemma}
+\begin{proof}[Sketch]
+	We have
+	\begin{equation}
+		\operatorname{Eq}(\operatorname{id},e) \cong \operatorname{ker}(\operatorname{id}-e) \cong \operatorname{im}(e)
+	\end{equation}
+	and
+	\begin{equation}
+		\operatorname{Coeq}(\operatorname{id},e) \cong \operatorname{Coker}(\operatorname{id} - e) \cong \operatorname{im}(e)
+	\end{equation}
+\end{proof}
+\begin{remark}
+	Another way of understanding Lemma \ref{lem:split_idemp_and_im} is that given a vector space $C$ and $v \in C$ along with an idempotent $e: C \lto C$ we have $x = e(x) + (\operatorname{id} - e)x$. It follows that
+	\begin{equation}
+		C \cong \operatorname{im}e \oplus \operatorname{im}(\operatorname{id} - e)
+	\end{equation}
+	From this it is clear that $\operatorname{Coker}(\operatorname{id} - e) \cong \operatorname{im}(e)$.
+\end{remark}
+
+Thus, to split an idempotent is to calculate the image of the idempotent. This is where the intuition that the splitting of idempotents is a fundamental component of the abstract study of computation; idempotents dictate the projection onto states of knowledge, which reduces entropy, and the calculation of the image of these spaces is the arrival at such a state of knowledge.
+
+
+
+\subsection{The superbicategorical structure on the homotopy category of matrix factorisations}
+
+
+\section{The superbicategory $\call{LG}$}
+\textcolor{red}{Note: so far we have only defined the bicategory (and we haven't even done that), do we even need the ``super"-structure?}
+
+Throughout, $k$ is a Notherian, commutative ring (but note that has already been understood how the following theory works in a more general context, see \cite{Cut_Operation}).
+
+\begin{defn}
+	A polynomial $U \in k[x] = k[x_1, \ldots, x_n]$ is a \textbf{potential} if:
+	\begin{itemize}
+		\item The sequence of partial derivatives $(\partial_{x_1}U, \ldots, \partial_{x_n}U)$ is quasi-regular.
+		\item The Jacobi ring $k[x]/(\partial_{x_1}U, \ldots, \partial_{x_n}U)$ is a finitely generated free $k$-module.
+		\end{itemize}
+	\end{defn}
+\textcolor{red}{Check with Dan if this is correct.}
+
+\begin{defn}\label{def:LG_partial_data}
+	The \textbf{bicategory of Landau-Ginzburg models over $k$}, denoted $\call{LG}_k$, consists of the following data:
+	\begin{itemize}
+		\item The objects of $\call{LG}_k$ are pairs $(k[x], U)$ where $k[x] = k[x_1, \ldots, x_n]$ is a polynomial ring and $U \in k[x]$ is a potential.
+		\item The category of $1$-morphisms $(k[x], U) \lto (k[y], V)$ is $h(U,V)^\omega$. \textcolor{red}{What is this?}
+		\item Composition of $1$-morphisms
+		\begin{equation}
+			\begin{tikzcd}
+				(k[x], U)\arrow[r,"{(X, d_X)}"] & (k[y], V)\arrow[r,"{(Y,d_Y)}"] & (k[z], W)
+				\end{tikzcd}
+			\end{equation}
+		is given by taking the tensor product of linear factorisations over $k[y]$:
+		\begin{equation}
+			(X, d_X) \otimes_{k[y]} (Y, d_Y) = (X \otimes_{k[y]} Y, d_X \otimes 1 + 1 \otimes d_Y)
+			\end{equation}
+		\item Consider an object $(k[x], U)$ where $k[x] = k[x_1, \ldots, x_n]$ and the polynomial ring $k[x,x'] = k[x_1, \ldots, x_n, x_1', \ldots, x_n']$. The unit 1-morphism $(I_U, d_{I_U})$ of $(k[x], U)$ is a Koszul matrix factorisation of $U(x') - U(x) \in k[x,x']$ arising from the Koszul complex of the sequence $(x_1 - x_1', \ldots, x_n - x_n')$ in $k[x,x']$.
+		\end{itemize}
+	\end{defn}
+We remark that Definition \ref{def:LG_partial_data} is incomplete.
+
+Note that it is not clear that the tensor product is a well-defined composition functor. Consider the 1-morphisms
+\begin{equation}
+	\begin{tikzcd}
+		(k[x], U)\arrow[r,"{(X, d_X)}"] & (k[y], V)\arrow[r,"{(Y,d_Y)}"] & (k[z], W)
+	\end{tikzcd}
+\end{equation}
+in $\call{LG}_k$. Writing $X = k[x,y]^m$ and $Y = k[y,z]^{m'}$ for some $m,m' \in \bb{N}$ we have that
+\begin{equation}
+	X \otimes_{k[y]} Y = (k[x,y] \otimes_{k[y]} k[y,z])^{m m'} = k[x,y,z]^{mm'}
+	\end{equation}
+which is free, but not finitely generated over $k[x,z]$. Hence it is only clear that the composition of $(X,d_X)$ and $(Y,d_Y)$ belongs to $\operatorname{HMF}(k[x,z], W(z) - U(x))$, rathare than $h(U,W)^\omega$.
+
+\section{Clifford thickening}
+Let $\call{T}$ be a small idempotent complete supercategory. We construct a new supercategory $\call{T}^\bullet$ called the \textbf{Clifford thickening} in which the objects are pairs $(X,n)$ of an integer $n \geq 0$ and a left $C_n$-module $X$ in $\call{T}$. Recall that if $A$ is a $\bb{Z}_2$-graded $k$-algebra then $\call{T}_A$ denotes the supercategory of $A$-modules in $\call{T}$ with $A$-linear maps.
+
+\begin{defn}
+	Let $\call{M}$ denote the superbicategory of Morita trivial $\bb{Z}_2$-graded $k$-algebras. The 1-morphisms are $\bb{Z}_2$-graded bimodules which are finitely generated and projective over $k$ and the 2-morphisms are degree zero bimodule maps.
+	\end{defn} 
+
+\begin{proposition}
+	The assignment of the supercategory $\call{T}_A$ to an algebra $A$ and of the superfunctor $\Phi_V = V \otimes_A (\und{0.2})$ to a $B-A-$bimodule $V$ determines a strong superfunctor
+	\begin{equation}
+		\Phi^\call{T}: \call{M} \lto \operatorname{Cat}_k^{\operatorname{sup}}
+		\end{equation}
+	to the superbicategory of small supercategories and superfunctors
+	\end{proposition}
+\begin{proof}
+	See \cite[Proposition 2.22]{Cut_Operation}.
+	\end{proof}
+\begin{defn}
+	Let $\bb{N}$ denote the category of integers $n \geq 0$ with a unique morphism $\phi_{m,n}L n \lto m$ for each pair $m, n$.
+	\end{defn}
+We view $\bb{N}$ as a bicategory with only identity 2-morphisms. \textcolor{red}{Rewrite this and check with Dan if this is the correct definition, do we really have morphsims for \emph{any} pair $m,n$?}
+
+\begin{lemma}
+	There is a strong functor $\bb{N} \lto \call{M}$ defined by
+	\begin{align*}
+		n &\longmapsto C_n = \operatorname{End}_k(S_n)\\
+		\phi_{m,n} &\longmapsto S_{m,n} = S_m \otimes_k S_n^\ast
+		\end{align*}
+	\end{lemma}
+The composite of these strong functors is a strong functor
+\begin{equation}\label{eq:strong_functor_composite}
+	\begin{tikzcd}
+		\bb{N}\arrow[r] & \call{M}\arrow[r] & \operatorname{Cat}_k^{\operatorname{sup}}
+		\end{tikzcd}
+	\end{equation}
+sending $n$ to the category of left $C_n$-modules in $\call{T}$ and $\phi_{m,n}$ to the functor $S_{m,n} \otimes_{C_n} \und{0.2}$.
+
+\begin{defn}
+	The \textbf{Clifford thickening} $\call{T}^\bullet$ of the supercategory $\call{T}$ is the category which results from the Grothendieck construction applied to the strong functor \eqref{eq:strong_functor_composite}.
+	\end{defn}
+
+\textcolor{red}{There is a more concrete definition circumnavigating the Grothendieck construction but I do not understand it yet.}
+
+
+
+\begin{lemma}
+	Let $X$ be a $C_n$-module in $\call{T}$. The idempotent $e_n: X \lto X$
+	\end{lemma}
+
+\section{Material I don't think I need}
+\subsection{The superbicategory $\call{C}$}
+In this section we define a superbicategory without units $\call{C}$. The objects of $\call{C}$ are the same as $\call{LG}$, namely potentials $(x,W)$.
+\begin{defn}
+	Given potentials $(x,W)$ and $(y,V)$ we define
+	\begin{equation}
+		\call{C}(W,V) := \Big(\operatorname{hmf}(k[x,y], V - W)^\omega\Big)
+	\end{equation}
+	where $(\und{0.2})^\omega$ denotes th eidempotent completion and $(\und{0.2})^\bullet$ is the Clifford thickening.
+\end{defn}
+Thus a $1$-morphism $W \lto V$ in $\call{C}$ is a finite rank matrix factorisation of $V(y) - W(x)$ together with an idempotent endomprhism $e$ and a family of odd operators $\gamma_i, \gamma_i^\dagger$ satisfying Clifford relations and the equations (all up to homotopy)
+\begin{equation}
+	\gamma_i e = \gamma_i = e\gamma_i,\qquad \gamma_i^\dagger e = \gamma_i^\dagger = e\gamma_i^\dagger
+\end{equation}
+
+For matrix factorisations $X, Y$ of $V(y) - W(x)$ with respective Clifford actions $\{ \gamma_i, \gamma_i^\dagger \}_{i = 1}^a$ and $\{ \rho_j, \rho_j^\dagger \}_{j = 1}^b$ the 2-morphisms $\phi: (X,a) \lto (Y,b)$ in $\call{C}$ are in bijection with morphisms of matrix factorisations $\phi: X \lto Y$ satisfying
+\begin{equation}
+	\phi \gamma_i^\dagger = 0, \qquad \rho_j \phi = 0,\qquad 1 \leq i \leq a, \quad 1 \leq j \leq b
+\end{equation}
+\textcolor{red}{Lemma missing here}
+The first aim of this section is to define, for any object $(z,U)$ of $\call{LG}$, a functor
 \begin{align*}
-(\overline{\nu}_i + \nu_i)(1 + \psi_i\theta_{\sigma^{-1}i}) &= \bar{\nu}_i + \nu_i + \bar{\nu}_i\psi\theta_{\sigma^{-1}i} + \nu_i\psi_i\theta_{\sigma^{-1}i}\\
-&= \theta_{\sigma^{-1}i}^\ast + \theta_{\sigma^{-1}i} + \psi_i - \psi^\ast_i + \theta_{\sigma^{-1}i}^\ast \psi\theta_{\sigma^{-1}i} + \theta_{\sigma^{-1}i}\psi_i\theta_{\sigma^{-1}i} + \psi_i\psi_i\theta_{\sigma^{-1}i} - \psi^\ast_i \psi_i\theta_{\sigma^{-1}i}\\
-&= \theta_{\sigma^{-1}i}^\ast + \theta_{\sigma^{-1}i} + \psi_i- \psi_i^\ast  + \psi_i + 0 - \theta_{\sigma^{-1}i} - 0\\
-&= \theta_{\sigma^{-1}i}^\ast - \psi_i^\ast
+	\call{C}(V,U) \otimes_k \call{C}(W,V) &\lto \call{C}(W,U)\\
+	(Y,X) &\longmapsto Y \mid X
 \end{align*}
+\textcolor{red}{What does $\otimes$ mean here?}
 
+which we call the \textbf{cut functor}. The cut operation is defined on matrix factorisations $X$ of $V - W$ and $Y$ of $U - V$ as follows, assuming $y = (y_1, \ldots, y_m)$ and writing
+\begin{equation}
+	J_V = k[y]/(\partial_{y_1}V, \ldots, \partial_{y_m}V)
+\end{equation}
+\begin{lemma}
+	The $\bb{Z}_2$-graded $k[x,z]$-module
+	\begin{equation}
+		Y \mid X = Y \otimes_{k[y]} J_V \otimes_{k[y]} X
+	\end{equation}
+	with the differential $d_Y \otimes 1 + 1 \otimes d_X$ is a finite rank matrix factorisation of $U - W$.
+\end{lemma}
+\begin{proof}
+	Since $V$ is a potential $J_V$ is a finite rank free $k$-module, and it follows that $Y\mid X$ is a finite rank free $k[x,z]$-module.
+\end{proof}
 
+There exists a Clifford action on $Y \mid X$, however it is difficult to describe in general and so we now describe how multiplicative proof nets will be modeled and then consider this Clifford action in this particular case.
+
+\subsection{Super(bi)categories}
+Throughout $k$ is a notherian $\bb{Q}$-alebra. By default categories and functors are $k$-linear.
+
+\subsubsection{Supercategories}
+\begin{defn}
+	A \textbf{supercategory} is a category $\call{C}$ together with a functor $\Psi: \call{C} \lto \call{C}$ and a natural isomoprhism $\xi: \Psi^2 \lto 1_\call{C}$ satisfying the condition
+	\begin{equation}\label{eq:super_condition}
+		\xi \ast 1_\Psi = 1_\Psi \ast \xi
+	\end{equation}
+	as natural transformations $\Psi^3 \lto \Psi$. A \textbf{superfunctor} $(F,\gamma)$ from a supercategory $(\call{C}, \Psi_\call{C})$ to a supercategory $(\call{D}, \Psi_{\call{D}})$ is a functor $F: \call{C} \lto \call{D}$ together with a natural isomoprhism $\gamma: F\Psi_\call{C} \lto \Psi_\call{D}F$ satisfying
+	\begin{equation}\label{eq:super_functor}
+		1_F \ast \xi = (\xi \ast 1_F)(1_\Psi \ast \gamma)(\gamma \ast 1_\Psi)
+	\end{equation}
+	A \textbf{supernatural transformation} $\varphi: F \lto G$ between superfunctors $(F, \gamma_F), (G, \gamma_G)$ is a natural transformation making the following diagram commute:
+	\begin{equation}\label{eq:super_nat_trans}
+		\begin{tikzcd}
+			F\Psi\arrow[r,"{\varphi \Psi}"]\arrow[d,"{\gamma_F}"] & G\Psi\arrow[d,"{\gamma_G}"]\\
+			\Psi F\arrow[r,"{\Psi \varphi}"] & \Psi G
+		\end{tikzcd}
+	\end{equation}
+\end{defn}
+
+\begin{remark}
+	Condition \eqref{eq:super_condition} means that for all $C \in \call{C}$ we have the following equality.
+	\begin{equation}
+		\xi_{\Psi C} = \Psi \xi_C
+	\end{equation}
+	Condition \eqref{eq:super_functor} means that for all $C \in \call{C}$ we have the following equality.
+	\begin{equation}
+		F\xi_C = \xi_{FC}\Psi_{\call{D}}\gamma_C \gamma_{\Psi_{\call{C}C}}
+	\end{equation}
+	which can be written as requiring commutativity of the following diagram.
+	\begin{equation}
+		\begin{tikzcd}
+			F\Psi_C C\arrow[r,"{\gamma_{\Psi_\call{C} C}}"]\arrow[d,swap,"{F\xi_C}"] & \Psi_\call{D} F \Psi_{\call{C}}C\arrow[d,"{\Psi_{\call{D}}\gamma_C}"]\\
+			FC & \Psi_{\call{D}}^2 FC\arrow[l,"{\xi_{\call{D}FC}}"]
+		\end{tikzcd}
+	\end{equation}
+\end{remark}
+
+Lower case letters $a, b, \ldots$ denote objects of a bicategory, while upper case letters $X, Y, \ldots$ and greek letters $\alpha, \beta, \ldots$ respectively denote 1-morphisms and 2-morphisms. Units are denotes $\Delta$, associators are $\alpha$, and unitors are $\lambda, \rho$. The composition of $Y, X$ is denoted $YX$ or $Y \circ X$.
+
+\begin{defn}
+	A \textbf{superbicategory} is a bicategory $\call{B}$ together with the data:
+	\begin{itemize}
+		\item For each object $a$ a $1$-morphism $\Psi_a: a \lto a$ and a 2-isomorphism $\xi_a: \Psi_a^2 \lto \Delta_a$.
+		\item For each 1-morphism $X: a \lto b$ a natural 2-isomoprhism $\gamma_X: X\Psi_a \lto \Psi_b X$.
+	\end{itemize}
+	This data is required to satsify the following axioms:
+	\begin{itemize}
+		\item For each composable pair $X, Y$ of 1-morphisms the diagram
+		\begin{equation}
+			\begin{tikzcd}
+				(YX)\Psi\arrow[rrr,"{\gamma_{YX}}"]\arrow[d,"{\alpha}"] &&& \Psi(YX)\\
+				Y(X\Psi)\arrow[r,"{1_Y \ast \gamma_X}"] & Y(\Psi X)\arrow[r,"{\alpha^{-1}}"] & (Y\Psi)X\arrow[r,"{\gamma_Y \ast 1_X}"] & (\Psi Y)X\arrow[u,"{\alpha}"]
+			\end{tikzcd}
+		\end{equation}
+		commutes.
+		\item For every object $a$, $\xi_a \ast 1_\Psi = 1_\Psi \ast \xi_a$.
+		\item For every 1-morphism $X: a \lto b, 1_X \ast \xi_a = (\xi_b \ast 1)(1_\Psi \ast \gamma_X)(\gamma_X \ast 1_\Psi)$.
+	\end{itemize}
+\end{defn}
+
+\begin{example}
+	There is a bicategory of $\bb{Z}_2$-graded $k$-algebras where 1-morphisms are $\bb{Z}_2$-graded bimodules and 2-morphisms are degree zero bimodule maps. Given a $B-A-$module $M$ the shift $M[1]$ has the grading $M[1]_i = M_{i+1}$ and the left and right action given by 
+	\begin{equation}
+		b \cdot m = (-1)^{|b|}bm,\qquad m \cdot a = (-1)^{|a|} m a
+	\end{equation}
+	Thsi is a functor $\Psi = (\und{0.2})[1]$ on the category of $B-A-$bimodules and with $\xi = 1$ this defines the structure of a supercategory on this category of bimodules. The suual isomoprhisms of bimodules $\tau$
+	\begin{align}
+		N[1] \otimes M &\lto (N \otimes M)[1], & n \otimes m &\longmapsto n \otimes m\\
+		N \otimes M[1] &\lto (N \otimes M)[1], & n \otimes m &\longmapsto (-1)^{|n|}n \otimes m
+	\end{align}
+	satisfy the conditions in Appendix \cite[B]{Cut_Operation} and therefore give the bicategory of $\bb{Z}_2$-graded algberas and bimodules the structure of a superbicategory.
+\end{example}
+
+\begin{thebibliography}{99}
+	\bibitem{Hitchcock} R. Hitchcock. \emph{Differentiation, Division and the Bicategory of Landau-Ginzburg Models}. Master's thesis. \url{http://therisingsea.org/notes/MScThesisRohanHitchcock.pdf}
+	
+	\bibitem{Borceux} F. Borceux. \emph{Handbook of Categorical Algebra 1: Basic Category Theory}. Vol. 50. Encyclopedia of Mathematics and its Applications. Cambridge University Press, 1994.
+	
+	\bibitem{TroianiSCA} W. Troiani. \emph{Secondary Commutative Algebra}.
+	
+	\bibitem{Friedrich} T. Friedrich, \emph{Dirac Operators in Riemannian Geometry} 20MathematicsSubjectClasification.Primary58Jx; Secondary 53C27, 53C28, 57R57, 58J05, 58J20, 58J50, 81R25.
+	
+	\bibitem{Cut_Operation} D. Murfet. \emph{The cut operation on matrix factorisations}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	\end{thebibliography}
 
 \end{document}
 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.5.21)  22 FEB 2022 15:04
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.5.21)  10 AUG 2022 10:13
 entering extended mode
 **./ThreeAlgorithms.tex
 (ThreeAlgorithms.tex
@@ -922,74 +922,51 @@ LaTeX Font Info:    Redeclaring math accent \vec on input line 1848.
 )
 \c@thm=\count313
 LaTeX Info: Redefining \diamondtimes on input line 91.
-
-(/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/latex/ge
-ometry/geometry.sty
-Package: geometry 2020/01/02 v5.9 Page Geometry
-
-(/Library/Application Support/MiKTeX/texmfs/install/tex/generic/iftex/ifvtex.st
-y
-Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
-)
-\Gm@cnth=\count314
-\Gm@cntv=\count315
-\c@Gm@tempcnt=\count316
-\Gm@bindingoffset=\dimen296
-\Gm@wd@mp=\dimen297
-\Gm@odd@mp=\dimen298
-\Gm@even@mp=\dimen299
-\Gm@layoutwidth=\dimen300
-\Gm@layoutheight=\dimen301
-\Gm@layouthoffset=\dimen302
-\Gm@layoutvoffset=\dimen303
-\Gm@dimlist=\toks47
-
-(/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/latex/ge
-ometry/geometry.cfg)) (ThreeAlgorithms.aux)
+ (ThreeAlgorithms.aux)
 \openout1 = `ThreeAlgorithms.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 110.
-LaTeX Font Info:    ... okay on input line 110.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 110.
-LaTeX Font Info:    ... okay on input line 110.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 110.
-LaTeX Font Info:    ... okay on input line 110.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 110.
-LaTeX Font Info:    ... okay on input line 110.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 110.
-LaTeX Font Info:    ... okay on input line 110.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 110.
-LaTeX Font Info:    ... okay on input line 110.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 110.
-LaTeX Font Info:    ... okay on input line 110.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 110.
-LaTeX Font Info:    ... okay on input line 110.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 110.
-LaTeX Font Info:    ... okay on input line 110.
-LaTeX Font Info:    Checking defaults for T3/cmr/m/n on input line 110.
-LaTeX Font Info:    Trying to load font information for T3+cmr on input line 11
-0.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 108.
+LaTeX Font Info:    ... okay on input line 108.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 108.
+LaTeX Font Info:    ... okay on input line 108.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 108.
+LaTeX Font Info:    ... okay on input line 108.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 108.
+LaTeX Font Info:    ... okay on input line 108.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 108.
+LaTeX Font Info:    ... okay on input line 108.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 108.
+LaTeX Font Info:    ... okay on input line 108.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 108.
+LaTeX Font Info:    ... okay on input line 108.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 108.
+LaTeX Font Info:    ... okay on input line 108.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 108.
+LaTeX Font Info:    ... okay on input line 108.
+LaTeX Font Info:    Checking defaults for T3/cmr/m/n on input line 108.
+LaTeX Font Info:    Trying to load font information for T3+cmr on input line 10
+8.
 
 (/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/latex/ti
 pa/t3cmr.fd
 File: t3cmr.fd 2001/12/31 TIPA font definitions
 )
-LaTeX Font Info:    ... okay on input line 110.
+LaTeX Font Info:    ... okay on input line 108.
 
 (/Library/Application Support/MiKTeX/texmfs/install/tex/context/base/mkii/supp-
 pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count317
-\scratchdimen=\dimen304
+\scratchcounter=\count314
+\scratchdimen=\dimen296
 \scratchbox=\box76
-\nofMPsegments=\count318
-\nofMParguments=\count319
-\everyMPshowfont=\toks48
-\MPscratchCnt=\count320
-\MPscratchDim=\dimen305
-\MPnumerator=\count321
-\makeMPintoPDFobject=\count322
-\everyMPtoPDFconversion=\toks49
+\nofMPsegments=\count315
+\nofMParguments=\count316
+\everyMPshowfont=\toks47
+\MPscratchCnt=\count317
+\MPscratchDim=\dimen297
+\MPnumerator=\count318
+\makeMPintoPDFobject=\count319
+\everyMPtoPDFconversion=\toks48
 )
 (/Library/Application Support/MiKTeX/texmfs/install/tex/latex/epstopdf-pkg/epst
 opdf-base.sty
@@ -1001,7 +978,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 -sys.cfg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
-Package hyperref Info: Link coloring OFF on input line 110.
+Package hyperref Info: Link coloring OFF on input line 108.
 
 (/Library/Application Support/MiKTeX/texmfs/install/tex/latex/hyperref/nameref.
 sty
@@ -1015,129 +992,170 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count323
+\c@section@level=\count320
 )
-LaTeX Info: Redefining \ref on input line 110.
-LaTeX Info: Redefining \pageref on input line 110.
-LaTeX Info: Redefining \nameref on input line 110.
+LaTeX Info: Redefining \ref on input line 108.
+LaTeX Info: Redefining \pageref on input line 108.
+LaTeX Info: Redefining \nameref on input line 108.
  (ThreeAlgorithms.out) (ThreeAlgorithms.out)
 \@outlinefile=\write4
 \openout4 = `ThreeAlgorithms.out'.
 
-*geometry* driver: auto-detecting
-*geometry* detected driver: pdftex
-*geometry* verbose mode - [ preamble ] result:
-* driver: pdftex
-* paper: <default>
-* layout: <same size as paper>
-* layoutoffset:(h,v)=(0.0pt,0.0pt)
-* modes: 
-* h-part:(L,W,R)=(28.45274pt, 557.38951pt, 28.45274pt)
-* v-part:(T,H,B)=(28.45274pt, 738.0645pt, 28.45274pt)
-* \paperwidth=614.295pt
-* \paperheight=794.96999pt
-* \textwidth=557.38951pt
-* \textheight=738.0645pt
-* \oddsidemargin=-43.81725pt
-* \evensidemargin=-43.81725pt
-* \topmargin=-80.81725pt
-* \headheight=12.0pt
-* \headsep=25.0pt
-* \topskip=12.0pt
-* \footskip=30.0pt
-* \marginparwidth=44.0pt
-* \marginparsep=10.0pt
-* \columnsep=10.0pt
-* \skip\footins=10.8pt plus 4.0pt minus 2.0pt
-* \hoffset=0.0pt
-* \voffset=0.0pt
-* \mag=1000
-* \@twocolumnfalse
-* \@twosidefalse
-* \@mparswitchfalse
-* \@reversemarginfalse
-* (1in=72.27pt=25.4mm, 1cm=28.453pt)
-
-LaTeX Font Info:    Trying to load font information for U+msa on input line 112
+LaTeX Font Info:    Trying to load font information for U+msa on input line 110
 .
 (/Library/Application Support/MiKTeX/texmfs/install/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 112
+LaTeX Font Info:    Trying to load font information for U+msb on input line 110
 .
 (/Library/Application Support/MiKTeX/texmfs/install/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Trying to load font information for U+rsfs on input line 11
-2.
+0.
 
 (/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/latex/jk
 nappen/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
 LaTeX Font Info:    Trying to load font information for U+stmry on input line 1
-12.
+10.
 
 (/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/latex/st
 maryrd/Ustmry.fd)
 LaTeX Font Info:    Trying to load font information for U+cmllr on input line 1
-12.
+10.
 
 (/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/latex/cm
-ll/ucmllr.fd) [1
+ll/ucmllr.fd)
+Overfull \hbox (0.28761pt too wide) in paragraph at lines 111--112
+\OT1/cmr/m/n/12 It is the twenty-first century and formal logic has been irreve
+rsibly intertwined
+ []
+
+
+Overfull \hbox (24.26607pt too wide) in paragraph at lines 111--112
+\OT1/cmr/m/n/12 with the theory of computation. When pressed on exactly why thi
+s intertwinement
+ []
+
+
+Overfull \hbox (5.36078pt too wide) in paragraph at lines 119--120
+[]\OT1/cmr/bx/n/12 Cut-elimination: \OT1/cmr/m/n/12 What distinguishes a logica
+l system to a computational
+ []
+
+[1
 
 {/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/data/pdftex/config/p
-dftex.map}]
+dftex.map}] [2]
+Overfull \hbox (18.16066pt too wide) in paragraph at lines 127--128
+\OT1/cmr/m/n/12 indeed this result crucially uses the algorithm implied by \OT1
+/cmr/m/it/12 functional completeness\OT1/cmr/m/n/12 ,
+ []
 
-LaTeX Warning: Citation `Godel' on page 2 undefined on input line 129.
 
-
-LaTeX Warning: Citation `lambek' on page 2 undefined on input line 129.
+Overfull \hbox (11.67023pt too wide) in paragraph at lines 135--136
+\OT1/cmr/m/n/12 these is a special type $\U/MnSymbolC/m/n/12 ó$\OT1/cmr/m/n/12 
+. There are also two type constructors, conjunction
+ []
 
 \myBox1=\box77
-\myScoreStart1=\dimen306
-\myCenter1=\dimen307
-\myScoreEnd1=\dimen308
+\myScoreStart1=\dimen298
+\myCenter1=\dimen299
+\myScoreEnd1=\dimen300
+[3]
 \myBox2=\box78
-\myScoreStart2=\dimen309
-\myCenter2=\dimen310
-\myScoreEnd2=\dimen311
-[2] (ThreeAlgorithms.aux)
+\myScoreStart2=\dimen301
+\myCenter2=\dimen302
+\myScoreEnd2=\dimen303
 
-LaTeX Warning: There were undefined references.
+Overfull \hbox (6.77136pt too wide) in paragraph at lines 192--193
+[][]\OT1/cmr/bx/n/12 Definition 2.0.2 \OT1/cmr/m/n/12 ($\OML/cmm/m/it/12 $\OT1
+/cmr/m/n/12 -Type theory)\OT1/cmr/bx/n/12 . []\OT1/cmr/m/n/12 A $\OML/cmm/m/it/
+12 $\OT1/cmr/bx/n/12 -type theory \OT1/cmr/m/n/12 consists of the following. 
+ []
 
+LaTeX Font Info:    Trying to load font information for U+bbm on input line 194
+.
+
+(/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/latex/bb
+m/ubbm.fd
+File: ubbm.fd 1999/03/15 V 1.2 Font definition for bbm font - TH
+) [4]
+Overfull \hbox (22.99896pt too wide) in paragraph at lines 221--222
+[]\OT1/cmr/m/n/12 The terms are $\OML/cmm/m/it/12 $\OT1/cmr/m/n/12 -equivalenc
+e $\U/MnSymbolD/m/n/12 []$ \OT1/cmr/m/n/12 classes of preterms where $\OML/cmm
+/m/it/12 $\OT1/cmr/m/n/12 -equivalence
+ []
+
+
+Overfull \hbox (19.27661pt too wide) in paragraph at lines 233--234
+[]\OT1/cmr/m/n/12 The free variable set of a term $\OMX/MnSymbolE/m/n/12  \OML/
+cmm/m/it/12 t\OMX/MnSymbolE/m/n/12 $ \OT1/cmr/m/n/12 is $[]\OMX/MnSymbolE/m/n/
+12 à\OML/cmm/m/it/12 t\OMX/MnSymbolE/m/n/12 ç$ \OT1/cmr/m/n/12 where $\OML/cmm/
+m/it/12 t$ \OT1/cmr/m/n/12 is any representative
+ []
+
+[5]
+Overfull \hbox (18.21342pt too wide) in paragraph at lines 246--247
+[][]\OT1/cmr/bx/n/12 Remark 2.0.3. []\OT1/cmr/m/n/12 By replacing $\U/MnSymbolA
+/m/n/12 –[] []$ \OT1/cmr/m/n/12 in Definition []2.0.2[] by the smallest equival
+ence
+ []
+
+
+Overfull \hbox (11.2492pt too wide) in paragraph at lines 250--251
+\OT1/cmr/m/it/12 category and $\OMS/MnSymbolS/m/n/12 C\OMX/MnSymbolE/m/n/12  \O
+ML/cmm/m/it/12 x[] \U/MnSymbolC/m/n/12  \OML/cmm/m/it/12 A[]; [] ; x[] \U/MnSy
+mbolC/m/n/12  \OML/cmm/m/it/12 A[]\OMX/MnSymbolE/m/n/12 $ \OT1/cmr/m/it/12 th
+e cartesian closed category freely generated
+ []
+
+
+Underfull \hbox (badness 4805) in paragraph at lines 272--273
+[]\OT1/cmr/m/n/12 K. Godel, \OT1/cmr/m/it/12 On Formally Undecidable Propositi
+ons of Principia
+ []
+
+[6] (ThreeAlgorithms.aux)
 Package rerunfilecheck Info: File `ThreeAlgorithms.out' has not changed.
 (rerunfilecheck)             Checksum: BEA13E3480AFF02FD07B3E8E4876ABAE;319.
  ) 
 Here is how much of TeX's memory you used:
- 25446 strings out of 481099
- 464680 string characters out of 2904467
- 703706 words of memory out of 3000000
- 42317 multiletter control sequences out of 15000+600000
- 425210 words of font info for 112 fonts, out of 8000000 for 9000
+ 25030 strings out of 481099
+ 458471 string characters out of 2904467
+ 689475 words of memory out of 3000000
+ 41884 multiletter control sequences out of 15000+600000
+ 427383 words of font info for 120 fonts, out of 8000000 for 9000
  0 hyphenation exceptions out of 8191
- 98i,6n,103p,1439b,326s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 98i,9n,103p,1439b,622s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/fonts/enc/
-dvips/mnsymbol/MnSymbolD.enc}{/Users/wtroiani/Library/Application Support/MiKTe
-X/texmfs/install/fonts/enc/dvips/mnsymbol/MnSymbolE.enc}{/Users/wtroiani/Librar
-y/Application Support/MiKTeX/texmfs/install/fonts/enc/dvips/mnsymbol/MnSymbolA.
-enc}{/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/fonts/en
-c/dvips/mnsymbol/MnSymbolS.enc} </Users/wtroiani/Library/Application Support/Mi
-KTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1200.pk>{/Users/wtroian
-i/Library/Application Support/MiKTeX/texmfs/install/fonts/enc/dvips/mnsymbol/Mn
-SymbolC.enc}</Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/
-fonts/type1/public/mnsymbol/MnSymbol12.pfb></Library/Application Support/MiKTeX
-/texmfs/install/fonts/type1/public/amsfonts/cm/cmbx12.pfb></Library/Application
- Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi12.pfb></Libr
-ary/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cm
-mi8.pfb></Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/
-amsfonts/cm/cmr12.pfb></Library/Application Support/MiKTeX/texmfs/install/fonts
-/type1/public/amsfonts/cm/cmr17.pfb></Library/Application Support/MiKTeX/texmfs
-/install/fonts/type1/public/amsfonts/cm/cmr8.pfb></Library/Application Support/
-MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on ThreeAlgorithms.pdf (2 pages, 126899 bytes).
+dvips/mnsymbol/MnSymbolS.enc}{/Users/wtroiani/Library/Application Support/MiKTe
+X/texmfs/install/fonts/enc/dvips/mnsymbol/MnSymbolC.enc} </Users/wtroiani/Libra
+ry/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/public/bbm/dpi600/bbm
+12.pk>{/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/fonts/
+enc/dvips/mnsymbol/MnSymbolD.enc}{/Users/wtroiani/Library/Application Support/M
+iKTeX/texmfs/install/fonts/enc/dvips/mnsymbol/MnSymbolE.enc}{/Users/wtroiani/Li
+brary/Application Support/MiKTeX/texmfs/install/fonts/enc/dvips/mnsymbol/MnSymb
+olA.enc} </Users/wtroiani/Library/Application Support/MiKTeX/texmfs/data/fonts/
+pk/ljfour/jknappen/ec/dpi600/tcrm1200.pk></Users/wtroiani/Library/Application S
+upport/MiKTeX/texmfs/install/fonts/type1/public/mnsymbol/MnSymbol12.pfb></Users
+/wtroiani/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/
+mnsymbol/MnSymbol8.pfb></Library/Application Support/MiKTeX/texmfs/install/font
+s/type1/public/amsfonts/cm/cmbx12.pfb></Library/Application Support/MiKTeX/texm
+fs/install/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></Library/Application Su
+pport/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi12.pfb></Library
+/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi8
+.pfb></Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/ams
+fonts/cm/cmr12.pfb></Library/Application Support/MiKTeX/texmfs/install/fonts/ty
+pe1/public/amsfonts/cm/cmr17.pfb></Library/Application Support/MiKTeX/texmfs/in
+stall/fonts/type1/public/amsfonts/cm/cmr8.pfb></Library/Application Support/MiK
+TeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmti12.pfb></Library/Applicat
+ion Support/MiKTeX/texmfs/install/fonts/type1/public/rsfs/rsfs10.pfb>
+Output written on ThreeAlgorithms.pdf (6 pages, 164441 bytes).
 PDF statistics:
- 91 PDF objects out of 1000 (max. 8388607)
- 15 named destinations out of 1000 (max. 500000)
+ 143 PDF objects out of 1000 (max. 8388607)
+ 30 named destinations out of 1000 (max. 500000)
  29 words of extra memory for PDF output out of 10000 (max. 10000000)
 

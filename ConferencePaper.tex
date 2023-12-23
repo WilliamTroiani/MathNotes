@@ -1,0 +1,769 @@
+% This is samplepaper.tex, a sample chapter demonstrating the
+% LLNCS macro package for Springer Computer Science proceedings;
+% Version 2.20 of 2017/10/04
+%
+\documentclass[runningheads]{llncs}
+%
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{mathrsfs}
+\usepackage{array}
+\usepackage{amssymb}
+\usepackage{units}
+\usepackage{graphicx}
+\usepackage{tikz-cd}
+\usepackage{nicefrac}
+\usepackage{hyperref}
+\usepackage{bbm}
+\usepackage{color}
+\usepackage{tensor}
+\usepackage{tipa}
+\usepackage{bussproofs}
+\usepackage{ stmaryrd }
+\usepackage{ textcomp }
+\usepackage{leftidx}
+\usepackage{afterpage}
+\usepackage{varwidth}
+\usepackage{tasks}
+\usepackage{ cmll }
+\usepackage{makecell}
+\usepackage{MnSymbol}
+\usepackage{adjustbox}
+\usepackage{multirow}
+\usepackage{booktabs}
+\usepackage{xparse}
+\usepackage{calc}
+\usepackage{stackengine}
+\usepackage{csquotes}
+\usepackage{enumitem}
+\usepackage{graphicx}
+
+\def\doubleunderline#1{\underline{\underline{#1}}}
+\newcommand{\bb}[1]{\mathbb{#1}}
+\newcommand{\barN}{\overline{\bb{N}}}
+
+\newcommand{\scr}[1]{\mathscr{#1}}
+\newcommand{\call}[1]{\mathcal{#1}}
+\newcommand{\Ccal}{\call{C}}
+\newcommand{\Dcal}{\call{D}}
+\newcommand{\Ecal}{\call{E}}
+\newcommand{\Fcal}{\call{F}}
+\newcommand{\Ical}{\call{I}}
+\newcommand{\Jcal}{\call{J}}
+\newcommand{\Mcal}{\call{M}}
+\newcommand{\Mcol}{\overline{\call{M}}}
+\newcommand{\Pcal}{\call{P}}
+\newcommand{\Qcal}{\call{Q}}
+\newcommand{\Rcal}{\call{R}}
+\newcommand{\Vcal}{\call{V}}
+\newcommand{\yon}{\mathbf{y}} % might switch for a "yo" in future
+
+\newcommand{\boxo}{\mathbin{\overline{\boxtimes}}}
+
+\newcommand{\und}[1]{\underline{\hspace{#1 cm}}}
+\newcommand{\adj}[1]{\text{\textopencorner}{#1}\text{\textcorner}}
+\newcommand{\comment}[1]{}
+\newcommand{\lto}{\longrightarrow}
+\newcommand{\rone}{(\operatorname{R}\bold{1})}
+\newcommand{\lone}{(\operatorname{L}\bold{1})}
+\newcommand{\rimp}{(\operatorname{R} \multimap)}
+\newcommand{\limp}{(\operatorname{L} \multimap)}
+\newcommand{\rtensor}{(\operatorname{R}\otimes)}
+\newcommand{\ltensor}{(\operatorname{L}\otimes)}
+\newcommand{\promotion}{(\operatorname{Prom})}
+\newcommand{\dereliction}{\operatorname{Der}}
+\newcommand{\contraction}{\operatorname{Ctr}}
+\newcommand{\weakening}{\operatoranme{Weak}}
+\newcommand{\rtrue}{(\operatorname{R}\top)}
+\newcommand{\rwith}{(\operatorname{R}\&)}
+\newcommand{\lwithleft}{(\operatorname{L}\&)_{\operatorname{left}}}
+\newcommand{\lwithright}{(\operatorname{L}\&)_{\operatorname{right}}}
+\newcommand{\rplusleft}{(\operatorname{R}\oplus)_{\operatorname{left}}}
+\newcommand{\rplusright}{(\operatorname{R}\oplus)_{\operatorname{right}}}
+\newcommand{\lplus}{(\operatorname{L}\oplus)}
+\newcommand{\prom}{(\operatorname{prom})}
+\newcommand{\ctr}{(\operatorname{ctr})}
+\newcommand{\der}{(\operatorname{der})}
+\newcommand{\weak}{(\operatorname{weak})}
+\newcommand{\exi}{(\operatorname{exists})}
+\newcommand{\fa}{(\operatorname{for\text{ }all})}
+\newcommand{\ex}{(\operatorname{ex})}
+\newcommand{\cut}{(\operatorname{cut})}
+\newcommand{\ax}{(\operatorname{ax})}
+\newcommand{\negation}{\sim}
+\newcommand{\true}{\top}
+\newcommand{\false}{\bot}
+\newcommand{\lneg}{(\operatorname{L}\neg)}
+\newcommand{\rneg}{(\operatorname{R}\neg)}
+\DeclareRobustCommand{\diamondtimes}{%
+	\mathbin{\text{\rotatebox[origin=c]{45}{$\boxplus$}}}%
+}
+\newcommand{\tagarray}{\mbox{}\refstepcounter{equation}$(\theequation)$}
+\newcommand{\startproof}[1]{
+	\AxiomC{#1}
+	\noLine
+	\UnaryInfC{$\vdots$}
+}
+\newcommand\showdiv[1]{\overline{\smash{)}#1}}
+\DeclareMathOperator{\set}{Set}
+\DeclareMathOperator{\finset}{FinSet}
+\DeclareMathOperator{\vect}{Vect}
+\DeclareMathOperator{\cat}{Cat}
+\DeclareMathOperator{\CAT}{CAT}
+\DeclareMathOperator{\pcat}{-Cat}
+\DeclareMathOperator{\pCAT}{-CAT}
+\DeclareMathOperator{\psh}{PSh}
+\DeclareMathOperator{\RIG}{RIG}
+\DeclareMathOperator{\mon}{mon}
+\DeclareMathOperator{\MON}{MON}
+\DeclareMathOperator{\modu}{-mod}
+\DeclareMathOperator{\MODU}{-MOD}
+\DeclareMathOperator{\ind}{Ind}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\Fun}{Fun}
+\DeclareMathOperator{\PSh}{PSh}
+\DeclareMathOperator{\ob}{ob}
+\DeclareMathOperator{\id}{id}
+\DeclareMathOperator*{\colim}{colim}
+\newcommand{\op}{{}^{\mathrm{op}}}
+\newcommand{\coherence}[2]{#1\text{ }\rotatebox{90}{()}_A\text{ }#2}
+% Used for displaying a sample figure. If possible, figure files should
+% be included in EPS format.
+%
+% If you use the hyperref package, please uncomment the following line
+% to display URLs in blue roman font according to Springer's eBook style:
+% \renewcommand\UrlFont{\color{blue}\rmfamily}
+
+\begin{document}
+%
+\title{$\lambda$}
+%
+%\titlerunning{Abbreviated paper title}
+% If the paper title is too long for the running head, you can set
+% an abbreviated paper title here
+%
+\author{Morgan Rogers\inst{1}\orcidID{0000-1111-2222-3333} \and
+Thomas Seiller\inst{2,3}\orcidID{1111-2222-3333-4444} \and
+William Troiani\inst{3}\orcidID{2222--3333-4444-5555}}
+%
+\authorrunning{F. Author et al.}
+% First names are abbreviated in the running head.
+% If there are more than two authors, 'et al.' is used.
+%
+\institute{Princeton University, Princeton NJ 08544, USA \and
+Springer Heidelberg, Tiergartenstr. 17, 69121 Heidelberg, Germany
+\email{lncs@springer.com}\\
+\url{http://www.springer.com/gp/computer-science/lncs} \and
+ABC Institute, Rupert-Karls-University Heidelberg, Heidelberg, Germany\\
+\email{\{abc,lncs\}@uni-heidelberg.de}}
+%
+\maketitle              % typeset the header of the contribution
+%
+\begin{abstract}
+The abstract should briefly summarize the contents of the paper in
+15--250 words.
+
+\keywords{First keyword  \and Second keyword \and Another keyword.}
+\end{abstract}
+
+\section{Introduction}
+In \cite{Girard} Girard proves his Normal Form Theorem \cite{??} which shows an equivalence between Normal Functors (Definition \ref{def:def:normal_functor}) and Analytic Functors (Definition \ref{def:analytic}). He does this by way of constructing a common ``normal form" (Definition \ref{def:forms}) for each type of functor. Using this, he then constructs a model for the untyped $\lambda$-calculus (Definition \ref{def:functor_model}) where a term $t$ along with a valid context (Definition \ref{def:context}) $\underline{x}$ is interpretted as a normal functor $\llbracket \underline{x} \mid t \rrbracket: (\set^A)^n \lto \set^A$, where $A$ is an arbitrary, fixed, countably infinite set.
+
+Within this model, however, lurked more structure than that which was reflected by the syntax. A defining property of normal functors is that they are given by their restriction to \textit{integral} functors. Though this holds for \textit{all} normal functors, the stronger condition that a functor is defined by its restriction to its underlying sets $A \times \ldots \times A \lto \set^A$ only holds for \textit{linear} normal functors. Restricting the syntax of $\lambda$-calculus to the simply typed $\lambda$-calculus (a la Church) followed by extending the syntax to notate these linear functors, leads to the logical system Linear Logic.
+
+How exactly it is that Linear Logic is modelled by normal functors was never written down in Girard's original paper. Furthermore, what \textit{is} written there is overcomplicated; one need not consider normal functors at all, as the core mathematical ideas of his work there can be understood by considering the much simpler normal \textit{functions} instead. At face value, this simplified model bares similarities to the weighted relational model, and also to the ``weighted Scott domains'' model. However, it is distinct from these, so we declare this genuinely new (to the best of the author's knowledge) model as this paper's main contribution. In Section \ref{sec:Linear_Logic} we explicitly define the extension of this model to Linear Logic (more precisely, intuitionistic sequent calculus multiplicative exponential linear logic).
+
+\section{Girard's Normal Form Theorem}\label{sec:NFT}
+Let $A$ be a fixed set, or equivalently, a small discrete category (ie, a category with only identity morphisms).
+\begin{definition}\label{def:normal_functor}
+		A functor $\set^A \lto \set$ is \textbf{normal} if it preserves direct colimits and wide pullbacks.
+		\end{definition}
+Normal functors $\scr{F}: \set^A \lto \set$ have the crucial property that the image of a functor $F \in \set^A$ under $\scr{F}$ is determined by \emph{finite data}, even if $F$ is infinitary. To illustrate this point, consider a set $X$ and let $\{ X_i \}_{i \in I}$ be its set of finite subsets. Then $X$ can be written as the direct colimit $\operatorname{Colim}_{i \in I}\{ X_i \}$. Now say $Y$ is another set and we have a function $f: X \lto Y$. We can consider $X,Y$ as categories and $f$ as a functor. Then if $f$ preserves filtered colimits and wide pullbacks, we have the following:
+\begin{align*}
+    f(X) &= f(\operatorname{Colim}_{i \in I}\{ X_i \})\\
+    &= \operatorname{Colim}_{i \in I}\{ f(X_i) \} 
+\end{align*}
+We can think of the collection $\{ f(X_i) \}_{i \in I}$ as a collection of \emph{finite approximations} to $f$. Moreover, if $x \in X$ and $X_i, X_j \subseteq X$ are both finite such that $x \in X_i, X_j$ then $x \in X_i \cap X_j$ and so
+\begin{equation}
+f(X_i \cap X_j) = f(X_i) \cap f(X_j)
+\end{equation}
+as $f$ preserves pullbacks. This implies that there exists a \emph{minimal, finite} subset $X$ determining the behaviour of $f$ on $x$.
+
+The theory presented in this section can be thought of as a generalisation of this phenomena just observed to a categorical setting.
+
+\begin{definition}\label{def:analytic}
+		A functor $\scr{F}: \set^A \lto \set$ is \textbf{analytic} if there exists a family of sets $\lbrace C_{G}\rbrace_{G \in \set^A}$ such that for all objects $F \in \set^A$ and all morphisms $\mu: F \lto G$ we have
+		\begin{equation*}
+			\scr{F}(F) = \coprod_{G \in \operatorname{Int}(A)}(C_G \times \set^A(G,F))\quad \scr{F}(\mu) = \coprod_{G \in \operatorname{Int}(A)}(C_G \times \set^A(G,\mu))
+			\end{equation*}
+		\end{definition}
+
+\begin{definition}\label{def:forms}
+		Let $(F,x) \in \operatorname{El}(\scr{F})$. A \textbf{form} of $\scr{F}$ with respect to $(F,x)$ is an object of the category $\operatorname{El}(\scr{F})/(F,x)$, the comma category over $(F,x)$ of the category of elements $\operatorname{El}(\scr{F})$.
+		
+		The form is \textbf{normal} if it is initial ie, is an initial object in the category $\operatorname{El}(\scr{F}))/(F,x)$.
+
+  Let $X \in \set$ be a set and $F \in \set^A$ a functor, and $\eta: (G,y) \lto (F,x)$ a form, where $x \in \scr{F}(F)$.
+		\begin{itemize}
+			\item $X$ is an \textbf{integer} if it is a Von Neumann integer ($0 := \varnothing, 1 = \{0\}, \ldots, n := \{ 0, \ldots, n-1\}, \ldots$).
+		\item $F$ is \textbf{finite} if for all $a \in A$ the set $F(a)$ is finite, and all but finitely many of $F(a)$ are equal to $\varnothing$.
+		\item $F$ is \textbf{integral} if for all $a \in A$ the set $F(a)$ is an integer.
+		\item $\eta: (G,y) \lto (F,x)$ is \textbf{finite} if $G$ is finite.
+		\item $\eta: (G,y) \lto (F,x)$ is \textbf{integral} if $G$ is integral.
+			\end{itemize}
+		We let $\operatorname{Int}(A)$ denote the set of integral functors $F \in \set^A$.
+
+		The functor $\scr{F}$ satisfies the \textbf{finite normal form property} if for every object $(F,x)$ in $\operatorname{El}(\scr{F})$ (the category of elements of $\scr{F}$) there exists a finite normal form $\eta: (G,y) \lto (F,x)$ (Definition \ref{def:forms}).
+		
+		The functor $\scr{F}$ satisfies the \textbf{integral normal form property} if in the above the functor $G$ can be taken to be integral.
+		\end{definition}
+
+We remark that the statement of Girard's main Theorem is written incorrectly there, the correct statement is given as follows.
+ 
+\begin{theorem}\label{theorem:normal_form_theorem}
+    Let $\scr{F}: \set^A \lto \set$ be a functor. Then the following are equivalent:
+    \begin{enumerate}
+        \item\label{en:normal} $\scr{F}$ is normal.
+        \item\label{en:fnf} $\scr{F}$ satisfies the finite normal form property.
+        \item $\scr{F}$ is isomorphic to an analytic functor.
+    \end{enumerate}
+\end{theorem}
+The proof of Theorem \ref{theorem:normal_form_theorem} is difficult and requires all assumptions made so far, for instance, we \textit{must} consider integral functors (considering finite functors is not enough), and we \textit{must} the authors do not aware of a proof of the implication \ref{en:fnf}$\Rightarrow$\ref{en:normal} which does not use this assumption. However, a full proof of Theorem \ref{theorem:normal_form_theorem} will be given in \cite{PhD}.
+
+\section{$\lambda$-terms as normal functors}
+We present a model of the untyped $\lambda$-calculus using normal functors. In Girard's original paper he was concerned with the \textit{minimal data property} which was sketched at the start of Section \ref{sec:NFT}. To obtain this property, we must assume that normal functors preserve wide pullbacks, however, if one is willing to depart from this property, then the preservation of pullbacks may be dropped! There is no point in any of the following results which will require this property. Moreover, in Section \ref{sec:normal_functions} we will present our simplification of Girard's model by considering normal \textit{functions} and we will drop this superfluous condition.
+\begin{definition}
+    For an arbitrary set $A$ we denote by $\operatorname{Int}(A)$ the subset of $\set^A$ given by integral functors.
+\end{definition}
+
+\begin{remark}
+    In the original presentation, \cite[Proposition 3.1]{Girard}, a seemingly highly specific choice of set $A_\infty$ was taken for $A$, along with a seemingly highly specific choice of bijection. This is misleading as the only property which $A_\infty$ must satisfy is that it is in bijection with $\operatorname{Int}(A_\infty) \times A_\infty$, which is satisfied by any infinite set.
+\end{remark}
+
+We now fix once and for all a countably infinite set $A$ and a bijection $q: \operatorname{Int}(A) \times A \lto A$. This bijection induces an equivalence of categories $\overline{q}: \set^A \lto \set^{\operatorname{Int}(A) \times A}$. In the following, we use the notation $\operatorname{Norm}(\Ccal, \Dcal)$ to denote the normal functors with domain a category $\Ccal$ and codomain a category $\Dcal$.
+
+\begin{lemma}
+    For $n > 0$ there exists a pair of functions $(-)^\plus, (-)^\minus$
+    \begin{equation}
+        \begin{tikzcd}
+            \operatorname{Norm}\big((\set^A)^n \times \set^A, \set^A\big)\arrow[r,shift left, "{(-)^\plus}"] & \operatorname{Norm}\big((\set^A)^n, \set^{\operatorname{Int}(A) \times A}\big)\arrow[l, shift left, "{(-)^{\minus}}"]
+        \end{tikzcd}
+    \end{equation}
+    such that the composite $((-)^+)^\minus$ is the identity.
+\end{lemma}
+\begin{proof}
+    Let $\scr{F}: (\set^A)^n \times \set^A \lto \set^A$ be normal. By Theorem \ref{theorem:normal_form_theorem} we can assume without loss of generality that $F$ is analytic. For any sequence $\underline{F} = (F_1, \ldots, F_n)$ of functors in $\set^A$ and every functor $F \in \set^A$ we have the following, where the coproduct is taken over all $\underline{G}, G \in \operatorname{Int}(A)^{n} \times \operatorname{Int}(A)$.
+    \begin{equation}\label{eq:Girard_Plus}
+        \scr{F}(\underline{F}, F) = \coprod C_{\underline{G}, G}(\underline{F},F) \times \operatorname{Set}^A(G, F)
+    \end{equation}
+    for some family of functors $\{ C_{\underline{G},G}(\underline{F}, F): A \lto \set\}_{\underline{G},G \in \operatorname{Int}(A)^n \times \operatorname{Int}(A) }$, \eqref{eq:Girard_Plus} is a functor $A \lto \set$.
+
+    We define for $(G', a) \in \operatorname{Int}(A) \times A$ the following where the coproduct is over all $\underline{G} \in \operatorname{Int}(A)^n$
+    \begin{equation}
+        \scr{F}^+(\underline{F})(G, a) = \coprod C_{\underline{G}, G}(\underline{F}, G)(a)
+    \end{equation}
+    Conversely, given a normal functor $\scr{G}: (\set^A)^n \lto \set^{\operatorname{Int}(A) \times A}$ we define for $(\underline{F},F) \in (\set^A)^n \times \set^A$ and $a \in A$:
+    \begin{equation}
+        \scr{G}^-(\underline{F}, F)(a) := \coprod_{G \in \operatorname{Int}(A)} \scr{G}(\underline{F})(G,a) \times \set^A(G, F)
+    \end{equation}
+    The claim made on the functions $(-)^\plus, (-)^\minus$ follows easily.
+\end{proof}
+
+\begin{definition}\label{def:context}
+		A \textbf{context} is a sequence of variables $\underline{x} = \{ x_1, \ldots, x_n \}$. Given a $\lambda$-term $t$ a context $\underline{x}$ is \textbf{valid for $t$} if the free variable set $\operatorname{FV}(t) \subseteq \underline{x}$ of $t$ is a subset of $\underline{x}$.
+	\end{definition}
+
+\begin{definition}\label{def:functor_model}
+    Let $t$ be a term and $\underline{x} = \{x_1, \ldots, x_n\}$ a valid context for $t$. We simultaneously define a functor
+    \begin{equation}
+        \llbracket \underline{x} \mid t \rrbracket: (\set^A)^n \lto \set^A
+    \end{equation}
+    and prove its normal by induction on the structure of $t$.
+    \begin{center}
+			\begin{tabular}{ | c | c | }
+			\hline
+				\textbf{Variable $x_i \in \underline{x}$} & 
+				$\llbracket \underline{x} \mid x_i \rrbracket = \pi_i$\\
+				\hline
+\textbf{Application $t = t_1 t_2$} & $\llbracket \underline{x} \mid t_1t_2\rrbracket = \operatorname{App}\big( \langle \overline{q} \llbracket \underline{x} \mid t_1 \rrbracket, \llbracket \underline{x} \mid t_2 \rrbracket \rangle \big)$\\
+\hline
+\textbf{Abstraction $t = \lambda y. t'$} & $\llbracket \underline{x} \mid \lambda y. t' \rrbracket := \overline{q}^{-1} \llbracket \underline{x}, y \mid t' \rrbracket^+$\\
+\hline
+			\end{tabular}
+		\end{center}
+\end{definition}
+
+\begin{remark}
+    Although the notation and presentation differs significantly, this is exactly the same definition as \cite[The model $A_\infty$]{Girard}. In particular, using the notation there, given $H: (\set^A)^n \lto \set^{\operatorname{Int}(A) \times A}$, $J: (\set^A)^n \lto \set^A$, and $\underline{F} \in (\set^A)^n$ we have:
+    \begin{equation}
+        \operatorname{App}(H(\underline{F}), J(\underline{F})) = H^-(\underline{F}, J(\underline{F}))
+    \end{equation}
+\end{remark}
+
+In \cite{Girard}, Girard proves the substitution Lemma and the proceeding Theorem.
+
+\begin{lemma}
+    Let $t,s$ be $\lambda$-terms and $\underline{x} = \{ x_1, \ldots, x_{n} \}$ be a collection of variables and $y$ another variable so that $\underline{x} \cup \{ y \}$ is a valid context for $t$ and $\underline{x}$ is a valid context for $s$. Then for any $\underline{F}\in (\set^A)^{n}$ we have
+		\begin{equation}\label{eq:sub_lem_cond}
+			\llbracket \underline{x} \mid t[y := s]\rrbracket(\underline{F}) = \llbracket \underline{x}, y \mid t \rrbracket(\underline{F}, \llbracket \underline{x} \mid s \rrbracket (\underline{F}))
+			\end{equation}
+\end{lemma}
+
+\begin{theorem}
+    This is a denotational model of the $\lambda$-calculus. That is, if $t$ is a $\lambda$-term and $\underline{x}$ a valid context for $t$ and for $s$, then we have the following equality.
+		\begin{equation}
+			\llbracket \underline{x} \mid (\lambda y. t)s\rrbracket = \llbracket \underline{x} \mid t[y:=s]\rrbracket
+			\end{equation}
+\end{theorem}
+
+
+
+
+
+\section{$\lambda$-terms as normal functions}\label{sec:normal_functions}
+There are several aspects of the model given in the previous Section which are unnatural and obfuscating. Firstly, from the perspective of category theory it is very strange to choose particular representatives of finite sets (the Von Neumann integers). Moreover, requiring that $A$ is a set renders all statements of natural transformations difficult to appreciate, as \textit{any} collection of $A$-indexed functions is natural, as there is no neutrality squares to check. Lastly, the role of preservation of wide pullbacks plays no technical role, it is only a feature of the model which may or may not be desired.
+
+These dissatisfying aspects are fixed in this Section by considering a more natural presentation of the ideas present in the model. We will dispose of the assumption that wide pullbacks are preserved entirely, and although greater generality is \textit{not} considered, the setting we consider is more natural for the concepts involved. In the sequel to this paper \cite{??} we will categorify this model to find the right categorical perspective on Girard's original model.
+
+Fix a set $A$. Denote by $\Qcal(A)$ the set of functions $\underline{a}: A \lto \bb{N} \cup \{ \infty \}$ and by $\Ical(A)$ the subset consisting of those $\underline{a}$ such that $\sum_{n \in \bb{N}}\underline{a}(n) < \infty$. The set $\Qcal(A)$ admits a partial order $\leq$ given by $\underline{a}_1 \leq \underline{a}_2$ if and only if $\forall a \in A, \underline{a}_1(a) \leq \underline{a}_2(a)$. Let $n > 0$ and consider the set $\Qcal(A)^n$. Since $\Qcal(A)$ is partially ordered, the set $\Qcal(A)^n$ also comes equipped with a partial order $\leq$, where for $x = (\underline{a}_1, \ldots, \underline{a_n}), y = (\underline{b}_1, \ldots, \underline{b_n}) \in \Qcal(A)^n$, we have $x \leq y\text{ if and only if }\underline{a}_i \leq \underline{b_i}\text{  }\forall i = 1, \ldots, n$.
+	
+	We fix another set $B$.
+	
+	\begin{definition}\label{def:normal}
+		A function $f: \Qcal(A)^n \lto \Qcal(B)$ is \textbf{normal} if $\forall x,y \in \Qcal{A}^n, x \leq y \Rightarrow f(x) \leq f(y)$. An order preserving function $f$ is \textbf{normal} if it preserves supremums of filtered sets. That is, if $\{ x_i \}_{i \in I}$ is a filtered set of elements in $\Qcal(A)^n$, then $f(\operatorname{sup}_{i \in I} \{ x_i \}) = \operatorname{sup}_{i \in I}\{ f(x_i) \}$
+	\end{definition}
+
+\begin{definition}
+	An order preserving function $f: \Qcal(A)^n \lto \Qcal(B)$ is \textbf{analytic} if for any pair $(x, b) \in \Qcal(A)^n \times B$ we have
+	\begin{equation}
+		f(x)(b) = \operatorname{sup}_{u \in \Ical(A)^n}f(u)(b)\delta_{u \leq x}
+	\end{equation}
+	where $\delta_{u \leq x}$ is equal to 1 if and only if $u \leq x$, it is equal to 0 otherwise.
+	\end{definition}
+
+\begin{theorem}\label{theorem:normal_analytic}
+	Let $f: \Qcal(A)^n \lto \Qcal(B)$ be order preserving. Then $f$ is normal if and only if it is analyitic.
+	\end{theorem}
+\begin{proof}
+	Say $f$ is normal and let $(x,b) \in \Qcal(A)^n \times B$ be arbitrary. Consider the set
+	\begin{equation}
+		\scr{X}_x := \{ \underline{b} \in \Ical(A) \mid \underline{b} \leq x \}
+		\end{equation}
+	Then $\operatorname{sup} \scr{X}_x = x$. Since $f$ is normal, we thus have
+	\begin{equation}
+		f(x)(b) = f(\operatorname{sup}\scr{X}_x)(b) = \operatorname{sup}f(\scr{X}_x)(b) = \operatorname{sup}_{u \in \Ical(A)^n}f(u)(b)\delta_{u \leq x}
+		\end{equation}
+	On the other hand, say $f$ is analytic. Let $\{ x_i \}_{i \in I}$ be a filtered set. Then for any $b \in B$ we have
+	\begin{equation}\label{eq:f_sup}
+		f(\operatorname{sup}_{i \in I}\{ x_i \})(b) = \operatorname{sup}_{u \in \Ical(A)^n}\big\{f(u)(b)\delta_{u \leq \operatorname{sup}_{i \in I}\{ x_i \}}\big\}
+		\end{equation}
+	Also,
+	\begin{equation}\label{eq:sup_f}
+		\operatorname{sup}_{i \in I}\{ f(x_i)(b) \} = \operatorname{sup}_{i \in I}\big\{ \operatorname{sup}_{u \in \Ical(A)^n}\{ f(u)(b)\delta_{u \leq x_i}\} \big\}
+		\end{equation}
+	It is clear that \eqref{eq:f_sup} and \eqref{eq:sup_f} are equal.
+	\end{proof}
+	We will relate a normal function $f: \Qcal(A)^{n} \times \Qcal(A) \lto \Qcal(A)$ to its ``curried" version $f^+: \Qcal(A)^n \lto \Qcal(\Ical(A) \times A)$.
+	
+	\begin{definition}
+		Let $f: \Qcal(A)^{n} \times \Qcal(A) \lto \Qcal(A)$ be normal. By Theorem \ref{theorem:normal_analytic} we can write, for $(\alpha, \underline{a}) \in \Qcal(A)^{n} \times \Qcal(A), c \in A$:
+		\begin{equation}\label{eq:variables}
+			f(\alpha, \underline{a})(c) = \operatorname{sup}_{\underline{b} \in \Ical(A)}f(\alpha, \underline{b})(c)\delta_{\underline{b} \leq \underline{a}}
+		\end{equation}
+		Then we can define a function $f^+: \Qcal(A)^{n} \lto \Qcal(\Ical(A) \times A)$ as follows.
+		\begin{equation}
+			f^+(\alpha)(\underline{b}, c) = f(\alpha, \underline{b})(c)
+		\end{equation}
+		We note that $f^+$ is analytic and thus normal by Theorem \ref{theorem:normal_analytic}.
+		
+		Given a normal function $f: \Qcal(A)^n \lto \Qcal(\Ical(A) \times A)$ we define $f^-: \Qcal(A)^{n} \times \Qcal(A) \lto \Qcal(A)$ in the following way.
+		\begin{equation}
+			f^-(\alpha, \underline{a})(c) := \operatorname{sup}_{\underline{b} \in \Ical(A)}f(\alpha)(\underline{b}, c)\delta_{\underline{b} \leq \underline{a}}
+			\end{equation}
+		\end{definition}
+	
+	\begin{proposition}\label{theorem:adjunction}
+		Given normal functions $f: \Qcal(A)^n \times \Qcal(A) \lto \Qcal(A), g: \Qcal(A)^n \lto \Qcal(\Ical(A) \times A)$ we have $(f^+)^- = f$ and $(g^-)^+ \geq g$.
+    \end{proposition}
+	\begin{proof}
+	Let $(\alpha, \underline{a}) \in \Qcal(A)^{n} \times \Qcal(A), c \in A$. We have:
+	\begin{align*}
+		(f^+)^-(\alpha, \underline{a})(c) &= \operatorname{sup}_{\underline{b} \in \Ical(A)}f^+(\alpha)(\underline{b},c)\delta_{\underline{b} \leq \underline{a}}\\
+		&=  \operatorname{sup}_{\underline{b} \in \Ical(A)}f(\alpha, \underline{b})(c)\delta_{\underline{b} \leq \underline{a}}\\
+		&=f(\alpha, \underline{a})(c)
+	\end{align*}
+On the other hand,
+\begin{align*}
+	(g^-)^+(\alpha)(\underline{b},c) &= g^-(\alpha, \underline{b})(c)\\
+	&= \operatorname{sup}_{\underline{b}' \in \Ical(A)}g(\alpha)(\underline{b}', c)\delta_{\underline{b}' \leq \underline{b}}\\
+	&\geq g(\alpha)(\underline{b},c)
+	\end{align*}
+	\end{proof}
+	
+	\begin{definition}
+		We define a function $\operatorname{App}: \Qcal(\Ical(A) \times A) \times \Qcal(A) \lto \Qcal(A)$ as follows. Let $(f, \underline{a}) \in \Qcal(\Ical(A) \times A) \times \Qcal(A), c \in A$.
+		\begin{equation}
+			\operatorname{App}(f,\underline{a})(c) = \operatorname{sup}_{\underline{b} \in \Ical(A)}f(\underline{b},c)\delta_{\underline{b} \leq \underline{a}}
+			\end{equation}
+		\end{definition}
+	
+	\begin{remark}
+		Say $f: \Qcal(A)^n \lto \Qcal(\Ical(A) \times A)$ and $g: \Qcal(A)^n \lto \Qcal(A)$. Then for $\alpha \in \Qcal(A)^n$ we have
+		\begin{equation}
+			\operatorname{App}(f(\alpha), g(\alpha))= f^-(\alpha, g(\alpha))
+			\end{equation}
+		\end{remark}
+	
+	\begin{lemma}\label{lem:app_normal}
+		The function $\operatorname{App}$ is normal.
+	\end{lemma}
+ \begin{proof}
+     See Appendix \ref{ap:normal_functions}
+ \end{proof}
+	\subsection{The $\lambda$-calculus model}
+	Now assume $A$ is countably infinite. We notice that since $\Ical(A) \times A$ is also countably infinite, we can fix a choice of such a bijection $q$. There is an induced bijection $\overline{q}: \Qcal(A) \lto \Qcal(\Ical(A) \times A)$.
+	
+	\begin{definition}\label{def:the_model}
+		Let $\underline{x} = \{ x_1, \ldots, x_n \}$ be a set of variables and let $t$ be a $\lambda$-term for which $\underline{x}$ is a valid context (Definition \ref{def:context}). We associate to each such pair $(\underline{x}, t)$ a normal function $\llbracket \underline{x} \mid t \rrbracket: \Qcal(A)^n \lto \Qcal(A)$ inductively on the structure of $t$:
+		\begin{center}
+			\begin{tabular}{ | c | c | }
+			\hline
+				\textbf{Variable $x_i \in \underline{x}$} & 
+				$\llbracket \underline{x} \mid x_i \rrbracket = \pi_i$\\
+				\hline
+\textbf{Application $t = t_1 t_2$} & $\llbracket \underline{x} \mid t_1t_2\rrbracket = \operatorname{App}\big( \langle \overline{q} \llbracket \underline{x} \mid t_1 \rrbracket, \llbracket \underline{x} \mid t_2 \rrbracket \rangle \big)$\\
+\hline
+\textbf{Abstraction $t = \lambda y. t'$} & $\llbracket \underline{x} \mid \lambda y. t' \rrbracket := \overline{q}^{-1} \llbracket \underline{x}, y \mid t' \rrbracket^+$\\
+\hline
+			\end{tabular}
+		\end{center}
+	\end{definition}
+	\begin{remark}
+The table appearing in Definition \ref{def:the_model} is identical to that in Definition \ref{def:functor_model} but the notation means different things. This shows how conceptually our model is capturing the essence of Girard's.
+	\end{remark}
+	
+	\begin{lemma}\label{lem:substitution}[Substitution Lemma]
+		Let $t,s$ be $\lambda$-terms and $\underline{x} = \{ x_1, \ldots, x_{n} \}$ be a collection of variables and $y$ another variable so that $\underline{x} \cup \{ y \}$ is a valid context for $t$ and $\underline{x}$ is a valid context for $s$. Then for any $\alpha\in \Qcal(A)^{n}$ we have
+		\begin{equation}\label{eq:sub_lem_cond}
+			\llbracket \underline{x} \mid t[y := s]\rrbracket(\alpha) = \llbracket \underline{x}, y \mid t \rrbracket(\alpha, \llbracket \underline{x} \mid s \rrbracket (\alpha))
+			\end{equation}
+		\end{lemma}
+	
+	\begin{theorem}\label{theorem:denotational_model}
+		This is a denotational model of the $\lambda$-calculus. That is, if $t$ is a $\lambda$-term and $\underline{x}$ a valid context for $t$ and for $s$, then we have the following equality.
+		\begin{equation}
+			\llbracket \underline{x} \mid (\lambda y. t)s\rrbracket = \llbracket \underline{x} \mid t[y:=s]\rrbracket
+			\end{equation}
+		\end{theorem}
+	
+	\begin{proof}
+		By the substitution Lemma \ref{lem:substitution} we have for $\alpha \in \Qcal(A)^n$:
+		\begin{equation}
+			\llbracket \underline{x} \mid t[y:=s]\rrbracket(\alpha) = \llbracket \underline{x}, y \mid t\rrbracket(\alpha, \llbracket \underline{x} \mid s \rrbracket(\alpha))
+			\end{equation}
+		On the other hand, we have
+		\begin{align*}
+			\llbracket \underline{x} \mid (\lambda y.t)s\rrbracket(\alpha) &= \operatorname{App}(\big\langle (\overline{q} \overline{q}^{-1}\llbracket \underline{x}, y \mid t \rrbracket^+), \llbracket \underline{x} \mid s \rrbracket\big\rangle)(\alpha)\\
+			&=(\llbracket \underline{x}, y \mid t\rrbracket^+)^-(\alpha, \llbracket\underline{x} \mid s \rrbracket(\alpha))\\
+			&= \llbracket \underline{x}, y \mid t \rrbracket (\alpha, \llbracket \underline{x} \mid s \rrbracket(\alpha))
+			\end{align*}
+		which concludes the proof.
+		\end{proof}
+
+\section{Linear proofs as linear functions}
+	Since we have a model of the untyped $\lambda$-calculus, we thus have a model of the simply typed $\lambda$-calculus. We extend this reduced model to one of Linear Logic by decomposing the arrow type constructor $A \rightarrow B$ to $!A \multimap B$.
+	
+	Recall that for a set $A$ the set $\Qcal(A)$ contains all functions $f: A \lto \barN$. Considering $\barN$ as a set equipped with the operation of natural number addition, the set $\Qcal(A)$ along with point-wise addition forms a commutative monoid structure.
+	
+	\begin{definition}
+		Given sets $A_1, \ldots, A_n, B$, a function $f: \prod_{i = 1}^n \call{Q}(A_i)\lto \Qcal(B)$ is \textbf{linear} if it is linear in each argument. We denote the set of all linear functions
+		\begin{equation}
+			\operatorname{Add}(\prod_{i = 1}^n \call{Q}(A_i), \Qcal(B))
+			\end{equation}
+		\end{definition}
+	
+Say we have a function $f: \prod_{i = 1}^n \call{Q}(A_i) \times \call{Q}(A) \lto \call{Q}(B)$ which is linear in the variable $\call{Q}(A)$. Then for any $\alpha \in \prod_{i = 1}^n\call{Q}(A_i)$ and $\underline{a} \in \call{Q}(A)$ we have
+\begin{equation}
+	f(\alpha, \underline{a}) = f(\alpha, \sum_{a \in A}\underline{a}(a)\cdot \delta_a) = \sum_{a \in A}\underline{a}(a) \cdot f(\alpha, \delta_a)
+\end{equation}
+We define $f^\times: \prod_{i = 1}^n \Qcal(A_i) \lto \Qcal(A \times B)$ as follows, where $\alpha \in \Qcal(A_i), (a,b) \in A \times B$:
+\begin{equation}
+	f^\times(\alpha)(a,b) = f(\alpha, \delta_{a})(b)
+\end{equation}
+Conversely, given a linear function $g: \prod_{i = 1}^{n}\call{Q}(A_i) \lto \call{Q}(A \times B)$ we define $g^\div: \prod_{i = 1}^n\call{Q}(A_i) \times \call{Q}(A) \lto \call{Q}(B)$ as follows, where $(\alpha, \underline{a}) \in \Qcal(A_i) \times \Qcal(A), b \in B$:
+\begin{equation}
+f^\div(\alpha, \underline{a})(b) =  \sum_{a \in A}\underline{a}(a) \cdot f(\alpha, a)(b)
+\end{equation}
+Clearly, if $f: \prod_{i = 1}^n\call{Q}(A_i) \times \call{Q}(A) \lto \call{Q}(B)$ is linear in the final argument, then $(f^\div)^\times = f$. Conversely, if $g: \prod_{i = 1}^n \call{Q}(A_i) \lto \call{Q}(A \times B)$ then $(g^\times)^\div = g$. We have proven:
+\begin{proposition}
+    There exists a bijection
+    \begin{equation}
+        \operatorname{Add}(\prod_{i = 1}^n \call{Q}(A_i) \times \call{Q}(A), \call{Q}(B)) \lto \operatorname{Add}(\prod_{i = 1}^n, \call{Q}(A \times B))
+    \end{equation}
+\end{proposition}
+	
+	\begin{remark}
+		We remark that a \emph{normal} function $f: \prod_{i=1}^n \Qcal(A_i) \lto \Qcal(B)$ is determined by its restriction to the domain $\prod_{i=1}^n\Ical(A_i) \lto \Qcal(B)$, whereas if $f$ is \emph{linear} then it is determined by its restriction to the domain $\prod_{i=1}^n A_i \lto \Qcal(B)$.
+		\end{remark}
+\begin{definition}
+We define a function
+\begin{align*}
+	\operatorname{LinApp}_{A,B}: \call{Q}(A \times B) \times \call{Q}(A) &\lto \call{Q}(B)\\
+	(f, \underline{a}) &\longmapsto \sum_{a \in A}\underline{a}(a)\cdot f(a, -)
+\end{align*}
+\end{definition}
+
+\begin{lemma}
+The function $\operatorname{LinApp}_{A,B}$ is linear in each argument.
+\end{lemma}
+
+\subsection{The model of intuitionistic linear logic}
+Recall that to a set $A$ we have associated a set of functions $\Qcal(A) = \{ \underline{a}: A\lto \overline{\bb{N}}\}$. We extend this to a functor monad on $\set$.
+\begin{definition}\label{def:Q_monad}
+    Given a morphism $f: A \lto B$ we define a function $\Qcal(f): \Qcal(A) \lto \Qcal(B)$ as follows, where $\underline{a} \in \Qcal(A), b \in B$, $\Qcal(f)(\underline{a})(b) = \sum_{a \in f^{-1}(b)}\underline{a}(a)$. This defines a functor $\Qcal: \set \lto \set$.
+
+    For each set $A$ we define a function $\mu_A: \Qcal(\Qcal(A)) \lto \Qcal(A)$ as follows, where $\underline{A} \in \Qcal(\Qcal(A)), a \in A: \mu_A(\underline{A})(a) = \sum_{\underline{a} \in \Qcal(A)}\underline{A}(\underline{a})\cdot(\underline{a})(a)$. We also define a function $\eta_A: A \lto \Qcal(A)$ as follows, where $a \in A: \eta_A(a) = \delta_a$, where $\delta_a(a') = 1$ if $a = a'$ and is 0 otherwise.
+\end{definition}
+\begin{lemma}
+    The sets $\mu = \{ \mu_A \}_{A \in \set}, \eta = \{ \eta_A\}_{A \in \set}$ form natural transformations, and the triple $(\Qcal, \mu, \eta)$ a monad.
+\end{lemma}
+\begin{definition}
+We choose for each atomic formula $X$ a set which we denote $\underline{X}$. We define
+\begin{equation}
+\underline{X \otimes Y} = \underline{X \parr Y} = \underline{X} \coprod \underline{Y},\qquad \underline{! A} = \underline{? A} = \Ical(A),\qquad \underline{\neg A} = \underline{A}
+\end{equation}
+\end{definition}
+To each formula $A$ we define $\llbracket A \rrbracket := \Qcal(\underline{A})$. We will interpret a proof $\pi$ of a sequent $A_1, \ldots, A_n \vdash B$ as a morphism $\underline{A_1} \times \ldots \times \underline{A_n} \lto \underline{B}$ in the Kleisli category of $\Qcal$. That is, we associate a function $\underline{A_1} \times \ldots \times \underline{A_n} \lto \Qcal(\underline{B})$.
+	
+\begin{definition}\label{def:model}
+We define a translation of proofs to linear functions. In the following, we use the inclusion map $d_A: \Ical(A) \lto \Qcal(A)$, the morphism $!_A: A \lto \Qcal(\Ical(A))$ which maps an element $a \in A$ to the double singleton $\delta_{\delta_a}$, the canonical diagonal map $\Delta_A: \Qcal(A) \lto \Qcal(A) \times \Qcal(A)$, the swap map $s_A: \Qcal(A) \times \Qcal(A) \lto \Qcal(A) \times \Qcal(A)$, mapping the pair $(\underline{a}_1, \underline{a}_2) \mapsto (\underline{a}_2, \underline{a}_1)$.
+\end{definition}
+
+\begin{theorem}
+Definition \ref{def:model} gives a model of intuitionistic linear logic. That is, if $\pi_1$ and $\pi_2$ are $\cut$-equivalent proofs, then
+\begin{equation}
+\llbracket \pi_1 \rrbracket = \llbracket \pi_2 \rrbracket
+\end{equation}
+\end{theorem}
+\begin{proof}
+We go through each $\cut$-elimination rule methodically and prove invariance of the interpretations under these transformations.
+
+Say $\gamma: \pi \lto \pi'$ is a reduction. If this reduction is either \textbf{anything}/$\ax$ or $\ax$/\textbf{anything} then the constructions of $\llbracket \pi \rrbracket$ and $\llbracket \pi' \rrbracket$ differ only by composition with an identity morphism, and so clearly $\llbracket \pi \rrbracket = \llbracket \pi' \rrbracket$.
+
+The cases of $\rtensor/\ltensor$, \textbf{anything}/$\ctr$, $\prom/\weak$ are similarly trivial.
+
+The interesting cases are $\prom/\der$ and $(\operatorname{R}\multimap)$/$(\operatorname{L}\multimap)$. First we consider $\prom/\der$. The two interpretations are respectively
+\begin{equation}
+\llbracket \pi' \rrbracket d_A \circ_{\call{I}(A)} !_A \llbracket \pi \rrbracket,\qquad \llbracket \pi ' \rrbracket \circ_A \llbracket \pi \rrbracket
+\end{equation}
+So it suffices to show that $d_A \circ !_A = \operatorname{Id}_{\call{I}(A)}$. This is a calculation:
+\begin{align*}
+\operatorname{Add}(d_A)!_A(a) &= \operatorname{Add}(d_A)(\delta_{\delta_a})\\
+&= d_A(\delta_a)\\
+&= \delta_a
+\end{align*}
+which is the identity in $\operatorname{Kl}(\call{Q})$.
+
+Next we consider $(\operatorname{R}\multimap)$/$(\operatorname{L}\multimap)$. The two interpretations are respectively
+\begin{align*}
+&\prod_{i = 1}^n \call{Q}(A_i) \times \prod_{i = 1}^m \call{Q}(B_i) \times \prod_{i = 1}^k \call{Q}(C_i) \lto \call{Q}(C)\\
+&(\alpha, \beta, \gamma) \longmapsto \llbracket \pi''\rrbracket(\operatorname{LinApp}(\llbracket \pi \rrbracket^\times(\alpha), \llbracket \pi'\rrbracket(\beta)))
+\end{align*}
+and
+\begin{align*}
+&\prod_{i = 1}^n \call{Q}(A_i) \times \prod_{i = 1}^m \call{Q}(B_i) \times \prod_{i = 1}^k \call{Q}(C_i) \lto \call{Q}(C)\\
+&(\alpha, \beta, \gamma) \longmapsto \llbracket \pi'' \rrbracket(\llbracket \pi\rrbracket(\alpha, \llbracket \pi'\rrbracket(\beta)))
+\end{align*}
+So it suffices to show that for a general $g: \call{Q}(A) \times \call{Q}(C) \lto \call{Q}(B)$ which is linear in $\call{Q}(A)$, we have
+\begin{equation}
+\operatorname{LinApp}(g^\times(\underline{c}), \underline{a}) = g(\underline{a}, \underline{c})
+\end{equation}
+This follows from the following calculation.
+\begin{align*}
+\operatorname{LinApp}(g^\times(\underline{c}, \underline{a})) &= \sum_{a \in A}g^\times(\underline{c})(a, -)\\
+&= \sum_{a \in A}\underline{a}(a)g(\delta_{a}, \underline{c})(-)\\
+&= g(\underline{a}, \underline{c})
+\end{align*}
+where the last line follows from linearity of $g$.
+\end{proof}
+\begin{remark}\ref{remark:Qualitative_domains}
+By replacing the set $\overline{\bb{N}}$ in Definition \ref{def:Q_monad} we obtain a monad $\call{P}$ which we call the \textbf{power set monad} on $\set$. This can be generalised by considering \textbf{qualitative domains}, which consist of a set $X$ along with a set $|X|$ of subsets of $X$, which contains the empty set, and is closed under arbitrary subset and also filtered colimits. This was done by Girard in \cite[d]{??} and in \cite[d]{??} he shows that in fact \textbf{binary} qualitative domains are all which are needed to be considered in order to obtain a model of $\lambda$-calculus. It is easy to show that Binary qualitative domains are exactly coherent spaces. Investigating the true origins of Linear Logic was in fact the original motivation for this current paper.
+\end{remark}
+\section{Comparison to other models}
+Perhaps the model we have presented here resembles other models which are well known in the literature, notably the relational model, the weighted relational model, and the Scott domains models. In fact this model is distinct from all of these and we now briefly explain how. 
+
+Our reference for the relational model is \cite[Section 5.1]{Manzonetto}. In Remark \ref{remark:Qualitative_domains} we explained how a new model of $\lambda$-calculus can be extracted from the work done in Section \ref{sec:lambda_calculus} by considering the power set monad $\call{P}$ instead of the arbitrary multiset monad $\Qcal$. 
+
+\appendix
+\section{Linear Logic model}
+\begin{center}
+\begin{tabular}{ | c | c |}
+\hline
+\AxiomC{}
+\RightLabel{$\ax$}
+\UnaryInfC{$X \vdash X$}
+\DisplayProof
+&
+$\llbracket \pi \rrbracket = \operatorname{id}_{\Qcal(\underline{X})}$\\
+\hline
+\startproof{$\pi_1$}
+\noLine
+\UnaryInfC{$\Gamma \vdash A$}
+\startproof{$\pi_2$}
+\noLine
+\UnaryInfC{$\Delta, A, \Delta' \vdash B$}
+\RightLabel{$\cut$}
+\BinaryInfC{$\Gamma, \Delta, \Delta' \vdash B$}
+\DisplayProof
+&
+$\llbracket \pi \rrbracket = \llbracket \pi_2 \rrbracket \circ_{\Qcal(A)}\llbracket \pi_1 \rrbracket$\\
+\hline
+\startproof{$\pi'$}
+\noLine
+\UnaryInfC{$\Gamma, A, B, \Delta \vdash C$}
+\RightLabel{$\ltensor$}
+\UnaryInfC{$\Gamma, A \otimes B, \Delta \vdash C$}
+\DisplayProof
+&
+$\llbracket \pi \rrbracket := \llbracket \pi' \rrbracket$\\
+\hline
+\startproof{$\pi_1$}
+\noLine
+\UnaryInfC{$\Gamma \vdash A$}
+\startproof{$\pi_2$}
+\noLine
+\UnaryInfC{$\Delta \vdash B$}
+\RightLabel{$\rtensor$}
+\BinaryInfC{$\Gamma, \Delta \vdash A \otimes B$}
+\DisplayProof
+&
+$\llbracket \pi_1 \rrbracket \times \llbracket \pi_2 \rrbracket$\\
+\hline
+\startproof{$\pi'$}
+\noLine
+\UnaryInfC{$\Gamma, A, \Delta \vdash B$}
+\RightLabel{$\rimp$}
+\UnaryInfC{$\Gamma, \Delta \vdash A \multimap B$}
+\DisplayProof
+&
+$\llbracket \pi \rrbracket := \llbracket \pi' \rrbracket^\times$\\
+\hline
+\startproof{$\pi'$}
+\noLine
+\UnaryInfC{$\Gamma \vdash A$}
+\startproof{$\pi''$}
+\noLine
+\UnaryInfC{$B, \Delta \vdash C$}
+\RightLabel{$(\operatorname{L}\multimap)$}
+\BinaryInfC{$A \multimap B, \Gamma, \Delta \vdash C$}
+\DisplayProof
+&
+$\llbracket \pi \rrbracket(f, \underline{\alpha}, \beta) = \llbracket \pi''\rrbracket\big(\beta, \operatorname{LinApp}_{A,B}(f, \llbracket \pi' \rrbracket(\alpha))\big)$\\
+\hline
+\startproof{$\pi'$}
+\noLine
+\UnaryInfC{$\Gamma, A, \Gamma' \vdash \Delta$}
+\RightLabel{$\der$}
+\UnaryInfC{$\Gamma, !A, \Gamma' \vdash \Delta$}
+\DisplayProof
+&
+$\llbracket \pi \rrbracket := \llbracket \pi' \rrbracket \circ_{\Qcal(A)} d_A$\\
+\hline
+\startproof{$\pi'$}
+\noLine
+\UnaryInfC{$!\Gamma \vdash A$}
+\RightLabel{$\promotion$}
+\UnaryInfC{$!\Gamma \vdash !A$}
+\DisplayProof
+&
+$\llbracket \pi \rrbracket := !_A \circ \llbracket \pi' \rrbracket$\\
+\hline
+\startproof{$\pi'$}
+\noLine
+\UnaryInfC{$\Gamma, !A, !A \vdash B$}
+\RightLabel{$\ctr$}
+\UnaryInfC{$\Gamma, !A, \vdash B$}
+\DisplayProof
+&
+$\llbracket \pi \rrbracket = \llbracket \pi' \rrbracket \circ_{\call{I}(A) \times \call{I}(A)}\Delta_A$\\
+\hline
+\startproof{$\pi'$}
+\noLine
+\UnaryInfC{$\Gamma \vdash B$}
+\RightLabel{$\weak$}
+\UnaryInfC{$\Gamma, !A \vdash B$}
+\DisplayProof
+&
+$\llbracket \pi \rrbracket(\underline{a}_1, \ldots, \underline{a}_n, \underline{a}) = \llbracket \pi' \rrbracket(\underline{a}_1, \ldots, \underline{a}_n)$\\
+\hline
+\startproof{$\pi$}
+\noLine
+\UnaryInfC{$\Gamma, A, B, \Delta \vdash C$}
+\RightLabel{$\ex$}
+\UnaryInfC{$\Gamma, B, A, \Delta \vdash C$}
+\DisplayProof
+&
+$\llbracket \pi \rrbracket := \llbracket \pi' \rrbracket \circ_{A \times B} s_{B,A}$\\
+\hline
+\end{tabular}
+\end{center}
+
+\section{$\lambda$-terms as normal functions proofs}\label{ap:normal_functions}
+\begin{proof}[Proof of Lemma \ref{lem:app_normal}]
+		We will show directly that $\operatorname{App}$ preserves filtered supremums.
+		
+		First, notice that there is a bijection $\Qcal(\Ical(A) \times A) \times \Qcal(A) \cong \Qcal(\Ical(A) \times A + A)$. Thus, the definition of normality is according to Definition \ref{def:normal} with respect to the function
+		\begin{equation}
+			\Qcal(\Ical(A) \times A + A) \lto \Qcal(\Ical(A) \times A)
+		\end{equation}
+		induced by this bijection and the function $\operatorname{App}$. This definition is equivalent to the following condition.
+		
+			Let $\{ f_i \}_{i \in I} \subseteq \Qcal(\Ical(A) \times A)$ and $\{{ \underline{a}_j }\}_{j \in J} \subseteq \Qcal(A)$ be arbitrary filtered sets. Then the following equality holds.
+			\begin{equation}
+				\operatorname{App}(\operatorname{sup}_{i \in I}\{ f_i \}, \operatorname{sup}_{j \in J}\{ \underline{a}_j \}) = \operatorname{sup}_{i \in I, j \in J}\operatorname{App}\big(f_i, \underline{a}_j\big)
+			\end{equation}
+		Let $\{ f_i \}_{i \in I} \subseteq \Qcal(\Ical(A) \times A)$ be an arbitrary set and let $f$ denote $\operatorname{min}_{i \in I}\{ f_i \}$ and $\underline{a}$ denote $\operatorname{min}_{i \in I}\{ \underline{a}_i \}$. Then for any pair $(\underline{b}, c) \in \Qcal(\Ical(A) \times A)$ we have
+		\begin{align*}
+			\operatorname{App}(f,\underline{a})(\underline{b}, c) &= \operatorname{sup}_{\underline{b} \in \Ical(A)}f(\underline{b}, c)\delta_{\underline{b}(c) \leq \underline{a}(c)}\\
+			&=\operatorname{sup}_{\underline{b}} \operatorname{sup}_{i \in I}\{ f_i \}\big(\underline{b}, c\big) \delta_{\underline{b} \leq \operatorname{sup}_{j \in J}\underline{a}_j}\\
+			&= \operatorname{sup}_{
+			\underline{b}}\operatorname{sup}_{i \in I, j \in J}f_i(\underline{b}, c)\delta_{\underline{b} \leq \underline{a}_j}\\
+			&= \operatorname{sup}_{i \in I, j \in J}\operatorname{sup}_{
+				\underline{b}}f_i(\underline{b}, c)\delta_{\underline{b} \leq \underline{a}_j}
+		\end{align*}
+		as required.
+	\end{proof}\textbf{•}
+%
+%
+%
+%
+% ---- Bibliography ----
+%
+% BibTeX users should specify bibliography style 'splncs04'.
+% References will then be sorted and formatted in the correct style.
+%
+% \bibliographystyle{splncs04}
+% \bibliography{mybibliography}
+%
+\begin{thebibliography}{8}
+\bibitem{Manzonetto}
+Manzonetto, G.: What is a Categorical Model of the Differential and the Resource $\lambda$-Calculi?. Journal \textbf{2}(5), 99--110 (2016)
+
+\bibitem{ref_lncs1}
+Author, F., Author, S.: Title of a proceedings paper. In: Editor,
+F., Editor, S. (eds.) CONFERENCE 2016, LNCS, vol. 9999, pp. 1--13.
+Springer, Heidelberg (2016). \doi{10.10007/1234567890}
+
+\bibitem{ref_book1}
+Author, F., Author, S., Author, T.: Book title. 2nd edn. Publisher,
+Location (1999)
+
+\bibitem{ref_proc1}
+Author, A.-B.: Contribution title. In: 9th International Proceedings
+on Proceedings, pp. 1--2. Publisher, Location (2010)
+
+\bibitem{ref_url1}
+LNCS Homepage, \url{http://www.springer.com/lncs}. Last accessed 4
+Oct 2017
+\end{thebibliography}
+\end{document}

@@ -1,8 +1,20 @@
-\contentsline {section}{\numberline {1}Introduction}{1}{section.1}%
-\contentsline {section}{\numberline {2}Forms}{2}{section.2}%
-\contentsline {section}{\numberline {3}Finite normal forms and analyticity}{4}{section.3}%
-\contentsline {section}{\numberline {4}Finite normal forms and normality}{9}{section.4}%
-\contentsline {section}{\numberline {5}Qualitative domains}{18}{section.5}%
-\contentsline {section}{\numberline {6}Coherence spaces}{25}{section.6}%
-\contentsline {section}{\numberline {A}Examples}{26}{appendix.A}%
-\contentsline {section}{\numberline {B}Girard's LIES}{27}{appendix.B}%
+\contentsline {section}{\numberline {1}Introduction}{2}{section.1}%
+\contentsline {section}{\numberline {2}Girard's Normal Form Theorem}{2}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Analytic functors}{4}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Normal functors}{8}{subsection.2.2}%
+\contentsline {section}{\numberline {3}$\lambda $-terms as normal functors}{16}{section.3}%
+\contentsline {section}{\numberline {4}$\lambda $-terms as normal functions}{20}{section.4}%
+\contentsline {subsection}{\numberline {4.1}The retract}{22}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}The App function}{23}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}The $\lambda $-calculus model}{24}{subsection.4.3}%
+\contentsline {section}{\numberline {5}Relationship with categorical semantics}{27}{section.5}%
+\contentsline {section}{\numberline {6}Intuitionistic Linear Logic proofs as additive functions}{30}{section.6}%
+\contentsline {subsection}{\numberline {6.1}The linear app function}{31}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}The model of intuitionistic linear logic}{32}{subsection.6.2}%
+\contentsline {section}{\numberline {7}Qualitative domains}{37}{section.7}%
+\contentsline {section}{\numberline {8}Coherence spaces}{45}{section.8}%
+\contentsline {section}{\numberline {9}Monad-comonad interaction}{47}{section.9}%
+\contentsline {subsection}{\numberline {9.1}Semi-cocartesian rig categories}{47}{subsection.9.1}%
+\contentsline {subsection}{\numberline {9.2}Ind-completion}{48}{subsection.9.2}%
+\contentsline {section}{\numberline {A}Background on $\lambda $-calculus}{51}{appendix.A}%
+\contentsline {section}{\numberline {B}Background on intuitionistic linear logic}{52}{appendix.B}%

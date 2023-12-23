@@ -1,0 +1,1647 @@
+\documentclass[12pt]{article}
+
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{mathrsfs}
+\usepackage{array}
+\usepackage{amssymb}
+\usepackage{units}
+\usepackage{graphicx}
+\usepackage{tikz-cd}
+\usepackage{nicefrac}
+\usepackage{hyperref}
+\usepackage{bbm}
+\usepackage{color}
+\usepackage{tensor}
+\usepackage{tipa}
+\usepackage{bussproofs}
+\usepackage{ stmaryrd }
+\usepackage{ textcomp }
+\usepackage{leftidx}
+\usepackage{afterpage}
+\usepackage{varwidth}
+\usepackage{tasks}
+\usepackage{ cmll }
+\usepackage{makecell}
+\usepackage{MnSymbol}
+\usepackage{adjustbox}
+\usepackage{multirow}
+\usepackage{booktabs}
+\usepackage{xparse}
+\usepackage{calc}
+\usepackage{stackengine}
+\usepackage{csquotes}
+\usepackage{enumitem}
+
+\theoremstyle{plain}
+\newtheorem{thm}{Theorem}[subsection] % reset theorem numbering for each chapter
+\newtheorem{proposition}[thm]{Proposition}
+\newtheorem{lemma}[thm]{Lemma}
+\newtheorem{fact}[thm]{Fact}
+\newtheorem{cor}[thm]{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{defn}[thm]{Definition} % definition numbers are dependent on theorem numbers
+\newtheorem{exmp}[thm]{Example} % same for example numbers
+\newtheorem{notation}[thm]{Notation}
+\newtheorem{remark}[thm]{Remark}
+\newtheorem{condition}[thm]{Condition}
+\newtheorem{question}[thm]{Question}
+\newtheorem{construction}[thm]{Construction}
+\newtheorem{exercise}[thm]{Exercise}
+\newtheorem{example}[thm]{Example}
+\newtheorem{aside}[thm]{Aside}
+\newtheorem{algorithm}[thm]{Algorithm}
+
+\def\doubleunderline#1{\underline{\underline{#1}}}
+\newcommand{\bb}[1]{\mathbb{#1}}
+\newcommand{\barN}{\overline{\bb{N}}}
+
+\newcommand{\scr}[1]{\mathscr{#1}}
+\newcommand{\call}[1]{\mathcal{#1}}
+\newcommand{\Ccal}{\call{C}}
+\newcommand{\Dcal}{\call{D}}
+\newcommand{\Ecal}{\call{E}}
+\newcommand{\Fcal}{\call{F}}
+\newcommand{\Ical}{\call{I}}
+\newcommand{\Jcal}{\call{J}}
+\newcommand{\Mcal}{\call{M}}
+\newcommand{\Mcol}{\overline{\call{M}}}
+\newcommand{\Pcal}{\call{P}}
+\newcommand{\Qcal}{\call{Q}}
+\newcommand{\Rcal}{\call{R}}
+\newcommand{\Vcal}{\call{V}}
+\newcommand{\yon}{\mathbf{y}} % might switch for a "yo" in future
+
+\newcommand{\boxo}{\mathbin{\overline{\boxtimes}}}
+
+\newcommand{\und}[1]{\underline{\hspace{#1 cm}}}
+\newcommand{\adj}[1]{\text{\textopencorner}{#1}\text{\textcorner}}
+\newcommand{\comment}[1]{}
+\newcommand{\lto}{\longrightarrow}
+\newcommand{\rone}{(\operatorname{R}\bold{1})}
+\newcommand{\lone}{(\operatorname{L}\bold{1})}
+\newcommand{\rimp}{(\operatorname{R} \multimap)}
+\newcommand{\limp}{(\operatorname{L} \multimap)}
+\newcommand{\rtensor}{(\operatorname{R}\otimes)}
+\newcommand{\ltensor}{(\operatorname{L}\otimes)}
+\newcommand{\promotion}{(\operatorname{Prom})}
+\newcommand{\dereliction}{\operatorname{Der}}
+\newcommand{\contraction}{\operatorname{Ctr}}
+\newcommand{\weakening}{\operatoranme{Weak}}
+\newcommand{\rtrue}{(\operatorname{R}\top)}
+\newcommand{\rwith}{(\operatorname{R}\&)}
+\newcommand{\lwithleft}{(\operatorname{L}\&)_{\operatorname{left}}}
+\newcommand{\lwithright}{(\operatorname{L}\&)_{\operatorname{right}}}
+\newcommand{\rplusleft}{(\operatorname{R}\oplus)_{\operatorname{left}}}
+\newcommand{\rplusright}{(\operatorname{R}\oplus)_{\operatorname{right}}}
+\newcommand{\lplus}{(\operatorname{L}\oplus)}
+\newcommand{\prom}{(\operatorname{prom})}
+\newcommand{\ctr}{(\operatorname{ctr})}
+\newcommand{\der}{(\operatorname{der})}
+\newcommand{\weak}{(\operatorname{weak})}
+\newcommand{\exi}{(\operatorname{exists})}
+\newcommand{\fa}{(\operatorname{for\text{ }all})}
+\newcommand{\ex}{(\operatorname{ex})}
+\newcommand{\cut}{(\operatorname{cut})}
+\newcommand{\ax}{(\operatorname{ax})}
+\newcommand{\negation}{\sim}
+\newcommand{\true}{\top}
+\newcommand{\false}{\bot}
+\newcommand{\lneg}{(\operatorname{L}\neg)}
+\newcommand{\rneg}{(\operatorname{R}\neg)}
+\DeclareRobustCommand{\diamondtimes}{%
+	\mathbin{\text{\rotatebox[origin=c]{45}{$\boxplus$}}}%
+}
+\newcommand{\tagarray}{\mbox{}\refstepcounter{equation}$(\theequation)$}
+\newcommand{\startproof}[1]{
+	\AxiomC{#1}
+	\noLine
+	\UnaryInfC{$\vdots$}
+}
+\newcommand\showdiv[1]{\overline{\smash{)}#1}}
+\DeclareMathOperator{\set}{Set}
+\DeclareMathOperator{\finset}{FinSet}
+\DeclareMathOperator{\vect}{Vect}
+\DeclareMathOperator{\cat}{Cat}
+\DeclareMathOperator{\CAT}{CAT}
+\DeclareMathOperator{\pcat}{-Cat}
+\DeclareMathOperator{\pCAT}{-CAT}
+\DeclareMathOperator{\psh}{PSh}
+\DeclareMathOperator{\RIG}{RIG}
+\DeclareMathOperator{\mon}{mon}
+\DeclareMathOperator{\MON}{MON}
+\DeclareMathOperator{\modu}{-mod}
+\DeclareMathOperator{\MODU}{-MOD}
+\DeclareMathOperator{\ind}{Ind}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\Fun}{Fun}
+\DeclareMathOperator{\PSh}{PSh}
+\DeclareMathOperator{\ob}{ob}
+\DeclareMathOperator{\id}{id}
+\DeclareMathOperator*{\colim}{colim}
+\newcommand{\op}{{}^{\mathrm{op}}}
+\newcommand{\coherence}[2]{#1\text{ }\rotatebox{90}{()}_A\text{ }#2}
+
+
+\newenvironment{scprooftree}[1]%
+{\gdef\scalefactor{#1}\begin{center}\proofSkipAmount \leavevmode}%
+	{\scalebox{\scalefactor}{\DisplayProof}\proofSkipAmount \end{center} }
+
+\title{$\lambda$}
+\author{Wi$\lambda\lambda$iam Troiani, Morgan Rogers, Thomas Sei$\lambda\lambda$er}
+\date{\today}
+
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+	
+\section{Introduction}
+The language of mathematics is constrained by the finite means we have to express it. Simultaneously, we are interested in inherently infinite structures such as the real numbers or infinite dimensional vector spaces. Thus, the language we use to describe mathematics must thread a needle between the finite and the infinite. Modern mathematical foundations achieves this with great success; we indulge ourselves in the hypothesis that a new variable or type may always be introduced and distinguished from the finite set which are currently being used in practice.
+
+The untyped $\lambda$-calculus is also potentially infinite in at least two different ways: in the context of a redex $(\lambda x. M)N$ there are an \emph{arbitrary} yet \emph{finite} amount of free occurrences of $x$ inside $M$, and thus an arbitrary yet finite amount of substitutions performed in the single-step $\beta$-reduction $(\lambda x. M)N \lto_{\beta} M[x := N]$. This also holds for the simply typed $\lambda$-calculus, however the \emph{untyped} $\lambda$-calculus admits another dimension of potential infinitude in that there are terms whose reductions grow \emph{arbitrarily large}, although each term itself in the reduction sequence is finite. For instance we have, where $\omega$ denotes $\lambda x. xxx$:
+\begin{equation*}
+    \omega \omega \lto_{\beta} \omega \omega \omega \lto_{\beta} \omega \omega \omega \omega \lto_{\beta} \ldots
+\end{equation*}
+Finding models of the untyped $\lambda$-calculus establishes formal semantics displaying this idea of potential infinitude as suggested by the syntax.
+
+Motivated to find such a semantics, Girard considered his Normal Form Theorem (???) as a statement relating property to presentation, and constructed an interpretation for the untyped $\lambda$-calculus where each term $t$ (in context $\underline{x} = \{ x_1, \ldots, x_n \}$) is given an associated normal functor $\llbracket t \mid \underline{x} \} \rrbracket: \set^A \times \ldots, \times \set^A \lto \set^A$.
+
+Within this model, however, lurked more structure than that which was reflected by the syntax. A defining property of normal functors is that they are given by their restriction to \textit{integral} functors. Though this holds for \textit{all} normal functors, the stronger condition that a functor is defined by its restriction to its underlying sets $A \times \ldots \times A \lto \set^A$ only holds for \textit{linear} normal functors. Restricting the syntax of $\lambda$-calculus to the simply typed $\lambda$-calculus (a la Church) followed by extending the syntax to notate these linear functors, leads to the logical system Linear Logic.
+
+How exactly it is that Linear Logic is modelled by normal functors was never written down in Girard's original paper. Furthermore, what is written there is overcomplicated; one need not consider normal functors at all, as the core mathematical ideas of his work there can be understood by considering the much simpler normal \textit{functions} instead. At face value, this simplified model bares similarities to the weighted relational model, and also to the ``weighted Scott domains'' model. However, it is distinct from these, so we declare this genuinely new (to the best of the author's knowledge) model as this paper's main contribution.
+
+\section{Girard's Normal Form Theorem}
+
+One of the main contributions of \cite{Girard} is his Normal Form Theorem \cite[Theorem 2.8]{Girard} which establishes an equivalence between three different types of functors. We remark that the statement of the Theorem is written incorrectly there, the correct statement is given as follows.
+ 
+\begin{thm}\label{thm:normal_form_theorem}
+    Let $\scr{F}: \set^A \lto \set$ be a functor. Then the following are equivalent:
+    \begin{itemize}
+        \item $\scr{F}$ is normal.
+        \item $\scr{F}$ satisfies the finite normal form property.
+        \item $\scr{F}$ is isomorphic to an analytic functor.
+    \end{itemize}
+\end{thm}
+
+\begin{defn}\label{def:forms}
+		Let $(F,x) \in \operatorname{El}(\scr{F})$. A \textbf{form} of $\scr{F}$ with respect to $(F,x)$ is an object of the category $\operatorname{El}(\scr{F})/(F,x)$, the comma category over $(F,x)$ of the category of elements $\operatorname{El}(\scr{F})$.
+		
+		The form is \textbf{normal} if it is initial (ie, is an initial object in the category $\operatorname{El}(\scr{F}))/(F,x)$.
+
+  Let $X \in \set$ be a set and $F \in \set^A$ a functor, and $\eta: (G,y) \lto (F,x)$ a form, where $x \in \scr{F}(F)$.
+		\begin{itemize}
+			\item $X$ is an \textbf{integer} if it is a Von Neumann integer ($0 := \varnothing, 1 = \{0\}, \ldots, n := \{ 0, \ldots, n-1\}, \ldots$).
+		\item $F$ is \textbf{finite} if for all $a \in A$ the set $F(a)$ is finite, and all but finitely many of $F(a)$ are equal to $\varnothing$.
+		\item $F$ is \textbf{integral} if for all $a \in A$ the set $F(a)$ is an integer.
+		\item $\eta: (G,y) \lto (F,x)$ is \textbf{finite} if $G$ is finite.
+		\item $\eta: (G,y) \lto (F,x)$ is \textbf{integral} if $G$ is integral.
+			\end{itemize}
+		We let $\operatorname{Int}(A)$ denote the set of integral functors $F \in \set^A$.
+
+		The functor $\scr{F}$ satisfies the \textbf{finite normal form property} if for every object $(F,x)$ in $\operatorname{El}(\scr{F})$ (the category of elements of $\scr{F}$) there exists a finite normal form $\eta: (G,y) \lto (F,x)$ (Definition \ref{def:forms}).
+		
+		The functor $\scr{F}$ satisfies the \textbf{integral normal form property} if in the above the functor $G$ can be taken to be integral.
+		\end{defn}
+	
+Clearly, every integral functor is finite. Conversely, every finite functor is isomorphic to an integral functor. It follows that the finite normal form property is equivalent to the integral normal form property. Moreover, this holds even when $A$ is an arbitrary category, even though this case was not considered in Girard's original paper \cite{Girard}.
+
+\subsection{Analytic functors}
+
+\begin{defn}\label{def:analytic}
+		A functor $\scr{F}: \set^A \lto \set$ is \textbf{analytic} if there exists a family of sets $\lbrace C_{G}\rbrace_{G \in \set^A}$ such that for all objects $F \in \set^A$ and all morphisms $\mu: F \lto G$ we have
+		\begin{equation*}
+			\scr{F}(F) = \coprod_{G \in \operatorname{Int}(A)}(\set^A(G,F) \times C_G)\quad \scr{F}(\mu) = \coprod_{G \in \operatorname{Int}(A)}(\set^A(G,\mu) \times C_G)
+			\end{equation*}
+		\end{defn}
+
+A functor $\scr{F}: \set^A \lto \set$ admits the finite normal form property if and only if it is isomorphic to an analytic functor (see ??). In short, given a functor $F \in \set^A$ and an element $x \in \scr{F}(F)$, a normal form $\eta: (G, y) \lto (F, x)$ will induce the data of a triple $(G, \eta, y') \in \coprod_{G \in \operatorname{Int}(A)}(\set^A(G,F) \times C_G)$ where $y'$ is equivalent to $y$ under an appropriate equivalence relation. To finish the proof, we must define the equivalence relation defining the classes which form $C_G$. This will require an alternate classification of when an integral form is normal without reference to its codomain.
+
+	\begin{lemma}\label{lem:normal_form_prop--->analytic}
+		A functor $\scr{F}: \set^A \lto \set$ satisfies the finite normal form property, if and only if $\scr{F}$ is isomorphic to an analytic functor.
+		\end{lemma}
+
+Everything so far also holds in the setting where $A$ is an arbitrary category, even though the assumption was made in \cite{Girard} that $A$ is a set.
+	
+\subsection{Normal functors}
+\label{sec:normal_functors}
+The functors of this section $\scr{F}: \set^A \lto \set$ will be defined as those which preserve certain limits and colimits, but their crucial property will in fact be that the image of a functor $F \in \set^A$ under $\scr{F}$ will be determined by \emph{finite data}, even if $F$ is infinitary. To illustrate this point, consider a set $X$ and let $\{ X_i \}_{i \in I}$ be its set of finite subsets. Then $X$ can be written as the filtered colimit $\colim_{i \in I}\{ X_i \}$. Now say $Y$ is another set and we have a function $f: X \lto Y$. We can consider $X,Y$ as categories (with only identity morphisms) and $f$ as a functor. Then if $f$ preserves filtered colimits and wide pullbacks, we have the following:
+\begin{align*}
+    f(X) &= f(\colim_{i \in I}\{ X_i \})\\
+    &= \colim_{i \in I}\{ f(X_i) \} 
+\end{align*}
+We can think of the collection $\{ f(X_i) \}_{i \in I}$ as a collection of \emph{finite approximations} to $f$. Moreover, if $x \in X$ and $X_i, X_j \subseteq X$ are both finite such that $x \in X_i, X_j$ then $x \in X_i \cap X_j$ and so
+\begin{equation}
+f(X_i \cap X_j) = f(X_i) \cap f(X_j)
+\end{equation}
+as $f$ preserves pullbacks. This implies that there exists a \emph{minimal, finite} subset $X$ determining the behaviour of $f$ on $x$.
+
+The theory presented in this section can be thought of as a generalisation of this phenomena just observed to a categorical setting.
+
+	\begin{defn}\label{def:normal_functor}
+		A functor $\set^A \lto \set$ is \textbf{normal} if it preserves direct colimits and wide pullbacks.
+		\end{defn}
+
+  \begin{lemma}\label{lem:finite_generation_functors}
+		Any functor $F \in \set^A$ is the colimit of finite functors in $\set^A$.
+		\end{lemma}
+	\begin{proof}
+	    Left to the reader.
+	\end{proof}
+
+ Lemma \ref{lem:finite_generation_functors} is useful for proving that certain subobjects are finite. In short, one can prove a set $Y$ is finite by defining a surjective function $f: X \lto Y$ where $X$ is finite. This suggest a relaxing of the finite normal form condition to the \emph{saturated form condition}, which is to say that every appropriate pair $(F,x)$ admits a saturated form.
+
+ \begin{defn}\label{def:saturated}
+		A form $\eta: (G, y) \lto (F,x)$ is \textbf{saturated} if any other form $\epsilon: (H, z) \lto (G,y)$ is an epimorphism.
+		\end{defn}
+	
+	\begin{lemma}
+		If $\scr{F}$ is normal, then every saturated form is finite.
+		\end{lemma}
+	\begin{proof}
+		Let $\eta: (G, y) \lto (F,x)$ be a saturated form. We have by Lemma \ref{lem:finite_generation_functors} that $G$ is the colimit of its finite subobjects, so we write $G \cong \colim\{ G_i \}_{i \in I}$. Hence, $\scr{F}(G) \cong \scr{F} \colim\{ G_i \} \cong \colim\{ \scr{F}(G_i) \}$, using normality.
+  
+		Thus, we can view $y$ as an element of $\colim\{ \scr{F}(G_i) \}$ and consider $i \in I$ along with $y' \in \scr{F}(G_i)$ which maps onto $y \in \colim\{ \scr{F}(G_i) \}$ under the corresponding morphism of the colimit. We thus have a commutative diagram.
+		\begin{equation}
+			\begin{tikzcd}
+				\scr{F}(G)\arrow[r,"{\cong}"] & \colim\{ \scr{F}(G_i) \}\\
+				& \scr{F} (G_i)\arrow[u]\arrow[ul]
+				\end{tikzcd}
+			\end{equation}
+		Thus, $(G_i, y') \lto (G,y)$ is a form which is surjective by saturation of $\eta$. Since $G_i$ is finite, this implies $G$ is finite.
+		\end{proof}
+	The final preliminary lemma required states that morphisms out of saturated normal forms are unique, in an appropriate sense. The proof of this lemma will use the fact that any functor preserving pullbacks preserves equalisers.
+	\begin{lemma}\label{lem:saturated_unique}
+		Let $\eta: (G,y) \lto (F,x)$ be saturated and $\eta': (G,y) \lto (F,x)$ an arbitrary form. Then $\eta = \eta'$.
+		\end{lemma}
+	\begin{proof}
+		Consider the equaliser $\operatorname{Eq}(\scr{F}\eta, \scr{F}\eta')$. Since $\scr{F}\eta(y) = \scr{F}\eta'(y)$ we have that $y \in \operatorname{Eq}(\scr{F}\eta, \scr{F}\eta')$. Since $\operatorname{Eq}(\scr{F}\eta, \scr{F}\eta') \cong \scr{F}\operatorname{Eq}(\eta,\eta')$ it follows that $(\operatorname{Eq}(\eta,\eta'), y) \lto (G,y)$ is a form, which in fact is surjective by saturation of $\eta$. It follows that $\eta = \eta'$.
+		\end{proof}
+	
+	\begin{lemma}\label{lem:normal--->finite_normal_form_property}
+		If $\scr{F}: \set^A \lto \set$ is normal then it satisfies the normal form property.
+		\end{lemma}
+	
+
+The remaining result to be proved for Theorem \ref{thm:normal_form_theorem} is the converse to Lemma \ref{lem:normal--->finite_normal_form_property}. Indeed this is the most difficult part of the proof. This result and its proof was one of the main motivators for the authors to search for a more satisfying framework within which to describe the ideas hidden inside the details here. We include the result and proof in the appendix for completeness.
+ 
+	\begin{lemma}\label{lem:normal_from_prop--->normal}
+		A functor $\scr{F}: \set^A \lto \set$ satisfying the finite normal form property is normal.
+		\end{lemma}
+
+\section{$\lambda$-terms as normal functors}
+
+\begin{defn}
+    For an arbitrary set $A$ we denote by $\operatorname{Int}(A)$ the subset of $\set^A$ given by integral functors.
+\end{defn}
+
+Notice that if $A$ is infinite then the sets $\operatorname{Int}(A) \times A$ and $A$ have the same cardinality, and so there exists a bijection $\operatorname{Int}(A) \times A \lto A$. That such a bijection exists is crucial to the modelling of $\lambda$-terms. We have moreover insisted on $A$ being countably infinite to reflect the statements on potential infinitude made earlier.
+
+\begin{remark}
+    In the original presentation, \cite[Proposition 3.1]{Girard}, a seemingly highly specific choice of set $A_\infty$ was taken for $A$, along with a seemingly highly specific choice of bijection. This is misleading as the only property which $A_\infty$ must satisfy is that it is in bijection with $\operatorname{Int}(A_\infty) \times A_\infty$, which is satisfied by any infinite set.
+\end{remark}
+
+We now fix once and for all a countably infinite set $A$ and a bijection $q: \operatorname{Int}(A) \times A \lto A$. This bijection induces an equivalence of categories $\overline{q}: \set^A \lto \set^{\operatorname{Int}(A) \times A}$ which, loosely speaking, is used to model currying. This is made precise by the following Lemma, where we use the notation $\operatorname{Norm}(\Ccal, \Dcal)$ to denote the normal functors with domain a category $\Ccal$ and codomain a category $\Dcal$.
+
+\begin{lemma}
+    For $n > 0$ there exists a pair of functions $(-)^\plus, (-)^\minus$
+    \begin{equation}
+        \begin{tikzcd}
+            \operatorname{Norm}\big((\set^A)^n \times \set^A, \set^A\big)\arrow[r,shift left, "{(-)^\plus}"] & \operatorname{Norm}\big((\set^A)^n, \set^{\operatorname{Int}(A) \times A}\big)\arrow[l, shift left, "{(-)^{\minus}}"]
+        \end{tikzcd}
+    \end{equation}
+    such that the composite $((-)^+)^\minus$ is the identity.
+\end{lemma}
+\begin{proof}
+    Let $\scr{F}: (\set^A)^n \times \set^A \lto \set^A$ be normal. By Theorem \ref{thm:normal_form_theorem} we can assume without loss of generality that $F$ is analytic. For any sequence $\underline{F} = (F_1, \ldots, F_n)$ of functors in $\set^A$ and every functor $F \in \set^A$ we have the following, where the coproduct is taken over all $\underline{G}, G \in \operatorname{Int}(A)^{n} \times \operatorname{Int}(A)$.
+    \begin{equation}\label{eq:Girard_Plus}
+        \scr{F}(\underline{F}, F) = \coprod C_{\underline{G}, G}(\underline{F},F) \times \operatorname{Set}^A(G, F)
+    \end{equation}
+    for some family of functors $\{ C_{\underline{G},G}(\underline{F}, F): A \lto \set\}_{\underline{G},G \in \operatorname{Int}(A)^n \times \operatorname{Int}(A) }$, \eqref{eq:Girard_Plus} is a functor $A \lto \set$.
+
+    We define for $(G', a) \in \operatorname{Int}(A) \times A$ the following where the coproduct is over all $\underline{G} \in \operatorname{Int}(A)^n$
+    \begin{equation}
+        \scr{F}^+(\underline{F})(G, a) = \coprod C_{\underline{G}, G}(\underline{F}, G)(a)
+    \end{equation}
+    Conversely, given a normal functor $\scr{G}: (\set^A)^n \lto \set^{\operatorname{Int}(A) \times A}$ we define for $(\underline{F},F) \in (\set^A)^n \times \set^A$ and $a \in A$:
+    \begin{equation}
+        \scr{G}^-(\underline{F}, F)(a) := \coprod_{G \in \operatorname{Int}(A)} \scr{G}(\underline{F})(G,a) \times \set^A(G, F)
+    \end{equation}
+    The claims made on the functions $(-)^\plus, (-)^\minus$ follow easily.
+\end{proof}
+
+\begin{defn}\label{def:functor_model}
+    Let $t$ be a term and $\underline{x} = \{x_1, \ldots, x_n\}$ a context for $t$ (ie, a set of variables containing the free variables of $t$). We simultaneously define a functor
+    \begin{equation}
+        \llbracket \underline{x} \mid t \rrbracket: (\set^A)^n \lto \set^A
+    \end{equation}
+    and prove its normal by induction on the structure of $t$.
+    \begin{center}
+			\begin{tabular}{ | c | c | }
+			\hline
+				\textbf{Variable $x_i \in \underline{x}$} & 
+				$\llbracket \underline{x} \mid x_i \rrbracket = \pi_i$\\
+				\hline
+\textbf{Application $t = t_1 t_2$} & $\llbracket \underline{x} \mid t_1t_2\rrbracket = \operatorname{App}\big( \langle \overline{q} \llbracket \underline{x} \mid t_1 \rrbracket, \llbracket \underline{x} \mid t_2 \rrbracket \rangle \big)$\\
+\hline
+\textbf{Abstraction $t = \lambda y. t'$} & $\llbracket \underline{x} \mid \lambda y. t' \rrbracket := \overline{q}^{-1} \llbracket \underline{x}, y \mid t' \rrbracket^+$\\
+\hline
+			\end{tabular}
+		\end{center}
+\end{defn}
+
+\begin{remark}
+    Although the notation and presentation differs significantly, this is exactly the same definition as \cite[The model $A_\infty$]{Girard}. In particular, using the notation there, given $H: (\set^A)^n \lto \set^{\operatorname{Int}(A) \times A}$, $J: (\set^A)^n \lto \set^A$, and $\underline{F} \in (\set^A)^n$ we have:
+    \begin{equation}
+        \operatorname{App}(H(\underline{F}), J(\underline{F})) = H^-(\underline{F}, J(\underline{F}))
+    \end{equation}
+\end{remark}
+
+The expected substitution Lemma holds, as does the statement that any two terms related under $\alpha\beta\eta$-equivalence are interpreted as isomorphic functors. In Section \ref{sec:new_model} we simplify this model and provide full proofs of the two corresponding statements (respectively Lemma \ref{lem:substitution}, Theorem \ref{thm:denotational_model}) there. Thus we omit the proofs of the following two statements.
+
+\begin{lemma}
+    \textcolor{red}{Substitution Lemma}
+\end{lemma}
+
+\begin{thm}
+    \textcolor{red}{Model}
+\end{thm}
+	
+\section{$\lambda$-terms as normal functions}\label{sec:new_model}
+Throughout we work with a fixed set $A$.
+	
+	\begin{defn}
+		We denote by $\Qcal(A)$ the set of functions $\underline{a}: A \lto \bb{N} \cup \{ \infty \}$. That is, $\Qcal(A)$ is the set of multisets with elements in $A$ allowing for the possibility that elements occur infinitly often. We denote by $\Ical(A)$ the subset of $\Qcal(A)$ consisting of \textbf{finite} functions $\underline{a}: A \lto \bb{N} \cup \{ \infty \}$, that is, functions satisfying the conditions that all but finitely many $c \in A$ are such that $\underline{a}(c) = 0$ and that the image lies in $\bb{N}$.
+	\end{defn}
+	
+	\begin{remark}
+		The set $\Qcal(A)$ is partially ordered with order $\leq$ given by the following with $\underline{a}_1, \underline{a}_2 \in \Qcal(A)$:
+		\begin{equation}
+			\underline{a}_1 \leq \underline{a}_2 \text{ if and only if }\forall a \in A, \underline{a}_1(a) \leq \underline{a}_2(a)
+		\end{equation}
+		Let $n > 0$ be a natural number and consider the set $\Qcal(A)^n$. Since $\Qcal(A)$ is partially ordered, the set $\Qcal(A)^n$ is also equipt with a partial order $\leq$ given as follows. If $x = (\underline{a}_1, \ldots, \underline{a_n}), y = (\underline{b}_1, \ldots, \underline{b_n}) \in \Qcal(A)^n$,
+		\begin{equation}
+			x \leq y\text{ if and only if }\underline{a}_i \leq \underline{b_i}\text{  }\forall i = 1, \ldots, n,
+		\end{equation}
+	\end{remark}
+	
+	We fix another set $B$.
+	
+	\begin{defn}\label{def:normal}
+		A function $f: \Qcal(A)^n \lto \Qcal(B)$ is \textbf{normal} if it is order preserving, that is, for $x, y \in \Qcal(A)^n$ if
+			\begin{equation}
+				x \leq y
+			\end{equation}
+			then
+			\begin{equation}
+				f(x) \leq f(y)
+			\end{equation}
+		An order preserving function $f$ is \textbf{normal} if it preserves supremum of filtered sets. That is, if $\{ x_i \}_{i \in I}$ is a filtered set of elements in $\Qcal(A)^n$, then
+			\begin{equation}
+				f(\operatorname{sup}_{i \in I} \{ x_i \}) = \operatorname{sup}_{i \in I}\{ f(x_i) \}
+			\end{equation}
+	\end{defn}
+	
+	\begin{remark}
+		Definition \ref{def:normal} is the analogue to Girard's definition of Normal Functors \cite[Definition 2.1]{Girard}.
+	\end{remark}
+
+\begin{defn}
+	An order preserving function $f: \Qcal(A)^n \lto \Qcal(B)$ is \textbf{analytic} if for any pair $(x, b) \in \Qcal(A)^n \times B$ we have
+	\begin{equation}
+		f(x)(b) = \operatorname{sup}_{u \in \Ical(A)^n}f(u)(b)\delta_{u \leq x}
+	\end{equation}
+	where
+	\begin{equation}
+		\delta_{u \leq x} = 
+		\begin{cases}
+			1, & u \leq x\\
+			0, & \text{otherwise}
+		\end{cases}
+	\end{equation}
+	This is the analogue in the current context of \emph{analytic functors} defined in \cite[Definition 2.2]{Girard}. 
+	\end{defn}
+
+\begin{thm}\label{thm:normal_analytic}
+	Let $f: \Qcal(A)^n \lto \Qcal(B)$ be order preserving. Then $f$ is normal if and only if it is analyitic.
+	\end{thm}
+\begin{proof}
+	First assume that $f$ is normal. Let $(x,b) \in \Qcal(A)^n \times B$ be arbitrary. Consider the set
+	\begin{equation}
+		\scr{X}_x := \{ \underline{b} \in \Ical(A) \mid \underline{b} \leq x \}
+		\end{equation}
+	Then $\operatorname{sup} \scr{X}_x = x$. Since $f$ is normal, we thus have
+	\begin{align*}
+		f(x)(b) &= f(\operatorname{sup}\scr{X}_x)(b)\\
+		&= \operatorname{sup}f(\scr{X}_x)(b)\\
+		&= \operatorname{sup}_{u \in \Ical(A)^n}f(u)(b)\delta_{u \leq x}
+		\end{align*}
+	and so $f$ is analytic.
+	
+	On the other hand, say $f$ is analytic. Let $\{ x_i \}_{i \in I}$ be a filtered set. Then for any $b \in B$ we have
+	\begin{equation}\label{eq:f_sup}
+		f(\operatorname{sup}_{i \in I}\{ x_i \})(b) = \operatorname{sup}_{u \in \Ical(A)^n}\big\{f(u)(b)\delta_{u \leq \operatorname{sup}_{i \in I}\{ x_i \}}\big\}
+		\end{equation}
+	On the other hand, we have
+	\begin{equation}\label{eq:sup_f}
+		\operatorname{sup}_{i \in I}\{ f(x_i)(b) \} = \operatorname{sup}_{i \in I}\big\{ \operatorname{sup}_{u \in \Ical(A)^n}\{ f(u)(b)\delta_{u \leq x_i}\} \big\}
+		\end{equation}
+	It is clear that \eqref{eq:f_sup} and \eqref{eq:sup_f} are equal.
+	\end{proof}
+	
+	\subsection{The retract}
+	We will relate a normal function $f: \Qcal(A)^{n} \times \Qcal(A) \lto \Qcal(A)$ to its ``curried" version $f^+: \Qcal(A)^n \lto \Qcal(\Ical(A) \times A)$.
+	
+	\begin{defn}
+		Let $f: \Qcal(A)^{n} \times \Qcal(A) \lto \Qcal(A)$ be normal. By Theorem \ref{thm:normal_analytic} we can write, for $(\alpha, \underline{a}) \in \Qcal(A)^{n} \times \Qcal(A), c \in A$:
+		\begin{equation}\label{eq:variables}
+			f(\alpha, \underline{a})(c) = \operatorname{sup}_{\underline{b} \in \Ical(A)}f(\alpha, \underline{b})(c)\delta_{\underline{b} \leq \underline{a}}
+		\end{equation}
+		Then we can define a function $f^+: \Qcal(A)^{n} \lto \Qcal(\Ical(A) \times A)$ as follows.
+		\begin{equation}
+			f^+(\alpha)(\underline{b}, c) = f(\alpha, \underline{b})(c)
+		\end{equation}
+		We note that $f^+$ is analytic and thus normal by Theorem \ref{thm:normal_analytic}.
+		
+		Given a normal function $f: \Qcal(A)^n \lto \Qcal(\Ical(A) \times A)$ we define $f^-: \Qcal(A)^{n} \times \Qcal(A) \lto \Qcal(A)$ in the following way.
+		\begin{equation}
+			f^-(\alpha, \underline{a})(c) := \operatorname{sup}_{\underline{b} \in \Ical(A)}f(\alpha)(\underline{b}, c)\delta_{\underline{b} \leq \underline{a}}
+			\end{equation}
+		\end{defn}
+	
+	\begin{thm}\label{thm:adjunction}
+		There exists a natural bijection.
+		\begin{equation}\label{eq:injective}
+			\operatorname{Normal}(\Qcal(A)^{n} \times \Qcal(A), \Qcal(A)) \lto \operatorname{Normal}(\Qcal(A)^n, \Qcal(\Ical(A) \times A))
+		\end{equation}
+	which maps a normal function $f: \Qcal(A)^{n} \times \Qcal(A) \lto \Qcal(A)$ to $f^+$ and has inverse which maps a normal function $g: \Qcal(A)^n \lto \Qcal(\Ical(A) \times A)$ to $g^-$.
+		\end{thm}
+	\begin{proof}
+	Let $f: \Qcal(A)^{n} \times \Qcal(A) \lto \Qcal(A)$ be normal. Let $(\alpha, \underline{a}) \in \Qcal(A)^{n} \times \Qcal(A), c \in A$. We have:
+	\begin{align*}
+		(f^+)^-(\alpha, \underline{a})(c) &= \operatorname{sup}_{\underline{b} \in \Ical(A)}f^+(\alpha)(\underline{b},c)\delta_{\underline{b} \leq \underline{a}}\\
+		&=  \operatorname{sup}_{\underline{b} \in \Ical(A)}f(\alpha, \underline{b})(c)\delta_{\underline{b} \leq \underline{a}}\\
+		&=f(\alpha, \underline{a})(c)
+	\end{align*}
+On the other hand, let $g: \Qcal(A)^n \lto \Qcal(\Ical(A) \times A)$ be normal. Then
+\begin{align*}
+	(g^-)^+(\alpha)(\underline{b},c) &= g^-(\alpha, \underline{b})(c)\\
+	&= \operatorname{sup}_{\underline{b}' \in \Ical(A)}g(\alpha)(\underline{b}', c)\delta_{\underline{b}' \leq \underline{b}}\\
+	&= g(\alpha)(\underline{b},c)
+	\end{align*}
+	\end{proof}
+	
+	\subsection{The App function}
+	
+	\begin{defn}
+		We define a function $\operatorname{App}: \Qcal(\Ical(A) \times A) \times \Qcal(A) \lto \Qcal(A)$ as follows. Let $(f, \underline{a}) \in \Qcal(\Ical(A) \times A) \times \Qcal(A), c \in A$.
+		\begin{equation}
+			\operatorname{App}(f,\underline{a})(c) = \operatorname{sup}_{\underline{b} \in \Ical(A)}f(\underline{b},c)\delta_{\underline{b} \leq \underline{a}}
+			\end{equation}
+		\end{defn}
+	
+	\begin{remark}
+		Say $f: \Qcal(A)^n \lto \Qcal(\Ical(A) \times A)$ and $g: \Qcal(A)^n \lto \Qcal(A)$. Then for $\alpha \in \Qcal(A)^n$ we have
+		\begin{equation}
+			\operatorname{App}(f(\alpha), g(\alpha))= f^-(\alpha, g(\alpha))
+			\end{equation}
+		\end{remark}
+	
+	\begin{lemma}\label{lem:app_normal}
+		The function $\operatorname{App}$ is normal.
+	\end{lemma}
+	\begin{proof}
+		We will show directly that $\operatorname{App}$ preserves filtered supremums.
+		
+		First, notice that there is a bijection $\Qcal(\Ical(A) \times A) \times \Qcal(A) \cong \Qcal(\Ical(A) \times A + A)$. Thus, the definition of normality is according to Definition \ref{def:normal} with respect to the function
+		\begin{equation}
+			\Qcal(\Ical(A) \times A + A) \lto \Qcal(\Ical(A) \times A)
+		\end{equation}
+		induced by this bijection and the function $\operatorname{App}$. This definition is equivalent to the following condition.
+		
+			Let $\{ f_i \}_{i \in I} \subseteq \Qcal(\Ical(A) \times A)$ and $\{{ \underline{a}_j }\}_{j \in J} \subseteq \Qcal(A)$ be arbitrary filtered sets. Then the following equality holds.
+			\begin{equation}
+				\operatorname{App}(\operatorname{sup}_{i \in I}\{ f_i \}, \operatorname{sup}_{j \in J}\{ \underline{a}_j \}) = \operatorname{sup}_{i \in I, j \in J}\operatorname{App}\big(f_i, \underline{a}_j\big)
+			\end{equation}
+		Let $\{ f_i \}_{i \in I} \subseteq \Qcal(\Ical(A) \times A)$ be an arbitrary set and let $f$ denote $\operatorname{min}_{i \in I}\{ f_i \}$ and $\underline{a}$ denote $\operatorname{min}_{i \in I}\{ \underline{a}_i \}$. Then for any pair $(\underline{b}, c) \in \Qcal(\Ical(A) \times A)$ we have
+		\begin{align*}
+			\operatorname{App}(f,\underline{a})(\underline{b}, c) &= \operatorname{sup}_{\underline{b} \in \Ical(A)}f(\underline{b}, c)\delta_{\underline{b}(c) \leq \underline{a}(c)}\\
+			&=\operatorname{sup}_{\underline{b}} \operatorname{sup}_{i \in I}\{ f_i \}\big(\underline{b}, c\big) \delta_{\underline{b} \leq \operatorname{sup}_{j \in J}\underline{a}_j}\\
+			&= \operatorname{sup}_{
+			\underline{b}}\operatorname{sup}_{i \in I, j \in J}f_i(\underline{b}, c)\delta_{\underline{b} \leq \underline{a}_j}\\
+			&= \operatorname{sup}_{i \in I, j \in J}\operatorname{sup}_{
+				\underline{b}}f_i(\underline{b}, c)\delta_{\underline{b} \leq \underline{a}_j}
+		\end{align*}
+		as required.
+	\end{proof}
+	
+	
+%	\begin{remark}
+%		We show how the $\operatorname{App}$ behaves with respect to composition.
+%		
+%		Let $f,g: \Qcal(A)^n \lto \Qcal(A)$ be two normal functions. Then $\operatorname{App}: \Qcal(A)^n \lto \Qcal(A)$, where $\alpha \in \Qcal(A)^n, c \in A$ is given by
+%		\begin{align*}
+%			\operatorname{App}\big(\overline{q}f, g\big)(\alpha)(c) &= (\overline{q}f)^-(\alpha, g(\alpha))(c)\\
+%			&= \operatorname{max}_{\underline{b} \in \Ical(A)} f(\alpha)q(\underline{b}, c)\delta_{\underline{b}(c) \leq g(\alpha)(c)}
+%			\end{align*}
+%		\end{remark}
+	
+	\subsection{The $\lambda$-calculus model}
+	
+	We continue working with a fixed set $A$ but now we impose the extra assumption that $A$ is countably infinite. We notice that since $\Ical(A) \times A$ is also countably infinite, there exists a bijection
+	\begin{equation}
+		q: \Ical(A) \times A \lto A
+	\end{equation}
+	We fix a choice of such a bijection $q$. There is an induced bijection
+	\begin{align*}
+		\overline{q}: \Qcal(A) &\lto \Qcal(\Ical(A) \times A)\\
+		\underline{a} &\longmapsto \underline{a} \circ q
+	\end{align*}
+	
+	\begin{defn}
+		A \textbf{context} is a sequence of variables $\underline{x} = \{ x_1, \ldots, x_n \}$. Given a $\lambda$-term $t$ a context $\underline{x}$ is \textbf{valid for $t$} if the free variable set $\operatorname{FV}(t) \subseteq \underline{x}$ of $t$ is a subset of $\underline{x}$.
+	\end{defn}
+	
+	\begin{defn}\label{def:the_model}
+		Let $\underline{x} = \{ x_1, \ldots, x_n \}$ be a set of variables and let $t$ be a $\lambda$-term for which $\underline{x}$ is a valid context. We will associate to each such pair $(\underline{x}, t)$ a normal function
+		\begin{equation}\label{eq:model}
+			\llbracket \underline{x} \mid t \rrbracket: \Qcal(A)^n \lto \Qcal(A)
+		\end{equation}
+		We define \eqref{eq:model} inductively on the structure of $t$.
+		\begin{center}
+			\begin{tabular}{ | c | c | }
+			\hline
+				\textbf{Variable $x_i \in \underline{x}$} & 
+				$\llbracket \underline{x} \mid x_i \rrbracket = \pi_i$\\
+				\hline
+\textbf{Application $t = t_1 t_2$} & $\llbracket \underline{x} \mid t_1t_2\rrbracket = \operatorname{App}\big( \langle \overline{q} \llbracket \underline{x} \mid t_1 \rrbracket, \llbracket \underline{x} \mid t_2 \rrbracket \rangle \big)$\\
+\hline
+\textbf{Abstraction $t = \lambda y. t'$} & $\llbracket \underline{x} \mid \lambda y. t' \rrbracket := \overline{q}^{-1} \llbracket \underline{x}, y \mid t' \rrbracket^+$\\
+\hline
+			\end{tabular}
+		\end{center}
+	\end{defn}
+	\begin{remark}
+The table appearing in Definition \ref{def:the_model} is identical to that in Definition \ref{def:functor_model} but the notation means different things. This shows how conceptually our model is capturing the essence of Girard's.
+	\end{remark}
+	
+	\begin{lemma}\label{lem:substitution}[Substitution Lemma]
+		Let $t,s$ be $\lambda$-terms and $\underline{x} = \{ x_1, \ldots, x_{n} \}$ be a collection of variables and $y$ another variable so that $\underline{x} \cup \{ y \}$ is a valid context for $t$ and $\underline{x}$ is a valid context for $s$. Then for any $\alpha\in \Qcal(A)^{n}$ we have
+		\begin{equation}\label{eq:sub_lem_cond}
+			\llbracket \underline{x} \mid t[y := s]\rrbracket(\alpha) = \llbracket \underline{x}, y \mid t \rrbracket(\alpha, \llbracket \underline{x} \mid s \rrbracket (\alpha))
+			\end{equation}
+		\end{lemma}
+	
+	\begin{thm}\label{thm:denotational_model}
+		This is a denotational model of the $\lambda$-calculus. That is, if $t$ is a $\lambda$-term and $\underline{x}$ a valid context for $t$ and for $s$, then we have the following equality.
+		\begin{equation}
+			\llbracket \underline{x} \mid (\lambda y. t)s\rrbracket = \llbracket \underline{x} \mid t[y:=s]\rrbracket
+			\end{equation}
+		\end{thm}
+	
+	\begin{proof}
+		By the substitution Lemma \ref{lem:substitution} we have for $\alpha \in \Qcal(A)^n$:
+		\begin{equation}
+			\llbracket \underline{x} \mid t[y:=s]\rrbracket(\alpha) = \llbracket \underline{x}, y \mid t\rrbracket(\alpha, \llbracket \underline{x} \mid s \rrbracket(\alpha))
+			\end{equation}
+		On the other hand, we have
+		\begin{align*}
+			\llbracket \underline{x} \mid (\lambda y.t)s\rrbracket(\alpha) &= \operatorname{App}(\big\langle (\overline{q} \overline{q}^{-1}\llbracket \underline{x}, y \mid t \rrbracket^+), \llbracket \underline{x} \mid s \rrbracket\big\rangle)(\alpha)\\
+			&=(\llbracket \underline{x}, y \mid t\rrbracket^+)^-(\alpha, \llbracket\underline{x} \mid s \rrbracket(\alpha))\\
+			&= \llbracket \underline{x}, y \mid t \rrbracket (\alpha, \llbracket \underline{x} \mid s \rrbracket(\alpha))
+			\end{align*}
+		which concludes the proof.
+		\end{proof}
+	
+\section{Intuitionistic Linear Logic proofs as additive functions}
+	Since we have a model of the untyped $\lambda$-calculus, we thus have a model of the simply typed $\lambda$-calculus. We extend this model of the simply typed $\lambda$-calculus to Linear Logic by decomposing the arrow type constructor $A \lto B$ to $!A \multimap B$.
+	
+	Recall that for a set $A$ the set $\Qcal(A)$ contains all functions $f: A \lto \barN$. Considering $\barN$ as a set equipt with the operation of natural number addition, the set $\Qcal(A)$ along with pointwise addition forms a commutative monoid structure.
+	
+	\begin{defn}
+		Given sets $A_1, \ldots, A_n, B$, a function $f: \Qcal(A_1) \times \ldots \times \Qcal(A_n) \lto \Qcal(B)$ is \textbf{additive} if it is linear in each argument. We denote the set of all additive functions
+		\begin{equation}
+			\operatorname{Add}(\Qcal(A_1) \times \ldots \times \Qcal(A_n), \Qcal(B))
+			\end{equation}
+		\end{defn}
+	
+Say we have a function $f: \prod_{i = 1}^n \call{Q}(A_i) \times \call{Q}(A) \lto \call{Q}(B)$ which is additive in the variable $\call{Q}(A)$. Then for any $\alpha \in \prod_{i = 1}^n\call{Q}(A_i)$ and $\underline{a} \in \call{Q}(A)$ we have
+\begin{align*}
+	f(\alpha, \underline{a}) &= f(\alpha, \sum_{a \in A}\underline{a}(a)\cdot \delta_a)\\
+	&= \sum_{a \in A}\underline{a}(a) \cdot f(\alpha, \delta_a)
+\end{align*}
+We define
+\begin{align*}
+	f^\times: \prod_{i = 1}^n \call{Q}(A_i) &\lto \call{Q}(A \times B)\\
+	\alpha &\longmapsto \big( (a, b) \mapsto f(\alpha, \delta_{a})(b)\big)
+\end{align*}
+Conversely, given an additive function $g: \prod_{i = 1}^{n}\call{Q}(A_i) \lto \call{Q}(A \times B)$ we define
+\begin{align*}
+	g^\div: \prod_{i = 1}^n\call{Q}(A_i) \times \call{Q}(A) &\lto \call{Q}(B)\\
+(\alpha, \underline{a}) &\longmapsto \sum_{a \in A}\underline{a}(a) \cdot f(\alpha, a)
+\end{align*}
+Clearly, if $f: \prod_{i = 1}^n\call{Q}(A_i) \times \call{Q}(A) \lto \call{Q}(A)$ is additive in the final argument, then $(f^\div)^\times = f$.
+	
+	\begin{remark}
+		We remark that a \emph{normal} function $f: \prod_{i=1}^n \Qcal(A_i) \lto \Qcal(B)$ is determined by its restriction to the domain $\prod_{i=1}^n\Ical(A_i) \lto \Qcal(B)$, whereas if $f$ is \emph{additive} then it is determined by its restriction to the domain $\prod_{i=1}^n A_i \lto \Qcal(B)$.
+		\end{remark}
+
+\subsection{The linear app function}
+\begin{defn}
+We define a function
+\begin{align*}
+	\operatorname{LinApp}_{A,B}: \call{Q}(A \times B) \times \call{Q}(B) &\lto \call{Q}(B)\\
+	(f, \underline{a}) &\longmapsto \sum_{a \in A}\underline{a}(a)\cdot f(a, -)
+\end{align*}
+\end{defn}
+
+\textcolor{red}{I realise now that we have not been careful enough with what we mean by additive. Do we mean literally additive or ``multi-additive'', ie, additive in each argument? I think we mean the latter.}
+
+\begin{lemma}
+The function $\operatorname{LinApp}_{A,B}$ is additive in each argument.
+\end{lemma}
+\begin{proof}
+This is a calculation, let $(f, \underline{a}), (f', \underline{a}') \in \call{Q}(A \times B) \times \call{Q}(B)$. Then:
+\begin{align*}
+	\operatorname{LinApp}_{A,B}\big(f + f', \underline{a} + \underline{a}'\big) &= \sum_{a \in A}(\underline{a} + \underline{a}')(a)\cdot (f + f')(a, -)\\
+	&= \sum_{a \in A}(\underline{a}(a) + \underline{a}'(a))\cdot (f(a, -) + f'(a, -))\\
+	&= \operatorname{LinApp}_{A,B}(f, \underline{a}) + \operatorname{LinApp}_{A,B}(f, \underline{a}')\\
+	&\qquad \operatorname{LinApp}_{A,B}(f', \underline{a}) + \operatorname{LinApp}_{A,B}(f', \underline{a}')
+\end{align*}
+\end{proof}
+
+\subsection{The model of intuitionistic linear logic}
+
+	\begin{defn}
+		There is an infinite set of \textbf{atoms} $X, Y, Z, \ldots$ The set of \textbf{pre-formulas} is defined as follows.
+		\begin{itemize}
+			\item Any atom is a pre-formula.
+			\item If $A,B$ are pre-formulas then so are $A \otimes B, A \parr B$.
+			\item If $A$ is a pre-formula, then so are $\neg A, ! A, ?A$.
+			\end{itemize}
+		The set of \textbf{formulas} is the quotient of the set of pre-formulas by the equivalence relation $\sim$ generated by, for any pre-formulas $A,B$ and atomic formula $X$, the following.
+		\begin{align*}
+			\neg(A \otimes B) &\sim \neg A \parr \neg B & \neg(A \parr B) &\sim \neg A \otimes \neg B\\
+			%\neg (X,+) &\sim (X,-) & \neg (X,-) &\sim (X,+)\\
+			\neg !A &\sim ? \neg A & \neg ? A &\sim ! \neg A
+			\end{align*}
+		\end{defn}
+	
+	\begin{defn}
+		We choose for each atomic formula $X$ a set which we denote $\underline{X}$. We define
+		\begin{equation}
+			\underline{X \otimes Y} = \underline{X \parr Y} = \underline{X} \coprod \underline{Y},\qquad \underline{! A} = \underline{? A} = \Ical(A),\qquad \underline{\neg A} = \underline{A}
+			\end{equation}
+		To each formula $A$ we define
+		\begin{equation}
+			\llbracket A \rrbracket := \Qcal(\underline{A})
+			\end{equation}
+		\end{defn}
+	
+	We will intepret a proof $\pi$ of a sequent $A_1, \ldots, A_n \vdash B$ as an additive function
+	\begin{equation}
+		\Qcal(\underline{A_1}) \times \ldots \times \Qcal(\underline{A_n}) \lto \Qcal(\underline{B})
+		\end{equation}
+	
+	\begin{defn}\label{def:model}
+		We define a translation of proofs in multiplicative, exponential linear logic to additive functions.
+		\begin{itemize}
+			\item \textbf{Identity group}
+		\begin{itemize}
+			\item Say $\pi$ is an axiom rule.
+			\begin{center}
+				\AxiomC{}
+				\RightLabel{$\ax$}
+				\UnaryInfC{$X \vdash X$}
+				\DisplayProof
+				\end{center}
+			Then $\llbracket \pi \rrbracket: \Qcal(\underline{X}) \lto \Qcal(\underline{X})$ is the identity function.
+			\item Say $\pi$ has final rule given by a cut.
+			\begin{center}
+				\startproof{$\pi_1$}
+				\noLine
+				\UnaryInfC{$\Gamma \vdash A$}
+				\startproof{$\pi_2$}
+				\noLine
+				\UnaryInfC{$\Delta, A, \Delta' \vdash B$}
+				\RightLabel{$\cut$}
+				\BinaryInfC{$\Gamma, \Delta, \Delta' \vdash B$}
+				\DisplayProof
+				\end{center}
+			We define $\llbracket \pi \rrbracket$ to be the result of substituting $\llbracket \pi_2 \rrbracket$ into the $\Qcal(A)$ slot for $\llbracket \pi_1 \rrbracket$.
+			\begin{equation*}
+				\llbracket \pi \rrbracket = \llbracket \pi_2 \rrbracket \circ_{\Qcal(A)}\llbracket \pi_1 \rrbracket
+				\end{equation*}
+			\end{itemize}
+		\item \textbf{Multiplicative group}
+		\begin{itemize}
+			\item Say the last rule of $\pi$ is given by $\ltensor$.
+			\begin{center}
+				\startproof{$\pi'$}
+				\noLine
+				\UnaryInfC{$\Gamma, A, B, \Delta \vdash C$}
+				\RightLabel{$\ltensor$}
+				\UnaryInfC{$\Gamma, A \otimes B, \Delta \vdash C$}
+				\DisplayProof
+			\end{center}
+			Then $\llbracket \pi \rrbracket := \llbracket \pi' \rrbracket$.
+			\item Say the last rule of $\pi$ is given by $\rtensor$.
+			\begin{center}
+				\startproof{$\pi_1$}
+				\noLine
+				\UnaryInfC{$\Gamma \vdash A$}
+				\startproof{$\pi_2$}
+				\noLine
+				\UnaryInfC{$\Delta \vdash B$}
+				\RightLabel{$\rtensor$}
+				\BinaryInfC{$\Gamma, \Delta \vdash A \otimes B$}
+				\DisplayProof
+			\end{center}
+			We define $\llbracket \pi\rrbracket$ to be the product
+			\begin{equation}
+				\llbracket \pi_1 \rrbracket \times \llbracket \pi_2 \rrbracket
+			\end{equation}
+			\item Say the last rule of $\pi$ is given by $\rimp$.
+			\begin{center}
+				\startproof{$\pi'$}
+				\noLine
+				\UnaryInfC{$\Gamma, A, \Delta \vdash B$}
+				\RightLabel{$\rimp$}
+				\UnaryInfC{$\Gamma, \Delta \vdash A \multimap B$}
+				\DisplayProof
+			\end{center}
+			We define
+			\begin{equation}
+				\llbracket \pi \rrbracket := \llbracket \pi' \rrbracket^\times
+			\end{equation}
+\item Say the last rule of $\pi$ is given by $(\operatorname{L} \multimap)$.
+\begin{center}
+	\startproof{$\pi'$}
+	\noLine
+	\UnaryInfC{$\Gamma \vdash A$}
+	\startproof{$\pi''$}
+	\noLine
+	\UnaryInfC{$B, \Delta \vdash C$}
+	\RightLabel{$(\operatorname{L}\multimap)$}
+	\BinaryInfC{$A \multimap B, \Gamma, \Delta \vdash C$}
+	\DisplayProof
+\end{center}
+Say $\Gamma = A_1, \ldots, A_n, \Delta = B_1, \ldots, B_m$. Then we have two additive functions
+\begin{align*}
+	\llbracket \pi' \rrbracket: \prod_{i = 1}^n \call{Q}(A_i) &\lto \call{Q}(A)\\
+	\llbracket \pi'' \rrbracket: \prod_{i = 1}^m \call{Q}(B) \times \call{Q}(B_i) &\lto \call{Q}(C)
+\end{align*}
+We define
+\begin{align*}
+\llbracket \pi \rrbracket : &\call{Q}(A \times B) \times \prod_{i = 1}^n \call{Q}(A_i) \times \prod_{i = 1}^m \call{Q}(B_i) \lto \call{Q}(C)\\
+&(f, \underline{\alpha}, \beta) \longmapsto \llbracket \pi''\rrbracket\big(\beta, \operatorname{LinApp}_{A,B}(f, \llbracket \pi' \rrbracket(\alpha))\big)
+\end{align*}
+\end{itemize}
+\item \textbf{Exponential group}
+\begin{itemize}
+		\item Say the last rule of $\pi$ is given by $\der$.
+		\begin{center}
+			\startproof{$\pi'$}
+			\noLine
+			\UnaryInfC{$\Gamma, A, \Gamma' \vdash \Delta$}
+			\RightLabel{$\der$}
+			\UnaryInfC{$\Gamma, !A, \Gamma' \vdash \Delta$}
+			\DisplayProof
+			\end{center}
+		There is a morphism
+		\begin{align*}
+			d_A: \Ical(A) &\lto \Qcal(A)\\
+			\underline{a} &\longmapsto \underline{a}
+			\end{align*}
+		which simply forgets that $\underline{a}$ is finite.
+
+		We define
+		\begin{equation}
+			\llbracket \pi \rrbracket := \llbracket \pi' \rrbracket \circ_{\Qcal(A)} d_A
+			\end{equation}
+		\item Say the last rule of $\pi$ is given by $\prom$.
+		
+		There is a morphism
+		\begin{align*}
+			!_A: A &\lto \Qcal(\Ical(A))\\
+			a &\longmapsto \delta_{\delta_a}
+			\end{align*}
+where
+\begin{align*}
+\delta_a: A &\lto \bb{N}\\
+a' &\longmapsto
+\begin{cases}
+1,& a = a'\\
+0,& a \neq a'
+\end{cases}
+\end{align*}
+and
+\begin{align*}
+\delta_{\delta_a}: \call{Q}(A) &\lto \bb{N}\\
+\underline{a} &\longmapsto
+\begin{cases}
+1,& \underline{a} = \delta_a\\
+0,& \underline{a} \neq \delta_a\
+\end{cases}
+\end{align*}
+
+		We define
+		\begin{equation}
+			\llbracket \pi \rrbracket := !_A \circ \llbracket \pi' \rrbracket
+			\end{equation}
+\item Say the last rule of $\pi$ is given by $\ctr$.
+\begin{center}
+\startproof{$\pi'$}
+\noLine
+\UnaryInfC{$\Gamma, !A, !A \vdash B$}
+\RightLabel{$\ctr$}
+\UnaryInfC{$\Gamma, !A, \vdash B$}
+\DisplayProof
+\end{center}
+We consider the canonical diagonal map
+\begin{align*}
+\Delta_A: \call{I}(A) &\lto \call{I}(A) \times \call{I}(A)\\
+\underline{a} &\longmapsto (\underline{a}, \underline{a})
+\end{align*}
+We define
+\begin{equation}
+\llbracket \pi \rrbracket = \llbracket \pi' \rrbracket \circ_{\call{I}(A) \times \call{I}(A)}\Delta_A
+\end{equation}
+\item Say the last rule of $\pi$ is given by $\weak$.
+\begin{center}
+\startproof{$\pi'$}
+\noLine
+\UnaryInfC{$\Gamma \vdash B$}
+\RightLabel{$\weak$}
+\UnaryInfC{$\Gamma, !A \vdash B$}
+\DisplayProof
+\end{center}
+Say $\Gamma = A_1, \ldots, A_n$. Then
+\begin{equation}
+\llbracket \pi' \rrbracket: \prod_{i = 1}^n\call{Q}(A_i) \lto \call{Q}(B)
+\end{equation}
+We define
+\begin{align*}
+\llbracket \pi \rrbracket: \prod_{i = 1}^n\call{Q}(A_i) \times \call{Q}(A) &\lto \call{Q}(B)\\
+(\underline{a}_1, \ldots, \underline{a}_n, \underline{a}) &\longmapsto \llbracket \pi' \rrbracket(\underline{a}_1, \ldots, \underline{a}_n)
+\end{align*}
+			\end{itemize}
+\item \textbf{Structural rule}
+\begin{itemize}
+\item Say the last rule is $\ex$.
+\begin{center}
+\startproof{$\pi$}
+\noLine
+\UnaryInfC{$\Gamma, A, B, \Delta \vdash C$}
+\RightLabel{$\ex$}
+\UnaryInfC{$\Gamma, B, A, \Delta \vdash C$}
+\DisplayProof
+\end{center}
+Then there is a canonical swap map
+\begin{align*}
+s_{B,A}: B \times A &\lto A \times B\\
+(b,a) &\longmapsto (a,b)
+\end{align*}
+We define
+\begin{equation}
+\llbracket \pi \rrbracket := \llbracket \pi' \rrbracket \circ_{A \times B} s_{B,A}
+\end{equation}
+	\end{itemize}
+		\end{itemize}
+		\end{defn}
+
+\begin{thm}
+Definition \ref{def:model} gives a model of intuitionistic linear logic. That is, if $\pi_1$ and $\pi_2$ are $\cut$-equivalent proofs, then
+\begin{equation}
+\llbracket \pi \rrbracket = \llbracket \pi' \rrbracket
+\end{equation}
+\end{thm}
+\begin{proof}
+We go through each $\cut$-elimination rule methodically and prove invariance of the interpretations under these transformations.
+
+Say $\gamma: \pi \lto \pi'$ is a reduction. If this reduction is either \textbf{anything}/$\ax$ or $\ax$/\textbf{anything} then the constructions of $\llbracket \pi \rrbracket$ and $\llbracket \pi' \rrbracket$ differ only by composition with an identity morphism, and so clearly $\llbracket \pi \rrbracket = \llbracket \pi' \rrbracket$.
+
+The cases of $\rtensor/\ltensor$, \textbf{anything}/$\ctr$, $\prom/\weak$ are similarly trivial.
+
+The interesting cases are $\prom/\der$ and $(\operatorname{R}\multimap)$/$(\operatorname{L}\multimap)$. First we consider $\prom/\der$. The two interpretations are respectively
+\begin{equation}
+\llbracket \pi' \rrbracket d_A \circ_{\call{I}(A)} !_A \llbracket \pi \rrbracket,\qquad \llbracket \pi ' \rrbracket \circ_A \llbracket \pi \rrbracket
+\end{equation}
+So it suffices to show that $d_A \circ !_A = \operatorname{Id}_{\call{I}(A)}$. This is a calculation:
+\begin{align*}
+\operatorname{Add}(d_A)!_A(a) &= \operatorname{Add}(d_A)(\delta_{\delta_a})\\
+&= d_A(\delta_a)\\
+&= \delta_a
+\end{align*}
+which is the identity in $\operatorname{Kl}(\call{Q})$.
+
+Next we consider $(\operatorname{R}\multimap)$/$(\operatorname{L}\multimap)$. The two interpretations are respectively
+\begin{align*}
+&\prod_{i = 1}^n \call{Q}(A_i) \times \prod_{i = 1}^m \call{Q}(B_i) \times \prod_{i = 1}^k \call{Q}(C_i) \lto \call{Q}(C)\\
+&(\alpha, \beta, \gamma) \longmapsto \llbracket \pi''\rrbracket(\operatorname{LinApp}(\llbracket \pi \rrbracket^\times(\alpha), \llbracket \pi'\rrbracket(\beta)))
+\end{align*}
+and
+\begin{align*}
+&\prod_{i = 1}^n \call{Q}(A_i) \times \prod_{i = 1}^m \call{Q}(B_i) \times \prod_{i = 1}^k \call{Q}(C_i) \lto \call{Q}(C)\\
+&(\alpha, \beta, \gamma) \longmapsto \llbracket \pi'' \rrbracket(\llbracket \pi\rrbracket(\alpha, \llbracket \pi'\rrbracket(\beta)))
+\end{align*}
+So it suffices to show that for a general $g: \call{Q}(A) \times \call{Q}(C) \lto \call{Q}(B)$ which is additive in $\call{Q}(A)$, we have
+\begin{equation}
+\operatorname{LinApp}(g^\times(\underline{c}), \underline{a}) = g(\underline{a}, \underline{c})
+\end{equation}
+This follows from the following calculation.
+\begin{align*}
+\operatorname{LinApp}(g^\times(\underline{c}, \underline{a})) &= \sum_{a \in A}g^\times(\underline{c})(a, -)\\
+&= \sum_{a \in A}\underline{a}(a)g(\delta_{a}, \underline{c})(-)\\
+&= g(\underline{a}, \underline{c})
+\end{align*}
+where the last line follows from additivity of $g$.
+\end{proof}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	\section{Qualitative domains}
+	\textcolor{red}{Definition of stable function?}
+	\begin{defn}
+		A \textbf{qualitative domain} is a set $X$ along with a collection $\scr{X}$ of subsets $U \subseteq X$ subject to the following.
+		\begin{itemize}
+			\item $\scr{X}$ covers $X$
+			\begin{equation}
+				\bigcup_{U \in \scr{X}}U = X
+				\end{equation}
+			\item The empty set is in $\scr{X}$
+			\begin{equation}
+				\varnothing \in \scr{X}
+				\end{equation}
+			\item The union of a directed system in $\scr{X}$ is in $\scr{X}$. That is, if $\{ U_i \}_{i \in I}$ satisfies
+			\begin{equation}
+				\forall i, j \in I, \exists k \in I, U_i \cup U_j \subseteq U_k
+				\end{equation}
+			and $U_i \in \scr{X}$ for all $i$, then $\bigcup_{i \in I} U_i \in \scr{X}$.
+			\item Any subset of a set in $\scr{X}$ is in $\scr{X}$. That is,
+			\begin{equation}
+				V \in \scr{X}\text{ and }U \subseteq V \Longrightarrow U \in \scr{X}
+				\end{equation}
+			\end{itemize}
+		A qualitative domain is \textbf{binary} if whenever $U\subseteq X$ is such that $U \not\in \scr{X}$ there exists $x,y \in U$ such that $\{ x,y \} \not\in \scr{X}$.
+		\end{defn}
+	
+	\begin{example}
+		Let $X = \bb{Z}$. Denote respectively by $\bb{Z}_{\text{Even}}, \bb{Z}_{\text{Odd}}$ the even integers and the odd integers. Define:
+		\begin{equation}
+			\scr{X} := \call{P}(\bb{Z}_{\text{Even}}) \cup \call{P}(\bb{Z}_{\text{Odd}}) \cup \Big\{ \{ n, m \} \mid n\text{ even}, m\text{ odd}\Big\}
+			\end{equation}
+		This is a qualitative domain which is not binary.
+		\end{example}
+	\begin{lemma}\label{lem:finite_subsets}
+		For any qualitative domain $(X,\scr{X})$ a subset $U \subseteq X$ is an element of $\scr{X}$ if and only if all the finite subsets of $U$ are in $\scr{X}$.
+		\end{lemma}
+	\begin{proof}
+		If was proved just after Definition \ref{def:saturated} that any set is the directed colimit of its finite subsets. Since a qualitative domain is closed under this operation, it follows that if all the finite subsets of $U$ are in $\scr{X}$, then so is $U$.
+		
+		Conversely, \emph{any} subset of an element of $\scr{X}$ is in $\scr{X}$, by definition. So clearly any finite subset is so.
+		\end{proof}
+	
+	\begin{thm}\label{thm:representation}
+		Let $f: (X,\scr{X}) \lto (Y, \scr{Y})$ be a stable function of qualitative domains. For all pairs $(U, y)$ consisting of a set $U \in \scr{X}$ in $\scr{X}$ and an element $y \in f(U)$ in $f(U)$ there exists a unique minimal finite subset $V \subseteq U$ such that $y \in f(V)$.
+		\end{thm}
+	\begin{proof}
+		Recall that $U$ is the direct colimit of its finite subsets, so we can write
+		\begin{equation}
+			\bigcup_{U' \in \call{P}_{\text{fin}}(U)}U' = U
+			\end{equation}
+		By Lemma \ref{lem:finite_subsets} we have that all $U' \in \call{P}_{\text{fin}U}$ are elements of $\scr{X}$. Since $f$ preserves directed colimits, we have
+		\begin{equation}
+			f\Big(\bigcup_{U' \in \call{P}_{\text{fin}}(U)}U'\Big) = \bigcup_{U' \in \call{P}_{\text{fin}}(U)}f(U')
+			\end{equation}
+		and so $y \in f(U')$ for some finite subset $U' \subseteq U$, establishing existence.
+		
+		Assume that $U'$ is chosen to be minimal with respect to inclusion. Say $V$ is another such set. Then $U' \cup V$ is a subset of $U$, thus $U' \cup V \in \scr{X}$. In such a setting, $f$ commutes with intersection, so $f(U' \cap V) = f(U') \cap f(V)$ contains $y$. To avoid contradicting minimality, we must have $U' = V$. This establishes uniqueness.
+		\end{proof}
+	
+	\begin{defn}
+		Let $(X, \scr{X}), (Y, \scr{Y})$ be qualitative domains and let $f: \scr{X} \lto \scr{Y}$ be a stable function. The \textbf{trace} of $f$ is the following set.
+		\begin{align}
+			\operatorname{tr}(f) := \{ (W, w) &\in \call{P}_{\text{fin}}(X) \times Y \mid \exists U \in W \cap \scr{X}, w \in f(U)\\
+			&\text{ and }\forall V \subseteq U, V \neq U \Rightarrow w \not\in f(V) \}
+			\end{align}
+		\end{defn}
+	
+	Ranging over all stable functions gives back a qualitative domain.
+	
+	\begin{defn}\label{def:implication}
+		Let $(X,\scr{X}), (Y, \scr{Y})$ be qualitative domains and let $f: \scr{X} \lto \scr{Y}$ be stable. Define the following set.
+		\begin{equation}
+			\scr{X} \Rightarrow \scr{Y} := \{ \operatorname{tr}(f) \mid f: \scr{X} \lto \scr{Y}\text{ stable} \}
+			\end{equation}
+		\end{defn}
+	
+	\begin{lemma}\label{lem:implication_qd}
+		In the context and with the notation of Definition \ref{def:implication}, the following is a qualitative domain.
+		\begin{equation}
+			\big(\call{P}_{\text{fin}}(X) \times Y, \scr{X} \Rightarrow \scr{Y}\big)
+			\end{equation}
+		\end{lemma}
+	\begin{proof}
+		Adopting the attitude that a function is a subset of a cartesian product, we may consider the \emph{empty function} $\varnothing: \scr{X} \lto \scr{Y}$, defined formally as the empty subset of the set $X \times Y$. This is such that $\operatorname{tr}(\varnothing) = \varnothing$, and so $\varnothing \in \scr{X} \times \scr{Y}$.
+		
+		Next we show that $\scr{X} \times \scr{Y}$ is closed under subsets, that is, if $\operatorname{tr}(f) \in \scr{X} \times \scr{Y}$ and $\mathfrak{a} \subseteq \operatorname{tr}(f)$ then $\mathfrak{a} \in \scr{X} \times \scr{Y}$.
+		
+		Define the following function.
+		\begin{align}
+			\label{eq:subset}h_{\frak{a}}: \scr{X} &\lto \scr{Y}\\
+			W &\longmapsto \{ y \in Y \mid \exists V \subseteq W, V \text{ finite}, (V, y) \in \frak{a} \}
+			\end{align}
+		We claim this is stable and that $\frak{a} =\operatorname{tr}(h)$. First we prove stability.
+		
+		Consider a directed system of sets $\{ W_i \}_{i \in I}$. We have
+		\begin{equation}
+			g_U(\bigcup_{i \in I}W_i) = \{ y \in Y \mid \exists V \subseteq \bigcup_{i \in I}W_i, V\text{ finite}, (V,y) \in \frak{a} \}
+			\end{equation}
+		Let $y \in g_U(\bigcup_{i \in I}W_i)$ and let $V \subseteq \bigcup_{i \in I}W_i$ be finite so that $(V,y) \in \frak{a}$. For each $v \in V$ there exists $i_v \in I$ so that $v \in W_{i_v}$. Since $V$ is finite and the system $\{ W_i \}_{i \in I}$ is directed, there thus exists $i \in I$ so that $V \subseteq W_i$. We have shown
+		\begin{equation}
+			g_U(\bigcup_{i \in I}W_i) = \bigcup_{i \in I}\{ y \in Y \mid \exists V \subseteq W_i,\text{ finite}, (V,y) \in \frak{a} \} = \bigcup_{i \in I}g_U(W_i)
+			\end{equation}
+		Next, say $W, W' \in \scr{X}$ are such that $W \cup W' \in \scr{X}$, we must show $g_U(W \cap W') = g_U(W) \cap g_U(W')$. We observe that $g_U(W \cap W') \subseteq g_U(W) \cap g_U(W')$ is trivial, as if there exists a finite subset $V$ of $W \cap W'$ satisfying $(V,y) \in \frak{a}$, then that same subset $V$ is a subset of $W$ and of $W'$ satisfying $(V,y) \in \frak{a}$.
+		
+		Thus, we consider an element $y \in g_U(W) \cap g_U(W')$. Let $V \subseteq W, V' \subseteq W'$ be finite subsets so that $(V, y) \in \frak{a}, (V', y)\in \frak{a}$. We have that $V \cup V' \subseteq W \cup W' \in \scr{X}$ and so $V \cup V' \in \scr{X}$. This means that $f(V \cap V') = f(V) \cap f(V')$ by stability of $f$, moreover, this shows $y \in f(V \cap V')$. To avoid contradicting the minimality condition which is part of $\operatorname{tr}(f)$ we must have $V \cap V' = V = V'$. Thus, $V$ is a finite subset of $W \cap W'$ satisfying $(V, y) \in \frak{a}$, in other words, $y \in g_U(W \cap W')$.
+		
+		Next we show that $\operatorname{tr}(g_{\frak{a}}) = \frak{a}$. First, let $(W, w) \in \frak{a}$. We notice that since $\frak{a} \subseteq \operatorname{tr}(f)$ that $W$ is finite. Hence, $w$ satisfies the defining property of $g_U(W)$ and thus $w \in g_U(W)$. To show minimality, simply notice that for any subset $T \in \scr{X}$,
+		\begin{align*}
+			w \in g_{\frak{a}}(T) &\Longrightarrow (T,w) \in \frak{a}\\
+			&\Longrightarrow (T,w) \in \operatorname{tr}(f)
+			\end{align*}
+		Thus, $W$ must be minimal so that $w \in g_{\frak{a}}(W)$. We have shown that $W$ is finite and minimal such that $w \in g_U(W)$, in other words, $(W,w) \in \operatorname{tr}(g_U)$.
+		
+		Lastly, say $(W,w) \in \operatorname{tr}(g_{\frak{a}})$. Then $w \in g_{\frak{a}}(W)$. Let $W' \subseteq W$ be finite so that $(W', w) \in \frak{a}$. Since $W$ is the minimal such (by definition of $\operatorname{tr}(g_{\frak{a}})$), we must have $W = W'$, and so $(W,w) \in \frak{a}$.
+		
+		So far, we have established that $\scr{X} \times \scr{Y}$ is closed under subsets. Now we show that it is closed under directed union.
+		
+		Say $\{ \operatorname{tr}(f_i) \}_{i \in I}$ is a directed system. Define the following function.
+		\begin{align*}
+			h: \scr{X} &\lto \scr{Y}\\
+			W &\longmapsto \{ y \in Y \mid \exists V \subseteq W, V\text{ finite}, (V,y) \in \bigcup_{i \in I}\operatorname{tr}(f_i) \}
+			\end{align*}
+		First we show this is stable.
+		
+		Closure under directed sets follows exactly similarly as the proof that $h_{\frak{a}}$ \eqref{eq:subset} is closed under directed sets.
+		
+		Finally, we show that if $W, W', W \cup W' \in \scr{X}$ then $h(W \cap W) = h(W) \cap h(W')$. This also follows similarly to what has already been shown, but we give the details.
+		
+		Let $V,V'$ be finite subsets of $W,W'$ respectively so that $(V,y), (V',y) \in \bigcup_{i \in I}\operatorname{tr}(f_i)$. By directedness, there exists $i \in I$ such that $(V,y), (V',y) \in \operatorname{tr}(f_i)$. Since $V \cup V' \subseteq W \cup W'$ we have $V \cup V' \in \scr{X}$ and so $ f_i(V \cap V') = f_i(V) \cap f_i(V') $, by stability of $f_i$. Since $y \in f_i(V \cap V')$ it follows by minimality that $V = V' = V \cap V'$. Thus $y \in h(W \cap W')$.
+		\end{proof}
+	
+	\begin{proposition}\label{prop:abs_binary}
+		If $(X,\scr{X}), (Y, \scr{Y})$ are qualitative domains, then $(\call{P}_{\text{fin}}(X) \times Y, \scr{X} \Rightarrow \scr{Y})$ is also binary.
+		\end{proposition}
+	\begin{proof}
+		We claim the following: if $\frak{a} \in \call{P}_{\text{fin}}(X) \times Y$ satisfies the following condition:
+		\begin{equation}\label{eq:condition_stability}
+			\text{if } (U,u),(V,u) \in \frak{a}\text{ satisfy }U \cup V \in \scr{X}\text{ then }U = V
+			\end{equation}
+		then there exists a stable function $g: \scr{X} \lto \scr{Y}$ such that $\frak{a} = \operatorname{tr}(g)$.
+		
+		In the proof of Lemma \ref{lem:implication_qd} we showed that if $\frak{a}$ is a subset of a set which is the trace $\operatorname{tr}(f)$ of a function, then $\frak{a}$ is itself the trace of a function. There, the only fact about $\frak{a} \subseteq \operatorname{tr}(f)$ which was used, was that in such a setting, condition \eqref{eq:condition_stability} holds. Thus, the proof there applies to the current context.
+		
+		The contrapositive to what has been proved so far, is that if $\frak{a}$ is not the trace of any stable function, then there exists $(U,u), (V,u) \in \frak{a}$ such that $U \cup V \in \scr{X}$ but $U \neq V$.
+		
+		We consider the two element subset
+		\begin{equation}
+			A := \{ (U, u), (V,u) \} \subseteq \frak{a}
+			\end{equation}
+		Since $U \cup V \in \scr{X}$, if $A = \operatorname{tr}(g)$ for some stable $g$, then by minimality we would have $U = V$, which we know is not the case.
+		
+		Thus, $\scr{X} \Rightarrow \scr{Y}$ is binary.
+		\end{proof}
+	
+	\begin{remark}
+		We remark that Proposition \ref{prop:abs_binary} did \emph{not} require that either $\scr{X}$ nor $\scr{Y}$ be binary.
+	\end{remark}
+	
+	\begin{defn}\label{def:app}
+		Given qualitative domains $(X, \scr{X})$, $(\call{P}_{\text{fin}}(X) \times Y, \scr{X} \Rightarrow \scr{Y})$ along with $U \in \scr{X}, \frak{a} \in \scr{X} \Rightarrow \scr{Y}$ we define
+		\begin{equation}\label{eq:app_def}
+			\operatorname{App}(\frak{a}, U) = \{ y \in Y \mid \exists V \subseteq U, (V, y) \in \frak{a} \}
+			\end{equation}
+		Let $\operatorname{App}(\scr{X} \Rightarrow \scr{Y}, \scr{X})$ denote the collection of sets \eqref{eq:app_def} ranging over all $U \in \scr{X}$ and all $\frak{a} \in \scr{X} \Rightarrow \scr{Y}$.
+		\end{defn}
+	\begin{lemma}
+		In the context and with the notation of Definition \ref{def:app}, the pair $(Y, \operatorname{App}(\scr{X} \Rightarrow \scr{Y}, \scr{X}))$ is a qualitative domain.
+		\end{lemma}
+	\begin{proof}
+		Let $\frak{a} = \operatorname{tr}(g)$ for some stable function $g: \scr{X} \lto \scr{Y}$ and let $U \in \scr{X}$. Say $T \subseteq \operatorname{App}(\frak{a}, U)$ and define the following function.
+		\begin{align}
+			f: \scr{X} &\lto \scr{Y}\\
+			\label{eq:defining_equation}W &\longmapsto \{ y \in Y \mid \exists V \subseteq W\text{ finite } (V,y) \in \frak{a} \} \cap T
+			\end{align}
+		This is well defined as for all $W \in \scr{X}$ the set given on the right of \eqref{eq:defining_equation} is a subset of $g(W)$. Now we show that this is stable.
+		
+		The function $f$ clearly preserves inclusion, we now show that $f$ preserves directed unions.
+		
+		Consider a directed family of sets $\{ W_i \}_{i \in I}$ each of which is an element of $\scr{X}$. We have the following calculation, where the second equality follows by directedness of $\{ W_i \}_{i\in I}$ and the finiteness of the set $V$ present there.
+		\begin{align*}
+			f(\bigcup_{i \in I}W_i) &= \{ y \in Y \mid \exists V \subseteq W\text{ finite }(V, y) \in \frak{a} \} \cap T\\
+			&= \Big(\bigcup_{i \in I} \{ y \in Y \mid \exists V \subseteq W_i \text{ finite }(V,y) \in \frak{a} \}\Big) \cap T\\
+			&= \bigcup_{i \in I}\Big( \{ y \in Y \mid \exists V \subseteq W_i \text{ finite }(V,y) \in \frak{a} \} \cap T\Big)\\
+			&= \bigcup_{i \in I}f(W_i)
+			\end{align*}
+		
+		Now we show that if $U,W \in \scr{X}$ satisfy $U \cup W \in \scr{X}$ then $f(U \cap W) = f(U) \cap f(W)$. The non-trivial inequality to be proved is the following.
+		\begin{align}
+			\label{eq:finite_cap}&\{ y \in Y \mid \exists V \subseteq U\text{ finite }(V,y) \in \frak{a} \} \cap  \{ y \in Y \mid \exists W \subseteq U\text{ finite }(V,y) \in \frak{a} \} \\
+			\label{eq:finite_cap_both}&\subseteq \{ y \in Y \mid \exists V \subseteq U \cap W\text{ finite }(V,y) \in \frak{a} \}
+			\end{align}
+		Let $y$ be an element of the set $\eqref{eq:finite_cap}$ and let $V_1,V_2$ respectively denote finite sets such that $(V_1,y) \in \frak{a}, (V_2, y) \in \frak{a}$. Recall that $\frak{a} = \operatorname{tr}(g)$ and so $y \in g(V_1) \cap g(V_2) = g(V_1 \cap V_2)$ by stability of $g$. It follows by minimality that $V_1 \cap V_2 = V_1 = V_2$. We thus have that $V_1$ is finite and $V_1 \subseteq U, V_1 \subseteq W$. So $(V_1,y) \in \frak{a}$ and $V_1$ is finite and satisfies $V_1 \subseteq U \cap W$. That is, $y$ is an element of the set given in \eqref{eq:finite_cap_both}. Establishing stability of $f$.
+		
+		We now claim that $T = \operatorname{App}(\operatorname{tr}(f), U)$. First, let $t \in T$. Then $t \in \operatorname{App}(\frak{a}, U)$. Denote by $V$ a subseteq of $U$ such that $(V, t) \in \frak{a}$. Since $\frak{a} = \operatorname{tr}(g)$ we have that $V$ is finite and minimal amongst those subseteq $W \subseteq U$ such that $y \in g(W)$. That is, $t \in \operatorname{tr}(f)$.
+		
+		On the other hand, if $y \in \operatorname{App}(\operatorname{tr}(f), U)$ then by definition of $\operatorname{App}(\operatorname{tr}(f), U)$ there exists $V \subseteq U$ such that $(V, y) \in \operatorname{tr}(f)$. This implies in particular that $y \in f(V)$ and so $y \in \{ y' \in Y \mid \exists V' \subseteq W \text{ finite }(V,y) \in \frak{a} \} \cap T$, so in particular, $y \in T$. We make the remark that everything up until this point of the proof still works if $\operatorname{App}(\frak{a},U)$ had instead been defined as $\{ y \in Y \mid (U, y) \in \frak{a} \}$. However for what follows, it is crucial that Definition \eqref{eq:app_def} is taken instead.
+		
+		We now show that $\operatorname{App}(\scr{X} \Rightarrow \scr{Y}, \scr{X})$ is closed under directed union. Let $\{ \operatorname{App}(\frak{a}_i, U_u) \}_{i \in I}$ be a directed set. For each $i \in I$ let $f_i$ denote a stable function such that $\frak{a}_i = \operatorname{tr}(f_i)$. We have already seen in the proof of Lemma \ref{lem:implication_qd} that the union of a direct system of sets which are all the trace of some stable function is itself the trace of a function. So our first claim is that $\{ \operatorname{tr}(f_i) \}_{i \in I}$ is directed. Let $i,j \in I$ and let $k \in I$ be such that $\operatorname{App}(\operatorname{tr}(f_i), U_i), \operatorname{App}(\operatorname{tr}(f_j), U_j) \subseteq \operatorname{App}(\operatorname{tr}(f_k), U_k)$. Then for any $y \in \operatorname{App}(\operatorname{tr}(f_i), U_i)$ we have $y \in f_i(U_i) \subseteq f_k(U_i) \subseteq f_k(U_k)$ and similarly for $j$. This shows that $\operatorname{tr}(f_i), \operatorname{tr}(f_j) \subseteq \operatorname{tr}(f_k)$. It follows that $\{ \operatorname{tr}(f_i) \}_{i \in I}$ is a directed system. Let $f$ denote a stable function such that $\operatorname{tr}(f) = \bigcup_{i \in I}\operatorname{tr}(f_i)$.
+		
+		Let $U := \bigcup_{i \in I}U_i$, the proof will be finished once we establish the following claim.
+		\begin{equation}
+			\bigcup_{i \in I}\operatorname{App}(\frak{a}_i, U_i) = \operatorname{App}(\operatorname{tr}(f), U)
+			\end{equation}
+		For any element $y \in \bigcup_{i \in I}\operatorname{App}(\frak{a}_i, U_i)$ there exists $i \in I$ such that $y \in \operatorname{App}(\frak{a}_i, U_i)$ and so there exists $V \subseteq U_i$ for which $(V, y) \in \frak{a}_i$. We have that $y \in f_i(V) \subseteq f(V) \subseteq f(U)$. Thus, $V$ is a subset of $U$ such that $(V, y) \in \operatorname{tr}(f)$, that is, $y \in \operatorname{App}(\operatorname{tr}(f), U)$. Here, we used crucially Definition \eqref{eq:app_def}.
+		
+		Conversely, if $y \in \operatorname{App}(\operatorname{tr}(f), U)$ then $y \in f(U) = \bigcup_{i \in I}f(U_i)$ by stability of $f$. Hence, there exists $i \in I$ such that $y \in f(U_i)$ and so taking $U_i$ as a subset of itself, we see that $(U_i, y)$ satisfy the condition required so that $y \in f_i(U_i)$. That is, there exists $i \in I$ such that $y \in \operatorname{App}(\frak{a}_i, U_i)$. This completes the proof.
+		\end{proof}
+	
+	\begin{lemma}\label{lem:app_binary}
+		Let $(X, \scr{X}), (Y, \scr{Y})$ be qualitative domains. For every subset $\frak{a} \subseteq Y$ there exists a stable function $f: X \lto Y$ and a set $U \subseteq X$ such that
+		\begin{equation}
+			\frak{a} = \operatorname{App}(\operatorname{tr}(f), U)
+			\end{equation}
+		\end{lemma}
+	\begin{proof}
+		Consider the constant function
+		\begin{align*}
+			f: \scr{X} &\lto \scr{Y}\\
+			W &\longmapsto \frak{a}
+			\end{align*}
+		We first claim that this is stable. Clearly, if $W \subseteq W'$ then $f(W) = f(W')$ and so in particular, $f(W) \subseteq f(W')$.
+		
+		Next, if $\{ U_i \}_{i \in I}$ is a directed system of sets in $\scr{X}$ we have
+		\begin{equation}
+			\bigcup_{i \in I}f(U_i) = \bigcup_{i \in I}\frak{a} = \frak{a}  = f(\bigcup_{i \in I})
+			\end{equation}
+		
+		Lastly, if $W_1 \cup W_2 \in \scr{X}$ then we again (trivially) have
+		\begin{equation}
+			f(W_1 \cap W_2) = \frak{a} = \frak{a}\cap \frak{a} = f(W_1) \cap f(W_2)
+			\end{equation}
+		
+		Next, we claim that the empty set $\varnothing$ is an appropriate choice for $U$, that is
+		\begin{equation}
+			\frak{a} = \operatorname{App}(\operatorname{tr}(f), \varnothing)
+			\end{equation}
+		We have
+		\begin{align*}
+			y \in \frak{a} &\Leftrightarrow y \in f(\varnothing)\\
+			&\Leftrightarrow \exists V \subseteq \varnothing\text{ st }(V,y) \in \operatorname{tr}(f)\\
+			&\Leftrightarrow y \in \operatorname{App}(\operatorname{tr}(f), \varnothing)
+			\end{align*}
+		\end{proof}
+	
+	Lemma \ref{lem:app_binary} shows that 
+	\begin{equation}
+	\operatorname{App}(\scr{X} \Rightarrow \scr{Y}, \scr{X}) = \call{P}(Y)
+	\end{equation}
+and so in particular $(Y, \operatorname{App}(\scr{X} \Rightarrow \scr{Y}, \scr{X}))$ is binary. However, this result is not so interesting, as we have considered all the stable functions $f: X \lto Y$ in the set $\scr{X} \Rightarrow \scr{Y}$ and the proof of Lemma \ref{lem:app_binary} makes critical use of the constant function.
+
+Thus, one may be tempted to fix the choice of stable function first. More precisely, we could define
+\begin{equation}
+	\operatorname{App}(\operatorname{tr}(f),\scr{X}) := \{ \operatorname{App}(\operatorname{tr}(f),U) \mid U \in \scr{X} \}
+	\end{equation}
+and then consider the pair
+\begin{equation}\label{eq:not_qualitative}
+	\big(Y,\operatorname{App}(\operatorname{tr}(f),\scr{X})\big)
+	\end{equation}
+However, \eqref{eq:not_qualitative} in general is \emph{not} a qualitative domain. To see this, consider two qualitative domains $(X, \scr{X}), (Y, \scr{Y})$ and the constant function $f: \scr{X} \lto \scr{Y}, f(X) = Y$ for some fixed set $Y \in \scr{Y}$. If $Y$ is non-empty and $Y' \subsetneq Y$ is a proper subset, then there is no set $X' \in \scr{X}$ such that $f(X') = Y'$, that is, there exists no set $X' \in \scr{X}$ such that
+\begin{equation}
+	Y' = \operatorname{App}(\operatorname{tr}(f), X')
+	\end{equation}
+In general, a qualitative domain $(Z, \scr{Z})$ is required to be such that if $U \in \scr{Z}$ and $U' \subseteq U$ is a subset of $U$ then $U' \in \scr{Z}$. The above argument shows that this does \emph{not} hold for $\big(Y, \operatorname{App}(\operatorname{tr}(f), \scr{X})$ and so this is not a qualitative domain.
+
+Furthermore, a qualitative domain $(Z, \scr{Z})$ always has the empty set $\varnothing$ as an element of $\scr{Z}$. There is no way to guarantee this for $\big(Y, \operatorname{App}(\operatorname{tr}(f), \scr{X})$ as stable functions are \emph{not} required to satisfy $f(\varnothing) = \varnothing$. That is, the image of a stable function need not contain the empty set.
+	
+	\section{Coherence spaces}
+	We recall the definition of a \emph{reflexive graph}.
+	\begin{defn}
+		A multigraph $G = (V,E)$ is \textbf{reflexive} if for every vertex $v \in V$ there exists an edge $\{ v, v \}$ (recall that in a multigraph, the set $E$ is a \emph{multiset}, and so here the notation $\{ v,v\}$ does \emph{not} mean the set $\{ v\}$).
+		\end{defn}
+	\begin{defn}
+		A \textbf{coherence space} $A$ is a pair $(|A|, \coh_A)$ consisting of a set $|A|$ and a reflexive, symmetric relation $\coh_A$ on $|A|$. The set $|A|$ is the \textbf{web} of $A$ and the relation $\coh_A$ is the \textbf{coherence} of $A$.
+		\end{defn}
+	
+	\begin{lemma}
+		Let $(X, \scr{X})$ be a binary qualitative domain. Define a relation $R$ on $X$ in the following way.
+		\begin{equation}
+			(x_1,x_2) \in R \Leftrightarrow \{ x_1, x_2 \} \in \scr{X}
+			\end{equation}
+		This relation is reflexive and symmetric.
+		\end{lemma}
+	\begin{proof}
+		Since $X$ is a qualitative domain, the sets $\scr{X}$ cover $X$, that is,
+		\begin{equation}
+			\bigcup_{U \in \scr{X}}U = X
+			\end{equation}
+		Thus, since every subset of every elemenet of $\scr{X}$ is also an element of $\scr{X}$, it follows that $\{ x \} \in \scr{X}$ for each $x \in X$. In other words, $R$ is reflexive.
+		
+		The defining statement of $R$ is symmetric in $x_1, x_2$ and so $R$ is clearly symmetric as a relation.
+		\end{proof}
+	
+	\begin{defn}
+		A \textbf{clique} in a coherence space $A = (|A|, \coh_A)$ is a subset $C \subseteq |A|$ subject to
+		\begin{equation}
+			\forall c_1, c_2 \in C\qquad c_1 \coh_A c_2
+			\end{equation}
+		\end{defn}
+	
+	\begin{lemma}
+		Let $A = (|A|, \coh_A)$ be a coherence space. Let $\scr{X}$ denote the set of cliques of $A$. Then $(|A|, \scr{X})$ is a binary qualitative domain.
+		\end{lemma}
+	\begin{proof}
+		Since $\coh_A$ is reflexice, we have that for all $a \in |A|$ that $\{ a \} \in \scr{X}$, and so $\scr{X}$ covers $|A|$.
+		
+		The empty set is vacuously a clique, and so $\varnothing \in \scr{X}$.
+		
+		If $\{ U_i \}_{i \in I}$ is a directed family of cliques, then $U := \bigcup_{i \in I}U_i$ is satisfies:
+		\begin{equation}
+			\forall u_1, u_2 \in U, \exists i \in I, \{ u_1, u_2 \} \in U
+			\end{equation}
+		and so $u_1 \coh_A u_2$. That is, $U$ is a clique.
+		
+		If $U,V \in \scr{X}$ are such that $U \cup V \in \scr{X}$ then we see that $U \cap V$, being a subset of $U \cup V$, is a clique. Thus $U \cap V \in \scr{X}$.
+		
+		Say $U \not\in \scr{X}$. Then by definition, there exists $u_1, u_2$ such that $u_1 \not\coh_A u_2$. That is, $\{ u_1 u_2 \} \not\in \scr{X}$, and so $(|A|,\scr{X})$ is binary.
+		\end{proof}
+	We thus have a bijection between the collection of coherence spaces and the collection of binary qualitative domains.
+
+\appendix
+\section{Proofs}
+\subsection{Normal forms and analytic functors}
+\begin{lemma}\label{lem:int_id}
+		Let $\eta: (G,y) \lto (F,x)$ be an integral form (not necessarily normal) and say $\scr{F}$ satisfies the integral normal form property. Then $\eta$ is normal if and only if $\operatorname{id}_G: (G, y) \lto (G,y)$ is.
+	\end{lemma}
+	\begin{proof}
+		Let $\eta': (G, y') \lto (F,x)$ be an integral normal form associated to $(F,x)$. Then by normality there exists a morphism $\delta: G \lto G$ so that the following is a commutative diagram in $\operatorname{El}(\scr{F})$.
+		\begin{equation}\label{eq:id_normal}
+			\begin{tikzcd}
+				(G, y')\arrow[d,swap,"{\delta}"]\arrow[r,"{\eta'}"] & (F,x)\\
+				(G,y)\arrow[ur,swap,"{\eta}"]\arrow[u,bend left, dashed, "{\delta'}"]
+				\end{tikzcd}
+			\end{equation}
+		Since $\operatorname{id}$ is normal, there exists a section $\delta'$ rendering \eqref{eq:id_normal} commutative.
+		
+		Since $\delta \delta' = \operatorname{id}_G$ and $\eta$ is normal, it follows that $\eta'$ is normal. On the other hand, say $\eta$ is normal. Let $\epsilon: (H, w) \lto (G,y)$ be arbitrary. Consider the composition $\eta \epsilon$. By normality of $\eta$, there exists a unique $\delta: (G, y) \lto (H, w)$ so that the following diagram commutes:
+		\begin{equation}
+			\begin{tikzcd}
+				& (F,x)\\
+				(G,y)\arrow[ur, "{\eta}"]\arrow[r,"{\delta}"] & (H,w)\arrow[u,"{\eta \epsilon}"]
+				\end{tikzcd}
+			\end{equation}
+		If $\delta'$ was another such map, then $\eta \epsilon \delta = \eta \epsilon \delta'$ so by normality of $\eta$ we have that $\delta = \delta'$.
+	\end{proof}
+	
+	\begin{proof}[Proof of Lemma \ref{lem:normal_form_prop--->analytic}]
+		The main step in the proof will be to define for each $G \in \operatorname{Int}(A)$ a set $C_G$ and for each $F \in \set^A$ a bijection
+		\begin{equation}\label{eq:bijection}
+			h_F: \scr{F}(F) \lto \coprod_{G \in \operatorname{Int}(A)}(\operatorname{Set}^A(G, F) \times C_G)
+			\end{equation}
+		In fact, in the current setting where $A$ admits only identity morphisms, this will complete the proof.
+		
+		For any element $(F,x)$ of $\operatorname{El}(\scr{F})$ there is some finite normal form $\eta: (G,y) \lto (F,x)$, isomorphic to an integral normal form. Thus, it suffices to consider the case where $\scr{F}$ satisfies the \emph{integral} normal form property.
+		
+		An integral normal form $\eta: (G,y) \lto (F,x)$ is \emph{not} uniquely determined by $(F,x)$, however, given another integral normal form $\eta': (G',y') \lto (F,x)$ we have that $G' \cong G$ by normality and thus $G' = G$ by integrality. So at least the domain of the object is uniquely determined by $(F,x)$.
+		
+		Let $X_G$ denote the elements $y \in \scr{F}(G)$ for which $\operatorname{id}_G: (G,y) \lto (G,y)$ is normal, since $\scr{F}$ satisfies the integral form property, there is always at least one such $y$. Let $C_G$ denote a set of choices of representatives of the isomorphism classes of $X_G$.
+				
+		Thus, to each $x \in \scr{F}(F)$ we have associated an integral normal form $\eta: (G, y) \lto (F,x)$ and fixed particular choices so that this map $h_F(x) = (G, \eta, y)$ is a bijection.
+		\end{proof}
+
+In general, if $\mu: H \lto G$ is a natural transformation and $\eta: (G, y) \lto (F, x)$ is a normal form, then the composite $\eta \mu$ is need \emph{not} be a normal form. However, if $\scr{F}$ satisfies the finite normal form property the normal forms \emph{can} be carried through natural transformations. This is the content of the next Lemma.
+ 
+	\begin{lemma}\label{lem:nat_trans_carry}
+		Let $\scr{F}: \set^A \lto \set$ be a functor satisfying the normal form property. Then if $\eta: (G,y) \lto (F,x)$ is a normal form and $\mu: G \lto H$ is a natural transformation, then $\mu \eta: (G,y) \lto (H, \scr{F}(\mu)(x))$ is a normal form.
+	\end{lemma}
+	\begin{proof}
+		Let $\epsilon: (K, z) \lto (H, \scr{F}(\mu)(x))$ be an arbitrary form. We show that there exists a unique morphism $(G,y) \lto (K,z)$ in the category $\operatorname{El}(\scr{F})/(H, \scr{F}(\mu)(x))$. Since $\scr{F}$ satisfies the normal form property there exists some normal form $\gamma:(L,w) \lto (H, \scr{F}(\mu)(x))$. It is convenient to draw this situation out in the category $\operatorname{El}(\scr{F})$, ignore the dashed arrows for now.
+		% https://q.uiver.app/?q=WzAsNSxbMSwwLCIoRiwgeCkiXSxbMSwxLCIoSCwgXFxzY3J7Rn0oXFxldGEpKHgpKSJdLFswLDIsIihLLHopIl0sWzAsMCwiKEcseSkiXSxbMCwxLCIoTCx3KSJdLFswLDEsIlxcZXRhIl0sWzIsMSwiXFxlcHNpbG9uIiwyXSxbMywwLCJcXG11Il0sWzQsMSwiXFxnYW1tYSJdLFs0LDIsIlxcYmV0YSIsMix7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs0LDMsIlxcZGVsdGEiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMyw0LCJcXGRlbHRhJyIsMix7ImN1cnZlIjoyLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XV0=
+		\begin{equation}\label{eq:natural_trans_carry}
+			\begin{tikzcd}
+				{(G,y)}\arrow[r, "\eta"]\arrow[d, shift left, "{\delta'}"', dashed, swap] & {(F, x)}\arrow[d, "\mu"] \\
+				{(L,w)}\arrow[r, "\gamma"]\arrow[d, "\beta"', dashed]\arrow[u, shift left, "\delta", dashed] & {(H, \scr{F}(\mu)(x))} \\
+				{(K,z)}\arrow[ur,"\epsilon"']
+			\end{tikzcd}
+		\end{equation}
+		Since $\mu\eta: (G,y) \lto (H, \scr{F}(\mu)(x))$ is a form with respect to $(H, \scr{F}(\mu)(x))$ we have by initiality of $\gamma: (L,w) \lto (H, \scr{F}(\mu)(x))$ that there exists a morphism $\delta: (L,w) \lto (G,y)$ fitting into \eqref{eq:natural_trans_carry}.
+		
+		The morphism $\eta \delta: (L,w) \lto (F,x)$ induces the morphism $\delta'$ and composing this with the morphism $\beta$ (which is induce by initiality of $\gamma: (L, w) \lto (H, \scr{F}(\mu)(x))$ induces a morphism $(G,y) \lto (K,z)$ which is the unique morphism rending the full diagram commutative. Thus $\mu\eta: (G,y) \lto (H, \scr{F}(\mu)(x))$ is initial.
+	\end{proof}
+ 
+	\begin{lemma}\label{lem:analytic--->normal_form_property}
+		Let $\scr{F}: \set^A \lto \set$ be analytic. Then $\scr{F}$ satisfies the normal form property.
+		\end{lemma}
+	\begin{proof}
+		Let $F \in \set^A$ be arbitrary and consider an element $(G, \eta, y)$ of $\scr{F}(F) = \coprod_{G' \in \operatorname{Int}(A)}(\set^A(G', F) \times C_{G'})$. We can then consider the set $\scr{F}(G) = \coprod_{G' \in \operatorname{Int}(A)}\set^A(G', G) \times C_{G'}$. A particular element of this set is $(G, \operatorname{id}_G, y)$. We show that $\eta: (G, (G, \operatorname{id}_G, y)) \lto (F, (G, \eta, y))$ is normal.
+		
+		Say $\epsilon: (H, (G', \eta', y')) \lto (F, (G,\eta, y))$ is a form, then
+		\begin{equation}\label{eq:ep_im}
+			\scr{F}(\epsilon)(G', \eta', y') = (G, \eta, y)
+			\end{equation}
+		We unpack the definition of the function $\scr{F}(\epsilon) = \coprod_{G \in \operatorname{Int}(A)}(\set^A(G,\epsilon) \times C_G)$. This function makes the following Diagram commute, where the vertical morphisms are canonical inclusion maps.
+		\begin{equation}
+			\begin{tikzcd}
+				\coprod_{G \in \operatorname{Int}(A)}(\set^A(G, H) \times C_G)\arrow[r,"{\scr{F}(\mu)}"] & \coprod_{G \in \operatorname{Int}A}(\set^A(G, F))\\
+				\set^A(G, H) \times C_G\arrow[r,"{\und{0.2} \circ \epsilon \times \operatorname{id}_{C_G}}"]\arrow[u] & \set^A(G, F) \times C_G\arrow[u]
+				\end{tikzcd}
+			\end{equation}
+		So \eqref{eq:ep_im} implies $((\und{0.2} \circ \epsilon) \times \operatorname{id})(\eta', y') = (\eta, y)$. We thus have:
+		\begin{equation}
+				G' = G,\quad \epsilon \eta' = \eta,\quad y' = y
+			\end{equation}
+		Thus, the domain of the morphism $\epsilon: (H, (G', \eta', y')) \lto (F, (G, \eta, y))$ is equal to $(H, (G, \eta', y))$. We need a unique morphism $(G, (G, \operatorname{id}_G, y)) \lto (H, (G, \eta', y))$. Clearly $\eta'$ is such a morphism, and it is the unique such because for any morphism $\mu: G \lto G$ we have $(\set^A(G, \mu) \times C_G)(\mu) = \mu$,  and so $\eta'$ is the unique morphism $\mu$ determined by the condition $(\set^A(G, \mu) \times C_G)(\mu) = \eta'$.
+		\end{proof}
+
+\subsection{Normal forms and normal functors}
+\begin{proof}[Proof of Lemma \ref{lem:normal--->finite_normal_form_property}]
+		Let $(F,x)$ be a pair consisting of a functor $F \in \set^A$ and an element $x \in \scr{F}(F)$. Consider all the saturated forms with codomain $(F,x)$ and take the pullback of this entire diagram. We use the labelling as given by \eqref{eq:pullback_diag}.
+		\begin{equation}\label{eq:pullback_diag}
+			\begin{tikzcd}
+				& (S_i, y_i)\arrow[dr,"{\sigma_i}"]\\
+				\operatorname{PullBack}\arrow[ur,"{\eta_i}"]\arrow[dr,swap,"{\eta_j}"] & \vdots & (F,x)\\
+				 & (S_j, y_j)\arrow[ur,swap,"{\sigma_j}"]
+				\end{tikzcd}
+			\end{equation}
+		There exists $y \in \scr{F}(\operatorname{PullBack})$ so that $\scr{F}\eta_i(y) = y_i$ for all $i$. We consider a saturated form $\epsilon: (G, z) \lto (\operatorname{PullBack}, y)$. We claim that this is a normal form with respect to $(F,x)$.
+		
+		Assume there is a form $\delta: (H, w) \lto (F,x)$ and consider a saturated form $\delta': (H', w') \lto (H, w)$. A saturated form is one such that any form \emph{into} it is surjective. Thus $\delta \delta': (H', w')\lto (F,x)$ is saturated as $\delta': (H', w') \lto (H,w)$ is.
+		
+		It follows that $(H,w) = (S_i, y_i)$ for some $i$. Thus we have a morphism $\eta_i \epsilon: (G, z) \lto (S_i, y_i) = (H,w)$. It follows from Lemma \ref{lem:saturated_unique} that this is the unique morphism in the appropriate sense. This completes the proof.
+		\end{proof}
+
+\begin{proof}[Proof of Lemma \ref{lem:normal_from_prop--->normal}]
+		We must show that $\scr{F}$ preserves directed colimits and wide pullbacks.\\
+		\textbf{$\scr{F}$ preserves directed colimits:} consider a directed system, that is, assume there exists a collection of objects $\lbrace F_i \rbrace_{i \in I}$ fo $\set^A$, where $I$ is a set equipped with a partial order $<$, along with a collection of morphisms $\lbrace \alpha_{ij}: F_i \lto F_j \rbrace_{i,j \in I}$ subject to the following conditions
+		\begin{itemize}
+			\item $\forall i, j \in I,\text{ }\exists k \in I\text{ such that }\alpha_{ik}: F_i \lto F_k, \text{ and } \alpha_{jk}: F_j \lto F_k\text{ exist.}$
+			\item $\forall i,j,k \in I,\text{ }\alpha_{jk} \alpha_{ij} = \alpha_{ik}$
+			\item $\forall i \in I\text{ }\alpha_{ii} = \operatorname{id}_{F_i}$
+			\end{itemize}
+		Let $C$ denote the directed colimit of this directed system in the category $\set^A$ and let $\{\mu_i: F_i \lto C\}$ denote the associated morphisms into $C$. Consider also the directed colimit
+		\begin{equation}
+			\big(C',\{g_i: \scr{F}(F_i) \lto C'\}_{i \in I}\big)
+		\end{equation}
+		of the directed system given by $\big(\lbrace \scr{F}( F_i) \rbrace_{i \in I}, \lbrace \scr{F}(\alpha_{ij}): \scr{F}(F_i) \lto \scr{F}(F_j)\rbrace_{i,j \in I}\big)$ in the category $\set$.
+		
+		By the universal property of $C'$, there exists a unique function
+		\begin{equation}
+			f: C' \lto \scr{F}(C)
+			\end{equation}
+		so that for all $i \in I$ the following diagram commutes.
+		\begin{equation}
+			\begin{tikzcd}
+				\scr{F}(F_i)\arrow[d,swap,"{g_i}"]\arrow[dr,"{\scr{F}(\mu_i)}"]\\
+				C'\arrow[r,swap,"{f}"] & \scr{F} (C)
+				\end{tikzcd}
+			\end{equation}
+		We need to prove that $f$ is an isomorphism (ie, a bijection). We do this by proving that it is injective and surjective.
+		
+		First we prove surjectivity. Let $z \in \scr{F}(C)$. By the finite normal form property, there exists a finite normal form $\epsilon: (G, w) \lto (C, z)$. Now, for each $a \in A$ there is a function
+		\begin{equation}
+			\epsilon_a: G(a) \lto C(a)
+			\end{equation}
+		hence, there exists some $i \in I$ and function $\epsilon_a': G(a) \lto F_i(a)$ through which the function $\epsilon_a$ factors. Since $G$ is finite, and the colimit is directed, there exists an $i \in I$ such that for each $a \in A$ there is a morphism $G(a) \lto F_i(a)$, which we also call $\epsilon_a'$, which makes the following diagram commute.
+		\begin{equation}
+			\begin{tikzcd}
+				G(a)\arrow[r,"{\epsilon_a'}"]\arrow[dr,swap,"{\epsilon_a}"] & F_i(a)\arrow[d]\\
+				& C(a)
+				\end{tikzcd}
+			\end{equation}
+		We claim the collection $\epsilon' := \{\epsilon_a': G(a) \lto F_i(a)\}$ is a natural transformation, however since $A$ is discrete (ie, has no non-identity morphisms), there is no condition to check, so this is vacuously satisfied.
+		
+		Note: even in the case where $A$ is an arbitrary category, we still obtain naturality, it is inhereted from naturality of the morphisms involved in the following diagram:
+		\begin{equation}
+			\begin{tikzcd}
+				G\arrow[r]\arrow[drr] & F_{i'}\arrow[r,"{\alpha_{i'i}}"] & F_i\\
+				& & F_j\arrow[u,"{\alpha_{ji}}"]
+				\end{tikzcd}
+			\end{equation}
+		
+		We have constructed a natural transformation $\epsilon': G \lto F_i$ so that the following diagram commutes.
+		\begin{equation}
+			\begin{tikzcd}
+				G\arrow[r,"{\epsilon'}"]\arrow[dr,swap,"{\epsilon}"] & F_i\arrow[d]\\
+				& C
+				\end{tikzcd}
+			\end{equation}
+		Let $z'$ denote $\scr{F}(\epsilon')(w)$. We have commutativity of the following diagram
+		\begin{equation}
+			\begin{tikzcd}
+				\scr{F}F_i\arrow[d,swap,"{g_i}"]\arrow[dr,"{\scr{F}\mu_i}"]\\
+				C'\arrow[r,"{f}"] & \scr{F} (C)
+				\end{tikzcd}
+			\end{equation}
+		Hence, $g_i(z')$ is an element of $C'$ such that $f(g_i(z')) = z$, establishing surjectivity.
+		
+		Now we prove injectivity. Let $x_1,x_2 \in C'$ be such that $f(x_1) = f(x_2)$. Let $z$ denote this element of $\scr{F}(C)$. The functions $\{ g_i\}_{i \in I}$ form a surjective family over $C'$ and so there exists $i,i' \in I$ and $x_1' \in \scr{F}(F_i), x_2' \in \scr{F}(F_{i'})$ so that $g_i(x_1') = x_1, g_{i'}(x_2') = x_2$. In fact, since the diagram the colimit is over is filtered, we can assume without loss of generality that $i = i'$.
+		
+		Turning our consideration to $z$, which is an element of $\scr{F}(C)$, we choose a normal form $\epsilon: (G, y) \lto (C, z)$. We have already seen in the proof of surjectivity how from this we obtain a $j \in I$ along with a natural transformation $\epsilon': G \lto F_j$ so that the following diagram commutes.
+		\begin{equation}\label{eq:by_finiteness}
+			\begin{tikzcd}
+				G\arrow[r,"{\epsilon'}"]\arrow[dr,swap,"{\epsilon}"] & F_j\arrow[d,"{\mu_j}"]\\
+				& C
+				\end{tikzcd}
+			\end{equation}
+		We have that $\scr{F}(\mu_i)(x_1') = \scr{F}(\mu_i)(x_2') = z$. So, by initiality of $(G,y)$ there exists unique morphisms $\delta_1,\delta_2: G \lto F_i$ so that the following diagram commutes
+		\begin{equation}\label{eq:by_normality}
+		\begin{tikzcd}
+			G\arrow[dr,"{\epsilon}"]\arrow[d,swap, shift right, "{\delta_2}"]\arrow[d,shift left, "{\delta_1}"]\\
+			F_i\arrow[r,swap,"{\mu_i}"] & C
+			\end{tikzcd}
+		\end{equation}
+		and so that $
+			\scr{F}(\delta_1)(y) = x_1\text{ and }\scr{F}(\delta_2)(y) = x_2$.
+		
+		Combining \eqref{eq:by_finiteness} and \eqref{eq:by_normality} we obtain commutativity of the following diagram.
+		\begin{equation}\label{eq:colimit_commuting}
+			\begin{tikzcd}
+				G\arrow[r,"{\epsilon'}"]\arrow[d,shift left,"{\delta_1}"]\arrow[d, swap, shift right, "{\delta_2}"] & F_j\arrow[d,"{\mu_j}"]\\
+				F_i\arrow[r,swap,"{\mu_i}"] & C
+				\end{tikzcd}
+			\end{equation}
+		Now, let $a \in A$ be an arbitrary element of $A$ and consider \eqref{eq:colimit_commuting} with everything evaluated at $a$, this gives a commuting diagram in $\set$. We notice that if $G(a)$ is non-empty, then there exists a pair of elements $d,d' \in F_i(a)$ so that $\mu_{ia}(d) = \mu_{ia}(d')$ and so there exists some $k \in I$ such that $\alpha_{ika}: F_{i}(a) \lto F_k(a)$ so that $\alpha_{ika}(d) = \alpha_{ika}(d')$. By finiteness of $G$ (in particular, since all but finitely many $a \in A$ are such that $G(a)$ is non-empty) there thus exists $k \in I$ and $\alpha_{ik}: F_i \lto F_k$ so that for all $a \in A$ there exists $d,d' \in F_i(a)$ so that $\alpha_{ika}(d) = \alpha_{ika}(d')$. Lastly, by the first property above of directed colimits we may assume $k = j$. The result is the following commutative diagram in $\set^A$.
+		\begin{equation}
+			\begin{tikzcd}
+				& F_k\arrow[d,"{\mu_j}"]\\
+				F_i\arrow[ur,"{\alpha_{ik}}"]\arrow[r,"{\mu_i}"] & C
+				\end{tikzcd}
+			\end{equation}
+		Finally, we can consider the following commuting diagram in $\set$.
+		\begin{equation}
+			\begin{tikzcd}[column sep = huge, row sep = huge]
+			\scr{F}G\arrow[dr,"{\scr{F}\epsilon'}"]\arrow[d,shift right, swap, "{\scr{F}\delta_1}"]\arrow[d,shift left, "{\scr{F}\delta_2}"]\\
+			\scr{F}F_i\arrow[r,"{\scr{F}\alpha_{ij}}"]& \scr{F}F_j
+			\end{tikzcd}
+			\end{equation}
+		Thus, $\scr{F}\alpha_{ij}\scr{F}\delta_1(y) = \scr{F}\alpha_{ij}\scr{F}\delta_2(y)$, ie, $\scr{F}\alpha_{ij}(x_1') = \scr{F}\alpha_{ij}(x_2')$, ie, $x_1 = x_2$. This establishes injectivity.
+%		\textbf{$\scr{F}$ preserves arbitrary pullbacks:} Let $\{\alpha_{i}: F_i \lto H\}_{i \in I}$ be a (possibly infinite) collection of natural transformations and let $(P, \{\pi_i: P \lto F_i\})$ denote their pullback. Also, let $(P', \{\mu_i: P' \lto \scr{F}(F_i) \})$ denote the pullback in $\set$ of $\{\scr{F}\alpha_i: \scr{F}(F_i) \lto \scr{F}(H)\}_{i \in I}$. By the universal property of the pullback $P'$ there exists a function $f: \scr{F}(P) \lto P'$ so that for each $i \in I$ the following Diagram commutes.
+		\begin{equation}
+			\begin{tikzcd}\label{eq:induced_commutativity}
+				\scr{F}P\arrow[r,"{f}"]\arrow[dr,swap,"{\scr{F}\pi_i}"] & P'\arrow[d,"{\mu_i}"]\\
+				& \scr{F}(F_i)
+				\end{tikzcd}
+			\end{equation}
+		We must show that $f$ is a bijection. First we show surjectivity. Let $z \in P'$. For each $i$ we consider $\scr{F}(\pi_i)(z)$, which we denote by $z_i$. Since $\scr{F}$ satisfies the normal form property, there exists a normal form
+		\begin{equation}
+			\eta_i: (G_i, w_i) \lto (F_i, z_i)
+			\end{equation}
+		By Lemma \ref{lem:nat_trans_carry} the compositions
+		\begin{equation}
+			\alpha_i \eta_i: (G_i, w_i) \lto (H, \scr{F}(\alpha_i)(w_i))
+			\end{equation}
+		are normal forms with respect to $(G, \scr{F}(\alpha_i)(w_i))$ (note, $\scr{F}(\alpha_i)(w_i)$ is independent of $i$).
+		
+		Hence by essential uniqueness of initial objects, we can assume without loss of generality that for all pairs $i,j \in I$ we have $G_i = G_j$, denote this common element by $G$.
+		
+		By the universal property of the pullback, there exists a natural transformation $\delta: G \lto P$ rendering the following Diagram commutative.
+		\begin{equation}
+			\begin{tikzcd}
+				G\arrow[d,swap,"{\delta}"]\arrow[r,"{\eta_i}"] & F_i\\
+				P\arrow[ur,swap,"{\pi_i}"]
+				\end{tikzcd}
+			\end{equation}
+		We notice also that the colleciton of elements $\lbrace w_i \rbrace_{i \in I}$ induces an element $w \in \scr{F}G$ so that for all $i \in I$ we have $\scr{F}(\eta_i)(w) = z_i$.
+	
+		We claim that
+		\begin{equation}
+			f\scr{F}(\delta)(w) = z
+			\end{equation}
+		It suffices to show the following for all $i \in I$.
+		\begin{equation}
+			\pi_{\scr{F}(F_i)}(z) = \pi_{\scr{F}(F_i)}f\scr{F}(\delta)(w)
+			\end{equation}
+		This holds by the following calculation.
+		\begin{align}
+			\pi_{\scr{F}(F_i)}f\scr{F}(\delta)(w) &= \scr{F}(\pi_i) \scr{F}(\delta)(w)\\
+			&= \scr{F}(\eta_i)(w)\\
+			&= z_i\\
+			&= \pi_{\scr{F}(F_i)}(z)
+			\end{align}
+		
+		Now we prove injectivity. Let $x_1,x_2 \in \scr{F}P$ be such that $f(x_1) = f(x_2)$. By the normal form property, there is a normal form $\chi_1: (X_1, x_1') \lto (P, x_1)$ with respect to $(P,x_1)$ and a normal form $\chi_2: (X_2, x_2') \lto (P, x_2)$ with respect to $(P,x_1)$. Let $i \in I$ be arbitrary and consider the composition of these normal forms with the natural transformation $\pi_i$:
+		\begin{equation}\label{eq:composed_normal_forms}
+			\begin{tikzcd}
+				(X_1,x_1')\arrow[r,"{\chi_1}"] & (P, x_1)\arrow[r,"{\pi_i}"] & (F_i, \scr{F}(\pi_i \chi_1)(x_1'))\\
+				(X_2,x_2')\arrow[r,"{\chi_2}"] & (P, x_2)\arrow[r,"{\pi_i}"] & (F_i, \scr{F}(\pi_i \chi_2)(x_2'))
+				\end{tikzcd}
+			\end{equation}
+		Now, by commutativity of \eqref{eq:induced_commutativity} we have
+		\begin{equation}
+			\scr{F}(\pi_i \chi_1)(x_1') = \scr{F}(\pi_i)(x_1) = \mu_i f(x_1) = \mu_if(x_2) = \scr{F}(\pi_i \chi_2)(x_2')
+			\end{equation}
+		Let $w$ denote this common element.
+		
+		This implies that \eqref{eq:composed_normal_forms} are both objects of the same comma category, $\operatorname{El}(\scr{F})/(F_i, w)$, and in fact these are both normal by Lemma \ref{lem:nat_trans_carry}. We can thus assume without loss of generality that $X_1 = X_2, x_1' = x_2'$, we let $X,x$ respectively denote these common elements. Thus, our hypothesis is: for all $i \in I$ we have
+		\begin{equation}\label{eq:epi_would_be_nice}
+			\pi_i\chi_1 = \pi_i\chi_2
+			\end{equation}
+		It now remains to show 
+		\begin{equation}
+			\scr{F}(\chi_1)(x) = \scr{F}(\chi_2)(x)
+			\end{equation}
+		We do this by proving $\chi_1 = \chi_2$.
+		
+		First, notice that for $k = 1,2$ and all $i \in I$ we have $\scr{F}(\pi_i \chi_k) = \mu_i f \scr{F}(\chi_k)(x)$. Thus, by Lemma \ref{lem:nat_trans_carry} the following are normal forms:
+		\begin{equation}
+			\pi_i \chi_k: (X,x) \lto (F_i, \mu_i f \scr{F}(\chi_k)(x))
+			\end{equation}
+		By uniqueness of normal forms, it follows that $\pi_i \chi_1 = \pi_i \chi_j$ for all $i \in I$. Let $\xi_i$ denote this common morphism. We now have that both $\chi_1$ and $\chi_2$ are morphisms $X \lto P$ rendering the following diagram commutative for all $i, j \in I$.
+		\begin{equation}
+			\begin{tikzcd}
+				X\arrow[rrd, bend left,"{\xi_i}"]\arrow[ddr,swap,bend right,"{\xi_j}"]\arrow[dr,"{\chi_1,\chi_2}"]\\
+				& P\arrow[r,"{\pi_i}"]\arrow[d,swap,"{\pi_j}"] & F_i\arrow[d,swap,"{\alpha_i}"]\\
+				& F_j\arrow[r,"{\alpha_j}"] & H
+				\end{tikzcd}
+			\end{equation}
+		It follows from the universal property of the pullback that $\chi_1 = \chi_2$.
+		\end{proof}
+
+\subsection{Models}
+\begin{proof}[Proof of Lemma \ref{lem:substitution}]
+		We proceed by induction on the structure of the term $t$. We notice that the case where $t$ is a variable is trivial.
+		
+		\textbf{Say $t = t_1t_2$ is an application.} First, we have the following, where $(\alpha, \underline{a}) \in \Qcal(A)^n \times \Qcal(A)$, note that we suppress the contexts to ease notation.
+		\begin{equation}
+			\llbracket t_1 t_2 \rrbracket(\alpha, \underline{a}) = \operatorname{App}\big(\overline{q}\llbracket t_1 \rrbracket(\alpha, \underline{a}), \llbracket t_2 \rrbracket(\alpha, \underline{a})\big)
+			\end{equation}
+		On the other hand,
+		\begin{align*}
+			\llbracket (t_1[y:=s])(t_2[y:=s]) \rrbracket(\alpha) &= \operatorname{App}(\overline{q}\llbracket t_1[y:=s]\rrbracket(\alpha), \llbracket t_2[y:=s]\rrbracket(\alpha))\\
+			&= \operatorname{App}(\overline{q}\llbracket t_1 \rrbracket(\alpha, \llbracket s \rrbracket(\alpha)), \llbracket t_2 \rrbracket(\alpha, \llbracket s \rrbracket(\alpha)))
+			\end{align*}
+		where in the final line we have used the inductive hypothesis.
+		
+		Thus we have \eqref{eq:sub_lem_cond} in this case.
+		
+		\textbf{Say $t = \lambda y'. t'$ is an abstraction.} We have, where $(\alpha, \underline{a}) \in \Qcal(A)^n \times \Qcal(A)$:
+		\begin{equation}
+			\llbracket \underline{x}, y \mid \lambda y'.t\rrbracket(\alpha, \underline{a}) = \overline{q}^{-1}\llbracket \underline{x}, y, y' \mid t' \rrbracket^+(\alpha, \underline{a})
+			\end{equation}
+		On the other hand, we have for $\alpha \in \Qcal(A)^n$ and $c \in A$ the following (assume $q^{-1}(c) = (\underline{c}', c''))$.
+		\begin{align*}
+			\llbracket \underline{x}, y \mid \lambda y'.t[y:=s]\rrbracket(\alpha)(c) &= \big(\overline{q}^{-1} \llbracket \underline{x}, y, y' \mid t'[y:=s]\rrbracket^+\big)(\alpha)(c)\\
+			&= \llbracket \underline{x}, y, y' \mid t'[y :=s]\rrbracket^+(\alpha)(\underline{c}', c'')\\
+			&= \operatorname{sup}_{u \in \Ical(A)^n}\llbracket \underline{x}, y, y' \mid t'[y := s]\rrbracket(u, \underline{c}')(c'')\delta_{u \leq \alpha}\\
+			&= \operatorname{sup}_{u \in \Ical(A)^n}\llbracket \underline{x}, y, y' \mid t' \rrbracket (u, \llbracket \underline{x} \mid s \rrbracket(u), \underline{c}')(c'')\delta_{u \leq \alpha}\\
+			&= \llbracket \underline{x}, y, y' \mid t' \rrbracket^+ (\alpha, \llbracket \underline{x} \mid s \rrbracket(\alpha), \underline{c}')(c'')\\
+			&= \overline{q}^{-1}\llbracket \underline{x}, y, y' \mid t' \rrbracket^+(\alpha, \llbracket \underline{x} \mid s \rrbracket)(c)
+			\end{align*}
+		where we have used the inductive hypothesis in the fourth line.
+		
+		Thus \eqref{eq:sub_lem_cond} follows.
+		\end{proof}
+
+\begin{thebibliography}{9}
+	\bibitem{Girard} J. Y. Girard, \emph{Normal functors, power series and lambda-calculus}.
+	
+	\bibitem{BS} J.Y.Girard, \emph{The Blind Spot}
+
+	\bibitem{pseudomonad} M. Fiore, N. Gambino, M. Hyland and G. Winskel, \emph{Relative pseudomonads, Kleisli bicategories,
+and substitution monoidal structures}, Selecta Mathematica, volume 24 (2018).
+	
+	\bibitem{Hasagawa} Hasegawa, \emph{Two applications of analytic functors}
+	
+	\bibitem{LinearLogic} W. Troiani, \emph{Introduction to Linear Logic, Multiplicatives}, \url{https://williamtroiani.github.io/Notes/LinearLogic.pdf}
+	
+	\bibitem{LLC} Benton, Bierman, de Paiva, Hyland \emph{A Term Calculus for Intuitionistic Linear Logic}
+	\end{thebibliography}
+\end{document}
+
+%Acknowledgements:
+% Chris Grossack for freeness
+% Nathanael Arkor and Giacomo Tendas for references on enriched cocompletions
+% Hugo Paquet and Zeinab Galal for their discussion and healthy scepticism
+% ...

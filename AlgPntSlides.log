@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.5.21)  22 JUN 2022 11:58
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.5.21)  21 MAR 2023 09:50
 entering extended mode
 **./AlgPntSlides.tex
 (AlgPntSlides.tex
@@ -879,6 +879,26 @@ amer/beamerinnerthemedefault.sty
 amer/beamerouterthemedefault.sty)))
 (/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/latex/be
 amer/beamerfontthemeserif.sty)
+(/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/latex/al
+gorithms/algorithm.sty
+Package: algorithm 2009/08/24 v0.1 Document Style `algorithm' - floating enviro
+nment
+
+(/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/latex/fl
+oat/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count327
+\float@exts=\toks44
+\float@box=\box72
+\@float@everytoks=\toks45
+\@floatcapt=\box73
+)
+(/Library/Application Support/MiKTeX/texmfs/install/tex/latex/base/ifthen.sty
+Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
+)
+\@float@every@algorithm=\toks46
+\c@algorithm=\count328
+)
 (/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/latex/jk
 nappen/mathrsfs.sty
 Package: mathrsfs 1996/01/01 Math RSFS package v1.0 (jk)
@@ -888,20 +908,17 @@ Package: mathrsfs 1996/01/01 Math RSFS package v1.0 (jk)
 .sty
 Package: array 2020/10/01 v2.5c Tabular extension package (FMi)
 \col@sep=\dimen292
-\ar@mcellbox=\box72
+\ar@mcellbox=\box74
 \extrarowheight=\dimen293
-\NC@list=\toks44
+\NC@list=\toks47
 \extratabsurround=\skip64
 \backup@length=\skip65
-\ar@cellbox=\box73
+\ar@cellbox=\box75
 )
 (/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/latex/un
 its/units.sty
 Package: units 1998/08/04 v0.9b Typesetting units
 
-(/Library/Application Support/MiKTeX/texmfs/install/tex/latex/base/ifthen.sty
-Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
-)
 (/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/latex/un
 its/nicefrac.sty
 Package: nicefrac 1998/08/04 v0.9b Nice fractions
@@ -922,7 +939,7 @@ Package: pgf 2021/05/15 v3.1.9a (3.1.9a)
 (/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/modules/pgf
 moduleshapes.code.tex
 File: pgfmoduleshapes.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgfnodeparttextbox=\box74
+\pgfnodeparttextbox=\box76
 )
 (/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/modules/pgf
 moduleplot.code.tex
@@ -948,8 +965,8 @@ Package: pgffor 2021/05/15 v3.1.9a (3.1.9a)
 h.code.tex)
 \pgffor@iter=\dimen296
 \pgffor@skip=\dimen297
-\pgffor@stack=\toks45
-\pgffor@toks=\toks46
+\pgffor@stack=\toks48
+\pgffor@toks=\toks49
 ))
 (/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/frontendlay
 er/tikz/tikz.code.tex
@@ -958,7 +975,7 @@ Package: tikz 2021/05/15 v3.1.9a (3.1.9a)
 (/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/libraries/p
 gflibraryplothandlers.code.tex
 File: pgflibraryplothandlers.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgf@plot@mark@count=\count327
+\pgf@plot@mark@count=\count329
 \pgfplotmarksize=\dimen298
 )
 \tikz@lastx=\dimen299
@@ -969,23 +986,23 @@ File: pgflibraryplothandlers.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 \tikz@lastmovetoy=\dimen304
 \tikzleveldistance=\dimen305
 \tikzsiblingdistance=\dimen306
-\tikz@figbox=\box75
-\tikz@figbox@bg=\box76
-\tikz@tempbox=\box77
-\tikz@tempbox@bg=\box78
-\tikztreelevel=\count328
-\tikznumberofchildren=\count329
-\tikznumberofcurrentchild=\count330
-\tikz@fig@count=\count331
+\tikz@figbox=\box77
+\tikz@figbox@bg=\box78
+\tikz@tempbox=\box79
+\tikz@tempbox@bg=\box80
+\tikztreelevel=\count330
+\tikznumberofchildren=\count331
+\tikznumberofcurrentchild=\count332
+\tikz@fig@count=\count333
 
 (/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/modules/pgf
 modulematrix.code.tex
 File: pgfmodulematrix.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgfmatrixcurrentrow=\count332
-\pgfmatrixcurrentcolumn=\count333
-\pgf@matrix@numberofcolumns=\count334
+\pgfmatrixcurrentrow=\count334
+\pgfmatrixcurrentcolumn=\count335
+\pgf@matrix@numberofcolumns=\count336
 )
-\tikz@expandcount=\count335
+\tikz@expandcount=\count337
 
 (/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/frontendlay
 er/tikz/libraries/tikzlibrarytopaths.code.tex
@@ -1020,11 +1037,11 @@ LaTeX Font Info:    Overwriting math alphabet `\mathbbmss' in version `bold'
 (/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/latex/te
 nsor/tensor.sty
 Package: tensor 2004/12/20 v2.1 tensor indices package (PGR)
-\tnsr@Sps=\toks47
-\tnsr@Sbs=\toks48
-\tnsr@Spe=\toks49
-\tnsr@Sbe=\toks50
-\ncld@Mno=\toks51
+\tnsr@Sps=\toks50
+\tnsr@Sbs=\toks51
+\tnsr@Spe=\toks52
+\tnsr@Sbe=\toks53
+\ncld@Mno=\toks54
 )
 (/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/latex/ti
 pa/tipa.sty
@@ -1042,14 +1059,14 @@ Now handling font encoding T3 ...
 (/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/latex/bu
 ssproofs/bussproofs.sty
 Proof Tree (bussproofs) style macros. Version 1.1.
-\theLevel=\count336
-\myMaxLevel=\count337
-\myBoxA=\box79
-\myBoxB=\box80
-\myBoxC=\box81
-\myBoxD=\box82
-\myBoxLL=\box83
-\myBoxRL=\box84
+\theLevel=\count338
+\myMaxLevel=\count339
+\myBoxA=\box81
+\myBoxB=\box82
+\myBoxC=\box83
+\myBoxD=\box84
+\myBoxLL=\box85
+\myBoxRL=\box86
 \thisAboveSkip=\dimen311
 \thisBelowSkip=\dimen312
 \newScoreStart=\dimen313
@@ -1084,15 +1101,15 @@ Package: leftidx 2003/09/24 v1.03 Left indices
 (/Library/Application Support/MiKTeX/texmfs/install/tex/latex/latex-tools/after
 page.sty
 Package: afterpage 2014/10/28 v1.08 After-Page Package (DPC)
-\AP@output=\toks52
-\AP@partial=\box85
-\AP@footins=\box86
+\AP@output=\toks55
+\AP@partial=\box87
+\AP@footins=\box88
 )
 (/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/latex/va
 rwidth/varwidth.sty
 Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
-\@vwid@box=\box87
-\sift@deathcycles=\count338
+\@vwid@box=\box89
+\sift@deathcycles=\count340
 \@vwid@loff=\dimen327
 \@vwid@roff=\dimen328
 )
@@ -1105,8 +1122,8 @@ Package: expl3 2021-05-11 L3 programming layer (loader)
 (/Library/Application Support/MiKTeX/texmfs/install/tex/latex/l3backend/l3backe
 nd-pdftex.def
 File: l3backend-pdftex.def 2021-05-07 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count339
-\l__pdf_internal_box=\box88
+\l__color_backend_stack_int=\count341
+\l__pdf_internal_box=\box90
 ))
 (/Library/Application Support/MiKTeX/texmfs/install/tex/latex/l3packages/xparse
 /xparse.sty
@@ -1118,19 +1135,19 @@ File: l3backend-pdftex.def 2021-05-07 L3 backend support: PDF output (pdfTeX)
 ate/xtemplate.sty
 Package: xtemplate 2021-05-07 L3 Experimental prototype document functions
 \l__xtemplate_tmp_dim=\dimen329
-\l__xtemplate_tmp_int=\count340
+\l__xtemplate_tmp_int=\count342
 \l__xtemplate_tmp_muskip=\muskip18
 \l__xtemplate_tmp_skip=\skip69
 )
 Package: tasks 2021/02/20 v1.3a lists with columns filled horizontally
-\g__tasks_total_items_int=\count341
-\l__tasks_columns_int=\count342
-\g__tasks_rows_int=\count343
-\g__tasks_current_col_num_int=\count344
-\g__tasks_current_row_num_int=\count345
-\l__tasks_item_columns_int=\count346
-\g__tasks_env_int=\count347
-\l__tasks_start_int=\count348
+\g__tasks_total_items_int=\count343
+\l__tasks_columns_int=\count344
+\g__tasks_rows_int=\count345
+\g__tasks_current_col_num_int=\count346
+\g__tasks_current_row_num_int=\count347
+\l__tasks_item_columns_int=\count348
+\g__tasks_env_int=\count349
+\l__tasks_start_int=\count350
 \l__tasks_item_indent_dim=\dimen330
 \l__tasks_item_default_indent_dim=\dimen331
 \l__tasks_item_width_dim=\dimen332
@@ -1145,13 +1162,13 @@ Package: tasks 2021/02/20 v1.3a lists with columns filled horizontally
 \l__tasks_custom_after_item_skip=\skip71
 \l__tasks_before_list_skip=\skip72
 \l__tasks_after_list_skip=\skip73
-\l__tasks_item_coffin=\box89
-\l__tasks_label_coffin=\box90
-\c@task=\count349
-\l__tasks_tmpa_int=\count350
-\l__tasks_tmpb_int=\count351
-\l__tasks_tmpa_coffin=\box91
-\l__tasks_tmpa_box=\box92
+\l__tasks_item_coffin=\box91
+\l__tasks_label_coffin=\box92
+\c@task=\count351
+\l__tasks_tmpa_int=\count352
+\l__tasks_tmpb_int=\count353
+\l__tasks_tmpa_coffin=\box93
+\l__tasks_tmpa_box=\box94
 
 Package xtemplate Info: Declaring object type 'tasks' taking 3 argument(s) on
 (xtemplate)             line 450.
@@ -1170,8 +1187,8 @@ LaTeX Font Info:    Overwriting symbol font `llsymbols' in version `bold'
 kecell/makecell.sty
 Package: makecell 2009/08/03 V0.1e Managing of Tab Column Heads and Cells
 \rotheadsize=\dimen340
-\c@nlinenum=\count352
-\TeXr@lab=\toks53
+\c@nlinenum=\count354
+\TeXr@lab=\toks56
 )
 (/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/latex/mn
 symbol/MnSymbol.sty
@@ -1268,11 +1285,11 @@ moduledecorations.code.tex
 \pgfdecoratedinputsegmentcompleteddistance=\dimen343
 \pgfdecoratedinputsegmentremainingdistance=\dimen344
 \pgf@decorate@distancetomove=\dimen345
-\pgf@decorate@repeatstate=\count353
+\pgf@decorate@repeatstate=\count355
 \pgfdecorationsegmentamplitude=\dimen346
 \pgfdecorationsegmentlength=\dimen347
 )
-\tikz@lib@dec@box=\box93
+\tikz@lib@dec@box=\box95
 )
 (/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pgf/libraries/d
 ecorations/pgflibrarydecorations.pathmorphing.code.tex)))
@@ -1288,10 +1305,10 @@ Package: xkeyval 2020/11/20 v2.8 package option processing (HA)
 .tex
 (/Library/Application Support/MiKTeX/texmfs/install/tex/generic/xkeyval/xkvutil
 s.tex
-\XKV@toks=\toks54
-\XKV@tempa@toks=\toks55
+\XKV@toks=\toks57
+\XKV@tempa@toks=\toks58
 )
-\XKV@depth=\count354
+\XKV@depth=\count356
 File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
 ))
 (/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/latex/ad
@@ -1306,7 +1323,7 @@ Package: trimclip 2020/08/19 v1.2 Trim and clip general TeX material
 (/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/latex/co
 llectbox/collectbox.sty
 Package: collectbox 2012/05/17 v0.4b Collect macro arguments as boxes
-\collectedbox=\box94
+\collectedbox=\box96
 )
 \tc@llx=\dimen348
 \tc@lly=\dimen349
@@ -1330,13 +1347,13 @@ File: tc-pdftex.def 2019/01/04 v2.2 Clipping driver for pdftex
 (/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/latex/if
 oddpage/ifoddpage.sty
 Package: ifoddpage 2016/04/23 v1.1 Conditionals for odd/even page detection
-\c@checkoddpage=\count355
+\c@checkoddpage=\count357
 ))
 (/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/latex/mu
 ltirow/multirow.sty
 Package: multirow 2021/03/15 v2.8 Span multiple rows of a table
 \multirow@colwidth=\skip74
-\multirow@cntb=\count356
+\multirow@cntb=\count358
 \multirow@dima=\skip75
 \bigstrutjot=\dimen360
 )
@@ -1353,67 +1370,60 @@ Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
 \cmidrulesep=\dimen368
 \cmidrulekern=\dimen369
 \defaultaddspace=\dimen370
-\@cmidla=\count357
-\@cmidlb=\count358
+\@cmidla=\count359
+\@cmidlb=\count360
 \@aboverulesep=\dimen371
 \@belowrulesep=\dimen372
-\@thisruleclass=\count359
-\@lastruleclass=\count360
+\@thisruleclass=\count361
+\@lastruleclass=\count362
 \@thisrulewidth=\dimen373
 )
 (/Library/Application Support/MiKTeX/texmfs/install/tex/latex/latex-tools/calc.
 sty
 Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count361
-\calc@Bcount=\count362
+\calc@Acount=\count363
+\calc@Bcount=\count364
 \calc@Adimen=\dimen374
 \calc@Bdimen=\dimen375
 \calc@Askip=\skip76
 \calc@Bskip=\skip77
 LaTeX Info: Redefining \setlength on input line 80.
 LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count363
+\calc@Ccount=\count365
 \calc@Cskip=\skip78
 )
-\c@thm=\count364
+\c@thm=\count366
 LaTeX Info: Redefining \diamondtimes on input line 104.
- (AlgPntSlides.aux
-
-LaTeX Warning: Label `eq:link_ideal_example' multiply defined.
-
-
-LaTeX Warning: Label `eq:induced' multiply defined.
-
-)
+ (AlgPntSlides.aux)
 \openout1 = `AlgPntSlides.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 140.
-LaTeX Font Info:    ... okay on input line 140.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 140.
-LaTeX Font Info:    ... okay on input line 140.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 140.
-LaTeX Font Info:    ... okay on input line 140.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 140.
-LaTeX Font Info:    ... okay on input line 140.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 140.
-LaTeX Font Info:    ... okay on input line 140.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 140.
-LaTeX Font Info:    ... okay on input line 140.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 140.
-LaTeX Font Info:    ... okay on input line 140.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 140.
-LaTeX Font Info:    ... okay on input line 140.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 140.
-LaTeX Font Info:    ... okay on input line 140.
-LaTeX Font Info:    Checking defaults for T3/cmr/m/n on input line 140.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 146.
+LaTeX Font Info:    ... okay on input line 146.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 146.
+LaTeX Font Info:    ... okay on input line 146.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 146.
+LaTeX Font Info:    ... okay on input line 146.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 146.
+LaTeX Font Info:    ... okay on input line 146.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 146.
+LaTeX Font Info:    ... okay on input line 146.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 146.
+LaTeX Font Info:    ... okay on input line 146.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 146.
+LaTeX Font Info:    ... okay on input line 146.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 146.
+LaTeX Font Info:    ... okay on input line 146.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 146.
+LaTeX Font Info:    ... okay on input line 146.
+LaTeX Font Info:    Checking defaults for T3/cmr/m/n on input line 146.
 LaTeX Font Info:    Trying to load font information for T3+cmr on input line 14
-0.
+6.
 
 (/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/latex/ti
 pa/t3cmr.fd
 File: t3cmr.fd 2001/12/31 TIPA font definitions
 )
-LaTeX Font Info:    ... okay on input line 140.
+LaTeX Font Info:    ... okay on input line 146.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1453,17 +1463,17 @@ LaTeX Font Info:    ... okay on input line 140.
 (/Library/Application Support/MiKTeX/texmfs/install/tex/context/base/mkii/supp-
 pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count365
+\scratchcounter=\count367
 \scratchdimen=\dimen376
-\scratchbox=\box95
-\nofMPsegments=\count366
-\nofMParguments=\count367
-\everyMPshowfont=\toks56
-\MPscratchCnt=\count368
+\scratchbox=\box97
+\nofMPsegments=\count368
+\nofMParguments=\count369
+\everyMPshowfont=\toks59
+\MPscratchCnt=\count370
 \MPscratchDim=\dimen377
-\MPnumerator=\count369
-\makeMPintoPDFobject=\count370
-\everyMPtoPDFconversion=\toks57
+\MPnumerator=\count371
+\makeMPintoPDFobject=\count372
+\everyMPtoPDFconversion=\toks60
 )
 (/Library/Application Support/MiKTeX/texmfs/install/tex/latex/epstopdf-pkg/epst
 opdf-base.sty
@@ -1475,7 +1485,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 -sys.cfg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
-Package hyperref Info: Link coloring OFF on input line 140.
+Package hyperref Info: Link coloring OFF on input line 146.
 
 (/Library/Application Support/MiKTeX/texmfs/install/tex/latex/hyperref/nameref.
 sty
@@ -1489,11 +1499,11 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count371
+\c@section@level=\count373
 )
-LaTeX Info: Redefining \ref on input line 140.
-LaTeX Info: Redefining \pageref on input line 140.
-LaTeX Info: Redefining \nameref on input line 140.
+LaTeX Info: Redefining \ref on input line 146.
+LaTeX Info: Redefining \pageref on input line 146.
+LaTeX Info: Redefining \nameref on input line 146.
  (AlgPntSlides.out) (AlgPntSlides.out)
 \@outlinefile=\write5
 \openout5 = `AlgPntSlides.out'.
@@ -1527,124 +1537,105 @@ Dictionary: translator-theorem-dictionary, Language: English
 
 {/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/data/pdftex/config/p
 dftex.map}]
-LaTeX Font Info:    Trying to load font information for U+msa on input line 188
+<PatternsOfEquality.png, id=43, 381.425pt x 125.46875pt>
+File: PatternsOfEquality.png Graphic file (type png)
+<use PatternsOfEquality.png>
+Package pdftex.def Info: PatternsOfEquality.png  used on input line 175.
+(pdftex.def)             Requested size: 230.46739pt x 75.81021pt.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 175
 .
 
 (/Library/Application Support/MiKTeX/texmfs/install/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 188
+LaTeX Font Info:    Trying to load font information for U+msb on input line 175
 .
 (/Library/Application Support/MiKTeX/texmfs/install/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 18
-8.
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 17
+5.
 
 (/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/latex/jk
 nappen/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
 LaTeX Font Info:    Trying to load font information for U+stmry on input line 1
-88.
+75.
 
 (/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/latex/st
 maryrd/Ustmry.fd)
 LaTeX Font Info:    Trying to load font information for U+cmllr on input line 1
-88.
+75.
 
 (/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/latex/cm
 ll/ucmllr.fd) [2
 
-] [3
+ <./PatternsOfEquality.png>] [3
 
 ] [4
 
-]
-Overfull \hbox (5.51631pt too wide) detected at line 258
-[]
- []
-
-[5
+] [5
 
 ] [6
 
-] [7
+]
+Overfull \hbox (5.51631pt too wide) detected at line 300
+[]
+ []
+
+[7
+
+] [8
+
+] [9
 
 ]
-Overfull \hbox (10.38858pt too wide) detected at line 393
+Overfull \hbox (10.38858pt too wide) detected at line 433
 [][]
  []
 
 
-Overfull \hbox (243.999pt too wide) detected at line 393
+Overfull \hbox (21.70845pt too wide) detected at line 433
 []
  []
 
-
-Overfull \hbox (10.82648pt too wide) in paragraph at lines 393--393
-[]  
- []
-
-[8
-
-]pdfTeX warning (ext4): destination with the same identifier (name{eq:link_idea
-l_example}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.438 	\end{frame}
-                  
-Overfull \hbox (10.38858pt too wide) detected at line 438
-[][]
- []
-
-
-Overfull \hbox (21.70845pt too wide) detected at line 438
-[]
- []
-
-[9
-
-] [10
+[10
 
 ]
-Overfull \hbox (4.77496pt too wide) detected at line 500
-[]
- []
+
+Package amsfonts Warning: Obsolete command \bold; \mathbf should be used instea
+d on input line 452.
 
 [11
 
+] [12
+
 ]
-Overfull \hbox (34.44041pt too wide) in paragraph at lines 586--586
+Overfull \hbox (1.59033pt too wide) in paragraph at lines 556--556
  [] 
- []
-
-[12
-
-]
-Overfull \vbox (0.66064pt too high) detected at line 635
  []
 
 [13
 
-] [14
+]
+Overfull \vbox (0.66064pt too high) detected at line 605
+ []
+
+[14
 
 ] [15
 
+] [16
+
 ]
-Overfull \hbox (4.72093pt too wide) detected at line 771
+Overfull \hbox (4.72093pt too wide) detected at line 741
 [][]
  []
 
-[16
+[17
 
-] [17
-
-]
-Overfull \vbox (2.29544pt too high) detected at line 803
- []
-
-[18
+] [18
 
 ] [19
 
@@ -1660,47 +1651,85 @@ Overfull \vbox (2.29544pt too high) detected at line 803
 
 ] [25
 
-] [26
+]
+<DivisionEarlyStopping.png, id=691, 628.3475pt x 470.75874pt>
+File: DivisionEarlyStopping.png Graphic file (type png)
+<use DivisionEarlyStopping.png>
+Package pdftex.def Info: DivisionEarlyStopping.png  used on input line 910.
+(pdftex.def)             Requested size: 307.28987pt x 230.22127pt.
+ [26
 
-] [27
+ <./DivisionEarlyStopping.png>]
+<BuchbergerEarlyStopping.png, id=718, 635.37375pt x 440.64626pt>
+File: BuchbergerEarlyStopping.png Graphic file (type png)
+<use BuchbergerEarlyStopping.png>
+Package pdftex.def Info: BuchbergerEarlyStopping.png  used on input line 917.
+(pdftex.def)             Requested size: 307.28987pt x 213.12149pt.
+[27
 
-] [28
+ <./BuchbergerEarlyStopping.png>] [28
 
 ] [29
 
-] [30
+]
+Overfull \vbox (11.13841pt too high) detected at line 971
+ []
 
-]pdfTeX warning (ext4): destination with the same identifier (name{eq:induced})
- has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.1091 \end{frame}
-                   [31
+[30
+
+] [31
 
 ] [32
 
-]
-Overfull \hbox (1.59988pt too wide) detected at line 1246
-[]
- []
-
-[33
+] [33
 
 ] [34
 
 ]
-Overfull \hbox (3.46425pt too wide) detected at line 1354
-[][][][]
- []
+<FallingRoofsOne.png, id=939, 1024.32687pt x 494.84875pt>
+File: FallingRoofsOne.png Graphic file (type png)
+<use FallingRoofsOne.png>
+Package pdftex.def Info: FallingRoofsOne.png  used on input line 1039.
+(pdftex.def)             Requested size: 351.08998pt x 169.60548pt.
+ [35
 
-[35
+ <./FallingRoofsOne.png>] [36
+
+] [37
+
+] [38
+
+] [39
 
 ]
-Overfull \hbox (1.59988pt too wide) detected at line 1394
-[]
+[40
+
+] [41
+
+]
+<ConclusionAlgPnt.png, id=1122, 375.4025pt x 270.00874pt>
+File: ConclusionAlgPnt.png Graphic file (type png)
+<use ConclusionAlgPnt.png>
+Package pdftex.def Info: ConclusionAlgPnt.png  used on input line 1253.
+(pdftex.def)             Requested size: 199.73653pt x 143.66426pt.
+
+Overfull \vbox (7.22035pt too high) detected at line 1253
  []
 
-[36
+[42
+
+ <./ConclusionAlgPnt.png>] [43
+
+ </Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/tex/latex/b
+eamer/beamericonarticle.pdf>] [44
+
+
+]
+Underfull \vbox (badness 1281) detected at line 1285
+ []
+
+[45
+
 
 ]
 \tf@nav=\write6
@@ -1713,20 +1742,17 @@ Overfull \hbox (1.59988pt too wide) detected at line 1394
 \openout8 = `AlgPntSlides.snm'.
 
  (AlgPntSlides.aux)
-
-LaTeX Warning: There were multiply-defined labels.
-
 Package rerunfilecheck Info: File `AlgPntSlides.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 36667 strings out of 481099
- 743828 string characters out of 2904467
- 999440 words of memory out of 3000000
- 53232 multiletter control sequences out of 15000+600000
- 431995 words of font info for 137 fonts, out of 8000000 for 9000
+ 35179 strings out of 481099
+ 704003 string characters out of 2904467
+ 945594 words of memory out of 3000000
+ 51705 multiletter control sequences out of 15000+600000
+ 420999 words of font info for 93 fonts, out of 8000000 for 9000
  0 hyphenation exceptions out of 8191
- 128i,26n,126p,2988b,1535s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 128i,27n,126p,1980b,1535s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/fonts/enc/
 dvips/mnsymbol/MnSymbolE.enc}{/Users/wtroiani/Library/Application Support/MiKTe
 X/texmfs/install/fonts/enc/dvips/mnsymbol/MnSymbolC.enc}{/Users/wtroiani/Librar
@@ -1736,38 +1762,32 @@ c/dvips/mnsymbol/MnSymbolD.enc}{/Users/wtroiani/Library/Application Support/MiK
 TeX/texmfs/install/fonts/enc/dvips/mnsymbol/MnSymbolF.enc}</Users/wtroiani/Libr
 ary/Application Support/MiKTeX/texmfs/install/fonts/type1/public/mnsymbol/MnSym
 bol10.pfb></Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/fo
-nts/type1/public/mnsymbol/MnSymbol5.pfb></Users/wtroiani/Library/Application Su
-pport/MiKTeX/texmfs/install/fonts/type1/public/mnsymbol/MnSymbol6.pfb></Users/w
-troiani/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/mn
-symbol/MnSymbol7.pfb></Users/wtroiani/Library/Application Support/MiKTeX/texmfs
-/install/fonts/type1/public/mnsymbol/MnSymbol8.pfb></Users/wtroiani/Library/App
-lication Support/MiKTeX/texmfs/install/fonts/type1/public/cmll/cmllr10.pfb></Li
-brary/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/
-cmmi10.pfb></Library/Application Support/MiKTeX/texmfs/install/fonts/type1/publ
-ic/amsfonts/cm/cmmi12.pfb></Library/Application Support/MiKTeX/texmfs/install/f
-onts/type1/public/amsfonts/cm/cmmi5.pfb></Library/Application Support/MiKTeX/te
-xmfs/install/fonts/type1/public/amsfonts/cm/cmmi6.pfb></Library/Application Sup
-port/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi7.pfb></Library/A
-pplication Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi8.p
-fb></Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfo
-nts/cm/cmr10.pfb></Library/Application Support/MiKTeX/texmfs/install/fonts/type
-1/public/amsfonts/cm/cmr12.pfb></Library/Application Support/MiKTeX/texmfs/inst
-all/fonts/type1/public/amsfonts/cm/cmr6.pfb></Library/Application Support/MiKTe
-X/texmfs/install/fonts/type1/public/amsfonts/cm/cmr7.pfb></Library/Application 
-Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmr8.pfb></Library
-/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmss1
-0.pfb></Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/am
-sfonts/cm/cmss12.pfb></Library/Application Support/MiKTeX/texmfs/install/fonts/
-type1/public/amsfonts/cm/cmss8.pfb></Library/Application Support/MiKTeX/texmfs/
-install/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></Library/Application Suppo
-rt/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmssi10.pfb></Library/A
-pplication Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmssi12
-.pfb></Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/ams
-fonts/symbols/msbm10.pfb></Users/wtroiani/Library/Application Support/MiKTeX/te
-xmfs/install/fonts/type1/public/hoekwater/stmary10.pfb>
-Output written on AlgPntSlides.pdf (36 pages, 549515 bytes).
+nts/type1/public/mnsymbol/MnSymbol6.pfb></Users/wtroiani/Library/Application Su
+pport/MiKTeX/texmfs/install/fonts/type1/public/mnsymbol/MnSymbol8.pfb></Library
+/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmbx1
+0.pfb></Users/wtroiani/Library/Application Support/MiKTeX/texmfs/install/fonts/
+type1/public/cmll/cmllr10.pfb></Library/Application Support/MiKTeX/texmfs/insta
+ll/fonts/type1/public/amsfonts/cm/cmmi10.pfb></Library/Application Support/MiKT
+eX/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi12.pfb></Library/Applicati
+on Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi6.pfb></Lib
+rary/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/c
+mmi8.pfb></Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public
+/amsfonts/cm/cmr10.pfb></Library/Application Support/MiKTeX/texmfs/install/font
+s/type1/public/amsfonts/cm/cmr6.pfb></Library/Application Support/MiKTeX/texmfs
+/install/fonts/type1/public/amsfonts/cm/cmr8.pfb></Library/Application Support/
+MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmss10.pfb></Library/Appli
+cation Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmss12.pfb>
+</Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts
+/cm/cmss8.pfb></Library/Application Support/MiKTeX/texmfs/install/fonts/type1/p
+ublic/amsfonts/cm/cmssi10.pfb></Library/Application Support/MiKTeX/texmfs/insta
+ll/fonts/type1/public/amsfonts/cm/cmssi12.pfb></Library/Application Support/MiK
+TeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmtt10.pfb></Library/Applicat
+ion Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/symbols/msbm10.pf
+b></Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/rsfs/r
+sfs10.pfb>
+Output written on AlgPntSlides.pdf (45 pages, 1187847 bytes).
 PDF statistics:
- 1088 PDF objects out of 1200 (max. 8388607)
- 99 named destinations out of 1000 (max. 500000)
- 43 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1354 PDF objects out of 1440 (max. 8388607)
+ 139 named destinations out of 1000 (max. 500000)
+ 68 words of extra memory for PDF output out of 10000 (max. 10000000)
 

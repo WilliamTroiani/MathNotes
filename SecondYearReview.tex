@@ -1,0 +1,278 @@
+\documentclass[12pt]{article}
+
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{mathrsfs}
+\usepackage{array}
+\usepackage{amssymb}
+\usepackage{units}
+\usepackage{graphicx}
+\usepackage{tikz-cd}
+\usepackage{nicefrac}
+\usepackage{hyperref}
+\usepackage{bbm}
+\usepackage{color}
+\usepackage{tensor}
+\usepackage{tipa}
+\usepackage{bussproofs}
+\usepackage{ stmaryrd }
+\usepackage{ textcomp }
+\usepackage{leftidx}
+\usepackage{afterpage}
+\usepackage{varwidth}
+\usepackage{tasks}
+\usepackage{ cmll }
+\usepackage{makecell}
+\usepackage{MnSymbol}
+\usepackage{quiver}
+\usepackage{adjustbox}
+\usepackage{multirow}
+\usepackage{booktabs}
+\usepackage{xparse}
+\usepackage{calc}
+\usepackage{stackengine}
+\usepackage{csquotes}
+
+\newcommand\blankpage{
+	\null
+	\thispagestyle{empty}
+	\addtocounter{page}{-1}
+	\newpage
+}
+
+\newcommand{\PhantC}{\phantom{\colon}}%
+\newcommand{\PhantSQ}{\phantom{\sqrt{\hspace{0.3ex}}}}
+
+% https://tex.stackexchange.com/questions/63355/wrapping-cmidrule-in-a-macro
+\ExplSyntaxOn
+\makeatletter
+\newcommand{\CMidRule}{\noalign\bgroup\@CMidRule{}}
+\NewDocumentCommand{\@CMidRule}{
+	m % Material to reinsert before cmidrule.
+	O{0.0ex} % #1 = left adjust
+	O{0.0ex} % #1 = right adjust
+	m  %       #3 = columns to span
+}{
+	\peek_meaning_remove_ignore_spaces:NTF \CMidRule
+	{ \@CMidRule { #1 \cmidrule[\cmidrulewidth](l{#2}r{#3}){#4} } }
+	{ \egroup #1 \cmidrule[\cmidrulewidth](l{#2}r{#3}){#4} }
+}
+\makeatother
+\ExplSyntaxOff
+
+\graphicspath{ {images/} }
+
+\theoremstyle{plain}
+\newtheorem{thm}{Theorem}[subsection] % reset theorem numbering for each chapter
+\newtheorem{proposition}[thm]{Proposition}
+\newtheorem{lemma}[thm]{Lemma}
+\newtheorem{fact}[thm]{Fact}
+\newtheorem{cor}[thm]{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{defn}[thm]{Definition} % definition numbers are dependent on theorem numbers
+\newtheorem{exmp}[thm]{Example} % same for example numbers
+\newtheorem{notation}[thm]{Notation}
+\newtheorem{remark}[thm]{Remark}
+\newtheorem{condition}[thm]{Condition}
+\newtheorem{question}[thm]{Question}
+\newtheorem{construction}[thm]{Construction}
+\newtheorem{exercise}[thm]{Exercise}
+\newtheorem{example}[thm]{Example}
+\newtheorem{aside}[thm]{Aside}
+\newtheorem{algorithm}[thm]{Algorithm}
+
+\def\doubleunderline#1{\underline{\underline{#1}}}
+\newcommand{\bb}[1]{\mathbb{#1}}
+\newcommand{\scr}[1]{\mathscr{#1}}
+\newcommand{\call}[1]{\mathcal{#1}}
+\newcommand{\psheaf}{\text{\underline{Set}}^{\scr{C}^{\text{op}}}}
+\newcommand{\und}[1]{\underline{\hspace{#1 cm}}}
+\newcommand{\adj}[1]{\text{\textopencorner}{#1}\text{\textcorner}}
+\newcommand{\comment}[1]{}
+\newcommand{\lto}{\longrightarrow}
+\newcommand{\rone}{(\operatorname{R}\bold{1})}
+\newcommand{\lone}{(\operatorname{L}\bold{1})}
+\newcommand{\rimp}{(\operatorname{R} \multimap)}
+\newcommand{\limp}{(\operatorname{L} \multimap)}
+\newcommand{\rtensor}{(\operatorname{R}\otimes)}
+\newcommand{\ltensor}{(\operatorname{L}\otimes)}
+\newcommand{\rtrue}{(\operatorname{R}\top)}
+\newcommand{\rwith}{(\operatorname{R}\&)}
+\newcommand{\lwithleft}{(\operatorname{L}\&)_{\operatorname{left}}}
+\newcommand{\lwithright}{(\operatorname{L}\&)_{\operatorname{right}}}
+\newcommand{\rplusleft}{(\operatorname{R}\oplus)_{\operatorname{left}}}
+\newcommand{\rplusright}{(\operatorname{R}\oplus)_{\operatorname{right}}}
+\newcommand{\lplus}{(\operatorname{L}\oplus)}
+\newcommand{\prom}{(\operatorname{prom})}
+\newcommand{\ctr}{(\operatorname{ctr})}
+\newcommand{\der}{(\operatorname{der})}
+\newcommand{\weak}{(\operatorname{weak})}
+\newcommand{\exi}{(\operatorname{exists})}
+\newcommand{\fa}{(\operatorname{for\text{ }all})}
+\newcommand{\ex}{(\operatorname{ex})}
+\newcommand{\cut}{(\operatorname{cut})}
+\newcommand{\ax}{(\operatorname{ax})}
+\newcommand{\negation}{\sim}
+\newcommand{\true}{\top}
+\newcommand{\false}{\bot}
+\DeclareRobustCommand{\diamondtimes}{%
+	\mathbin{\text{\rotatebox[origin=c]{45}{$\boxplus$}}}%
+}
+\newcommand{\tagarray}{\mbox{}\refstepcounter{equation}$(\theequation)$}
+\newcommand{\startproof}[1]{
+	\AxiomC{#1}
+	\noLine
+	\UnaryInfC{$\vdots$}
+}
+\newcommand\showdiv[1]{\overline{\smash{)}#1}}
+\newcommand{\set}{\operatorname{\underline{Set}}}
+\newcommand{\coherence}[2]{#1\text{ }\rotatebox{90}{()}_A\text{ }#2}
+
+
+
+\newenvironment{scprooftree}[1]%
+{\gdef\scalefactor{#1}\begin{center}\proofSkipAmount \leavevmode}%
+	{\scalebox{\scalefactor}{\DisplayProof}\proofSkipAmount \end{center} }
+
+\title{Second Year Review}
+\author{William Troiani}
+\date{\today}
+
+\begin{document}
+	\maketitle
+	\section{Introduction}
+	
+	What is a proof? Thinking deeply about this question can and has lead to the establishment of formal connections between some aspects of mathematical logic and some aspects of theoretical computer science. For example, the Curry-Howard Correspondence can be understood as an equivalence between categories, one of which is ``computational", and the other which is ``logical". We take a moment to explain this equivalence, assuming familiarity with the basic constructs of the simply typed $\lambda$-calculus, and intuitionistic sequence calculus (with soul connective implication, denoted $\supset$), for more details the interested reader can consult \cite{GMZ}.
+	
+	Let $Q$ be a set of variables, where a variable $x: \tau$ consists of a \textbf{name} $x$ and a \textbf{type} $\tau$ (formally, one begins with a countably infinite set of variable names $\call{V}$ and a countably infinite set of types (again, formal symbols) $\Phi$. For each type $\rho \in \Phi$ we take a copy of $\call{V}$ and denote this copy $\call{V}_\rho$. These are the \textbf{typed variables}. A ``variable" means a ``typed variable"). The $\lambda$-calculus consists of \textbf{terms} which are built inductively using three \textbf{term formation rules}, see \cite[Appendix A]{GMZ} but recall that each term has an associated type which is either an \textbf{atomic type} $\rho$ or an \textbf{arrow type} $\rho \lto \tau$.
+	
+	We define a category $\call{L}_Q$ whose objects are elements of the set $\Phi \coprod \{ \bold{1} \}$ where $\bold{1}$ is a symbol we formally adjoin. A morphism $\tau \lto \sigma$ where $\tau, \sigma \in \Phi$ is an equivalence class of terms $t$ of type $\tau \lto \sigma$, and a morphism $\bold{1} \lto \tau$ is an equivalence class of terms $t$ of type $\tau$. The equivalence relation which defines these equivalence relations are given by three \textbf{term reduction} rules: \textbf{$\alpha$-conversion} \cite[Appendix A, page 62]{GMZ} \textbf{$\beta$-reduction} \cite[Definition 1.3.2]{SorUrz}, and \textbf{$\eta$-expansion} \cite[Definition 1.3.9]{SorUrz}. These reductions provide the \emph{dynamic} content of the simply typed $\lambda$-calculus. The category $\call{L}_Q$ is the ``computer science" component of the Curry-Howard equivalence.
+	
+	On the other hand, given a sequence $\frak{q}$ of named variables, we define a category $\call{S}_\frak{q}$ to consist of intuitionistic sequence calculus proofs. More precisely, the objects are a list of variables (which should be taken to be the same set of variables used to define $\call{L}_Q$) along with a formal element $\bold{1}$ adjoined. A morphism $\rho \lto \tau$ in $\call{L}_{\frak{q}}$ is an equivalence class of proofs of $\rho \supset \tau$ (ie, the proposition $\rho$ implies the proposition $\tau$) under the hypotheses $\frak{q}$ and a morphism $\bold{1} \lto \rho$ is an equivalence class of proofs of the $\rho$ under hypotheses $\frak{q}$. The appropriate equivalence relation here is much more difficult to explain and justification for the generators of this relation was part of the contribution of the paper \cite{GMZ}.\footnote{To the authoritative reader: this paper is work which was done by Daniel Murfet and myself \emph{before} I started my PhD. The main reason why this has been mentioned here is to provide appropriate context for what comes next.}
+	
+	Thus we have described two categories, one of which involves morphisms which arise naturally in theoretical computer science, and the other involves morphisms which arise naturally in formal logic. That these two categories are equivalent \cite[Theorem 4.15]{GMZ} is a remarkable result which provides motivation to consider these two fields from the perspective of the other.
+	
+	It is the author's opinion that the most interesting part of this equivalence is the relationship between the \emph{dynamics} of both systems. How can we understand these dynamics mathematically? This question leads to the first of two projects which provide the work which I have done during the second year of my PhD. This project will be crudely referred to as ``the French project" as it was carried out in France under the supervision of Thomas Seiller, and indeed is very ``French" in nature; there are many researchers in France who are interested in the dynamics of the aformentioned systems. For similar reasons, I refer to the project I have done mostly in collaboration with Murfet as ``the Australian project".
+	
+	\section{The French project}\label{sec:french}
+	How can we understand the dynamics of the $\lambda$-calculus? We make a technical note here that we will now consider the \textbf{untyped} $\lambda$-calculus (where earlier we considered the \emph{simply typed} $\lambda$-calculus). We have particular interest in the terms of these two systems, of which those in the simply typed $\lambda$-calculus provide a subset of those in the untyped $\lambda$-calculus. An example of a term which exists in the untyped $\lambda$-calculus but not in the simply typed $\lambda$-calculus is the fixed point
+	\begin{equation}
+		\Delta := (\lambda x. xx)(\lambda x. xx)
+		\end{equation}
+	We notice that this term reduces under $\beta$-reduction to itself, which obscures the separation between ``data" and ``functions of data". The blurring of this line is a key feature of the untyped $\lambda$-calculus (after all, in the simply typed $\lambda$-calculus, the distinction between terms of atomic type and terms of arrow type provides a sharp distinction between data and functions of data).
+	
+	It was Girard's idea \cite{Girard} to consider each term in the untyped $\lambda$-calculus as a \emph{normal functor}, that is, a functor $F: \set^A \lto \set^B$ (where $A,B$ are sets, ie, discrete small categories) where $F$ preserves wide pullbacks and filtered colimits. A crucial part of this paper is the establishment between three different criteria which are equivalent to $F$ being normal. See \cite[Theorem 2.8]{Girard} but note that there is a typo in the statement, part (ii) should read ``$F$ is isomorphic to an analytic functor".
+	
+	Using this Theorem, Girard defines a denotational model of the $\lambda$-calculus. Whilst doing so, he notices the presence of extra structure in the model than what appears in the syntax (the $\lambda$-calculus), and so extends the syntax to a new system which is now known as \emph{linear logic}. Indeed, this logic is central in the intersection between theoretical computer science and mathematical logic, and features connectives which would be interesting to have rich mathematical models of. We return to this point later.
+	
+	I read this paper very thoroughly, and I have written notes for more the main Theorem and the model. \footnote{These notes do not appear on my webpage at the moment because I am still working on them, but I have attached them as a separate document so that the authoritative reader can observe the work I have done. This document is 43 pages long, and features extensions of lemmas and theorems originally stated in \cite{Girard}, for example, Section 3 of my notes works with functor categories $\set^A$ where $A$ is a small category, where in \cite{Girard} on the case where $A$ is a small discrete category is considered.}
+	
+	While reading this paper, it occurred to me that the model is over complicated and features ideas which could be made to be more transparent if we worked in a more concrete setting. Thomas and myself, along with another researcher Morgan Rogers, have worked on ``decategorifying" Girard's model and recently have made progress on this, and are currently writing this up for publication. This new model is partially written in Section 7 of \cite{TroianiPolynomialFunct}. This new model is one of the most significant contributions I have been involved in throughout this PhD, and was discovered during my second year. I am largely indebted to the help of Seiller and Rogers, but I point out that a refinement to the definition of the App function (\cite[Definition 7.2.1]{TroianiPolynomialFunct}, in particular, the adjunction of Definition \cite[Definition 7.1.1]{TroianiPolynomialFunct}), many of the core proofs used in this section and all of the proofs of the other sections, as well as the idea to search for such a model in the first place, were ideas of mine influenced by Girard's paper \cite{Girard}.
+	
+	\section{The Australian Project}
+	In Section \ref{sec:french} we described a \emph{denotational} model of the untyped $\lambda$-calculus. What makes this a \emph{denotational} model is the fact that terms which are equivalent under $\alpha\beta\eta$-equivalence are modelled as the exact same function. That is, the model is unaware of the dynamics. Generally speaking, we have a good understanding of the conversion rules as static objects, but how can we understand these rules as \emph{dynamic} objects?
+	
+	This question, influenced by the ideas of, again, Girard, but in a different context \cite{GoI}, lead Murfet to discover \emph{cut-systems}, which provide a refinement to horizontal composition in the bicategory of Landau-Ginzburg models (as well as other contexts). Murfet and myself believe that cut-systems should provide a model for linear logic, and moreover, a model which rather than interpreting proofs which are equivalent to each other as the \emph{same} object, instead interprets them as different objects which are related to each other via the dynamics available to any cut-system (ie, the splitting of idempotents).
+	
+	The Landau-Ginzburg category can be observed through many different lenses. One of these lenses is that of Quantum Error Correction Codes, considered as interactive physical systems. Understanding the aforementioned connectives of linear logic inside this setting is a core goal of this PhD. Murfet and myself are continuing to work towards this goal, but currently we have found a model for a sub-fragment of linear logic using Quantum Error Correction Codes, which is currently being written up for publication, and a model for this same sub-fragment using coordinate rings, which was discovered, written up, and submitted during my second year. See \cite{AlgPnt}.
+	
+	This model is interesting because it relates two distinct \emph{and pre-existing} dynamical structures in mathematics. One of them is Buchberger's Algorithm, which calculates Gr\"{o}bner bases from generating sets of ideals in certain polynomial rings, and cut-elimination, which corresponds under the Curry-Howard correspondence to $\beta$-reduction (and so may be thought of as a dynamics of computation).
+	
+	Whilst working on this paper, I noticed that cut-elimination can in fact be thought of in two different ways. One could consider an instance of the cut-rule in a proof and \emph{reduce} this, by commuting it with another deduction rule, hence reducing the distance in the proof between this cut rule and an axiom rule, or one could consider eliminating all instances of the cut-rule simultaneously in one, big \emph{normalisation} step. The standard presentation of Buchberger's Algorithm, given in say \cite{CLO}, is capable of performing normalisation, whereas a variation on Buchberger's Algorithm is needed in order to perform \emph{reduction}.
+	
+	\section{Other academic work}
+	This year I ran two online seminars and one online course at \emph{metauni}, an online community where volunteer reseachers present seminars to participants. The first of these was a proof of a key result used in G\"{o}del's First Incompleteness Theorem, that the primitive recursive functions are representable. The notes for these are available on my webpage \cite{GI}.
+	
+	The second of these was on the Ax-Grothendieck Theorem, which states that any injective polynomial $f: \bb{C}^n \lto \bb{C}^n$ is surjective. This result is interesting due to the proof rather than the result, as the proof uses model theory techniques. This seminar was an opportunity for participants to see how formal logic can be used to prove mathematical statements (ie, logic is more than just philosophical musings).
+	
+	The course was an introduction to category theory, notes for these can be found on my webpage too \cite{SoC}.
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	\begin{thebibliography}{9}
+		\bibitem{GMZ} Murfet, Troiani. \emph{The Gentzen-Mints-Zucker Duality}. \url{https://arxiv.org/abs/2008.10131}
+		
+		\bibitem{SorUrz} Sorensen. \emph{Urzyczyn Lectures on the Curry-Howard Isomorphism} View series: Studies in Logic and the Foundations of Mathematics July 4 2006.
+		
+		\bibitem{Girard} Girard. \emph{Normal functors, power series and lambda-calculus}. Lecture Notes in Computer Science, 62, Springer, Berlin (1978), pp. 72-89
+		
+		\bibitem{TroianiPolynomialFunct} Rogers. Seiller. Troiani. \emph{Analytic functors and $\lambda$-calculus}. To appear.
+		
+		\bibitem{GoI} Girard. \emph{I Intepretation of system F}. Studies in Logic and the Foundations of Mathematics
+		Volume 127, 1989, Pages 221-260
+		
+		\bibitem{Murfet} Murfet. \emph{The cut operation on matrix factorisations.} \url{https://arxiv.org/abs/1402.4541}
+		
+		\bibitem{AlgPnt} Murfet. Troiani. \emph{Elimination and cut-elimination in multiplicative linear logic} \url{https://arxiv.org/abs/2207.10871}
+		
+		\bibitem{CLO} Cox. Little. O’Shea. \emph{Ideals, Varieties, and Algorithms}. Springer Cham, 17 October 2016
+		
+		\bibitem{GI} Troiani. \emph{G\"{o}del's First Incompleteness Theorem}, \url{https://williamtroiani.github.io/Notes/FirstIncompletenessTheorem.tex.pdf}
+		
+		\bibitem{AG} Troiani. \emph{Ax-Grothendieck Theorem}. \url{https://williamtroiani.github.io/Notes/ax-grothendieck.pdf}
+		
+		\bibitem{SoC} Troiani. \emph{Shadows of Computation}. \url{https://williamtroiani.github.io/Teaching.html}
+		\end{thebibliography}
+	
+	\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
